@@ -5,6 +5,7 @@ import Typed from 'react-typed';
 const Header = props => (
   <header id="header" style={props.timeout ? { display: 'none' } : {}}>
     <div className="logo">
+
       <span className="icon fa-laptop"></span>
     </div>
     <div className="content">
