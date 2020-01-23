@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Starter - Dimension V2',
-    author: 'Hunter Chang',
-    description: 'A Gatsby.js V2 Starter based on Dimension by HTML5 UP',
+    title: 'Idris Olubisi Portfolio',
+    author: 'Idris Olubisi',
+    description: 'This is my personal portfolio that tells a detailed information about me',
     social: {
-      twitter: ''
+      twitter: 'olanetsoft'
     }
   },
   plugins: [
