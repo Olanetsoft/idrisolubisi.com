@@ -68,9 +68,7 @@ class Main extends React.Component {
           </span>
           <p>
             Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu,
-            at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent
-            urna nisi, fringila lorem et vehicula lacinia quam. Integer
-            sollicitudin mauris nec lorem luctus ultrices.
+            at eleifend sapien imperdiet ac. 
           </p>
           
           <span className="image main">
@@ -78,9 +76,7 @@ class Main extends React.Component {
           </span>
           <p>
             Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu,
-            at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent
-            urna nisi, fringila lorem et vehicula lacinia quam. Integer
-            sollicitudin mauris nec lorem luctus ultrices.
+            at eleifend sapien imperdiet ac. 
           </p>
 
           <span className="image main">
@@ -88,9 +84,7 @@ class Main extends React.Component {
           </span>
           <p>
             Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu,
-            at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent
-            urna nisi, fringila lorem et vehicula lacinia quam. Integer
-            sollicitudin mauris nec lorem luctus ultrices.
+            at eleifend sapien imperdiet ac. 
           </p>
           {close}
         </article>
