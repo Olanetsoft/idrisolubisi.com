@@ -11,11 +11,11 @@ const Header = props => (
       <div className="inner">
         <h1>
           <Typed
-                strings={[" i'm Idris olubisi"]}
-                typeSpeed={50}
+                strings={["i'm Idris olubisi"]}
+                typeSpeed={30}
               />
         </h1>
-         <h3 style={{color: "yellow"}}>     
+         <h3 style={{color: "#41EE31"}}>     
               <Typed
                 strings={[
                     'I write code for a living',

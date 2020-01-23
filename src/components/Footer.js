@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-let date = new Date().toLocaleDateString();
+let date = new Date();
+let newDate = date.getFullYear();
 const Footer = (props) => (
     <footer id="footer" style={props.timeout ? {display: 'none'} : {}}>
         <ul className="icons">
@@ -48,7 +49,7 @@ const Footer = (props) => (
             </li>
             
           </ul>
-        <p className="copyright">&copy;{date} Made with <a href="https://www.twitter.com/olanetsoft" className="icon fa-heart"> by @olanetsoft  Powered by</a><a href="https://www.gatsbyjs.org/" > Gatsby</a></p>
+        <p className="copyright">&copy;{newDate} Made with <a href="https://www.twitter.com/olanetsoft" className="icon fa-heart"> by @olanetsoft  Powered by</a><a href="https://www.gatsbyjs.org/" > Gatsby</a></p>
     </footer>
 )
 
