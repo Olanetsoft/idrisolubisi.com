@@ -15,7 +15,7 @@ const Header = props => (
                 typeSpeed={30}
               />
         </h1>
-         <h3 style={{color: "#41EE31"}}>     
+         <h3 style={{color: "gold"}}>     
               <Typed
                 strings={[
                     'I write code for a living',
@@ -27,7 +27,7 @@ const Header = props => (
           </h3>
         <p>
         I’m a Software Engineer based in Lagos, Nigeria. <br/>
-        I'm passionate about making the web accessible to everyone and the open-source community.
+        I'm passionate about writing code that solves problem.
           {/* A fully responsive site template designed by{' '}
           <a href="https://html5up.net">HTML5 UP</a> and released
           <br />
