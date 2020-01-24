@@ -73,7 +73,7 @@ const Header = props => (
               props.onOpenArticle('skill/certificate')
             }}
           >
-            Skills/Cert <span className="fa fa-cogs" aria-hidden="true"></span>
+            certificates <span className="fa fa-cogs" aria-hidden="true"></span>
           </button>
         </li>
         <li>
