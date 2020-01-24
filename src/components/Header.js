@@ -46,7 +46,7 @@ const Header = props => (
               props.onOpenArticle('intro')
             }}
           >
-            My Blog <span className="icon fa-pen"></span>
+            My Blog <span className="fa fa-pencil" aria-hidden="true"></span>
           </button>
         </li>
         <li>

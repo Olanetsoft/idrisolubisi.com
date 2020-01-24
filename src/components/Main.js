@@ -28,7 +28,7 @@ class Main extends React.Component {
           }`}
           style={{ display: 'none' }}
         >
-          <h2 className="major">Intro</h2>
+          <h2 className="major">MY Blog</h2>
           <span className="image main">
             <img src={pic01} alt="" />
           </span>
@@ -62,13 +62,13 @@ class Main extends React.Component {
           }`}
           style={{ display: 'none' }}
         >
-          <h2 className="major">Work</h2>
+          <h2 className="major">PROJECTS</h2>
           <span className="image main">
-            <img src={pic02} alt="" />
+            {/* <img src={pic02} alt="" /> */}
+            <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/>
           </span>
           <p>
-            Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu,
-            at eleifend sapien imperdiet ac. 
+            Rethink Lagos 
           </p>
           
           <span className="image main">
