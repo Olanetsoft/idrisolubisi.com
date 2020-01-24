@@ -7,6 +7,7 @@ import RethinkLagos from '../images/rethinkLagos.png'
 import Boeinvest from '../images/boeinvest.png'
 import DigitalClock from '../images/digiitalClock.png'
 import Isazoni from '../images/isazoni.png'
+import KWARASELL from '../images/kwarasell.png'
 //import Kwarasell from '../images/kwarasell.png';
 import MusicalEvent from '../images/musicalEvent.png'
 import Naija4life from '../images/naija4life.png'
@@ -132,7 +133,7 @@ class Main extends React.Component {
           </p>
 
           <span className="image main">
-            <a href="https://www.kwarasell.com" target='_blank'><img src={pic03} alt="Kwarasell"/></a>
+            <a href="https://www.kwarasell.com" target='_blank'><img src={KWARASELL} alt="Kwarasell"/></a>
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
