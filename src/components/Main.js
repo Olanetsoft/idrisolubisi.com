@@ -12,7 +12,7 @@ import MusicalEvent from '../images/musicalEvent.png'
 import Naija4life from '../images/naija4life.png'
 import SkillImage from '../images/skillimage2.jpg'
 import CertImage from '../images/certImagenew.jpg';
-
+import ABoutImage from '../images/aboutPic.jpg'
 
 
 
@@ -157,14 +157,21 @@ class Main extends React.Component {
               </a>
             </li>
             <li>
-              <a href="https://codebushi.com"
+              <a href="https://medium.com/@olanetsoft"
+               className="icon fa-medium"
+               target='_blank'>
+                <span className="label">Medium</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://facebook.com/olubisiidris"
                className="icon fa-facebook"
                target='_blank'>
                 <span className="label">Facebook</span>
               </a>
             </li>
             <li>
-              <a href="https://instagram.com"
+              <a href="https://www.instagram.com/olanetsoft"
                className="icon fa-instagram"
                target='_blank'>
                 <span className="label">Instagram</span>
@@ -193,7 +200,7 @@ class Main extends React.Component {
         >
           <h2 className="major">About</h2>
           <span className="image main">
-            <img src={pic03} alt="" />
+            <img src={ABoutImage} alt="" />
           </span>
           <p>
             Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent
@@ -224,14 +231,21 @@ class Main extends React.Component {
               </a>
             </li>
             <li>
-              <a href="https://codebushi.com"
+              <a href="https://medium.com/@olanetsoft"
+               className="icon fa-medium"
+               target='_blank'>
+                <span className="label">Medium</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://facebook.com/olubisiidris"
                className="icon fa-facebook"
                target='_blank'>
                 <span className="label">Facebook</span>
               </a>
             </li>
             <li>
-              <a href="https://instagram.com"
+              <a href="https://www.instagram.com/olanetsoft"
                className="icon fa-instagram"
                target='_blank'>
                 <span className="label">Instagram</span>
@@ -263,14 +277,15 @@ class Main extends React.Component {
             <img src={SkillImage} alt="" size={{height: '0px'}} />
           </span>
           <p>
-            Skills.
+            SKILLS<br/>
+            
           </p>
 
           <span className="image main">
             <img src={CertImage} alt="" />
           </span>
           <p>
-            Certificates  
+            CERTIFICATES  
           </p>
 
           <ul className="icons">
@@ -293,14 +308,21 @@ class Main extends React.Component {
               </a>
             </li>
             <li>
-              <a href="https://codebushi.com"
+              <a href="https://medium.com/@olanetsoft"
+               className="icon fa-medium"
+               target='_blank'>
+                <span className="label">Medium</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://facebook.com/olubisiidris"
                className="icon fa-facebook"
                target='_blank'>
                 <span className="label">Facebook</span>
               </a>
             </li>
             <li>
-              <a href="https://instagram.com"
+              <a href="https://www.instagram.com/olanetsoft"
                className="icon fa-instagram"
                target='_blank'>
                 <span className="label">Instagram</span>
@@ -356,32 +378,54 @@ class Main extends React.Component {
           <ul className="icons">
             <li>
               <a
-                href="https://twitter.com/HuntaroSan"
+                href="https://twitter.com/olanetsoft"
                 className="icon fa-twitter"
+                target='_blank'
               >
                 <span className="label">Twitter</span>
               </a>
             </li>
             <li>
-              <a href="https://codebushi.com" className="icon fa-facebook">
+              <a
+                href="https://github.com/olanetsoft"
+                className="icon fa-github"
+                target='_blank'
+              >
+                <span className="label">GitHub</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://medium.com/@olanetsoft"
+               className="icon fa-medium"
+               target='_blank'>
+                <span className="label">Medium</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://facebook.com/olubisiidris"
+               className="icon fa-facebook"
+               target='_blank'>
                 <span className="label">Facebook</span>
               </a>
             </li>
             <li>
-              <a href="https://codebushi.com" className="icon fa-instagram">
+              <a href="https://www.instagram.com/olanetsoft"
+               className="icon fa-instagram"
+               target='_blank'>
                 <span className="label">Instagram</span>
               </a>
             </li>
             <li>
               <a
-                href="https://github.com/codebushi/gatsby-starter-dimension"
-                className="icon fa-github"
+                href="https://www.linkedin.com/in/olubisi-idris-ayinde-05727b17a/"
+                className="icon fa-linkedin"
+                target='_blank'
               >
-                <span className="label">GitHub</span>
+                <span className="label">linkedIn</span>
               </a>
             </li>
-          </ul>
-          {close}
+            
+          </ul>{close}
         </article>
       </div>
     )
