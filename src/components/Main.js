@@ -367,7 +367,7 @@ class Main extends React.Component {
           <h2 className="major">Contact</h2>
           <form 
           method="post" 
-          name="contact"
+          action="#" 
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           >
@@ -385,8 +385,7 @@ class Main extends React.Component {
             </div>
             <ul className="actions">
               <li>
-                {/* <input type="submit" value="Send Message" className="special" /> */}
-                <button className="special">Send Message</button>
+                <input type="submit" value="Send Message" className="special" />
               </li>
               <li>
                 <input type="reset" value="Reset" />
