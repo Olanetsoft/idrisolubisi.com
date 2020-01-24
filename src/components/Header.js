@@ -5,7 +5,6 @@ import Typed from 'react-typed';
 const Header = props => (
   <header id="header" style={props.timeout ? { display: 'none' } : {}}>
     <div className="logo">
-
       <span className="icon fa-laptop"></span>
     </div>
     <div className="content">
@@ -20,7 +19,9 @@ const Header = props => (
               <Typed
                 strings={[
                     'I write code for a living',
-                    'I write technical content'
+                    'I write technical content',
+                    'I love to write clean code',
+                    'I love football'
                     ]}
                     typeSpeed={40}
                     backSpeed={60}
@@ -45,7 +46,7 @@ const Header = props => (
               props.onOpenArticle('intro')
             }}
           >
-            Intro
+            Intro <span className="icon fa-laptop"></span>
           </button>
         </li>
         <li>
@@ -54,7 +55,7 @@ const Header = props => (
               props.onOpenArticle('work')
             }}
           >
-            Work
+            Work <span className="icon fa-laptop"></span>
           </button>
         </li>
         <li>
@@ -63,7 +64,7 @@ const Header = props => (
               props.onOpenArticle('about')
             }}
           >
-            About
+            About <span className="icon fa-laptop"></span>
           </button>
         </li>
         <li>
@@ -72,7 +73,7 @@ const Header = props => (
               props.onOpenArticle('contact')
             }}
           >
-            Contact
+            Contact <span className="icon fa-laptop"></span>
           </button>
         </li>
       </ul>
