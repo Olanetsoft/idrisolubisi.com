@@ -10,6 +10,12 @@ import Isazoni from '../images/isazoni.png'
 import Kwarasell from '../images/Kwarasell.png'
 import MusicalEvent from '../images/musicalEvent.png'
 import Naija4life from '../images/naija4life.png'
+import SkillImage from '../images/skillimage2.jpg'
+import CertImage from '../images/certimagenew.jpg'
+
+
+
+
 
 class Main extends React.Component {
   render() {
@@ -69,6 +75,8 @@ class Main extends React.Component {
           }`}
           style={{ display: 'none' }}
         >
+
+
           <h2 className="major">PROJECTS</h2>
           <span className="image main">
             <a href="https://www.rethinklagos.com" target='_blank'><img src={RethinkLagos} alt="Rethink"/></a>
@@ -78,21 +86,59 @@ class Main extends React.Component {
           <a href="https://www.rethinklagos.com" target='_blank'>RETHINK LAGOS.</a> Creating new perceptions of the vibrant afropolitan megacity. 
           </p>
           
+
           <span className="image main">
-            <img src={pic02} alt="" />
+            <a href="https://music-event.netlify.com" target='_blank'><img src={MusicalEvent} alt="MusicEvent"/></a>
+            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
-            Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu,
-            at eleifend sapien imperdiet ac. 
+          <a href="https://music-event.netlify.com" target='_blank'>Musical Event.</a> Creating new perceptions of the vibrant afropolitan megacity. 
+          </p>
+
+
+          <span className="image main">
+            <a href="https://www.boeinvest.com" target='_blank'><img src={Boeinvest} alt="Boeinvest"/></a>
+            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
+          </span>
+          <p>
+          <a href="https://www.boeinvest.com" target='_blank'>BOEINVEST.</a> Creating new perceptions of the vibrant afropolitan megacity. 
+          </p>
+
+
+          <span className="image main">
+            <a href="https://digital-web-clock.netlify.com" target='_blank'><img src={DigitalClock} alt="DigitalClock"/></a>
+            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
+          </span>
+          <p>
+          <a href="https://digital-web-clock.netlify.com" target='_blank'>DIGITAL CLOCK.</a> Creating new perceptions of the vibrant afropolitan megacity. 
+          </p>
+
+
+          <span className="image main">
+            <a href="https://www.naija4life.com.ng" target='_blank'><img src={Naija4life} alt="Rethink"/></a>
+            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
+          </span>
+          <p>
+          <a href="https://www.naija4life.com.ng" target='_blank'>NAIJA4LIFE BLOG.</a> Creating new perceptions of the vibrant afropolitan megacity. 
+          </p>
+
+
+          <span className="image main">
+            <a href="https://www.isazoni.com" target='_blank'><img src={Isazoni} alt="isazoni"/></a>
+            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
+          </span>
+          <p>
+          <a href="https://www.isazoni.com.ng" target='_blank'>ISAZONI.</a> Creating new perceptions of the vibrant afropolitan megacity. 
           </p>
 
           <span className="image main">
-            <img src={pic02} alt="" />
+            <a href="https://www.kwarasell.com" target='_blank'><img src={Kwarasell} alt="Kwarasell"/></a>
+            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
-            Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu,
-            at eleifend sapien imperdiet ac. 
+          <a href="https://www.naija4life.com.ng" target='_blank'>NAIJA4LIFE BLOG.</a> Creating new perceptions of the vibrant afropolitan megacity. 
           </p>
+
           {close}
         </article>
 
@@ -118,6 +164,33 @@ class Main extends React.Component {
           </p>
           {close}
         </article>
+
+        <article
+          id="about"
+          className={`${this.props.article === 'skill/certificate' ? 'active' : ''} ${
+            this.props.articleTimeout ? 'timeout' : ''
+          }`}
+          style={{ display: 'none' }}
+        >
+          <h2 className="major">Skills/certificate</h2>
+          <span className="image main">
+            <img src={SkillImage} alt="" size={{height: '0px'}} />
+          </span>
+          <p>
+            Skills.
+          </p>
+
+          <span className="image main">
+            <img src={CertImage} alt="" />
+          </span>
+          <p>
+            Certificates  
+          </p>
+          {close}
+        </article>
+
+
+
 
         <article
           id="contact"

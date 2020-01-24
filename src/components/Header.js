@@ -70,10 +70,19 @@ const Header = props => (
         <li>
           <button
             onClick={() => {
+              props.onOpenArticle('skill/certificate')
+            }}
+          >
+            Skills/Cert <span className="fa fa-cogs" aria-hidden="true"></span>
+          </button>
+        </li>
+        <li>
+          <button
+            onClick={() => {
               props.onOpenArticle('contact')
             }}
           >
-            Contact <span className="icon fa-address-card"></span>
+            Hire me <span className="icon fa-address-card"></span>
           </button>
         </li>
       </ul>
