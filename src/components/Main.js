@@ -8,11 +8,10 @@ import Boeinvest from '../images/boeinvest.png'
 import DigitalClock from '../images/digiitalClock.png'
 import Isazoni from '../images/isazoni.png'
 import KWARASELL from '../images/kwarasell.png'
-//import Kwarasell from '../images/kwarasell.png';
 import MusicalEvent from '../images/musicalEvent.png'
 import Naija4life from '../images/naija4life.png'
 import SkillImage from '../images/skillimage2.jpg'
-//import CertImage from '../images/certimagenew.jpg';
+import CertImage from '../images/certImagenew.jpg';
 
 
 
@@ -182,7 +181,7 @@ class Main extends React.Component {
           </p>
 
           <span className="image main">
-            <img src={pic03} alt="" />
+            <img src={CertImage} alt="" />
           </span>
           <p>
             Certificates  
