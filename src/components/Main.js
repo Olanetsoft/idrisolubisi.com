@@ -3,6 +3,13 @@ import React from 'react'
 import pic01 from '../images/pic01.jpg'
 import pic02 from '../images/pic02.jpg'
 import pic03 from '../images/pic03.jpg'
+import RethinkLagos from '../images/rethinkLagos.png'
+import Boeinvest from '../images/boeinvest.png'
+import DigitalClock from '../images/digiitalClock.png'
+import Isazoni from '../images/isazoni.png'
+import Kwarasell from '../images/Kwarasell.png'
+import MusicalEvent from '../images/musicalEvent.png'
+import Naija4life from '../images/naija4life.png'
 
 class Main extends React.Component {
   render() {
@@ -64,11 +71,11 @@ class Main extends React.Component {
         >
           <h2 className="major">PROJECTS</h2>
           <span className="image main">
-            {/* <img src={pic02} alt="" /> */}
-            <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/>
+            <a href="https://www.rethinklagos.com" target='_blank'><img src={RethinkLagos} alt="Rethink"/></a>
+            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
-            Rethink Lagos 
+          <a href="https://www.rethinklagos.com" target='_blank'>RETHINK LAGOS.</a> Creating new perceptions of the vibrant afropolitan megacity. 
           </p>
           
           <span className="image main">
