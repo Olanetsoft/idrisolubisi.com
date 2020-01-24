@@ -83,16 +83,15 @@ class Main extends React.Component {
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
-          <a href="https://www.rethinklagos.com" target='_blank'>RETHINK LAGOS.</a> Creating new perceptions of the vibrant afropolitan megacity. 
+          PROJECT NAME: RETHINK LAGOS <a href="https://www.rethinklagos.com" target='_blank' className="fa fa-eye"> View live || </a>
           </p>
           
 
           <span className="image main">
             <a href="https://music-event.netlify.com" target='_blank'><img src={MusicalEvent} alt="MusicEvent"/></a>
-            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
-          <a href="https://music-event.netlify.com" target='_blank'>Musical Event.</a> Creating new perceptions of the vibrant afropolitan megacity. 
+          PROJECT NAME: Musical Event <a href="https://music-event.netlify.com" target='_blank' className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/musical-event-project" target='_blank' className="icon fa-github"> View on GitHub</a>
           </p>
 
 
@@ -101,42 +100,41 @@ class Main extends React.Component {
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
-          <a href="https://www.boeinvest.com" target='_blank'>BOEINVEST.</a> Creating new perceptions of the vibrant afropolitan megacity. 
+            PROJECT NAME: BOE INVESTMENT NIGERIA  <a href="https://www.boeinvest.com" target='_blank' className="fa fa-eye"> View live || </a>
           </p>
 
 
           <span className="image main">
             <a href="https://digital-web-clock.netlify.com" target='_blank'><img src={DigitalClock} alt="DigitalClock"/></a>
-            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
+            
           </span>
           <p>
-          <a href="https://digital-web-clock.netlify.com" target='_blank'>DIGITAL CLOCK.</a> Creating new perceptions of the vibrant afropolitan megacity. 
+
+          PROJECT NAME: DIGITAL CLOCK <a href="https://digital-web-clock.netlify.com" target='_blank' className="fa fa-eye"> View live || </a> <a href="https://github.com/Olanetsoft/Ticking-Clock-With-React" target='_blank' className="icon fa-github"> View on GitHub</a>
+           
           </p>
 
 
           <span className="image main">
             <a href="https://www.naija4life.com.ng" target='_blank'><img src={Naija4life} alt="Rethink"/></a>
-            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
-          <a href="https://www.naija4life.com.ng" target='_blank'>NAIJA4LIFE BLOG.</a> Creating new perceptions of the vibrant afropolitan megacity. 
+          PROJECT NAME: NAIJA4LIFE BLOG <a href="https://www.naija4life.com.ng" target='_blank' className="fa fa-eye"> View live || </a>
           </p>
 
 
           <span className="image main">
             <a href="https://www.isazoni.com" target='_blank'><img src={Isazoni} alt="isazoni"/></a>
-            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
-          <a href="https://www.isazoni.com.ng" target='_blank'>ISAZONI.</a> Creating new perceptions of the vibrant afropolitan megacity. 
+            PROJECT NAME: ISAZ-ONI <a href="https://www.isazoni.com.ng" target='_blank' className="fa fa-eye"> View live || </a>
           </p>
 
           <span className="image main">
             <a href="https://www.kwarasell.com" target='_blank'><img src={KWARASELL} alt="Kwarasell"/></a>
-            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
-          <a href="https://www.naija4life.com.ng" target='_blank'>NAIJA4LIFE BLOG.</a> Creating new perceptions of the vibrant afropolitan megacity. 
+            PROJECT NAME: KWARASELL.COM <a href="https://www.kwarasell.com" target='_blank' className="fa fa-eye"> View live || </a>
           </p>
 
           {close}
