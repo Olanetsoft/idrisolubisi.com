@@ -46,7 +46,7 @@ const Header = props => (
               props.onOpenArticle('intro')
             }}
           >
-            My Blog <span className="icon fa-laptop"></span>
+            My Blog <span className="icon fa-pen"></span>
           </button>
         </li>
         <li>
@@ -55,7 +55,7 @@ const Header = props => (
               props.onOpenArticle('work')
             }}
           >
-            My Work <span className="icon fa-laptop"></span>
+            PROJECTS <span className="icon fa-laptop"></span>
           </button>
         </li>
         <li>
@@ -64,7 +64,7 @@ const Header = props => (
               props.onOpenArticle('about')
             }}
           >
-            About Me <span className="icon fa-laptop"></span>
+            About Me <span className="icon fa-user"></span>
           </button>
         </li>
         <li>
@@ -73,7 +73,7 @@ const Header = props => (
               props.onOpenArticle('contact')
             }}
           >
-            Contact <span className="icon fa-laptop"></span>
+            Contact <span className="icon fa-address-card"></span>
           </button>
         </li>
       </ul>
