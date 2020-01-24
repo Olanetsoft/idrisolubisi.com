@@ -365,8 +365,9 @@ class Main extends React.Component {
           style={{ display: 'none' }}
         >
           <h2 className="major">Contact</h2>
-          <form method="post" 
-          
+          <form 
+          method="post" 
+          name="contact"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           >
