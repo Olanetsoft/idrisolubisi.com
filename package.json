@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-dimension-v2",
-  "description": "Gatsby Starter - Dimension V2",
+  "name": "idris-olubisi-portfolio-v1",
+  "description": "This is my personal portfolio that tells a detailed information about me",
   "version": "1.0.0",
-  "author": "Hunter Chang",
+  "author": "Idris Olubisi",
   "dependencies": {
     "gatsby": "^2.18.18",
     "gatsby-plugin-manifest": "^2.2.34",
