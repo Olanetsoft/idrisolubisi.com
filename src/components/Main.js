@@ -16,98 +16,13 @@ import ABoutImage from '../images/aboutPic.jpg'
 
 //http://jsfiddle.net/5e6zr2Lq/1/
 
-const errorStyle = {
-    marginLeft: '5px',
-    fontSize: '13px',
-    color: 'red'
-};
 
 class Main extends React.Component {
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      fields: {},
-      errors: {}
-    }
-  }
-
-  handleValidation() {
-    let fields = this.state.fields;
-    let errors = {};
-    let formIsValid = true;
-
-    //Name
-    if (!fields["name"]) {
-      formIsValid = false;
-      errors["name"] = "Field Cannot be empty";
-    }
-
-    if (typeof fields["name"] !== "undefined") {
-      if (!fields["name"].match(/^[a-zA-Z]+$/)) {
-        formIsValid = false;
-        errors["name"] = "Only letters";
-      }
-    }
-
-    //Email
-    if (!fields["email"]) {
-      formIsValid = false;
-      errors["email"] = "Field Cannot be empty";
-    }
-
-    if (typeof fields["email"] !== "undefined") {
-      let lastAtPos = fields["email"].lastIndexOf('@');
-      let lastDotPos = fields["email"].lastIndexOf('.');
-
-      if (!(lastAtPos < lastDotPos && lastAtPos > 0 && fields["email"].indexOf('@@') == -1 && lastDotPos > 2 && (fields["email"].length - lastDotPos) > 2)) {
-        formIsValid = false;
-        errors["email"] = "Email is not valid";
-      }
-    }
-
-
-
-    //Message
-    if (!fields["message"]) {
-      formIsValid = false;
-      errors["message"] = "Field Cannot be empty";
-    }
-
-    if (typeof fields["message"] !== "undefined") {
-      if (!fields["message"].match(/^[a-zA-Z]+$/)) {
-        formIsValid = false;
-        errors["message"] = "Only letters";
-      }
-    }
-
-
-    this.setState({ errors: errors });
-    return formIsValid;
-  }
-
-  contactSubmit(e) {
-    e.preventDefault();
-    if (this.handleValidation()) {
-      alert("Thanks for getting in touch... I will get back to you as soon as possible :)");
-    } else {
-      alert("Some fields are missing on the form.")
-    }
-
-  }
-
-
-  handleChange(field, e) {
-    let fields = this.state.fields;
-    fields[field] = e.target.value;
-    this.setState({ fields });
-  }
-
-
-
+          
   render() {
-
+    let myFunction = ()=> {
+      alert("Thanks For getting in Touch... You will get a feedback soon")
+              }
     let close = (
       <div
         className="close"
@@ -127,7 +42,7 @@ class Main extends React.Component {
           id="intro"
           className={`${this.props.article === 'intro' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
-            }`}
+          }`}
           style={{ display: 'none' }}
         >
           <h2 className="major">MY Blog</h2>
@@ -161,31 +76,31 @@ class Main extends React.Component {
           id="work"
           className={`${this.props.article === 'work' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
-            }`}
+          }`}
           style={{ display: 'none' }}
         >
 
 
           <h2 className="major">PROJECTS</h2>
           <span className="image main">
-            <a href="https://www.rethinklagos.com" target='_blank'><img src={RethinkLagos} alt="Rethink" /></a>
+            <a href="https://www.rethinklagos.com" target='_blank'><img src={RethinkLagos} alt="Rethink"/></a>
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
-            PROJECT NAME: RETHINK LAGOS <a href="https://www.rethinklagos.com" target='_blank' className="fa fa-eye"> View live || </a>
+          PROJECT NAME: RETHINK LAGOS <a href="https://www.rethinklagos.com" target='_blank' className="fa fa-eye"> View live || </a>
           </p>
-
+          
 
           <span className="image main">
-            <a href="https://music-event.netlify.com" target='_blank'><img src={MusicalEvent} alt="MusicEvent" /></a>
+            <a href="https://music-event.netlify.com" target='_blank'><img src={MusicalEvent} alt="MusicEvent"/></a>
           </span>
           <p>
-            PROJECT NAME: Musical Event <a href="https://music-event.netlify.com" target='_blank' className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/musical-event-project" target='_blank' className="icon fa-github"> View on GitHub</a>
+          PROJECT NAME: Musical Event <a href="https://music-event.netlify.com" target='_blank' className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/musical-event-project" target='_blank' className="icon fa-github"> View on GitHub</a>
           </p>
 
 
           <span className="image main">
-            <a href="https://www.boeinvest.com" target='_blank'><img src={Boeinvest} alt="Boeinvest" /></a>
+            <a href="https://www.boeinvest.com" target='_blank'><img src={Boeinvest} alt="Boeinvest"/></a>
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
@@ -194,33 +109,33 @@ class Main extends React.Component {
 
 
           <span className="image main">
-            <a href="https://digital-web-clock.netlify.com" target='_blank'><img src={DigitalClock} alt="DigitalClock" /></a>
-
+            <a href="https://digital-web-clock.netlify.com" target='_blank'><img src={DigitalClock} alt="DigitalClock"/></a>
+            
           </span>
           <p>
 
-            PROJECT NAME: DIGITAL CLOCK <a href="https://digital-web-clock.netlify.com" target='_blank' className="fa fa-eye"> View live || </a> <a href="https://github.com/Olanetsoft/Ticking-Clock-With-React" target='_blank' className="icon fa-github"> View on GitHub</a>
-
+          PROJECT NAME: DIGITAL CLOCK <a href="https://digital-web-clock.netlify.com" target='_blank' className="fa fa-eye"> View live || </a> <a href="https://github.com/Olanetsoft/Ticking-Clock-With-React" target='_blank' className="icon fa-github"> View on GitHub</a>
+           
           </p>
 
 
           <span className="image main">
-            <a href="https://www.naija4life.com.ng" target='_blank'><img src={Naija4life} alt="Rethink" /></a>
+            <a href="https://www.naija4life.com.ng" target='_blank'><img src={Naija4life} alt="Rethink"/></a>
           </span>
           <p>
-            PROJECT NAME: NAIJA4LIFE BLOG <a href="https://www.naija4life.com.ng" target='_blank' className="fa fa-eye"> View live || </a>
+          PROJECT NAME: NAIJA4LIFE BLOG <a href="https://www.naija4life.com.ng" target='_blank' className="fa fa-eye"> View live || </a>
           </p>
 
 
           <span className="image main">
-            <a href="https://www.isazoni.com" target='_blank'><img src={Isazoni} alt="isazoni" /></a>
+            <a href="https://www.isazoni.com" target='_blank'><img src={Isazoni} alt="isazoni"/></a>
           </span>
           <p>
             PROJECT NAME: ISAZ-ONI <a href="https://www.isazoni.com.ng" target='_blank' className="fa fa-eye"> View live || </a>
           </p>
 
           <span className="image main">
-            <a href="https://www.kwarasell.com" target='_blank'><img src={KWARASELL} alt="Kwarasell" /></a>
+            <a href="https://www.kwarasell.com" target='_blank'><img src={KWARASELL} alt="Kwarasell"/></a>
           </span>
           <p>
             PROJECT NAME: KWARASELL.COM <a href="https://www.kwarasell.com" target='_blank' className="fa fa-eye"> View live || </a>
@@ -247,22 +162,22 @@ class Main extends React.Component {
             </li>
             <li>
               <a href="https://medium.com/@olanetsoft"
-                className="icon fa-medium"
-                target='_blank'>
+               className="icon fa-medium"
+               target='_blank'>
                 <span className="label">Medium</span>
               </a>
             </li>
             <li>
               <a href="https://facebook.com/olubisiidris"
-                className="icon fa-facebook"
-                target='_blank'>
+               className="icon fa-facebook"
+               target='_blank'>
                 <span className="label">Facebook</span>
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com/olanetsoft"
-                className="icon fa-instagram"
-                target='_blank'>
+               className="icon fa-instagram"
+               target='_blank'>
                 <span className="label">Instagram</span>
               </a>
             </li>
@@ -275,7 +190,7 @@ class Main extends React.Component {
                 <span className="label">linkedIn</span>
               </a>
             </li>
-
+            
           </ul>
           {close}
         </article>
@@ -284,7 +199,7 @@ class Main extends React.Component {
           id="about"
           className={`${this.props.article === 'about' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
-            }`}
+          }`}
           style={{ display: 'none' }}
         >
           <h2 className="major">About</h2>
@@ -321,22 +236,22 @@ class Main extends React.Component {
             </li>
             <li>
               <a href="https://medium.com/@olanetsoft"
-                className="icon fa-medium"
-                target='_blank'>
+               className="icon fa-medium"
+               target='_blank'>
                 <span className="label">Medium</span>
               </a>
             </li>
             <li>
               <a href="https://facebook.com/olubisiidris"
-                className="icon fa-facebook"
-                target='_blank'>
+               className="icon fa-facebook"
+               target='_blank'>
                 <span className="label">Facebook</span>
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com/olanetsoft"
-                className="icon fa-instagram"
-                target='_blank'>
+               className="icon fa-instagram"
+               target='_blank'>
                 <span className="label">Instagram</span>
               </a>
             </li>
@@ -349,7 +264,7 @@ class Main extends React.Component {
                 <span className="label">linkedIn</span>
               </a>
             </li>
-
+            
           </ul>
           {close}
         </article>
@@ -358,35 +273,35 @@ class Main extends React.Component {
           id="about"
           className={`${this.props.article === 'skill/certificate' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
-            }`}
+          }`}
           style={{ display: 'none' }}
         >
           <h2 className="major">Achievements</h2>
-
+          
 
           <span className="image main">
             <img src={CertImage} alt="" />
           </span>
           <p>
-            ACHIEVEMENTS<br />
+            ACHIEVEMENTS<br/>
             <a class="fa fa-trophy" aria-hidden="true" href="https://openclassrooms.com/en/course-certificates/7471028571"> Build web apps with ReactJS</a>
             <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/M96TN8JSDWXP"> Front-End Web UI Frameworks and Tools: Bootstrap 4</a>
             <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/records/69E4K5X3NBLY"> Responsive Website Basics: code with HTML,CSS and Javascript</a>
-            <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/BAP3BYQ2K4AJ"> Home Networking Basics</a><br />
-            <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/M3TZQUVANEW3"> Data Communications and Network Services</a><br />
-            <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/UFGB7QCD8RFK"> Network Protocols and Architecture</a><br />
-            <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/F5RX3YLQKCYP"> Internet Connection: How to Get Online?</a><br />
+            <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/BAP3BYQ2K4AJ"> Home Networking Basics</a><br/>
+            <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/M3TZQUVANEW3"> Data Communications and Network Services</a><br/>
+            <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/UFGB7QCD8RFK"> Network Protocols and Architecture</a><br/>
+            <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/F5RX3YLQKCYP"> Internet Connection: How to Get Online?</a><br/>
             <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/35ZJQ28HWABE"> Preparing to Manage Human Resources</a>
             <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/2ERVRYUM39E9"> Project Management: The Basics for Success</a>
-            <a class="fa fa-trophy" aria-hidden="true" href="http://GOO.GL/y4UjgN"> The Fundamentals of DIgital Marketing</a><br />
-            <a class="fa fa-trophy" aria-hidden="true" href="https://www.sololearn.com/Certificate/1051-8503127/pdf/"> C++ Tutorial course</a><br />
-            <a class="fa fa-trophy" aria-hidden="true" href="https://www.sololearn.com/Certificate/1023-8503127/pdf/"> CSS Fundamentals course</a><br />
-            <a class="fa fa-trophy" aria-hidden="true" href="https://www.sololearn.com/Certificate/1014-8503127/pdf/"> HTML Fundamentals course</a><br />
-            <a class="fa fa-trophy" aria-hidden="true" href="#"> SharePoint Development</a><br />
+            <a class="fa fa-trophy" aria-hidden="true" href="http://GOO.GL/y4UjgN"> The Fundamentals of DIgital Marketing</a><br/>
+            <a class="fa fa-trophy" aria-hidden="true" href="https://www.sololearn.com/Certificate/1051-8503127/pdf/"> C++ Tutorial course</a><br/>
+            <a class="fa fa-trophy" aria-hidden="true" href="https://www.sololearn.com/Certificate/1023-8503127/pdf/"> CSS Fundamentals course</a><br/>
+            <a class="fa fa-trophy" aria-hidden="true" href="https://www.sololearn.com/Certificate/1014-8503127/pdf/"> HTML Fundamentals course</a><br/>
+            <a class="fa fa-trophy" aria-hidden="true" href="#"> SharePoint Development</a><br/>
             <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/2RUKKMFTZALP"> Enterprise System Management and Security</a>
-
-
-
+             
+            
+              
           </p>
 
           <ul className="icons">
@@ -410,22 +325,22 @@ class Main extends React.Component {
             </li>
             <li>
               <a href="https://medium.com/@olanetsoft"
-                className="icon fa-medium"
-                target='_blank'>
+               className="icon fa-medium"
+               target='_blank'>
                 <span className="label">Medium</span>
               </a>
             </li>
             <li>
               <a href="https://facebook.com/olubisiidris"
-                className="icon fa-facebook"
-                target='_blank'>
+               className="icon fa-facebook"
+               target='_blank'>
                 <span className="label">Facebook</span>
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com/olanetsoft"
-                className="icon fa-instagram"
-                target='_blank'>
+               className="icon fa-instagram"
+               target='_blank'>
                 <span className="label">Instagram</span>
               </a>
             </li>
@@ -438,7 +353,7 @@ class Main extends React.Component {
                 <span className="label">linkedIn</span>
               </a>
             </li>
-
+            
           </ul>
           {close}
         </article>
@@ -449,74 +364,40 @@ class Main extends React.Component {
           id="contact"
           className={`${this.props.article === 'contact' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
-            }`}
+          }`}
           style={{ display: 'none' }}
         >
           <h2 className="major">Contact</h2>
-          <form
-            name="contact"
-            method="post"
-            action="/"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            onSubmit={this.contactSubmit.bind(this)}>
-
-
+          <form 
+          name="contact"
+           method="post" 
+           action="/"
+           data-netlify="true" 
+            data-netlify-honeypot="bot-field" >
             <input type="hidden" name="bot-field" />
             <input type="hidden" name="form-name" value="contact" />
 
             <div className="field half first">
               <label htmlFor="name">Name</label>
-              <input type="text"
-               name="name"
-                id="name"
-                refs="name"
-                placeholder="Name"
-                 onChange={this.handleChange.bind(this, "name")} 
-                 value={this.state.fields["name"]} />
-                 <span style={errorStyle}>{this.state.errors["name"]}</span>
+              <input type="text" name="name" id="name" required />
             </div>
-
-
-
             <div className="field half">
               <label htmlFor="email">Email</label>
-              <input type="email" 
-              name="email" 
-              id="email" 
-              refs="email"
-              placeholder="Email" 
-              onChange={this.handleChange.bind(this, "email")} 
-              value={this.state.fields["email"]} />
-              <span style={errorStyle}>{this.state.errors["email"]}</span>
+              <input type="email" name="email" id="email" required />
             </div>
-
-
-
-
             <div className="field">
               <label htmlFor="message">Message</label>
-              <textarea 
-              name="message"
-               id="message" 
-               rows="4" 
-               refs="message"
-               onChange={this.handleChange.bind(this, "message")} 
-               value={this.state.fields["message"]}></textarea>
-               <span style={errorStyle}>{this.state.errors["message"]}</span>
+              <textarea name="message" id="message" rows="4" required></textarea>
             </div>
-
-
-
             <ul className="actions">
               <li>
-                <input type="submit" value="Send Message" className="special" />
+                <input type="submit" value="Send Message" className="special" onClick={myFunction} />
               </li>
-              {/* <li>
+              <li>
                 <input type="reset" value="Reset" />
-              </li> */}
+              </li>
             </ul>
-
+            
           </form>
           <ul className="icons">
             <li>
@@ -539,22 +420,22 @@ class Main extends React.Component {
             </li>
             <li>
               <a href="https://medium.com/@olanetsoft"
-                className="icon fa-medium"
-                target='_blank'>
+               className="icon fa-medium"
+               target='_blank'>
                 <span className="label">Medium</span>
               </a>
             </li>
             <li>
               <a href="https://facebook.com/olubisiidris"
-                className="icon fa-facebook"
-                target='_blank'>
+               className="icon fa-facebook"
+               target='_blank'>
                 <span className="label">Facebook</span>
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com/olanetsoft"
-                className="icon fa-instagram"
-                target='_blank'>
+               className="icon fa-instagram"
+               target='_blank'>
                 <span className="label">Instagram</span>
               </a>
             </li>
@@ -567,7 +448,7 @@ class Main extends React.Component {
                 <span className="label">linkedIn</span>
               </a>
             </li>
-
+            
           </ul>
           {close}
         </article>
