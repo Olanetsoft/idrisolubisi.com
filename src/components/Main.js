@@ -356,7 +356,6 @@ class Main extends React.Component {
 
 
 
-
         <article
           id="contact"
           className={`${this.props.article === 'contact' ? 'active' : ''} ${
@@ -376,15 +375,15 @@ class Main extends React.Component {
 
             <div className="field half first">
               <label htmlFor="name">Name</label>
-              <input type="text" name="name" id="name" />
+              <input type="text" name="name" id="name" required />
             </div>
             <div className="field half">
               <label htmlFor="email">Email</label>
-              <input type="text" name="email" id="email" />
+              <input type="email" name="email" id="email" required />
             </div>
             <div className="field">
               <label htmlFor="message">Message</label>
-              <textarea name="message" id="message" rows="4"></textarea>
+              <textarea name="message" id="message" rows="4" required></textarea>
             </div>
             <ul className="actions">
               <li>
@@ -445,7 +444,8 @@ class Main extends React.Component {
               </a>
             </li>
             
-          </ul>{close}
+          </ul>
+          {close}
         </article>
       </div>
     )
