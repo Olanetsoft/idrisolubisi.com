@@ -18,7 +18,13 @@ import ABoutImage from '../images/aboutPic.jpg'
 
 
 class Main extends React.Component {
+  
+              
+          
   render() {
+    let myFunction = ()=> {
+      alert("Thanks For getting in Touch... You will get a feedback soon")
+              }
     let close = (
       <div
         className="close"
@@ -367,7 +373,7 @@ class Main extends React.Component {
           <form 
           name="contact"
            method="post" 
-           action="/success"
+           action="/"
            data-netlify="true" 
             data-netlify-honeypot="bot-field" >
             <input type="hidden" name="bot-field" />
@@ -387,12 +393,13 @@ class Main extends React.Component {
             </div>
             <ul className="actions">
               <li>
-                <input type="submit" value="Send Message" className="special" />
+                <input type="submit" value="Send Message" className="special" onClick={myFunction} />
               </li>
               <li>
                 <input type="reset" value="Reset" />
               </li>
             </ul>
+            
           </form>
           <ul className="icons">
             <li>
