@@ -18,11 +18,11 @@ import ABoutImage from '../images/aboutPic.jpg'
 
 
 class Main extends React.Component {
-          
+
   render() {
-    let myFunction = ()=> {
+    let myFunction = () => {
       alert("Thanks For getting in Touch... You will get a feedback soon")
-              }
+    }
     let close = (
       <div
         className="close"
@@ -42,7 +42,7 @@ class Main extends React.Component {
           id="intro"
           className={`${this.props.article === 'intro' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
-          }`}
+            }`}
           style={{ display: 'none' }}
         >
           <h2 className="major">MY Blog</h2>
@@ -76,31 +76,31 @@ class Main extends React.Component {
           id="work"
           className={`${this.props.article === 'work' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
-          }`}
+            }`}
           style={{ display: 'none' }}
         >
 
 
           <h2 className="major">PROJECTS</h2>
           <span className="image main">
-            <a href="https://www.rethinklagos.com" target='_blank'><img src={RethinkLagos} alt="Rethink"/></a>
+            <a href="https://www.rethinklagos.com" target='_blank'><img src={RethinkLagos} alt="Rethink" /></a>
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
-          PROJECT NAME: RETHINK LAGOS <a href="https://www.rethinklagos.com" target='_blank' className="fa fa-eye"> View live || </a>
+            PROJECT NAME: RETHINK LAGOS <a href="https://www.rethinklagos.com" target='_blank' className="fa fa-eye"> View live || </a>
           </p>
-          
+
 
           <span className="image main">
-            <a href="https://music-event.netlify.com" target='_blank'><img src={MusicalEvent} alt="MusicEvent"/></a>
+            <a href="https://music-event.netlify.com" target='_blank'><img src={MusicalEvent} alt="MusicEvent" /></a>
           </span>
           <p>
-          PROJECT NAME: Musical Event <a href="https://music-event.netlify.com" target='_blank' className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/musical-event-project" target='_blank' className="icon fa-github"> View on GitHub</a>
+            PROJECT NAME: Musical Event <a href="https://music-event.netlify.com" target='_blank' className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/musical-event-project" target='_blank' className="icon fa-github"> View on GitHub</a>
           </p>
 
 
           <span className="image main">
-            <a href="https://www.boeinvest.com" target='_blank'><img src={Boeinvest} alt="Boeinvest"/></a>
+            <a href="https://www.boeinvest.com" target='_blank'><img src={Boeinvest} alt="Boeinvest" /></a>
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
@@ -109,33 +109,33 @@ class Main extends React.Component {
 
 
           <span className="image main">
-            <a href="https://digital-web-clock.netlify.com" target='_blank'><img src={DigitalClock} alt="DigitalClock"/></a>
-            
+            <a href="https://digital-web-clock.netlify.com" target='_blank'><img src={DigitalClock} alt="DigitalClock" /></a>
+
           </span>
           <p>
 
-          PROJECT NAME: DIGITAL CLOCK <a href="https://digital-web-clock.netlify.com" target='_blank' className="fa fa-eye"> View live || </a> <a href="https://github.com/Olanetsoft/Ticking-Clock-With-React" target='_blank' className="icon fa-github"> View on GitHub</a>
-           
+            PROJECT NAME: DIGITAL CLOCK <a href="https://digital-web-clock.netlify.com" target='_blank' className="fa fa-eye"> View live || </a> <a href="https://github.com/Olanetsoft/Ticking-Clock-With-React" target='_blank' className="icon fa-github"> View on GitHub</a>
+
           </p>
 
 
           <span className="image main">
-            <a href="https://www.naija4life.com.ng" target='_blank'><img src={Naija4life} alt="Rethink"/></a>
+            <a href="https://www.naija4life.com.ng" target='_blank'><img src={Naija4life} alt="Rethink" /></a>
           </span>
           <p>
-          PROJECT NAME: NAIJA4LIFE BLOG <a href="https://www.naija4life.com.ng" target='_blank' className="fa fa-eye"> View live || </a>
+            PROJECT NAME: NAIJA4LIFE BLOG <a href="https://www.naija4life.com.ng" target='_blank' className="fa fa-eye"> View live || </a>
           </p>
 
 
           <span className="image main">
-            <a href="https://www.isazoni.com" target='_blank'><img src={Isazoni} alt="isazoni"/></a>
+            <a href="https://www.isazoni.com" target='_blank'><img src={Isazoni} alt="isazoni" /></a>
           </span>
           <p>
             PROJECT NAME: ISAZ-ONI <a href="https://www.isazoni.com.ng" target='_blank' className="fa fa-eye"> View live || </a>
           </p>
 
           <span className="image main">
-            <a href="https://www.kwarasell.com" target='_blank'><img src={KWARASELL} alt="Kwarasell"/></a>
+            <a href="https://www.kwarasell.com" target='_blank'><img src={KWARASELL} alt="Kwarasell" /></a>
           </span>
           <p>
             PROJECT NAME: KWARASELL.COM <a href="https://www.kwarasell.com" target='_blank' className="fa fa-eye"> View live || </a>
@@ -162,22 +162,22 @@ class Main extends React.Component {
             </li>
             <li>
               <a href="https://medium.com/@olanetsoft"
-               className="icon fa-medium"
-               target='_blank'>
+                className="icon fa-medium"
+                target='_blank'>
                 <span className="label">Medium</span>
               </a>
             </li>
             <li>
               <a href="https://facebook.com/olubisiidris"
-               className="icon fa-facebook"
-               target='_blank'>
+                className="icon fa-facebook"
+                target='_blank'>
                 <span className="label">Facebook</span>
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com/olanetsoft"
-               className="icon fa-instagram"
-               target='_blank'>
+                className="icon fa-instagram"
+                target='_blank'>
                 <span className="label">Instagram</span>
               </a>
             </li>
@@ -190,7 +190,7 @@ class Main extends React.Component {
                 <span className="label">linkedIn</span>
               </a>
             </li>
-            
+
           </ul>
           {close}
         </article>
@@ -199,7 +199,7 @@ class Main extends React.Component {
           id="about"
           className={`${this.props.article === 'about' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
-          }`}
+            }`}
           style={{ display: 'none' }}
         >
           <h2 className="major">About</h2>
@@ -207,13 +207,29 @@ class Main extends React.Component {
             <img src={ABoutImage} alt="" />
           </span>
           <p>
-            Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent
-            eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam
-            erat volutpat. Praesent urna nisi, fringila lorem et vehicula
-            lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.
-            Aliquam libero et malesuada fames ac ante ipsum primis in faucibus.
-            Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit
-            amet.
+            Tetiary Institution Details :<br/><br/>
+              Abubakar Tafawa Balewa University<br/>
+              Degree Name: Bachelor's degreeField Of StudyElectrical and Electronics Engineering<br/>
+              Dates attended or expected graduation: 2012 – 2017<br/>
+              
+              Leadership Role:<br/>
+              1. Social Director of the Nigerian Institute of Electrical and Electronics Engineering (NIEEE)Atbu Chapter 2015/2016 Academic Session<br/>
+              2. Vice-president of National Association of Kwara state Student (NAKSS)Atbu Chapter 2015.<br/>
+              3. Secretary General of Ilorin Emirate Student's Union(IESU) 2014/2015<br/>
+              4. Welfare Director of Isokan Students State Association(ISSA) 2014/2015<br/>
+              5. Director of Social, National Union of Lagos State students (NULASS) 2014/2015<br/><br/>
+              
+              
+              College Details: <br/><br/>
+              Brainpoint College<br/>
+              Degree Name: West Africa Examination Council<br/>
+              Dates attended or expected graduation: 2006 – 2011<br/><br/>
+              
+              
+              Primary school Details: <br/><br/>
+              Muslim Children Private School<br/>
+              Degree Name: First school leaving certificate<br/>
+              Dates attended or expected graduation 2000 – 2005<br/>
           </p>
           <ul className="icons">
             <li>
@@ -236,22 +252,22 @@ class Main extends React.Component {
             </li>
             <li>
               <a href="https://medium.com/@olanetsoft"
-               className="icon fa-medium"
-               target='_blank'>
+                className="icon fa-medium"
+                target='_blank'>
                 <span className="label">Medium</span>
               </a>
             </li>
             <li>
               <a href="https://facebook.com/olubisiidris"
-               className="icon fa-facebook"
-               target='_blank'>
+                className="icon fa-facebook"
+                target='_blank'>
                 <span className="label">Facebook</span>
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com/olanetsoft"
-               className="icon fa-instagram"
-               target='_blank'>
+                className="icon fa-instagram"
+                target='_blank'>
                 <span className="label">Instagram</span>
               </a>
             </li>
@@ -264,7 +280,7 @@ class Main extends React.Component {
                 <span className="label">linkedIn</span>
               </a>
             </li>
-            
+
           </ul>
           {close}
         </article>
@@ -273,35 +289,35 @@ class Main extends React.Component {
           id="about"
           className={`${this.props.article === 'skill/certificate' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
-          }`}
+            }`}
           style={{ display: 'none' }}
         >
           <h2 className="major">Achievements</h2>
-          
+
 
           <span className="image main">
             <img src={CertImage} alt="" />
           </span>
           <p>
-            ACHIEVEMENTS<br/>
+            ACHIEVEMENTS<br />
             <a class="fa fa-trophy" aria-hidden="true" href="https://openclassrooms.com/en/course-certificates/7471028571"> Build web apps with ReactJS</a>
             <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/M96TN8JSDWXP"> Front-End Web UI Frameworks and Tools: Bootstrap 4</a>
             <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/records/69E4K5X3NBLY"> Responsive Website Basics: code with HTML,CSS and Javascript</a>
-            <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/BAP3BYQ2K4AJ"> Home Networking Basics</a><br/>
-            <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/M3TZQUVANEW3"> Data Communications and Network Services</a><br/>
-            <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/UFGB7QCD8RFK"> Network Protocols and Architecture</a><br/>
-            <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/F5RX3YLQKCYP"> Internet Connection: How to Get Online?</a><br/>
+            <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/BAP3BYQ2K4AJ"> Home Networking Basics</a><br />
+            <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/M3TZQUVANEW3"> Data Communications and Network Services</a><br />
+            <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/UFGB7QCD8RFK"> Network Protocols and Architecture</a><br />
+            <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/F5RX3YLQKCYP"> Internet Connection: How to Get Online?</a><br />
             <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/35ZJQ28HWABE"> Preparing to Manage Human Resources</a>
             <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/2ERVRYUM39E9"> Project Management: The Basics for Success</a>
-            <a class="fa fa-trophy" aria-hidden="true" href="http://GOO.GL/y4UjgN"> The Fundamentals of DIgital Marketing</a><br/>
-            <a class="fa fa-trophy" aria-hidden="true" href="https://www.sololearn.com/Certificate/1051-8503127/pdf/"> C++ Tutorial course</a><br/>
-            <a class="fa fa-trophy" aria-hidden="true" href="https://www.sololearn.com/Certificate/1023-8503127/pdf/"> CSS Fundamentals course</a><br/>
-            <a class="fa fa-trophy" aria-hidden="true" href="https://www.sololearn.com/Certificate/1014-8503127/pdf/"> HTML Fundamentals course</a><br/>
-            <a class="fa fa-trophy" aria-hidden="true" href="#"> SharePoint Development</a><br/>
+            <a class="fa fa-trophy" aria-hidden="true" href="http://GOO.GL/y4UjgN"> The Fundamentals of DIgital Marketing</a><br />
+            <a class="fa fa-trophy" aria-hidden="true" href="https://www.sololearn.com/Certificate/1051-8503127/pdf/"> C++ Tutorial course</a><br />
+            <a class="fa fa-trophy" aria-hidden="true" href="https://www.sololearn.com/Certificate/1023-8503127/pdf/"> CSS Fundamentals course</a><br />
+            <a class="fa fa-trophy" aria-hidden="true" href="https://www.sololearn.com/Certificate/1014-8503127/pdf/"> HTML Fundamentals course</a><br />
+            <a class="fa fa-trophy" aria-hidden="true" href="#"> SharePoint Development</a><br />
             <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/2RUKKMFTZALP"> Enterprise System Management and Security</a>
-             
-            
-              
+
+
+
           </p>
 
           <ul className="icons">
@@ -325,22 +341,22 @@ class Main extends React.Component {
             </li>
             <li>
               <a href="https://medium.com/@olanetsoft"
-               className="icon fa-medium"
-               target='_blank'>
+                className="icon fa-medium"
+                target='_blank'>
                 <span className="label">Medium</span>
               </a>
             </li>
             <li>
               <a href="https://facebook.com/olubisiidris"
-               className="icon fa-facebook"
-               target='_blank'>
+                className="icon fa-facebook"
+                target='_blank'>
                 <span className="label">Facebook</span>
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com/olanetsoft"
-               className="icon fa-instagram"
-               target='_blank'>
+                className="icon fa-instagram"
+                target='_blank'>
                 <span className="label">Instagram</span>
               </a>
             </li>
@@ -353,7 +369,7 @@ class Main extends React.Component {
                 <span className="label">linkedIn</span>
               </a>
             </li>
-            
+
           </ul>
           {close}
         </article>
@@ -364,15 +380,15 @@ class Main extends React.Component {
           id="contact"
           className={`${this.props.article === 'contact' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
-          }`}
+            }`}
           style={{ display: 'none' }}
         >
           <h2 className="major">Contact</h2>
-          <form 
-          name="contact"
-           method="post" 
-           action="/"
-           data-netlify="true" 
+          <form
+            name="contact"
+            method="post"
+            action="/"
+            data-netlify="true"
             data-netlify-honeypot="bot-field" >
             <input type="hidden" name="bot-field" />
             <input type="hidden" name="form-name" value="contact" />
@@ -397,7 +413,7 @@ class Main extends React.Component {
                 <input type="reset" value="Reset" />
               </li>
             </ul>
-            
+
           </form>
           <ul className="icons">
             <li>
@@ -420,22 +436,22 @@ class Main extends React.Component {
             </li>
             <li>
               <a href="https://medium.com/@olanetsoft"
-               className="icon fa-medium"
-               target='_blank'>
+                className="icon fa-medium"
+                target='_blank'>
                 <span className="label">Medium</span>
               </a>
             </li>
             <li>
               <a href="https://facebook.com/olubisiidris"
-               className="icon fa-facebook"
-               target='_blank'>
+                className="icon fa-facebook"
+                target='_blank'>
                 <span className="label">Facebook</span>
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com/olanetsoft"
-               className="icon fa-instagram"
-               target='_blank'>
+                className="icon fa-instagram"
+                target='_blank'>
                 <span className="label">Instagram</span>
               </a>
             </li>
@@ -448,7 +464,7 @@ class Main extends React.Component {
                 <span className="label">linkedIn</span>
               </a>
             </li>
-            
+
           </ul>
           {close}
         </article>
