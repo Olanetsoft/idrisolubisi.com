@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react';
 import Typed from 'react-typed';
+import {Link} from 'gatsby';
 
 const Header = props => (
   <header id="header" style={props.timeout ? { display: 'none' } : {}}>
@@ -41,13 +42,16 @@ const Header = props => (
     <nav>
       <ul>
         <li>
+          <Link to="/post">
           <button
-            onClick={() => {
-              props.onOpenArticle('intro')
-            }}
+            // onClick={() => {
+            //   props.onOpenArticle('intro')
+            // }}
           >
             My Blog <span className="fa fa-pencil" aria-hidden="true"></span>
           </button>
+          </Link>
+          
         </li>
         <li>
           <button
