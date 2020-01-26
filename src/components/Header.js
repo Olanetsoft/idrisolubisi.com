@@ -42,7 +42,8 @@ const Header = props => (
     <nav>
       <ul>
         <li>
-          <Link to="/post">
+          <Link to="/blog">
+            
           <button
             // onClick={() => {
             //   props.onOpenArticle('intro')
