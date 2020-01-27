@@ -292,7 +292,7 @@ class Main extends React.Component {
             }`}
           style={{ display: 'none' }}
         >
-          <h2 className="major">Experience & Achievements</h2>
+          <h2 className="major">Experience & <br/>Achievements</h2>
 
 
           <span className="image main">

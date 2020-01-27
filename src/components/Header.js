@@ -78,7 +78,7 @@ const Header = props => (
               props.onOpenArticle('skill/certificate')
             }}
           >
-            Work Experience <span className="fa fa-cogs" aria-hidden="true"></span>
+            Experience <span className="fa fa-cogs" aria-hidden="true"></span>
           </button>
         </li>
         <li>
