@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Idris Olubisi Portfolio',
     author: 'Idris Olubisi',
-    description: 'This is my personal portfolio that tells a detailed information about me',
+    description: 'This is my blog where i write technical content and also a personal portfolio that tells a detailed information about me',
     social: {
       twitter: 'olanetsoft',
       github: 'olanetsoft'
@@ -49,7 +49,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: ``,
+        trackingId: `UA-154454841-1`,
         head: true
       }
     },
