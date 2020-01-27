@@ -5,10 +5,13 @@
   "author": "Idris Olubisi",
   "dependencies": {
     "gatsby": "^2.18.18",
+    "gatsby-plugin-analytics": "^0.2.0",
+    "gatsby-plugin-google-tagmanager": "^2.1.24",
     "gatsby-plugin-manifest": "^2.2.34",
     "gatsby-plugin-offline": "^3.0.32",
     "gatsby-plugin-react-helmet": "^3.1.18",
     "gatsby-plugin-sass": "^2.1.26",
+    "gatsby-plugin-sitemap": "^2.2.26",
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-transformer-remark": "^2.6.48",
     "node-sass": "^4.13.0",

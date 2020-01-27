@@ -6,7 +6,8 @@ module.exports = {
     social: {
       twitter: 'olanetsoft',
       github: 'olanetsoft'
-    }
+    },
+    siteUrl: `http://localhost:9000`
   },
   plugins: [
     {
@@ -38,5 +39,26 @@ module.exports = {
     },
     'gatsby-plugin-sass',
     'gatsby-plugin-offline',
+    {
+      resolve: `gatsby-transformer-remark`,
+      options:{
+
+      },
+    },
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: ``,
+        head: true
+      }
+    },
+    {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: ``,
+        includeInDevelopment: true
+      }
+    }
   ],
 }
