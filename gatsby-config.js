@@ -4,7 +4,8 @@ module.exports = {
     author: 'Idris Olubisi',
     description: 'This is my personal portfolio that tells a detailed information about me',
     social: {
-      twitter: 'olanetsoft'
+      twitter: 'olanetsoft',
+      github: 'olanetsoft'
     }
   },
   plugins: [
@@ -22,5 +23,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-sass',
+    'gatsby-plugin-offline',
   ],
 }

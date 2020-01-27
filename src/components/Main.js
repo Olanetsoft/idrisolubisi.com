@@ -95,7 +95,7 @@ class Main extends React.Component {
             <a href="https://music-event.netlify.com" target='_blank'><img src={MusicalEvent} alt="MusicEvent" /></a>
           </span>
           <p>
-            PROJECT NAME: Musical Event <a href="https://music-event.netlify.com" target='_blank' className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/musical-event-project" target='_blank' className="icon fa-github"> View on GitHub</a>
+          TITLE: Musical Event <a href="https://music-event.netlify.com" target='_blank' className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/musical-event-project" target='_blank' className="icon fa-github"> View on GitHub</a>
           </p>
 
 
@@ -104,7 +104,7 @@ class Main extends React.Component {
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
-            PROJECT NAME: BOE INVESTMENT NIGERIA  <a href="https://www.boeinvest.com" target='_blank' className="fa fa-eye"> View live || </a>
+          TITLE: BOE INVESTMENT NIGERIA  <a href="https://www.boeinvest.com" target='_blank' className="fa fa-eye"> View live || </a>
           </p>
 
 
@@ -114,7 +114,7 @@ class Main extends React.Component {
           </span>
           <p>
 
-            PROJECT NAME: DIGITAL CLOCK <a href="https://digital-web-clock.netlify.com" target='_blank' className="fa fa-eye"> View live || </a> <a href="https://github.com/Olanetsoft/Ticking-Clock-With-React" target='_blank' className="icon fa-github"> View on GitHub</a>
+          TITLE: DIGITAL CLOCK <a href="https://digital-web-clock.netlify.com" target='_blank' className="fa fa-eye"> View live || </a> <a href="https://github.com/Olanetsoft/Ticking-Clock-With-React" target='_blank' className="icon fa-github"> View on GitHub</a>
 
           </p>
 
@@ -123,7 +123,7 @@ class Main extends React.Component {
             <a href="https://www.naija4life.com.ng" target='_blank'><img src={Naija4life} alt="Rethink" /></a>
           </span>
           <p>
-            PROJECT NAME: NAIJA4LIFE BLOG <a href="https://www.naija4life.com.ng" target='_blank' className="fa fa-eye"> View live || </a>
+          TITLE: NAIJA4LIFE BLOG <a href="https://www.naija4life.com.ng" target='_blank' className="fa fa-eye"> View live || </a>
           </p>
 
 
@@ -131,14 +131,14 @@ class Main extends React.Component {
             <a href="https://www.isazoni.com" target='_blank'><img src={Isazoni} alt="isazoni" /></a>
           </span>
           <p>
-            PROJECT NAME: ISAZ-ONI <a href="https://www.isazoni.com.ng" target='_blank' className="fa fa-eye"> View live || </a>
+          TITLE: ISAZ-ONI <a href="https://www.isazoni.com.ng" target='_blank' className="fa fa-eye"> View live || </a>
           </p>
 
           <span className="image main">
             <a href="https://www.kwarasell.com" target='_blank'><img src={KWARASELL} alt="Kwarasell" /></a>
           </span>
           <p>
-            PROJECT NAME: KWARASELL.COM <a href="https://www.kwarasell.com" target='_blank' className="fa fa-eye"> View live || </a>
+          TITLE: KWARASELL.COM <a href="https://www.kwarasell.com" target='_blank' className="fa fa-eye"> View live || </a>
           </p>
 
           <ul className="icons">
