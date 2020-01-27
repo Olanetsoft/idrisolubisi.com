@@ -3,16 +3,16 @@ import React from 'react'
 //import pic01 from '../images/pic01.jpg'
 // import pic02 from '../images/pic02.jpg'
 // import pic03 from '../images/pic03.jpg'
-import RethinkLagos from '../images/rethinkLagos.png'
-import Boeinvest from '../images/boeinvest.png'
-import DigitalClock from '../images/digiitalClock.png'
-import Isazoni from '../images/isazoni.png'
-import KWARASELL from '../images/kwarasell.png'
-import MusicalEvent from '../images/musicalEvent.png'
-import Naija4life from '../images/naija4life.png'
+import RethinkLagos from '../images/rethinkLagos.webp'
+import Boeinvest from '../images/boeinvest.webp'
+import DigitalClock from '../images/digiitalClock.webp'
+import Isazoni from '../images/isazoni.webp'
+import KWARASELL from '../images/kwarasell.webp'
+import MusicalEvent from '../images/musicalEvent.webp'
+import Naija4life from '../images/naija4life.webp'
 //import SkillImage from '../images/skillimage2.jpg'
 import CertImage from '../images/certImagenew.jpg';
-import ABoutImage from '../images/aboutPic.jpg'
+import ABoutImage from '../images/aboutPic.webp'
 
 //http://jsfiddle.net/5e6zr2Lq/1/
 
@@ -87,7 +87,7 @@ class Main extends React.Component {
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
-            PROJECT NAME: RETHINK LAGOS <a href="https://www.rethinklagos.com" target='_blank' className="fa fa-eye"> View live || </a>
+            TITLE: RETHINK LAGOS <a href="https://www.rethinklagos.com" target='_blank' className="fa fa-eye"> View live || </a>
           </p>
 
 
