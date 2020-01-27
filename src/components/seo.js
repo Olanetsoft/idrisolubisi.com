@@ -9,8 +9,9 @@ function SEO({ description, lang, meta, title }){
         query {
             site {
                 siteMetadata {
-                    author
                     description
+                    author
+                    siteUrl
                 }
             }
         }
@@ -44,12 +45,16 @@ function SEO({ description, lang, meta, title }){
              },
              {
                name: `twitter:card`,
-               content: `summary`,
+               content: `summary_large_image`,
              },
              {
                name: `twitter:creator`,
                content: `${site.siteMetadata.author}`,
              },
+             {
+                name: `twitter:image`,
+                content: `${site.siteMetadata.siteUrl}'WILLADDPATHLATER'twitter-card.jpg`,
+            },
              {
                name: `twitter:title`,
                content: title,
