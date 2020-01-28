@@ -22,7 +22,8 @@ const Header = props => (
                     'I write code for a living',
                     'I write technical content',
                     'I love to write clean code',
-                    'I love football'
+                    'I love to contribute to open source',
+                    'I love sport'
                     ]}
                     typeSpeed={40}
                     backSpeed={60}
