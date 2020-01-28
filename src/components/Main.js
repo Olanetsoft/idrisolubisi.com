@@ -298,27 +298,90 @@ class Main extends React.Component {
           <span className="image main">
             <img src={CertImage} alt="" />
           </span>
+          
+              <h3>Tavia Technologies Limited</h3>
+              <h4>ROLE: Software Developer/Support Analyst -SharePoint<br/><br/>
+              Company Name: Tavia Technologies Limited Full-time<br/><br/>
+              Dates Employed: May 2019 – Present<br/><br/>
+              Location: Lagos, Nigeria</h4>
+              <br/>
+
+              <h3>Ultra Media Solution</h3>
+              <h4>Role: Web Development and Digital Marketing Intern<br/><br/>
+              Company Name: Ultra Media Solution Internship<br/><br/>
+              Dates Employed: Mar 2019 – Apr 2019<br/><br/>
+              Location: 11 Unity Road ikeja lagos</h4>
+              <br/>
+
+              <h3>CVIT</h3>
+              <h4>Role: Network Administrator intern<br/>
+              Company Name: CVIT Internship<br/><br/>
+              Dates Employed: Mar 2019 – Apr 2019<br/>
+              Location: Ikeja lagos</h4>
+              <br/>
+              <h3>FIIRO AUTOMATION</h3>
+              <h4>Role: Graduate Electrical Engineer Trainee<br/><br/>
+              Company Name: FIIRO AUTOMATION Full-time<br/><br/>
+              Dates Employed: Jun 2018 – Mar 2019<br/><br/>
+              Location: Lagos, Nigeria</h4>
+              <br/>
+              <h3>Code lagos</h3>
+              <h4>Role:Trainee<br/>
+              Company Name: Code lagos Contract<br/><br/>
+              Dates Employed: Oct 2018 – Nov 2018<br/><br/>
+              Location: Lagos,Nigeria</h4>
+              <br/>
+              
+              <h3>Cisco Networking Academy</h3>
+              <h4>Role: Engineering Trainee<br/><br/>
+              Company Name: Cisco Networking Academy Full-time<br/><br/>
+              Dates Employed: Sep 2018 – Nov 2018</h4>
+              <br/>
+
+              <h3>Google Digital Skills For Africa</h3>
+              <h4>Digital Marketing Trainee<br/><br/>
+              Company Name: Google Digital Skills For Africa Internship<br/><br/>
+              Dates Employed: Sep 2018 – Oct 2018</h4>
+              <br/>
+              <h3>Al-Hikmah University</h3>
+              <h4>Electrical Engineer Trainee<br/><br/>
+              Company Name: Al-Hikmah University Internship<br/><br/>
+              Dates Employed: Nov 2016 – Apr 2017<br/><br/>
+              Location: Kwara, Nigeria</h4>
+              <br/>
+              
+              <h3>More Blessing Engineering Works</h3>
+              <h4>Role: Engineer Trainee<br/><br/>
+              Company Name: More Blessing Engineering Works<br/><br/>
+              Dates Employed: Jan 2016 – Mar 2016<br/><br/>
+              Location: Lagos, Nigeria</h4>
+              <br/>
+          
+
+
           <p>
-            <b>ACHIEVEMENTS</b><br />
+            <b>ACHIEVEMENTS</b>
+            </p>
+            <h4>
             <a class="fa fa-trophy" aria-hidden="true" href="https://openclassrooms.com/en/course-certificates/7471028571"> Build web apps with ReactJS</a>
-            <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/M96TN8JSDWXP"> Front-End Web UI Frameworks and Tools: Bootstrap 4</a>
-            <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/records/69E4K5X3NBLY"> Responsive Website Basics: code with HTML,CSS and Javascript</a>
+            <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/M96TN8JSDWXP"> Front-End Web UI Frameworks and Tools:Bootstrap 4</a><br/>
+            <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/records/69E4K5X3NBLY"> Responsive Website Basics: code with HTML,CSS & Js</a><br/>
             <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/BAP3BYQ2K4AJ"> Home Networking Basics</a><br />
             <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/M3TZQUVANEW3"> Data Communications and Network Services</a><br />
             <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/UFGB7QCD8RFK"> Network Protocols and Architecture</a><br />
             <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/F5RX3YLQKCYP"> Internet Connection: How to Get Online?</a><br />
             <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/35ZJQ28HWABE"> Preparing to Manage Human Resources</a>
-            <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/2ERVRYUM39E9"> Project Management: The Basics for Success</a>
+            <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/2ERVRYUM39E9"> Project Management: The Basics for Success</a><br/>
             <a class="fa fa-trophy" aria-hidden="true" href="http://GOO.GL/y4UjgN"> The Fundamentals of DIgital Marketing</a><br />
             <a class="fa fa-trophy" aria-hidden="true" href="https://www.sololearn.com/Certificate/1051-8503127/pdf/"> C++ Tutorial course</a><br />
             <a class="fa fa-trophy" aria-hidden="true" href="https://www.sololearn.com/Certificate/1023-8503127/pdf/"> CSS Fundamentals course</a><br />
             <a class="fa fa-trophy" aria-hidden="true" href="https://www.sololearn.com/Certificate/1014-8503127/pdf/"> HTML Fundamentals course</a><br />
             <a class="fa fa-trophy" aria-hidden="true" href="#"> SharePoint Development</a><br />
-            <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/2RUKKMFTZALP"> Enterprise System Management and Security</a>
+            <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/2RUKKMFTZALP"> Enterprise System Management and Security</a><br/>
 
-
-
-          </p>
+          </h4>
+          <br/>
+          
 
           <ul className="icons">
             <li>
