@@ -23,7 +23,7 @@ class PostTemplate extends Component {
 					<li><Link to="/blog" ><i className="fa fa-long-arrow-left"> Go Back To Articles Page</i></Link></li>
 				</ul>
                 <section className="posts">
-                    <h3 id="post-Title">{title}</h3>
+                    <h2 id="post-Title">{title}</h2>
                 <p className="date">{date}</p>
                 <div dangerouslySetInnerHTML={{ __html: post.html }} />
                 <ul>
