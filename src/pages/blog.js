@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { graphql, Link } from 'gatsby';
 import Container from '../components/container'
 
+
 //style
 import '../assets/css/blog.css'
 
