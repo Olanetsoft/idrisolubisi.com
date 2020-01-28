@@ -6,7 +6,7 @@
 .date {
     color: #1d7eb5;
     font-weight: bold;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .posts ul:last-child {
@@ -41,4 +41,8 @@
     display: flex;
     justify-content: center;
     padding-top: 30px;
+
+    }
+    .post-Title{
+        padding-top: 30px;
     }

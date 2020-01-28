@@ -45,15 +45,16 @@ module.exports = {
 			resolve: `gatsby-transformer-remark`,
 			options: {
 				plugins: [
-					`gatsby-remark-prismjs`,
-					`gatsby-remark-smartypants`,
-          `gatsby-remark-copy-linked-files`,
           {
             resolve: `gatsby-remark-images`,
             options: {
                 maxWidth: 590
-            }
-          }
+            },
+          },
+					`gatsby-remark-prismjs`,
+					`gatsby-remark-smartypants`,
+          `gatsby-remark-copy-linked-files`,
+          
 				]
 			}
 		},
@@ -107,7 +108,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-tagmanager`,
       options: {
-        id: ``,
+        id: `GTM-NCRB8VQ`,
         includeInDevelopment: true
       }
     }
