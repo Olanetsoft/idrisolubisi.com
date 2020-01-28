@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { graphql, Link } from 'gatsby';
 import Container from '../components/container'
 
+//style
+import '../assets/css/blog.css'
 
 // Utils
 import { shorten } from '../utils/truncateStr';
@@ -9,42 +11,45 @@ import Footer from '../components/Footer'
 import SEO from '../components/seo'
 
 class Blog extends Component {
-    render() {
-        const { data } = this.props;
-        const posts = data.allMarkdownRemark.edges;
-        return (
+	render() {
+		const { data } = this.props;
+		const posts = data.allMarkdownRemark.edges;
+		return (
 
-            <Container>
-                <SEO title="Blog - All Post" />
-                
-                <h2>Articles</h2>
-                <hr />
-                {posts.map(({ node }) => {
-                    const title = node.frontmatter.title || node.fields.slug;
-                    return (
-                        <div key={node.fields.slug}>
-                            <h3 style={{ marginBottom: '.15rem', marginTop: '.90rem' }}>
-                                <Link to={node.fields.slug}>{title}</Link>
-                            </h3>
-                            <small>{node.frontmatter.date}</small>
-                            <div
-										className="content"
-										dangerouslySetInnerHTML={{ __html: shorten(node.html, 300) }}
-									/>
-									<Link to={node.fields.slug}>
-										<button>Read more</button>
-									</Link>
-                            {/* <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+			<Container>
+				<SEO title="Blog - All Post" />
+
+				<h2>Articles</h2>
+				<hr />
+				{posts.map(({ node }) => {
+					const title = node.frontmatter.title || node.fields.slug;
+					return (
+						<div key={node.fields.slug} className="card">
+							<h3 style={{ marginBottom: '.15rem', marginTop: '.90rem' }}>
+								<Link to={node.fields.slug}>{title}</Link>
+							</h3>
+							<small>{node.frontmatter.date}</small>
+							<div
+								className="container"
+								dangerouslySetInnerHTML={{ __html: shorten(node.html, 200) }}
+							/>
+							<div className="button-link">
+								<Link to={node.fields.slug}>
+									<button>Read more</button>
+								</Link>
+							</div>
+
+							{/* <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
                                  */}
-                        </div>
-                    );
-                })}
-                <Footer/>
-            </Container>
+						</div>
+					);
+				})}
+				<Footer />
+			</Container>
 
 
-        );
-    }
+		);
+	}
 }
 
 export default Blog;
