@@ -39,6 +39,8 @@ module.exports = {
     },
     'gatsby-plugin-sass',
     'gatsby-plugin-offline',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
 			resolve: `gatsby-transformer-remark`,
 			options: {
