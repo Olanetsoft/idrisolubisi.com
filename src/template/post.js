@@ -19,6 +19,9 @@ class PostTemplate extends Component {
 
             <div>
                 <SEO title={title} description={description || post.excerpt} slug={slug} />
+                <ul id="the-nav">
+					<li><a href="/blog" ><i className="fa fa-long-arrow-left"> Go Back To Articles Page</i></a></li>
+				</ul>
                 <section className="posts">
                 <p className="date">{date}</p>
                 <div dangerouslySetInnerHTML={{ __html: post.html }} />

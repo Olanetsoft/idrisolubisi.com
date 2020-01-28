@@ -18,7 +18,9 @@ class Blog extends Component {
 
 			<Container>
 				<SEO title="Blog - All Post" />
-
+				<ul id="link-back-home">
+					<li><a href="/" ><i className="fa fa-long-arrow-left"> Go Back Home</i></a></li>
+				</ul>
 				<h2>Articles</h2>
 				<hr />
 				{posts.map(({ node }) => {
