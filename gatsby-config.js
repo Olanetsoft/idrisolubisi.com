@@ -28,8 +28,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'Idris Olubisi Portfolio',
+        short_name: 'Blog',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',
