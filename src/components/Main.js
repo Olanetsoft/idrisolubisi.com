@@ -83,7 +83,7 @@ class Main extends React.Component {
 
           <h2 className="major">PROJECTS</h2>
           <span className="image main">
-            <a href="https://www.rethinklagos.com" target='_blank'><img src={RethinkLagos} alt="Rethink" /></a>
+            <a href="https://www.rethinklagos.com" target='_blank' rel="noopener noreferrer" ><img src={RethinkLagos} alt="Rethink" /></a>
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
@@ -92,53 +92,53 @@ class Main extends React.Component {
 
 
           <span className="image main">
-            <a href="https://music-event.netlify.com" target='_blank'><img src={MusicalEvent} alt="MusicEvent" /></a>
+            <a href="https://music-event.netlify.com" target='_blank' rel="noopener noreferrer"><img src={MusicalEvent} alt="MusicEvent" /></a>
           </span>
           <p>
-          TITLE: Musical Event <a href="https://music-event.netlify.com" target='_blank' className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/musical-event-project" target='_blank' className="icon fa-github"> View on GitHub</a>
+          TITLE: Musical Event <a href="https://music-event.netlify.com" target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/musical-event-project" target='_blank' className="icon fa-github"> View on GitHub</a>
           </p>
 
 
           <span className="image main">
-            <a href="https://www.boeinvest.com" target='_blank'><img src={Boeinvest} alt="Boeinvest" /></a>
+            <a href="https://www.boeinvest.com" target='_blank' rel="noopener noreferrer"><img src={Boeinvest} alt="Boeinvest" /></a>
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
-          TITLE: BOE INVESTMENT NIGERIA  <a href="https://www.boeinvest.com" target='_blank' className="fa fa-eye"> View live || </a>
+          TITLE: BOE INVESTMENT NIGERIA  <a href="https://www.boeinvest.com" target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View live || </a>
           </p>
 
 
           <span className="image main">
-            <a href="https://digital-web-clock.netlify.com" target='_blank'><img src={DigitalClock} alt="DigitalClock" /></a>
+            <a href="https://digital-web-clock.netlify.com" target='_blank' rel="noopener noreferrer"><img src={DigitalClock} alt="DigitalClock" /></a>
 
           </span>
           <p>
 
-          TITLE: DIGITAL CLOCK <a href="https://digital-web-clock.netlify.com" target='_blank' className="fa fa-eye"> View live || </a> <a href="https://github.com/Olanetsoft/Ticking-Clock-With-React" target='_blank' className="icon fa-github"> View on GitHub</a>
+          TITLE: DIGITAL CLOCK <a href="https://digital-web-clock.netlify.com" target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View live || </a> <a href="https://github.com/Olanetsoft/Ticking-Clock-With-React" target='_blank' className="icon fa-github"> View on GitHub</a>
 
           </p>
 
 
           <span className="image main">
-            <a href="https://www.naija4life.com.ng" target='_blank'><img src={Naija4life} alt="Rethink" /></a>
+            <a href="https://www.naija4life.com.ng" target='_blank' rel="noopener noreferrer"><img src={Naija4life} alt="Rethink" /></a>
           </span>
           <p>
-          TITLE: NAIJA4LIFE BLOG <a href="https://www.naija4life.com.ng" target='_blank' className="fa fa-eye"> View live || </a>
+          TITLE: NAIJA4LIFE BLOG <a href="https://www.naija4life.com.ng" target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View live || </a>
           </p>
 
 
           <span className="image main">
-            <a href="https://www.isazoni.com" target='_blank'><img src={Isazoni} alt="isazoni" /></a>
+            <a href="https://www.isazoni.com" target='_blank' rel="noopener noreferrer"><img src={Isazoni} alt="isazoni" /></a>
           </span>
           <p>
-          TITLE: ISAZ-ONI <a href="https://www.isazoni.com.ng" target='_blank' className="fa fa-eye"> View live || </a>
+          TITLE: ISAZ-ONI <a href="https://www.isazoni.com.ng" target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View live || </a>
           </p>
 
           <span className="image main">
-            <a href="https://www.kwarasell.com" target='_blank'><img src={KWARASELL} alt="Kwarasell" /></a>
+            <a href="https://www.kwarasell.com" target='_blank' rel="noopener noreferrer"><img src={KWARASELL} alt="Kwarasell" /></a>
           </span>
           <p>
-          TITLE: KWARASELL.COM <a href="https://www.kwarasell.com" target='_blank' className="fa fa-eye"> View live || </a>
+          TITLE: KWARASELL.COM <a href="https://www.kwarasell.com" target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View live || </a>
           </p>
 
           <ul className="icons">
@@ -147,6 +147,7 @@ class Main extends React.Component {
                 href="https://twitter.com/olanetsoft"
                 className="icon fa-twitter"
                 target='_blank'
+                rel="noopener noreferrer"
               >
                 <span className="label">Twitter</span>
               </a>
@@ -156,6 +157,7 @@ class Main extends React.Component {
                 href="https://github.com/olanetsoft"
                 className="icon fa-github"
                 target='_blank'
+                rel="noopener noreferrer"
               >
                 <span className="label">GitHub</span>
               </a>
@@ -163,21 +165,24 @@ class Main extends React.Component {
             <li>
               <a href="https://medium.com/@olanetsoft"
                 className="icon fa-medium"
-                target='_blank'>
+                target='_blank'
+                rel="noopener noreferrer">
                 <span className="label">Medium</span>
               </a>
             </li>
             <li>
               <a href="https://facebook.com/olubisiidris"
                 className="icon fa-facebook"
-                target='_blank'>
+                target='_blank'
+                rel="noopener noreferrer">
                 <span className="label">Facebook</span>
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com/olanetsoft"
                 className="icon fa-instagram"
-                target='_blank'>
+                target='_blank'
+                rel="noopener noreferrer">
                 <span className="label">Instagram</span>
               </a>
             </li>
@@ -186,6 +191,7 @@ class Main extends React.Component {
                 href="https://www.linkedin.com/in/olubisi-idris-ayinde-05727b17a/"
                 className="icon fa-linkedin"
                 target='_blank'
+                rel="noopener noreferrer"
               >
                 <span className="label">linkedIn</span>
               </a>
@@ -237,6 +243,7 @@ class Main extends React.Component {
                 href="https://twitter.com/olanetsoft"
                 className="icon fa-twitter"
                 target='_blank'
+                rel="noopener noreferrer"
               >
                 <span className="label">Twitter</span>
               </a>
@@ -246,6 +253,7 @@ class Main extends React.Component {
                 href="https://github.com/olanetsoft"
                 className="icon fa-github"
                 target='_blank'
+                rel="noopener noreferrer"
               >
                 <span className="label">GitHub</span>
               </a>
@@ -253,21 +261,24 @@ class Main extends React.Component {
             <li>
               <a href="https://medium.com/@olanetsoft"
                 className="icon fa-medium"
-                target='_blank'>
+                target='_blank'
+                rel="noopener noreferrer">
                 <span className="label">Medium</span>
               </a>
             </li>
             <li>
               <a href="https://facebook.com/olubisiidris"
                 className="icon fa-facebook"
-                target='_blank'>
+                target='_blank'
+                rel="noopener noreferrer">
                 <span className="label">Facebook</span>
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com/olanetsoft"
                 className="icon fa-instagram"
-                target='_blank'>
+                target='_blank'
+                rel="noopener noreferrer">
                 <span className="label">Instagram</span>
               </a>
             </li>
@@ -276,6 +287,7 @@ class Main extends React.Component {
                 href="https://www.linkedin.com/in/olubisi-idris-ayinde-05727b17a/"
                 className="icon fa-linkedin"
                 target='_blank'
+                rel="noopener noreferrer"
               >
                 <span className="label">linkedIn</span>
               </a>
@@ -389,6 +401,7 @@ class Main extends React.Component {
                 href="https://twitter.com/olanetsoft"
                 className="icon fa-twitter"
                 target='_blank'
+                rel="noopener noreferrer"
               >
                 <span className="label">Twitter</span>
               </a>
@@ -398,6 +411,7 @@ class Main extends React.Component {
                 href="https://github.com/olanetsoft"
                 className="icon fa-github"
                 target='_blank'
+                rel="noopener noreferrer"
               >
                 <span className="label">GitHub</span>
               </a>
@@ -405,21 +419,24 @@ class Main extends React.Component {
             <li>
               <a href="https://medium.com/@olanetsoft"
                 className="icon fa-medium"
-                target='_blank'>
+                target='_blank'
+                rel="noopener noreferrer">
                 <span className="label">Medium</span>
               </a>
             </li>
             <li>
               <a href="https://facebook.com/olubisiidris"
                 className="icon fa-facebook"
-                target='_blank'>
+                target='_blank'
+                rel="noopener noreferrer">
                 <span className="label">Facebook</span>
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com/olanetsoft"
                 className="icon fa-instagram"
-                target='_blank'>
+                target='_blank'
+                rel="noopener noreferrer">
                 <span className="label">Instagram</span>
               </a>
             </li>
@@ -428,6 +445,7 @@ class Main extends React.Component {
                 href="https://www.linkedin.com/in/olubisi-idris-ayinde-05727b17a/"
                 className="icon fa-linkedin"
                 target='_blank'
+                rel="noopener noreferrer"
               >
                 <span className="label">linkedIn</span>
               </a>
@@ -484,6 +502,7 @@ class Main extends React.Component {
                 href="https://twitter.com/olanetsoft"
                 className="icon fa-twitter"
                 target='_blank'
+                rel="noopener noreferrer"
               >
                 <span className="label">Twitter</span>
               </a>
@@ -493,6 +512,7 @@ class Main extends React.Component {
                 href="https://github.com/olanetsoft"
                 className="icon fa-github"
                 target='_blank'
+                rel="noopener noreferrer"
               >
                 <span className="label">GitHub</span>
               </a>
@@ -500,21 +520,24 @@ class Main extends React.Component {
             <li>
               <a href="https://medium.com/@olanetsoft"
                 className="icon fa-medium"
-                target='_blank'>
+                target='_blank'
+                rel="noopener noreferrer">
                 <span className="label">Medium</span>
               </a>
             </li>
             <li>
               <a href="https://facebook.com/olubisiidris"
                 className="icon fa-facebook"
-                target='_blank'>
+                target='_blank'
+                rel="noopener noreferrer">
                 <span className="label">Facebook</span>
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com/olanetsoft"
                 className="icon fa-instagram"
-                target='_blank'>
+                target='_blank'
+                rel="noopener noreferrer">
                 <span className="label">Instagram</span>
               </a>
             </li>
@@ -523,6 +546,7 @@ class Main extends React.Component {
                 href="https://www.linkedin.com/in/olubisi-idris-ayinde-05727b17a/"
                 className="icon fa-linkedin"
                 target='_blank'
+                rel="noopener noreferrer"
               >
                 <span className="label">linkedIn</span>
               </a>

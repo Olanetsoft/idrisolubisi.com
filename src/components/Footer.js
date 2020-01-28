@@ -56,7 +56,7 @@ const Footer = (props) => (
             </li>
             
           </ul>
-        <p className="copyright">&copy;{newDate} Made with <a href="https://www.twitter.com/olanetsoft" className="icon fa-heart"> by @olanetsoft  Powered by</a><a href="https://www.gatsbyjs.org/" > Gatsby</a></p>
+        <p className="copyright">&copy;{newDate} Made with <a href="https://www.twitter.com/olanetsoft" target='_blank' rel="noopener noreferrer" className="icon fa-heart" > by @olanetsoft  Powered by</a><a href="https://www.gatsbyjs.org/" target="_blank" rel="noopener noreferrer"> Gatsby</a></p>
     </footer>
 )
 

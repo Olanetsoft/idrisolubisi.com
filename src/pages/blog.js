@@ -10,6 +10,7 @@ import { shorten } from '../utils/truncateStr';
 import Footer from '../components/Footer'
 import SEO from '../components/seo'
 
+
 class Blog extends Component {
 	render() {
 		const { data } = this.props;
@@ -19,7 +20,7 @@ class Blog extends Component {
 			<Container>
 				<SEO title="Blog - All Post" />
 				<ul id="link-back-home">
-					<li><a href="/" ><i className="fa fa-long-arrow-left"> Go Back Home</i></a></li>
+					<li><Link to="/" ><i className="fa fa-long-arrow-left"> Go Back Home</i></Link></li>
 				</ul>
 				<h2>Articles</h2>
 				<hr />
