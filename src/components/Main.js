@@ -221,14 +221,39 @@ class Main extends React.Component {
           <i class="fa fa-html5" style={{fontSize: "3em", color: "Tomato"}}></i>
           <i class="fa fa-html5" style={{fontSize: "3em", color: "Tomato"}}></i>
           
-
+          <h5>Back End: </h5>
+          <i class="fab fa-react" style={{fontSize: "3em", color: "Tomato"}}></i>
+          <i class="fa fa-html5" style={{fontSize: "3em", color: "Tomato"}}></i>
+          <i class="fa fa-html5" style={{fontSize: "3em", color: "Tomato"}}></i>
           
+          <h5>Framework: </h5>
+          <i class="fa fa-react" style={{fontSize: "3em", color: "Tomato"}}></i>
+          <i class="fa fa-html5" style={{fontSize: "3em", color: "Tomato"}}></i>
+          <i class="fa fa-html5" style={{fontSize: "3em", color: "Tomato"}}></i>
           
-          <h3>Tetiary Institution Details :</h3>
-              <h5>ROLE: Software Developer/Support Analyst -SharePoint<br/>
-              Abubakar Tafawa Balewa University<br/>
-              Degree Name: Bachelor's degreeField Of StudyElectrical and Electronics Engineering<br/>
-              Dates attended or expected graduation: 2012 – 2017
+          <h5>Content Management System: </h5>
+          <i class="fab fa-react" style={{fontSize: "3em", color: "Tomato"}}></i>
+          <i class="fa fa-wordpress" style={{fontSize: "3em", color: "Tomato"}}></i>
+          <i class="fa fa-html5" style={{fontSize: "3em", color: "Tomato"}}></i>
+          
+          <h5>Development Tool: </h5>
+          <i class="fa fa-react" style={{fontSize: "3em", color: "Tomato"}}></i>
+          <i class="fa fa fa-git" style={{fontSize: "3em", color: "Tomato"}}></i>
+          <i class="fa fa-gitlab" style={{fontSize: "3em", color: "Tomato"}}></i>
+          <i class="fa fa-github" style={{fontSize: "3em", color: "Tomato"}}></i>
+          <i class="fa fa-gitlab" style={{fontSize: "3em", color: "Tomato"}}></i>
+          
+          <h5>Programing Language: </h5>
+          <i class="fa fa-gitlab" style={{fontSize: "3em", color: "Tomato"}}></i>
+          <i class="fa fa-github" style={{fontSize: "3em", color: "Tomato"}}></i>
+          <i class="fa fa-gitlab" style={{fontSize: "3em", color: "Tomato"}}></i>
+          
+          <br/>
+          <h3>Tertiary Institution Details :</h3>
+              <h5>Abubakar Tafawa Balewa University<br/>
+              Degree Name: Bachelor's degree<br/>
+              Field Of Study: Electrical and Electronics Engineering<br/>
+              Dates attended: 2012 – 2017
               <h3>Leadership Role:</h3>
               1. Social Director of the Nigerian Institute of Electrical and Electronics Engineering (NIEEE)Atbu Chapter 2015/2016 Academic Session<br/>
               2. Vice-president of National Association of Kwara state Student (NAKSS)Atbu Chapter 2015.<br/>
@@ -241,7 +266,7 @@ class Main extends React.Component {
               <h3>College Details: </h3>
               <h5>Brainpoint College<br/>
               Degree Name: West Africa Examination Council<br/>
-              Dates attended or expected graduation: 2006 – 2011<br/><br/>
+              Dates attended : 2006 – 2011<br/>
               </h5>
               
               <h3>Primary school Details: </h3>

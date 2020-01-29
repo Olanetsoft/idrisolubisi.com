@@ -4,7 +4,9 @@
   "version": "1.0.0",
   "author": "Idris Olubisi",
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.12.0",
     "babel-plugin-styled-components": "^1.10.7",
+    "font-awesome": "^4.7.0",
     "gatsby": "^2.18.18",
     "gatsby-image": "^2.2.39",
     "gatsby-plugin-analytics": "^0.2.0",
@@ -31,6 +33,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
+    "react-icons": "^3.8.0",
     "react-typed": "^1.2.0",
     "styled-components": "^5.0.0"
   },
