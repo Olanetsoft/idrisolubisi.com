@@ -3,15 +3,7 @@ import React from 'react'
 //import pic01 from '../images/pic01.jpg'
 // import pic02 from '../images/pic02.jpg'
 // import pic03 from '../images/pic03.jpg'
-import RethinkLagos from '../images/rethinkLagos.webp'
-import Boeinvest from '../images/boeinvest.webp'
-import DigitalClock from '../images/digiitalClock.webp'
-import Isazoni from '../images/isazoni.webp'
-import KWARASELL from '../images/kwarasell.webp'
-import MusicalEvent from '../images/musicalEvent.webp'
-import Naija4life from '../images/naija4life.webp'
-import PonkApp from '../images/ponkApp.webp'
-import ABoutImage from '../images/aboutPic.webp'
+
 
 //http://jsfiddle.net/5e6zr2Lq/1/
 
@@ -46,7 +38,7 @@ class Main extends React.Component {
         >
           <h2 className="major">MY Blog</h2>
           <span className="image main">
-            <img src={DigitalClock} alt="" />
+            <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/digiitalClock.webp" alt="" />
           </span>
           <p>
             Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin
@@ -84,7 +76,7 @@ class Main extends React.Component {
           <h5><a href="https://github.com/Olanetsoft" target='_blank' className="icon fa-github"> Click here to View More on GitHub</a></h5>
 
           <span className="image main">
-            <a href="https://www.rethinklagos.com" target='_blank' rel="noopener noreferrer" ><img src={RethinkLagos} alt="Rethink" /></a>
+            <a href="https://www.rethinklagos.com" target='_blank' rel="noopener noreferrer" ><img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/rethinkLagos.webp" alt="Rethink" /></a>
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
@@ -92,7 +84,7 @@ class Main extends React.Component {
           </p>
 
           <span className="image main">
-            <a href="https://www.boeinvest.com" target='_blank' rel="noopener noreferrer"><img src={Boeinvest} alt="Boeinvest" /></a>
+            <a href="https://www.boeinvest.com" target='_blank' rel="noopener noreferrer"><img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/boeinvest.webp" alt="Boeinvest" /></a>
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
@@ -101,7 +93,7 @@ class Main extends React.Component {
 
 
           <span className="image main">
-            <a href="https://digital-web-clock.netlify.com" target='_blank' rel="noopener noreferrer"><img src={DigitalClock} alt="DigitalClock" /></a>
+            <a href="https://digital-web-clock.netlify.com" target='_blank' rel="noopener noreferrer"><img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/digiitalClock.webp" alt="DigitalClock" /></a>
 
           </span>
           <p>
@@ -112,7 +104,7 @@ class Main extends React.Component {
 
           
           <span className="image main">
-            <a href="https://www.naija4life.com.ng" target='_blank' rel="noopener noreferrer"><img src={Naija4life} alt="Rethink" /></a>
+            <a href="https://www.naija4life.com.ng" target='_blank' rel="noopener noreferrer"><img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308683/Idris%20Portfolio%20Pictures/naija4life.webp" alt="Rethink" /></a>
           </span>
           <p>
           TITLE: NAIJA4LIFE BLOG <a href="https://www.naija4life.com.ng" target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View live || </a>
@@ -120,28 +112,29 @@ class Main extends React.Component {
 
 
           <span className="image main">
-            <a href="https://www.isazoni.com" target='_blank' rel="noopener noreferrer"><img src={Isazoni} alt="isazoni" /></a>
+            <a href="https://www.isazoni.com" target='_blank' rel="noopener noreferrer"><img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/isazoni.webp" alt="isazoni" /></a>
           </span>
           <p>
           TITLE: ISAZ-ONI <a href="https://www.isazoni.com.ng" target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View live || </a>
           </p>
 
           <span className="image main">
-            <a href="https://www.kwarasell.com" target='_blank' rel="noopener noreferrer"><img src={KWARASELL} alt="Kwarasell" /></a>
+            <a href="https://www.kwarasell.com" target='_blank' rel="noopener noreferrer"><img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/kwarasell.webp" alt="Kwarasell" /></a>
           </span>
           <p>
           TITLE: KWARASELL.COM <a href="https://www.kwarasell.com" target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View live || </a>
           </p>
 
           <span className="image main">
-            <a href="https://ponk-app.netlify.com" target='_blank' rel="noopener noreferrer"><img src={PonkApp} alt="MusicEvent" /></a>
+            <a href="https://ponk-app.netlify.com" target='_blank' rel="noopener noreferrer"><img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/ponkApp.webp" alt="MusicEvent" /></a>
           </span>
           <p>
           TITLE: Ponk App <a href="https://ponk-app.netlify.com" target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/Ponk-App" target='_blank' className="icon fa-github"> View on GitHub</a>
           </p>
 
           <span className="image main">
-            <a href="https://music-event.netlify.com" target='_blank' rel="noopener noreferrer"><img src={MusicalEvent} alt="MusicEvent" /></a>
+
+            <a href="https://music-event.netlify.com" target='_blank' rel="noopener noreferrer"><img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308685/Idris%20Portfolio%20Pictures/musicalEvent.webp" alt="MusicEvent" /></a>
           </span>
           <p>
           TITLE: Musical Event <a href="https://music-event.netlify.com" target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/musical-event-project" target='_blank' className="icon fa-github"> View on GitHub</a>
@@ -217,33 +210,47 @@ class Main extends React.Component {
         >
           <h2 className="major">About</h2>
           <span className="image main">
-            <img src={ABoutImage} alt="" />
+            <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/aboutPic.webp" alt="My_photo" />
           </span>
-          <p>
-            Tetiary Institution Details :<br/><br/>
+          <h3>skill set</h3>
+          
+          <h5>front End: </h5>
+          <i class="fa fa-html5" style={{fontSize: "3em", color: "Tomato"}}></i>
+          <i class="fa fa-css3" style={{fontSize: "3em", color: "Tomato"}}></i>
+          <i class="fa fa-react" style={{fontSize: "3em", color: "Tomato"}}></i>
+          <i class="fa fa-html5" style={{fontSize: "3em", color: "Tomato"}}></i>
+          <i class="fa fa-html5" style={{fontSize: "3em", color: "Tomato"}}></i>
+          
+
+          
+          
+          <h3>Tetiary Institution Details :</h3>
+              <h5>ROLE: Software Developer/Support Analyst -SharePoint<br/>
               Abubakar Tafawa Balewa University<br/>
               Degree Name: Bachelor's degreeField Of StudyElectrical and Electronics Engineering<br/>
-              Dates attended or expected graduation: 2012 – 2017<br/>
-              
-              Leadership Role:<br/>
+              Dates attended or expected graduation: 2012 – 2017
+              <h3>Leadership Role:</h3>
               1. Social Director of the Nigerian Institute of Electrical and Electronics Engineering (NIEEE)Atbu Chapter 2015/2016 Academic Session<br/>
               2. Vice-president of National Association of Kwara state Student (NAKSS)Atbu Chapter 2015.<br/>
               3. Secretary General of Ilorin Emirate Student's Union(IESU) 2014/2015<br/>
               4. Welfare Director of Isokan Students State Association(ISSA) 2014/2015<br/>
-              5. Director of Social, National Union of Lagos State students (NULASS) 2014/2015<br/><br/>
+              5. Director of Social, National Union of Lagos State students (NULASS) 2014/2015<br/>
+              </h5>
               
               
-              College Details: <br/><br/>
-              Brainpoint College<br/>
+              <h3>College Details: </h3>
+              <h5>Brainpoint College<br/>
               Degree Name: West Africa Examination Council<br/>
               Dates attended or expected graduation: 2006 – 2011<br/><br/>
+              </h5>
               
-              
-              Primary school Details: <br/><br/>
-              Muslim Children Private School<br/>
+              <h3>Primary school Details: </h3>
+              <h5>Muslim Children Private School<br/>
               Degree Name: First school leaving certificate<br/>
               Dates attended or expected graduation 2000 – 2005<br/>
-          </p>
+              </h5>
+
+
           <ul className="icons">
             <li>
               <a
