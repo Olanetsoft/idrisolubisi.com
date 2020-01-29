@@ -11,7 +11,7 @@ import KWARASELL from '../images/kwarasell.webp'
 import MusicalEvent from '../images/musicalEvent.webp'
 import Naija4life from '../images/naija4life.webp'
 //import SkillImage from '../images/skillimage2.jpg'
-import CertImage from '../images/certImagenew.jpg';
+// import CertImage from '../images/certImagenew.jpg';
 import ABoutImage from '../images/aboutPic.webp'
 
 //http://jsfiddle.net/5e6zr2Lq/1/
@@ -308,7 +308,7 @@ class Main extends React.Component {
 
 
           <span className="image main">
-            <img src={CertImage} alt="" />
+            {/* <img src={CertImage} alt="" /> */}
           </span>
           
               <h3>Tavia Technologies Limited</h3>
