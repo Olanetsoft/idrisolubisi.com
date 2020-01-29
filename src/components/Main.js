@@ -10,8 +10,7 @@ import Isazoni from '../images/isazoni.webp'
 import KWARASELL from '../images/kwarasell.webp'
 import MusicalEvent from '../images/musicalEvent.webp'
 import Naija4life from '../images/naija4life.webp'
-//import SkillImage from '../images/skillimage2.jpg'
-// import CertImage from '../images/certImagenew.jpg';
+import PonkApp from '../images/ponkApp.webp'
 import ABoutImage from '../images/aboutPic.webp'
 
 //http://jsfiddle.net/5e6zr2Lq/1/
@@ -82,6 +81,8 @@ class Main extends React.Component {
 
 
           <h2 className="major">PROJECTS</h2>
+          <h5><a href="https://github.com/Olanetsoft" target='_blank' className="icon fa-github"> Click here to View More on GitHub</a></h5>
+
           <span className="image main">
             <a href="https://www.rethinklagos.com" target='_blank' rel="noopener noreferrer" ><img src={RethinkLagos} alt="Rethink" /></a>
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
@@ -89,15 +90,6 @@ class Main extends React.Component {
           <p>
             TITLE: RETHINK LAGOS <a href="https://www.rethinklagos.com" target='_blank' className="fa fa-eye"> View live || </a>
           </p>
-
-
-          <span className="image main">
-            <a href="https://music-event.netlify.com" target='_blank' rel="noopener noreferrer"><img src={MusicalEvent} alt="MusicEvent" /></a>
-          </span>
-          <p>
-          TITLE: Musical Event <a href="https://music-event.netlify.com" target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/musical-event-project" target='_blank' className="icon fa-github"> View on GitHub</a>
-          </p>
-
 
           <span className="image main">
             <a href="https://www.boeinvest.com" target='_blank' rel="noopener noreferrer"><img src={Boeinvest} alt="Boeinvest" /></a>
@@ -118,7 +110,7 @@ class Main extends React.Component {
 
           </p>
 
-
+          
           <span className="image main">
             <a href="https://www.naija4life.com.ng" target='_blank' rel="noopener noreferrer"><img src={Naija4life} alt="Rethink" /></a>
           </span>
@@ -140,6 +132,21 @@ class Main extends React.Component {
           <p>
           TITLE: KWARASELL.COM <a href="https://www.kwarasell.com" target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View live || </a>
           </p>
+
+          <span className="image main">
+            <a href="https://ponk-app.netlify.com" target='_blank' rel="noopener noreferrer"><img src={PonkApp} alt="MusicEvent" /></a>
+          </span>
+          <p>
+          TITLE: Ponk App <a href="https://ponk-app.netlify.com" target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/Ponk-App" target='_blank' className="icon fa-github"> View on GitHub</a>
+          </p>
+
+          <span className="image main">
+            <a href="https://music-event.netlify.com" target='_blank' rel="noopener noreferrer"><img src={MusicalEvent} alt="MusicEvent" /></a>
+          </span>
+          <p>
+          TITLE: Musical Event <a href="https://music-event.netlify.com" target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/musical-event-project" target='_blank' className="icon fa-github"> View on GitHub</a>
+          </p>
+
 
           <ul className="icons">
             <li>
