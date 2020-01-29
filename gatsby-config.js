@@ -105,12 +105,12 @@ module.exports = {
         head: true
       }
     },
-    {
-      resolve: `gatsby-plugin-google-tagmanager`,
-      options: {
-        id: ``,
-        includeInDevelopment: true
-      },
-    }
+    // {
+    //   resolve: `gatsby-plugin-google-tagmanager`,
+    //   options: {
+    //     id: ``,
+    //     includeInDevelopment: true
+    //   },
+    // }
   ],
 }
