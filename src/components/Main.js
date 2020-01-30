@@ -73,14 +73,21 @@ class Main extends React.Component {
 
 
           <h2 className="major">PROJECTS</h2>
-          <h5><a href="https://github.com/Olanetsoft" target='_blank' className="icon fa-github"> Click here to View More on GitHub</a></h5>
+          <h5><a href="https://github.com/Olanetsoft" 
+          target='_blank' 
+          rel="noopener noreferrer"
+           className="icon fa-github"> Click here to View More on GitHub</a></h5>
 
           <span className="image main">
-            <a href="https://www.rethinklagos.com" target='_blank' rel="noopener noreferrer" ><img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/rethinkLagos.webp" alt="Rethink" /></a>
+            <a href="https://www.rethinklagos.com" 
+            target='_blank'
+             rel="noopener noreferrer" ><img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/rethinkLagos.webp" alt="Rethink" /></a>
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
-            TITLE: RETHINK LAGOS <a href="https://www.rethinklagos.com" target='_blank' className="fa fa-eye"> View live || </a>
+            TITLE: RETHINK LAGOS <a href="https://www.rethinklagos.com" target='_blank'
+            rel="noopener noreferrer"
+            className="fa fa-eye"> View live || </a>
           </p>
 
           <span className="image main">
@@ -98,7 +105,12 @@ class Main extends React.Component {
           </span>
           <p>
 
-          TITLE: DIGITAL CLOCK <a href="https://digital-web-clock.netlify.com" target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View live || </a> <a href="https://github.com/Olanetsoft/Ticking-Clock-With-React" target='_blank' className="icon fa-github"> View on GitHub</a>
+          TITLE: DIGITAL CLOCK <a href="https://digital-web-clock.netlify.com" 
+          target='_blank' rel="noopener noreferrer"
+           className="fa fa-eye"> View live || </a> 
+           <a href="https://github.com/Olanetsoft/Ticking-Clock-With-React" 
+           target='_blank' className="icon fa-github" 
+           rel="noopener noreferrer"> View on GitHub</a>
 
           </p>
 
@@ -129,7 +141,9 @@ class Main extends React.Component {
             <a href="https://ponk-app.netlify.com" target='_blank' rel="noopener noreferrer"><img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/ponkApp.webp" alt="MusicEvent" /></a>
           </span>
           <p>
-          TITLE: Ponk App <a href="https://ponk-app.netlify.com" target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/Ponk-App" target='_blank' className="icon fa-github"> View on GitHub</a>
+          TITLE: Ponk App <a href="https://ponk-app.netlify.com" target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/Ponk-App" target='_blank' 
+          rel="noopener noreferrer" 
+          className="icon fa-github"> View on GitHub</a>
           </p>
 
           <span className="image main">
@@ -137,7 +151,10 @@ class Main extends React.Component {
             <a href="https://music-event.netlify.com" target='_blank' rel="noopener noreferrer"><img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308685/Idris%20Portfolio%20Pictures/musicalEvent.webp" alt="MusicEvent" /></a>
           </span>
           <p>
-          TITLE: Musical Event <a href="https://music-event.netlify.com" target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/musical-event-project" target='_blank' className="icon fa-github"> View on GitHub</a>
+          TITLE: Musical Event <a href="https://music-event.netlify.com" target='_blank'
+           rel="noopener noreferrer" 
+           className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/musical-event-project" target='_blank' rel="noopener noreferrer"
+           className="icon fa-github"> View on GitHub</a>
           </p>
 
 
@@ -337,7 +354,7 @@ class Main extends React.Component {
         </article>
 
         <article
-          id="about"
+          id="experience"
           className={`${this.props.article === 'skill/certificate' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
             }`}
@@ -359,14 +376,14 @@ class Main extends React.Component {
 
               <h3>Ultra Media Solution</h3>
               <h4>Role: Web Development and Digital Marketing Intern<br/><br/>
-              Company Name: Ultra Media Solution Internship<br/><br/>
+              Company Name: Ultra Media Solution<br/><br/>
               Dates Employed: Mar 2019 – Apr 2019<br/><br/>
               Location: 11 Unity Road ikeja lagos</h4>
               <br/>
 
               <h3>CVIT</h3>
               <h4>Role: Network Administrator intern<br/>
-              Company Name: CVIT Internship<br/><br/>
+              Company Name: CVIT <br/><br/>
               Dates Employed: Mar 2019 – Apr 2019<br/>
               Location: Ikeja lagos</h4>
               <br/>
@@ -391,12 +408,12 @@ class Main extends React.Component {
 
               <h3>Google Digital Skills For Africa</h3>
               <h4>Digital Marketing Trainee<br/><br/>
-              Company Name: Google Digital Skills For Africa Internship<br/><br/>
+              Company Name: Google Digital Skills For Africa<br/><br/>
               Dates Employed: Sep 2018 – Oct 2018</h4>
               <br/>
               <h3>Al-Hikmah University</h3>
-              <h4>Electrical Engineer Trainee<br/><br/>
-              Company Name: Al-Hikmah University Internship<br/><br/>
+              <h4>Electrical & Electronics Engineer Trainee<br/><br/>
+              Company Name: Al-Hikmah University<br/><br/>
               Dates Employed: Nov 2016 – Apr 2017<br/><br/>
               Location: Kwara, Nigeria</h4>
               <br/>
