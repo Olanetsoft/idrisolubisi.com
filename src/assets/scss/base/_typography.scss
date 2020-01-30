@@ -7,7 +7,7 @@
 /* Type */
 
 	html {
-		font-size: 16pt;
+		font-size: 16px;
 
 		@include breakpoint(xlarge) {
 			font-size: 12pt;
