@@ -42,17 +42,17 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
-			resolve: `gatsby-transformer-remark`,
-			options: {
-				plugins: [
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
-                maxWidth: 590
+              maxWidth: 590
             },
           },
-					`gatsby-remark-prismjs`,
-					`gatsby-remark-smartypants`,
+          `gatsby-remark-prismjs`,
+          `gatsby-remark-smartypants`,
           `gatsby-remark-copy-linked-files`,
           {
             resolve: `gatsby-remark-social-cards`,
@@ -85,9 +85,9 @@ module.exports = {
               yMargin: 24,// Edge margin used when y value is not set
             }
           }
-				]
-			}
-		},
+        ]
+      }
+    },
 
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-styled-components`,

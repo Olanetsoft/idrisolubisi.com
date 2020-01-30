@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Idris Olubisi",
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^13.4.0",
     "@fortawesome/free-brands-svg-icons": "^5.12.0",
     "babel-plugin-styled-components": "^1.10.7",
     "font-awesome": "^4.7.0",
