@@ -222,7 +222,7 @@ class Main extends React.Component {
           <i class="fa fa-html5" style={{fontSize: "3em", color: "Tomato"}}></i>
           
           <h5>Back End: </h5>
-          <i class="fab fa-react" style={{fontSize: "3em", color: "Tomato"}}></i>
+          <i class="fa fa-react" style={{fontSize: "3em", color: "Tomato"}}></i>
           <i class="fa fa-html5" style={{fontSize: "3em", color: "Tomato"}}></i>
           <i class="fa fa-html5" style={{fontSize: "3em", color: "Tomato"}}></i>
           

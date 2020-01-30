@@ -11,6 +11,7 @@ const Footer = (props) => (
                 href="https://twitter.com/olanetsoft"
                 className="icon fa-twitter"
                 target='_blank'
+                rel="noopener noreferrer"
               >
                 <span className="label">Twitter</span>
               </a>
@@ -20,6 +21,7 @@ const Footer = (props) => (
                 href="https://github.com/olanetsoft"
                 className="icon fa-github"
                 target='_blank'
+                rel="noopener noreferrer"
               >
                 <span className="label">GitHub</span>
               </a>
@@ -27,21 +29,24 @@ const Footer = (props) => (
             <li>
               <a href="https://medium.com/@olanetsoft"
                className="icon fa-medium"
-               target='_blank'>
+               target='_blank'
+               rel="noopener noreferrer">
                 <span className="label">Medium</span>
               </a>
             </li>
             <li>
               <a href="https://facebook.com/olubisiidris"
                className="icon fa-facebook"
-               target='_blank'>
+               target='_blank'
+               rel="noopener noreferrer">
                 <span className="label">Facebook</span>
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com/olanetsoft"
                className="icon fa-instagram"
-               target='_blank'>
+               target='_blank'
+               rel="noopener noreferrer">
                 <span className="label">Instagram</span>
               </a>
             </li>
@@ -50,6 +55,7 @@ const Footer = (props) => (
                 href="https://www.linkedin.com/in/olubisi-idris-ayinde-05727b17a/"
                 className="icon fa-linkedin"
                 target='_blank'
+                rel="noopener noreferrer"
               >
                 <span className="label">linkedIn</span>
               </a>
