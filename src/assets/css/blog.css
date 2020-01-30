@@ -3,6 +3,7 @@
     transition: 0.3s;
     border-radius: 5px; /* 5px rounded corners */
     background-color: darkgrey;
+    margin-bottom: 50px;
 }
   /* On mouse-over, add a deeper shadow */
   .card:hover {

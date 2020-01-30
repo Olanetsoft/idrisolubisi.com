@@ -28,6 +28,7 @@ class Blog extends Component {
 				{posts.map(({ node }) => {
 					const title = node.frontmatter.title || node.fields.slug;
 					return (
+						<Link to={node.fields.slug}>
 						<div key={node.fields.slug} className="card">
 							<h3 style={{ marginBottom: '.15rem', marginTop: '.90rem' }}>
 								<Link to={node.fields.slug}>{title}</Link>
@@ -37,15 +38,17 @@ class Blog extends Component {
 								className="container"
 								dangerouslySetInnerHTML={{ __html: shorten(node.html, 200) }}
 							/>
-							<div className="button-link">
+							
+							{/* <div className="button-link">
 								<Link to={node.fields.slug}>
 									<button>Read more</button>
 								</Link>
-							</div>
+							</div> */}
 
 							{/* <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
                                  */}
 						</div>
+						</Link>
 					);
 				})}
 				<Footer />
