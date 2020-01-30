@@ -7,7 +7,7 @@ module.exports = {
       twitter: 'olanetsoft',
       github: 'olanetsoft'
     },
-    siteUrl: `https://olanetsoft.netlify.com`
+    siteUrl: `http://localhost:9000/`
   },
   plugins: [
     {
