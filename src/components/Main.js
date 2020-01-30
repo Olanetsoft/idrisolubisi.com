@@ -3,7 +3,7 @@ import React from 'react'
 //import pic01 from '../images/pic01.jpg'
 // import pic02 from '../images/pic02.jpg'
 // import pic03 from '../images/pic03.jpg'
-
+import gatsby from '../images/gatsby2.png'
 
 //http://jsfiddle.net/5e6zr2Lq/1/
 
@@ -230,40 +230,47 @@ class Main extends React.Component {
           <h3>skill set</h3>
 
           <h5>front End: </h5>
-          <i class="fa fa-html5" style={{ fontSize: "3em", color: "Tomato" }}></i>
-          <i class="fa fa-css3" style={{ fontSize: "3em", color: "Tomato" }}></i>
-          <i class="fa fa-react" style={{ fontSize: "3em", color: "Tomato" }}></i>
-          <i class="fa fa-html5" style={{ fontSize: "3em", color: "Tomato" }}></i>
-          <i class="fa fa-html5" style={{ fontSize: "3em", color: "Tomato" }}></i>
+          <img src="https://img.icons8.com/color/60/000000/html-5.png" alt="html" />&nbsp;&nbsp;&nbsp;
+          <img src="https://img.icons8.com/color/60/000000/css3.png" alt="css" />&nbsp;&nbsp;&nbsp;
+          <img src="https://img.icons8.com/color/60/000000/javascript.png" alt="js" />&nbsp;&nbsp;&nbsp;
+          <img src="https://img.icons8.com/color/60/000000/bootstrap.png" alt="bootstrap" />&nbsp;&nbsp;&nbsp;
+          <img src="https://img.icons8.com/officel/60/000000/react.png" alt="react" />&nbsp;&nbsp;&nbsp;
+          <img src="https://img.icons8.com/ios-filled/60/000000/jquery.png" alt="jquery" />
+          <br /><br />
+
 
           <h5>Back End: </h5>
-          <i class="fa fa-react" style={{ fontSize: "3em", color: "Tomato" }}></i>
-          <i class="fa fa-html5" style={{ fontSize: "3em", color: "Tomato" }}></i>
-          <i class="fa fa-html5" style={{ fontSize: "3em", color: "Tomato" }}></i>
+          <img src="https://img.icons8.com/color/60/000000/nodejs.png" alt="node" />&nbsp;&nbsp;&nbsp;
+          <img src="https://img.icons8.com/nolan/60/asp.png" alt="net" />&nbsp;&nbsp;&nbsp;
+          <img src="https://img.icons8.com/dusk/60/000000/sql.png" alt="sql" />&nbsp;&nbsp;&nbsp;
+          <img src="https://img.icons8.com/color/60/000000/graphql.png"alt="graphql" />
 
-          <h5>Framework: </h5>
-          <i class="fa fa-react" style={{ fontSize: "3em", color: "Tomato" }}></i>
-          <i class="fa fa-html5" style={{ fontSize: "3em", color: "Tomato" }}></i>
-          <i class="fa fa-html5" style={{ fontSize: "3em", color: "Tomato" }}></i>
+          <br /><br />
 
           <h5>Content Management System: </h5>
-          <i class="fab fa-react" style={{ fontSize: "3em", color: "Tomato" }}></i>
-          <i class="fa fa-wordpress" style={{ fontSize: "3em", color: "Tomato" }}></i>
-          <i class="fa fa-html5" style={{ fontSize: "3em", color: "Tomato" }}></i>
+          <img src="https://img.icons8.com/color/60/000000/ms-share-point.png" alt="share" />&nbsp;&nbsp;&nbsp;
+          <img src="https://img.icons8.com/color/60/000000/wordpress.png" alt="wordpress"/>&nbsp;&nbsp;&nbsp;
+          <img src={gatsby} alt="gatsby"/>
+
+          <br /><br />
 
           <h5>Development Tool: </h5>
-          <i class="fa fa-react" style={{ fontSize: "3em", color: "Tomato" }}></i>
-          <i class="fa fa fa-git" style={{ fontSize: "3em", color: "Tomato" }}></i>
-          <i class="fa fa-gitlab" style={{ fontSize: "3em", color: "Tomato" }}></i>
-          <i class="fa fa-github" style={{ fontSize: "3em", color: "Tomato" }}></i>
-          <i class="fa fa-gitlab" style={{ fontSize: "3em", color: "Tomato" }}></i>
+          <img src="https://img.icons8.com/color/60/000000/git.png" alt="git" />&nbsp;&nbsp;&nbsp;
+          <img src="https://img.icons8.com/ios-glyphs/60/000000/github.png" alt="github" />&nbsp;&nbsp;&nbsp;
+          <img src="https://img.icons8.com/color/60/000000/gitlab.png" alt="gitlab" />&nbsp;&nbsp;&nbsp;
+          <img src="https://img.icons8.com/color/60/000000/trello.png" alt="trello" />&nbsp;&nbsp;&nbsp;
+          <img src="https://img.icons8.com/color/60/000000/bitbucket.png" alt="bit" />&nbsp;&nbsp;&nbsp;
+          <img src="https://img.icons8.com/color/60/000000/microsoft-teams.png" alt="teams" />
+
+          <br /><br />
 
           <h5>Programing Language: </h5>
-          <i class="fa fa-gitlab" style={{ fontSize: "3em", color: "Tomato" }}></i>
-          <i class="fa fa-github" style={{ fontSize: "3em", color: "Tomato" }}></i>
-          <i class="fa fa-gitlab" style={{ fontSize: "3em", color: "Tomato" }}></i>
+          <img src="https://img.icons8.com/color/60/000000/javascript.png" alt="js" />&nbsp;&nbsp;&nbsp;
+          <img src="https://img.icons8.com/color/60/000000/c-sharp-logo.png" alt="csharp" />&nbsp;&nbsp;&nbsp;
+          <img src="https://img.icons8.com/dusk/60/000000/python.png" alt="python" />&nbsp;&nbsp;&nbsp;
+          
+          <br /><br />
 
-          <br />
           <h3>Tertiary Institution Details :</h3>
           <h5>Abubakar Tafawa Balewa University<br />
             Degree Name: Bachelor's degree<br />
