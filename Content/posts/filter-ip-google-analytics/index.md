@@ -8,7 +8,7 @@ date: 2019-06-10
 This is going to be a pretty brief post but the purpose of it is important. If you’ve gone to the trouble of setting up Google Analytics to monitor your website, then I’m pretty sure you don’t want noise from you visiting your own site or working on localhost to create a whole lot of noise in your Google Analytics data.
 
 Login to your GA account and click on the gear icon in the bottom left. From here, click `Filters` in the right hand column, then click the red `Add Filter` button.
-![Filters](./filter-info.png)
+![Filters](./filters.png)
 
 Select an appropriate name for your filter. I’ll call mine `My Home IP` as I will be adding my home IP address to the filter. In each dropdown select the following:
 - Select filter type: Exclude

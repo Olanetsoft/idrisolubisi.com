@@ -54,14 +54,6 @@ module.exports = {
 					`gatsby-remark-prismjs`,
 					`gatsby-remark-smartypants`,
           `gatsby-remark-copy-linked-files`,
-          
-				]
-			}
-		},
-    {
-      resolve: `gatsby-transformer-remark`,
-      options:{
-        plugins: [
           {
             resolve: `gatsby-remark-social-cards`,
             options: {
@@ -93,9 +85,10 @@ module.exports = {
               yMargin: 24,// Edge margin used when y value is not set
             }
           }
-        ]
-      },
-    },
+				]
+			}
+		},
+
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-styled-components`,
     {
