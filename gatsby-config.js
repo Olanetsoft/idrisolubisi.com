@@ -7,7 +7,7 @@ module.exports = {
       twitter: 'olanetsoft',
       github: 'olanetsoft'
     },
-    siteUrl: `http://localhost:9000`
+    siteUrl: `https://olanetsoft.netlify.com`
   },
   plugins: [
     {
@@ -105,12 +105,12 @@ module.exports = {
         head: true,
       }
     },
-    // {
-    //   resolve: `gatsby-plugin-google-tagmanager`,
-    //   options: {
-    //     id: ``,
-    //     includeInDevelopment: true
-    //   },
-    // }
+    {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: `GTM-T99QM6R`,
+        includeInDevelopment: true
+      },
+    }
   ],
 }
