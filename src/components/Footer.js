@@ -12,9 +12,8 @@ const Footer = (props) => (
                 className="icon fa-twitter"
                 target='_blank'
                 rel="noopener noreferrer"
-              >
-                <span className="label">Twitter</span>
-              </a>
+                aria-label="Twitter"
+              > </a>
             </li>
             <li>
               <a
@@ -22,32 +21,31 @@ const Footer = (props) => (
                 className="icon fa-github"
                 target='_blank'
                 rel="noopener noreferrer"
-              >
-                <span className="label">GitHub</span>
-              </a>
+                aria-label="Github"
+              ></a>
             </li>
             <li>
               <a href="https://medium.com/@olanetsoft"
-               className="icon fa-medium"
-               target='_blank'
-               rel="noopener noreferrer">
-                <span className="label">Medium</span>
+                className="icon fa-medium"
+                target='_blank'
+                rel="noopener noreferrer"
+                aria-label="Medium">
               </a>
             </li>
             <li>
               <a href="https://facebook.com/olubisiidris"
-               className="icon fa-facebook"
-               target='_blank'
-               rel="noopener noreferrer">
-                <span className="label">Facebook</span>
+                className="icon fa-facebook"
+                target='_blank'
+                rel="noopener noreferrer"
+                aria-label="Facebook">
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com/olanetsoft"
-               className="icon fa-instagram"
-               target='_blank'
-               rel="noopener noreferrer">
-                <span className="label">Instagram</span>
+                className="icon fa-instagram"
+                target='_blank'
+                rel="noopener noreferrer"
+                aria-label="Instagram">
               </a>
             </li>
             <li>
@@ -56,11 +54,11 @@ const Footer = (props) => (
                 className="icon fa-linkedin"
                 target='_blank'
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
               >
-                <span className="label">linkedIn</span>
               </a>
             </li>
-            
+
           </ul>
         <p className="copyright">&copy;{newDate} Made with <a href="https://www.twitter.com/olanetsoft" target='_blank' rel="noopener noreferrer" className="icon fa-heart" > by @olanetsoft  Powered by</a><a href="https://www.gatsbyjs.org/" target="_blank" rel="noopener noreferrer"> Gatsby</a></p>
     </footer>

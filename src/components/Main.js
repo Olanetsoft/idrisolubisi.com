@@ -138,7 +138,7 @@ class Main extends React.Component {
           </p>
 
           <span className="image main">
-            <a href="https://ponk-app.netlify.com" target='_blank' rel="noopener noreferrer"><img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/ponkApp.webp" alt="MusicEvent" /></a>
+            <a href="https://ponk-app.netlify.com" target='_blank' rel="noopener noreferrer"><img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/ponkApp.webp" alt="ponkApp" /></a>
           </span>
           <p>
             TITLE: Ponk App <a href="https://ponk-app.netlify.com" target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/Ponk-App" target='_blank'
@@ -165,9 +165,8 @@ class Main extends React.Component {
                 className="icon fa-twitter"
                 target='_blank'
                 rel="noopener noreferrer"
-              >
-                <span className="label">Twitter</span>
-              </a>
+                aria-label="Twitter"
+              > </a>
             </li>
             <li>
               <a
@@ -175,32 +174,31 @@ class Main extends React.Component {
                 className="icon fa-github"
                 target='_blank'
                 rel="noopener noreferrer"
-              >
-                <span className="label">GitHub</span>
-              </a>
+                aria-label="Github"
+              ></a>
             </li>
             <li>
               <a href="https://medium.com/@olanetsoft"
                 className="icon fa-medium"
                 target='_blank'
-                rel="noopener noreferrer">
-                <span className="label">Medium</span>
+                rel="noopener noreferrer"
+                aria-label="Medium">
               </a>
             </li>
             <li>
               <a href="https://facebook.com/olubisiidris"
                 className="icon fa-facebook"
                 target='_blank'
-                rel="noopener noreferrer">
-                <span className="label">Facebook</span>
+                rel="noopener noreferrer"
+                aria-label="Facebook">
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com/olanetsoft"
                 className="icon fa-instagram"
                 target='_blank'
-                rel="noopener noreferrer">
-                <span className="label">Instagram</span>
+                rel="noopener noreferrer"
+                aria-label="Instagram">
               </a>
             </li>
             <li>
@@ -209,8 +207,8 @@ class Main extends React.Component {
                 className="icon fa-linkedin"
                 target='_blank'
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
               >
-                <span className="label">linkedIn</span>
               </a>
             </li>
 
@@ -300,9 +298,8 @@ class Main extends React.Component {
                 className="icon fa-twitter"
                 target='_blank'
                 rel="noopener noreferrer"
-              >
-                <span className="label">Twitter</span>
-              </a>
+                aria-label="Twitter"
+              > </a>
             </li>
             <li>
               <a
@@ -310,32 +307,31 @@ class Main extends React.Component {
                 className="icon fa-github"
                 target='_blank'
                 rel="noopener noreferrer"
-              >
-                <span className="label">GitHub</span>
-              </a>
+                aria-label="Github"
+              ></a>
             </li>
             <li>
               <a href="https://medium.com/@olanetsoft"
                 className="icon fa-medium"
                 target='_blank'
-                rel="noopener noreferrer">
-                <span className="label">Medium</span>
+                rel="noopener noreferrer"
+                aria-label="Medium">
               </a>
             </li>
             <li>
               <a href="https://facebook.com/olubisiidris"
                 className="icon fa-facebook"
                 target='_blank'
-                rel="noopener noreferrer">
-                <span className="label">Facebook</span>
+                rel="noopener noreferrer"
+                aria-label="Facebook">
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com/olanetsoft"
                 className="icon fa-instagram"
                 target='_blank'
-                rel="noopener noreferrer">
-                <span className="label">Instagram</span>
+                rel="noopener noreferrer"
+                aria-label="Instagram">
               </a>
             </li>
             <li>
@@ -344,8 +340,8 @@ class Main extends React.Component {
                 className="icon fa-linkedin"
                 target='_blank'
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
               >
-                <span className="label">linkedIn</span>
               </a>
             </li>
 
@@ -458,9 +454,8 @@ class Main extends React.Component {
                 className="icon fa-twitter"
                 target='_blank'
                 rel="noopener noreferrer"
-              >
-                <span className="label">Twitter</span>
-              </a>
+                aria-label="Twitter"
+              > </a>
             </li>
             <li>
               <a
@@ -468,32 +463,31 @@ class Main extends React.Component {
                 className="icon fa-github"
                 target='_blank'
                 rel="noopener noreferrer"
-              >
-                <span className="label">GitHub</span>
-              </a>
+                aria-label="Github"
+              ></a>
             </li>
             <li>
               <a href="https://medium.com/@olanetsoft"
                 className="icon fa-medium"
                 target='_blank'
-                rel="noopener noreferrer">
-                <span className="label">Medium</span>
+                rel="noopener noreferrer"
+                aria-label="Medium">
               </a>
             </li>
             <li>
               <a href="https://facebook.com/olubisiidris"
                 className="icon fa-facebook"
                 target='_blank'
-                rel="noopener noreferrer">
-                <span className="label">Facebook</span>
+                rel="noopener noreferrer"
+                aria-label="Facebook">
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com/olanetsoft"
                 className="icon fa-instagram"
                 target='_blank'
-                rel="noopener noreferrer">
-                <span className="label">Instagram</span>
+                rel="noopener noreferrer"
+                aria-label="Instagram">
               </a>
             </li>
             <li>
@@ -502,8 +496,8 @@ class Main extends React.Component {
                 className="icon fa-linkedin"
                 target='_blank'
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
               >
-                <span className="label">linkedIn</span>
               </a>
             </li>
 
@@ -559,9 +553,8 @@ class Main extends React.Component {
                 className="icon fa-twitter"
                 target='_blank'
                 rel="noopener noreferrer"
-              >
-                <span className="label">Twitter</span>
-              </a>
+                aria-label="Twitter"
+              > </a>
             </li>
             <li>
               <a
@@ -569,32 +562,31 @@ class Main extends React.Component {
                 className="icon fa-github"
                 target='_blank'
                 rel="noopener noreferrer"
-              >
-                <span className="label">GitHub</span>
-              </a>
+                aria-label="Github"
+              ></a>
             </li>
             <li>
               <a href="https://medium.com/@olanetsoft"
                 className="icon fa-medium"
                 target='_blank'
-                rel="noopener noreferrer">
-                <span className="label">Medium</span>
+                rel="noopener noreferrer"
+                aria-label="Medium">
               </a>
             </li>
             <li>
               <a href="https://facebook.com/olubisiidris"
                 className="icon fa-facebook"
                 target='_blank'
-                rel="noopener noreferrer">
-                <span className="label">Facebook</span>
+                rel="noopener noreferrer"
+                aria-label="Facebook">
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com/olanetsoft"
                 className="icon fa-instagram"
                 target='_blank'
-                rel="noopener noreferrer">
-                <span className="label">Instagram</span>
+                rel="noopener noreferrer"
+                aria-label="Instagram">
               </a>
             </li>
             <li>
@@ -603,8 +595,8 @@ class Main extends React.Component {
                 className="icon fa-linkedin"
                 target='_blank'
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
               >
-                <span className="label">linkedIn</span>
               </a>
             </li>
 
