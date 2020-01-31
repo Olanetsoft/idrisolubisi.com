@@ -243,14 +243,14 @@ class Main extends React.Component {
           <img src="https://img.icons8.com/color/60/000000/nodejs.png" alt="node" />&nbsp;&nbsp;&nbsp;
           <img src="https://img.icons8.com/nolan/60/asp.png" alt="net" />&nbsp;&nbsp;&nbsp;
           <img src="https://img.icons8.com/dusk/60/000000/sql.png" alt="sql" />&nbsp;&nbsp;&nbsp;
-          <img src="https://img.icons8.com/color/60/000000/graphql.png"alt="graphql" />
+          <img src="https://img.icons8.com/color/60/000000/graphql.png" alt="graphql" />
 
           <br /><br />
 
           <h5>Content Management System: </h5>
           <img src="https://img.icons8.com/color/60/000000/ms-share-point.png" alt="share" />&nbsp;&nbsp;&nbsp;
-          <img src="https://img.icons8.com/color/60/000000/wordpress.png" alt="wordpress"/>&nbsp;&nbsp;&nbsp;
-          <img src={gatsby} alt="gatsby"/>
+          <img src="https://img.icons8.com/color/60/000000/wordpress.png" alt="wordpress" />&nbsp;&nbsp;&nbsp;
+          <img src={gatsby} alt="gatsby" />
 
           <br /><br />
 
@@ -268,7 +268,7 @@ class Main extends React.Component {
           <img src="https://img.icons8.com/color/60/000000/javascript.png" alt="js" />&nbsp;&nbsp;&nbsp;
           <img src="https://img.icons8.com/color/60/000000/c-sharp-logo.png" alt="csharp" />&nbsp;&nbsp;&nbsp;
           <img src="https://img.icons8.com/dusk/60/000000/python.png" alt="python" />&nbsp;&nbsp;&nbsp;
-          
+
           <br /><br />
 
           <h3>Tertiary Institution Details :</h3>
