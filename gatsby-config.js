@@ -7,7 +7,7 @@ module.exports = {
       twitter: 'olanetsoft',
       github: 'olanetsoft'
     },
-    siteUrl: `http://localhost:9000/`
+    siteUrl: `https://idrisolubisi.com/`
   },
   plugins: [
     {
