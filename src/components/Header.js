@@ -12,7 +12,7 @@ const Header = props => (
       <div className="inner">
         <h1>
           <Typed
-                strings={["i'm Idris olubisi"]}
+                strings={["Hi👋 i'm Idris olubisi"]}
                 typeSpeed={30}
               />
         </h1>
