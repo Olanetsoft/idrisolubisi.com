@@ -36,7 +36,7 @@ class Blog extends Component {
 								<small>{node.frontmatter.date}</small>
 								<div
 									className="container"
-									dangerouslySetInnerHTML={{ __html: shorten(node.html, 200) }}
+									dangerouslySetInnerHTML={{ __html: shorten(node.html, 150) }}
 								/>
 
 								{/* <div className="button-link">

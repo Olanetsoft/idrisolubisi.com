@@ -30,8 +30,8 @@ const Header = props => (
                     loop />
           </h3>
         <p>
-        I’m a Software Engineer based in Lagos, Nigeria. <br/>
-        I'm passionate about writing code that solves problem.
+        a Software Engineer based in Lagos, Nigeria. <br/>
+        passionate about writing code that solves problem.
         </p>
       </div>
     </div>
