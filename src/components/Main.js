@@ -228,6 +228,7 @@ class Main extends React.Component {
           <span className="image main">
             <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/aboutPic.webp" alt="My_photo" />
           </span>
+
           <h3>skill set</h3>
 
           <h5>front End: </h5>
