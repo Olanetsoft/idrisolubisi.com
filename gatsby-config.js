@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Idris Olubisi Portfolio',
     author: 'Idris Olubisi',
-    description: 'This is my blog where i write technical content and also a personal portfolio that tells a detailed information about me',
+    description: 'Idris a Software Engineer based in Lagos, Nigeria.He is passionate about writing code that solves problem.',
     social: {
       twitter: 'olanetsoft',
       github: 'olanetsoft'
