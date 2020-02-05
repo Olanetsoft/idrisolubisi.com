@@ -4,7 +4,7 @@ module.exports = {
     author: 'Idris Olubisi',
     description: 'Idris is a Software Engineer based in Lagos, Nigeria.He is passionate about writing code that solves problem.',
     social: {
-      twitter: 'olanetsoft',
+      twitter: '@olanetsoft',
       github: 'olanetsoft'
     },
     siteUrl: `https://idrisolubisi.com/`
