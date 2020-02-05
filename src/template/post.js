@@ -8,13 +8,15 @@ import Footer from '../components/Footer'
 //Style
 import '../assets/css/posts.css'
 
+
+
 class PostTemplate extends Component {
     render() {
         const frontmatter = this.props.data.markdownRemark.frontmatter;
         const { title, description, date } = frontmatter;
         const post = this.props.data.markdownRemark;
         const { previous, next, slug } = this.props.pageContext;
-
+        
         return (
 
             <div>
@@ -62,7 +64,9 @@ export const pageQuery = graphql`
 				date(formatString: "MMMM DD, YYYY")
 				subtitle
 				description
-			}
-		}
+            }
+        }
 	}
 `;
+
+
