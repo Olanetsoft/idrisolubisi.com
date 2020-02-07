@@ -4,6 +4,7 @@ import { graphql, Link } from 'gatsby';
 //Components
 import SEO from '../components/seo'
 import Footer from '../components/Footer'
+import Comments from '../components/Comments/CommentList';
 
 //Style
 import '../assets/css/posts.css'
@@ -28,6 +29,13 @@ class PostTemplate extends Component {
                     <h2 id="post-Title">{title}</h2>
                     <p className="date">{date}</p>
                     <div dangerouslySetInnerHTML={{ __html: post.html }} />
+                    <div className="comment-section">
+                <h4 className="comment-header">Comments</h4>
+                {/* Comment component comes here */}
+                <Comments />
+              </div>
+                    
+                   
                     <ul>
                         <li className="post-navigation">
                             {previous && (

@@ -45,3 +45,13 @@
   padding-bottom: 30px;
   
   }
+  .comment-section{
+    margin-top: 30px;
+  }
+  .comment-header {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: gold;
+    letter-spacing: -0.3px;
+    margin-bottom: 10px;
+  }

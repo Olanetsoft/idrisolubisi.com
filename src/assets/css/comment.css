@@ -1,0 +1,57 @@
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 10px 25px 20px 0;
+  }
+  .comment-form > input,
+  .comment-form > textarea {
+    width: 150%;
+    border: 3px solid goldenrod;
+    margin: 12px 0;
+    padding: 7px 14px;
+    font-size: 14px;
+    opacity: 0.8;
+    font-weight: bold;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+  }
+  .comment-form > div > .submit-button {
+    padding: 2px 30px;
+    background: rgb(184, 138, 12);
+    color: whitesmoke;
+    border-radius: 35px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .comment__meta > h5 {
+    font-size: 15px;
+    color: goldenrod;
+    opacity: 0.7;
+    margin-bottom: 3px;
+    line-height: 1;
+  }
+  hr {
+    background: rgba(0, 0, 0, 0.2);
+    height: 3px;
+  }
+  .comment__meta > span {
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0.5;
+  }
+  .comment__body {
+    font-size: 18px;
+    opacity: 0.8;
+    font-family: 'Rajdhani', cursive;
+  }
+  .no-comments-alert {
+    font-size: 16px;
+    color: white;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: -0.3px;
+  }
