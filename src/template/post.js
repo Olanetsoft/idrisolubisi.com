@@ -4,7 +4,7 @@ import { graphql, Link } from 'gatsby';
 //Components
 import SEO from '../components/seo'
 import Footer from '../components/Footer'
-import Comments from '../components/Comments/CommentList';
+import Comments from '../components/comments/CommentList.js';
 
 //Style
 import '../assets/css/posts.css'
