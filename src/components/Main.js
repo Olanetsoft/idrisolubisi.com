@@ -151,13 +151,13 @@ class Main extends React.Component {
                 className="icon fa-github"> View on GitHub</a>
           </p>
           
-          <span className="image main">
+          {/* <span className="image main">
             <a href="https://www.boeinvest.com" target='_blank' rel="noopener noreferrer"><img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/boeinvest.webp" alt="Boeinvest" /></a>
-            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
+            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> 
           </span>
           <p>
             TITLE: BOE INVESTMENT NIGERIA  <a href="https://www.boeinvest.com" target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View live || </a>
-          </p>
+          </p> */}
 
           <ul className="icons">
             <li>
