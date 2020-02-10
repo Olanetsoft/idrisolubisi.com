@@ -88,7 +88,7 @@ module.exports = {
         ]
       }
     },
-
+    `gatsby-plugin-preact`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-styled-components`,
     {
