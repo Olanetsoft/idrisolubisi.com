@@ -77,6 +77,12 @@ class Main extends React.Component {
             target='_blank'
             rel="noopener noreferrer"
             className="icon fa-github"> Click here to View More on GitHub</a></h5>
+          
+          <h5><a href="https://gitlab.com/Olanetsoft"
+            target='_blank'
+            rel="noopener noreferrer"
+            className="icon fa-gitlab"> Click here to View More on GitLab</a></h5>
+
 
           <span className="image main">
             <a href="https://www.rethinklagos.com"
