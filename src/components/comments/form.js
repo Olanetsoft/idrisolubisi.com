@@ -12,7 +12,7 @@ import React from 'react';
       async handleSubmit(e) {
         e.preventDefault();
         const body = JSON.stringify({ ...this.state });
-        const response = await fetch('http://localhost:4000/comment', {
+        const response = await fetch('http://localhost:4000/Comment', {
           method: 'post',
           body,
           headers: {

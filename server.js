@@ -30,7 +30,7 @@
    console.log(`Server started on port ${port}`);
  });
  
- app.post('/comment', (req, res) => {
+ app.post('/Comment', (req, res) => {
     const {body} = req;
     const data = {
       ...body,
