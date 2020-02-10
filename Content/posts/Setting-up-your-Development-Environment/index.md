@@ -3,7 +3,6 @@ title: Setting up your Development Environment - Git and Node
 subtitle: setup and begin your career
 description: Setting up your Development Environment provides a route to get started
 date: 2020-01-11
-tags: ["Settings", "tech"]
 ---
 ***
 In this article, you will learn to install Git and Node on your computer. I will advise you follow along so as to achieve the same output as mine at the end of this article, I’m pretty sure its going to be cool
