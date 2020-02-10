@@ -1,0 +1,20 @@
+.tags {
+    display: flex;
+    margin-right: 6px;
+    list-style: none;
+    padding: 0;
+    margin: 0 4px 0 0;
+  }
+  .tag {
+    color: black;
+    background: goldenrod;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 5px;
+    border-radius: 35px;
+    padding: 7px 12px;
+    line-height: 12px;
+    font-family: 'Rajdhani', cursive;
+    text-decoration: none;
+  }

@@ -5,6 +5,8 @@ import { graphql, Link } from 'gatsby';
 import SEO from '../components/seo'
 import Footer from '../components/Footer'
 import Comments from '../components/comments/CommentList.js';
+import Tags from '../components/Tags'
+
 
 //Style
 import '../assets/css/posts.css'
@@ -29,6 +31,7 @@ class PostTemplate extends Component {
                     <h2 id="post-Title">{title}</h2>
                     <p className="date">{date}</p>
                     <div dangerouslySetInnerHTML={{ __html: post.html }} />
+                    <Tags list={post.frontmatter.tags || []} />
                     <div className="comment-section">
                 <h4 className="comment-header">Comments</h4>
                 {/* Comment component comes here */}
@@ -69,7 +72,8 @@ export const pageQuery = graphql`
 			html
 			frontmatter {
 				title
-				date(formatString: "MMMM DD, YYYY")
+                date(formatString: "MMMM DD, YYYY")
+                tags
 				subtitle
 				description
             }
