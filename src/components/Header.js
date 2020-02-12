@@ -25,7 +25,7 @@ const Header = props => (
                     'I love to contribute to open source',
                     'I love sport'
                     ]}
-                    typeSpeed={40}
+                    typeSpeed={100}
                     backSpeed={60}
                     loop />
           </h3>
