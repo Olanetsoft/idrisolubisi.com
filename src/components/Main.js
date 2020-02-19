@@ -235,8 +235,10 @@ class Main extends React.Component {
             <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/aboutPic.webp" alt="My_photo" />
           </span>
 
+          <h5>I strive for excellence and precision at all time, contributing the best of my ability and quota to improving organizational objective and achieving all goals set and target.</h5>
+          
           <h3>skill set</h3>
-
+          
           <h5>front End: </h5>
           <img src="https://img.icons8.com/color/60/000000/html-5.png" alt="html" />&nbsp;&nbsp;&nbsp;
           <img src="https://img.icons8.com/color/60/000000/css3.png" alt="css" />&nbsp;&nbsp;&nbsp;
