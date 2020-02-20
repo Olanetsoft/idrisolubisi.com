@@ -264,7 +264,7 @@ class Main extends React.Component {
 
           <br /><br />
 
-          <h5>Development Tool: </h5>
+          <h5>Development Tools: </h5>
           <img src="https://img.icons8.com/color/60/000000/git.png" alt="git" />&nbsp;&nbsp;&nbsp;
           <img src="https://img.icons8.com/ios-glyphs/60/000000/github.png" alt="github" />&nbsp;&nbsp;&nbsp;
           <img src="https://img.icons8.com/color/60/000000/gitlab.png" alt="gitlab" />&nbsp;&nbsp;&nbsp;
@@ -274,7 +274,7 @@ class Main extends React.Component {
 
           <br /><br />
 
-          <h5>Programing Language: </h5>
+          <h5>Programing Languages: </h5>
           <img src="https://img.icons8.com/color/60/000000/javascript.png" alt="js" />&nbsp;&nbsp;&nbsp;
           <img src="https://img.icons8.com/color/60/000000/c-sharp-logo.png" alt="csharp" />&nbsp;&nbsp;&nbsp;
           <img src="https://img.icons8.com/dusk/60/000000/python.png" alt="python" />&nbsp;&nbsp;&nbsp;
