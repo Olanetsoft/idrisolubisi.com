@@ -450,6 +450,8 @@ class Main extends React.Component {
             <br /><br />
             <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/records/69E4K5X3NBLY"> Responsive Website Basics: code with HTML,CSS & Js</a><br />
             <br /><br />
+            <a class="fa fa-trophy" aria-hidden="true" href="https://academy.infinite.red/courses/679257/certificate"> AI Demystified: 5-Day Mini-Course</a><br />
+            <br /><br />
             <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/BAP3BYQ2K4AJ"> Home Networking Basics</a><br />
             <br /><br />
             <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/M3TZQUVANEW3"> Data Communications and Network Services</a><br />
