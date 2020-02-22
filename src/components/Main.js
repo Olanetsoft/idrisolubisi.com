@@ -165,7 +165,7 @@ class Main extends React.Component {
 <p>
 TITLE: Web Clock <a href="https://web-clockjs.netlify.com" target='_blank'
   rel="noopener noreferrer"
-  className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/musical-event-project" target='_blank' rel="noopener noreferrer"
+  className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/webclock" target='_blank' rel="noopener noreferrer"
     className="icon fa-github"> View on GitHub</a>
 </p>
 
