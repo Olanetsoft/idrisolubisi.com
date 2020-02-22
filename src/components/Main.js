@@ -157,6 +157,22 @@ class Main extends React.Component {
                 className="icon fa-github"> View on GitHub</a>
           </p>
           
+
+          <span className="image main">
+
+<a href="https://web-clockjs.netlify.com" target='_blank' rel="noopener noreferrer"><img src="https://res.cloudinary.com/olanetsoft/image/upload/v1582408165/Idris%20Portfolio%20Pictures/jsclock.webp" alt="jsClock" /></a>
+</span>
+<p>
+TITLE: Web Clock <a href="https://web-clockjs.netlify.com" target='_blank'
+  rel="noopener noreferrer"
+  className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/musical-event-project" target='_blank' rel="noopener noreferrer"
+    className="icon fa-github"> View on GitHub</a>
+</p>
+
+
+
+
+
           <span className="image main">
             <a href="https://www.boeinvest.com" target='_blank' rel="noopener noreferrer"><img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/boeinvest.webp" alt="Boeinvest" /></a>
            <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> 
