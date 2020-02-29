@@ -398,58 +398,49 @@ TITLE: Web Clock <a href="https://web-clockjs.netlify.com" target='_blank'
 
           <h3>Tavia Technologies Limited</h3>
           <h4>ROLE: Software Developer/Support Analyst -SharePoint<br /><br />
-            Company Name: Tavia Technologies Limited Full-time<br /><br />
             Dates Employed: May 2019 – Present<br /><br />
             Location: Lagos, Nigeria</h4>
           <br />
 
           <h3>Ultra Media Solution</h3>
           <h4>Role: Web Development and Digital Marketing Intern<br /><br />
-            Company Name: Ultra Media Solution<br /><br />
             Dates Employed: Mar 2019 – Apr 2019<br /><br />
             Location: 11 Unity Road ikeja lagos</h4>
           <br />
 
           <h3>CVIT</h3>
           <h4>Role: Network Administrator intern<br />
-            Company Name: CVIT <br /><br />
             Dates Employed: Mar 2019 – Apr 2019<br />
             Location: Ikeja lagos</h4>
           <br />
           <h3>FIIRO AUTOMATION</h3>
           <h4>Role: Graduate Electrical Engineer Trainee<br /><br />
-            Company Name: FIIRO AUTOMATION Full-time<br /><br />
             Dates Employed: Jun 2018 – Mar 2019<br /><br />
             Location: Lagos, Nigeria</h4>
           <br />
           <h3>Code lagos</h3>
           <h4>Role:Trainee<br />
-            Company Name: Code lagos Contract<br /><br />
             Dates Employed: Oct 2018 – Nov 2018<br /><br />
             Location: Lagos,Nigeria</h4>
           <br />
 
           <h3>Cisco Networking Academy</h3>
           <h4>Role: Engineering Trainee<br /><br />
-            Company Name: Cisco Networking Academy Full-time<br /><br />
             Dates Employed: Sep 2018 – Nov 2018</h4>
           <br />
 
           <h3>Google Digital Skills For Africa</h3>
           <h4>Digital Marketing Trainee<br /><br />
-            Company Name: Google Digital Skills For Africa<br /><br />
             Dates Employed: Sep 2018 – Oct 2018</h4>
           <br />
           <h3>Al-Hikmah University</h3>
           <h4>Electrical & Electronics Engineer Trainee<br /><br />
-            Company Name: Al-Hikmah University<br /><br />
             Dates Employed: Nov 2016 – Apr 2017<br /><br />
             Location: Kwara, Nigeria</h4>
           <br />
 
           <h3>More Blessing Engineering Works</h3>
           <h4>Role: Engineer Trainee<br /><br />
-            Company Name: More Blessing Engineering Works<br /><br />
             Dates Employed: Jan 2016 – Mar 2016<br /><br />
             Location: Lagos, Nigeria</h4>
           <br />
