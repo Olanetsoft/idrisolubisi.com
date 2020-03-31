@@ -77,11 +77,33 @@ class Main extends React.Component {
             target='_blank'
             rel="noopener noreferrer"
             className="icon fa-github"> Click here to View More on GitHub</a></h5>
-          
+
           <h5><a href="https://gitlab.com/Olanetsoft"
             target='_blank'
             rel="noopener noreferrer"
             className="icon fa-gitlab"> Click here to View More on GitLab</a></h5>
+
+
+
+          <span className="image main">
+            <a href="https://vogue.herokuapp.com/"
+              target='_blank'
+              rel="noopener noreferrer" ><img src="https://res.cloudinary.com/olanetsoft/image/upload/v1585696699/Idris%20Portfolio%20Pictures/vogue.webp" alt="vogue" /></a>
+            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
+          </span>
+          <p>
+            TITLE: VOGUE STORE <a href="https://vogue.herokuapp.com/" target='_blank'
+              rel="noopener noreferrer"
+              className="fa fa-eye"> View live || </a>
+              <a href="https://github.com/Olanetsoft/Vogue-Store"
+              target='_blank' className="icon fa-github"
+              rel="noopener noreferrer"> View on GitHub</a>
+          </p>
+
+
+
+
+
 
 
           <span className="image main">
@@ -94,9 +116,10 @@ class Main extends React.Component {
             TITLE: RETHINK LAGOS <a href="https://www.rethinklagos.com" target='_blank'
               rel="noopener noreferrer"
               className="fa fa-eye"> View live || </a>
+               
           </p>
 
-          
+
 
 
           <span className="image main">
@@ -156,18 +179,18 @@ class Main extends React.Component {
               className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/musical-event-project" target='_blank' rel="noopener noreferrer"
                 className="icon fa-github"> View on GitHub</a>
           </p>
-          
+
 
           <span className="image main">
 
-<a href="https://web-clockjs.netlify.com" target='_blank' rel="noopener noreferrer"><img src="https://res.cloudinary.com/olanetsoft/image/upload/v1582408165/Idris%20Portfolio%20Pictures/jsclock.webp" alt="jsClock" /></a>
-</span>
-<p>
-TITLE: Web Clock <a href="https://web-clockjs.netlify.com" target='_blank'
-  rel="noopener noreferrer"
-  className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/webclock" target='_blank' rel="noopener noreferrer"
-    className="icon fa-github"> View on GitHub</a>
-</p>
+            <a href="https://web-clockjs.netlify.com" target='_blank' rel="noopener noreferrer"><img src="https://res.cloudinary.com/olanetsoft/image/upload/v1582408165/Idris%20Portfolio%20Pictures/jsclock.webp" alt="jsClock" /></a>
+          </span>
+          <p>
+            TITLE: Web Clock <a href="https://web-clockjs.netlify.com" target='_blank'
+              rel="noopener noreferrer"
+              className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/webclock" target='_blank' rel="noopener noreferrer"
+                className="icon fa-github"> View on GitHub</a>
+          </p>
 
 
 
@@ -175,7 +198,7 @@ TITLE: Web Clock <a href="https://web-clockjs.netlify.com" target='_blank'
 
           <span className="image main">
             <a href="https://www.boeinvest.com" target='_blank' rel="noopener noreferrer"><img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/boeinvest.webp" alt="Boeinvest" /></a>
-           <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> 
+            <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com" />
           </span>
           <p>
             TITLE: BOE INVESTMENT NIGERIA  <a href="https://www.boeinvest.com" target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View live || </a>
@@ -252,9 +275,9 @@ TITLE: Web Clock <a href="https://web-clockjs.netlify.com" target='_blank'
           </span>
 
           <h5>I strive for excellence and precision at all time, contributing the best of my ability and quota to improving organizational objective and achieving all goals set and target.</h5>
-          
+
           <h3>skill set</h3>
-          
+
           <h5>front End: </h5>
           <img src="https://img.icons8.com/color/60/000000/html-5.png" alt="html" />&nbsp;&nbsp;&nbsp;
           <img src="https://img.icons8.com/color/60/000000/css3.png" alt="css" />&nbsp;&nbsp;&nbsp;
