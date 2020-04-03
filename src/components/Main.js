@@ -99,7 +99,7 @@ class Main extends React.Component {
             <a href="https://vogue.herokuapp.com/"
               target='_blank'
               rel="noopener noreferrer" >
-              <img src={vogue} alt="vogue" /></a>
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1585696699/Idris%20Portfolio%20Pictures/vogue.webp" alt="vogue" /></a>
             {/* https://res.cloudinary.com/olanetsoft/image/upload/v1585696699/Idris%20Portfolio%20Pictures/vogue.webp */}
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
@@ -121,7 +121,9 @@ class Main extends React.Component {
           <span className="image main">
             <a href="https://www.rethinklagos.com"
               target='_blank'
-              rel="noopener noreferrer" ><img src={rethinkLagos} alt="Rethink" /></a>
+              rel="noopener noreferrer" >
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/rethinkLagos.webp"
+                alt="Rethink" /></a>
             {/* https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/rethinkLagos.webp */}
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
@@ -133,11 +135,28 @@ class Main extends React.Component {
           </p>
 
 
+          <span className="image main">
+            <a href="https://we-flex.netlify.com/"
+              target='_blank'
+              rel="noopener noreferrer" >
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1585911355/Idris%20Portfolio%20Pictures/we-flex.webp" alt="vogue" /></a>
+            {/* https://res.cloudinary.com/olanetsoft/image/upload/v1585696699/Idris%20Portfolio%20Pictures/vogue.webp */}
+            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
+          </span>
+          <p>
+            TITLE: WE-FLEX <a href="https://we-flex.netlify.com/" target='_blank'
+              rel="noopener noreferrer"
+              className="fa fa-eye"> View live || </a>
+            <a href="https://github.com/Olanetsoft/we-flex"
+              target='_blank' className="icon fa-github"
+              rel="noopener noreferrer"> View on GitHub</a>
+          </p>
 
 
           <span className="image main">
             <a href="https://digital-web-clock.netlify.com" target='_blank' rel="noopener noreferrer">
-              <img src={dig} alt="DigitalClock" /></a>
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/digiitalClock.webp"
+                alt="DigitalClock" /></a>
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/digiitalClock.webp" */}
           </span>
           <p>
@@ -154,7 +173,8 @@ class Main extends React.Component {
 
           <span className="image main">
             <a href="https://www.naija4life.com.ng" target='_blank' rel="noopener noreferrer">
-              <img src={naija4life} alt="naija4life" /></a>
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308683/Idris%20Portfolio%20Pictures/naija4life.webp"
+                alt="naija4life" /></a>
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308683/Idris%20Portfolio%20Pictures/naija4life.webp" */}
           </span>
           <p>
@@ -164,7 +184,7 @@ class Main extends React.Component {
 
           <span className="image main">
             <a href="https://www.isazoni.com" target='_blank' rel="noopener noreferrer">
-              <img src={isa} alt="isazoni" /></a>
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/isazoni.webp" alt="isazoni" /></a>
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/isazoni.webp" */}
           </span>
           <p>
@@ -173,7 +193,7 @@ class Main extends React.Component {
 
           <span className="image main">
             <a href="https://www.kwarasell.com" target='_blank' rel="noopener noreferrer">
-              <img src={kwarasell} alt="Kwarasell" /></a>
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/kwarasell.webp" alt="Kwarasell" /></a>
 
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/kwarasell.webp" */}
           </span>
@@ -183,7 +203,7 @@ class Main extends React.Component {
 
           <span className="image main">
             <a href="https://ponk-app.netlify.com" target='_blank' rel="noopener noreferrer">
-              <img src={ponk} alt="ponkApp" /></a>
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/ponkApp.webp" alt="ponkApp" /></a>
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/ponkApp.webp" */}
           </span>
           <p>
@@ -195,7 +215,8 @@ class Main extends React.Component {
           <span className="image main">
 
             <a href="https://music-event.netlify.com" target='_blank' rel="noopener noreferrer">
-              <img src={musical} alt="MusicEvent" /></a>
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308685/Idris%20Portfolio%20Pictures/musicalEvent.webp"
+                alt="MusicEvent" /></a>
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308685/Idris%20Portfolio%20Pictures/musicalEvent.webp" */}
           </span>
           <p>
@@ -209,7 +230,7 @@ class Main extends React.Component {
           <span className="image main">
 
             <a href="https://web-clockjs.netlify.com" target='_blank' rel="noopener noreferrer">
-              <img src={web} alt="jsClock" /></a>
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1582408165/Idris%20Portfolio%20Pictures/jsclock.webp" alt="jsClock" /></a>
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1582408165/Idris%20Portfolio%20Pictures/jsclock.webp" */}
           </span>
           <p>
@@ -226,7 +247,7 @@ class Main extends React.Component {
           <span className="image main">
             <a href="https://www.boeinvest.com" target='_blank' rel="noopener noreferrer">
 
-              <img src={boe} alt="Boeinvest" /></a>
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/boeinvest.webp" alt="Boeinvest" /></a>
             {/* https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/boeinvest.webp */}
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com" /> */}
           </span>
@@ -538,6 +559,8 @@ class Main extends React.Component {
             <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/2RUKKMFTZALP"> Enterprise System Management and Security</a><br />
 
           </h4>
+          <a href="https://drive.google.com/file/d/1i5Rqzc_lh7fMNIxqJjQK1u7ktn168mJF/view">View CV</a>
+          <br />
           <br />
 
 
