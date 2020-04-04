@@ -113,6 +113,18 @@ class Main extends React.Component {
           </p>
 
 
+          
+          <span className="image main">
+            <a href="https://integrations.eu-gb.assistant.watson.cloud.ibm.com/web/public/08c8e484-3c52-4685-8cc5-be6974aaeb8f"
+              target='_blank'
+              rel="noopener noreferrer" >
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1586018935/Idris%20Portfolio%20Pictures/waka.webp" alt="wakalagos" /></a>
+              </span>
+          <p>
+            TITLE: WAKALAGOS CHAT APP <a href="https://integrations.eu-gb.assistant.watson.cloud.ibm.com/web/public/08c8e484-3c52-4685-8cc5-be6974aaeb8f" target='_blank'
+              rel="noopener noreferrer"
+              className="fa fa-eye"> View live </a>
+          </p>
 
 
 
