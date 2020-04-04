@@ -104,7 +104,7 @@ class Main extends React.Component {
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
-            TITLE: VOGUE STORE <a href="https://vogue.herokuapp.com/" target='_blank'
+            PROJECT NAME: VOGUE STORE <a href="https://vogue.herokuapp.com/" target='_blank'
               rel="noopener noreferrer"
               className="fa fa-eye"> View live || </a>
             <a href="https://github.com/Olanetsoft/Vogue-Store"
@@ -121,7 +121,7 @@ class Main extends React.Component {
               <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1586018935/Idris%20Portfolio%20Pictures/waka.webp" alt="wakalagos" /></a>
               </span>
           <p>
-            TITLE: WAKALAGOS CHAT APP <a href="https://integrations.eu-gb.assistant.watson.cloud.ibm.com/web/public/08c8e484-3c52-4685-8cc5-be6974aaeb8f" target='_blank'
+          PROJECT NAME: WAKALAGOS CHAT APP <a href="https://integrations.eu-gb.assistant.watson.cloud.ibm.com/web/public/08c8e484-3c52-4685-8cc5-be6974aaeb8f" target='_blank'
               rel="noopener noreferrer"
               className="fa fa-eye"> View live </a>
           </p>
@@ -140,9 +140,9 @@ class Main extends React.Component {
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
-            TITLE: RETHINK LAGOS <a href="https://www.rethinklagos.com" target='_blank'
+          PROJECT NAME: RETHINK LAGOS <a href="https://www.rethinklagos.com" target='_blank'
               rel="noopener noreferrer"
-              className="fa fa-eye"> View live || </a>
+              className="fa fa-eye"> View live </a>
 
           </p>
 
@@ -156,7 +156,7 @@ class Main extends React.Component {
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
-            TITLE: WE-FLEX <a href="https://we-flex.netlify.com/" target='_blank'
+          PROJECT NAME: WE-FLEX <a href="https://we-flex.netlify.com/" target='_blank'
               rel="noopener noreferrer"
               className="fa fa-eye"> View live || </a>
             <a href="https://github.com/Olanetsoft/we-flex"
@@ -173,7 +173,7 @@ class Main extends React.Component {
           </span>
           <p>
 
-            TITLE: DIGITAL CLOCK <a href="https://digital-web-clock.netlify.com"
+          PROJECT NAME: DIGITAL CLOCK <a href="https://digital-web-clock.netlify.com"
               target='_blank' rel="noopener noreferrer"
               className="fa fa-eye"> View live || </a>
             <a href="https://github.com/Olanetsoft/Ticking-Clock-With-React"
@@ -190,7 +190,7 @@ class Main extends React.Component {
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308683/Idris%20Portfolio%20Pictures/naija4life.webp" */}
           </span>
           <p>
-            TITLE: NAIJA4LIFE BLOG <a href="https://www.naija4life.com.ng" target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View live || </a>
+          PROJECT NAME: NAIJA4LIFE BLOG <a href="https://www.naija4life.com.ng" target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View live || </a>
           </p>
 
 
@@ -200,7 +200,8 @@ class Main extends React.Component {
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/isazoni.webp" */}
           </span>
           <p>
-            TITLE: ISAZ-ONI <a href="https://www.isazoni.com.ng" target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View live || </a>
+          PROJECT NAME: ISAZ-ONI <a href="https://www.isazoni.com.ng" target='_blank' 
+          rel="noopener noreferrer" className="fa fa-eye"> View live </a>
           </p>
 
           <span className="image main">
@@ -210,7 +211,8 @@ class Main extends React.Component {
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/kwarasell.webp" */}
           </span>
           <p>
-            TITLE: KWARASELL.COM <a href="https://www.kwarasell.com" target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View live || </a>
+          PROJECT NAME: KWARASELL.COM <a href="https://www.kwarasell.com" 
+          target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View live </a>
           </p>
 
           <span className="image main">
@@ -219,7 +221,7 @@ class Main extends React.Component {
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/ponkApp.webp" */}
           </span>
           <p>
-            TITLE: Ponk App <a href="https://ponk-app.netlify.com" target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/Ponk-App" target='_blank'
+          PROJECT NAME: Ponk App <a href="https://ponk-app.netlify.com" target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/Ponk-App" target='_blank'
               rel="noopener noreferrer"
               className="icon fa-github"> View on GitHub</a>
           </p>
@@ -232,7 +234,7 @@ class Main extends React.Component {
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308685/Idris%20Portfolio%20Pictures/musicalEvent.webp" */}
           </span>
           <p>
-            TITLE: Musical Event <a href="https://music-event.netlify.com" target='_blank'
+          PROJECT NAME: Musical Event <a href="https://music-event.netlify.com" target='_blank'
               rel="noopener noreferrer"
               className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/musical-event-project" target='_blank' rel="noopener noreferrer"
                 className="icon fa-github"> View on GitHub</a>
@@ -246,7 +248,7 @@ class Main extends React.Component {
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1582408165/Idris%20Portfolio%20Pictures/jsclock.webp" */}
           </span>
           <p>
-            TITLE: Web Clock <a href="https://web-clockjs.netlify.com" target='_blank'
+          PROJECT NAME: Web Clock <a href="https://web-clockjs.netlify.com" target='_blank'
               rel="noopener noreferrer"
               className="fa fa-eye"> View Live || </a> <a href="https://github.com/Olanetsoft/webclock" target='_blank' rel="noopener noreferrer"
                 className="icon fa-github"> View on GitHub</a>
@@ -264,8 +266,8 @@ class Main extends React.Component {
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com" /> */}
           </span>
           <p>
-            TITLE: BOE INVESTMENT NIGERIA  <a href="https://www.boeinvest.com"
-              target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View live || </a>
+          PROJECT NAME: BOE INVESTMENT NIGERIA  <a href="https://www.boeinvest.com"
+              target='_blank' rel="noopener noreferrer" className="fa fa-eye"> View live </a>
           </p>
 
           <ul className="icons">
