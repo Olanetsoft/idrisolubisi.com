@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react';
 import Typed from 'react-typed';
-import {Link} from 'gatsby';
+import { Link } from 'gatsby';
 
 const Header = props => (
   <header id="header" style={props.timeout ? { display: 'none' } : {}}>
@@ -12,25 +12,25 @@ const Header = props => (
       <div className="inner">
         <h1>
           <Typed
-                strings={["i'm Idris olubisi"]}
-                typeSpeed={30}
-              />
+            strings={["i'm Idris olubisi"]}
+            typeSpeed={30}
+          />
         </h1>
-         <h3 style={{color: "gold"}}>     
-              <Typed
-                strings={[
-                    'I write code for a living',
-                    'I write technical content',
-                    'I love to write clean code',
-                    'I love to contribute to open source',
-                    'I love sport'
-                    ]}
-                    typeSpeed={100}
-                    backSpeed={60}
-                    loop />
-          </h3>
+        <h3 style={{ color: "gold" }}>
+          <Typed
+            strings={[
+              'I write code for a living',
+              'I write technical content',
+              'I love to write clean code',
+              'I love to contribute to open source',
+              'I love sport'
+            ]}
+            typeSpeed={100}
+            backSpeed={60}
+            loop />
+        </h3>
         <p>
-        a Software Engineer based in Lagos, Nigeria. <br/>
+          a Software Engineer based in Lagos, Nigeria. <br />
         passionate about writing code that solves problem.
         </p>
       </div>
@@ -39,16 +39,16 @@ const Header = props => (
       <ul>
         <li>
           <Link to="/blog">
-            
-          <button
+
+            <button
             // onClick={() => {
             //   props.onOpenArticle('intro')
             // }}
-          >
-            My Blog <span className="fa fa-pencil" aria-hidden="true"></span>
-          </button>
+            >
+              My Blog <span className="fa fa-pencil" aria-hidden="true"></span>
+            </button>
           </Link>
-          
+
         </li>
         <li>
           <button
