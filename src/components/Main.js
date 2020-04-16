@@ -171,6 +171,29 @@ class Main extends React.Component {
 
 
           <span className="image main">
+            <a href="https://git-user.netlify.app/" target='_blank' rel="noopener noreferrer">
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1587046190/Idris%20Portfolio%20Pictures/thegitpic.webp"
+                alt="git" /></a>
+            {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/digiitalClock.webp" */}
+          </span>
+          <p>
+
+            PROJECT NAME: GITHUB PROFILE FINDER <br /><a href="https://git-user.netlify.app"
+              target='_blank' rel="noopener noreferrer"
+              className="fa fa-eye"> Visit Site </a>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <a href="https://github.com/Olanetsoft/git-card"
+              target='_blank' className="icon fa-github"
+              rel="noopener noreferrer"> View Source Code</a>
+
+          </p>
+
+
+
+
+
+
+          <span className="image main">
             <a href="https://digital-web-clock.netlify.com" target='_blank' rel="noopener noreferrer">
               <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/digiitalClock.webp"
                 alt="DigitalClock" /></a>
@@ -187,6 +210,19 @@ class Main extends React.Component {
               rel="noopener noreferrer"> View Source Code</a>
 
           </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
           <span className="image main">
