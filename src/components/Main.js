@@ -96,6 +96,26 @@ class Main extends React.Component {
 
 
           <span className="image main">
+            <a href="https://tutor-x.netlify.com//"
+              target='_blank'
+              rel="noopener noreferrer" >
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1587593572/Idris%20Portfolio%20Pictures/tutorX.webp" alt="tutorX" /></a>
+            {/* https://res.cloudinary.com/olanetsoft/image/upload/v1585696699/Idris%20Portfolio%20Pictures/vogue.webp */}
+            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
+          </span>
+          <p>
+            PROJECT NAME: TUTORX <br />
+            <a href="https://tutor-x.netlify.com/" target='_blank'
+              rel="noopener noreferrer"
+              className="fa fa-eye"> Visit Site  </a>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://github.com/Olanetsoft/Tutor-X"
+              target='_blank' className="icon fa-github"
+              rel="noopener noreferrer"> View Source Code</a>
+          </p>
+
+
+          <span className="image main">
             <a href="https://vogue.herokuapp.com/"
               target='_blank'
               rel="noopener noreferrer" >
@@ -135,7 +155,7 @@ class Main extends React.Component {
               target='_blank'
               rel="noopener noreferrer" >
               <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1587046190/Idris%20Portfolio%20Pictures/themathpic.webp"
-               alt="mathGame" /></a>
+                alt="mathGame" /></a>
             {/* https://res.cloudinary.com/olanetsoft/image/upload/v1585696699/Idris%20Portfolio%20Pictures/vogue.webp */}
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
@@ -327,8 +347,8 @@ class Main extends React.Component {
             <a href="https://www.boeinvest.com" target='_blank' rel="noopener noreferrer">
 
               <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/boeinvest.webp" alt="Boeinvest" /></a> */}
-            {/* https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/boeinvest.webp */}
-            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com" /> */}
+          {/* https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/boeinvest.webp */}
+          {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com" /> */}
           {/* </span> */}
           {/* <p>
             PROJECT NAME: BOE INVESTMENT NIGERIA <br />
@@ -606,7 +626,7 @@ class Main extends React.Component {
             <b>ACHIEVEMENTS</b>
           </p>
           <h4>
-          <a class="fa fa-trophy" aria-hidden="true" href="https://www.freecodecamp.org/certification/olanetsoft/javascript-algorithms-and-data-structures"> JavaScript Algorithms and Data Structures Certification </a>
+            <a class="fa fa-trophy" aria-hidden="true" href="https://www.freecodecamp.org/certification/olanetsoft/javascript-algorithms-and-data-structures"> JavaScript Algorithms and Data Structures Certification </a>
             <br /><br />
             <a class="fa fa-trophy" aria-hidden="true" href="https://openclassrooms.com/en/course-certificates/7471028571"> Build web apps with ReactJS</a>
             <br /><br />
