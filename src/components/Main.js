@@ -3,16 +3,16 @@ import React from 'react'
 //import pic01 from '../images/pic01.jpg'
 // import pic02 from '../images/pic02.jpg'
 // import pic03 from '../images/pic03.jpg'
-import boe from "../../Content/assets/boeinvest.webp"
-import dig from "../../Content/assets/digiitalClock.png"
-import isa from "../../Content/assets/isazoni.png"
-import kwarasell from "../../Content/assets/kwarasell.png"
-import musical from "../../Content/assets/musicalEvent.png"
-import naija4life from "../../Content/assets/naija4life.png"
-import ponk from "../../Content/assets/ponkApp.png"
-import rethinkLagos from "../../Content/assets/rethinkLagos.png"
-import vogue from "../../Content/assets/vogu.png"
-import web from "../../Content/assets/webclock.png"
+// import boe from "../../Content/assets/boeinvest.webp"
+// import dig from "../../Content/assets/digiitalClock.png"
+// import isa from "../../Content/assets/isazoni.png"
+// import kwarasell from "../../Content/assets/kwarasell.png"
+// import musical from "../../Content/assets/musicalEvent.png"
+// import naija4life from "../../Content/assets/naija4life.png"
+// import ponk from "../../Content/assets/ponkApp.png"
+// import rethinkLagos from "../../Content/assets/rethinkLagos.png"
+// import vogue from "../../Content/assets/vogu.png"
+// import web from "../../Content/assets/webclock.png"
 import gatsby from '../images/gatsby2.png'
 
 //http://jsfiddle.net/5e6zr2Lq/1/
