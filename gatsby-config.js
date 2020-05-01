@@ -7,7 +7,8 @@ module.exports = {
       twitter: '@olanetsoft',
       github: 'olanetsoft'
     },
-    siteUrl: `https://idrisolubisi.com/`
+    siteUrl: `https://idrisolubisi.com/`,
+    siteImage: `https://res.cloudinary.com/olanetsoft/image/upload/v1588335882/Idris%20Portfolio%20Pictures/thenew2.jpg`
   },
   plugins: [
     {
