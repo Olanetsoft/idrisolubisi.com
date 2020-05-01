@@ -2,6 +2,7 @@
 title: How To Create A React App - Stress Free
 subtitle: React magic keeps DOM in an awesome mood
 description: Setting up your Development Environment provides a route to get started
+image: ../content/assets/react.png
 date: 2020-01-15
 ---
 ***

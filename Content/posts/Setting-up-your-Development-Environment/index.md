@@ -2,6 +2,7 @@
 title: Setting up your Development Environment - Git and Node
 subtitle: setup and begin your career
 description: Setting up your Development Environment provides a route to get started
+image: ../content/assets/setupEnvironment.jpeg
 date: 2020-01-11
 ---
 ***
