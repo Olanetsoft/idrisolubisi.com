@@ -627,6 +627,8 @@ class Main extends React.Component {
           <h4>
             <a class="fa fa-trophy" aria-hidden="true" href="https://www.freecodecamp.org/certification/olanetsoft/javascript-algorithms-and-data-structures"> JavaScript Algorithms and Data Structures Certification </a>
             <br /><br />
+            <a class="fa fa-trophy" aria-hidden="true" href="https://www.freecodecamp.org/certification/olanetsoft/apis-and-microservices"> APIs and Microservices </a>
+            <br /><br />
             <a class="fa fa-trophy" aria-hidden="true" href="https://openclassrooms.com/en/course-certificates/7471028571"> Build web apps with ReactJS</a>
             <br /><br />
             <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/M96TN8JSDWXP"> Front-End Web UI Frameworks and Tools:Bootstrap 4</a><br />
