@@ -62,7 +62,7 @@ module.exports = {
                 field: "title",
                 font: "DejaVuSansCondensed",
                 color: "black", // black|white
-                size: 24, // 16|24|32|48|64
+                size: 48, // 16|24|32|48|64
                 style: "bold", // normal|bold|italic
                 x: null, // Will default to xMargin
                 y: null, // Will default to yMargin
