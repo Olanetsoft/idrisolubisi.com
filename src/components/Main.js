@@ -662,7 +662,7 @@ class Main extends React.Component {
             <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/2RUKKMFTZALP"> Enterprise System Management and Security</a><br />
 
           </h4>
-          <a href="https://drive.google.com/file/d/1i5Rqzc_lh7fMNIxqJjQK1u7ktn168mJF/view">View CV</a>
+          <a href="https://docs.google.com/document/d/1j9OHvUFFaEvFmRxkNEZn4jAd_4EJVh9GosEGuo7couI/edit?usp=sharing">View CV</a>
           <br />
           <br />
 
