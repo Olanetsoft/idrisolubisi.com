@@ -583,8 +583,8 @@ class Main extends React.Component {
           <br />
 
           <h3>CVIT</h3>
-          <h4>Role: Network Administrator intern<br />
-            Dates Employed: Mar 2019 – Apr 2019<br />
+          <h4>Role: Network Administrator intern<br /><br />
+            Dates Employed: Mar 2019 – Apr 2019<br /><br />
             Location: Ikeja lagos</h4>
           <br />
           <h3>FIIRO AUTOMATION</h3>
@@ -593,7 +593,7 @@ class Main extends React.Component {
             Location: Lagos, Nigeria</h4>
           <br />
           <h3>Code lagos</h3>
-          <h4>Role:Trainee<br />
+          <h4>Role:Trainee<br /><br />
             Dates Employed: Oct 2018 – Nov 2018<br /><br />
             Location: Lagos,Nigeria</h4>
           <br />
@@ -625,7 +625,7 @@ class Main extends React.Component {
             <b>ACHIEVEMENTS</b>
           </p>
           <h4>
-            <a class="fa fa-trophy" aria-hidden="true" href="https://www.freecodecamp.org/certification/olanetsoft/javascript-algorithms-and-data-structures"> JavaScript Algorithms and Data Structures Certification </a>
+            <a class="fa fa-trophy" aria-hidden="true" href="https://www.freecodecamp.org/certification/olanetsoft/javascript-algorithms-and-data-structures"> JavaScript Algorithms & Data Structures </a>
             <br /><br />
             <a class="fa fa-trophy" aria-hidden="true" href="https://www.freecodecamp.org/certification/olanetsoft/apis-and-microservices"> APIs and Microservices </a>
             <br /><br />
