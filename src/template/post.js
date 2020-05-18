@@ -3,8 +3,7 @@ import { graphql, Link } from 'gatsby';
 
 //Components
 import SEO from '../components/seo'
-import Footer from '../components/Footer'
-import Comments from '../components/comments/CommentList.js';
+import Footer from '../components/Footer';
 
 //Style
 import '../assets/css/posts.css'
@@ -17,7 +16,7 @@ class PostTemplate extends Component {
         const { title, description, date } = frontmatter;
         const post = this.props.data.markdownRemark;
         const { previous, next, slug } = this.props.pageContext;
-        
+
         return (
 
             <div>
@@ -29,13 +28,9 @@ class PostTemplate extends Component {
                     <h2 id="post-Title">{title}</h2>
                     <p className="date">{date}</p>
                     <div dangerouslySetInnerHTML={{ __html: post.html }} />
-                    <div className="comment-section">
-                <h4 className="comment-header">Comments</h4>
-                {/* Comment component comes here */}
-                <Comments />
-              </div>
-                    
-                   
+
+
+
                     <ul>
                         <li className="post-navigation">
                             {previous && (
@@ -48,7 +43,7 @@ class PostTemplate extends Component {
                             {next && (
                                 <Link to={next.fields.slug} rel="next">
                                     {next.frontmatter.title} →
-							</Link>
+                                </Link>
                             )}
                         </li>
                     </ul>
