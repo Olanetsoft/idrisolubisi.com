@@ -174,6 +174,27 @@ class Main extends React.Component {
 
 
           <span className="image main">
+            <a href="https://tourpadi.herokuapp.com/"
+              target='_blank'
+              rel="noopener noreferrer" >
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1591485569/Idris%20Portfolio%20Pictures/tourpadi.png"
+                alt="tourpadi" /></a>
+            {/* https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/rethinkLagos.webp */}
+            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
+          </span>
+          <p>
+          Project Title: Tour Padi <br />
+            <a href="https://tourpadi.herokuapp.com/" target='_blank'
+              rel="noopener noreferrer"
+              className="fa fa-eye"> Visit Site </a>
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://github.com/Olanetsoft/TourPadi"
+              target='_blank' className="icon fa-github"
+              rel="noopener noreferrer"> View Source Code</a>
+
+
+          </p>
+          <span className="image main">
             <a href="https://www.rethinklagos.com"
               target='_blank'
               rel="noopener noreferrer" >
@@ -189,6 +210,9 @@ class Main extends React.Component {
               className="fa fa-eye"> Visit Site </a>
 
           </p>
+
+
+
 
 
           <span className="image main">
