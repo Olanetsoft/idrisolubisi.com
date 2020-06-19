@@ -9,6 +9,7 @@
  const port = process.env.PORT || 4000;
  const { v4 } = require('uuid');
  const pusher = new Pusher({
+  
    appId: process.env.PUSHER_APP_ID,
    key: process.env.PUSHER_KEY,
    secret: process.env.PUSHER_SECRET,
