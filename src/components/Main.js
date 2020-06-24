@@ -96,6 +96,26 @@ class Main extends React.Component {
 
 
           <span className="image main">
+            <a href="https://hotzy-store.herokuapp.com/"
+              target='_blank'
+              rel="noopener noreferrer" >
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1592651780/hotzy.webp" alt="hotzy" /></a>
+            {/* https://res.cloudinary.com/olanetsoft/image/upload/v1585696699/Idris%20Portfolio%20Pictures/vogue.webp */}
+            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
+          </span>
+          <p>
+          Project Title: Hotzy Store <br />
+            <a href="https://hotzy-store.herokuapp.com/" target='_blank'
+              rel="noopener noreferrer"
+              className="fa fa-eye"> Visit Site  </a>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://github.com/Olanetsoft/hotzy-store"
+              target='_blank' className="icon fa-github"
+              rel="noopener noreferrer"> View Source Code</a>
+          </p>
+
+          
+          <span className="image main">
             <a href="https://tutor-x.netlify.com/"
               target='_blank'
               rel="noopener noreferrer" >
