@@ -157,13 +157,13 @@ class Main extends React.Component {
 
 
           <span className="image main">
-            <a href="https://integrations.eu-gb.assistant.watson.cloud.ibm.com/web/public/08c8e484-3c52-4685-8cc5-be6974aaeb8f"
+            <a href="https://web-chat.global.assistant.watson.cloud.ibm.com/preview.html?region=eu-gb&integrationID=08c8e484-3c52-4685-8cc5-be6974aaeb8f&serviceInstanceID=248098c0-92c6-4213-96bb-961a448bc72d"
               target='_blank'
               rel="noopener noreferrer" >
               <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1586018935/Idris%20Portfolio%20Pictures/waka.webp" alt="wakalagos" /></a>
           </span>
           <p>
-          Project Title: WakaLagos Chat App <br /><a href="https://integrations.eu-gb.assistant.watson.cloud.ibm.com/web/public/08c8e484-3c52-4685-8cc5-be6974aaeb8f" target='_blank'
+          Project Title: WakaLagos Chat App <br /><a href="https://web-chat.global.assistant.watson.cloud.ibm.com/preview.html?region=eu-gb&integrationID=08c8e484-3c52-4685-8cc5-be6974aaeb8f&serviceInstanceID=248098c0-92c6-4213-96bb-961a448bc72d" target='_blank'
               rel="noopener noreferrer"
               className="fa fa-eye"> Visit Site </a>
           </p>
