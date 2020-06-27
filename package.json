@@ -17,6 +17,7 @@
     "gatsby": "^2.18.18",
     "gatsby-image": "^2.2.39",
     "gatsby-plugin-analytics": "^0.2.0",
+    "gatsby-plugin-google-adsense": "^1.1.3",
     "gatsby-plugin-google-analytics": "^2.1.34",
     "gatsby-plugin-google-tagmanager": "^2.1.24",
     "gatsby-plugin-manifest": "^2.2.34",
