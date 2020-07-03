@@ -13,7 +13,7 @@ const Footer = (props) => (
           target='_blank'
           rel="noopener noreferrer"
           aria-label="Twitter"
-        > </a>
+        > &nbsp;</a>
       </li>
       <li>
         <a
@@ -22,14 +22,14 @@ const Footer = (props) => (
           target='_blank'
           rel="noopener noreferrer"
           aria-label="Github"
-        ></a>
+        >&nbsp;</a>
       </li>
       <li>
         <a href="https://medium.com/@olanetsoft"
           className="icon fa-medium"
           target='_blank'
           rel="noopener noreferrer"
-          aria-label="Medium">
+          aria-label="Medium">&nbsp;
         </a>
       </li>
       <li>
@@ -37,7 +37,7 @@ const Footer = (props) => (
           className="icon fa-facebook"
           target='_blank'
           rel="noopener noreferrer"
-          aria-label="Facebook">
+          aria-label="Facebook">&nbsp;
         </a>
       </li>
       <li>
@@ -45,7 +45,7 @@ const Footer = (props) => (
           className="icon fa-instagram"
           target='_blank'
           rel="noopener noreferrer"
-          aria-label="Instagram">
+          aria-label="Instagram">&nbsp;
         </a>
       </li>
       <li>
@@ -55,7 +55,7 @@ const Footer = (props) => (
           target='_blank'
           rel="noopener noreferrer"
           aria-label="LinkedIn"
-        >
+        >&nbsp;
         </a>
       </li>
 
