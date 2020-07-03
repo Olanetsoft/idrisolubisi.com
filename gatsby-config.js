@@ -11,13 +11,13 @@ module.exports = {
     siteImage: `https://res.cloudinary.com/olanetsoft/image/upload/v1588335882/Idris%20Portfolio%20Pictures/thenew2.jpg`
   },
   plugins: [
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/Content/assets`,
-        name: `assets`,
-      }
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     path: `${__dirname}/Content/assets`,
+    //     name: `assets`,
+    //   }
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
