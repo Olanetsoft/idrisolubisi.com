@@ -104,7 +104,7 @@ class Main extends React.Component {
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
-          Project Title: Hotzy Store <br />
+            Project Title: Hotzy Store <br />
             <a href="https://hotzy-store.herokuapp.com/" target='_blank'
               rel="noopener noreferrer"
               className="fa fa-eye"> Visit Site  </a>
@@ -114,7 +114,7 @@ class Main extends React.Component {
               rel="noopener noreferrer"> View Source Code</a>
           </p>
 
-          
+
           <span className="image main">
             <a href="https://tutor-x.netlify.com/"
               target='_blank'
@@ -124,7 +124,7 @@ class Main extends React.Component {
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
-          Project Title: tutorX <br />
+            Project Title: tutorX <br />
             <a href="https://tutor-x.netlify.com/" target='_blank'
               rel="noopener noreferrer"
               className="fa fa-eye"> Visit Site  </a>
@@ -163,7 +163,7 @@ class Main extends React.Component {
               <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1586018935/Idris%20Portfolio%20Pictures/waka.webp" alt="wakalagos" /></a>
           </span>
           <p>
-          Project Title: WakaLagos Chat App <br /><a href="https://web-chat.global.assistant.watson.cloud.ibm.com/preview.html?region=eu-gb&integrationID=08c8e484-3c52-4685-8cc5-be6974aaeb8f&serviceInstanceID=248098c0-92c6-4213-96bb-961a448bc72d" target='_blank'
+            Project Title: WakaLagos Chat App <br /><a href="https://web-chat.global.assistant.watson.cloud.ibm.com/preview.html?region=eu-gb&integrationID=08c8e484-3c52-4685-8cc5-be6974aaeb8f&serviceInstanceID=248098c0-92c6-4213-96bb-961a448bc72d" target='_blank'
               rel="noopener noreferrer"
               className="fa fa-eye"> Visit Site </a>
           </p>
@@ -180,7 +180,7 @@ class Main extends React.Component {
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
-          Project Title: Math Puzzle Game <br />
+            Project Title: Math Puzzle Game <br />
             <a href="https://math-puzzle.netlify.app/" target='_blank'
               rel="noopener noreferrer"
               className="fa fa-eye"> Visit Site  </a>
@@ -203,7 +203,7 @@ class Main extends React.Component {
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
-          Project Title: Tour Padi <br />
+            Project Title: Tour Padi <br />
             <a href="https://tourpadi.herokuapp.com/" target='_blank'
               rel="noopener noreferrer"
               className="fa fa-eye"> Visit Site </a>
@@ -224,7 +224,7 @@ class Main extends React.Component {
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
-          Project Title: Rethink Lagos <br />
+            Project Title: Rethink Lagos <br />
             <a href="https://www.rethinklagos.com" target='_blank'
               rel="noopener noreferrer"
               className="fa fa-eye"> Visit Site </a>
@@ -244,7 +244,7 @@ class Main extends React.Component {
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
           <p>
-          Project Title: We-Flex <br />
+            Project Title: We-Flex <br />
             <a href="https://we-flex.netlify.com/" target='_blank'
               rel="noopener noreferrer"
               className="fa fa-eye"> Visit Site </a>
@@ -263,7 +263,7 @@ class Main extends React.Component {
           </span>
           <p>
 
-          Project Title: GitHub Profile Finder<br /><a href="https://git-user.netlify.app"
+            Project Title: GitHub Profile Finder<br /><a href="https://git-user.netlify.app"
               target='_blank' rel="noopener noreferrer"
               className="fa fa-eye"> Visit Site </a>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -285,7 +285,7 @@ class Main extends React.Component {
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/digiitalClock.webp" */}
           </span>
           <p>
-          Project Title: Digital Clock <br /><a href="https://digital-web-clock.netlify.com"
+            Project Title: Digital Clock <br /><a href="https://digital-web-clock.netlify.com"
               target='_blank' rel="noopener noreferrer"
               className="fa fa-eye"> Visit Site </a>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -303,7 +303,7 @@ class Main extends React.Component {
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308683/Idris%20Portfolio%20Pictures/naija4life.webp" */}
           </span>
           <p>
-          Project Title: Naija4life Blog <br />
+            Project Title: Naija4life Blog <br />
             <a href="https://www.naija4life.com.ng" target='_blank'
               rel="noopener noreferrer" className="fa fa-eye"> Visit Site</a>
           </p>
@@ -315,7 +315,7 @@ class Main extends React.Component {
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/isazoni.webp" */}
           </span>
           <p>
-          Project Title: Isaz-Oni <br />
+            Project Title: Isaz-Oni <br />
             <a href="https://www.isazoni.com.ng" target='_blank'
               rel="noopener noreferrer" className="fa fa-eye"> Visit Site </a>
           </p>
@@ -327,7 +327,7 @@ class Main extends React.Component {
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/kwarasell.webp" */}
           </span>
           <p>
-          Project Title: Kwarasell <br />
+            Project Title: Kwarasell <br />
             <a href="https://www.kwarasell.com"
               target='_blank' rel="noopener noreferrer" className="fa fa-eye"> Visit Site </a>
           </p>
@@ -338,7 +338,7 @@ class Main extends React.Component {
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/ponkApp.webp" */}
           </span>
           <p>
-          Project Title: Ponk App <br />
+            Project Title: Ponk App <br />
             <a href="https://ponk-app.netlify.com"
               target='_blank' rel="noopener noreferrer" className="fa fa-eye">
               Visit Site </a>
@@ -356,7 +356,7 @@ class Main extends React.Component {
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308685/Idris%20Portfolio%20Pictures/musicalEvent.webp" */}
           </span>
           <p>
-          Project Title: Musical Event<br />
+            Project Title: Musical Event<br />
             <a href="https://music-event.netlify.com" target='_blank'
               rel="noopener noreferrer"
               className="fa fa-eye"> Visit Site </a>
@@ -373,7 +373,7 @@ class Main extends React.Component {
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1582408165/Idris%20Portfolio%20Pictures/jsclock.webp" */}
           </span>
           <p>
-          Project Title: Web Clock <br />
+            Project Title: Web Clock <br />
             <a href="https://web-clockjs.netlify.com" target='_blank'
               rel="noopener noreferrer"
               className="fa fa-eye"> Visit Site </a>
@@ -471,9 +471,9 @@ class Main extends React.Component {
 
           <h5>I strive for excellence and precision at all time, contributing the best of my ability and quota to improving organizational objective and achieving all goals set and target.</h5>
 
-          <h3>skill set</h3>
+          <h3>Skill set</h3>
 
-          <h5>front End: </h5>
+          <h5>Front End: </h5>
           <img src="https://img.icons8.com/color/60/000000/html-5.png" alt="html" />&nbsp;&nbsp;&nbsp;
           <img src="https://img.icons8.com/color/60/000000/css3.png" alt="css" />&nbsp;&nbsp;&nbsp;
           <img src="https://img.icons8.com/color/60/000000/javascript.png" alt="js" />&nbsp;&nbsp;&nbsp;
@@ -511,7 +511,7 @@ class Main extends React.Component {
           <h5>Programing Languages: </h5>
           <img src="https://img.icons8.com/color/60/000000/javascript.png" alt="js" />&nbsp;&nbsp;&nbsp;
           <img src="https://img.icons8.com/color/60/000000/c-sharp-logo.png" alt="csharp" />&nbsp;&nbsp;&nbsp;
-          <img src="https://img.icons8.com/dusk/60/000000/python.png" alt="python" />&nbsp;&nbsp;&nbsp;
+
 
           <br /><br />
 
@@ -706,7 +706,7 @@ class Main extends React.Component {
             <a class="fa fa-trophy" aria-hidden="true" href="https://www.coursera.org/account/accomplishments/verify/2RUKKMFTZALP"> Enterprise System Management and Security</a><br />
 
           </h4>
-          <a href="https://docs.google.com/document/d/1j9OHvUFFaEvFmRxkNEZn4jAd_4EJVh9GosEGuo7couI/edit?usp=sharing">View CV</a>
+          <a href="https://docs.google.com/document/d/1UaBM6in5aw2KiryRq3w9Rz9BFvmB24Dq_3oHJuEi2Wk/edit?usp=sharing">View Resume</a>
           <br />
           <br />
 
