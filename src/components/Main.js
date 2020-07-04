@@ -197,7 +197,7 @@ class Main extends React.Component {
             <a href="https://tourpadi.herokuapp.com/"
               target='_blank'
               rel="noopener noreferrer" >
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1591485569/Idris%20Portfolio%20Pictures/tourpadi.png"
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1593863784/Idris%20Portfolio%20Pictures/tourpadi.webp"
                 alt="tourpadi" /></a>
             {/* https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/rethinkLagos.webp */}
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
