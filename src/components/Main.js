@@ -94,6 +94,24 @@ class Main extends React.Component {
             className="icon fa-gitlab"> Click here to View More on GitLab</a></h5>
 
 
+          <span className="image main">
+            <a href="https://tutor-x.netlify.com/"
+              target='_blank'
+              rel="noopener noreferrer" >
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/tutorx.webp" alt="tutorX" /></a>
+            {/* https://res.cloudinary.com/olanetsoft/image/upload/v1585696699/Idris%20Portfolio%20Pictures/vogue.webp */}
+            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
+          </span>
+          <p>
+            Project Title: tutorX <br />
+            <a href="https://tutor-x.netlify.com/" target='_blank'
+              rel="noopener noreferrer"
+              className="fa fa-eye"> Visit Site  </a>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://github.com/Olanetsoft/Tutor-X"
+              target='_blank' className="icon fa-github"
+              rel="noopener noreferrer"> View Source Code</a>
+          </p>
 
           <span className="image main">
             <a href="https://hotzy-store.herokuapp.com/"
@@ -115,24 +133,20 @@ class Main extends React.Component {
           </p>
 
 
+
+
           <span className="image main">
-            <a href="https://tutor-x.netlify.com/"
+            <a href="https://web-chat.global.assistant.watson.cloud.ibm.com/preview.html?region=eu-gb&integrationID=08c8e484-3c52-4685-8cc5-be6974aaeb8f&serviceInstanceID=248098c0-92c6-4213-96bb-961a448bc72d"
               target='_blank'
               rel="noopener noreferrer" >
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1587593572/Idris%20Portfolio%20Pictures/tutorX.webp" alt="tutorX" /></a>
-            {/* https://res.cloudinary.com/olanetsoft/image/upload/v1585696699/Idris%20Portfolio%20Pictures/vogue.webp */}
-            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/chatapp.webp" alt="wakalagos" /></a>
           </span>
           <p>
-            Project Title: tutorX <br />
-            <a href="https://tutor-x.netlify.com/" target='_blank'
+            Project Title: WakaLagos Chat App <br /><a href="https://web-chat.global.assistant.watson.cloud.ibm.com/preview.html?region=eu-gb&integrationID=08c8e484-3c52-4685-8cc5-be6974aaeb8f&serviceInstanceID=248098c0-92c6-4213-96bb-961a448bc72d" target='_blank'
               rel="noopener noreferrer"
-              className="fa fa-eye"> Visit Site  </a>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="https://github.com/Olanetsoft/Tutor-X"
-              target='_blank' className="icon fa-github"
-              rel="noopener noreferrer"> View Source Code</a>
+              className="fa fa-eye"> Visit Site </a>
           </p>
+
 
 
           <span className="image main">
@@ -156,25 +170,13 @@ class Main extends React.Component {
 
 
 
-          <span className="image main">
-            <a href="https://web-chat.global.assistant.watson.cloud.ibm.com/preview.html?region=eu-gb&integrationID=08c8e484-3c52-4685-8cc5-be6974aaeb8f&serviceInstanceID=248098c0-92c6-4213-96bb-961a448bc72d"
-              target='_blank'
-              rel="noopener noreferrer" >
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1586018935/Idris%20Portfolio%20Pictures/waka.webp" alt="wakalagos" /></a>
-          </span>
-          <p>
-            Project Title: WakaLagos Chat App <br /><a href="https://web-chat.global.assistant.watson.cloud.ibm.com/preview.html?region=eu-gb&integrationID=08c8e484-3c52-4685-8cc5-be6974aaeb8f&serviceInstanceID=248098c0-92c6-4213-96bb-961a448bc72d" target='_blank'
-              rel="noopener noreferrer"
-              className="fa fa-eye"> Visit Site </a>
-          </p>
-
 
 
           <span className="image main">
             <a href="https://math-puzzle.netlify.app/"
               target='_blank'
               rel="noopener noreferrer" >
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1587046190/Idris%20Portfolio%20Pictures/themathpic.webp"
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/math.webp"
                 alt="mathGame" /></a>
             {/* https://res.cloudinary.com/olanetsoft/image/upload/v1585696699/Idris%20Portfolio%20Pictures/vogue.webp */}
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
@@ -218,7 +220,7 @@ class Main extends React.Component {
             <a href="https://www.rethinklagos.com"
               target='_blank'
               rel="noopener noreferrer" >
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/rethinkLagos.webp"
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426818/projects%20images/rethink.webp"
                 alt="Rethink" /></a>
             {/* https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/rethinkLagos.webp */}
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
@@ -239,7 +241,7 @@ class Main extends React.Component {
             <a href="https://we-flex.netlify.com/"
               target='_blank'
               rel="noopener noreferrer" >
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1585911355/Idris%20Portfolio%20Pictures/we-flex.webp" alt="vogue" /></a>
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/wechat.webp" alt="vogue" /></a>
             {/* https://res.cloudinary.com/olanetsoft/image/upload/v1585696699/Idris%20Portfolio%20Pictures/vogue.webp */}
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
@@ -256,8 +258,20 @@ class Main extends React.Component {
 
 
           <span className="image main">
+            <a href="https://www.naija4life.com.ng" target='_blank' rel="noopener noreferrer">
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/naija4life.webp"
+                alt="naija4life" /></a>
+            {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308683/Idris%20Portfolio%20Pictures/naija4life.webp" */}
+          </span>
+          <p>
+            Project Title: Naija4life Blog <br />
+            <a href="https://www.naija4life.com.ng" target='_blank'
+              rel="noopener noreferrer" className="fa fa-eye"> Visit Site</a>
+          </p>
+
+          <span className="image main">
             <a href="https://git-user.netlify.app/" target='_blank' rel="noopener noreferrer">
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1587046190/Idris%20Portfolio%20Pictures/thegitpic.webp"
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/git-user.webp"
                 alt="git" /></a>
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/digiitalClock.webp" */}
           </span>
@@ -278,40 +292,11 @@ class Main extends React.Component {
 
 
 
-          <span className="image main">
-            <a href="https://digital-web-clock.netlify.com" target='_blank' rel="noopener noreferrer">
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/digiitalClock.webp"
-                alt="DigitalClock" /></a>
-            {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/digiitalClock.webp" */}
-          </span>
-          <p>
-            Project Title: Digital Clock <br /><a href="https://digital-web-clock.netlify.com"
-              target='_blank' rel="noopener noreferrer"
-              className="fa fa-eye"> Visit Site </a>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-             <a href="https://github.com/Olanetsoft/Ticking-Clock-With-React"
-              target='_blank' className="icon fa-github"
-              rel="noopener noreferrer"> View Source Code</a>
-
-          </p>
-
-
-          <span className="image main">
-            <a href="https://www.naija4life.com.ng" target='_blank' rel="noopener noreferrer">
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308683/Idris%20Portfolio%20Pictures/naija4life.webp"
-                alt="naija4life" /></a>
-            {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308683/Idris%20Portfolio%20Pictures/naija4life.webp" */}
-          </span>
-          <p>
-            Project Title: Naija4life Blog <br />
-            <a href="https://www.naija4life.com.ng" target='_blank'
-              rel="noopener noreferrer" className="fa fa-eye"> Visit Site</a>
-          </p>
 
 
           <span className="image main">
             <a href="https://www.isazoni.com" target='_blank' rel="noopener noreferrer">
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/isazoni.webp" alt="isazoni" /></a>
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/isazzoni.webp" alt="isazoni" /></a>
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/isazoni.webp" */}
           </span>
           <p>
@@ -322,7 +307,7 @@ class Main extends React.Component {
 
           <span className="image main">
             <a href="https://www.kwarasell.com" target='_blank' rel="noopener noreferrer">
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/kwarasell.webp" alt="Kwarasell" /></a>
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/kwarasell.webp" alt="Kwarasell" /></a>
 
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/kwarasell.webp" */}
           </span>
@@ -334,7 +319,7 @@ class Main extends React.Component {
 
           <span className="image main">
             <a href="https://ponk-app.netlify.com" target='_blank' rel="noopener noreferrer">
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/ponkApp.webp" alt="ponkApp" /></a>
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426818/projects%20images/ponk.webp" alt="ponkApp" /></a>
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/ponkApp.webp" */}
           </span>
           <p>
@@ -351,7 +336,7 @@ class Main extends React.Component {
           <span className="image main">
 
             <a href="https://music-event.netlify.com" target='_blank' rel="noopener noreferrer">
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308685/Idris%20Portfolio%20Pictures/musicalEvent.webp"
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/music.webp"
                 alt="MusicEvent" /></a>
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308685/Idris%20Portfolio%20Pictures/musicalEvent.webp" */}
           </span>
@@ -369,7 +354,7 @@ class Main extends React.Component {
           <span className="image main">
 
             <a href="https://web-clockjs.netlify.com" target='_blank' rel="noopener noreferrer">
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1582408165/Idris%20Portfolio%20Pictures/jsclock.webp" alt="jsClock" /></a>
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/clock.webp" alt="jsClock" /></a>
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1582408165/Idris%20Portfolio%20Pictures/jsclock.webp" */}
           </span>
           <p>
@@ -384,6 +369,25 @@ class Main extends React.Component {
 
 
 
+
+
+
+          <span className="image main">
+            <a href="https://digital-web-clock.netlify.com" target='_blank' rel="noopener noreferrer">
+              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/digital.webp"
+                alt="DigitalClock" /></a>
+            {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/digiitalClock.webp" */}
+          </span>
+          <p>
+            Project Title: Digital Clock <br /><a href="https://digital-web-clock.netlify.com"
+              target='_blank' rel="noopener noreferrer"
+              className="fa fa-eye"> Visit Site </a>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <a href="https://github.com/Olanetsoft/Ticking-Clock-With-React"
+              target='_blank' className="icon fa-github"
+              rel="noopener noreferrer"> View Source Code</a>
+
+          </p>
 
 
           {/* <span className="image main">
@@ -474,43 +478,43 @@ class Main extends React.Component {
           <h3>Skill set</h3>
 
           <h5>Front End: </h5>
-          <img src="https://img.icons8.com/color/60/000000/html-5.png" alt="html" />&nbsp;&nbsp;&nbsp;
-          <img src="https://img.icons8.com/color/60/000000/css3.png" alt="css" />&nbsp;&nbsp;&nbsp;
-          <img src="https://img.icons8.com/color/60/000000/javascript.png" alt="js" />&nbsp;&nbsp;&nbsp;
-          <img src="https://img.icons8.com/color/60/000000/bootstrap.png" alt="bootstrap" />&nbsp;&nbsp;&nbsp;
-          <img src="https://img.icons8.com/officel/60/000000/react.png" alt="react" />&nbsp;&nbsp;&nbsp;
-          <img src="https://img.icons8.com/ios-filled/60/000000/jquery.png" alt="jquery" />
+          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-html-5-48.png" alt="html" />&nbsp;&nbsp;&nbsp;
+          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429982/projects%20images/icons8-css3-48.png" alt="css" />&nbsp;&nbsp;&nbsp;
+          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-javascript-48.png" alt="js" />&nbsp;&nbsp;&nbsp;
+          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429982/projects%20images/icons8-bootstrap-48.png" alt="bootstrap" />&nbsp;&nbsp;&nbsp;
+          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-react-48.png" alt="react" />&nbsp;&nbsp;&nbsp;
+          {/* <img src="https://img.icons8.com/ios-filled/48/000000/jquery.png" alt="jquery" /> */}
           <br /><br />
 
 
           <h5>Back End: </h5>
-          <img src="https://img.icons8.com/color/60/000000/nodejs.png" alt="node" />&nbsp;&nbsp;&nbsp;
-          <img src="https://img.icons8.com/nolan/60/asp.png" alt="net" />&nbsp;&nbsp;&nbsp;
-          <img src="https://img.icons8.com/dusk/60/000000/sql.png" alt="sql" />&nbsp;&nbsp;&nbsp;
-          <img src="https://img.icons8.com/color/60/000000/graphql.png" alt="graphql" />
+          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-nodejs-48.png" alt="node" />&nbsp;&nbsp;&nbsp;
+          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429982/projects%20images/icons8-asp-48.png" alt="net" />&nbsp;&nbsp;&nbsp;
+          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-sql-48.png" alt="sql" />&nbsp;&nbsp;&nbsp;
+          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-graphql-48.png" alt="graphql" />
 
           <br /><br />
 
           <h5>Content Management System: </h5>
-          <img src="https://img.icons8.com/color/60/000000/ms-share-point.png" alt="share" />&nbsp;&nbsp;&nbsp;
-          <img src="https://img.icons8.com/color/60/000000/wordpress.png" alt="wordpress" />&nbsp;&nbsp;&nbsp;
-          <img src={gatsby} alt="gatsby" />
+          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-microsoft-sharepoint-48.png" alt="share" />&nbsp;&nbsp;&nbsp;
+          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-wordpress-48.png" alt="wordpress" />&nbsp;&nbsp;&nbsp;
+          {/* <img src={gatsby} alt="gatsby" /> */}
 
           <br /><br />
 
           <h5>Development Tools: </h5>
-          <img src="https://img.icons8.com/color/60/000000/git.png" alt="git" />&nbsp;&nbsp;&nbsp;
-          <img src="https://img.icons8.com/ios-glyphs/60/000000/github.png" alt="github" />&nbsp;&nbsp;&nbsp;
-          <img src="https://img.icons8.com/color/60/000000/gitlab.png" alt="gitlab" />&nbsp;&nbsp;&nbsp;
-          <img src="https://img.icons8.com/color/60/000000/trello.png" alt="trello" />&nbsp;&nbsp;&nbsp;
-          <img src="https://img.icons8.com/color/60/000000/bitbucket.png" alt="bit" />&nbsp;&nbsp;&nbsp;
-          <img src="https://img.icons8.com/color/60/000000/microsoft-teams.png" alt="teams" />
+          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429982/projects%20images/icons8-git-48.png" alt="git" />&nbsp;&nbsp;&nbsp;
+          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429982/projects%20images/icons8-github-48.png" alt="github" />&nbsp;&nbsp;&nbsp;
+          {/* <img src="https://img.icons8.com/color/48/000000/gitlab.png" alt="gitlab" />&nbsp;&nbsp;&nbsp; */}
+          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-trello-48.png" alt="trello" />&nbsp;&nbsp;&nbsp;
+          {/* <img src="https://img.icons8.com/color/48/000000/bitbucket.png" alt="bit" />&nbsp;&nbsp;&nbsp; */}
+          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-microsoft-teams-48.png" alt="teams" />
 
           <br /><br />
 
           <h5>Programing Languages: </h5>
-          <img src="https://img.icons8.com/color/60/000000/javascript.png" alt="js" />&nbsp;&nbsp;&nbsp;
-          <img src="https://img.icons8.com/color/60/000000/c-sharp-logo.png" alt="csharp" />&nbsp;&nbsp;&nbsp;
+          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-javascript-48.png" alt="js" />&nbsp;&nbsp;&nbsp;
+          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429982/projects%20images/icons8-c-sharp-logo-48.png" alt="csharp" />&nbsp;&nbsp;&nbsp;
 
 
           <br /><br />
