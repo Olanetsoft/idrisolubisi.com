@@ -237,13 +237,13 @@ class Main extends React.Component {
 
 
 
-          <span className="image main">
+          {/* <span className="image main">
             <a href="https://we-flex.netlify.com/"
               target='_blank'
               rel="noopener noreferrer" >
               <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/wechat.webp" alt="vogue" /></a>
             {/* https://res.cloudinary.com/olanetsoft/image/upload/v1585696699/Idris%20Portfolio%20Pictures/vogue.webp */}
-            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
+            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> 
           </span>
           <p>
             Project Title: We-Flex <br />
@@ -254,20 +254,23 @@ class Main extends React.Component {
             <a href="https://github.com/Olanetsoft/we-flex"
               target='_blank' className="icon fa-github"
               rel="noopener noreferrer"> View Source Code</a>
-          </p>
+          </p> */}
 
 
-          <span className="image main">
+
+          {/* <span className="image main">
             <a href="https://www.naija4life.com.ng" target='_blank' rel="noopener noreferrer">
               <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/naija4life.webp"
                 alt="naija4life" /></a>
-            {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308683/Idris%20Portfolio%20Pictures/naija4life.webp" */}
+            {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308683/Idris%20Portfolio%20Pictures/naija4life.webp" 
           </span>
           <p>
             Project Title: Naija4life Blog <br />
             <a href="https://www.naija4life.com.ng" target='_blank'
               rel="noopener noreferrer" className="fa fa-eye"> Visit Site</a>
-          </p>
+          </p> */}
+
+
 
           <span className="image main">
             <a href="https://git-user.netlify.app/" target='_blank' rel="noopener noreferrer">
@@ -294,28 +297,32 @@ class Main extends React.Component {
 
 
 
-          <span className="image main">
+          {/* <span className="image main">
             <a href="https://www.isazoni.com" target='_blank' rel="noopener noreferrer">
               <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/isazzoni.webp" alt="isazoni" /></a>
-            {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/isazoni.webp" */}
+            {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/isazoni.webp" 
           </span>
           <p>
             Project Title: Isaz-Oni <br />
             <a href="https://www.isazoni.com.ng" target='_blank'
               rel="noopener noreferrer" className="fa fa-eye"> Visit Site </a>
-          </p>
+          </p> */}
 
-          <span className="image main">
+
+
+
+
+          {/* <span className="image main">
             <a href="https://www.kwarasell.com" target='_blank' rel="noopener noreferrer">
               <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/kwarasell.webp" alt="Kwarasell" /></a>
 
-            {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/kwarasell.webp" */}
+            {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/kwarasell.webp"
           </span>
           <p>
             Project Title: Kwarasell <br />
             <a href="https://www.kwarasell.com"
               target='_blank' rel="noopener noreferrer" className="fa fa-eye"> Visit Site </a>
-          </p>
+          </p> */}
 
           <span className="image main">
             <a href="https://ponk-app.netlify.com" target='_blank' rel="noopener noreferrer">
@@ -372,11 +379,11 @@ class Main extends React.Component {
 
 
 
-          <span className="image main">
+          {/* <span className="image main">
             <a href="https://digital-web-clock.netlify.com" target='_blank' rel="noopener noreferrer">
               <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/digital.webp"
                 alt="DigitalClock" /></a>
-            {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/digiitalClock.webp" */}
+            {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/digiitalClock.webp" 
           </span>
           <p>
             Project Title: Digital Clock <br /><a href="https://digital-web-clock.netlify.com"
@@ -387,7 +394,7 @@ class Main extends React.Component {
               target='_blank' className="icon fa-github"
               rel="noopener noreferrer"> View Source Code</a>
 
-          </p>
+          </p> */}
 
 
           {/* <span className="image main">
@@ -544,7 +551,7 @@ class Main extends React.Component {
             Degree Name: First school leaving certificate<br />
             Dates attended or expected graduation 2000 – 2005<br />
           </h5>
-
+          <br /><br />
 
           <ul className="icons">
             <li>
