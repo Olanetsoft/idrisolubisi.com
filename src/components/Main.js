@@ -1,20 +1,20 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-//import pic01 from '../images/pic01.jpg'
-// import pic02 from '../images/pic02.jpg'
-// import pic03 from '../images/pic03.jpg'
-// import boe from "../../Content/assets/boeinvest.webp"
-// import dig from "../../Content/assets/digiitalClock.png"
-// import isa from "../../Content/assets/isazoni.png"
-// import kwarasell from "../../Content/assets/kwarasell.png"
-// import musical from "../../Content/assets/musicalEvent.png"
-// import naija4life from "../../Content/assets/naija4life.png"
-// import ponk from "../../Content/assets/ponkApp.png"
-// import rethinkLagos from "../../Content/assets/rethinkLagos.png"
-// import vogue from "../../Content/assets/vogu.png"
-// import web from "../../Content/assets/webclock.png"
-import test from "../../Content/assets/git.png"
-import gatsby from '../images/gatsby2.png'
+
+
+import chatapp from "../../Content/assets/chatapp.webp"
+import musical from "../../Content/assets/music.webp"
+import clock from "../../Content/assets/clock.webp"
+import git from "../../Content/assets/git-user.webp"
+import math from "../../Content/assets/math.webp"
+import ponk from "../../Content/assets/ponk.webp"
+import rethinkLagos from "../../Content/assets/rethink.webp"
+import tutorx from "../../Content/assets/tutorx.webp"
+// import wechat from "../../Content/assets/wechat.webp"
+import hotzy from "../../Content/assets/hotzy.webp"
+import tourpadi from "../../Content/assets/tourpadi.webp"
+// import test from "../../Content/assets/git.png"
+// import gatsby from '../images/gatsby2.png'
 
 //http://jsfiddle.net/5e6zr2Lq/1/
 
@@ -100,7 +100,7 @@ class Main extends React.Component {
               target='_blank'
               rel="noopener noreferrer" >
               {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/tutorx.webp" alt="tutorX" /></a> */}
-              <img src={test} alt="tutorX" /></a>
+              <img src={tutorx} alt="tutorX" /></a>
             {/* https://res.cloudinary.com/olanetsoft/image/upload/v1585696699/Idris%20Portfolio%20Pictures/vogue.webp */}
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
@@ -119,9 +119,8 @@ class Main extends React.Component {
             <a href="https://hotzy-store.herokuapp.com/"
               target='_blank'
               rel="noopener noreferrer" >
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1592651780/hotzy.webp" alt="hotzy" /></a>
-            {/* https://res.cloudinary.com/olanetsoft/image/upload/v1585696699/Idris%20Portfolio%20Pictures/vogue.webp */}
-            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
+              <img src={hotzy} alt="hotzy" /></a>
+              {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1592651780/hotzy.webp" alt="hotzy" /></a> */}
           </span>
           <p>
             Project Title: Hotzy Store <br />
@@ -141,7 +140,8 @@ class Main extends React.Component {
             <a href="https://web-chat.global.assistant.watson.cloud.ibm.com/preview.html?region=eu-gb&integrationID=08c8e484-3c52-4685-8cc5-be6974aaeb8f&serviceInstanceID=248098c0-92c6-4213-96bb-961a448bc72d"
               target='_blank'
               rel="noopener noreferrer" >
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/chatapp.webp" alt="wakalagos" /></a>
+              <img src={chatapp} alt="wakalagos" /></a>
+              {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/chatapp.webp" alt="wakalagos" /></a> */}
           </span>
           <p>
             Project Title: WakaLagos Chat App <br /><a href="https://web-chat.global.assistant.watson.cloud.ibm.com/preview.html?region=eu-gb&integrationID=08c8e484-3c52-4685-8cc5-be6974aaeb8f&serviceInstanceID=248098c0-92c6-4213-96bb-961a448bc72d" target='_blank'
@@ -178,10 +178,10 @@ class Main extends React.Component {
             <a href="https://math-puzzle.netlify.app/"
               target='_blank'
               rel="noopener noreferrer" >
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/math.webp"
+              <img src={math}
                 alt="mathGame" /></a>
-            {/* https://res.cloudinary.com/olanetsoft/image/upload/v1585696699/Idris%20Portfolio%20Pictures/vogue.webp */}
-            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
+              {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/math.webp"
+                alt="mathGame" /></a> */}
           </span>
           <p>
             Project Title: Math Puzzle Game <br />
@@ -201,8 +201,10 @@ class Main extends React.Component {
             <a href="https://tourpadi.herokuapp.com/"
               target='_blank'
               rel="noopener noreferrer" >
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1593863784/Idris%20Portfolio%20Pictures/tourpadi.webp"
+              <img src={tourpadi}
                 alt="tourpadi" /></a>
+              {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1593863784/Idris%20Portfolio%20Pictures/tourpadi.webp"
+                alt="tourpadi" /></a> */}
             {/* https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/rethinkLagos.webp */}
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
@@ -222,10 +224,11 @@ class Main extends React.Component {
             <a href="https://www.rethinklagos.com"
               target='_blank'
               rel="noopener noreferrer" >
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426818/projects%20images/rethink.webp"
+              <img src={rethinkLagos}
                 alt="Rethink" /></a>
-            {/* https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/rethinkLagos.webp */}
-            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
+              {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426818/projects%20images/rethink.webp"
+                alt="Rethink" /></a> */}
+           
           </span>
           <p>
             Project Title: Rethink Lagos <br />
@@ -276,8 +279,10 @@ class Main extends React.Component {
 
           <span className="image main">
             <a href="https://git-user.netlify.app/" target='_blank' rel="noopener noreferrer">
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/git-user.webp"
+              <img src={git}
                 alt="git" /></a>
+              {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/git-user.webp"
+                alt="git" /></a> */}
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/digiitalClock.webp" */}
           </span>
           <p>
@@ -328,7 +333,8 @@ class Main extends React.Component {
 
           <span className="image main">
             <a href="https://ponk-app.netlify.com" target='_blank' rel="noopener noreferrer">
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426818/projects%20images/ponk.webp" alt="ponkApp" /></a>
+              <img src={ponk} alt="ponkApp" /></a>
+              {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426818/projects%20images/ponk.webp" alt="ponkApp" /></a> */}
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/ponkApp.webp" */}
           </span>
           <p>
@@ -345,10 +351,11 @@ class Main extends React.Component {
           <span className="image main">
 
             <a href="https://music-event.netlify.com" target='_blank' rel="noopener noreferrer">
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/music.webp"
+              <img src={musical}
                 alt="MusicEvent" /></a>
-            {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308685/Idris%20Portfolio%20Pictures/musicalEvent.webp" */}
-          </span>
+              {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/music.webp"
+                alt="MusicEvent" /></a> */}
+               </span>
           <p>
             Project Title: Musical Event<br />
             <a href="https://music-event.netlify.com" target='_blank'
@@ -363,7 +370,8 @@ class Main extends React.Component {
           <span className="image main">
 
             <a href="https://web-clockjs.netlify.com" target='_blank' rel="noopener noreferrer">
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/clock.webp" alt="jsClock" /></a>
+              <img src={clock} alt="jsClock" /></a>
+              {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/clock.webp" alt="jsClock" /></a> */}
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1582408165/Idris%20Portfolio%20Pictures/jsclock.webp" */}
           </span>
           <p>
