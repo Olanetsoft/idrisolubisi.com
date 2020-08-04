@@ -10,9 +10,10 @@ import math from "../../Content/assets/math.webp"
 import ponk from "../../Content/assets/ponk.webp"
 import rethinkLagos from "../../Content/assets/rethink.webp"
 import tutorx from "../../Content/assets/tutorx.webp"
-// import wechat from "../../Content/assets/wechat.webp"
+import vogue from "../../Content/assets/vogue.webp"
 import hotzy from "../../Content/assets/hotzy.webp"
 import tourpadi from "../../Content/assets/tourpadi.webp"
+import aboutPic from "../../Content/assets/aboutPic.webp"
 // import test from "../../Content/assets/git.png"
 // import gatsby from '../images/gatsby2.png'
 
@@ -155,9 +156,9 @@ class Main extends React.Component {
             <a href="https://vogue.herokuapp.com/"
               target='_blank'
               rel="noopener noreferrer" >
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1585696699/Idris%20Portfolio%20Pictures/vogue.webp" alt="vogue" /></a>
-            {/* https://res.cloudinary.com/olanetsoft/image/upload/v1585696699/Idris%20Portfolio%20Pictures/vogue.webp */}
-            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
+              <img src={vogue} /></a>
+              {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1585696699/Idris%20Portfolio%20Pictures/vogue.webp" alt="vogue" /></a> */}
+           
           </span>
           <p>
             Project Title: Vogue Store <br />
@@ -487,7 +488,8 @@ class Main extends React.Component {
         >
           <h2 className="major">About</h2>
           <span className="image main">
-            <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/aboutPic.webp" alt="My_photo" />
+            <img src={aboutPic} alt="My_photo" />
+            {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/aboutPic.webp" alt="My_photo" /> */}
           </span>
 
           <h5>I strive for excellence and precision at all time, contributing the best of my ability and quota to improving organizational objective and achieving all goals set and target.</h5>
