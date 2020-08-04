@@ -13,6 +13,7 @@ import React from 'react'
 // import rethinkLagos from "../../Content/assets/rethinkLagos.png"
 // import vogue from "../../Content/assets/vogu.png"
 // import web from "../../Content/assets/webclock.png"
+import test from "../../Content/assets/git.png"
 import gatsby from '../images/gatsby2.png'
 
 //http://jsfiddle.net/5e6zr2Lq/1/
@@ -98,7 +99,8 @@ class Main extends React.Component {
             <a href="https://tutor-x.netlify.com/"
               target='_blank'
               rel="noopener noreferrer" >
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/tutorx.webp" alt="tutorX" /></a>
+              {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/tutorx.webp" alt="tutorX" /></a> */}
+              <img src={test} alt="tutorX" /></a>
             {/* https://res.cloudinary.com/olanetsoft/image/upload/v1585696699/Idris%20Portfolio%20Pictures/vogue.webp */}
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
