@@ -2,18 +2,18 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 
-import chatapp from "../../Content/assets/chatapp.webp"
-import musical from "../../Content/assets/music.webp"
-import clock from "../../Content/assets/clock.webp"
-import git from "../../Content/assets/git-user.webp"
-import math from "../../Content/assets/math.webp"
-import ponk from "../../Content/assets/ponk.webp"
-import rethinkLagos from "../../Content/assets/rethink.webp"
-import tutorx from "../../Content/assets/tutorx.webp"
-import vogue from "../../Content/assets/vogue.webp"
-import hotzy from "../../Content/assets/hotzy.webp"
-import tourpadi from "../../Content/assets/tourpadi.webp"
-import aboutPic from "../../Content/assets/aboutPic.webp"
+import chatapp from "../../Content/assets/chatapp.png"
+import musical from "../../Content/assets/music.png"
+import clock from "../../Content/assets/clock.png"
+import git from "../../Content/assets/git-user.png"
+import math from "../../Content/assets/math.png"
+import ponk from "../../Content/assets/ponk.png"
+import rethinkLagos from "../../Content/assets/rethink.png"
+import tutorx from "../../Content/assets/tutorx.png"
+import vogue from "../../Content/assets/vogue.png"
+import hotzy from "../../Content/assets/hotzy.png"
+import tourpadi from "../../Content/assets/tourpadi.png"
+import aboutPic from "../../Content/assets/aboutPic.jpg"
 // import test from "../../Content/assets/git.png"
 // import gatsby from '../images/gatsby2.png'
 
@@ -494,7 +494,7 @@ class Main extends React.Component {
 
           <h5>I strive for excellence and precision at all time, contributing the best of my ability and quota to improving organizational objective and achieving all goals set and target.</h5>
 
-          <h3>Skill set</h3>
+          <h3>Skill Set</h3>
 
           <h5>Front End: </h5>
           <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-html-5-48.png" alt="html" />&nbsp;&nbsp;&nbsp;
@@ -537,7 +537,7 @@ class Main extends React.Component {
 
 
           <br /><br />
-
+{/* 
           <h3>Tertiary Institution Details :</h3>
           <h5>Abubakar Tafawa Balewa University<br />
             Degree Name: Bachelor's degree<br />
@@ -563,7 +563,7 @@ class Main extends React.Component {
             Degree Name: First school leaving certificate<br />
             Dates attended or expected graduation 2000 – 2005<br />
           </h5>
-          <br /><br />
+          <br /><br /> */}
 
           <ul className="icons">
             <li>

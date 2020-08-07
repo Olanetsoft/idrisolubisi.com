@@ -36,7 +36,8 @@
 			'background-color #{_duration(transition)} ease-in-out',
 			'border-bottom-color #{_duration(transition)} ease-in-out'
 		));
-		border-bottom: dotted 1px _palette(fg-light);
+		border-bottom: dotted 2px _palette(fg-light);
+		border-style: solid;
 		text-decoration: none;
 		color: inherit;
 

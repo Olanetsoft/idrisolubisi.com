@@ -19,11 +19,12 @@
 
   h3{
     padding: 10px 20px;
-    color: rgb(0, 0, 0);
+    color: rgb(4, 169, 151)
   }
 
   h3:hover{
-      color: indigo;
+      /* color: indigo; */
+      color: rgb(13, 114, 102)
   }
 
   small{
