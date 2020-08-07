@@ -4,7 +4,7 @@ import React from 'react'
 
 import chatapp from "../../Content/assets/chatapp.png"
 import musical from "../../Content/assets/music.png"
-import clock from "../../Content/assets/clock.png"
+// import clock from "../../Content/assets/clock.png"
 import git from "../../Content/assets/git-user.png"
 import math from "../../Content/assets/math.png"
 import ponk from "../../Content/assets/ponk.png"
@@ -364,12 +364,12 @@ class Main extends React.Component {
           </p>
 
 
-          <span className="image main">
+          {/* <span className="image main">
 
             <a href="https://web-clockjs.netlify.com" target='_blank' rel="noopener noreferrer">
               <img src={clock} alt="jsClock" /></a>
               {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/clock.webp" alt="jsClock" /></a> */}
-            {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1582408165/Idris%20Portfolio%20Pictures/jsclock.webp" */}
+            {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1582408165/Idris%20Portfolio%20Pictures/jsclock.webp" 
           </span>
           <p>
             Project Title: Web Clock <br />
@@ -379,7 +379,7 @@ class Main extends React.Component {
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <a href="https://github.com/Olanetsoft/webclock" target='_blank' rel="noopener noreferrer"
               className="icon fa-github"> View Source Code</a>
-          </p>
+          </p> */}
 
 
 
