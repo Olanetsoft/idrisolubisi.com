@@ -34,13 +34,6 @@ class PostTemplate extends Component {
                     <p className="date">{date}</p>
                     <div dangerouslySetInnerHTML={{ __html: post.html }} />
                     <DiscussionEmbed {...disqusConfig} />
-                    {/* <Global>
-                        <PageBody>
-                            {/* highlight-next-line *
-                            
-                        </PageBody>
-                    </Global> */}
-
                     <ul>
                         <li className="post-navigation">
                             {previous && (
