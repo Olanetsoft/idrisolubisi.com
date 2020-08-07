@@ -15,7 +15,6 @@ The name sounds familiar, right? but you haven't used it to deploy any of your w
 
 ## What Is Netlify?
 ***
-![Netlify](./giphy.gif)
 
 Netlify is an all-in-one platform for automating modern web projects. Replace your hosting infrastructure, continuous integration, and deployment pipeline with a single workflow. Integrate dynamic functionality like serverless functions, user authentication, and form handling as your projects grow.
 
