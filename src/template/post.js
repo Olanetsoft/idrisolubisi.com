@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { graphql, Link } from 'gatsby';
+import { DiscussionEmbed } from "disqus-react"
 
 //Components
 import SEO from '../components/seo'
@@ -17,6 +18,10 @@ class PostTemplate extends Component {
         const post = this.props.data.markdownRemark;
         const { previous, next, slug } = this.props.pageContext;
 
+        const disqusConfig = {
+            shortname: process.env.GATSBY_DISQUS_NAME,
+            config: { identifier: slug, title },
+        }
         return (
 
             <div>
@@ -28,8 +33,13 @@ class PostTemplate extends Component {
                     <h2 id="post-Title">{title}</h2>
                     <p className="date">{date}</p>
                     <div dangerouslySetInnerHTML={{ __html: post.html }} />
-
-
+                    <DiscussionEmbed {...disqusConfig} />
+                    {/* <Global>
+                        <PageBody>
+                            {/* highlight-next-line *
+                            
+                        </PageBody>
+                    </Global> */}
 
                     <ul>
                         <li className="post-navigation">
