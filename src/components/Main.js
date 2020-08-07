@@ -493,43 +493,43 @@ class Main extends React.Component {
           <h3>Skill Set</h3>
 
           <h5>Front End: </h5>
-          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-html-5-48.png" alt="html" />&nbsp;&nbsp;&nbsp;
-          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429982/projects%20images/icons8-css3-48.png" alt="css" />&nbsp;&nbsp;&nbsp;
-          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-javascript-48.png" alt="js" />&nbsp;&nbsp;&nbsp;
-          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429982/projects%20images/icons8-bootstrap-48.png" alt="bootstrap" />&nbsp;&nbsp;&nbsp;
-          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-react-48.png" alt="react" />&nbsp;&nbsp;&nbsp;
+          <img className="lazyload" data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-html-5-48.png" alt="html" />&nbsp;&nbsp;&nbsp;
+          <img className="lazyload" data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429982/projects%20images/icons8-css3-48.png" alt="css" />&nbsp;&nbsp;&nbsp;
+          <img className="lazyload" data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-javascript-48.png" alt="js" />&nbsp;&nbsp;&nbsp;
+          <img className="lazyload" data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429982/projects%20images/icons8-bootstrap-48.png" alt="bootstrap" />&nbsp;&nbsp;&nbsp;
+          <img className="lazyload" data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-react-48.png" alt="react" />&nbsp;&nbsp;&nbsp;
           {/* <img src="https://img.icons8.com/ios-filled/48/000000/jquery.png" alt="jquery" /> */}
           <br /><br />
 
 
           <h5>Back End: </h5>
-          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-nodejs-48.png" alt="node" />&nbsp;&nbsp;&nbsp;
-          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429982/projects%20images/icons8-asp-48.png" alt="net" />&nbsp;&nbsp;&nbsp;
-          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-sql-48.png" alt="sql" />&nbsp;&nbsp;&nbsp;
-          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-graphql-48.png" alt="graphql" />
+          <img className="lazyload" data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-nodejs-48.png" alt="node" />&nbsp;&nbsp;&nbsp;
+          <img className="lazyload" data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429982/projects%20images/icons8-asp-48.png" alt="net" />&nbsp;&nbsp;&nbsp;
+          <img className="lazyload" data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-sql-48.png" alt="sql" />&nbsp;&nbsp;&nbsp;
+          <img className="lazyload" data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-graphql-48.png" alt="graphql" />
 
           <br /><br />
 
           <h5>Content Management System: </h5>
-          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-microsoft-sharepoint-48.png" alt="share" />&nbsp;&nbsp;&nbsp;
-          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-wordpress-48.png" alt="wordpress" />&nbsp;&nbsp;&nbsp;
+          <img className="lazyload" data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-microsoft-sharepoint-48.png" alt="share" />&nbsp;&nbsp;&nbsp;
+          <img className="lazyload" data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-wordpress-48.png" alt="wordpress" />&nbsp;&nbsp;&nbsp;
           {/* <img src={gatsby} alt="gatsby" /> */}
 
           <br /><br />
 
           <h5>Development Tools: </h5>
-          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429982/projects%20images/icons8-git-48.png" alt="git" />&nbsp;&nbsp;&nbsp;
-          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429982/projects%20images/icons8-github-48.png" alt="github" />&nbsp;&nbsp;&nbsp;
+          <img className="lazyload" data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429982/projects%20images/icons8-git-48.png" alt="git" />&nbsp;&nbsp;&nbsp;
+          <img className="lazyload" data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429982/projects%20images/icons8-github-48.png" alt="github" />&nbsp;&nbsp;&nbsp;
           {/* <img src="https://img.icons8.com/color/48/000000/gitlab.png" alt="gitlab" />&nbsp;&nbsp;&nbsp; */}
-          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-trello-48.png" alt="trello" />&nbsp;&nbsp;&nbsp;
+          <img className="lazyload" data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-trello-48.png" alt="trello" />&nbsp;&nbsp;&nbsp;
           {/* <img src="https://img.icons8.com/color/48/000000/bitbucket.png" alt="bit" />&nbsp;&nbsp;&nbsp; */}
-          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-microsoft-teams-48.png" alt="teams" />
+          <img className="lazyload" data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-microsoft-teams-48.png" alt="teams" />
 
           <br /><br />
 
           <h5>Programing Languages: </h5>
-          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-javascript-48.png" alt="js" />&nbsp;&nbsp;&nbsp;
-          <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429982/projects%20images/icons8-c-sharp-logo-48.png" alt="csharp" />&nbsp;&nbsp;&nbsp;
+          <img className="lazyload" data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-javascript-48.png" alt="js" />&nbsp;&nbsp;&nbsp;
+          <img className="lazyload" data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429982/projects%20images/icons8-c-sharp-logo-48.png" alt="csharp" />&nbsp;&nbsp;&nbsp;
 
 
           <br /><br />
