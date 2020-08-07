@@ -19,7 +19,7 @@ class PostTemplate extends Component {
         const { previous, next, slug } = this.props.pageContext;
 
         const disqusConfig = {
-            shortname: process.env.GATSBY_DISQUS_NAME,
+            shortname: "idrisolubisi-com",
             config: { identifier: slug, title },
         }
         return (
