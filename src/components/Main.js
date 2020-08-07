@@ -24,7 +24,7 @@ class Main extends React.Component {
 
   render() {
     let myFunction = () => {
-      alert("Thanks For getting in Touch... You will get a feedback soon")
+      alert("Thanks For getting in Touch... You will get a feedback soon !")
     }
     let close = (
       <div
