@@ -2,7 +2,7 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 5px; /* 5px rounded corners */
-    background-color: darkgrey;
+    background-color: rgb(224, 224, 224);
     margin-bottom: 50px;
 }
   /* On mouse-over, add a deeper shadow */
@@ -19,7 +19,7 @@
 
   h3{
     padding: 10px 20px;
-    color: royalblue;
+    color: rgb(0, 0, 0);
   }
 
   h3:hover{
@@ -28,7 +28,7 @@
 
   small{
     padding: 5px 20px;
-    color:indigo;
+    color:rgb(107, 14, 173);
   }
   .button-link{
     background-color: black;
