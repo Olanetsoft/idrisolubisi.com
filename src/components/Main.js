@@ -97,7 +97,7 @@ class Main extends React.Component {
               target='_blank'
               rel="noopener noreferrer" >
               {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/tutorx.webp" alt="tutorX" /></a> */}
-              <img src={tutorx} alt="tutorX" /></a>
+              <img className="lazyload" data-src={tutorx} alt="tutorX" /></a>
             {/* https://res.cloudinary.com/olanetsoft/image/upload/v1585696699/Idris%20Portfolio%20Pictures/vogue.webp */}
             {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
@@ -116,7 +116,7 @@ class Main extends React.Component {
             <a href="https://hotzy-store.herokuapp.com/"
               target='_blank'
               rel="noopener noreferrer" >
-              <img src={hotzy} alt="hotzy" /></a>
+              <img className="lazyload" data-src={hotzy} alt="hotzy" /></a>
               {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1592651780/hotzy.webp" alt="hotzy" /></a> */}
           </span>
           <p>
@@ -137,7 +137,7 @@ class Main extends React.Component {
             <a href="https://web-chat.global.assistant.watson.cloud.ibm.com/preview.html?region=eu-gb&integrationID=08c8e484-3c52-4685-8cc5-be6974aaeb8f&serviceInstanceID=248098c0-92c6-4213-96bb-961a448bc72d"
               target='_blank'
               rel="noopener noreferrer" >
-              <img src={chatapp} alt="wakalagos" /></a>
+              <img className="lazyload" data-src={chatapp} alt="wakalagos" /></a>
               {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/chatapp.webp" alt="wakalagos" /></a> */}
           </span>
           <p>
@@ -152,7 +152,7 @@ class Main extends React.Component {
             <a href="https://vogue.herokuapp.com/"
               target='_blank'
               rel="noopener noreferrer" >
-              <img src={vogue} /></a>
+              <img className="lazyload" data-src={vogue} alt="vogue"/></a>
               {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1585696699/Idris%20Portfolio%20Pictures/vogue.webp" alt="vogue" /></a> */}
            
           </span>
@@ -175,7 +175,7 @@ class Main extends React.Component {
             <a href="https://math-puzzle.netlify.app/"
               target='_blank'
               rel="noopener noreferrer" >
-              <img src={math}
+              <img className="lazyload" data-src={math}
                 alt="mathGame" /></a>
               {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/math.webp"
                 alt="mathGame" /></a> */}
@@ -198,7 +198,7 @@ class Main extends React.Component {
             <a href="https://tourpadi.herokuapp.com/"
               target='_blank'
               rel="noopener noreferrer" >
-              <img src={tourpadi}
+              <img className="lazyload" data-src={tourpadi}
                 alt="tourpadi" /></a>
               {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1593863784/Idris%20Portfolio%20Pictures/tourpadi.webp"
                 alt="tourpadi" /></a> */}
@@ -221,7 +221,7 @@ class Main extends React.Component {
             <a href="https://www.rethinklagos.com"
               target='_blank'
               rel="noopener noreferrer" >
-              <img src={rethinkLagos}
+              <img className="lazyload" data-src={rethinkLagos}
                 alt="Rethink" /></a>
               {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426818/projects%20images/rethink.webp"
                 alt="Rethink" /></a> */}
@@ -276,7 +276,7 @@ class Main extends React.Component {
 
           <span className="image main">
             <a href="https://git-user.netlify.app/" target='_blank' rel="noopener noreferrer">
-              <img src={git}
+              <img className="lazyload" data-src={git}
                 alt="git" /></a>
               {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/git-user.webp"
                 alt="git" /></a> */}
@@ -330,7 +330,7 @@ class Main extends React.Component {
 
           <span className="image main">
             <a href="https://ponk-app.netlify.com" target='_blank' rel="noopener noreferrer">
-              <img src={ponk} alt="ponkApp" /></a>
+              <img className="lazyload" data-src={ponk} alt="ponkApp" /></a>
               {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426818/projects%20images/ponk.webp" alt="ponkApp" /></a> */}
             {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/ponkApp.webp" */}
           </span>
@@ -348,7 +348,7 @@ class Main extends React.Component {
           <span className="image main">
 
             <a href="https://music-event.netlify.com" target='_blank' rel="noopener noreferrer">
-              <img src={musical}
+              <img className="lazyload" data-src={musical}
                 alt="MusicEvent" /></a>
               {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/music.webp"
                 alt="MusicEvent" /></a> */}
@@ -484,7 +484,7 @@ class Main extends React.Component {
         >
           <h2 className="major">About</h2>
           <span className="image main">
-            <img src={aboutPic} alt="My_photo" />
+            <img className="lazyload" data-src={aboutPic} alt="My_photo" />
             {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/aboutPic.webp" alt="My_photo" /> */}
           </span>
 

@@ -55,6 +55,7 @@ module.exports = {
           `gatsby-remark-prismjs`,
           `gatsby-remark-smartypants`,
           `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-lazy-load`,
           {
             resolve: `gatsby-remark-social-cards`,
             options: {
