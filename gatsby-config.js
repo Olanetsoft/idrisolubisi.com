@@ -94,6 +94,12 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-styled-components`,
     {
+      resolve: 'gatsby-plugin-preconnect',
+      options: {
+        domains: ['https://www.googletagmanager.com', 'https://www.google-analytics.com'],
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: `UA-154454841-1`,
