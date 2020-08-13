@@ -14,7 +14,7 @@ import '../assets/css/posts.css'
 class PostTemplate extends Component {
     render() {
         const frontmatter = this.props.data.markdownRemark.frontmatter;
-        const { title, description, date } = frontmatter;
+        const { title, description, date, image } = frontmatter;
         const post = this.props.data.markdownRemark;
         const { previous, next, slug } = this.props.pageContext;
 
@@ -25,7 +25,11 @@ class PostTemplate extends Component {
         return (
 
             <div>
-                <SEO title={title} description={description || post.excerpt} slug={slug} />
+                <SEO title={title}
+                    description={description || post.excerpt}
+                    slug={slug}
+                    image={image}
+                />
                 <ul id="the-nav">
                     <li><Link to="/blog" ><i className="fa fa-long-arrow-left"> Go Back To Articles Page</i></Link></li>
                 </ul>
@@ -69,7 +73,16 @@ export const pageQuery = graphql`
 				title
 				date(formatString: "MMMM DD, YYYY")
 				subtitle
-				description
+                description
+                image {
+                    childImageSharp {
+                      resize(width: 1200) {
+                        src
+                        height
+                        width
+                      }
+                    }
+                  }
             }
         }
 	}
