@@ -2,7 +2,7 @@
 title: Deploy Your Front End App To Netlify in 4 minutes
 subtitle: Netlify makes it super easy when it comes to deploying and accessibility
 description: Deploying your app live makes it accessible for everyone to visit your site anywhere in the world
-image: ./site.png
+image: ./netlify.png
 date: 2020-08-02
 ---
 ***
