@@ -23,7 +23,7 @@ function SEO({ description, lang, meta, title, slug, image: metaImage }) {
   const image =
     metaImage && metaImage.src
       ? `${site.siteMetadata.siteUrl}${metaImage.src}`
-      : null
+      : `${site.siteMetadata.siteImage}`
 
   const canonical = slug ? `${site.siteMetadata.siteUrl}${slug}` : null
   return (
@@ -55,10 +55,10 @@ function SEO({ description, lang, meta, title, slug, image: metaImage }) {
           property: `og:description`,
           content: metaDescription,
         },
-        {
-          property: "og:image",
-          content: `${site.siteMetadata.siteImage}`,
-        },
+        // {
+        //   property: "og:image",
+        //   content: `${site.siteMetadata.siteImage}`,
+        // },
         {
           property: `og:type`,
           content: `website`,
