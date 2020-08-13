@@ -23,7 +23,7 @@ function SEO({ description, lang, meta, title, slug, image: metaImage }) {
   const image =
     metaImage && metaImage.src
       ? `${site.siteMetadata.siteUrl}${metaImage.src}`
-      : `${site.siteMetadata.siteImage}`
+      : null
 
   const canonical = slug ? `${site.siteMetadata.siteUrl}${slug}` : null
   return (
