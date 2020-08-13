@@ -5,6 +5,7 @@ import { DiscussionEmbed } from "disqus-react"
 //Components
 import SEO from '../components/seo'
 import Footer from '../components/Footer';
+import Layout from '../components/layout'
 
 //Style
 import '../assets/css/posts.css'
@@ -26,32 +27,34 @@ class PostTemplate extends Component {
 
             <div>
                 <SEO title={title} description={description || post.excerpt} slug={slug} />
-                <ul id="the-nav">
-                    <li><Link to="/blog" ><i className="fa fa-long-arrow-left"> Go Back To Articles Page</i></Link></li>
-                </ul>
-                <section className="posts">
-                    <h2 id="post-Title">{title}</h2>
-                    <p className="date">{date}</p>
-                    <div dangerouslySetInnerHTML={{ __html: post.html }} />
-                    <DiscussionEmbed {...disqusConfig} />
-                    <ul>
-                        <li className="post-navigation">
-                            {previous && (
-                                <Link to={previous.fields.slug} rel="prev">
-                                    ← {previous.frontmatter.title}
-                                </Link>
-                            )}
-                        </li>
-                        <li className="post-navigation">
-                            {next && (
-                                <Link to={next.fields.slug} rel="next">
-                                    {next.frontmatter.title} →
-                                </Link>
-                            )}
-                        </li>
+                <Layout slug={slug}>
+                    <ul id="the-nav">
+                        <li><Link to="/blog" ><i className="fa fa-long-arrow-left"> Go Back To Articles Page</i></Link></li>
                     </ul>
-                </section>
-                <Footer />
+                    <section className="posts">
+                        <h2 id="post-Title">{title}</h2>
+                        <p className="date">{date}</p>
+                        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+                        <DiscussionEmbed {...disqusConfig} />
+                        <ul>
+                            <li className="post-navigation">
+                                {previous && (
+                                    <Link to={previous.fields.slug} rel="prev">
+                                        ← {previous.frontmatter.title}
+                                    </Link>
+                                )}
+                            </li>
+                            <li className="post-navigation">
+                                {next && (
+                                    <Link to={next.fields.slug} rel="next">
+                                        {next.frontmatter.title} →
+                                    </Link>
+                                )}
+                            </li>
+                        </ul>
+                    </section>
+                    <Footer />
+                </Layout>
             </div>
         );
     }
@@ -69,7 +72,14 @@ export const pageQuery = graphql`
 				title
 				date(formatString: "MMMM DD, YYYY")
 				subtitle
-				description
+                description
+                image{
+                    childImageSharp {
+                      fluid(maxWidth: 800) {
+                        ...GatsbyImageSharpFluid
+                      }
+                    }
+                  }
             }
         }
 	}
