@@ -2,6 +2,7 @@
 title: How To Create A React App - Stress Free
 subtitle: React magic keeps DOM in an awesome mood
 description: All libraries are really just collections of class definitions, and when you call a method from a library, you remain in control. On the other hand, frameworks specify the control flow so they actually call your code. In a certain way, frameworks are meant to solve structural and architectural problems, which is not what React does
+image: ./react.png
 date: 2020-02-15
 ---
 ***
