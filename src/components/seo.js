@@ -44,10 +44,10 @@ function SEO({ description, lang, meta, title, slug, siteImage }){
                property: `og:type`,
                content: `website`,
              },
-             {
-               property: `og:image`,
-               content: `${site.siteMetadata.siteImage}`,
-             },
+            //  {
+            //    property: `og:image`,
+            //    content: `${site.siteMetadata.siteImage}`,
+            //  },
              {
                name: `twitter:card`,
                content: `summary_large_image`,
