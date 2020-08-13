@@ -14,10 +14,12 @@ import '../assets/css/posts.css'
 class PostTemplate extends Component {
     render() {
         const frontmatter = this.props.data.markdownRemark.frontmatter;
-        const { title, description, date, image } = frontmatter;
+        const { title, description, date } = frontmatter;
         const post = this.props.data.markdownRemark;
         const { previous, next, slug } = this.props.pageContext;
-
+        const image = post.frontmatter.image
+            ? post.frontmatter.image.childImageSharp.resize
+            : null
         const disqusConfig = {
             shortname: "idrisolubisi-com",
             config: { identifier: slug, title },
