@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import '../assets/scss/main.scss'
 
-const Layout = ({ slug, children, location }) => {
+const Layout = ({ children, location }) => {
 
   let content;
 
@@ -32,7 +32,6 @@ const Layout = ({ slug, children, location }) => {
           site {
             siteMetadata {
               title
-              siteUrl
             }
           }
         }
@@ -44,10 +43,6 @@ const Layout = ({ slug, children, location }) => {
             meta={[
               { name: 'description', content: 'A software developer that writes code to solve human problem' },
               { name: 'keywords', content: 'idrisolubisi, idris olubisi, olubisi, idris blog, idris portfolio, idris gatsby blog, idris' },
-              <meta
-                name="twitter:image"
-                content={`${data.site.siteMetadata.siteUrl}${slug}twitter-card.jpg`}
-              />
             ]}
           >
             <html lang="en" />
