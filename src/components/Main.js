@@ -4,6 +4,7 @@ import React from 'react'
 
 import chatapp from "../../Content/assets/chatapp.png"
 import musical from "../../Content/assets/music.png"
+import naija from "../../Content/assets/supernaija.png"
 // import clock from "../../Content/assets/clock.png"
 import git from "../../Content/assets/git-user.png"
 import math from "../../Content/assets/math.png"
@@ -90,6 +91,29 @@ class Main extends React.Component {
             target='_blank'
             rel="noopener noreferrer"
             className="icon fa-gitlab"> Click here to View More on GitLab</a></h5>
+
+
+          <span className="image main">
+            <a href="https://supernigerians.herokuapp.com/"
+              target='_blank'
+              rel="noopener noreferrer" >
+              {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/tutorx.webp" alt="tutorX" /></a> */}
+              <img className="lazyload" data-src={naija} alt="super nigerians" /></a>
+            {/* https://res.cloudinary.com/olanetsoft/image/upload/v1585696699/Idris%20Portfolio%20Pictures/vogue.webp */}
+            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
+          </span>
+          <p>
+            Project Title: Super Nigerians <br />
+            <a href="https://supernigerians.herokuapp.com/" target='_blank'
+              rel="noopener noreferrer"
+              className="fa fa-eye"> Visit Site  </a>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://github.com/Olanetsoft/SuperNigerians"
+              target='_blank' className="icon fa-github"
+              rel="noopener noreferrer"> View Source Code</a>
+          </p>
+
+
 
 
           <span className="image main">
