@@ -48,6 +48,10 @@ function SEO({ description, lang, meta, title, slug, image: metaImage }) {
           content: metaDescription,
         },
         {
+          name: `monetization`,
+          content: `$ilp.uphold.com/eNN6da7eFU9N`,
+        },
+        {
           property: `og:title`,
           content: title,
         },
