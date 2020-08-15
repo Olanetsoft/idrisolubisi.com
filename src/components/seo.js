@@ -59,10 +59,10 @@ function SEO({ description, lang, meta, title, slug, image: metaImage }) {
           property: `og:description`,
           content: metaDescription,
         },
-        // {
-        //   property: "og:image",
-        //   content: `${site.siteMetadata.siteImage}`,
-        // },
+        {
+          name: "image",
+          content: `${site.siteMetadata.siteImage}`,
+        },
         {
           property: `og:type`,
           content: `website`,
