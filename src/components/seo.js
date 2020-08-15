@@ -59,10 +59,10 @@ function SEO({ description, lang, meta, title, slug, image: metaImage }) {
           property: `og:description`,
           content: metaDescription,
         },
-        {
-          name: "image",
-          content: `${site.siteMetadata.siteImage}`,
-        },
+        // {
+        //   property: "og:image",
+        //   content: `${site.siteMetadata.siteImage}`,
+        // },
         {
           property: `og:type`,
           content: `website`,
@@ -84,7 +84,7 @@ function SEO({ description, lang, meta, title, slug, image: metaImage }) {
           ? [
             {
               property: "og:image",
-              content: image,
+              content: image || `${site.siteMetadata.siteImage}`,
             },
             {
               property: `og:description`,
