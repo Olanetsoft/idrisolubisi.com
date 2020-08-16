@@ -10,12 +10,12 @@ const Header = props => (
     </div>
     <div className="content">
       <div className="inner">
-        <h1>
+        <h2>
           <Typed
             strings={["I'm Idris Olubisi"]}
             typeSpeed={30}
           />
-        </h1>
+        </h2>
         <h3 style={{ color: "gold" }}>
           <Typed
             strings={[
