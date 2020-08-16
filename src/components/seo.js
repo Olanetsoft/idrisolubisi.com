@@ -44,6 +44,10 @@ function SEO({ description, lang, meta, title, slug, image: metaImage }) {
       }
       meta={[
         {
+          name: 'viewport',
+          content: 'width=device-width, initial-scale=1',
+        },
+        {
           name: `description`,
           content: metaDescription,
         },
