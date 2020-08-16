@@ -61,7 +61,7 @@ function SEO({ description, lang, meta, title, slug, image: metaImage }) {
         },
         {
           property: "og:image",
-          content: `${site.siteMetadata.siteImage}`,
+          content: `${site.siteMetadata.siteImage || image}`,
         },
         {
           property: `og:type`,
