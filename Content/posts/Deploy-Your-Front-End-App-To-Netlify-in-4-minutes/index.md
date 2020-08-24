@@ -95,7 +95,7 @@ Wait, Netlify is getting things ready for you. :)
 
 Congratulation Your site is Live
 
-![Netlify](./fyCL.gif)
+<!-- ![Netlify](./fyCL.gif) -->
 
 ![Netlify](./Screenshot1.png)
 
