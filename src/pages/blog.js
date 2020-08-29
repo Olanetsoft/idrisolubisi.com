@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { graphql, Link } from 'gatsby';
+import Img from 'gatsby-image';
 import Container from '../components/container'
 
 
@@ -30,6 +31,7 @@ class Blog extends Component {
 					return (
 						<Link to={node.fields.slug}>
 							<div key={node.fields.slug} className="card">
+								<Img className="post-img" sizes={node.frontmatter.image.childImageSharp.sizes} />
 								<h3 style={{ marginBottom: '.15rem', marginTop: '.90rem' }}>
 									<Link to={node.fields.slug}>{title}</Link>
 								</h3>
@@ -82,6 +84,13 @@ export const pageQuery = graphql`
 						date(formatString: "MMMM DD, YYYY")
 						title
 						description
+						image {
+							childImageSharp {
+							  sizes(maxWidth:600 , maxHeight: 300, quality: 90) {
+								...GatsbyImageSharpSizes
+							  }
+							}
+						}
 					}
 				}
 			}
