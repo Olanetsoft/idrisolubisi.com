@@ -18,9 +18,10 @@ Have got some favorites readme i will like to share with you before we proceed:
 
 ![jason](./jason.png)
 
-![gift](./gift.png)
-
 ![samson1](./samson.png)
+
+![bolaji](./bolaji.png)
+
 
 Now let's create something magical 🤗
 
