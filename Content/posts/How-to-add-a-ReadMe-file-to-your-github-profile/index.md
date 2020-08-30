@@ -2,7 +2,7 @@
 title: How to add a README file to your Github Profile
 subtitle: Showcasing yourself
 description: Information about you, your work, portfolio and anything else on your GitHub profile
-image: ./markdown.svg.png
+image: ./mine.png
 date: 2020-08-30
 ---
 
