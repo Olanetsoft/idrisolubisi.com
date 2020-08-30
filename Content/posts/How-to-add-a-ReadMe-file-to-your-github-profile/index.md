@@ -10,7 +10,7 @@ date: 2020-08-30
 
 Hi guys! I trust y’all had a good day?
 
-Our focus today is the amazing special feature for developers, designers etc. that was added by GitHub recently. This feature allows us to showcase yourself not just by building but by adding information about your work, portfolio and anything else on your GitHub Profile.
+Our focus today is the amazing special feature for developers, designers etc. that was added by GitHub recently. This feature allows you to showcase yourself not just by building but by adding information about your work, portfolio and anything else on your GitHub Profile.
 
 Have got some favorites readme i will like to share with you before we proceed:
 
