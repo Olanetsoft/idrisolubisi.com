@@ -22,7 +22,6 @@ Have got some favorites readme i will like to share with you before we proceed:
 
 ![bolaji](./bolaji.png)
 
-
 Now let's create something magical 🤗
 
 ## Some prerequisite :
