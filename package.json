@@ -26,6 +26,7 @@
     "gatsby-plugin-offline": "^3.0.32",
     "gatsby-plugin-preact": "^3.1.26",
     "gatsby-plugin-preconnect": "^1.1.54",
+    "gatsby-plugin-preload-fonts": "^1.2.23",
     "gatsby-plugin-react-helmet": "^3.1.18",
     "gatsby-plugin-sass": "^2.1.26",
     "gatsby-plugin-sharp": "^2.4.3",
@@ -65,7 +66,8 @@
     "develop": "gatsby develop",
     "serve": "gatsby serve",
     "format": "prettier --write '**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preload-fonts": "gatsby-preload-fonts"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
