@@ -530,8 +530,10 @@ class Main extends React.Component {
           <img className="lazyload" data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-nodejs-48.png" alt="node" />&nbsp;&nbsp;&nbsp;
           <img className="lazyload" data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429982/projects%20images/icons8-asp-48.png" alt="net" />&nbsp;&nbsp;&nbsp;
           <img className="lazyload" data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-sql-48.png" alt="sql" />&nbsp;&nbsp;&nbsp;
-          <img className="lazyload" data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-graphql-48.png" alt="graphql" />
-
+          <img className="lazyload" data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-graphql-48.png" alt="graphql" />&nbsp;&nbsp;&nbsp;
+          <img className="lazyload" data-src="https://img.icons8.com/color/48/000000/mongodb.png" alt="mongodb" /> &nbsp;&nbsp;&nbsp;
+          <img className="lazyload" data-src="https://img.icons8.com/color/48/000000/heroku.png" alt="heroku" /> &nbsp;&nbsp;&nbsp;
+          <img className="lazyload" data-src="https://img.icons8.com/color/48/000000/azure-1.png" alt="azure"/>
           <br /><br />
 
           <h5>Content Management System: </h5>
