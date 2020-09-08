@@ -10,7 +10,7 @@ date: 2020-08-02
 
 Hi guys! I trust y’all had a good day?
 
-Today’s article will be focusing on [Netlify](https://www.netlify.com 'Netlify Homepage') hmm :)
+Today’s article will be focusing on the amazing [Netlify](https://www.netlify.com 'Netlify Homepage') platform hmm :)
 
 The name sounds familiar, right? but you haven't used it to deploy any of your web apps trust me I know how you feel. I will take you through the steps to take to have your site deployed to [Netlify](https://www.netlify.com 'Netlify Homepage') in less than 4minutes.
 

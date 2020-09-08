@@ -32,14 +32,17 @@ class Blog extends Component {
 						<Link to={node.fields.slug}>
 							<div key={node.fields.slug} className="card">
 								<Img className="post-img" sizes={node.frontmatter.image.childImageSharp.sizes} />
-								<h3 style={{ marginBottom: '.15rem', marginTop: '.90rem' }}>
-									<Link to={node.fields.slug}>{title}</Link>
-								</h3>
-								<small>{node.frontmatter.date}</small>
-								<div
-									className="container"
-									dangerouslySetInnerHTML={{ __html: shorten(node.html, 150) }}
-								/>
+								<div className="mainc">
+									<h3>
+										<Link to={node.fields.slug}>{title}</Link>
+									</h3>
+									<small>{node.frontmatter.date}</small>
+									<div
+										className="container"
+										dangerouslySetInnerHTML={{ __html: shorten(node.html, 80) }}
+									/>
+								</div>
+
 
 								{/* <div className="button-link">
 								<Link to={node.fields.slug}>

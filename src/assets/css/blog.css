@@ -4,7 +4,20 @@
   border-radius: 20px; /* 5px rounded corners */
   background-color: rgb(224, 224, 224);
   margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  /* float: none; */
+  width: calc(70% - 25px);
 }
+
+.mainc {
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  /* float: none; */
+  /* width: calc(70% - 25px); */
+}
+
 /* On mouse-over, add a deeper shadow */
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(204, 200, 200, 0.2);
@@ -12,7 +25,7 @@
 
 /* Add some padding inside the card container */
 .container {
-  padding: 5px 20px;
+  padding: 1px 15px;
   color: black;
 }
 
