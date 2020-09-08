@@ -7,7 +7,7 @@
   margin-left: auto;
   margin-right: auto;
   /* float: none; */
-  width: calc(70% - 25px);
+  width: calc(70% - 10px);
 }
 
 .mainc {
