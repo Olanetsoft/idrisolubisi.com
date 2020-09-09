@@ -112,7 +112,23 @@ class Main extends React.Component {
               target='_blank' className="icon fa-github"
               rel="noopener noreferrer"> View Source Code</a>
           </p>
-
+          <span className="image main">
+            <a href="https://hotzy-store.herokuapp.com/"
+              target='_blank'
+              rel="noopener noreferrer" >
+              <img className="lazyload" data-src={hotzy} alt="hotzy" /></a>
+            {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1592651780/hotzy.webp" alt="hotzy" /></a> */}
+          </span>
+          <p>
+            Project Title: Hotzy Store <br />
+            <a href="https://hotzy-store.herokuapp.com/" target='_blank'
+              rel="noopener noreferrer"
+              className="fa fa-eye"> Visit Site  </a>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://github.com/Olanetsoft/hotzy-store"
+              target='_blank' className="icon fa-github"
+              rel="noopener noreferrer"> View Source Code</a>
+          </p>
 
 
 
@@ -136,23 +152,7 @@ class Main extends React.Component {
               rel="noopener noreferrer"> View Source Code</a>
           </p>
 
-          <span className="image main">
-            <a href="https://hotzy-store.herokuapp.com/"
-              target='_blank'
-              rel="noopener noreferrer" >
-              <img className="lazyload" data-src={hotzy} alt="hotzy" /></a>
-            {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1592651780/hotzy.webp" alt="hotzy" /></a> */}
-          </span>
-          <p>
-            Project Title: Hotzy Store <br />
-            <a href="https://hotzy-store.herokuapp.com/" target='_blank'
-              rel="noopener noreferrer"
-              className="fa fa-eye"> Visit Site  </a>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="https://github.com/Olanetsoft/hotzy-store"
-              target='_blank' className="icon fa-github"
-              rel="noopener noreferrer"> View Source Code</a>
-          </p>
+
 
 
 
@@ -533,7 +533,7 @@ class Main extends React.Component {
           <img className="lazyload" data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-graphql-48.png" alt="graphql" />&nbsp;&nbsp;&nbsp;
           <img className="lazyload" data-src="https://img.icons8.com/color/48/000000/mongodb.png" alt="mongodb" /> &nbsp;&nbsp;&nbsp;
           <img className="lazyload" data-src="https://img.icons8.com/color/48/000000/heroku.png" alt="heroku" /> &nbsp;&nbsp;&nbsp;
-          <img className="lazyload" data-src="https://img.icons8.com/color/48/000000/azure-1.png" alt="azure"/>
+          <img className="lazyload" data-src="https://img.icons8.com/color/48/000000/azure-1.png" alt="azure" />
           <br /><br />
 
           <h5>Content Management System: </h5>
