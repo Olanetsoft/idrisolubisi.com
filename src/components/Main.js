@@ -665,6 +665,13 @@ class Main extends React.Component {
             Location: Lagos, Nigeria</h4>
           <br />
 
+          <h3>Hotels.ng</h3>
+          <h4>ROLE: Backend Developer<br /><br />
+            Dates Employed: Jun 2020 – Sept 2020<br /><br />
+            Location: Lagos, Nigeria</h4>
+          <br />
+
+
           <h3>Ultra Media Solution</h3>
           <h4>Role: Web Development and Digital Marketing Intern<br /><br />
             Dates Employed: Mar 2019 – Apr 2019<br /><br />
