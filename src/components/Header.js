@@ -38,7 +38,7 @@ const Header = props => (
     <nav>
       <ul>
         <li>
-          <Link to="/blog">
+          <Link to="https://blog.idrisolubisi.com/" target="_blank">
 
             <button
             // onClick={() => {
