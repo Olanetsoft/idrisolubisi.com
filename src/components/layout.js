@@ -6,21 +6,14 @@ import { StaticQuery, graphql } from 'gatsby'
 import '../assets/scss/main.scss'
 
 const Layout = ({ children, location }) => {
-
-  let content;
+  let content
 
   if (location && location.pathname === '/') {
-    content = (
-      <div>
-        {children}
-      </div>
-    )
+    content = <div>{children}</div>
   } else {
     content = (
       <div id="wrapper" className="page">
-        <div>
-          {children}
-        </div>
+        <div>{children}</div>
       </div>
     )
   }
@@ -41,8 +34,15 @@ const Layout = ({ children, location }) => {
           <Helmet
             title={data.site.siteMetadata.title}
             meta={[
-              { name: 'description', content: 'A software developer that writes code to solve human problem' },
-              { name: 'keywords', content: 'idrisolubisi, idris olubisi, olubisi, idris blog, idris portfolio, idris gatsby blog, idris' },
+              {
+                name: 'description',
+                content:
+                  'Idris is a Software Engineer, Technical Writer, Speaker and Open-source contributor with extensive experience in entire project life cycle',
+              },
+              {
+                name: 'keywords',
+                content: 'Idris Olubisi : Back End Developer',
+              },
             ]}
           >
             <html lang="en" />

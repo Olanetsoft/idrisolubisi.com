@@ -1,93 +1,93 @@
-import React, { Component } from 'react';
-import { graphql, Link } from 'gatsby';
-import { DiscussionEmbed } from "disqus-react"
+import React, { Component } from 'react'
+import { graphql, Link } from 'gatsby'
+import { DiscussionEmbed } from 'disqus-react'
 
 //Components
 import SEO from '../components/seo'
-import Footer from '../components/Footer';
+import Footer from '../components/Footer'
 
 //Style
 import '../assets/css/posts.css'
 
-
-
 class PostTemplate extends Component {
-    render() {
-        const frontmatter = this.props.data.markdownRemark.frontmatter;
-        const { title, description, date } = frontmatter;
-        const post = this.props.data.markdownRemark;
-        const { previous, next, slug } = this.props.pageContext;
-        const image = post.frontmatter.image
-            ? post.frontmatter.image.childImageSharp.resize
-            : null
-        const disqusConfig = {
-            shortname: "idrisolubisi-com",
-            config: { identifier: slug, title },
-        }
-        return (
-
-            <div>
-                <SEO title={title}
-                    description={description || post.excerpt}
-                    slug={slug}
-                    image={image}
-                />
-                <ul id="the-nav">
-                    <li><Link to="/blog" ><i className="fa fa-long-arrow-left"> Go Back To Articles Page</i></Link></li>
-                </ul>
-                <section className="posts">
-                    <h2 id="post-Title">{title}</h2>
-                    <p className="date">{date}</p>
-                    <div dangerouslySetInnerHTML={{ __html: post.html }} />
-                    <DiscussionEmbed {...disqusConfig} />
-                    <ul>
-                        <li className="post-navigation">
-                            {previous && (
-                                <Link to={previous.fields.slug} rel="prev">
-                                    ← {previous.frontmatter.title}
-                                </Link>
-                            )}
-                        </li>
-                        <li className="post-navigation">
-                            {next && (
-                                <Link to={next.fields.slug} rel="next">
-                                    {next.frontmatter.title} →
-                                </Link>
-                            )}
-                        </li>
-                    </ul>
-                </section>
-                <Footer />
-            </div>
-        );
+  render() {
+    const frontmatter = this.props.data.markdownRemark.frontmatter
+    const { title, description, date } = frontmatter
+    const post = this.props.data.markdownRemark
+    const { previous, next, slug } = this.props.pageContext
+    const image = post.frontmatter.image
+      ? post.frontmatter.image.childImageSharp.resize
+      : null
+    const disqusConfig = {
+      shortname: 'idrisolubisi-com',
+      config: { identifier: slug, title },
     }
+    return (
+      <div>
+        <SEO
+          title={title}
+          description={description || post.excerpt}
+          slug={slug}
+          image={image}
+        />
+        <ul id="the-nav">
+          <li>
+            <Link to="/blog">
+              <i className="fa fa-long-arrow-left"> Go Back To Articles Page</i>
+            </Link>
+          </li>
+        </ul>
+        <section className="posts">
+          <h2 id="post-Title">{title}</h2>
+          <p className="date">{date}</p>
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          <DiscussionEmbed {...disqusConfig} />
+          <ul>
+            <li className="post-navigation">
+              {previous && (
+                <Link to={previous.fields.slug} rel="prev">
+                  ← {previous.frontmatter.title}
+                </Link>
+              )}
+            </li>
+            <li className="post-navigation">
+              {next && (
+                <Link to={next.fields.slug} rel="next">
+                  {next.frontmatter.title} →
+                </Link>
+              )}
+            </li>
+          </ul>
+        </section>
+        <Footer />
+      </div>
+    )
+  }
 }
 
-export default PostTemplate;
+export default PostTemplate
 
 export const pageQuery = graphql`
-	query Posts($slug: String!) {
-		markdownRemark(fields: { slug: { eq: $slug } }) {
-			id
-			excerpt(pruneLength: 160)
-			html
-			frontmatter {
-				title
-				date(formatString: "MMMM DD, YYYY")
-				subtitle
-                description
-                image {
-                    childImageSharp {
-                      resize(width: 1200) {
-                        src
-                        height
-                        width
-                      }
-                    }
-                  }
+  query Posts($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      id
+      excerpt(pruneLength: 160)
+      html
+      frontmatter {
+        title
+        date(formatString: "MMMM DD, YYYY")
+        subtitle
+        description
+        image {
+          childImageSharp {
+            resize(width: 1200) {
+              src
+              height
+              width
             }
+          }
         }
-	}
-`;
-
-
+      }
+    }
+  }
+`

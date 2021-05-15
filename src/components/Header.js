@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'
-import React from 'react';
-import Typed from 'react-typed';
-import { Link } from 'gatsby';
+import React from 'react'
+import Typed from 'react-typed'
 
 const Header = props => (
   <header id="header" style={props.timeout ? { display: 'none' } : {}}>
@@ -11,44 +10,49 @@ const Header = props => (
     <div className="content">
       <div className="inner">
         <h2>
-          <Typed
-            strings={["I'm Idris Olubisi"]}
-            typeSpeed={30}
-          />
+          <Typed strings={['I am Idris Olubisi']} typeSpeed={30} />
         </h2>
-        <h3 style={{ color: "gold" }}>
+        <h3 style={{ color: 'gold' }}>
           <Typed
             strings={[
+              'I am a public SPeaker',
               'I write code for a living',
               'I write technical content',
               'I love to write clean and reusable code',
               'I love to contribute to open source',
-              'I love sport'
             ]}
             typeSpeed={100}
             backSpeed={60}
-            loop />
+            loop
+          />
         </h3>
         <p>
-          a Software Engineer based in Lagos, Nigeria. <br />
-        passionate about writing code that solves problem.
+          a Software Engineer, Technical Writer, Speaker and Open-source
+          contributor based in Lagos, Nigeria.
         </p>
       </div>
     </div>
     <nav>
       <ul>
         <li>
-          <Link to="https://blog.idrisolubisi.com/" target="_blank">
-
-            <button
+          <button>
+            <a
+              href="https://blog.idrisolubisi.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              My Blog <span className="fa fa-pencil" aria-hidden="true"></span>
+            </a>
+          </button>
+          {/* <Link to="https://blog.idrisolubisi.com/" target="_blank"> */}
+          {/* <button
             // onClick={() => {
             //   props.onOpenArticle('intro')
             // }}
             >
               My Blog <span className="fa fa-pencil" aria-hidden="true"></span>
             </button>
-          </Link>
-
+          </Link> */}
         </li>
         <li>
           <button
