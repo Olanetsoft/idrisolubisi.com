@@ -41,7 +41,7 @@ const Layout = ({ children, location }) => {
               },
               {
                 name: 'keywords',
-                content: 'Idris Olubisi : Back End Developer',
+                content: 'Idris Olubisi: Back End Developer',
               },
             ]}
           >

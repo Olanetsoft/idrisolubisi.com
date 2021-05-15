@@ -19,7 +19,7 @@ class PostTemplate extends Component {
       ? post.frontmatter.image.childImageSharp.resize
       : null
     const disqusConfig = {
-      shortname: 'idrisolubisi-com',
+      shortname: 'idrisolubisi.com',
       config: { identifier: slug, title },
     }
     return (

@@ -89,7 +89,7 @@ class IndexPage extends React.Component {
   render() {
     return (
       <Layout location={this.props.location}>
-        <SEO title="Idris Olubisi : Back End Developer" />
+        <SEO title="Idris Olubisi: Back End Developer" />
         <div
           className={`body ${this.state.loading} ${
             this.state.isArticleVisible ? 'is-article-visible' : ''

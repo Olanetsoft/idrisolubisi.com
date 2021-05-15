@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Idris Olubisi : Back End Developer',
+    title: 'Idris Olubisi: Back End Developer',
     author: 'Idris Olubisi',
     description: 'Idris is a Software Engineer, Technical Writer, Speaker and Open-source contributor with extensive experience in entire project life cycle',
     social: {
@@ -29,7 +29,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Idris Olubisi : Back End Developer',
+        name: 'Idris Olubisi: Back End Developer',
         short_name: 'Back End Developer',
         start_url: '/',
         background_color: '#663399',
