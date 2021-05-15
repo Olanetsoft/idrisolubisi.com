@@ -883,6 +883,17 @@ class Main extends React.Component {
           <span className="image main">
             {/* <img src={CertImage} alt="" /> */}
           </span>
+          <h3>Philanthrolab</h3>
+          <h4>
+            ROLE: Back End Engineer
+            <br />
+            <br />
+            Dates Employed: April 2021 – Present
+            <br />
+            <br />
+            Location: Dallas, Texas.
+          </h4>
+          <br />
 
           <h3>Tavia Technologies Limited</h3>
           <h4>
