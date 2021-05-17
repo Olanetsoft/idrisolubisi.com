@@ -9,7 +9,8 @@ module.exports = {
       github: 'olanetsoft',
     },
     siteUrl: `https://idrisolubisi.com/`,
-    siteImage: `https://res.cloudinary.com/olanetsoft/image/upload/v1588335882/Idris%20Portfolio%20Pictures/thenew2.jpg`,
+    // siteImage: `https://res.cloudinary.com/olanetsoft/image/upload/v1588335882/Idris%20Portfolio%20Pictures/thenew2.jpg`,
+    siteImage: `./Content/assets/new3.webp`,
   },
   plugins: [
     {

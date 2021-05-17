@@ -1,15 +1,11 @@
-import React, { lazy } from 'react'
+import React from 'react'
 import Layout from '../components/layout'
 import image from '../../Content/assets/new3.webp'
 
 import SEO from '../components/seo'
-// import Header from '../components/Header'
-// import Main from '../components/Main'
-// import Footer from '../components/Footer'
-
-const Main = lazy(() => import('../components/Main'));
-const Header = lazy(() => import('../components/Header'));
-const Footer = lazy(() => import('../components/Footer'));
+import Header from '../components/Header'
+import Main from '../components/Main'
+import Footer from '../components/Footer'
 
 class IndexPage extends React.Component {
   constructor(props) {
