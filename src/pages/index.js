@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout'
+import image from '../../Content/assets/new3.webp'
 
 import SEO from '../components/seo'
 import Header from '../components/Header'
@@ -110,7 +111,15 @@ class IndexPage extends React.Component {
             />
             <Footer timeout={this.state.timeout} />
           </div>
-          <div id="bg"></div>
+          <div
+            id="bg"
+            style={{
+              backgroundImage: `url(${image})`,
+              backgroundPosition: 'top',
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+            }}
+          ></div>
         </div>
       </Layout>
     )

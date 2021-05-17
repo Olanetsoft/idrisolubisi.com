@@ -35,6 +35,10 @@ const Layout = ({ children, location }) => {
             title={data.site.siteMetadata.title}
             meta={[
               {
+                name: 'viewport',
+                content: 'width=device-width, initial-scale=1',
+              },
+              {
                 name: 'description',
                 content:
                   'Idris is a Software Engineer, Technical Writer, Speaker and Open-source contributor with extensive experience in entire project life cycle',
