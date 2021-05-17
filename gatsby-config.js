@@ -2,13 +2,14 @@ module.exports = {
   siteMetadata: {
     title: 'Idris Olubisi: Back End Developer',
     author: 'Idris Olubisi',
-    description: 'Idris is a Software Engineer, Technical Writer, Speaker and Open-source contributor with extensive experience in entire project life cycle',
+    description:
+      'Idris is a Software Engineer, Technical Writer, Speaker and Open-source contributor with extensive experience in entire project life cycle',
     social: {
       twitter: '@olanetsoft',
-      github: 'olanetsoft'
+      github: 'olanetsoft',
     },
     siteUrl: `https://idrisolubisi.com/`,
-    siteImage: `https://res.cloudinary.com/olanetsoft/image/upload/v1588335882/Idris%20Portfolio%20Pictures/thenew2.jpg`
+    siteImage: `https://res.cloudinary.com/olanetsoft/image/upload/v1588335882/Idris%20Portfolio%20Pictures/thenew2.jpg`,
   },
   plugins: [
     {
@@ -16,14 +17,14 @@ module.exports = {
       options: {
         path: `${__dirname}/Content/assets`,
         name: `assets`,
-      }
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/Content/posts`,
         name: `blogPosts`,
-      }
+      },
     },
     'gatsby-plugin-react-helmet',
     {
@@ -49,7 +50,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590
+              maxWidth: 590,
             },
           },
           `gatsby-remark-prismjs`,
@@ -60,35 +61,35 @@ module.exports = {
             resolve: `gatsby-remark-social-cards`,
             options: {
               title: {
-                field: "title",
-                font: "DejaVuSansCondensed",
-                color: "black", // black|white
+                field: 'title',
+                font: 'DejaVuSansCondensed',
+                color: 'black', // black|white
                 size: 48, // 16|24|32|48|64
-                style: "bold", // normal|bold|italic
+                style: 'bold', // normal|bold|italic
                 x: null, // Will default to xMargin
                 y: null, // Will default to yMargin
               },
               meta: {
                 parts: [
-                  "- ",
-                  { field: "author" },
-                  " » ",
-                  { field: "date", format: "mmmm dS" },
+                  '- ',
+                  { field: 'author' },
+                  ' » ',
+                  { field: 'date', format: 'mmmm dS' },
                 ],
-                font: "DejaVuSansCondensed",
-                color: "black", // black|white
+                font: 'DejaVuSansCondensed',
+                color: 'black', // black|white
                 size: 24, // 16|24|32|48|64
-                style: "normal", // normal|bold|italic
+                style: 'normal', // normal|bold|italic
                 x: null, // Will default to xMargin
                 y: null, // Will default to cardHeight - yMargin - size
               },
-              background: "#FFFFFF", // Background color for the card
+              background: '#FFFFFF', // Background color for the card
               xMargin: 24, // Edge margin used when x value is not set
-              yMargin: 24,// Edge margin used when y value is not set
-            }
-          }
-        ]
-      }
+              yMargin: 24, // Edge margin used when y value is not set
+            },
+          },
+        ],
+      },
     },
     `gatsby-plugin-preact`,
     `gatsby-plugin-sitemap`,
@@ -96,7 +97,10 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-preconnect',
       options: {
-        domains: ['https://www.googletagmanager.com', 'https://www.google-analytics.com'],
+        domains: [
+          'https://www.googletagmanager.com',
+          'https://www.google-analytics.com',
+        ],
       },
     },
     {
@@ -104,14 +108,14 @@ module.exports = {
       options: {
         trackingId: `UA-154454841-1`,
         head: true,
-      }
+      },
     },
     {
       resolve: `gatsby-plugin-google-tagmanager`,
       options: {
         id: `GTM-T99QM6R`,
-        includeInDevelopment: true
+        includeInDevelopment: true,
       },
-    }
+    },
   ],
 }

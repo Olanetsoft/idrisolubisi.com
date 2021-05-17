@@ -31,8 +31,8 @@ class Main extends React.Component {
         onClick={() => {
           this.props.onCloseArticle()
         }}
-        onKeyDown={this.props.onCloseArticle()}
         tabIndex={0}
+        aria-hidden="true"
       >
         {' '}
       </div>
@@ -1011,7 +1011,7 @@ class Main extends React.Component {
           </p>
           <h4>
             <a
-              class="fa fa-trophy"
+              className="fa fa-trophy"
               aria-hidden="true"
               href="https://www.freecodecamp.org/certification/olanetsoft/javascript-algorithms-and-data-structures"
             >
@@ -1021,7 +1021,7 @@ class Main extends React.Component {
             <br />
             <br />
             <a
-              class="fa fa-trophy"
+              className="fa fa-trophy"
               aria-hidden="true"
               href="https://www.freecodecamp.org/certification/olanetsoft/apis-and-microservices"
             >
@@ -1031,7 +1031,7 @@ class Main extends React.Component {
             <br />
             <br />
             <a
-              class="fa fa-trophy"
+              className="fa fa-trophy"
               aria-hidden="true"
               href="https://openclassrooms.com/en/course-certificates/7471028571"
             >
@@ -1041,7 +1041,7 @@ class Main extends React.Component {
             <br />
             <br />
             <a
-              class="fa fa-trophy"
+              className="fa fa-trophy"
               aria-hidden="true"
               href="https://www.coursera.org/account/accomplishments/verify/M96TN8JSDWXP"
             >
@@ -1052,7 +1052,7 @@ class Main extends React.Component {
             <br />
             <br />
             <a
-              class="fa fa-trophy"
+              className="fa fa-trophy"
               aria-hidden="true"
               href="https://www.coursera.org/account/accomplishments/records/69E4K5X3NBLY"
             >
@@ -1063,7 +1063,7 @@ class Main extends React.Component {
             <br />
             <br />
             <a
-              class="fa fa-trophy"
+              className="fa fa-trophy"
               aria-hidden="true"
               href="https://academy.infinite.red/courses/679257/certificate"
             >
@@ -1074,7 +1074,7 @@ class Main extends React.Component {
             <br />
             <br />
             <a
-              class="fa fa-trophy"
+              className="fa fa-trophy"
               aria-hidden="true"
               href="https://www.coursera.org/account/accomplishments/verify/BAP3BYQ2K4AJ"
             >
@@ -1085,7 +1085,7 @@ class Main extends React.Component {
             <br />
             <br />
             <a
-              class="fa fa-trophy"
+              className="fa fa-trophy"
               aria-hidden="true"
               href="https://www.coursera.org/account/accomplishments/verify/M3TZQUVANEW3"
             >
@@ -1096,7 +1096,7 @@ class Main extends React.Component {
             <br />
             <br />
             <a
-              class="fa fa-trophy"
+              className="fa fa-trophy"
               aria-hidden="true"
               href="https://www.coursera.org/account/accomplishments/verify/UFGB7QCD8RFK"
             >
@@ -1107,7 +1107,7 @@ class Main extends React.Component {
             <br />
             <br />
             <a
-              class="fa fa-trophy"
+              className="fa fa-trophy"
               aria-hidden="true"
               href="https://www.coursera.org/account/accomplishments/verify/F5RX3YLQKCYP"
             >
@@ -1118,7 +1118,7 @@ class Main extends React.Component {
             <br />
             <br />
             <a
-              class="fa fa-trophy"
+              className="fa fa-trophy"
               aria-hidden="true"
               href="https://www.coursera.org/account/accomplishments/verify/35ZJQ28HWABE"
             >
@@ -1128,7 +1128,7 @@ class Main extends React.Component {
             <br />
             <br />
             <a
-              class="fa fa-trophy"
+              className="fa fa-trophy"
               aria-hidden="true"
               href="https://www.coursera.org/account/accomplishments/verify/2ERVRYUM39E9"
             >
@@ -1139,7 +1139,7 @@ class Main extends React.Component {
             <br />
             <br />
             <a
-              class="fa fa-trophy"
+              className="fa fa-trophy"
               aria-hidden="true"
               href="http://GOO.GL/y4UjgN"
             >
@@ -1150,7 +1150,7 @@ class Main extends React.Component {
             <br />
             <br />
             <a
-              class="fa fa-trophy"
+              className="fa fa-trophy"
               aria-hidden="true"
               href="https://www.sololearn.com/Certificate/1051-8503127/pdf/"
             >
@@ -1161,7 +1161,7 @@ class Main extends React.Component {
             <br />
             <br />
             <a
-              class="fa fa-trophy"
+              className="fa fa-trophy"
               aria-hidden="true"
               href="https://www.sololearn.com/Certificate/1023-8503127/pdf/"
             >
@@ -1172,7 +1172,7 @@ class Main extends React.Component {
             <br />
             <br />
             <a
-              class="fa fa-trophy"
+              className="fa fa-trophy"
               aria-hidden="true"
               href="https://www.sololearn.com/Certificate/1014-8503127/pdf/"
             >
@@ -1182,7 +1182,7 @@ class Main extends React.Component {
             <br />
             <br />
             <br />
-            <a class="fa fa-trophy" aria-hidden="true" href="/#">
+            <a className="fa fa-trophy" aria-hidden="true" href="/#">
               {' '}
               SharePoint Development
             </a>
@@ -1190,7 +1190,7 @@ class Main extends React.Component {
             <br />
             <br />
             <a
-              class="fa fa-trophy"
+              className="fa fa-trophy"
               aria-hidden="true"
               href="https://www.coursera.org/account/accomplishments/verify/2RUKKMFTZALP"
             >
@@ -1199,6 +1199,7 @@ class Main extends React.Component {
             </a>
             <br />
           </h4>
+
           <a href="https://docs.google.com/document/d/1UaBM6in5aw2KiryRq3w9Rz9BFvmB24Dq_3oHJuEi2Wk/edit?usp=sharing">
             View Resume
           </a>

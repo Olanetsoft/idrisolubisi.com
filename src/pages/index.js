@@ -29,12 +29,12 @@ class IndexPage extends React.Component {
     document.addEventListener('mousedown', this.handleClickOutside)
   }
 
-  // componentWillUnmount() {
-  //   if (this.timeoutId) {
-  //     clearTimeout(this.timeoutId)
-  //   }
-  //   document.removeEventListener('mousedown', this.handleClickOutside)
-  // }
+  componentWillUnmount() {
+    if (this.timeoutId) {
+      clearTimeout(this.timeoutId)
+    }
+    document.removeEventListener('mousedown', this.handleClickOutside)
+  }
 
   setWrapperRef(node) {
     this.wrapperRef = node

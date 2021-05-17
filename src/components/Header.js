@@ -10,7 +10,7 @@ const Header = props => (
     <div className="content">
       <div className="inner">
         <h2>
-          <Typed strings={['I am Idris Olubisi']} typeSpeed={30} />
+          <Typed strings={["I'm Idris Olubisi"]} typeSpeed={30} />
         </h2>
         <h3 style={{ color: 'gold' }}>
           <Typed
@@ -40,6 +40,7 @@ const Header = props => (
               href="https://blog.idrisolubisi.com/"
               target="_blank"
               rel="noopener noreferrer"
+              style={{ borderBottom: 'none' }}
             >
               My Blog <span className="fa fa-pencil" aria-hidden="true"></span>
             </a>
