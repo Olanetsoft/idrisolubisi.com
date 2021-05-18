@@ -45,15 +45,6 @@ const Header = props => (
               My Blog <span className="fa fa-pencil" aria-hidden="true"></span>
             </a>
           </button>
-          {/* <Link to="https://blog.idrisolubisi.com/" target="_blank"> */}
-          {/* <button
-            // onClick={() => {
-            //   props.onOpenArticle('intro')
-            // }}
-            >
-              My Blog <span className="fa fa-pencil" aria-hidden="true"></span>
-            </button>
-          </Link> */}
         </li>
         <li>
           <button
@@ -89,6 +80,18 @@ const Header = props => (
             }}
           >
             Hire me <span className="icon fa-address-card"></span>
+          </button>
+        </li>
+        <li>
+          <button>
+            <a
+              href="https://docs.google.com/document/d/1UaBM6in5aw2KiryRq3w9Rz9BFvmB24Dq_3oHJuEi2Wk/edit?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ borderBottom: 'none' }}
+            >
+              Resume <span className="fa fa-file" aria-hidden="true"></span>
+            </a>
           </button>
         </li>
       </ul>

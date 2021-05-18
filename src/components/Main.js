@@ -2,22 +2,18 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import chatapp from '../../Content/assets/chatapp.png'
-import musical from '../../Content/assets/music.png'
 import naija from '../../Content/assets/supernaija.png'
-// import clock from "../../Content/assets/clock.png"
 import git from '../../Content/assets/git-user.png'
 import math from '../../Content/assets/math.png'
-import ponk from '../../Content/assets/ponk.png'
-import rethinkLagos from '../../Content/assets/rethink.png'
 import tutorx from '../../Content/assets/tutorx.png'
-import vogue from '../../Content/assets/vogue.png'
 import hotzy from '../../Content/assets/hotzy.png'
-import tourpadi from '../../Content/assets/tourpadi.png'
 import aboutPic from '../../Content/assets/aboutPic.jpg'
-// import test from "../../Content/assets/git.png"
-// import gatsby from '../images/gatsby2.png'
 
 //http://jsfiddle.net/5e6zr2Lq/1/
+import datalabs from '../../Content/assets/datalabs.png'
+import customerpayme from '../../Content/assets/customerpayme.png'
+import fundmylaptop from '../../Content/assets/fundmylaptop.png'
+import socialsafety from '../../Content/assets/socialsafety.png'
 
 class Main extends React.Component {
   render() {
@@ -44,36 +40,6 @@ class Main extends React.Component {
         id="main"
         style={this.props.timeout ? { display: 'flex' } : { display: 'none' }}
       >
-        {/* <article
-          id="intro"
-          className={`${this.props.article === 'intro' ? 'active' : ''} ${
-            this.props.articleTimeout ? 'timeout' : ''
-            }`}
-          style={{ display: 'none' }}
-        >
-          <h2 className="major">MY Blog</h2>
-          <span className="image main">
-            <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/digiitalClock.webp" alt="" />
-          </span>
-          <p>
-            Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin
-            aliquam facilisis ante interdum congue. Integer mollis, nisl amet
-            convallis, porttitor magna ullamcorper, amet egestas mauris. Ut
-            magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas.
-            By the way, check out my <a href="#work">awesome work</a>.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-            dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora
-            torquent per conubia nostra, per inceptos himenaeos. Etiam tristique
-            libero eu nibh porttitor fermentum. Nullam venenatis erat id
-            vehicula viverra. Nunc ultrices eros ut ultricies condimentum.
-            Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae
-            dolor.
-          </p>
-          {close}
-        </article> */}
-
         <article
           id="work"
           className={`${this.props.article === 'work' ? 'active' : ''} ${
@@ -82,45 +48,93 @@ class Main extends React.Component {
           style={{ display: 'none' }}
         >
           <h2 className="major">PROJECTS</h2>
-
+          <span className="image main">
+            <a
+              href="https://customerpay.me/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                className="lazyload"
+                data-src={customerpayme}
+                alt="customerpayme"
+              />
+            </a>
+          </span>
+          <button>
+            <a
+              href="https://customerpay.me/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="fa fa-eye"
+              style={{ borderBottom: 'none' }}
+            >
+              {' '}
+              Visit Site{' '}
+            </a>
+          </button>
           <span className="image main">
             <a
               href="https://supernigerians.herokuapp.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/tutorx.webp" alt="tutorX" /></a> */}
               <img
                 className="lazyload"
                 data-src={naija}
                 alt="super nigerians"
               />
             </a>
-            {/* https://res.cloudinary.com/olanetsoft/image/upload/v1585696699/Idris%20Portfolio%20Pictures/vogue.webp */}
-            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
-          <p>
-            Project Title: Super Nigerians <br />
+          <button>
             <a
               href="https://supernigerians.herokuapp.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="fa fa-eye"
+              style={{ borderBottom: 'none' }}
             >
               {' '}
               Visit Site{' '}
             </a>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </button>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button>
             <a
               href="https://github.com/Olanetsoft/SuperNigerians"
               target="_blank"
               className="icon fa-github"
               rel="noopener noreferrer"
+              style={{ borderBottom: 'none' }}
             >
               {' '}
               View Source Code
             </a>
-          </p>
+          </button>
+          <span className="image main">
+            <a
+              href="https://fundmylaptop.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                className="lazyload"
+                data-src={fundmylaptop}
+                alt="fundmylaptop"
+              />
+            </a>
+          </span>
+          <button>
+            <a
+              href="https://fundmylaptop.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="fa fa-eye"
+              style={{ borderBottom: 'none' }}
+            >
+              Visit Site{' '}
+            </a>
+          </button>
           <span className="image main">
             <a
               href="https://hotzy-store.herokuapp.com/"
@@ -129,66 +143,112 @@ class Main extends React.Component {
             >
               <img className="lazyload" data-src={hotzy} alt="hotzy" />
             </a>
-            {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1592651780/hotzy.webp" alt="hotzy" /></a> */}
           </span>
-          <p>
-            Project Title: Hotzy Store <br />
+          <button>
             <a
               href="https://hotzy-store.herokuapp.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="fa fa-eye"
+              style={{ borderBottom: 'none' }}
             >
               {' '}
               Visit Site{' '}
             </a>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </button>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button>
             <a
               href="https://github.com/Olanetsoft/hotzy-store"
               target="_blank"
               className="icon fa-github"
               rel="noopener noreferrer"
+              style={{ borderBottom: 'none' }}
             >
               {' '}
               View Source Code
             </a>
-          </p>
-
+          </button>
+          <span className="image main">
+            <a
+              href="https://datalab.socialsafety.net"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img className="lazyload" data-src={datalabs} alt="datalab" />
+            </a>
+          </span>
+          <button>
+            <a
+              href="https://datalab.socialsafety.net"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="fa fa-eye"
+              style={{ borderBottom: 'none' }}
+            >
+              {' '}
+              Visit Site{' '}
+            </a>
+          </button>
           <span className="image main">
             <a
               href="https://tutor-x.netlify.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/tutorx.webp" alt="tutorX" /></a> */}
               <img className="lazyload" data-src={tutorx} alt="tutorX" />
             </a>
-            {/* https://res.cloudinary.com/olanetsoft/image/upload/v1585696699/Idris%20Portfolio%20Pictures/vogue.webp */}
-            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
           </span>
-          <p>
-            Project Title: tutorX <br />
+          <button>
             <a
               href="https://tutor-x.netlify.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="fa fa-eye"
+              style={{ borderBottom: 'none' }}
             >
               {' '}
               Visit Site{' '}
             </a>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </button>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button>
             <a
               href="https://github.com/Olanetsoft/Tutor-X"
               target="_blank"
               className="icon fa-github"
               rel="noopener noreferrer"
+              style={{ borderBottom: 'none' }}
             >
               {' '}
               View Source Code
             </a>
-          </p>
-
+          </button>
+          <span className="image main">
+            <a
+              href="https://docs.socialsafety.net"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                className="lazyload"
+                data-src={socialsafety}
+                alt="socialsafety"
+              />
+            </a>
+          </span>
+          <button>
+            <a
+              href="https://docs.socialsafety.net"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="fa fa-eye"
+              style={{ borderBottom: 'none' }}
+            >
+              {' '}
+              Visit Site{' '}
+            </a>
+          </button>
           <span className="image main">
             <a
               href="https://web-chat.global.assistant.watson.cloud.ibm.com/preview.html?region=eu-gb&integrationID=08c8e484-3c52-4685-8cc5-be6974aaeb8f&serviceInstanceID=248098c0-92c6-4213-96bb-961a448bc72d"
@@ -197,54 +257,19 @@ class Main extends React.Component {
             >
               <img className="lazyload" data-src={chatapp} alt="wakalagos" />
             </a>
-            {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/chatapp.webp" alt="wakalagos" /></a> */}
           </span>
-          <p>
-            Project Title: WakaLagos Chat App <br />
+          <button>
             <a
               href="https://web-chat.global.assistant.watson.cloud.ibm.com/preview.html?region=eu-gb&integrationID=08c8e484-3c52-4685-8cc5-be6974aaeb8f&serviceInstanceID=248098c0-92c6-4213-96bb-961a448bc72d"
               target="_blank"
               rel="noopener noreferrer"
               className="fa fa-eye"
+              style={{ borderBottom: 'none' }}
             >
               {' '}
               Visit Site{' '}
             </a>
-          </p>
-
-          <span className="image main">
-            <a
-              href="https://vogue.herokuapp.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img className="lazyload" data-src={vogue} alt="vogue" />
-            </a>
-            {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1585696699/Idris%20Portfolio%20Pictures/vogue.webp" alt="vogue" /></a> */}
-          </span>
-          <p>
-            Project Title: Vogue Store <br />
-            <a
-              href="https://vogue.herokuapp.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="fa fa-eye"
-            >
-              {' '}
-              Visit Site{' '}
-            </a>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a
-              href="https://github.com/Olanetsoft/Vogue-Store"
-              target="_blank"
-              className="icon fa-github"
-              rel="noopener noreferrer"
-            >
-              {' '}
-              View Source Code
-            </a>
-          </p>
-
+          </button>
           <span className="image main">
             <a
               href="https://math-puzzle.netlify.app/"
@@ -256,119 +281,31 @@ class Main extends React.Component {
             {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/math.webp"
                 alt="mathGame" /></a> */}
           </span>
-          <p>
-            Project Title: Math Puzzle Game <br />
+          <button>
             <a
               href="https://math-puzzle.netlify.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="fa fa-eye"
+              style={{ borderBottom: 'none' }}
             >
               {' '}
               Visit Site{' '}
             </a>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </button>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button>
             <a
               href="https://github.com/Olanetsoft/math-game"
               target="_blank"
               className="icon fa-github"
               rel="noopener noreferrer"
+              style={{ borderBottom: 'none' }}
             >
               {' '}
               View Source Code
             </a>
-          </p>
-
-          <span className="image main">
-            <a
-              href="https://tourpadi.herokuapp.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img className="lazyload" data-src={tourpadi} alt="tourpadi" />
-            </a>
-            {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1593863784/Idris%20Portfolio%20Pictures/tourpadi.webp"
-                alt="tourpadi" /></a> */}
-            {/* https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/rethinkLagos.webp */}
-            {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> */}
-          </span>
-          <p>
-            Project Title: Tour Padi <br />
-            <a
-              href="https://tourpadi.herokuapp.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="fa fa-eye"
-            >
-              {' '}
-              Visit Site{' '}
-            </a>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a
-              href="https://github.com/Olanetsoft/TourPadi"
-              target="_blank"
-              className="icon fa-github"
-              rel="noopener noreferrer"
-            >
-              {' '}
-              View Source Code
-            </a>
-          </p>
-          <span className="image main">
-            <a
-              href="https://www.rethinklagos.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img className="lazyload" data-src={rethinkLagos} alt="Rethink" />
-            </a>
-            {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426818/projects%20images/rethink.webp"
-                alt="Rethink" /></a> */}
-          </span>
-          <p>
-            Project Title: Rethink Lagos <br />
-            <a
-              href="https://www.rethinklagos.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="fa fa-eye"
-            >
-              {' '}
-              Visit Site{' '}
-            </a>
-          </p>
-
-          {/* <span className="image main">
-            <a href="https://we-flex.netlify.com/"
-              target='_blank'
-              rel="noopener noreferrer" >
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/wechat.webp" alt="vogue" /></a>
-            {/* https://res.cloudinary.com/olanetsoft/image/upload/v1585696699/Idris%20Portfolio%20Pictures/vogue.webp */}
-          {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com"/> 
-          </span>
-          <p>
-            Project Title: We-Flex <br />
-            <a href="https://we-flex.netlify.com/" target='_blank'
-              rel="noopener noreferrer"
-              className="fa fa-eye"> Visit Site </a>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="https://github.com/Olanetsoft/we-flex"
-              target='_blank' className="icon fa-github"
-              rel="noopener noreferrer"> View Source Code</a>
-          </p> */}
-
-          {/* <span className="image main">
-            <a href="https://www.naija4life.com.ng" target='_blank' rel="noopener noreferrer">
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/naija4life.webp"
-                alt="naija4life" /></a>
-            {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308683/Idris%20Portfolio%20Pictures/naija4life.webp" 
-          </span>
-          <p>
-            Project Title: Naija4life Blog <br />
-            <a href="https://www.naija4life.com.ng" target='_blank'
-              rel="noopener noreferrer" className="fa fa-eye"> Visit Site</a>
-          </p> */}
-
+          </button>
           <span className="image main">
             <a
               href="https://git-user.netlify.app/"
@@ -377,173 +314,33 @@ class Main extends React.Component {
             >
               <img className="lazyload" data-src={git} alt="git" />
             </a>
-            {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/git-user.webp"
-                alt="git" /></a> */}
-            {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/digiitalClock.webp" */}
           </span>
-          <p>
-            Project Title: GitHub Profile Finder
-            <br />
+          <button>
             <a
               href="https://git-user.netlify.app"
               target="_blank"
               rel="noopener noreferrer"
               className="fa fa-eye"
+              style={{ borderBottom: 'none' }}
             >
               {' '}
               Visit Site{' '}
             </a>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </button>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button>
             <a
               href="https://github.com/Olanetsoft/git-card"
               target="_blank"
               className="icon fa-github"
               rel="noopener noreferrer"
+              style={{ borderBottom: 'none' }}
             >
               {' '}
               View Source Code
             </a>
-          </p>
-
-          {/* <span className="image main">
-            <a href="https://www.isazoni.com" target='_blank' rel="noopener noreferrer">
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/isazzoni.webp" alt="isazoni" /></a>
-            {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/isazoni.webp" 
-          </span>
-          <p>
-            Project Title: Isaz-Oni <br />
-            <a href="https://www.isazoni.com.ng" target='_blank'
-              rel="noopener noreferrer" className="fa fa-eye"> Visit Site </a>
-          </p> */}
-
-          {/* <span className="image main">
-            <a href="https://www.kwarasell.com" target='_blank' rel="noopener noreferrer">
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/kwarasell.webp" alt="Kwarasell" /></a>
-
-            {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/kwarasell.webp"
-          </span>
-          <p>
-            Project Title: Kwarasell <br />
-            <a href="https://www.kwarasell.com"
-              target='_blank' rel="noopener noreferrer" className="fa fa-eye"> Visit Site </a>
-          </p> */}
-
-          <span className="image main">
-            <a
-              href="https://ponk-app.netlify.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img className="lazyload" data-src={ponk} alt="ponkApp" />
-            </a>
-            {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426818/projects%20images/ponk.webp" alt="ponkApp" /></a> */}
-            {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/ponkApp.webp" */}
-          </span>
-          <p>
-            Project Title: Ponk App <br />
-            <a
-              href="https://ponk-app.netlify.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="fa fa-eye"
-            >
-              Visit Site{' '}
-            </a>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a
-              href="https://github.com/Olanetsoft/Ponk-App"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="icon fa-github"
-            >
-              {' '}
-              View Source Code
-            </a>
-          </p>
-
-          <span className="image main">
-            <a
-              href="https://music-event.netlify.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {' '}
-              <img className="lazyload" data-src={musical} alt="MusicEvent" />
-            </a>
-            {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/music.webp"
-                alt="MusicEvent" /></a> */}
-          </span>
-          <p>
-            Project Title: Musical Event
-            <br />
-            <a
-              href="https://music-event.netlify.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="fa fa-eye"
-            >
-              {' '}
-              Visit Site{' '}
-            </a>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a
-              href="https://github.com/Olanetsoft/musical-event-project"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="icon fa-github"
-            >
-              {' '}
-              View Source Code
-            </a>
-          </p>
-
-          {/* <span className="image main">
-
-            <a href="https://web-clockjs.netlify.com" target='_blank' rel="noopener noreferrer">
-              <img src={clock} alt="jsClock" /></a>
-              {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/clock.webp" alt="jsClock" /></a> */}
-          {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1582408165/Idris%20Portfolio%20Pictures/jsclock.webp" 
-          </span>
-          <p>
-            Project Title: Web Clock <br />
-            <a href="https://web-clockjs.netlify.com" target='_blank'
-              rel="noopener noreferrer"
-              className="fa fa-eye"> Visit Site </a>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://github.com/Olanetsoft/webclock" target='_blank' rel="noopener noreferrer"
-              className="icon fa-github"> View Source Code</a>
-          </p> */}
-
-          {/* <span className="image main">
-            <a href="https://digital-web-clock.netlify.com" target='_blank' rel="noopener noreferrer">
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1594426817/projects%20images/digital.webp"
-                alt="DigitalClock" /></a>
-            {/* "https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/digiitalClock.webp" 
-          </span>
-          <p>
-            Project Title: Digital Clock <br /><a href="https://digital-web-clock.netlify.com"
-              target='_blank' rel="noopener noreferrer"
-              className="fa fa-eye"> Visit Site </a>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-             <a href="https://github.com/Olanetsoft/Ticking-Clock-With-React"
-              target='_blank' className="icon fa-github"
-              rel="noopener noreferrer"> View Source Code</a>
-
-          </p> */}
-
-          {/* <span className="image main">
-            <a href="https://www.boeinvest.com" target='_blank' rel="noopener noreferrer">
-
-              <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/boeinvest.webp" alt="Boeinvest" /></a> */}
-          {/* https://res.cloudinary.com/olanetsoft/image/upload/v1580308681/Idris%20Portfolio%20Pictures/boeinvest.webp */}
-          {/* <img src="https://api.miniature.io/?width=100&height=30&url=rethinklagos.com" /> */}
-          {/* </span> */}
-          {/* <p>
-            PROJECT NAME: BOE INVESTMENT NIGERIA <br />
-            <a href="https://www.boeinvest.com"
-              target='_blank' rel="noopener noreferrer" className="fa fa-eye"> Visit Site </a>
-          </p> */}
-
+          </button>
+          <br /> <br />
           <ul className="icons">
             <li>
               <a
@@ -770,33 +567,6 @@ class Main extends React.Component {
           &nbsp;&nbsp;&nbsp;
           <br />
           <br />
-          {/* 
-          <h3>Tertiary Institution Details :</h3>
-          <h5>Abubakar Tafawa Balewa University<br />
-            Degree Name: Bachelor's degree<br />
-            Field Of Study: Electrical and Electronics Engineering<br />
-            Dates attended: 2012 – 2017
-              <h3>Leadership Role:</h3>
-            1. Social Director of the Nigerian Institute of Electrical and Electronics Engineering (NIEEE)Atbu Chapter 2015/2016 Academic Session<br />
-            2. Vice-president of National Association of Kwara state Student (NAKSS)Atbu Chapter 2015.<br />
-            3. Secretary General of Ilorin Emirate Student's Union(IESU) 2014/2015<br />
-            4. Welfare Director of Isokan Students State Association(ISSA) 2014/2015<br />
-            5. Director of Social, National Union of Lagos State students (NULASS) 2014/2015<br />
-          </h5>
-
-
-          <h3>College Details: </h3>
-          <h5>Brainpoint College<br />
-            Degree Name: West Africa Examination Council<br />
-            Dates attended : 2006 – 2011<br />
-          </h5>
-
-          <h3>Primary school Details: </h3>
-          <h5>Muslim Children Private School<br />
-            Degree Name: First school leaving certificate<br />
-            Dates attended or expected graduation 2000 – 2005<br />
-          </h5>
-          <br /><br /> */}
           <ul className="icons">
             <li>
               <a
@@ -1199,10 +969,6 @@ class Main extends React.Component {
             </a>
             <br />
           </h4>
-
-          <a href="https://docs.google.com/document/d/1UaBM6in5aw2KiryRq3w9Rz9BFvmB24Dq_3oHJuEi2Wk/edit?usp=sharing">
-            View Resume
-          </a>
           <br />
           <br />
 
