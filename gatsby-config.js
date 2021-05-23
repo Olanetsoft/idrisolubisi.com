@@ -3,7 +3,7 @@ module.exports = {
     title: 'Idris Olubisi: Back End Developer',
     author: 'Idris Olubisi',
     description:
-      'Idris is a Back End Developer, Technical Writer, Speaker and Open-source contributor with extensive experience in entire project life cycle',
+      'Idris is a Back End Developer, Technical Writer, Speaker and Open-source contributor from Lagos, Nigeria.',
     social: {
       twitter: '@olanetsoft',
       github: 'olanetsoft',

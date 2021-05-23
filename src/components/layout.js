@@ -41,7 +41,7 @@ const Layout = ({ children, location }) => {
               {
                 name: 'description',
                 content:
-                  'Idris is a Back End Developer, Technical Writer, Speaker and Open-source contributor with extensive experience in entire project life cycle',
+                  'Idris is a Back End Developer, Technical Writer, Speaker and Open-source contributor from Lagos, Nigeria.',
               },
               {
                 name: 'keywords',
