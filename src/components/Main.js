@@ -75,6 +75,27 @@ class Main extends React.Component {
           </button>
           <span className="image main">
             <a
+              href="https://datalabs.socialsafety.net"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img className="lazyload" data-src={datalabs} alt="datalab" />
+            </a>
+          </span>
+          <button>
+            <a
+              href="https://datalabs.socialsafety.net"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="fa fa-eye"
+              style={{ borderBottom: 'none' }}
+            >
+              {' '}
+              Visit Site{' '}
+            </a>
+          </button>
+          <span className="image main">
+            <a
               href="https://supernigerians.herokuapp.com/"
               target="_blank"
               rel="noopener noreferrer"
@@ -167,27 +188,6 @@ class Main extends React.Component {
             >
               {' '}
               View Source Code
-            </a>
-          </button>
-          <span className="image main">
-            <a
-              href="https://datalabs.socialsafety.net"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img className="lazyload" data-src={datalabs} alt="datalab" />
-            </a>
-          </span>
-          <button>
-            <a
-              href="https://datalab.socialsafety.net"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="fa fa-eye"
-              style={{ borderBottom: 'none' }}
-            >
-              {' '}
-              Visit Site{' '}
             </a>
           </button>
           <span className="image main">
