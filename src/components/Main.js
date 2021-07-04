@@ -171,7 +171,7 @@ class Main extends React.Component {
           </button>
           <span className="image main">
             <a
-              href="https://datalab.socialsafety.net"
+              href="https://datalabs.socialsafety.net"
               target="_blank"
               rel="noopener noreferrer"
             >

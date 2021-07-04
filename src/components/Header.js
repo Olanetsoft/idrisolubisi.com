@@ -85,7 +85,7 @@ const Header = props => (
         <li>
           <button>
             <a
-              href="https://docs.google.com/document/d/1UaBM6in5aw2KiryRq3w9Rz9BFvmB24Dq_3oHJuEi2Wk/edit?usp=sharing"
+              href="https://drive.google.com/file/d/1WToDftbMJ48daQOYJP40e_MYIVwrgEg-/view"
               target="_blank"
               rel="noopener noreferrer"
               style={{ borderBottom: 'none' }}
@@ -94,6 +94,25 @@ const Header = props => (
             </a>
           </button>
         </li>
+        {/* <li>
+          <button>
+            <a
+              href="https://www.buymeacoffee.com/olanetsoft"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ borderBottom: 'none' }}
+            >
+              <img
+                src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+                alt="Buy Me A Coffee"
+                style={{
+                  height: '2.75rem',
+                  minWidth: '7.5rem',
+                }}
+              />
+            </a>
+          </button>
+        </li> */}
       </ul>
     </nav>
   </header>
