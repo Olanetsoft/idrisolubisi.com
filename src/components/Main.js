@@ -96,6 +96,30 @@ class Main extends React.Component {
           </button>
           <span className="image main">
             <a
+              href="https://fundmylaptop.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                className="lazyload"
+                data-src={fundmylaptop}
+                alt="fundmylaptop"
+              />
+            </a>
+          </span>
+          <button>
+            <a
+              href="https://fundmylaptop.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="fa fa-eye"
+              style={{ borderBottom: 'none' }}
+            >
+              Visit Site{' '}
+            </a>
+          </button>
+          <span className="image main">
+            <a
               href="https://supernigerians.herokuapp.com/"
               target="_blank"
               rel="noopener noreferrer"
@@ -134,26 +158,40 @@ class Main extends React.Component {
           </button>
           <span className="image main">
             <a
-              href="https://fundmylaptop.com"
+              href="https://socialsafety.net"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img
                 className="lazyload"
-                data-src={fundmylaptop}
-                alt="fundmylaptop"
+                data-src={socialsafety}
+                alt="socialsafety"
               />
             </a>
           </span>
           <button>
             <a
-              href="https://fundmylaptop.com"
+              href="https://socialsafety.net"
               target="_blank"
               rel="noopener noreferrer"
               className="fa fa-eye"
               style={{ borderBottom: 'none' }}
             >
+              {' '}
               Visit Site{' '}
+            </a>
+          </button>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button>
+            <a
+              href="https://github.com/Olanetsoft/hotzy-store"
+              target="_blank"
+              className="icon fa-github"
+              rel="noopener noreferrer"
+              style={{ borderBottom: 'none' }}
+            >
+              {' '}
+              View Source Code
             </a>
           </button>
           <span className="image main">
@@ -175,19 +213,6 @@ class Main extends React.Component {
             >
               {' '}
               Visit Site{' '}
-            </a>
-          </button>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <button>
-            <a
-              href="https://github.com/Olanetsoft/hotzy-store"
-              target="_blank"
-              className="icon fa-github"
-              rel="noopener noreferrer"
-              style={{ borderBottom: 'none' }}
-            >
-              {' '}
-              View Source Code
             </a>
           </button>
           <span className="image main">
@@ -222,31 +247,6 @@ class Main extends React.Component {
             >
               {' '}
               View Source Code
-            </a>
-          </button>
-          <span className="image main">
-            <a
-              href="https://docs.socialsafety.net"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                className="lazyload"
-                data-src={socialsafety}
-                alt="socialsafety"
-              />
-            </a>
-          </span>
-          <button>
-            <a
-              href="https://docs.socialsafety.net"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="fa fa-eye"
-              style={{ borderBottom: 'none' }}
-            >
-              {' '}
-              Visit Site{' '}
             </a>
           </button>
           <span className="image main">
