@@ -181,19 +181,6 @@ class Main extends React.Component {
               Visit Site{' '}
             </a>
           </button>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <button>
-            <a
-              href="https://github.com/Olanetsoft/hotzy-store"
-              target="_blank"
-              className="icon fa-github"
-              rel="noopener noreferrer"
-              style={{ borderBottom: 'none' }}
-            >
-              {' '}
-              View Source Code
-            </a>
-          </button>
           <span className="image main">
             <a
               href="https://hotzy-store.herokuapp.com/"
@@ -213,6 +200,19 @@ class Main extends React.Component {
             >
               {' '}
               Visit Site{' '}
+            </a>
+          </button>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button>
+            <a
+              href="https://github.com/Olanetsoft/hotzy-store"
+              target="_blank"
+              className="icon fa-github"
+              rel="noopener noreferrer"
+              style={{ borderBottom: 'none' }}
+            >
+              {' '}
+              View Source Code
             </a>
           </button>
           <span className="image main">
