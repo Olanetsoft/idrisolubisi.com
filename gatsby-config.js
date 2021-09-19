@@ -110,12 +110,12 @@ module.exports = {
         head: true,
       },
     },
-    {
-      resolve: `gatsby-plugin-google-tagmanager`,
-      options: {
-        id: `GTM-T99QM6R`,
-        includeInDevelopment: true,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-tagmanager`,
+    //   options: {
+    //     id: `GTM-T99QM6R`,
+    //     includeInDevelopment: true,
+    //   },
+    // },
   ],
 }
