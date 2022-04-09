@@ -45,7 +45,7 @@
     "lazysizes": "^5.2.2",
     "node-sass": "^4.13.0",
     "preact": "^10.3.1",
-    "prismjs": "^1.25.0",
+    "prismjs": "^1.27.0",
     "pusher": "^3.0.0",
     "pusher-js": "^5.0.3",
     "react": "^16.12.0",
