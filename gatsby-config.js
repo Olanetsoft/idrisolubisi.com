@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: 'Idris Olubisi: Back End Developer',
+    title: 'Idris Olubisi | Software Engineer & Developer Advocate',
     author: 'Idris Olubisi',
     description:
-      'Idris is a Back End Developer, Technical Writer, Speaker and Open-source contributor from Lagos, Nigeria.',
+      'Idris is a Software Engineer, Developer Advocate, Technical Writer, Speaker and Open-source contributor.',
     social: {
       twitter: '@olanetsoft',
       github: 'olanetsoft',
@@ -30,13 +30,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Idris Olubisi: Back End Developer',
-        short_name: 'Back End Developer',
+        name: 'Idris Olubisi | Software Engineer & Developer Advocate',
+        short_name: 'Developer Advocate',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',
         display: 'minimal-ui',
-        icon: 'src/images/unchecked-circle.png', // This path is relative to the root of the site.
+        icon: 'src/images/dp.png', // This path is relative to the root of the site.
       },
     },
     'gatsby-plugin-sass',
