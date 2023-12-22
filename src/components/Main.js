@@ -421,15 +421,20 @@ class Main extends React.Component {
         >
           <h2 className="major">About</h2>
           <span className="image main">
-            <img className="lazyload" data-src={aboutPic} alt="My_photo" />
+            {/* <img className="lazyload" data-src={aboutPic} alt="My_photo" /> */}
             {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/aboutPic.webp" alt="My_photo" /> */}
           </span>
           <h5>
-            I strive for excellence and precision at all time, contributing the
-            best of my ability and quota to improving organizational objective
-            and achieving all goals set and target.
+            Idris is an accomplished software engineer, developer advocate,
+            technical writer, and developer advocate with expertise in open
+            source, blockchain, software products, and serverless technologies.
+            As a Developer Advocate, Idris brings industry knowledge and a
+            passion for empowering fellow developers. With a proven track record
+            of contributing to reputable publications and engaging with the
+            developer community, Idris is highly sought-after as a developer
+            relations engineer.
           </h5>
-          <h3>Skill Set</h3>
+          <h3>Technologies & Skills</h3>
           <h5>Front End: </h5>
           <img
             className="lazyload"
@@ -552,7 +557,7 @@ class Main extends React.Component {
           />
           <br />
           <br />
-          <h5>Programing Languages: </h5>
+          <h5>Programming Languages: </h5>
           <img
             className="lazyload"
             data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-javascript-48.png"
@@ -601,28 +606,7 @@ class Main extends React.Component {
                 {' '}
               </a>
             </li>
-            <li>
-              <a
-                href="https://facebook.com/olubisiidris"
-                className="icon fa-facebook"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-              >
-                {' '}
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/olanetsoft"
-                className="icon fa-instagram"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-              >
-                {' '}
-              </a>
-            </li>
+
             <li>
               <a
                 href="https://www.linkedin.com/in/olubisi-idris-ayinde-05727b17a/"
@@ -647,18 +631,53 @@ class Main extends React.Component {
         >
           <h2 className="major">
             Experience & <br />
-            Achievements
+            Certifications
           </h2>
 
           <span className="image main">
             {/* <img src={CertImage} alt="" /> */}
           </span>
+          <h3>Axelar</h3>
+          <h4>
+            ROLE: Developer Advocate
+            <br />
+            <br />
+            Dates: Apr 2023 - Present
+            <br />
+            <br />
+            Location: Waterloo, Ontario, Canada
+          </h4>
+          <br />
+          <h3>Mara</h3>
+          <h4>
+            ROLE: Developer Relation Engineer
+            <br />
+            <br />
+            Dates: Jul 2022 - Apr 2023
+            <br />
+            <br />
+            Location: Nairobi, Kenya
+          </h4>
+          <br />
+
+          <h3>Luna</h3>
+          <h4>
+            ROLE: Back End Engineer
+            <br />
+            <br />
+            Dates Employed: Dec 2021 - Jul 2022
+            <br />
+            <br />
+            Location: London, England, United Kingdom
+          </h4>
+          <br />
+
           <h3>Philanthrolab</h3>
           <h4>
             ROLE: Back End Engineer
             <br />
             <br />
-            Dates Employed: April 2021 – Present
+            Dates: April 2021 – Dec 2021
             <br />
             <br />
             Location: Dallas, Texas.
@@ -670,7 +689,7 @@ class Main extends React.Component {
             ROLE: Software Developer/Support Analyst -SharePoint
             <br />
             <br />
-            Dates Employed: May 2019 – Present
+            Dates: May 2019 – August 2021
             <br />
             <br />
             Location: Lagos, Nigeria
@@ -682,94 +701,7 @@ class Main extends React.Component {
             ROLE: Backend Developer
             <br />
             <br />
-            Dates Employed: Jun 2020 – Sept 2020
-            <br />
-            <br />
-            Location: Lagos, Nigeria
-          </h4>
-          <br />
-
-          <h3>Ultra Media Solution</h3>
-          <h4>
-            Role: Web Development and Digital Marketing Intern
-            <br />
-            <br />
-            Dates Employed: Mar 2019 – Apr 2019
-            <br />
-            <br />
-            Location: 11 Unity Road ikeja lagos
-          </h4>
-          <br />
-
-          <h3>CVIT</h3>
-          <h4>
-            Role: Network Administrator intern
-            <br />
-            <br />
-            Dates Employed: Mar 2019 – Apr 2019
-            <br />
-            <br />
-            Location: Ikeja lagos
-          </h4>
-          <br />
-          <h3>FIIRO AUTOMATION</h3>
-          <h4>
-            Role: Graduate Electrical Engineer Trainee
-            <br />
-            <br />
-            Dates Employed: Jun 2018 – Mar 2019
-            <br />
-            <br />
-            Location: Lagos, Nigeria
-          </h4>
-          <br />
-          <h3>Code lagos</h3>
-          <h4>
-            Role:Trainee
-            <br />
-            <br />
-            Dates Employed: Oct 2018 – Nov 2018
-            <br />
-            <br />
-            Location: Lagos,Nigeria
-          </h4>
-          <br />
-
-          <h3>Cisco Networking Academy</h3>
-          <h4>
-            Role: Engineering Trainee
-            <br />
-            <br />
-            Dates Employed: Sep 2018 – Nov 2018
-          </h4>
-          <br />
-
-          <h3>Google Digital Skills For Africa</h3>
-          <h4>
-            Digital Marketing Trainee
-            <br />
-            <br />
-            Dates Employed: Sep 2018 – Oct 2018
-          </h4>
-          <br />
-          <h3>Al-Hikmah University</h3>
-          <h4>
-            Electrical & Electronics Engineer Trainee
-            <br />
-            <br />
-            Dates Employed: Nov 2016 – Apr 2017
-            <br />
-            <br />
-            Location: Kwara, Nigeria
-          </h4>
-          <br />
-
-          <h3>More Blessing Engineering Works</h3>
-          <h4>
-            Role: Engineer Trainee
-            <br />
-            <br />
-            Dates Employed: Jan 2016 – Mar 2016
+            Dates: Jun 2020 – Sept 2020
             <br />
             <br />
             Location: Lagos, Nigeria
@@ -777,7 +709,7 @@ class Main extends React.Component {
           <br />
 
           <p>
-            <b>ACHIEVEMENTS</b>
+            <b>Certification</b>
           </p>
           <h4>
             <a
@@ -1006,28 +938,7 @@ class Main extends React.Component {
                 {' '}
               </a>
             </li>
-            <li>
-              <a
-                href="https://facebook.com/olubisiidris"
-                className="icon fa-facebook"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-              >
-                {' '}
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/olanetsoft"
-                className="icon fa-instagram"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-              >
-                {' '}
-              </a>
-            </li>
+
             <li>
               <a
                 href="https://www.linkedin.com/in/olubisi-idris-ayinde-05727b17a/"
@@ -1126,28 +1037,7 @@ class Main extends React.Component {
                 {' '}
               </a>
             </li>
-            <li>
-              <a
-                href="https://facebook.com/olubisiidris"
-                className="icon fa-facebook"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-              >
-                {' '}
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/olanetsoft"
-                className="icon fa-instagram"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-              >
-                {' '}
-              </a>
-            </li>
+
             <li>
               <a
                 href="https://www.linkedin.com/in/olubisi-idris-ayinde-05727b17a/"

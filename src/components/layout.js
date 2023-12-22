@@ -41,11 +41,12 @@ const Layout = ({ children, location }) => {
               {
                 name: 'description',
                 content:
-                  'Idris is a Back End Developer, Technical Writer, Speaker and Open-source contributor from Lagos, Nigeria.',
+                  'Idris is a Software Engineer, Developer Advocate, Technical Writer, Speaker and Open-source contributor.',
               },
               {
                 name: 'keywords',
-                content: 'Idris Olubisi: Back End Developer',
+                content:
+                  'Idris Olubisi: Software Engineer & Developer Advocate',
               },
             ]}
           >

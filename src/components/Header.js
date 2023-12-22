@@ -15,7 +15,7 @@ const Header = props => (
         <h3 style={{ color: 'gold' }}>
           <Typed
             strings={[
-              'I am a public SPeaker',
+              'I am a public speaker',
               'I write code for a living',
               'I write technical content',
               'I love to write clean and reusable code',
@@ -27,8 +27,8 @@ const Header = props => (
           />
         </h3>
         <p>
-          a Software Engineer, Technical Writer, Speaker and Open-source
-          contributor based in Lagos, Nigeria.
+          a Software Engineer, Developer Advocate, Technical Writer, Speaker and
+          Open-source contributor.
         </p>
       </div>
     </div>
@@ -42,11 +42,11 @@ const Header = props => (
               rel="noopener noreferrer"
               style={{ borderBottom: 'none' }}
             >
-              My Blog <span className="fa fa-pencil" aria-hidden="true"></span>
+              Blog <span className="fa fa-pencil" aria-hidden="true"></span>
             </a>
           </button>
         </li>
-        <li>
+        {/* <li>
           <button
             onClick={() => {
               props.onOpenArticle('work')
@@ -54,14 +54,14 @@ const Header = props => (
           >
             PROJECTS <span className="icon fa-laptop"></span>
           </button>
-        </li>
+        </li> */}
         <li>
           <button
             onClick={() => {
               props.onOpenArticle('about')
             }}
           >
-            About Me <span className="icon fa-user"></span>
+            About <span className="icon fa-user"></span>
           </button>
         </li>
         <li>
@@ -79,7 +79,7 @@ const Header = props => (
               props.onOpenArticle('contact')
             }}
           >
-            Hire me <span className="icon fa-address-card"></span>
+            Let's Chat <span className="icon fa-address-card"></span>
           </button>
         </li>
         <li>
@@ -94,8 +94,8 @@ const Header = props => (
             </a>
           </button>
         </li>
-        {/* <li>
-          <button>
+        <li>
+          {/* <button>
             <a
               href="https://www.buymeacoffee.com/olanetsoft"
               target="_blank"
@@ -111,8 +111,8 @@ const Header = props => (
                 }}
               />
             </a>
-          </button>
-        </li> */}
+          </button> */}
+        </li>
       </ul>
     </nav>
   </header>

@@ -39,31 +39,10 @@ const Footer = props => (
           <span className="fa fa-medium" aria-hidden="true"></span>
         </a>
       </li>
+
       <li>
         <a
-          href="https://facebook.com/olubisiidris"
-          // className="icon fa-facebook"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Facebook"
-        >
-          <span className="fa fa-facebook" aria-hidden="true"></span>
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://www.instagram.com/olanetsoft"
-          // className="icon fa-instagram"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
-        >
-          <span className="fa fa-instagram" aria-hidden="true"></span>
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://www.linkedin.com/in/olubisi-idris-ayinde-05727b17a/"
+          href="https://www.linkedin.com/in/idris-olubisi/"
           // className="icon fa-linkedin"
           target="_blank"
           rel="noopener noreferrer"
