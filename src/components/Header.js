@@ -85,7 +85,8 @@ const Header = props => (
         <li>
           <button>
             <a
-              href="https://drive.google.com/file/d/1grvPPBBzk6_L4gqtpe-kd45iPN0fJen9/view?usp=sharing"
+              // href="https://drive.google.com/file/d/1grvPPBBzk6_L4gqtpe-kd45iPN0fJen9/view?usp=sharing"
+              href="https://docs.google.com/document/d/10GebT28NusuOgkEBJWaXusuhNTIxxPh_3u1irbi4vy0/edit?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               style={{ borderBottom: 'none' }}

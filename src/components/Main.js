@@ -7,7 +7,12 @@ import git from '../../Content/assets/git-user.png'
 import math from '../../Content/assets/math.png'
 import tutorx from '../../Content/assets/tutorx.png'
 import hotzy from '../../Content/assets/hotzy.png'
-import aboutPic from '../../Content/assets/aboutPic.jpg'
+// import aboutPic from '../../Content/assets/aboutPic.jpg'
+
+// import { FaReact, FaNodeJs, FaGitSquare, FaGithub } from 'react-icons/fa'
+// import { IoLogoJavascript } from 'react-icons/io'
+// import { SiTypescript, SiSolidity, SiMicrosoftsharepoint } from 'react-icons/si'
+// import { GrGraphQl } from 'react-icons/gr'
 
 //http://jsfiddle.net/5e6zr2Lq/1/
 import datalabs from '../../Content/assets/datalabs.png'
@@ -428,147 +433,14 @@ class Main extends React.Component {
             Idris is an accomplished software engineer, developer advocate,
             technical writer, and developer advocate with expertise in open
             source, blockchain, software products, and serverless technologies.
+            <br /> <br />
             As a Developer Advocate, Idris brings industry knowledge and a
             passion for empowering fellow developers. With a proven track record
             of contributing to reputable publications and engaging with the
             developer community, Idris is highly sought-after as a developer
             relations engineer.
           </h5>
-          <h3>Technologies & Skills</h3>
-          <h5>Front End: </h5>
-          <img
-            className="lazyload"
-            data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-html-5-48.png"
-            alt="html"
-          />
-          &nbsp;&nbsp;&nbsp;
-          <img
-            className="lazyload"
-            data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429982/projects%20images/icons8-css3-48.png"
-            alt="css"
-          />
-          &nbsp;&nbsp;&nbsp;
-          <img
-            className="lazyload"
-            data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-javascript-48.png"
-            alt="js"
-          />
-          &nbsp;&nbsp;&nbsp;
-          <img
-            className="lazyload"
-            data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429982/projects%20images/icons8-bootstrap-48.png"
-            alt="bootstrap"
-          />
-          &nbsp;&nbsp;&nbsp;
-          <img
-            className="lazyload"
-            data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-react-48.png"
-            alt="react"
-          />
-          &nbsp;&nbsp;&nbsp;
-          {/* <img src="https://img.icons8.com/ios-filled/48/000000/jquery.png" alt="jquery" /> */}
-          <br />
-          <br />
-          <h5>Back End: </h5>
-          <img
-            className="lazyload"
-            data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-nodejs-48.png"
-            alt="node"
-          />
-          &nbsp;&nbsp;&nbsp;
-          <img
-            className="lazyload"
-            data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429982/projects%20images/icons8-asp-48.png"
-            alt="net"
-          />
-          &nbsp;&nbsp;&nbsp;
-          <img
-            className="lazyload"
-            data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-sql-48.png"
-            alt="sql"
-          />
-          &nbsp;&nbsp;&nbsp;
-          <img
-            className="lazyload"
-            data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-graphql-48.png"
-            alt="graphql"
-          />
-          &nbsp;&nbsp;&nbsp;
-          <img
-            className="lazyload"
-            data-src="https://img.icons8.com/color/48/000000/mongodb.png"
-            alt="mongodb"
-          />{' '}
-          &nbsp;&nbsp;&nbsp;
-          <img
-            className="lazyload"
-            data-src="https://img.icons8.com/color/48/000000/heroku.png"
-            alt="heroku"
-          />{' '}
-          &nbsp;&nbsp;&nbsp;
-          <img
-            className="lazyload"
-            data-src="https://img.icons8.com/color/48/000000/azure-1.png"
-            alt="azure"
-          />
-          <br />
-          <br />
-          <h5>Content Management System: </h5>
-          <img
-            className="lazyload"
-            data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-microsoft-sharepoint-48.png"
-            alt="share"
-          />
-          &nbsp;&nbsp;&nbsp;
-          <img
-            className="lazyload"
-            data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-wordpress-48.png"
-            alt="wordpress"
-          />
-          &nbsp;&nbsp;&nbsp;
-          {/* <img src={gatsby} alt="gatsby" /> */}
-          <br />
-          <br />
-          <h5>Development Tools: </h5>
-          <img
-            className="lazyload"
-            data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429982/projects%20images/icons8-git-48.png"
-            alt="git"
-          />
-          &nbsp;&nbsp;&nbsp;
-          <img
-            className="lazyload"
-            data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429982/projects%20images/icons8-github-48.png"
-            alt="github"
-          />
-          &nbsp;&nbsp;&nbsp;
-          {/* <img src="https://img.icons8.com/color/48/000000/gitlab.png" alt="gitlab" />&nbsp;&nbsp;&nbsp; */}
-          <img
-            className="lazyload"
-            data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-trello-48.png"
-            alt="trello"
-          />
-          &nbsp;&nbsp;&nbsp;
-          {/* <img src="https://img.icons8.com/color/48/000000/bitbucket.png" alt="bit" />&nbsp;&nbsp;&nbsp; */}
-          <img
-            className="lazyload"
-            data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-microsoft-teams-48.png"
-            alt="teams"
-          />
-          <br />
-          <br />
-          <h5>Programming Languages: </h5>
-          <img
-            className="lazyload"
-            data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429981/projects%20images/icons8-javascript-48.png"
-            alt="js"
-          />
-          &nbsp;&nbsp;&nbsp;
-          <img
-            className="lazyload"
-            data-src="https://res.cloudinary.com/olanetsoft/image/upload/v1594429982/projects%20images/icons8-c-sharp-logo-48.png"
-            alt="csharp"
-          />
+          {/* <h3>Technologies & Skills</h3> */}
           &nbsp;&nbsp;&nbsp;
           <br />
           <br />
