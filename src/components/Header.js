@@ -65,14 +65,30 @@ const Header = props => (
           </button>
         </li>
         <li>
-          <button
-            onClick={() => {
-              props.onOpenArticle('skill/certificate')
-            }}
-          >
-            Experience <span className="fa fa-cogs" aria-hidden="true"></span>
+          <button>
+            <a
+              href="https://www.linkedin.com/in/idris-olubisi/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ borderBottom: 'none' }}
+            >
+              Experience <span className="fa fa-cogs" aria-hidden="true"></span>
+            </a>
           </button>
         </li>
+        {/* <li>
+          <button>
+            <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ borderBottom: 'none' }}
+            >
+              Talks{' '}
+              <span className="fas fa-microphone-alt" aria-hidden="true"></span>
+            </a>
+          </button>
+        </li> */}
         <li>
           <button
             onClick={() => {
@@ -82,6 +98,7 @@ const Header = props => (
             Let's Chat <span className="icon fa-address-card"></span>
           </button>
         </li>
+
         <li>
           <button>
             <a
