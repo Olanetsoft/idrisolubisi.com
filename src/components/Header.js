@@ -104,7 +104,7 @@ const Header = props => (
             <a
               // href="https://drive.google.com/file/d/1grvPPBBzk6_L4gqtpe-kd45iPN0fJen9/view?usp=sharing"
               // href="https://docs.google.com/document/d/10GebT28NusuOgkEBJWaXusuhNTIxxPh_3u1irbi4vy0/edit?usp=sharing"
-              href="https://docs.google.com/document/d/1ul2a1HZ6qrLlXX07AwVjvKG3pCzw2KJj/edit?usp=drivesdk&ouid=104261988764575898297&rtpof=true&sd=true"
+              href="https://docs.google.com/document/d/1dcUOmgfnAsRihGTNqbpKRo_2-zF8boUz/edit?usp=sharing&ouid=104261988764575898297&rtpof=true&sd=true"
 
           target="_blank"
               rel="noopener noreferrer"
