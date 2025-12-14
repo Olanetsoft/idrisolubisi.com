@@ -5,5 +5,3 @@
  */
 
 // You can delete this file if you're not using it
-// In your gatsby-browser.js
-import 'lazysizes'

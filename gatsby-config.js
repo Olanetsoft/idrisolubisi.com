@@ -7,11 +7,21 @@ module.exports = {
     social: {
       twitter: '@olanetsoft',
       github: 'olanetsoft',
+      linkedin: 'idris-olubisi',
     },
-    siteUrl: `https://idrisolubisi.com/`,
-    siteImage: `https://res.cloudinary.com/olanetsoft/image/upload/v1588335882/Idris%20Portfolio%20Pictures/thenew2.jpg`,
+    siteUrl: `https://idrisolubisi.com`,
+    siteImage: `https://idrisolubisi.com/dp.png`,
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-preconnect',
+      options: {
+        domains: [
+          'https://www.googletagmanager.com',
+          'https://www.google-analytics.com',
+        ],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -26,21 +36,23 @@ module.exports = {
         name: `blogPosts`,
       },
     },
-    'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'Idris Olubisi | Software Engineer & Developer Advocate',
-        short_name: 'Developer Advocate',
+        short_name: 'Idris Olubisi',
+        description:
+          'Idris Olubisi - Software Engineer & Developer Educator at Midnight Foundation, Founder of Web3 Afrika, Technical Writer with 1M+ views',
         start_url: '/',
-        background_color: '#663399',
+        background_color: '#1d1f21',
         theme_color: '#663399',
-        display: 'minimal-ui',
-        icon: 'src/images/dp.png', // This path is relative to the root of the site.
+        display: 'standalone',
+        icon: 'src/images/dp.png',
+        crossOrigin: 'use-credentials',
       },
     },
     'gatsby-plugin-sass',
-    'gatsby-plugin-offline',
+    'gatsby-plugin-image',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
@@ -51,78 +63,50 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
+              quality: 90,
+              withWebp: true,
             },
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-smartypants`,
           `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-lazy-load`,
-          {
-            resolve: `gatsby-remark-social-cards`,
-            options: {
-              title: {
-                field: 'title',
-                font: 'DejaVuSansCondensed',
-                color: 'black', // black|white
-                size: 48, // 16|24|32|48|64
-                style: 'bold', // normal|bold|italic
-                x: null, // Will default to xMargin
-                y: null, // Will default to yMargin
-              },
-              meta: {
-                parts: [
-                  '- ',
-                  { field: 'author' },
-                  ' » ',
-                  { field: 'date', format: 'mmmm dS' },
-                ],
-                font: 'DejaVuSansCondensed',
-                color: 'black', // black|white
-                size: 24, // 16|24|32|48|64
-                style: 'normal', // normal|bold|italic
-                x: null, // Will default to xMargin
-                y: null, // Will default to cardHeight - yMargin - size
-              },
-              background: '#FFFFFF', // Background color for the card
-              xMargin: 24, // Edge margin used when x value is not set
-              yMargin: 24, // Edge margin used when y value is not set
-            },
-          },
         ],
       },
     },
-    `gatsby-plugin-preact`,
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        query: `
+          {
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+          }
+        `,
+        resolveSiteUrl: () => 'https://idrisolubisi.com',
+        serialize: ({ path }) => ({
+          url: path,
+          changefreq: path === '/' ? 'weekly' : 'monthly',
+          priority: path === '/' ? 1.0 : 0.7,
+        }),
+      },
+    },
     `gatsby-plugin-styled-components`,
     {
-      resolve: 'gatsby-plugin-preconnect',
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        domains: [
-          'https://www.googletagmanager.com',
-          'https://www.google-analytics.com',
-        ],
+        trackingIds: ['G-7MMFT1BXJV'],
+        gtagConfig: {
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        pluginConfig: {
+          head: true,
+          respectDNT: true,
+        },
       },
     },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `G-7MMFT1BXJV`,
-        head: true,
-      },
-    },
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: `UA-154454841-1`,
-    //     head: true,
-    //   },
-    // },
-    // {
-    //   resolve: `gatsby-plugin-google-tagmanager`,
-    //   options: {
-    //     id: `GTM-T99QM6R`,
-    //     includeInDevelopment: true,
-    //   },
-    // },
   ],
 }

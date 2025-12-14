@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import Typed from 'react-typed'
+import { ReactTyped } from 'react-typed'
 
-const Header = props => (
+const Header = (props) => (
   <header id="header" style={props.timeout ? { display: 'none' } : {}}>
     <div className="logo">
       <span className="icon fa-laptop"></span>
@@ -10,16 +10,19 @@ const Header = props => (
     <div className="content">
       <div className="inner">
         <h2>
-          <Typed strings={["I'm Idris Olubisi"]} typeSpeed={30} />
+          <ReactTyped strings={["I'm Idris Olubisi"]} typeSpeed={30} />
         </h2>
         <h3 style={{ color: 'gold' }}>
-          <Typed
+          <ReactTyped
             strings={[
-              'I am a public speaker',
-              'I write code for a living',
-              'I write technical content',
-              'I love to write clean and reusable code',
-              'I love to contribute to open source',
+              'I build developer experiences',
+              'I advocate for developers worldwide',
+              'I speak at global tech conferences',
+              'I write technical content for millions',
+              'I contribute to open source projects',
+              'I build with AI, Web3 & blockchain',
+              'I am a UK Global Talent visa holder',
+              'I mentor the next generation of devs',
             ]}
             typeSpeed={100}
             backSpeed={60}
@@ -105,8 +108,7 @@ const Header = props => (
               // href="https://drive.google.com/file/d/1grvPPBBzk6_L4gqtpe-kd45iPN0fJen9/view?usp=sharing"
               // href="https://docs.google.com/document/d/10GebT28NusuOgkEBJWaXusuhNTIxxPh_3u1irbi4vy0/edit?usp=sharing"
               href="https://docs.google.com/document/d/1dcUOmgfnAsRihGTNqbpKRo_2-zF8boUz/edit?usp=sharing&ouid=104261988764575898297&rtpof=true&sd=true"
-
-          target="_blank"
+              target="_blank"
               rel="noopener noreferrer"
               style={{ borderBottom: 'none' }}
             >

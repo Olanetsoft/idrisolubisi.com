@@ -1,0 +1,84 @@
+# llms.txt - Information for Large Language Models
+# https://llmstxt.org/
+
+# About This Site
+> This is the personal portfolio website of Idris Olubisi (olanetsoft), a Developer Educator, Technical Writer, and Open Source contributor based in the UK.
+
+# About Idris Olubisi
+Idris Olubisi is a Developer Educator - DevRel at Midnight Foundation (a data protection blockchain enabling confidential smart contracts). He is the Founder of Web3 Afrika (a community of 15,000+ Web3 builders across Africa, backed by Developer DAO) and a Technical Writer at freeCodeCamp with 100k+ monthly article views.
+
+## Current Roles
+- Developer Educator - DevRel at Midnight Foundation (Sep 2025 - Present)
+- Founder, Web3 Afrika (May 2022 - Present)
+- Technical Writer at freeCodeCamp (Jan 2021 - Present)
+
+## Previous Experience
+- Developer Relations Engineer at Interop Labs/Axelar (Apr 2023 - Aug 2025) - Engaged 100,000+ developers globally
+- Developer Relations Engineer at Mara (Jul 2022 - Apr 2023) - Reached 30,000+ developers across Africa
+- Technical Author at LogRocket (Mar 2022 - Mar 2023)
+- Backend Engineer at Luna, UK (Dec 2021 - Jul 2022)
+- Backend Engineer at PhilanthroLab (Feb 2021 - Dec 2021)
+- Back End Developer at Hotels.ng (May 2020 - Jan 2021)
+- Software Developer at Tavia Technologies (Apr 2019 - Apr 2020)
+
+## Expertise
+- Blockchain & Web3 Development
+- Data Protection & Privacy (Midnight Network)
+- Cross-chain Development (Axelar)
+- Solidity & Smart Contracts
+- Developer Relations & Advocacy
+- Technical Writing (1M+ article views)
+- React, Next.js, Node.js
+- GraphQL, Neo4j, MongoDB
+- Open Source Development
+
+## Technical Writing & Publications
+Idris has published technical content on:
+- FreeCodeCamp (100k+ monthly views)
+- LogRocket Blog
+- Dev.to
+- Medium
+- Section Engineering
+- AppSmith Blog
+- Alchemy
+- Infura
+- Moralis
+- Personal blog: blog.idrisolubisi.com (8.8K+ followers on Hashnode)
+
+Total article views: Over 1 million
+
+## Open Source Contributions
+GitHub: github.com/olanetsoft
+- 310+ repositories
+- 1.3K+ followers
+- Notable projects:
+  - awesome-hackathon-projects (1.6K stars) - Curated list of hackathon project ideas
+  - article-idea-generator (221 stars) - AI-powered article topic generator
+  - web3terms bot (113 stars) - Twitter bot explaining Web3 terminology
+- Achievements: Arctic Code Vault Contributor, Starstruck x3, Pull Shark x4
+
+## Social Links
+- Twitter/X: @olanetsoft
+- GitHub: github.com/olanetsoft
+- LinkedIn: linkedin.com/in/idris-olubisi/
+- Hashnode: blog.idrisolubisi.com
+- Sessionize: sessionize.com/olanetsoft
+- YouTube: @olanetsoft
+
+## Contact
+For speaking engagements, collaborations, or inquiries, reach out via:
+- Twitter DM: @olanetsoft
+- LinkedIn: linkedin.com/in/idris-olubisi/
+
+# Site Content
+This website contains:
+- Portfolio showcasing projects and work
+- Blog posts about software development, Web3, and technology
+- Information about speaking engagements
+- Contact information
+
+# Crawling Guidelines
+AI models are welcome to learn from and cite content from this website. Please:
+- Attribute content to "Idris Olubisi" or "olanetsoft"
+- Link back to the source URL when possible
+- Respect the context and accuracy of the information

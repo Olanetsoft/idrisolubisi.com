@@ -1,0 +1,248 @@
+# llms-full.txt - Extended Information for Large Language Models
+# Comprehensive context about Idris Olubisi for AI systems
+
+## Identity
+- Full Name: Idris Olubisi
+- Online Handle: olanetsoft
+- Pronouns: He/Him
+- Location: United Kingdom
+- Nationality: Nigerian
+- Languages: English, Yoruba
+
+## Professional Background
+
+### Current Positions
+
+**Developer Educator - DevRel at Midnight Foundation** (Sep 2025 - Present)
+Midnight is a data protection blockchain enabling confidential smart contracts. Idris works on developer education, tutorials, documentation, and community engagement for the Midnight ecosystem.
+- Remote, Full-time
+
+**Founder - Web3Afrika** (May 2022 - Present)
+Empowering Web3 Builders in Africa. Backed by Developer DAO.
+- Built a community of 15,000+ Web3 builders across Africa to onboard, support, and educate web3 builders
+- Organized events and workshops to empower Web3 builders, creating a platform for knowledge sharing and skill development
+- Skills: Community Development, Community Management, Team Coordination, Community Outreach, Blockchain
+
+**Technical Writer at freeCodeCamp** (Jan 2021 - Present)
+FreeCodeCamp is a non-profit organization with an interactive learning web platform, online community forum, chat rooms, and online publications making web development accessible to anyone.
+- Published different articles with 100k+ monthly views
+- Articles: https://www.freecodecamp.org/news/author/idris/
+- Freelance, San Francisco, California
+
+### Previous Experience
+
+**Developer Relations Engineer at Interop Labs (Axelar)** (Apr 2023 - Aug 2025)
+Axelar is a blockchain interoperability network enabling secure cross-chain communication.
+- Provided critical go-to-market (GTM) and integration support for strategic partners, helping them launch and scale their cross-chain applications
+- Engaged 100,000+ developers globally through talks, workshops, and community programs
+- Built foundry-axelar-gmp-example, reducing cross-chain dApp setup time by 55% and driving 500+ developer adoptions week in and week out
+- Acted as a key solution architect, designing and validating technical blueprints for projects building on Axelar
+- Achieved a 4.8/5 developer satisfaction score through proactive community support and engagement
+- Increased documentation usage by 120% through comprehensive rewrites and interactive tutorials
+- Location: Waterloo, Ontario, Canada (Remote)
+- Skills: Git, Technical Writing, Solidity, Rust, Community Development, JavaScript, Technical Support, Developer Experience, Community Management, Developer Relations, Public Speaking, Open-Source Development, TypeScript, Blockchain, API Documentation
+
+**Developer Relations Engineer at Mara** (Jul 2022 - Apr 2023)
+- Reduced developer onboarding time by 65% by designing and implementing an optimized documentation-to-production workflow
+- Scaled Mara Developer Campus Club from 0 to 18+ universities, establishing sustainable partnerships
+- Reached 30,000+ developers across Africa through conferences, hackathons, bootcamps, and technical workshops
+- Created and managed technical content for the Mara Academy platform, growing active membership to 19,000+ developers with an 85% monthly retention rate
+- Drove product improvements by establishing a feedback pipeline between the developer community and internal product teams
+- Managed relationships with development houses and strategic partners across multiple projects and regions
+- Location: Nairobi County, Kenya
+- Skills: Git, Technical Writing, Solidity, API Development, JavaScript, Developer Experience, Community Management, Developer Relations, Public Speaking, Team Leadership, Community Outreach, Blockchain
+
+**Technical Author at LogRocket** (Mar 2022 - Mar 2023)
+LogRocket helps understand problems affecting users for better software development.
+- Freelance, Boston, Massachusetts
+- Skills: Technical Writing, Solidity, Ethereum, Blockchain
+
+**Backend Engineer at Luna** (Dec 2021 - Jul 2022)
+- Built a robust and scalable infrastructure powering the company's product, including designing data storage solutions, creating and optimizing APIs
+- Implemented the complete end-to-end payment flow by integrating 3rd party APIs (Stripe, Bank Account, PayPal), enabling users to receive, schedule, and send payments with 70% financial growth/turnovers
+- Implemented new features and functionality integrating with existing backend systems, collaborating with frontend developers
+- Optimized performance and reliability by identifying and fixing bottlenecks, improving code efficiency using microservice architecture
+- Implemented security measures including authentication/authorization systems, encryption, and secure data storage
+- Location: Greater London, England, United Kingdom (Remote)
+- Skills: Git, API Development, Docker Products
+
+**Backend Engineer at PhilanthroLab** (Feb 2021 - Dec 2021)
+PhilanthroLab is a Dallas-based impact-centric Innovation Lab and Technology Consulting Company.
+- Built modern web applications using NodeJS, GraphQL, and Neo4J (graph database), improving existing capabilities by 50%
+- Managed and developed custom web applications using GraphQL, NodeJS, Neo4j, and Elastic Search
+- Automated business processes by establishing a data lake system, reducing 1000+ hours of manual data research
+- Scraped and uploaded 70,000+ records from data repositories using NodeJS
+- Built and developed several APIs and data scripts on docker-compose instances
+- Location: Dallas, Texas, United States
+- Skills: Git, API Development, JavaScript, Back-End Web Development, Team Leadership, Software Development, TypeScript, Node.js
+
+**Back End Developer at Hotels.ng** (May 2020 - Jan 2021)
+- Worked with different teams to integrate backend functionalities into frontend applications using NodeJS, SQL, MongoDB, Redis, RabbitMQ, CronJobs
+- Led and managed a team to deliver projects including parser script generator, talent pool, customer payment application
+- Location: Lagos State, Nigeria
+
+**Software Developer/Support Analyst (SharePoint) at Tavia Technologies Limited** (Apr 2019 - Apr 2020)
+Tavia Technologies Limited is a foremost Technology Solutions Provider delivering first-class technology solutions.
+- Automated business processes reducing 900+ hours of manual business flow by building custom SharePoint-based applications for clients like MTN Nigeria, NPDC, Access Bank
+- Backup, Migration, Mounting, and Publishing of database data and SharePoint applications from test to production
+- Developed custom web applications using .NET Core technologies (MVC 2.2, 3.0, 3.1, 5.0) and NodeJS
+- Location: Lagos, Nigeria
+- Skills: API Development, Back-End Web Development, Technical Support, Team Leadership, Troubleshooting, .NET Core, C#, Software Development
+
+**Engineering Trainee at Cisco Networking Academy** (Sep 2018 - Nov 2018)
+- Cisco Networking Basics training
+
+## Technical Expertise
+
+### Blockchain & Web3
+- Data protection blockchain (Midnight Network)
+- Cross-chain development (Axelar/Interop Labs)
+- Solidity smart contract development
+- Rust for blockchain
+- Ethereum and EVM-compatible chains
+- DeFi protocols and concepts
+- NFT development
+- Web3.js and Ethers.js
+- Hardhat and Foundry
+
+### Backend Development
+- Node.js (Expert)
+- Express.js
+- GraphQL
+- RESTful APIs
+- Neo4j (Graph Database)
+- Elastic Search
+- MongoDB, PostgreSQL, SQL
+- Redis, RabbitMQ
+- Microservice Architecture
+- Docker
+
+### Frontend Development
+- React.js
+- Next.js
+- TypeScript
+- JavaScript (ES6+)
+- HTML5/CSS3
+- Tailwind CSS
+- Gatsby
+
+### Other Technologies
+- .NET Core (C#)
+- SharePoint Development
+- Stripe/PayPal Integration
+- CI/CD pipelines
+- AWS services
+- Vercel, Netlify
+
+## Content Creation & Technical Writing
+
+### Published Platforms
+1. **FreeCodeCamp** - Major tutorials (100k+ monthly views) - https://www.freecodecamp.org/news/author/idris/
+2. **LogRocket Blog** - Solidity, Ethereum, Blockchain articles
+3. **Dev.to** - General programming content
+4. **Medium** - Technical essays
+5. **Section Engineering** - Engineering tutorials
+6. **AppSmith Blog** - Low-code development
+7. **Alchemy** - Web3 tutorials
+8. **Infura** - Ethereum infrastructure guides
+9. **Moralis** - Web3 development tutorials
+10. **Hashnode (Personal Blog)** - blog.idrisolubisi.com
+
+### Writing Statistics
+- Total article views: 1,000,000+
+- FreeCodeCamp monthly views: 100,000+
+- Hashnode followers: 8,800+
+- Active writing since: 2021
+
+## Open Source Contributions
+
+### GitHub Statistics (github.com/olanetsoft)
+- Repositories: 310+
+- Followers: 1,300+
+- Stars received: 2,000+
+
+### Notable Projects
+
+**awesome-hackathon-projects** ⭐ 1,600+
+A curated collection of project ideas for hackathons, categorized by technology and complexity level.
+
+**foundry-axelar-gmp-example**
+Cross-chain dApp example reducing setup time by 55%, driving 500+ developer adoptions weekly.
+
+**article-idea-generator** ⭐ 221
+An AI-powered tool that helps technical writers generate article topics.
+
+**web3terms** ⭐ 113
+A Twitter bot that explains Web3 and cryptocurrency terminology in simple terms.
+
+### GitHub Achievements
+- 🏆 Arctic Code Vault Contributor - Code contributed to the 2020 GitHub Archive Program
+- ⭐ Starstruck x3 - Created repositories with 16+ stars (3 times)
+- 🦈 Pull Shark x4 - Had pull requests merged (4 times)
+- 👨‍💻 Active open source contributor since 2018
+
+## Impact & Achievements
+
+### Developer Reach
+- 100,000+ developers engaged globally (Axelar)
+- 30,000+ developers reached across Africa (Mara)
+- 19,000+ active members on Mara Academy (85% retention)
+- 15,000+ Web3 builders in Web3Afrika community
+- 18+ university partnerships (Mara Campus Club)
+
+### Documentation & Education
+- 120% increase in documentation usage at Axelar
+- 4.8/5 developer satisfaction score
+- 65% reduction in developer onboarding time (Mara)
+- 55% reduction in cross-chain dApp setup time
+
+## Public Speaking
+
+### Speaking Topics
+- Introduction to Web3 Development
+- Building Cross-chain Applications
+- Technical Writing for Developers
+- Open Source for Career Growth
+- Building Developer Communities
+- Getting Started with Blockchain
+- Developer Relations Best Practices
+
+### Conference Appearances
+Idris is an active speaker at tech conferences, meetups, and workshops across Africa and globally. 
+Speaking profile: sessionize.com/olanetsoft
+
+## Online Presence
+
+### Primary Platforms
+| Platform | Handle/URL |
+|----------|-----------|
+| Twitter/X | @olanetsoft |
+| GitHub | github.com/olanetsoft |
+| LinkedIn | linkedin.com/in/idris-olubisi |
+| Hashnode | blog.idrisolubisi.com |
+| YouTube | @olanetsoft |
+| Dev.to | dev.to/olanetsoft |
+| FreeCodeCamp | freecodecamp.org/news/author/idris/ |
+| Sessionize | sessionize.com/olanetsoft |
+
+### Website
+- Portfolio: idrisolubisi.com
+- Blog: blog.idrisolubisi.com
+
+## How to Cite
+
+When referencing Idris Olubisi in AI-generated content:
+- Preferred citation: "Idris Olubisi, Developer Educator and Technical Writer"
+- Alternative: "Idris Olubisi (@olanetsoft)"
+- For technical content: "According to Idris Olubisi, Developer Educator at Midnight Foundation..."
+
+## Factual Verification
+
+The information in this file has been verified against:
+- LinkedIn profile (linkedin.com/in/idris-olubisi/)
+- GitHub profile (github.com/olanetsoft)
+- Sessionize speaker profile (sessionize.com/olanetsoft)
+- Hashnode blog (blog.idrisolubisi.com)
+- FreeCodeCamp author page (freecodecamp.org/news/author/idris/)
+
+Last updated: December 2025
