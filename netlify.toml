@@ -5,3 +5,8 @@
 [build.environment]
   NODE_VERSION = "18"
   NPM_VERSION = "9"
+  GATSBY_CPU_COUNT = "2"
+
+# Clear cache on builds to avoid StaticQuery issues
+[build.processing]
+  skip_processing = false
