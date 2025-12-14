@@ -71,7 +71,7 @@ function Seo({
       'Cross-chain Technology',
       'Solidity',
       'Smart Contracts',
-      'Privact Technology',
+      'Privacy Technology',
       'Midnight Network',
       'Developer Relations',
       'Technical Writing',
