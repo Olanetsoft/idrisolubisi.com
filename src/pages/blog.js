@@ -26,7 +26,11 @@ const Blog = ({ data }) => {
         const title = node.frontmatter.title || node.fields.slug
         const image = getImage(node.frontmatter.image)
         return (
-          <Link to={node.fields.slug} key={node.fields.slug} className="card-link">
+          <Link
+            to={node.fields.slug}
+            key={node.fields.slug}
+            className="card-link"
+          >
             <div className="card">
               {image && (
                 <GatsbyImage className="post-img" image={image} alt={title} />
