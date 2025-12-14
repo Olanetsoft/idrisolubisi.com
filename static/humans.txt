@@ -14,7 +14,7 @@ Open Source Community - For all the packages used
 
 /* SITE */
 
-Last update: 2024
+Last update: 2025
 Language: English
 Standards: HTML5, CSS3, ES6+
 Framework: Gatsby v5, React 18

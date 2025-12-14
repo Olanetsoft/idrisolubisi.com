@@ -6,8 +6,6 @@ import Container from '../components/container'
 //style
 import '../assets/css/blog.css'
 
-// Utils
-import { shorten } from '../utils/truncateStr'
 import Footer from '../components/Footer'
 import Seo from '../components/Seo'
 
@@ -15,7 +13,6 @@ const Blog = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
   return (
     <Container>
-      <Seo title="Idris Olubisi's Blog - All Post" />
       <ul id="link-back-home">
         <li>
           <Link to="/">
@@ -29,20 +26,15 @@ const Blog = ({ data }) => {
         const title = node.frontmatter.title || node.fields.slug
         const image = getImage(node.frontmatter.image)
         return (
-          <Link to={node.fields.slug} key={node.fields.slug}>
+          <Link to={node.fields.slug} key={node.fields.slug} className="card-link">
             <div className="card">
               {image && (
                 <GatsbyImage className="post-img" image={image} alt={title} />
               )}
               <div className="mainc">
-                <h3>
-                  <Link to={node.fields.slug}>{title}</Link>
-                </h3>
+                <h3>{title}</h3>
                 <small>{node.frontmatter.date}</small>
-                <div
-                  className="container"
-                  dangerouslySetInnerHTML={{ __html: shorten(node.html, 80) }}
-                />
+                <p className="container">{node.excerpt}</p>
               </div>
             </div>
           </Link>

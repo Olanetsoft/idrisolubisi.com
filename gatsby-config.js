@@ -9,7 +9,7 @@ module.exports = {
       github: 'olanetsoft',
       linkedin: 'idris-olubisi',
     },
-    siteUrl: `https://idrisolubisi.com/`,
+    siteUrl: `https://idrisolubisi.com`,
     siteImage: `https://idrisolubisi.com/dp.png`,
   },
   plugins: [

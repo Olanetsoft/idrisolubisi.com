@@ -141,11 +141,6 @@ function Seo({
         name: 'Developer DAO',
         description: 'Web3 developer community',
       },
-      {
-        '@type': 'Organization',
-        name: 'Developer DAO',
-        description: 'Web3 developer community',
-      },
     ],
     hasCredential: [
       {
