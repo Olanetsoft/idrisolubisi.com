@@ -15,11 +15,14 @@ const Header = (props) => (
         <h3 style={{ color: 'gold' }}>
           <ReactTyped
             strings={[
-              'I am a public speaker',
-              'I write code for a living',
-              'I write technical content',
-              'I love to write clean and reusable code',
-              'I love to contribute to open source',
+              'I build developer experiences',
+              'I advocate for developers worldwide',
+              'I speak at global tech conferences',
+              'I write technical content for millions',
+              'I contribute to open source projects',
+              'I build with AI, Web3 & blockchain',
+              'I am a UK Global Talent visa holder',
+              'I mentor the next generation of devs',
             ]}
             typeSpeed={100}
             backSpeed={60}
