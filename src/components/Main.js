@@ -429,44 +429,17 @@ class Main extends React.Component {
             {/* <img className="lazyload" data-src={aboutPic} alt="My_photo" /> */}
             {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/aboutPic.webp" alt="My_photo" /> */}
           </span>
-          <p>
-            I'm passionate about turning complex blockchain technology, AI
-            systems, and software products into tools that developers actually
-            want to use. As a Developer Relations Engineer with 5+ years of
-            experience, I've built my career on the belief that great technology
-            means nothing if developers can't access it easily.
-          </p>
-          <p>
-            My work spans community building at scale, developer experience, and
-            hands-on technical education, reaching over 100,000 developers
-            globally through conferences, workshops, and online programs. I've
-            built AI-powered developer tools using LangChain, Claude, and
-            ChatGPT APIs, and founded Web3 Afrika, now home to 15,000+ builders
-            exploring both AI and blockchain across the continent.
-          </p>
-          <p>
-            I have spoken at major conferences, including Osmocon Paris, ETHCC,
-            Devcon, Devfest Lagos, and CityJS, while contributing technical
-            content to FreeCodeCamp, LogRocket, Moralis, Alchemy, Hashnode, and
-            ConsenSys, which reaches over 100,000 monthly readers. My work
-            focuses on building and scaling developer communities, creating
-            practical documentation, and bridging the gap between cutting-edge
-            technology and real-world implementation.
-          </p>
-          <p>
-            Technical expertise encompasses JavaScript, TypeScript, Node.js,
-            React, Solidity, Rust, Web3.js, Smart Contracts, LangChain,
-            OpenAI/Claude APIs, RAG architecture, AI agents, GraphQL, Docker,
-            and cloud platforms, among others. Currently helping developers
-            build privacy applications at Midnight Foundation while exploring
-            AI/Web3 convergence.
-          </p>
-          <p>
-            I'm always looking to connect with fellow developer advocates who
-            care about measurable community impact, technical writers pushing
-            the boundaries of developer education, and anyone working to make AI
-            and blockchain technology genuinely accessible.
-          </p>
+          <h5>
+            Idris is a skilled software engineer, developer advocate, technical
+            writer, and developer advocate with expertise in open source,
+            blockchain, software products, and serverless technologies.
+            <br /> <br />
+            As a Developer Advocate, Idris brings industry knowledge and a
+            passion for empowering fellow developers. With a proven track record
+            of contributing to reputable publications and engaging with the
+            developer community, Idris is highly sought-after as a developer
+            relations engineer.
+          </h5>
           {/* <h3>Technologies & Skills</h3> */}
           &nbsp;&nbsp;&nbsp;
           <br />
