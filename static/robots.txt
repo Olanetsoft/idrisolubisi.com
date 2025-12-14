@@ -1,0 +1,31 @@
+# robots.txt for https://idrisolubisi.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://idrisolubisi.com/sitemap-index.xml
+
+# LLM/AI Crawler Information Files
+# See llms.txt for structured information about the site owner for AI models
+# Full version: https://idrisolubisi.com/llms-full.txt
+
+# Crawl-delay (optional, for polite crawling)
+Crawl-delay: 1
+
+# Block unnecessary paths
+Disallow: /404
+Disallow: /404.html
+Disallow: /*.json$
+Disallow: /page-data/
+
+# Allow important resources
+Allow: /static/
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.webp$
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /humans.txt

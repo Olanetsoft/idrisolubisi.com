@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import image from '../../Content/assets/new3.webp'
 
-import SEO from '../components/seo'
+import Seo from '../components/Seo'
 import Header from '../components/Header'
 import Main from '../components/Main'
 import Footer from '../components/Footer'
@@ -90,7 +90,7 @@ class IndexPage extends React.Component {
   render() {
     return (
       <Layout location={this.props.location}>
-        <SEO title="Idris Olubisi | Software Engineer & Developer Advocate" />
+        <Seo title="Idris Olubisi | Software Engineer & Developer Advocate" />
         <div
           className={`body ${this.state.loading} ${
             this.state.isArticleVisible ? 'is-article-visible' : ''

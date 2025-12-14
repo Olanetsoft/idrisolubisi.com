@@ -1,0 +1,23 @@
+/* TEAM */
+
+Developer & Designer: Idris Olubisi
+Site: https://idrisolubisi.com
+Twitter: @olanetsoft
+GitHub: github.com/olanetsoft
+Location: London, UK
+
+/* THANKS */
+
+Gatsby Team - For the amazing static site generator
+React Team - For the incredible UI library
+Open Source Community - For all the packages used
+
+/* SITE */
+
+Last update: 2024
+Language: English
+Standards: HTML5, CSS3, ES6+
+Framework: Gatsby v5, React 18
+Deployment: Netlify
+Components: SCSS, gatsby-plugin-image
+IDE: VS Code
