@@ -90,7 +90,6 @@ class IndexPage extends React.Component {
   render() {
     return (
       <Layout location={this.props.location}>
-        <Seo title="Idris Olubisi | Software Engineer & Developer Advocate" />
         <div
           className={`body ${this.state.loading} ${
             this.state.isArticleVisible ? 'is-article-visible' : ''
@@ -127,3 +126,10 @@ class IndexPage extends React.Component {
 }
 
 export default IndexPage
+
+export const Head = () => (
+  <Seo
+    title="Idris Olubisi | Software Engineer & Developer Advocate"
+    slug="/"
+  />
+)

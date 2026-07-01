@@ -3,7 +3,7 @@ module.exports = {
     title: 'Idris Olubisi | Software Engineer & Developer Advocate',
     author: 'Idris Olubisi',
     description:
-      'Idris is a Software Engineer, Developer Advocate, Technical Writer, Speaker and Open-source contributor.',
+      'Idris Olubisi is a Senior Developer Relations Engineer at Midnight, founder of Web3 Afrika, and freeCodeCamp author with 1M+ views — empowering developers across Africa and beyond.',
     social: {
       twitter: '@olanetsoft',
       github: 'olanetsoft',
@@ -42,7 +42,7 @@ module.exports = {
         name: 'Idris Olubisi | Software Engineer & Developer Advocate',
         short_name: 'Idris Olubisi',
         description:
-          'Idris Olubisi - Software Engineer & Developer Educator at Midnight Foundation, Founder of Web3 Afrika, Technical Writer with 1M+ views',
+          'Idris Olubisi - Senior Developer Relations Engineer at Midnight, Founder of Web3 Afrika, freeCodeCamp author with 1M+ views',
         start_url: '/',
         background_color: '#1d1f21',
         theme_color: '#663399',
