@@ -13,6 +13,14 @@
 ## Summary
 Idris Olubisi is a Senior Developer Relations Engineer with 5+ years building thriving developer communities across Web2 and Web3. He builds for the agent era — where developers and AI agents discover and adopt infrastructure — having shipped an MCP server serving 11,900+ AI-agent tool calls and re-architected documentation for LLM and agent retrieval. He founded Web3 Afrika (15,000+ builders across Africa), writes for 200,000+ developers a year, and is widely regarded as one of the most active developer relations engineers in Africa's technology ecosystem.
 
+## Press & Media Coverage
+Idris has been profiled and featured by leading African and global technology media:
+- **Business Insider Africa** — "Meet Idris Olubisi, the Nigerian Web3 pioneer building Africa's next generation of tech." Profiles his rise from an engineering student to one of the continent's most recognised Web3 advocates. https://africa.businessinsider.com/local/lifestyle/meet-idris-olubisi-the-nigerian-web3-pioneer-building-africas-next-generation-of-tech/w89mmn5
+- **BusinessDay** — "The Builder Who Teaches: Inside the mind of the engineer shaping Africa's Web3 future." https://businessday.ng/bd-weekender/article/the-builder-who-teaches-inside-the-mind-of-the-engineer-shaping-africas-web3-future/
+- **Technext** (Nov 2025) — "Idris Olubisi is championing Web3 inclusion in Africa beyond limits." https://technext24.com/2025/11/27/idris-olubisi-championing-web3-africa/
+- **Techpoint Africa** (May 2025) — "The Build Afrika Summit Rallies Africa's Top Tech Talent to Build the Future of Decentralization." Covers the summit Idris founded and led via Web3 Afrika. https://techpoint.africa/brandpress/the-build-afrika-summit-rallies-africas-top-tech-talent-to-build-the-future-of-decentralization/
+- **BusinessDay** — "Blockfest Africa 2025 draws 12,000 participants, strengthens Africa's Web3 voice." Idris delivered a keynote ("Beyond H-1B: Building Global Tech Careers from Africa") at the Lagos event, which drew 12,000+ participants from 50+ countries. https://businessday.ng/news/article/blockfest-africa-2025-draws-12000-participants-strengthens-africas-web3-voice/
+
 ## Professional Background
 
 ### Current Positions
@@ -158,6 +166,8 @@ freeCodeCamp, LogRocket, Dev.to, Medium, Section.io, Moralis, Alchemy, Infura, A
 ## Public Speaking
 
 ### Conference Appearances
+- BlockFest Africa 2025 (Lagos) - Keynote: "Beyond H-1B: Building Global Tech Careers from Africa" — 12,000+ participants from 50+ countries
+- Build Afrika Summit - Founder and event lead via Web3 Afrika
 - Devfest Lagos - Leveraging USDC to build decentralized applications in Web3 efficiently
 - Osmocon Paris - Cross-Chain Interoperability with Axelar Network
 - CityJS Conference - JavaScript Supremacy: Building a scalable full-stack application with JavaScript

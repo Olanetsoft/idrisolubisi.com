@@ -182,6 +182,46 @@ function Seo({
       '8.8K+ Blog Followers on Hashnode',
       '1.3K+ GitHub Followers',
     ],
+    // Press & media coverage about Idris (third-party authority signals)
+    subjectOf: [
+      {
+        '@type': 'NewsArticle',
+        headline:
+          'Meet Idris Olubisi, the Nigerian Web3 pioneer building Africa’s next generation of tech',
+        url: 'https://africa.businessinsider.com/local/lifestyle/meet-idris-olubisi-the-nigerian-web3-pioneer-building-africas-next-generation-of-tech/w89mmn5',
+        publisher: { '@type': 'Organization', name: 'Business Insider Africa' },
+      },
+      {
+        '@type': 'NewsArticle',
+        headline:
+          'Idris Olubisi is championing Web3 inclusion in Africa beyond limits',
+        url: 'https://technext24.com/2025/11/27/idris-olubisi-championing-web3-africa/',
+        datePublished: '2025-11-27',
+        publisher: { '@type': 'Organization', name: 'Technext' },
+      },
+      {
+        '@type': 'NewsArticle',
+        headline:
+          'The Builder Who Teaches: Inside the mind of the engineer shaping Africa’s Web3 future',
+        url: 'https://businessday.ng/bd-weekender/article/the-builder-who-teaches-inside-the-mind-of-the-engineer-shaping-africas-web3-future/',
+        publisher: { '@type': 'Organization', name: 'BusinessDay' },
+      },
+      {
+        '@type': 'NewsArticle',
+        headline:
+          'The Build Afrika Summit Rallies Africa’s Top Tech Talent to Build the Future of Decentralization',
+        url: 'https://techpoint.africa/brandpress/the-build-afrika-summit-rallies-africas-top-tech-talent-to-build-the-future-of-decentralization/',
+        datePublished: '2025-05-15',
+        publisher: { '@type': 'Organization', name: 'Techpoint Africa' },
+      },
+      {
+        '@type': 'NewsArticle',
+        headline:
+          'BlockFest Africa 2025 draws 12,000 participants, strengthens Africa’s Web3 voice',
+        url: 'https://businessday.ng/news/article/blockfest-africa-2025-draws-12000-participants-strengthens-africas-web3-voice/',
+        publisher: { '@type': 'Organization', name: 'BusinessDay' },
+      },
+    ],
   }
 
   // ProfilePage Schema for better personal website SEO

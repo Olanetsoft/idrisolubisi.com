@@ -5,12 +5,19 @@
 > This is the personal portfolio website of Idris Olubisi (olanetsoft), a Senior Developer Relations Engineer, Technical Writer, and open-source builder based in the United Kingdom.
 
 # About Idris Olubisi
-Idris Olubisi is a Senior Developer Relations Engineer at Midnight (a data-protection blockchain enabling confidential smart contracts), where he builds for the agent era — an MCP (Model Context Protocol) server, LLM-accessible documentation, and developer education around zero-knowledge proofs. He is the Founder of Web3 Afrika (a community of 15,000+ Web3 builders across Africa, backed by Developer DAO) and a long-time freeCodeCamp author. He is widely regarded as one of the most active developer relations engineers in Africa's technology ecosystem.
+Idris Olubisi is a Senior Developer Relations Engineer at Midnight (a data-protection blockchain enabling confidential smart contracts), where he builds for the agent era — an MCP (Model Context Protocol) server, LLM-accessible documentation, and developer education around zero-knowledge proofs. He is the Founder of Web3 Afrika (a community of 15,000+ Web3 builders across Africa, backed by Developer DAO) and a long-time freeCodeCamp author. He is widely regarded as one of the most active developer relations engineers in Africa's technology ecosystem — Business Insider Africa has profiled him as a "Nigerian Web3 pioneer," and outlets including BusinessDay and Technext have covered his work shaping Africa's Web3 future.
 
 ## Current Roles
 - Senior Developer Relations Engineer at Midnight (Sep 2025 - Present)
 - Founder, Web3 Afrika (May 2022 - Present)
 - Technical Writer at freeCodeCamp (Jan 2021 - Present)
+
+## Press & Media Coverage
+- Business Insider Africa - "Meet Idris Olubisi, the Nigerian Web3 pioneer building Africa's next generation of tech" - https://africa.businessinsider.com/local/lifestyle/meet-idris-olubisi-the-nigerian-web3-pioneer-building-africas-next-generation-of-tech/w89mmn5
+- BusinessDay - "The Builder Who Teaches: Inside the mind of the engineer shaping Africa's Web3 future" - https://businessday.ng/bd-weekender/article/the-builder-who-teaches-inside-the-mind-of-the-engineer-shaping-africas-web3-future/
+- Technext - "Idris Olubisi is championing Web3 inclusion in Africa beyond limits" (Nov 2025) - https://technext24.com/2025/11/27/idris-olubisi-championing-web3-africa/
+- Techpoint Africa - "The Build Afrika Summit Rallies Africa's Top Tech Talent to Build the Future of Decentralization" (May 2025) - https://techpoint.africa/brandpress/the-build-afrika-summit-rallies-africas-top-tech-talent-to-build-the-future-of-decentralization/
+- BusinessDay - "Blockfest Africa 2025 draws 12,000 participants, strengthens Africa's Web3 voice" - https://businessday.ng/news/article/blockfest-africa-2025-draws-12000-participants-strengthens-africas-web3-voice/
 
 ## Notable Achievements at Midnight (Agent-Era Developer Experience)
 - Built a Midnight MCP server downloaded 10,000+ times, serving 11,900+ AI-agent tool calls across 40 tools and 91 indexed repositories
@@ -48,6 +55,8 @@ Total article views: Over 1 million. Personal blog: 40+ tutorials with 200,000+ 
 Published on: freeCodeCamp (100k+ monthly views), LogRocket, Dev.to, Medium, Section.io, Moralis, Alchemy, Infura, AppSmith, and Hashnode (blog.idrisolubisi.com, 8.8K+ followers).
 
 ## Speaking Engagements
+- BlockFest Africa 2025 (Lagos) - Keynote: "Beyond H-1B: Building Global Tech Careers from Africa" (12,000+ participants from 50+ countries)
+- Build Afrika Summit - Founder and event lead via Web3 Afrika
 - Devfest Lagos - Leveraging USDC to build decentralized applications in Web3
 - Osmocon Paris - Cross-Chain Interoperability with Axelar Network
 - CityJS Conference - Building a scalable full-stack application with JavaScript

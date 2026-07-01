@@ -450,6 +450,57 @@ class Main extends React.Component {
             United Kingdom, he focuses on developer experience, blockchain,
             AI-agent tooling, and growing Africa&rsquo;s developer ecosystem.
           </h5>
+          <h3>Featured In</h3>
+          <h4>
+            <a
+              href="https://africa.businessinsider.com/local/lifestyle/meet-idris-olubisi-the-nigerian-web3-pioneer-building-africas-next-generation-of-tech/w89mmn5"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Business Insider Africa &mdash; Nigerian Web3 pioneer building
+              Africa&rsquo;s next generation of tech
+            </a>
+            <br />
+            <br />
+            <a
+              href="https://technext24.com/2025/11/27/idris-olubisi-championing-web3-africa/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Technext &mdash; Championing Web3 inclusion in Africa beyond
+              limits
+            </a>
+            <br />
+            <br />
+            <a
+              href="https://businessday.ng/bd-weekender/article/the-builder-who-teaches-inside-the-mind-of-the-engineer-shaping-africas-web3-future/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              BusinessDay &mdash; The builder who teaches: the engineer shaping
+              Africa&rsquo;s Web3 future
+            </a>
+            <br />
+            <br />
+            <a
+              href="https://techpoint.africa/brandpress/the-build-afrika-summit-rallies-africas-top-tech-talent-to-build-the-future-of-decentralization/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Techpoint Africa &mdash; Build Afrika Summit rallies
+              Africa&rsquo;s top tech talent
+            </a>
+            <br />
+            <br />
+            <a
+              href="https://businessday.ng/news/article/blockfest-africa-2025-draws-12000-participants-strengthens-africas-web3-voice/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              BusinessDay &mdash; BlockFest Africa 2025 draws 12,000
+              participants
+            </a>
+          </h4>
           {/* <h3>Technologies & Skills</h3> */}
           &nbsp;&nbsp;&nbsp;
           <br />
