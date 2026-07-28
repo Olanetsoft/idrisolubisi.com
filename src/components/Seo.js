@@ -12,6 +12,16 @@ const siteMetadata = {
   siteImage: 'https://idrisolubisi.com/dp.png',
 }
 
+// Serialize JSON-LD for inline injection. Escapes characters that could break out
+// of the <script> block (`<`, `>`, `&`) plus the JS-invalid line separators.
+const serializeJsonLd = data =>
+  JSON.stringify(data)
+    .replace(/</g, '\\u003c')
+    .replace(/>/g, '\\u003e')
+    .replace(/&/g, '\\u0026')
+    .replace(/\u2028/g, '\\u2028')
+    .replace(/\u2029/g, '\\u2029')
+
 function Seo({
   description = '',
   lang = 'en',
@@ -106,6 +116,17 @@ function Seo({
       'Content Creation',
       'Tutorials and Workshops',
       'Tech Blogging',
+      'Technical Documentation',
+      'Open Source Contribution',
+      'Mentorship and Coaching',
+      'Diversity and Inclusion in Tech',
+      'Web3 Education',
+      'Decentralized Applications (dApps)',
+      'Cryptography',
+      'Privacy-Preserving Technologies',
+      'Cross-Chain Interoperability',
+      'Blockchain Scalability Solutions',
+      'Decentralized Finance (DeFi)',
     ],
     knowsLanguage: ['English', 'Yoruba'],
     sameAs: [
@@ -221,6 +242,13 @@ function Seo({
         url: 'https://businessday.ng/news/article/blockfest-africa-2025-draws-12000-participants-strengthens-africas-web3-voice/',
         publisher: { '@type': 'Organization', name: 'BusinessDay' },
       },
+      {
+        '@type': 'NewsArticle',
+        headline:
+          'Investing in Africa’s Web3 Renaissance: The Strategic Case for Supporting Idris Olubisi’s Web3 Afrika Ecosystem',
+        url: 'https://www.ainvest.com/news/investing-africa-web3-renaissance-strategic-case-supporting-idris-olubisi-web3-afrika-ecosystem-2511/',
+        publisher: { '@type': 'Organization', name: 'AInvest' },
+      },
     ],
   }
 
@@ -324,7 +352,7 @@ function Seo({
   }
 
   const keywords =
-    'Idris Olubisi, olanetsoft, Senior Developer Relations Engineer, DevRel, Developer Advocate, Midnight, Web3 Afrika, MCP, AI Agents, Developer Experience, Zero-Knowledge Proofs, Technical Writer, Blockchain Developer, Web3, Africa, Solidity, React, Next.js, Node.js, Open Source, freeCodeCamp author'
+    'Idris Olubisi, olanetsoft, Senior Developer Relations Engineer, DevRel, Developer Advocate, AI Engineer, Midnight, Web3 Afrika, MCP, AI Agents, Developer Experience, Zero-Knowledge Proofs, Technical Writer, Blockchain Developer, Web3, Africa, Solidity, React, Next.js, Node.js, Open Source, freeCodeCamp author'
 
   return (
     <>
@@ -388,7 +416,7 @@ function Seo({
       {/* JSON-LD Structured Data for SEO & LLM crawlers */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
     </>
   )
