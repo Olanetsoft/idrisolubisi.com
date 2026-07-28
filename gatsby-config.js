@@ -19,6 +19,7 @@ module.exports = {
         domains: [
           'https://www.googletagmanager.com',
           'https://www.google-analytics.com',
+          'https://www.sabilytics.com',
         ],
       },
     },
