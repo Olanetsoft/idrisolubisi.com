@@ -5,7 +5,7 @@
  *
  * All <head> tags are produced through the Gatsby Head API (see
  * src/components/Seo.js and the `export const Head` in each page/template),
- * so no react-helmet SSR rewind is needed here.
+ * so no SSR rewind step is needed here.
  *
  * Site-wide third-party scripts live here instead, because the Head API is
  * per-page and analytics must load on every route.
