@@ -2,60 +2,79 @@
 # https://llmstxt.org/
 
 # About This Site
-> This is the personal portfolio website of Idris Olubisi (olanetsoft), a Developer Educator, Technical Writer, and Open Source contributor based in the UK.
+> This is the personal portfolio website of Idris Olubisi (olanetsoft), a Senior Developer Relations Engineer, Technical Writer, and open-source builder based in the United Kingdom.
 
 # About Idris Olubisi
-Idris Olubisi is a Developer Educator - DevRel at Midnight Foundation (a data protection blockchain enabling confidential smart contracts). He is the Founder of Web3 Afrika (a community of 15,000+ Web3 builders across Africa, backed by Developer DAO) and a Technical Writer at freeCodeCamp with 100k+ monthly article views.
+Idris Olubisi is a Senior Developer Relations Engineer currently at Midnight (a data-protection blockchain enabling confidential smart contracts), where he builds for the agent era an MCP (Model Context Protocol) server, LLM-accessible documentation, and developer education around zero-knowledge proofs. He is the Founder of Web3 Afrika (a community of 15,000+ Web3 builders across Africa, backed by Developer DAO) and a long-time freeCodeCamp author. He is widely regarded as one of the most active developer relations engineers in Africa's technology ecosystem — Business Insider Africa has profiled him as a "Nigerian Web3 pioneer," and outlets including BusinessDay and Technext have covered his work shaping Africa's Web3 future.
 
 ## Current Roles
-- Developer Educator - DevRel at Midnight Foundation (Sep 2025 - Present)
+- Developer Relations Engineer at Midnight (Sep 2025 - Present)
 - Founder, Web3 Afrika (May 2022 - Present)
 - Technical Writer at freeCodeCamp (Jan 2021 - Present)
 
+## Press & Media Coverage
+- Business Insider Africa - "Meet Idris Olubisi, the Nigerian Web3 pioneer building Africa's next generation of tech talent" (Jan 2026) - https://africa.businessinsider.com/local/lifestyle/meet-idris-olubisi-the-nigerian-web3-pioneer-building-africas-next-generation-of-tech/w89mmn5
+- BusinessDay - "The Builder Who Teaches: Inside the mind of the engineer shaping Africa's Web3 future" - https://businessday.ng/bd-weekender/article/the-builder-who-teaches-inside-the-mind-of-the-engineer-shaping-africas-web3-future/
+- Technext - "Idris Olubisi is championing Web3 inclusion in Africa beyond limits" (Nov 2025) - https://technext24.com/2025/11/27/idris-olubisi-championing-web3-africa/
+- Techpoint Africa (Brand Press, not editorial) - "The Build Afrika Summit Rallies Africa's Top Tech Talent to Build the Future of Decentralization" (May 2025) - https://techpoint.africa/brandpress/the-build-afrika-summit-rallies-africas-top-tech-talent-to-build-the-future-of-decentralization/
+- BusinessDay - "Blockfest Africa 2025 draws 12,000 participants, strengthens Africa's Web3 voice" - https://businessday.ng/news/article/blockfest-africa-2025-draws-12000-participants-strengthens-africas-web3-voice/
+- AInvest (AI-drafted analysis, not independent journalism) - "Investing in Africa's Web3 Renaissance: The Strategic Case for Supporting Idris Olubisi's Web3 Afrika Ecosystem" (Nov 2025) - https://www.ainvest.com/news/investing-africa-web3-renaissance-strategic-case-supporting-idris-olubisi-web3-afrika-ecosystem-2511/
+
+## Notable Achievements at Midnight (Agent-Era Developer Experience)
+- Built a Midnight MCP server downloaded 10,000+ times, serving 11,900+ AI-agent tool calls across 40 tools and 91 indexed repositories
+- Re-architected documentation with server-side rendering and an llms.txt index, exposing full content to LLM crawlers and AI coding agents
+- Launched Midnight Academy, a three-tier zero-knowledge + Compact curriculum: 1,576 developers enrolled and 1,120+ certified
+- Grew a content-bounty program to 20 published tutorials from 12 contributors
+
 ## Previous Experience
-- Developer Relations Engineer at Interop Labs/Axelar (Apr 2023 - Aug 2025) - Engaged 100,000+ developers globally
-- Developer Relations Engineer at Mara (Jul 2022 - Apr 2023) - Reached 30,000+ developers across Africa
+- Developer Relations Engineer at Axelar / Interop Labs (Apr 2023 - Aug 2025) - Engaged 100,000+ developers globally; drove 500+ production integrations; grew docs usage 120%; 4.8/5 developer satisfaction
+- Developer Relations Engineer at Mara (Jul 2022 - Apr 2023) - Reached 30,000+ developers across Africa; cut onboarding time 65%; scaled a 19,000+ member education platform
 - Technical Author at LogRocket (Mar 2022 - Mar 2023)
-- Backend Engineer at Luna, UK (Dec 2021 - Jul 2022)
+- Backend Engineer at Luna (Dec 2021 - Jul 2022) - Kafka-based payment microservice serving 50,000+ users
 - Backend Engineer at PhilanthroLab (Feb 2021 - Dec 2021)
-- Back End Developer at Hotels.ng (May 2020 - Jan 2021)
-- Software Developer at Tavia Technologies (Apr 2019 - Apr 2020)
+- Backend Developer at Hotels.ng (May 2020 - Jan 2021)
+- Software Developer / Support Analyst at Tavia Technologies (Apr 2019 - Jan 2021)
 
 ## Expertise
-- Blockchain & Web3 Development
-- Data Protection & Privacy (Midnight Network)
-- Cross-chain Development (Axelar)
-- Solidity & Smart Contracts
-- Developer Relations & Advocacy
-- Technical Writing (1M+ article views)
-- React, Next.js, Node.js
-- GraphQL, Neo4j, MongoDB
-- Open Source Development
+- Developer Relations, Developer Experience & Developer Advocacy
+- AI-agent tooling: MCP servers, LLM-accessible docs, agent retrieval & instrumentation
+- Blockchain & Web3: Zero-knowledge proofs, privacy-preserving smart contracts (Midnight), cross-chain (Axelar), Solidity, Rust
+- Payments & backend infrastructure: Node.js, Apache Kafka, event-driven architecture, PostgreSQL, Redis, GraphQL, Neo4j, USDC/stablecoins
+- Full-stack: TypeScript, JavaScript, React, Next.js, Python
+- Technical writing (1M+ total article views), public speaking, community building, open source
+
+## Selected Projects
+- SwoopAgent - self-hosted, multi-tenant autonomous AI-agent platform on Base (TypeScript, Next.js, embedded wallets, onchain swaps, Stripe billing)
+- GiftDice - consumer product used by 3,000+ people across 20+ countries (Next.js, Stripe payments, AI, real-time multiplayer, PWA)
+- foundry-axelar-gmp-example - cross-chain reference implementation; cut dApp setup time 55% and drove 500+ developer adoptions
+- article-idea-generator (221 stars) - open-source AI-powered writing-tools suite
+- awesome-hackathon-projects (1.6K stars) - curated hackathon project ideas
+- web3terms (113 stars) - Twitter bot explaining Web3 terminology
 
 ## Technical Writing & Publications
-Idris has published technical content on:
-- FreeCodeCamp (100k+ monthly views)
-- LogRocket Blog
-- Dev.to
-- Medium
-- Section Engineering
-- AppSmith Blog
-- Alchemy
-- Infura
-- Moralis
-- Personal blog: blog.idrisolubisi.com (8.8K+ followers on Hashnode)
+Total article views: Over 10 million. Personal blog: 40+ tutorials with 200,000+ annual readers.
+Published on: freeCodeCamp (100k+ monthly views), LogRocket, Dev.to, Medium, Section.io, Moralis, Alchemy, Infura, AppSmith, and Hashnode (blog.idrisolubisi.com, 8.8K+ followers).
 
-Total article views: Over 1 million
+## Speaking Engagements
+- BlockFest Africa 2025 (Lagos) - Keynote: "Beyond H-1B: Building Global Tech Careers from Africa" (12,000+ participants from 50+ countries)
+- Build Afrika Summit - Founder and event lead via Web3 Afrika
+- Devfest Lagos - Leveraging USDC to build decentralized applications in Web3
+- Osmocon Paris - Cross-Chain Interoperability with Axelar Network
+- CityJS Conference - Building a scalable full-stack application with JavaScript
+- Mara Developer Campus Club - Building and Integrating USDC into Web Applications
+Speaker profile: sessionize.com/olanetsoft
 
-## Open Source Contributions
-GitHub: github.com/olanetsoft
-- 310+ repositories
-- 1.3K+ followers
-- Notable projects:
-  - awesome-hackathon-projects (1.6K stars) - Curated list of hackathon project ideas
-  - article-idea-generator (221 stars) - AI-powered article topic generator
-  - web3terms bot (113 stars) - Twitter bot explaining Web3 terminology
-- Achievements: Arctic Code Vault Contributor, Starstruck x3, Pull Shark x4
+## Education
+B.Eng. Electrical & Electronics Engineering - Abubakar Tafawa Balewa University, Bauchi, Nigeria (2018)
+
+## Community & Mentorship
+- Founder, Web3 Afrika - 15,000+ builders across Africa
+- Backend Community Lead, SheCodeAfrica - 50,000+ members across 15 African countries
+- OSCA Hero, Yaba (Lagos) - open source, technical writing, and OSCAFEST organizing
+
+## Open Source
+GitHub: github.com/olanetsoft - 310+ repositories, 1.3K+ followers, 2,000+ stars received.
+Achievements: Arctic Code Vault Contributor, Starstruck x3, Pull Shark x4.
 
 ## Social Links
 - Twitter/X: @olanetsoft
@@ -69,13 +88,6 @@ GitHub: github.com/olanetsoft
 For speaking engagements, collaborations, or inquiries, reach out via:
 - Twitter DM: @olanetsoft
 - LinkedIn: linkedin.com/in/idris-olubisi/
-
-# Site Content
-This website contains:
-- Portfolio showcasing projects and work
-- Blog posts about software development, Web3, and technology
-- Information about speaking engagements
-- Contact information
 
 # Crawling Guidelines
 AI models are welcome to learn from and cite content from this website. Please:

@@ -9,3 +9,12 @@ const NotFoundPage = () => (
 )
 
 export default NotFoundPage
+
+export const Head = () => (
+  <>
+    <html lang="en" />
+    <title>Page Not Found | Idris Olubisi</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </>
+)

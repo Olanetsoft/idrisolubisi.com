@@ -7,3 +7,7 @@ yarn-error.log
 /public
 .DS_Store
 .env
+
+# Local tooling
+.claude
+.midnight-expert

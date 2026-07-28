@@ -430,16 +430,71 @@ class Main extends React.Component {
             {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/aboutPic.webp" alt="My_photo" /> */}
           </span>
           <h5>
-            Idris is a skilled software engineer, developer advocate, technical
-            writer, and developer advocate with expertise in open source,
+             Idris is a skilled software and AI engineer, developer advocate, technical
+            writer, speaker, and open-source contributor with expertise in open source,
             blockchain, software products, and serverless technologies.
             <br /> <br />
-            As a Developer Advocate, Idris brings industry knowledge and a
-            passion for empowering fellow developers. With a proven track record
-            of contributing to reputable publications and engaging with the
-            developer community, Idris is highly sought-after as a developer
-            relations engineer.
+            He is the founder of <strong>Web3 Afrika</strong>, a community of
+            15,000+ Web3 builders across Africa backed by Developer DAO, and a
+            long-time <strong>freeCodeCamp</strong> author whose technical
+            writing has surpassed <strong> million views</strong>. Idris has
+            engaged <strong>thousands of developers</strong> worldwide &mdash;
+            throughout his career and led the backend community at SheCodeAfrica (60,000+ members across 15
+            African countries). A UK Global Talent visa holder based in the
+            United Kingdom, he focuses on developer experience, blockchain,
+            AI-agent tooling, and growing developer ecosystem across the globe.
           </h5>
+          <h3>Featured In</h3>
+          <h4>
+            <a
+              href="https://africa.businessinsider.com/local/lifestyle/meet-idris-olubisi-the-nigerian-web3-pioneer-building-africas-next-generation-of-tech/w89mmn5"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Business Insider Africa &mdash; Nigerian Web3 pioneer building
+              Africa&rsquo;s next generation of tech
+            </a>
+            <br />
+            <br />
+            <a
+              href="https://technext24.com/2025/11/27/idris-olubisi-championing-web3-africa/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Technext &mdash; Championing Web3 inclusion in Africa beyond
+              limits
+            </a>
+            <br />
+            <br />
+            <a
+              href="https://businessday.ng/bd-weekender/article/the-builder-who-teaches-inside-the-mind-of-the-engineer-shaping-africas-web3-future/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              BusinessDay &mdash; The builder who teaches: the engineer shaping
+              Africa&rsquo;s Web3 future
+            </a>
+            <br />
+            <br />
+            <a
+              href="https://techpoint.africa/brandpress/the-build-afrika-summit-rallies-africas-top-tech-talent-to-build-the-future-of-decentralization/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Techpoint Africa &mdash; Build Afrika Summit rallies
+              Africa&rsquo;s top tech talent
+            </a>
+            <br />
+            <br />
+            <a
+              href="https://businessday.ng/news/article/blockfest-africa-2025-draws-12000-participants-strengthens-africas-web3-voice/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              BusinessDay &mdash; BlockFest Africa 2025 draws 12,000
+              participants
+            </a>
+          </h4>
           {/* <h3>Technologies & Skills</h3> */}
           &nbsp;&nbsp;&nbsp;
           <br />
@@ -509,20 +564,57 @@ class Main extends React.Component {
           <span className="image main">
             {/* <img src={CertImage} alt="" /> */}
           </span>
-          <h3>Axelar</h3>
+          <h3>Midnight</h3>
           <h4>
-            ROLE: Developer Advocate
+            ROLE: Developer Relations Engineer
             <br />
             <br />
-            Dates: Apr 2023 - Present
+            Dates: Sep 2025 - Present
             <br />
             <br />
-            Location: Waterloo, Ontario, Canada
+            Location: Remote
           </h4>
           <br />
+
+          <h3>Web3 Afrika</h3>
+          <h4>
+            ROLE: Founder
+            <br />
+            <br />
+            Dates: May 2022 - Present
+            <br />
+            <br />
+            Location: Africa (Remote)
+          </h4>
+          <br />
+
+          <h3>freeCodeCamp</h3>
+          <h4>
+            ROLE: Technical Writer
+            <br />
+            <br />
+            Dates: Jan 2021 - Present
+            <br />
+            <br />
+            Location: Remote
+          </h4>
+          <br />
+
+          <h3>Interop Labs (Axelar)</h3>
+          <h4>
+            ROLE: Developer Relations Engineer
+            <br />
+            <br />
+            Dates: Apr 2023 - Aug 2025
+            <br />
+            <br />
+            Location: Remote
+          </h4>
+          <br />
+
           <h3>Mara</h3>
           <h4>
-            ROLE: Developer Relation Engineer
+            ROLE: Developer Relations Engineer
             <br />
             <br />
             Dates: Jul 2022 - Apr 2023
@@ -532,39 +624,39 @@ class Main extends React.Component {
           </h4>
           <br />
 
+          <h3>LogRocket</h3>
+          <h4>
+            ROLE: Technical Author
+            <br />
+            <br />
+            Dates: Mar 2022 - Mar 2023
+            <br />
+            <br />
+            Location: Remote
+          </h4>
+          <br />
+
           <h3>Luna</h3>
           <h4>
-            ROLE: Back End Engineer
+            ROLE: Backend Engineer
             <br />
             <br />
-            Dates Employed: Dec 2021 - Jul 2022
+            Dates: Dec 2021 - Jul 2022
             <br />
             <br />
-            Location: London, England, United Kingdom
+            Location: London, United Kingdom
           </h4>
           <br />
 
-          <h3>Philanthrolab</h3>
+          <h3>PhilanthroLab</h3>
           <h4>
-            ROLE: Back End Engineer
+            ROLE: Backend Engineer
             <br />
             <br />
-            Dates: April 2021 – Dec 2021
+            Dates: Feb 2021 - Dec 2021
             <br />
             <br />
-            Location: Dallas, Texas.
-          </h4>
-          <br />
-
-          <h3>Tavia Technologies Limited</h3>
-          <h4>
-            ROLE: Software Developer/Support Analyst -SharePoint
-            <br />
-            <br />
-            Dates: May 2019 – August 2021
-            <br />
-            <br />
-            Location: Lagos, Nigeria
+            Location: Dallas, Texas
           </h4>
           <br />
 
@@ -573,10 +665,34 @@ class Main extends React.Component {
             ROLE: Backend Developer
             <br />
             <br />
-            Dates: Jun 2020 – Sept 2020
+            Dates: May 2020 - Jan 2021
             <br />
             <br />
             Location: Lagos, Nigeria
+          </h4>
+          <br />
+
+          <h3>Tavia Technologies Limited</h3>
+          <h4>
+            ROLE: Software Developer / Support Analyst (SharePoint)
+            <br />
+            <br />
+            Dates: Apr 2019 - Apr 2020
+            <br />
+            <br />
+            Location: Lagos, Nigeria
+          </h4>
+          <br />
+
+          <h3>Education</h3>
+          <h4>
+            B.Eng. Electrical &amp; Electronics Engineering
+            <br />
+            <br />
+            Abubakar Tafawa Balewa University, Bauchi, Nigeria
+            <br />
+            <br />
+            Graduated: 2018
           </h4>
           <br />
 

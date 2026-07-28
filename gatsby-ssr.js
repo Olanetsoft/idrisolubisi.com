@@ -2,37 +2,25 @@
  * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
  *
  * See: https://www.gatsbyjs.org/docs/ssr-apis/
+ *
+ * All <head> tags are produced through the Gatsby Head API (see
+ * src/components/Seo.js and the `export const Head` in each page/template),
+ * so no react-helmet SSR rewind is needed here.
+ *
+ * Site-wide third-party scripts live here instead, because the Head API is
+ * per-page and analytics must load on every route.
  */
 
-import React from 'react'
-import { Helmet } from 'react-helmet'
+const React = require('react')
 
-export const onRenderBody = (
-  { setHeadComponents, setHtmlAttributes, setBodyAttributes },
-  pluginOptions
-) => {
-  const helmet = Helmet.renderStatic()
-  setHtmlAttributes(helmet.htmlAttributes.toComponent())
-  setBodyAttributes(helmet.bodyAttributes.toComponent())
+exports.onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
-    helmet.title.toComponent(),
-    helmet.link.toComponent(),
-    helmet.meta.toComponent(),
-    helmet.noscript.toComponent(),
-    helmet.script.toComponent(),
-    helmet.style.toComponent(),
+    <script
+      key="sabilytics"
+      async
+      src="https://www.sabilytics.com/script.js"
+      data-site="z3p6fy6kw0ly"
+      data-domain="idrisolubisi.com"
+    />,
   ])
-}
-
-export const onPreRenderHTML = ({
-  getHeadComponents,
-  replaceHeadComponents,
-}) => {
-  const headComponents = getHeadComponents()
-  headComponents.sort((a, b) => {
-    if (a.type === 'title') return -1
-    if (b.type === 'title') return 1
-    return 0
-  })
-  replaceHeadComponents(headComponents)
 }

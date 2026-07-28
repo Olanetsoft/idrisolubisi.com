@@ -30,7 +30,7 @@ const Header = (props) => (
           />
         </h3>
         <p>
-          a Software Engineer, Developer Advocate, Technical Writer, Speaker and
+          a Software and AI Engineer, Developer Advocate, Technical Writer, Speaker and
           Open-source contributor.
         </p>
       </div>
