@@ -208,8 +208,9 @@ function Seo({
       {
         '@type': 'NewsArticle',
         headline:
-          'Meet Idris Olubisi, the Nigerian Web3 pioneer building Africa’s next generation of tech',
+          'Meet Idris Olubisi, the Nigerian Web3 pioneer building Africa’s next generation of tech talent',
         url: 'https://africa.businessinsider.com/local/lifestyle/meet-idris-olubisi-the-nigerian-web3-pioneer-building-africas-next-generation-of-tech/w89mmn5',
+        datePublished: '2026-01-11',
         publisher: { '@type': 'Organization', name: 'Business Insider Africa' },
       },
       {
@@ -228,11 +229,15 @@ function Seo({
         publisher: { '@type': 'Organization', name: 'BusinessDay' },
       },
       {
-        '@type': 'NewsArticle',
+        // Brand Press submission, not editorial: schema.org designates
+        // AdvertiserContentArticle for sponsored and brand-supplied content.
+        '@type': 'AdvertiserContentArticle',
         headline:
           'The Build Afrika Summit Rallies Africa’s Top Tech Talent to Build the Future of Decentralization',
         url: 'https://techpoint.africa/brandpress/the-build-afrika-summit-rallies-africas-top-tech-talent-to-build-the-future-of-decentralization/',
         datePublished: '2025-05-15',
+        description:
+          'Techpoint Africa Brand Press submission, created independently of Techpoint Africa’s editorial team.',
         publisher: { '@type': 'Organization', name: 'Techpoint Africa' },
       },
       {
@@ -243,10 +248,14 @@ function Seo({
         publisher: { '@type': 'Organization', name: 'BusinessDay' },
       },
       {
-        '@type': 'NewsArticle',
+        // AI-drafted analysis rather than reported journalism, so the generic
+        // Article type is used instead of NewsArticle.
+        '@type': 'Article',
         headline:
           'Investing in Africa’s Web3 Renaissance: The Strategic Case for Supporting Idris Olubisi’s Web3 Afrika Ecosystem',
         url: 'https://www.ainvest.com/news/investing-africa-web3-renaissance-strategic-case-supporting-idris-olubisi-web3-afrika-ecosystem-2511/',
+        description:
+          'Investment analysis drafted by AI agents under AInvest’s stated human-in-the-loop review, not reported by an independent human journalist.',
         publisher: { '@type': 'Organization', name: 'AInvest' },
       },
     ],

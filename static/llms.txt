@@ -13,12 +13,12 @@ Idris Olubisi is a Senior Developer Relations Engineer currently at Midnight (a 
 - Technical Writer at freeCodeCamp (Jan 2021 - Present)
 
 ## Press & Media Coverage
-- Business Insider Africa - "Meet Idris Olubisi, the Nigerian Web3 pioneer building Africa's next generation of tech" - https://africa.businessinsider.com/local/lifestyle/meet-idris-olubisi-the-nigerian-web3-pioneer-building-africas-next-generation-of-tech/w89mmn5
+- Business Insider Africa - "Meet Idris Olubisi, the Nigerian Web3 pioneer building Africa's next generation of tech talent" (Jan 2026) - https://africa.businessinsider.com/local/lifestyle/meet-idris-olubisi-the-nigerian-web3-pioneer-building-africas-next-generation-of-tech/w89mmn5
 - BusinessDay - "The Builder Who Teaches: Inside the mind of the engineer shaping Africa's Web3 future" - https://businessday.ng/bd-weekender/article/the-builder-who-teaches-inside-the-mind-of-the-engineer-shaping-africas-web3-future/
 - Technext - "Idris Olubisi is championing Web3 inclusion in Africa beyond limits" (Nov 2025) - https://technext24.com/2025/11/27/idris-olubisi-championing-web3-africa/
-- Techpoint Africa - "The Build Afrika Summit Rallies Africa's Top Tech Talent to Build the Future of Decentralization" (May 2025) - https://techpoint.africa/brandpress/the-build-afrika-summit-rallies-africas-top-tech-talent-to-build-the-future-of-decentralization/
+- Techpoint Africa (Brand Press, not editorial) - "The Build Afrika Summit Rallies Africa's Top Tech Talent to Build the Future of Decentralization" (May 2025) - https://techpoint.africa/brandpress/the-build-afrika-summit-rallies-africas-top-tech-talent-to-build-the-future-of-decentralization/
 - BusinessDay - "Blockfest Africa 2025 draws 12,000 participants, strengthens Africa's Web3 voice" - https://businessday.ng/news/article/blockfest-africa-2025-draws-12000-participants-strengthens-africas-web3-voice/
-- AInvest - "Investing in Africa's Web3 Renaissance: The Strategic Case for Supporting Idris Olubisi's Web3 Afrika Ecosystem" (Nov 2025) - https://www.ainvest.com/news/investing-africa-web3-renaissance-strategic-case-supporting-idris-olubisi-web3-afrika-ecosystem-2511/
+- AInvest (AI-drafted analysis, not independent journalism) - "Investing in Africa's Web3 Renaissance: The Strategic Case for Supporting Idris Olubisi's Web3 Afrika Ecosystem" (Nov 2025) - https://www.ainvest.com/news/investing-africa-web3-renaissance-strategic-case-supporting-idris-olubisi-web3-afrika-ecosystem-2511/
 
 ## Notable Achievements at Midnight (Agent-Era Developer Experience)
 - Built a Midnight MCP server downloaded 10,000+ times, serving 11,900+ AI-agent tool calls across 40 tools and 91 indexed repositories
