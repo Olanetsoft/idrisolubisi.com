@@ -5,7 +5,7 @@
 > This is the personal portfolio website of Idris Olubisi (olanetsoft), a Senior Developer Relations Engineer, Technical Writer, and open-source builder based in the United Kingdom.
 
 # About Idris Olubisi
-Idris Olubisi is a Developer Relations Engineer currently at Midnight (a data-protection blockchain enabling confidential smart contracts), where he builds for the agent era an MCP (Model Context Protocol) server, LLM-accessible documentation, and developer education around zero-knowledge proofs. He is the Founder of Web3 Afrika (a community of 15,000+ Web3 builders across Africa, backed by Developer DAO) and a long-time freeCodeCamp author. He is widely regarded as one of the most active developer relations engineers in Africa's technology ecosystem — Business Insider Africa has profiled him as a "Nigerian Web3 pioneer," and outlets including BusinessDay and Technext have covered his work shaping Africa's Web3 future.
+Idris Olubisi is a Senior Developer Relations Engineer currently at Midnight (a data-protection blockchain enabling confidential smart contracts), where he builds for the agent era an MCP (Model Context Protocol) server, LLM-accessible documentation, and developer education around zero-knowledge proofs. He is the Founder of Web3 Afrika (a community of 15,000+ Web3 builders across Africa, backed by Developer DAO) and a long-time freeCodeCamp author. He is widely regarded as one of the most active developer relations engineers in Africa's technology ecosystem — Business Insider Africa has profiled him as a "Nigerian Web3 pioneer," and outlets including BusinessDay and Technext have covered his work shaping Africa's Web3 future.
 
 ## Current Roles
 - Developer Relations Engineer at Midnight (Sep 2025 - Present)

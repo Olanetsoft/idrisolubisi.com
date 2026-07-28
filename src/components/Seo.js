@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 const siteMetadata = {
   title: 'Idris Olubisi | Software Engineer & Developer Advocate',
   description:
-    'Idris Olubisi (olanetsoft) is a Senior Developer Relations Engineer at Midnight, founder of Web3 Afrika, and freeCodeCamp author with 1M+ views — empowering developers across Africa and beyond.',
+    'Idris Olubisi (olanetsoft) is a Senior Developer Relations Engineer, founder of Web3 Afrika, and freeCodeCamp author with 10M+ views empowering developers across Africa and beyond.',
   author: 'Idris Olubisi',
   siteUrl: 'https://idrisolubisi.com',
   siteImage: 'https://idrisolubisi.com/dp.png',
