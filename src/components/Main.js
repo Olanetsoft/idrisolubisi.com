@@ -430,25 +430,19 @@ class Main extends React.Component {
             {/* <img src="https://res.cloudinary.com/olanetsoft/image/upload/v1580308684/Idris%20Portfolio%20Pictures/aboutPic.webp" alt="My_photo" /> */}
           </span>
           <h5>
-            Idris Olubisi &mdash; widely known as <strong>olanetsoft</strong>{' '}
-            &mdash; is a <strong>Senior Developer Relations Engineer</strong> at{' '}
-            <strong>Midnight</strong>, a data-protection blockchain enabling
-            confidential smart contracts, where he builds for the agent era: an
-            MCP server serving <strong>11,900+ AI-agent tool calls</strong>,
-            LLM-accessible documentation, and Midnight Academy &mdash; a
-            zero-knowledge curriculum with <strong>1,120+ certified</strong>{' '}
-            developers.
+             Idris is a skilled software and AI engineer, developer advocate, technical
+            writer, speaker, and open-source contributor with expertise in open source,
+            blockchain, software products, and serverless technologies.
             <br /> <br />
             He is the founder of <strong>Web3 Afrika</strong>, a community of
             15,000+ Web3 builders across Africa backed by Developer DAO, and a
             long-time <strong>freeCodeCamp</strong> author whose technical
-            writing has surpassed <strong>1 million views</strong>. Idris has
-            engaged <strong>100,000+ developers</strong> worldwide &mdash;
-            previously at Interop Labs (Axelar) and Mara &mdash; and led the
-            backend community at SheCodeAfrica (50,000+ members across 15
+            writing has surpassed <strong> million views</strong>. Idris has
+            engaged <strong>thousands of developers</strong> worldwide &mdash;
+            throughout his career and led the backend community at SheCodeAfrica (60,000+ members across 15
             African countries). A UK Global Talent visa holder based in the
             United Kingdom, he focuses on developer experience, blockchain,
-            AI-agent tooling, and growing Africa&rsquo;s developer ecosystem.
+            AI-agent tooling, and growing developer ecosystem across the globe.
           </h5>
           <h3>Featured In</h3>
           <h4>
@@ -572,7 +566,7 @@ class Main extends React.Component {
           </span>
           <h3>Midnight</h3>
           <h4>
-            ROLE: Senior Developer Relations Engineer
+            ROLE: Developer Relations Engineer
             <br />
             <br />
             Dates: Sep 2025 - Present

@@ -11,7 +11,7 @@
 - Languages: English, Yoruba
 
 ## Summary
-Idris Olubisi is a Senior Developer Relations Engineer with 5+ years building thriving developer communities across Web2 and Web3. He builds for the agent era — where developers and AI agents discover and adopt infrastructure — having shipped an MCP server serving 11,900+ AI-agent tool calls and re-architected documentation for LLM and agent retrieval. He founded Web3 Afrika (15,000+ builders across Africa), writes for 200,000+ developers a year, and is widely regarded as one of the most active developer relations engineers in Africa's technology ecosystem.
+Idris Olubisi is a Senior Developer Relations Engineer with 5+ years building thriving developer communities across Web2 and Web3. He builds for the agent era where developers and AI agents discover and adopt infrastructure having shipped an MCP server serving 11,900+ AI-agent tool calls and re-architected documentation for LLM and agent retrieval. He founded Web3 Afrika (15,000+ builders across Africa), writes for thousands of developers a year, and is widely regarded as one of the most active developer relations engineers in Africa's technology ecosystem and globally.
 
 ## Press & Media Coverage
 Idris has been profiled and featured by leading African and global technology media:
@@ -20,6 +20,7 @@ Idris has been profiled and featured by leading African and global technology me
 - **Technext** (Nov 2025) — "Idris Olubisi is championing Web3 inclusion in Africa beyond limits." https://technext24.com/2025/11/27/idris-olubisi-championing-web3-africa/
 - **Techpoint Africa** (May 2025) — "The Build Afrika Summit Rallies Africa's Top Tech Talent to Build the Future of Decentralization." Covers the summit Idris founded and led via Web3 Afrika. https://techpoint.africa/brandpress/the-build-afrika-summit-rallies-africas-top-tech-talent-to-build-the-future-of-decentralization/
 - **BusinessDay** — "Blockfest Africa 2025 draws 12,000 participants, strengthens Africa's Web3 voice." Idris delivered a keynote ("Beyond H-1B: Building Global Tech Careers from Africa") at the Lagos event, which drew 12,000+ participants from 50+ countries. https://businessday.ng/news/article/blockfest-africa-2025-draws-12000-participants-strengthens-africas-web3-voice/
+- **AInvest** (Nov 2025) — "Investing in Africa's Web3 Renaissance: The Strategic Case for Supporting Idris Olubisi's Web3 Afrika Ecosystem." An investment-analysis piece on the Web3 Afrika ecosystem. https://www.ainvest.com/news/investing-africa-web3-renaissance-strategic-case-supporting-idris-olubisi-web3-afrika-ecosystem-2511/
 
 ## Professional Background
 
@@ -146,7 +147,7 @@ Next.js app pairing AI title generation with a dozen developer utilities.
 ## Content Creation & Technical Writing
 
 ### Writing Statistics
-- Total article views: 1,000,000+
+- Total article views: 10,000,000+
 - Personal blog: 40+ technical tutorials, 200,000+ annual readers
 - freeCodeCamp monthly views: 100,000+
 - Hashnode followers: 8,800+

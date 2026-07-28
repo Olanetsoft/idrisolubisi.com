@@ -30,9 +30,8 @@ const Header = (props) => (
           />
         </h3>
         <p>
-          a Senior Developer Relations Engineer at Midnight, founder of Web3
-          Afrika, and freeCodeCamp author &mdash; empowering developers across
-          Africa.
+          a Software and AI Engineer, Developer Advocate, Technical Writer, Speaker and
+          Open-source contributor.
         </p>
       </div>
     </div>
