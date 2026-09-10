@@ -1,60 +1,31 @@
 {
-  "name": "idris-olubisi-portfolio-v1",
-  "description": "This is my personal portfolio that tells a detailed information about me",
-  "version": "2.0.0",
+  "name": "idrisolubisi.com",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Personal site of Idris Olubisi — Senior Developer Relations Engineer and AI engineer.",
   "author": "Idris Olubisi",
-  "dependencies": {
-    "@contentful/rich-text-react-renderer": "^15.19.0",
-    "@fortawesome/fontawesome-svg-core": "^6.5.1",
-    "@fortawesome/free-brands-svg-icons": "^6.5.1",
-    "@fortawesome/free-solid-svg-icons": "^6.5.1",
-    "@fortawesome/react-fontawesome": "^0.2.0",
-    "babel-plugin-styled-components": "^2.1.4",
-    "disqus-react": "^1.1.5",
-    "dotenv": "^16.3.1",
-    "gatsby": "^5.13.1",
-    "gatsby-plugin-google-gtag": "^5.13.1",
-    "gatsby-plugin-image": "^3.13.1",
-    "gatsby-plugin-manifest": "^5.13.1",
-    "gatsby-plugin-preconnect": "^1.4.0",
-    "gatsby-plugin-sass": "^6.13.1",
-    "gatsby-plugin-sharp": "^5.13.1",
-    "gatsby-plugin-sitemap": "^6.13.1",
-    "gatsby-plugin-styled-components": "^6.13.1",
-    "gatsby-remark-copy-linked-files": "^6.13.1",
-    "gatsby-remark-images": "^7.13.1",
-    "gatsby-remark-prismjs": "^7.13.1",
-    "gatsby-remark-smartypants": "^6.13.1",
-    "gatsby-source-filesystem": "^5.13.1",
-    "gatsby-transformer-remark": "^6.13.1",
-    "gatsby-transformer-sharp": "^5.13.1",
-    "prismjs": "^1.29.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^4.12.0",
-    "react-share": "^5.0.3",
-    "react-typed": "^2.0.12",
-    "sass": "^1.69.5",
-    "styled-components": "^6.1.1",
-    "uuid": "^9.0.1"
-  },
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "format": "prettier --write '**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@next/third-parties": "^16.3.4",
+    "next": "^16.3.4",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
   },
   "devDependencies": {
-    "prettier": "^3.1.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "@types/node": "^22.20.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.3.4",
+    "prettier": "^3.9.6",
+    "typescript": "^6.0.3"
   }
 }

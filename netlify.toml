@@ -1,9 +1,9 @@
 [build]
   command = "npm run build"
-  publish = "public"
 
 [build.environment]
-  # Keep in sync with .nvmrc. npm is intentionally not pinned so the build
-  # uses the version bundled with this Node release.
+  # Keep in sync with .nvmrc
   NODE_VERSION = "22"
-  GATSBY_CPU_COUNT = "2"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="8" fill="#1b1813"/>
+  <rect x="14" y="14" width="36" height="36" fill="none" stroke="#c8461c" stroke-width="2" transform="translate(4 4)"/>
+  <rect x="14" y="14" width="36" height="36" fill="#f3eee4"/>
+  <text x="32" y="43" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="30" fill="#1b1813">io</text>
+</svg>
