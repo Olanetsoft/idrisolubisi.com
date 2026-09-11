@@ -33,6 +33,20 @@ export const projects: Project[] = [
     note: "Written by me in the axelarnetwork org",
   },
   {
+    name: "GiftDice",
+    description:
+      "Consumer gift-exchange product with 3,000+ users across 20+ countries: Stripe payments, AI features, real-time multiplayer quizzes, PWA and push notifications. Built and maintained solo.",
+    href: "https://giftdice.com/",
+    kind: "product",
+  },
+  {
+    name: "SwoopAgent",
+    description:
+      "Self-hosted, multi-tenant autonomous AI-agent platform on Base with embedded wallets, on-chain swaps and Stripe billing. Engineered for money-movement correctness: atomic execution, idempotency keys, rate limiting and an independent circuit breaker. Live with real users.",
+    kind: "product",
+    note: "walkthrough on request",
+  },
+  {
     name: "awesome-hackathon-projects",
     description: "A curated list of hackathon project ideas, organised by technology and complexity.",
     href: "https://github.com/Olanetsoft/awesome-hackathon-projects",
@@ -52,19 +66,6 @@ export const projects: Project[] = [
     href: "https://github.com/Olanetsoft/jwt-project",
     stars: 154,
     kind: "open-source",
-  },
-  {
-    name: "GiftDice",
-    description:
-      "Consumer gift-exchange product with 3,000+ users across 20+ countries: Stripe payments, AI features, real-time multiplayer quizzes, PWA and push notifications. Built and maintained solo.",
-    href: "https://giftdice.com/",
-    kind: "product",
-  },
-  {
-    name: "SwoopAgent",
-    description:
-      "Self-hosted, multi-tenant autonomous AI-agent platform on Base with embedded wallets, on-chain swaps and Stripe billing. Engineered for money-movement correctness: atomic execution, idempotency keys, rate limiting and an independent circuit breaker. Live with real users.",
-    kind: "product",
   },
   {
     name: "AudioBoost",

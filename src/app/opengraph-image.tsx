@@ -51,20 +51,21 @@ export default async function OpenGraphImage() {
         <div style={{ display: "flex", fontSize: 58, lineHeight: 1.12, fontWeight: 500, width: 1000 }}>
           The first developer to read your docs is now an AI agent. I built the server it calls.
         </div>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ display: "flex", alignItems: "baseline", gap: 24 }}>
-            <div style={{ fontFamily: mono, fontSize: 120, lineHeight: 1, letterSpacing: -2 }}>{f.value}</div>
-            <div
-              style={{
-                display: "flex",
-                fontSize: 26,
-                background: "#f2c300",
-                color: "#131311",
-                padding: "4px 10px",
-              }}
-            >
-              {f.unit}
-            </div>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+          <div style={{ display: "flex", fontFamily: mono, fontSize: 104, lineHeight: 1, letterSpacing: -2 }}>
+            {f.value}
+          </div>
+          <div
+            style={{
+              display: "flex",
+              fontSize: 26,
+              background: "#f2c300",
+              color: "#131311",
+              padding: "4px 10px",
+              marginTop: 14,
+            }}
+          >
+            {f.unit}
           </div>
           <div style={{ display: "flex", fontFamily: mono, fontSize: 20, color: "#66635b", marginTop: 18 }}>
             {f.source} · {f.asOf} · idrisolubisi.com

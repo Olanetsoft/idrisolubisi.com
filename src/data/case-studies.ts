@@ -44,7 +44,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       "The first developer to read a new stack’s docs is now often an AI coding agent. I built the open-source Midnight MCP server, re-architected the documentation for LLM retrieval and launched a three-tier zero-knowledge curriculum.",
     story:
-      "In 2025 developers arrived at Midnight with Claude, Cursor or Copilot already open, and the agent was the first thing to read the docs. The docs were client-rendered, so to an agent they were a wall of JavaScript, and partners were losing days to onboarding friction the team could not see. I built the MCP server so an agent could search the codebase, compile Compact and read the documentation from inside the editor, re-architected the docs for retrieval with server-side rendering and an llms.txt index, and launched Midnight Academy, a three-tier Compact and zero-knowledge curriculum.",
+      "In 2025 developers arrived at Midnight with Claude, Cursor or Copilot already open, and the agent was the first thing to read the docs. The docs were client-rendered, so to an agent they were a wall of JavaScript, and partners were losing days to onboarding friction the team could not see. I built the MCP server so an agent could search the codebase, compile Compact and read the documentation from inside the editor, re-architected the docs for retrieval with server-side rendering and an llms.txt index, launched Midnight Academy, a three-tier Compact and zero-knowledge curriculum, and gave partner teams code reviews and debug sessions while they integrated.",
     status:
       "In 2026 Midnight standardised on two official tools, Kapa MCP and Midnight Expert, and midnight-mcp is being wound down; every tool on the server now carries the migration notice. The numbers below are from the period it was live.",
     output: {
@@ -55,8 +55,8 @@ export const caseStudies: CaseStudy[] = [
         "1,576 enrolled, 1,120+ certified",
       ],
       mark: 3,
-      source: "github.com/Olanetsoft/midnight-mcp",
-      href: "https://github.com/Olanetsoft/midnight-mcp",
+      source: "npm and GitHub; Academy and tool-call figures self-reported",
+      href: "https://www.npmjs.com/package/midnight-mcp",
       asOf: "2026-09-11",
     },
     skipped:
@@ -101,15 +101,15 @@ export const caseStudies: CaseStudy[] = [
     org: "Axelar / Interop Labs",
     role: "Developer Relations Engineer",
     period: "2023–25",
-    title: "Cutting cross-chain setup time in half for 100,000+ developers",
+    title: "Cutting cross-chain setup time in half for the teams building on Axelar",
     summary:
       "Cross-chain apps were hard to start and harder to debug. I built the reference implementation developers actually copied, rewrote the docs, and instrumented the path from first read to first build.",
     story:
-      "General Message Passing is a simple idea whose first working example was not. Developers were stitching together contracts, gateway addresses, gas services and tooling from scattered docs, and partners needed someone who could unblock an integration in a call, not a ticket. I wrote foundry-axelar-gmp-example, rewrote the docs with troubleshooting guides, and ran GitHub and Discord triage.",
+      "General Message Passing is a simple idea whose first working example was not. Developers were stitching together contracts, gateway addresses, gas services and tooling from scattered docs, and partners needed someone who could unblock an integration in a call, not a ticket. I wrote foundry-axelar-gmp-example, rewrote the docs with troubleshooting guides, scoped pilots and validated architectures for partner launches, and ran GitHub and Discord triage.",
     output: {
       items: ["Setup time −55%", "500+ adopters of the reference repo", "Docs usage +120%", "4.8/5 developer satisfaction"],
       mark: 0,
-      source: "github.com/axelarnetwork/foundry-axelar-gmp-example",
+      source: "GitHub for the repo; usage and satisfaction figures from Axelar's internal metrics, self-reported",
       href: "https://github.com/axelarnetwork/foundry-axelar-gmp-example",
       asOf: "2026-09-11",
     },
@@ -166,7 +166,7 @@ export const caseStudies: CaseStudy[] = [
     output: {
       items: ["15,000+ builders", "12,000 participants from 50+ countries at Blockfest Africa 2025", "20+ events"],
       mark: 1,
-      source: "BusinessDay",
+      source: "BusinessDay for Blockfest; community size self-reported",
       href: "https://businessday.ng/news/article/blockfest-africa-2025-draws-12000-participants-strengthens-africas-web3-voice/",
       asOf: "2025",
     },
@@ -211,14 +211,14 @@ export const caseStudies: CaseStudy[] = [
     org: "freeCodeCamp, LogRocket and others",
     role: "Technical author",
     period: "2021–present",
-    title: "Writing that has taught more than ten million developers",
+    title: "Tutorials read more than ten million times",
     summary:
       "Good tutorials are the cheapest, most scalable form of developer relations. I have written 40+ of them on the platforms developers already trust, and they keep compounding.",
     story:
       "Every tutorial started as a question a developer asked me in a Discord, at a workshop or in a GitHub issue. The article answers it end to end with code that runs, and it is published where that developer already reads: freeCodeCamp, LogRocket, Dev.to, Moralis, Section, Hashnode.",
     output: {
       items: ["10,000,000+ views across platforms", "100,000+ a month on freeCodeCamp", "40+ tutorials, 200,000+ readers a year on the blog"],
-      source: "freeCodeCamp author page",
+      source: "freeCodeCamp author page; cross-platform total self-reported",
       href: "https://www.freecodecamp.org/news/author/idris/",
       asOf: "2026-09-11",
     },

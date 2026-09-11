@@ -32,7 +32,7 @@ export function CopyLine({ command }: { command: string }) {
 
   return (
     <div className="copyline">
-      <pre className="terminal terminal-inline">
+      <pre className="terminal terminal-inline" tabIndex={0}>
         <code>
           <span className="term-prompt">$ </span>
           {command}

@@ -53,7 +53,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
           {cs.org} · {cs.role} · {cs.period}
         </p>
         <h1>{cs.title}</h1>
-        <p className="standfirst">{cs.story}</p>
+        <p className="standfirst">{cs.summary}</p>
         {cs.status && <p className="status">{cs.status}</p>}
         <OutputLine output={cs.output} mark={false} />
         <p className="note">{cs.skipped}</p>

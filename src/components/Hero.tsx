@@ -40,10 +40,12 @@ export function Hero() {
             Midnight MCP is an open-source server that lets Claude, Cursor and Copilot search a
             zero-knowledge codebase, compile Compact and read the documentation from inside the
             editor. It passed 10,000 downloads on npm and served more than 11,900 tool calls from
-            agents, a channel that did not exist before I built it. Before that: cross-chain
+            agents, a channel that did not exist before I built it. Midnight has since standardised
+            on official tooling and the server is being retired; the numbers here are from its live
+            period. Before that: cross-chain
             developer relations at Axelar for 100,000+ developers, Web3 Afrika, the community I
-            founded in 2022 that now has 15,000+ builders, and freeCodeCamp tutorials read more than
-            ten million times.
+            founded in 2022 that now has 15,000+ builders, and tutorials on freeCodeCamp and
+            elsewhere read more than ten million times.
           </p>
           <dl className="needs">
             <dt>Looking for</dt>
@@ -72,7 +74,8 @@ export function Hero() {
                 href={toolCategories.source}
                 date={toolCategories.capturedAt}
               >
-                {toolTotal} tools in {toolCategories.categories.length} categories, response abridged
+                {toolTotal} tools in {toolCategories.categories.length} categories plus a deprecation-notice tool, 31 in
+                all; response abridged
               </Provenance>
             }
           >

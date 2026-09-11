@@ -15,8 +15,8 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="container">
         <p>
-          Written in London. Started in Lagos. Read by ten million people and, since 2025, by
-          their agents:{" "}
+          Written in London. Started in Lagos. Read more than ten million times and, since 2025,
+          by agents too:{" "}
           <a href="/llms.txt" className="nav-mono" translate="no">
             /llms.txt
           </a>

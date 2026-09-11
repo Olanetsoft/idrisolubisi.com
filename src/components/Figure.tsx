@@ -15,8 +15,8 @@ export function Figure() {
         </p>
         <p className="figure-text">
           Each one is a request from Claude, Cursor or Copilot asking my server to search a
-          contract, compile Compact or read a page of docs on a developer’s behalf. Every number on
-          this page is dated and linked.
+          contract, compile Compact or read a page of docs on a developer’s behalf. Every figure in
+          the Work section below says where it comes from and when it was checked.
         </p>
         <Provenance source={f.source} href={f.href} date={f.asOf} />
         <p className="note">{f.note}</p>

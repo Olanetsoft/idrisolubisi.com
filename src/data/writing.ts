@@ -107,7 +107,7 @@ export const press: Press[] = [
 
 export const writingProvenance = {
   items: ["10,000,000+ views across platforms", "100,000+ a month on freeCodeCamp", "40+ tutorials, 200,000+ readers a year on the blog"],
-  source: "freeCodeCamp author page",
+  source: "freeCodeCamp author page; cross-platform total self-reported",
   href: "https://www.freecodecamp.org/news/author/idris/",
   asOf: "2026-09-11",
 };

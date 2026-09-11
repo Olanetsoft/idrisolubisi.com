@@ -32,7 +32,14 @@ export function ContactForm() {
   }
 
   return (
-    <form className="form" name="contact" onSubmit={onSubmit} aria-describedby="form-status">
+    <form
+      className="form"
+      name="contact"
+      method="POST"
+      action="/__forms.html"
+      onSubmit={onSubmit}
+      aria-describedby="form-status"
+    >
       <input type="hidden" name="form-name" value="contact" />
       <p className="hp" aria-hidden="true">
         <label>

@@ -29,7 +29,7 @@ export const site = {
       asOf: "Sep 2026",
       source: "midnight-mcp server telemetry",
       href: "https://github.com/Olanetsoft/midnight-mcp",
-      note: "The one number on this page I would defend in an interview.",
+      note: "The channel did not exist before the server did; that is why this number matters more to me than the download count.",
     },
     downloads: {
       value: "10,000+",

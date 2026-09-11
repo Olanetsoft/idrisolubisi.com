@@ -38,7 +38,7 @@ export function Code() {
               </p>
               <p>{p.description}</p>
               {(typeof p.stars === "number" || p.note) && (
-                <Provenance source="GitHub" href={p.href} date={starsFetchedAt}>
+                <Provenance source={p.href ? "GitHub" : "private"} href={p.href} date={starsFetchedAt}>
                   {[typeof p.stars === "number" ? `${format(p.stars)} stars` : null, p.note]
                     .filter(Boolean)
                     .join(" · ")}

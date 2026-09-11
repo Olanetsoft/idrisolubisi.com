@@ -375,6 +375,9 @@ mark.marker {
     overflow-x: auto;
     scrollbar-width: none;
     gap: 0 var(--space-4);
+    /* Fade the right edge so the off-screen items read as swipeable. */
+    mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent);
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent);
   }
   .site-nav::-webkit-scrollbar {
     display: none;
@@ -889,7 +892,7 @@ mark.marker {
   width: 100%;
   min-height: 44px;
   padding: 0.65rem 0.75rem;
-  border: 1px solid var(--rule-strong);
+  border: 1px solid var(--ink-3);
   background: var(--paper);
   color: var(--ink);
   font: inherit;
@@ -1057,6 +1060,17 @@ mark.marker {
 /* ---------- print ---------- */
 
 @media print {
+  :root,
+  [data-theme="dark"] {
+    --paper: #fff;
+    --paper-2: #f2f2f2;
+    --ink: #000;
+    --ink-2: #333;
+    --ink-3: #555;
+    --rule: #ccc;
+    --rule-strong: #888;
+    --signal: #1f6b45;
+  }
   .masthead nav,
   .theme-toggle,
   .bleed,

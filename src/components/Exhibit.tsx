@@ -21,7 +21,7 @@ export function Exhibit({ kind, label, request, children, caption, className }: 
     <figure className={["exhibit", `exhibit-${kind}`, className].filter(Boolean).join(" ")}>
       {label && <p className="exhibit-label">{label}</p>}
       {kind === "terminal" ? (
-        <pre className="terminal">
+        <pre className="terminal" tabIndex={0}>
           <code>
             {request && (
               <span className="term-request">
