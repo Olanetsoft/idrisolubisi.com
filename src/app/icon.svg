@@ -1,4 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" fill="#f2c300"/>
-  <text x="32" y="43" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-weight="700" font-size="30" fill="#131311">IO</text>
+  <rect width="64" height="64" rx="12" fill="#111827"/>
+  <text x="32" y="42" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-weight="600" font-size="28" fill="#ffffff">IO</text>
 </svg>

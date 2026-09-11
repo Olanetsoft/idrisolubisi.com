@@ -2,42 +2,29 @@ export const site = {
   name: "Idris Olubisi",
   handle: "olanetsoft",
   role: "Senior Developer Relations Engineer",
+  tagline: "AI developer tooling, zero-knowledge and cross-chain infrastructure",
+  bio: [
+    "I help developers, and increasingly their AI agents, succeed with hard infrastructure. At Midnight I built the open-source Midnight MCP server (10,000+ downloads, 11,900+ AI-agent tool calls), re-architected the documentation for LLM retrieval and launched Midnight Academy. Before that I led developer relations at Axelar for a global cross-chain developer community, and worked as a backend engineer on payments and data systems.",
+    "I founded Web3 Afrika, a community of 15,000+ builders across Africa, and my tutorials on freeCodeCamp and elsewhere have been read more than ten million times.",
+  ],
   title: "Idris Olubisi — Senior Developer Relations Engineer",
   description:
-    "Idris Olubisi (olanetsoft), Senior Developer Relations Engineer, London. Built the open-source Midnight MCP server (10,000+ downloads, 11,900+ AI-agent tool calls), re-architected docs for LLM retrieval, founded Web3 Afrika (15,000+ builders), freeCodeCamp author read 10M+ times.",
+    "Idris Olubisi is a Senior Developer Relations Engineer in London. Built the open-source Midnight MCP server (10,000+ downloads, 11,900+ AI-agent tool calls), led cross-chain developer relations at Axelar, founded Web3 Afrika (15,000+ builders), freeCodeCamp author read 10M+ times.",
   url: "https://idrisolubisi.com",
   location: "London, United Kingdom",
-  origin: "Lagos",
-  /** Set to publish a mailto link in the Contact section. Leave empty to rely on the form and DMs. */
+  /** Set to show a mailto link in Contact. */
   email: "",
-  availability: {
-    lookingFor:
-      "senior developer relations, developer advocacy, developer experience, developer success, forward-deployed engineering or AI-tooling roles",
-    from: "Available now. London, or remote.",
-    rightToWork: "UK Global Talent visa. No sponsorship needed.",
-    before:
-      "Midnight (2025–26), Axelar / Interop Labs (2023–25), Mara in Nairobi (2022–23); backend engineer at Luna, PhilanthroLab and Hotels.ng before that.",
-  },
+  availability:
+    "Open to senior developer relations, developer advocacy, developer experience, developer success, forward-deployed engineering and AI-tooling roles. Available now, London or remote. UK Global Talent visa, no sponsorship required.",
   resumeUrl: "/Idris-Olubisi-CV-2026.pdf",
   gaId: "G-7MMFT1BXJV",
   photoCredit: "Awesomeness by Oye",
-  figures: {
-    toolCalls: {
-      // Replace with the exact integer and a linkable source before publishing.
-      value: "11,900+",
-      unit: "tool calls served to AI agents by midnight-mcp",
-      asOf: "Sep 2026",
-      source: "midnight-mcp server telemetry",
-      href: "https://github.com/Olanetsoft/midnight-mcp",
-      note: "The channel did not exist before the server did; that is why this number matters more to me than the download count.",
-    },
-    downloads: {
-      value: "10,000+",
-      asOf: "Sep 2026",
-      source: "npm",
-      href: "https://www.npmjs.com/package/midnight-mcp",
-    },
-  },
+  highlights: [
+    { value: "11,900+", label: "AI-agent tool calls served by the Midnight MCP server" },
+    { value: "10,000+", label: "MCP server downloads on npm" },
+    { value: "15,000+", label: "builders in Web3 Afrika, the community I founded" },
+    { value: "10M+", label: "reads of my tutorials across freeCodeCamp and more" },
+  ],
   links: {
     github: "https://github.com/Olanetsoft",
     linkedin: "https://www.linkedin.com/in/idris-olubisi/",
@@ -52,13 +39,12 @@ export const site = {
     source: "https://github.com/Olanetsoft/idrisolubisi.com",
   },
   nav: [
-    { label: "Work", href: "/#work" },
-    { label: "Talks", href: "/#talks" },
+    { label: "About", href: "/#about" },
+    { label: "Experience", href: "/#experience" },
+    { label: "Projects", href: "/#projects" },
+    { label: "Speaking", href: "/#speaking" },
     { label: "Writing", href: "/#writing" },
-    { label: "Career", href: "/#career" },
-    { label: "Code", href: "/#code" },
     { label: "Contact", href: "/#contact" },
-    { label: "/llms.txt", href: "/llms.txt", mono: true },
   ],
 } as const;
 

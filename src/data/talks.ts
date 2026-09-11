@@ -28,7 +28,7 @@ export const talks: Talk[] = [
     href: "https://techpoint.africa/brandpress/the-build-afrika-summit-rallies-africas-top-tech-talent-to-build-the-future-of-decentralization/",
   },
   {
-    event: "Midnight fireside chat",
+    event: "Midnight",
     title: "AI-assisted developer tooling and a live MCP server demo",
     year: "2025",
     kind: "Fireside chat",

@@ -1,8 +1,8 @@
 import { site } from "@/data/site";
 
 const links = [
-  { label: "GitHub", href: site.links.github },
   { label: "LinkedIn", href: site.links.linkedin },
+  { label: "GitHub", href: site.links.github },
   { label: "X", href: site.links.x },
   { label: "Blog", href: site.links.blog },
   { label: "YouTube", href: site.links.youtube },
@@ -15,13 +15,7 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="container">
         <p>
-          Written in London. Started in Lagos. Read more than ten million times and, since 2025,
-          by agents too:{" "}
-          <a href="/llms.txt" className="nav-mono" translate="no">
-            /llms.txt
-          </a>
-          . Portrait by {site.photoCredit}. <a href={site.links.source}>Source on GitHub</a>. ©{" "}
-          {year} {site.name}.
+          © {year} {site.name}. Portrait by {site.photoCredit}. <a href="/llms.txt">llms.txt</a>
         </p>
         <ul>
           {links.map((l) => (

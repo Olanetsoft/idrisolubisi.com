@@ -5,10 +5,10 @@ export const alt = site.title;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-type OgFont = { name: string; data: ArrayBuffer; style: "normal"; weight: 400 | 500 };
+type OgFont = { name: string; data: ArrayBuffer; style: "normal"; weight: 400 | 600 };
 
 // Request the CSS with a legacy UA so Google serves TTF, which next/og can embed.
-async function loadGoogleFont(family: string, weight: 400 | 500): Promise<OgFont | null> {
+async function loadGoogleFont(family: string, weight: 400 | 600): Promise<OgFont | null> {
   try {
     const css = await fetch(
       `https://fonts.googleapis.com/css2?family=${encodeURIComponent(family).replace(/%20/g, "+")}:wght@${weight}&display=swap`,
@@ -23,12 +23,10 @@ async function loadGoogleFont(family: string, weight: 400 | 500): Promise<OgFont
 }
 
 export default async function OpenGraphImage() {
-  const fonts = (await Promise.all([loadGoogleFont("Literata", 500), loadGoogleFont("Martian Mono", 400)])).filter(
+  const fonts = (await Promise.all([loadGoogleFont("Geist", 600), loadGoogleFont("Geist", 400)])).filter(
     (f): f is OgFont => f !== null,
   );
-  const serif = fonts.some((f) => f.name === "Literata") ? "Literata" : "Georgia, serif";
-  const mono = fonts.some((f) => f.name === "Martian Mono") ? "Martian Mono" : "monospace";
-  const f = site.figures.toolCalls;
+  const family = fonts.length ? "Geist" : "Helvetica, Arial, sans-serif";
 
   return new ImageResponse(
     (
@@ -39,41 +37,26 @@ export default async function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          padding: "56px 72px 48px",
-          background: "#f4f1ea",
-          color: "#131311",
-          fontFamily: serif,
+          padding: "72px 80px",
+          background: "#ffffff",
+          color: "#111827",
+          fontFamily: family,
         }}
       >
-        <div style={{ display: "flex", fontFamily: mono, fontSize: 20, color: "#45433e" }}>
-          {site.name} · {site.role} · London
+        <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
+          <div style={{ display: "flex", fontSize: 68, fontWeight: 600, letterSpacing: -1.5 }}>{site.name}</div>
+          <div style={{ display: "flex", fontSize: 32, color: "#374151" }}>{site.role} · London</div>
+          <div style={{ display: "flex", fontSize: 26, color: "#6b7280", maxWidth: 1000, lineHeight: 1.35 }}>
+            {site.tagline}. Built the open-source Midnight MCP server; founder of Web3 Afrika; freeCodeCamp
+            author read 10M+ times.
+          </div>
         </div>
-        <div style={{ display: "flex", fontSize: 58, lineHeight: 1.12, fontWeight: 500, width: 1000 }}>
-          The first developer to read your docs is now an AI agent. I built the server it calls.
-        </div>
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-          <div style={{ display: "flex", fontFamily: mono, fontSize: 104, lineHeight: 1, letterSpacing: -2 }}>
-            {f.value}
-          </div>
-          <div
-            style={{
-              display: "flex",
-              fontSize: 26,
-              background: "#f2c300",
-              color: "#131311",
-              padding: "4px 10px",
-              marginTop: 14,
-            }}
-          >
-            {f.unit}
-          </div>
-          <div style={{ display: "flex", fontFamily: mono, fontSize: 20, color: "#66635b", marginTop: 18 }}>
-            {f.source} · {f.asOf} · idrisolubisi.com
-          </div>
+        <div style={{ display: "flex", justifyContent: "space-between", fontSize: 24, color: "#6b7280" }}>
+          <div style={{ display: "flex" }}>idrisolubisi.com</div>
+          <div style={{ display: "flex" }}>@olanetsoft</div>
         </div>
       </div>
     ),
-    // An empty fonts array disables next/og's built-in fallback, so omit it instead.
     fonts.length ? { ...size, fonts } : size,
   );
 }

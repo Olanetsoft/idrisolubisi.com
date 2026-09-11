@@ -1,24 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Literata, Martian_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { site } from "@/data/site";
 import "./globals.css";
 
-// Two faces, each with one job: Literata for what a human reads, Martian Mono for what a machine produced.
-const text = Literata({
+const sans = Geist({
   subsets: ["latin"],
-  style: ["normal", "italic"],
-  axes: ["opsz"],
-  variable: "--font-text",
-  display: "swap",
-});
-
-const mono = Martian_Mono({
-  subsets: ["latin"],
-  axes: ["wdth"],
-  variable: "--font-mono",
+  variable: "--font-sans",
   display: "swap",
 });
 
@@ -82,13 +72,10 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f4f1ea" },
-    { media: "(prefers-color-scheme: dark)", color: "#121212" },
-  ],
+  themeColor: "#ffffff",
 };
 
-const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t)}}catch(e){}})();`;
+const themeScript = `(function(){try{if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();`;
 
 const personJsonLd = {
   "@context": "https://schema.org",
@@ -126,7 +113,7 @@ const personJsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-GB" className={`${text.variable} ${mono.variable}`} suppressHydrationWarning>
+    <html lang="en-GB" className={sans.variable} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>

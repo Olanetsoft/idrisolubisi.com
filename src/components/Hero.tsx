@@ -1,89 +1,56 @@
-import { toolCategories, toolTotal } from "@/data/exhibits";
+import Image from "next/image";
 import { site } from "@/data/site";
-import { Exhibit } from "./Exhibit";
-import { Figure } from "./Figure";
-import { Provenance } from "./Provenance";
-
-function CategoriesResponse() {
-  // The server's own response, abridged to name and toolCount per category.
-  return (
-    <>
-      <span className="term-key">categories:</span>
-      {"\n"}
-      {toolCategories.categories.map((c) => (
-        <span key={c.name}>
-          {"  - "}
-          <span className="term-key">name:</span> {c.name}
-          {"\n"}
-          {"    "}
-          <span className="term-key">toolCount:</span> {c.toolCount}
-          {"\n"}
-        </span>
-      ))}
-    </>
-  );
-}
 
 export function Hero() {
-  const a = site.availability;
   return (
-    <>
-      <section className="hero container" aria-labelledby="hero-title">
-        <div className="hero-claim">
-          <p className="kicker">
-            {site.name} · {site.role} · {site.location.split(",")[0]}
+    <section className="hero" id="about" aria-labelledby="hero-title">
+      <div className="container hero-grid">
+        <figure className="portrait">
+          <Image
+            src="/images/idris-portrait.jpg"
+            alt="Idris Olubisi"
+            width={1407}
+            height={1600}
+            priority
+            sizes="(max-width: 760px) 120px, 176px"
+          />
+        </figure>
+        <div className="hero-copy">
+          <h1 id="hero-title">{site.name}</h1>
+          <p className="role">
+            {site.role} · {site.location.split(",")[0]}
           </p>
-          <h1 id="hero-title">
-            The first developer to read your docs is now an AI agent. I built the server it calls.
-          </h1>
-          <p className="standfirst">
-            Midnight MCP is an open-source server that lets Claude, Cursor and Copilot search a
-            zero-knowledge codebase, compile Compact and read the documentation from inside the
-            editor. It passed 10,000 downloads on npm and served more than 11,900 tool calls from
-            agents, a channel that did not exist before I built it. Midnight has since standardised
-            on official tooling and the server is being retired; the numbers here are from its live
-            period. Before that: cross-chain
-            developer relations at Axelar for 100,000+ developers, Web3 Afrika, the community I
-            founded in 2022 that now has 15,000+ builders, and tutorials on freeCodeCamp and
-            elsewhere read more than ten million times.
-          </p>
-          <dl className="needs">
-            <dt>Looking for</dt>
-            <dd>{a.lookingFor}.</dd>
-            <dt>From</dt>
-            <dd>{a.from}</dd>
-            <dt>Right to work</dt>
-            <dd>{a.rightToWork}</dd>
-            <dt>Before this</dt>
-            <dd>{a.before}</dd>
-            <dt>CV</dt>
-            <dd>
-              <a href={site.resumeUrl}>Idris-Olubisi-CV-2026.pdf</a>, opens in the browser
-            </dd>
-          </dl>
+          <p className="tagline">{site.tagline}</p>
+          {site.bio.map((p) => (
+            <p className="bio" key={p}>
+              {p}
+            </p>
+          ))}
+          <p className="availability">{site.availability}</p>
+          <div className="actions">
+            <a className="btn btn-primary" href={site.resumeUrl}>
+              Download CV
+            </a>
+            <a className="btn" href={site.links.linkedin} rel="me">
+              LinkedIn
+            </a>
+            <a className="btn" href={site.links.github} rel="me">
+              GitHub
+            </a>
+          </div>
         </div>
+      </div>
 
-        <div className="hero-exhibit">
-          <Exhibit
-            kind="terminal"
-            label="What an agent sees when it calls the server"
-            request={toolCategories.request}
-            caption={
-              <Provenance
-                source={toolCategories.server}
-                href={toolCategories.source}
-                date={toolCategories.capturedAt}
-              >
-                {toolTotal} tools in {toolCategories.categories.length} categories plus a deprecation-notice tool, 31 in
-                all; response abridged
-              </Provenance>
-            }
-          >
-            <CategoriesResponse />
-          </Exhibit>
-        </div>
-      </section>
-      <Figure />
-    </>
+      <div className="container">
+        <ul className="highlights" aria-label="Highlights">
+          {site.highlights.map((h) => (
+            <li key={h.label}>
+              <span className="value">{h.value}</span>
+              <span className="label">{h.label}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
   );
 }

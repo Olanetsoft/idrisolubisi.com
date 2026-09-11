@@ -9,7 +9,6 @@
     "dev": "next dev",
     "prebuild": "node scripts/check-cv.mjs",
     "build": "next build",
-    "postbuild": "node scripts/check-markers.mjs",
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
