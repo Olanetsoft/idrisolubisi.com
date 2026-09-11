@@ -1,13 +1,14 @@
 export type Talk = {
   event: string;
   title: string;
-  year?: string;
+  year: string;
   location?: string;
   kind: "Keynote" | "Talk" | "Workshop" | "Fireside chat" | "Host";
   href?: string;
   note?: string;
 };
 
+/** Ordered by strength, keynote first. Rows without a title, year and link do not ship. */
 export const talks: Talk[] = [
   {
     event: "Blockfest Africa 2025",
@@ -15,32 +16,22 @@ export const talks: Talk[] = [
     year: "2025",
     location: "Lagos",
     kind: "Keynote",
-    note: "12,000+ participants from 50+ countries",
+    note: "12,000 participants from 50+ countries",
     href: "https://businessday.ng/news/article/blockfest-africa-2025-draws-12000-participants-strengthens-africas-web3-voice/",
   },
   {
     event: "Build Afrika Summit",
-    title: "Founder and host — Africa's builders, protocols and partners in one room",
+    title: "Founder and host: Africa’s builders, protocols and partners in one room",
     year: "2025",
     location: "Lagos",
     kind: "Host",
     href: "https://techpoint.africa/brandpress/the-build-afrika-summit-rallies-africas-top-tech-talent-to-build-the-future-of-decentralization/",
   },
   {
-    event: "Midnight Fireside Chat",
+    event: "Midnight fireside chat",
     title: "AI-assisted developer tooling and a live MCP server demo",
     year: "2025",
     kind: "Fireside chat",
-  },
-  {
-    event: "Devcon",
-    title: "Ethereum developer conference",
-    kind: "Talk",
-  },
-  {
-    event: "ETHCC",
-    title: "Ethereum Community Conference",
-    kind: "Talk",
   },
   {
     event: "Osmocon",
@@ -52,7 +43,7 @@ export const talks: Talk[] = [
   },
   {
     event: "DevFest Lagos",
-    title: "Leveraging USDC to build decentralized applications in Web3 efficiently",
+    title: "Leveraging USDC to build decentralised applications in Web3 efficiently",
     year: "2022",
     location: "Lagos",
     kind: "Talk",
@@ -67,20 +58,18 @@ export const talks: Talk[] = [
   },
   {
     event: "Mara Developer Campus Club",
-    title: "Building and Integrating USDC into Web Applications",
+    title: "Building and integrating USDC into web applications",
     year: "2022",
     kind: "Workshop",
     href: "https://x.com/olanetsoft/status/1606312523677966337",
   },
 ];
 
-export const speakingTopics = [
-  "Agent-era developer experience",
-  "MCP and AI-agent tooling",
-  "Zero-knowledge proofs for working developers",
-  "Building cross-chain applications",
-  "Technical writing that compounds",
-  "Building developer communities in emerging markets",
-];
-
-export const youtubePlaylistId = "PLaZ7cT8J_HZbyPjlfLgFCCpA_rAbKaaqg";
+export const stagePhoto = {
+  src: "/images/idris-speaking-build-afrika.jpg",
+  width: 1800,
+  height: 1440,
+  alt: "Idris Olubisi speaking on stage at the Build Afrika Summit in Lagos to a full room of developers.",
+  caption:
+    "Build Afrika Summit, Lagos, 2025. The room was full of developers; I was on stage as founder and host.",
+};

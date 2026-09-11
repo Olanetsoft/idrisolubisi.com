@@ -1,8 +1,8 @@
+import { Career } from "@/components/Career";
+import { Code } from "@/components/Code";
 import { Contact } from "@/components/Contact";
-import { Experience } from "@/components/Experience";
 import { Hero } from "@/components/Hero";
-import { OpenSource } from "@/components/OpenSource";
-import { Speaking } from "@/components/Speaking";
+import { Talks } from "@/components/Talks";
 import { Work } from "@/components/Work";
 import { Writing } from "@/components/Writing";
 
@@ -11,10 +11,10 @@ export default function HomePage() {
     <>
       <Hero />
       <Work />
-      <Speaking />
-      <Experience />
+      <Talks />
       <Writing />
-      <OpenSource />
+      <Career />
+      <Code />
       <Contact />
     </>
   );

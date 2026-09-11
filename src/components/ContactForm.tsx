@@ -50,24 +50,16 @@ export function ContactForm() {
         </div>
       </div>
       <div className="field">
-        <label htmlFor="message">Message</label>
-        <textarea id="message" name="message" required placeholder="A role, a talk, a collaboration…" />
+        <label htmlFor="message">The problem, in a few lines</label>
+        <textarea id="message" name="message" required />
       </div>
-      <div style={{ display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
-        <button type="submit" className="btn btn-accent" disabled={status === "sending"}>
-          {status === "sending" ? "Sending…" : "Send message"}
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-            <path d="M5 12h14M13 6l6 6-6 6" />
-          </svg>
+      <div className="form-actions">
+        <button type="submit" className="btn" disabled={status === "sending"}>
+          {status === "sending" ? "Sending…" : "Send"}
         </button>
-        <p
-          id="form-status"
-          className={`form-status ${status === "sent" ? "ok" : status === "error" ? "err" : ""}`}
-          role="status"
-          aria-live="polite"
-        >
-          {status === "sent" && "Thanks — I'll reply within a couple of days."}
-          {status === "error" && "Something went wrong. Email me on LinkedIn or X instead."}
+        <p id="form-status" className="form-status" role="status" aria-live="polite">
+          {status === "sent" && "Received. I will reply in writing."}
+          {status === "error" && "That did not send. Message me on LinkedIn or X instead."}
         </p>
       </div>
     </form>

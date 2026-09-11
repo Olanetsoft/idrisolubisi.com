@@ -14,19 +14,19 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="container">
-        <p className="colophon">
-          © {year} {site.name}. Set in Fraunces, Instrument Sans and JetBrains Mono. Built with
-          Next.js and hosted on Netlify;{" "}
-          <a href="https://github.com/Olanetsoft/idrisolubisi.com" rel="noopener">
-            source on GitHub
+        <p>
+          Written in London. Started in Lagos. Read by ten million people and, since 2025, by
+          their agents:{" "}
+          <a href="/llms.txt" className="nav-mono" translate="no">
+            /llms.txt
           </a>
-          . Structured information for language models at{" "}
-          <a href="/llms.txt">/llms.txt</a>.
+          . Portrait by {site.photoCredit}. <a href={site.links.source}>Source on GitHub</a>. ©{" "}
+          {year} {site.name}.
         </p>
-        <ul className="mono">
+        <ul>
           {links.map((l) => (
             <li key={l.href}>
-              <a href={l.href} rel="me noopener">
+              <a href={l.href} rel="me">
                 {l.label}
               </a>
             </li>

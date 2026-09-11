@@ -1,28 +1,23 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Instrument_Sans, JetBrains_Mono } from "next/font/google";
+import { Literata, Martian_Mono } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { site } from "@/data/site";
 import "./globals.css";
 
-const display = Fraunces({
+// Two faces, each with one job: Literata for what a human reads, Martian Mono for what a machine produced.
+const text = Literata({
   subsets: ["latin"],
   style: ["normal", "italic"],
-  axes: ["opsz", "SOFT", "WONK"],
-  variable: "--font-display",
+  axes: ["opsz"],
+  variable: "--font-text",
   display: "swap",
 });
 
-const body = Instrument_Sans({
+const mono = Martian_Mono({
   subsets: ["latin"],
-  variable: "--font-body",
-  display: "swap",
-});
-
-const mono = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  axes: ["wdth"],
   variable: "--font-mono",
   display: "swap",
 });
@@ -39,6 +34,8 @@ export const metadata: Metadata = {
     "olanetsoft",
     "Senior Developer Relations Engineer",
     "Developer Advocate",
+    "Forward Deployed Engineer",
+    "Developer Success",
     "AI Engineer",
     "MCP server",
     "AI agents",
@@ -80,17 +77,14 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  other: {
-    "ai-content-declaration": "human-authored",
-  },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f3eee4" },
-    { media: "(prefers-color-scheme: dark)", color: "#141210" },
+    { media: "(prefers-color-scheme: light)", color: "#f4f1ea" },
+    { media: "(prefers-color-scheme: dark)", color: "#121212" },
   ],
 };
 
@@ -103,7 +97,7 @@ const personJsonLd = {
   alternateName: site.handle,
   url: site.url,
   image: `${site.url}/images/idris-portrait.jpg`,
-  jobTitle: "Senior Developer Relations Engineer",
+  jobTitle: site.role,
   description: site.description,
   address: { "@type": "PostalAddress", addressLocality: "London", addressCountry: "GB" },
   alumniOf: {
@@ -132,16 +126,12 @@ const personJsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en-GB"
-      className={`${display.variable} ${body.variable} ${mono.variable}`}
-      suppressHydrationWarning
-    >
+    <html lang="en-GB" className={`${text.variable} ${mono.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>
-        <a className="skip-link mono" href="#main">
+        <a className="skip-link" href="#main">
           Skip to content
         </a>
         <SiteHeader />

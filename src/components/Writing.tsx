@@ -1,86 +1,64 @@
+import Link from "next/link";
 import { site } from "@/data/site";
-import { articles, platforms, press } from "@/data/writing";
-import { Reveal } from "./Reveal";
-import { ArrowUpRight } from "./Icons";
+import { articles, press, writingProvenance } from "@/data/writing";
+import { Clipping } from "./Clipping";
+import { Provenance } from "./Provenance";
 
 export function Writing() {
+  const clips = press.filter((p) => p.clip);
+  const rest = press.filter((p) => !p.clip);
   return (
     <section className="section" id="writing" aria-labelledby="writing-title">
       <div className="container">
-        <Reveal className="section-head">
-          <div>
-            <p className="folio mono">
-              <b>04</b> Writing &amp; press
-            </p>
-            <h2 id="writing-title">Read by ten million developers</h2>
-          </div>
-          <p>
-            Forty-plus tutorials on the platforms developers already trust, and profiles by the
-            outlets that cover African tech. The writing is how most people meet me before we ever
-            talk.
-          </p>
-        </Reveal>
+        <h2 id="writing-title">Writing and press</h2>
 
-        <div className="writing">
-          <Reveal>
-            <div className="col-head mono">
-              <span>Press</span>
-              <span>Independent coverage</span>
-            </div>
-            <ul className="press-list">
-              {press.map((p) => (
-                <li key={p.href}>
-                  <a className="press-item" href={p.href} rel="noopener">
-                    <p className="outlet mono">
-                      <span>
-                        {p.outlet}
-                        {p.disclosure && <span className="disclosure"> · {p.disclosure}</span>}
-                      </span>
-                      <span>{p.date}</span>
-                    </p>
-                    <p className="headline">{p.headline}</p>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-
-          <Reveal delay={0.1}>
-            <div className="col-head mono">
-              <span>Selected articles</span>
-              <a href={site.links.blog} rel="noopener" className="arrow-link">
-                All writing <ArrowUpRight />
-              </a>
-            </div>
-            <ul className="article-list">
-              {articles.map((a) => (
-                <li key={a.href}>
-                  <a className="article-item" href={a.href} rel="noopener">
-                    <p className="outlet mono">
-                      <span>{a.outlet}</span>
-                      {a.note && <span>{a.note}</span>}
-                    </p>
-                    <p className="headline">{a.title}</p>
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <p className="platforms">
-              Published on{" "}
-              {platforms.map((p, i) => (
-                <span key={p}>
-                  {p}
-                  {i < platforms.length - 1 ? ", " : ""}
-                </span>
-              ))}{" "}
-              — and 40+ tutorials with 200,000+ annual readers on{" "}
-              <a className="link" href={site.links.blog} rel="noopener">
-                blog.idrisolubisi.com
-              </a>
-              .
-            </p>
-          </Reveal>
+        <div className="clippings">
+          {clips.map((p) => (
+            <Clipping item={p} key={p.href} />
+          ))}
         </div>
+
+        <ul className="plain-list press-list" aria-label="More coverage">
+          {rest.map((p) => (
+            <li key={p.href}>
+              <a href={p.href}>{p.headline}</a>
+              <span className="meta">
+                {" "}
+                {p.outlet}, {p.date}
+                {!p.independent && ", brand press"}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+        <p className="intro">
+          Every tutorial started as a question a developer asked me in a Discord, at a workshop or
+          in a GitHub issue. Together they have been read more than ten million times; freeCodeCamp
+          alone sees 100,000+ views a month.
+        </p>
+        <ul className="plain-list article-list" aria-label="Selected articles">
+          {articles.map((a) => (
+            <li key={a.href}>
+              <a href={a.href}>{a.title}</a>
+              <span className="meta">
+                {" "}
+                {a.outlet}
+                {a.note && `, ${a.note}`}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <Provenance
+          source={writingProvenance.source}
+          href={writingProvenance.href}
+          date={writingProvenance.asOf}
+        >
+          {writingProvenance.items.join(" · ")}
+        </Provenance>
+        <p className="after">
+          More on <a href={site.links.blog}>blog.idrisolubisi.com</a>, and the{" "}
+          <Link href="/work/technical-writing-ten-million-views">writing case study</Link>.
+        </p>
       </div>
     </section>
   );

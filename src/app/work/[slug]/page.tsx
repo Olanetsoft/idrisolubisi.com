@@ -2,10 +2,19 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { caseStudies, getCaseStudy } from "@/data/case-studies";
+import { installLine } from "@/data/exhibits";
 import { site } from "@/data/site";
-import { ArrowUpRight } from "@/components/Icons";
+import { CopyLine } from "@/components/CopyLine";
+import { OutputLine } from "@/components/OutputLine";
+import { WorkExhibit } from "@/components/Work";
 
 type Params = { slug: string };
+
+const slugify = (s: string) =>
+  s
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
 
 export function generateStaticParams(): Params[] {
   return caseStudies.map((c) => ({ slug: c.slug }));
@@ -38,89 +47,71 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
   const next = caseStudies[(index + 1) % caseStudies.length];
 
   return (
-    <article>
-      <header className="case-hero container">
-        <p className="folio mono">
-          <b>{String(index + 1).padStart(2, "0")}</b> Case study
-        </p>
-        <p className="work-meta mono">
-          <b>{cs.org}</b>
-          <span>{cs.role}</span>
-          <span>{cs.period}</span>
+    <article className="case">
+      <header className="container case-head">
+        <p className="meta">
+          {cs.org} · {cs.role} · {cs.period}
         </p>
         <h1>{cs.title}</h1>
-        <p className="lede">{cs.summary}</p>
-        <ul className="metrics case-metrics" aria-label="Key results">
-          {cs.metrics.map((m) => (
-            <li className="metric" key={m.label}>
-              <div className="value">{m.value}</div>
-              <div className="label">{m.label}</div>
-            </li>
-          ))}
-        </ul>
+        <p className="standfirst">{cs.story}</p>
+        {cs.status && <p className="status">{cs.status}</p>}
+        <OutputLine output={cs.output} mark={false} />
+        <p className="note">{cs.skipped}</p>
       </header>
 
-      <div className="case-body container">
+      <div className="container case-body">
         <aside className="case-aside">
-          <div>
-            <h4>Role</h4>
-            <p>{cs.role}</p>
-            <p className="muted">{cs.period}</p>
-          </div>
-          <div>
-            <h4>Topics</h4>
-            <ul className="tags" style={{ marginTop: 0 }}>
-              {cs.tags.map((t) => (
-                <li className="tag" key={t}>
-                  {t}
-                </li>
-              ))}
-            </ul>
-          </div>
+          <h2 className="aside-h">Role</h2>
+          <p>
+            {cs.role}, {cs.period}
+          </p>
+          <h2 className="aside-h">Stack</h2>
+          <p>{cs.stack}</p>
           {cs.links.length > 0 && (
-            <div>
-              <h4>Links</h4>
-              <ul>
+            <>
+              <h2 className="aside-h">Links</h2>
+              <ul className="plain-list">
                 {cs.links.map((l) => (
                   <li key={l.href}>
-                    <a className="arrow-link" href={l.href} rel="noopener">
-                      {l.label} <ArrowUpRight />
-                    </a>
+                    <a href={l.href}>{l.label}</a>
                   </li>
                 ))}
               </ul>
-            </div>
+            </>
           )}
+          {cs.exhibit === "toolCategories" && <CopyLine command={installLine} />}
+          {cs.showOnHome !== false && <WorkExhibit kind={cs.exhibit} />}
         </aside>
 
         <div className="case-content">
-          {cs.sections.map((s) => (
-            <section key={s.heading} aria-labelledby={s.heading}>
-              <h2 id={s.heading}>{s.heading}</h2>
-              {s.paragraphs?.map((p) => (
-                <p key={p}>{p}</p>
-              ))}
-              {s.bullets && (
-                <ul>
-                  {s.bullets.map((b) => (
-                    <li key={b}>{b}</li>
-                  ))}
-                </ul>
-              )}
-            </section>
-          ))}
+          {cs.sections.map((s) => {
+            const id = slugify(s.heading);
+            return (
+              <section key={s.heading} aria-labelledby={id}>
+                <h2 id={id}>{s.heading}</h2>
+                {s.paragraphs?.map((p) => (
+                  <p key={p}>{p}</p>
+                ))}
+                {s.bullets && (
+                  <ul>
+                    {s.bullets.map((b) => (
+                      <li key={b}>{b}</li>
+                    ))}
+                  </ul>
+                )}
+              </section>
+            );
+          })}
         </div>
       </div>
 
-      <nav className="case-nav container" aria-label="More case studies">
-        <Link href={`/work/${prev.slug}`}>
-          <span className="mono">← Previous</span>
-          <strong>{prev.org}</strong>
-        </Link>
-        <Link href={`/work/${next.slug}`}>
-          <span className="mono">Next →</span>
-          <strong>{next.org}</strong>
-        </Link>
+      <nav className="container case-nav" aria-label="More work">
+        <p>
+          Previous: <Link href={`/work/${prev.slug}`}>{prev.org}</Link>
+        </p>
+        <p>
+          Next: <Link href={`/work/${next.slug}`}>{next.org}</Link>
+        </p>
       </nav>
     </article>
   );

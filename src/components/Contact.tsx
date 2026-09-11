@@ -1,42 +1,50 @@
+import Image from "next/image";
 import { site } from "@/data/site";
 import { ContactForm } from "./ContactForm";
-import { Reveal } from "./Reveal";
 
 const links = [
   { label: "LinkedIn", href: site.links.linkedin, meta: "in/idris-olubisi" },
   { label: "X", href: site.links.x, meta: `@${site.handle}` },
-  { label: "GitHub", href: site.links.github, meta: site.handle },
-  { label: "Résumé", href: site.resumeUrl, meta: "PDF" },
+  { label: "GitHub", href: site.links.github, meta: "Olanetsoft" },
+  { label: "CV", href: site.resumeUrl, meta: "Idris-Olubisi-CV-2026.pdf" },
 ];
 
 export function Contact() {
   return (
     <section className="section" id="contact" aria-labelledby="contact-title">
       <div className="container contact">
-        <Reveal>
-          <p className="folio mono">
-            <b>06</b> Contact
+        <div className="contact-claim">
+          <h2 id="contact-title">Contact</h2>
+          <p className="intro">
+            Send me the onboarding problem your developers, or their agents, keep getting stuck on.
+            I read everything and reply to anything specific.
           </p>
-          <h2 id="contact-title">
-            Let&rsquo;s build something developers <em>actually adopt</em>.
-          </h2>
-          <p className="lede">
-            I&rsquo;m currently open to senior developer relations, developer experience and
-            AI-tooling roles — remote or London. Also happy to talk about speaking, writing and
-            advising.
-          </p>
-          <div className="contact-links">
+          {site.email && (
+            <a className="email" href={`mailto:${site.email}`}>
+              {site.email}
+            </a>
+          )}
+          <ul className="contact-links">
             {links.map((l) => (
-              <a key={l.label} href={l.href} rel="me noopener">
-                <span>{l.label}</span>
-                <span className="mono">{l.meta}</span>
-              </a>
+              <li key={l.label}>
+                <a href={l.href} rel="me">
+                  {l.label}
+                </a>
+                <span className="meta"> {l.meta}</span>
+              </li>
             ))}
-          </div>
-        </Reveal>
-        <Reveal delay={0.1}>
-          <ContactForm />
-        </Reveal>
+          </ul>
+          <figure className="portrait">
+            <Image
+              src="/images/idris-portrait.jpg"
+              alt="Idris Olubisi"
+              width={1407}
+              height={1600}
+              sizes="160px"
+            />
+          </figure>
+        </div>
+        <ContactForm />
       </div>
     </section>
   );

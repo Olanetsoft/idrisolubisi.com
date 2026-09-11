@@ -28,12 +28,13 @@ Idris has been profiled and featured by leading African and global technology me
 
 **Senior Developer Relations Engineer at Midnight** (Sep 2025 - Present)
 Midnight is a data-protection blockchain enabling confidential smart contracts.
-- Built a Midnight MCP (Model Context Protocol) server downloaded 10,000+ times and serving 11,900+ AI-agent tool calls across 40 tools and 91 indexed repositories
+- Built a Midnight MCP (Model Context Protocol) server downloaded 10,000+ times and serving 11,900+ AI-agent tool calls across 30 tools in seven categories (the server's own count, 11 Sep 2026)
 - Re-architected documentation with server-side rendering and an llms.txt index, exposing full content to LLM crawlers and AI coding agents
 - Launched Midnight Academy, a three-tier zero-knowledge + Compact curriculum (Foundations, Intermediate, Advanced): 1,576 developers enrolled and 1,120+ certified to date
 - Developing educational content around zero-knowledge proofs and privacy-preserving smart contracts
 - Tripled the content-bounty program to 20 published tutorials and 12 contributors by gating open submissions on compiling code
 - Built reference implementations and example dApps engineers use as starting points for building on Midnight
+- In 2026 Midnight standardised on two official tools, Kapa MCP and Midnight Expert, and midnight-mcp is being wound down; the package still installs and every tool carries the migration notice
 - Remote, Full-time
 
 **Founder - Web3 Afrika** (May 2022 - Present)
@@ -247,4 +248,4 @@ The information in this file has been verified against:
 - freeCodeCamp author page (freecodecamp.org/news/author/idris/)
 - Idris Olubisi's current résumé
 
-Last updated: July 2026
+Last updated: September 2026

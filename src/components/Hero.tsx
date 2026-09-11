@@ -1,93 +1,86 @@
-import Image from "next/image";
+import { toolCategories, toolTotal } from "@/data/exhibits";
 import { site } from "@/data/site";
-import { featuredIn, press } from "@/data/writing";
-import { ArrowRight } from "./Icons";
+import { Exhibit } from "./Exhibit";
+import { Figure } from "./Figure";
+import { Provenance } from "./Provenance";
+
+function CategoriesResponse() {
+  // The server's own response, abridged to name and toolCount per category.
+  return (
+    <>
+      <span className="term-key">categories:</span>
+      {"\n"}
+      {toolCategories.categories.map((c) => (
+        <span key={c.name}>
+          {"  - "}
+          <span className="term-key">name:</span> {c.name}
+          {"\n"}
+          {"    "}
+          <span className="term-key">toolCount:</span> {c.toolCount}
+          {"\n"}
+        </span>
+      ))}
+    </>
+  );
+}
 
 export function Hero() {
+  const a = site.availability;
   return (
     <>
       <section className="hero container" aria-labelledby="hero-title">
-        <div className="hero-copy">
-          <p className="hero-kicker mono">
-            <span className="dot" aria-hidden="true" />
-            <span>Senior Developer Relations Engineer</span>
-            <span aria-hidden="true">·</span>
-            <span>AI Engineer</span>
-            <span aria-hidden="true">·</span>
-            <span>London</span>
+        <div className="hero-claim">
+          <p className="kicker">
+            {site.name} · {site.role} · {site.location.split(",")[0]}
           </p>
-          <h1 className="hero-title" id="hero-title">
-            I help developers — and their <em>AI agents</em> — adopt hard technology.
+          <h1 id="hero-title">
+            The first developer to read your docs is now an AI agent. I built the server it calls.
           </h1>
-          <p className="hero-lede">
-            Five years of developer relations across zero-knowledge, cross-chain and AI
-            infrastructure. I build the tooling, documentation and communities that turn a curious
-            developer into a shipped integration. Founder of Web3 Afrika; freeCodeCamp author read
-            by more than ten million developers.
+          <p className="standfirst">
+            Midnight MCP is an open-source server that lets Claude, Cursor and Copilot search a
+            zero-knowledge codebase, compile Compact and read the documentation from inside the
+            editor. It passed 10,000 downloads on npm and served more than 11,900 tool calls from
+            agents, a channel that did not exist before I built it. Before that: cross-chain
+            developer relations at Axelar for 100,000+ developers, Web3 Afrika, the community I
+            founded in 2022 that now has 15,000+ builders, and freeCodeCamp tutorials read more than
+            ten million times.
           </p>
-          <div className="hero-actions">
-            <a className="btn" href="#work">
-              See the work
-              <ArrowRight />
-            </a>
-            <a className="btn btn-ghost" href={site.resumeUrl} download>
-              Download résumé
-            </a>
-          </div>
-          <p className="hero-meta mono">
-            <span>{site.availability}</span>
-            <span>UK Global Talent visa</span>
-          </p>
+          <dl className="needs">
+            <dt>Looking for</dt>
+            <dd>{a.lookingFor}.</dd>
+            <dt>From</dt>
+            <dd>{a.from}</dd>
+            <dt>Right to work</dt>
+            <dd>{a.rightToWork}</dd>
+            <dt>Before this</dt>
+            <dd>{a.before}</dd>
+            <dt>CV</dt>
+            <dd>
+              <a href={site.resumeUrl}>Idris-Olubisi-CV-2026.pdf</a>, opens in the browser
+            </dd>
+          </dl>
         </div>
 
-        <figure className="hero-figure">
-          <div className="frame">
-            <Image
-              src="/images/idris-portrait.jpg"
-              alt="Idris Olubisi, arms crossed and smiling, in a black leather jacket against a white studio backdrop."
-              width={1407}
-              height={1600}
-              priority
-              sizes="(max-width: 860px) 360px, 440px"
-            />
-          </div>
-          <figcaption className="mono">
-            <span>{site.name}</span>
-            <span>Photograph — {site.photoCredit}</span>
-          </figcaption>
-        </figure>
+        <div className="hero-exhibit">
+          <Exhibit
+            kind="terminal"
+            label="What an agent sees when it calls the server"
+            request={toolCategories.request}
+            caption={
+              <Provenance
+                source={toolCategories.server}
+                href={toolCategories.source}
+                date={toolCategories.capturedAt}
+              >
+                {toolTotal} tools in {toolCategories.categories.length} categories, response abridged
+              </Provenance>
+            }
+          >
+            <CategoriesResponse />
+          </Exhibit>
+        </div>
       </section>
-
-      <div className="container">
-        <ul className="metrics" aria-label="Career metrics">
-          {site.metrics.map((m) => (
-            <li className="metric" key={m.label}>
-              <div className="value">{m.value}</div>
-              <div className="label">{m.label}</div>
-            </li>
-          ))}
-        </ul>
-
-        <div className="featured">
-          <span className="mono">Featured in</span>
-          <ul>
-            {featuredIn.map((outlet) => {
-              const item = press.find((p) => p.outlet === outlet);
-              return (
-                <li key={outlet}>
-                  {item ? (
-                    <a href={item.href} rel="noopener">
-                      {outlet}
-                    </a>
-                  ) : (
-                    outlet
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </div>
+      <Figure />
     </>
   );
 }

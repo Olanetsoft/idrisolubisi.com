@@ -1,62 +1,106 @@
 import Link from "next/link";
-import { caseStudies } from "@/data/case-studies";
-import { Reveal } from "./Reveal";
-import { ArrowRight } from "./Icons";
+import { caseStudies, type CaseStudy } from "@/data/case-studies";
+import { axelarCommands, toolNames } from "@/data/exhibits";
+import { press } from "@/data/writing";
+import { Exhibit } from "./Exhibit";
+import { OutputLine } from "./OutputLine";
+import { Provenance } from "./Provenance";
+
+const blockfest = press.find((p) => p.headline.startsWith("Blockfest Africa 2025"));
+
+export function WorkExhibit({ kind }: { kind: CaseStudy["exhibit"] }) {
+  if (kind === "toolCategories") {
+    return (
+      <Exhibit
+        kind="terminal"
+        label="The tools an agent is offered"
+        request="tools/list"
+        caption={
+          <Provenance source="midnight-mcp" href={toolNames.source} date={toolNames.capturedAt}>
+            8 of 31 tool names
+          </Provenance>
+        }
+      >
+        {toolNames.names.map((n) => (
+          <span key={n}>
+            {n}
+            {"\n"}
+          </span>
+        ))}
+      </Exhibit>
+    );
+  }
+  if (kind === "axelarCommands") {
+    return (
+      <Exhibit
+        kind="terminal"
+        label="The first five commands in the README"
+        caption={
+          <Provenance
+            source="foundry-axelar-gmp-example"
+            href={axelarCommands.source}
+            date={axelarCommands.capturedAt}
+          >
+            57 of 59 commits are mine
+          </Provenance>
+        }
+      >
+        {axelarCommands.lines.map((l) => (
+          <span key={l}>
+            <span className="term-prompt">$ </span>
+            {l}
+            {"\n"}
+          </span>
+        ))}
+      </Exhibit>
+    );
+  }
+  if (!blockfest) return null;
+  return (
+    <Exhibit
+      kind="sheet"
+      label="The headline"
+      caption={
+        <Provenance source={blockfest.outlet} href={blockfest.href} date={blockfest.date} />
+      }
+    >
+      <blockquote className="sheet-quote" cite={blockfest.href}>
+        <p>“{blockfest.headline}”</p>
+      </blockquote>
+    </Exhibit>
+  );
+}
 
 export function Work() {
+  const rows = caseStudies.filter((c) => c.showOnHome !== false);
   return (
     <section className="section" id="work" aria-labelledby="work-title">
       <div className="container">
-        <Reveal className="section-head">
-          <div>
-            <p className="folio mono">
-              <b>01</b> Selected work
-            </p>
-            <h2 id="work-title">Work that moved the numbers</h2>
-          </div>
-          <p>
-            Four case studies from the last four years: an MCP server for AI agents, a cross-chain
-            reference implementation, a 15,000-builder community and a body of writing that keeps
-            compounding. Each one starts with a problem and ends with a measurement.
-          </p>
-        </Reveal>
-
-        <div className="work-list">
-          {caseStudies.map((cs, i) => (
-            <Reveal key={cs.slug} delay={Math.min(i * 0.06, 0.2)}>
-              <Link href={`/work/${cs.slug}`} className="work-item">
-                <span className="work-index mono">{String(i + 1).padStart(2, "0")}</span>
-                <div>
-                  <p className="work-meta mono">
-                    <b>{cs.org}</b>
-                    <span>{cs.role}</span>
-                    <span>{cs.period}</span>
-                  </p>
-                  <h3 className="work-title">{cs.title}</h3>
-                  <p className="work-summary">{cs.summary}</p>
-                  <ul className="tags" aria-label="Topics">
-                    {cs.tags.slice(0, 4).map((t) => (
-                      <li className="tag" key={t}>
-                        {t}
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="work-cta arrow-link mono">
-                    Read the case study <ArrowRight />
-                  </p>
-                </div>
-                <ul className="work-metrics" aria-label="Key results">
-                  {cs.metrics.slice(0, 2).map((m) => (
-                    <li key={m.label}>
-                      <div className="value">{m.value}</div>
-                      <div className="label">{m.label}</div>
-                    </li>
-                  ))}
-                </ul>
-              </Link>
-            </Reveal>
+        <h2 id="work-title">Work</h2>
+        <p className="intro">
+          Three things I built, each with the artefact, the output and the part most teams skip.
+        </p>
+        <ol className="ledger">
+          {rows.map((cs) => (
+            <li className="ledger-row" key={cs.slug}>
+              <div className="claim">
+                <p className="meta">
+                  {cs.org} · {cs.role} · {cs.period}
+                </p>
+                <h3>
+                  <Link href={`/work/${cs.slug}`}>{cs.title}</Link>
+                </h3>
+                <p>{cs.story}</p>
+                {cs.status && <p className="status">{cs.status}</p>}
+                <OutputLine output={cs.output} />
+                <p className="note">{cs.skipped}</p>
+              </div>
+              <div className="exhibit-col">
+                <WorkExhibit kind={cs.exhibit} />
+              </div>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   );
