@@ -82,6 +82,16 @@ a:hover {
   color: var(--accent-hover);
   text-decoration: underline;
 }
+/* Every link in the page body is underlined so none relies on colour alone;
+   navigation, buttons and "see all" links are the exceptions. */
+main a:not(.btn):not(.see-all),
+.site-footer p a {
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+}
+main a:not(.btn):hover {
+  text-decoration-color: currentColor;
+}
 a,
 button {
   touch-action: manipulation;

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     default: site.title,
     template: `%s — ${site.name}`,
   },
-  description: site.description,
+  description: site.metaDescription,
   keywords: [
     "Idris Olubisi",
     "olanetsoft",
@@ -77,38 +77,82 @@ export const viewport: Viewport = {
 
 const themeScript = `(function(){try{if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();`;
 
-const personJsonLd = {
+// Google's profile-page structured data: a ProfilePage whose main entity is the
+// Person, plus the WebSite node. Stable @ids let crawlers merge the three.
+const personId = `${site.url}/#person`;
+const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: site.name,
-  alternateName: site.handle,
-  url: site.url,
-  image: `${site.url}/images/idris-portrait.jpg`,
-  jobTitle: site.role,
-  email: site.email,
-  description: site.description,
-  address: { "@type": "PostalAddress", addressLocality: "London", addressCountry: "GB" },
-  alumniOf: {
-    "@type": "CollegeOrUniversity",
-    name: "Abubakar Tafawa Balewa University",
-  },
-  founder: { "@type": "Organization", name: "Web3 Afrika", url: site.links.web3afrika },
-  knowsAbout: [
-    "Developer Relations",
-    "Model Context Protocol",
-    "AI agents",
-    "Zero-knowledge proofs",
-    "Blockchain interoperability",
-    "Technical writing",
-  ],
-  sameAs: [
-    site.links.github,
-    site.links.linkedin,
-    site.links.x,
-    site.links.blog,
-    site.links.freecodecamp,
-    site.links.devto,
-    site.links.sessionize,
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": `${site.url}/#profile`,
+      url: site.url,
+      name: site.title,
+      description: site.description,
+      inLanguage: "en-GB",
+      dateModified: new Date().toISOString().slice(0, 10),
+      mainEntity: { "@id": personId },
+      isPartOf: { "@id": `${site.url}/#website` },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${site.url}/#website`,
+      url: site.url,
+      name: site.name,
+      inLanguage: "en-GB",
+      publisher: { "@id": personId },
+    },
+    {
+      "@type": "Person",
+      "@id": personId,
+      name: site.name,
+      alternateName: site.handle,
+      url: site.url,
+      image: `${site.url}/images/idris-portrait.jpg`,
+      jobTitle: site.role,
+      email: site.email,
+      description: site.description,
+      address: { "@type": "PostalAddress", addressLocality: "London", addressCountry: "GB" },
+      nationality: { "@type": "Country", name: "Nigeria" },
+      knowsLanguage: ["en", "yo"],
+      hasOccupation: {
+        "@type": "Occupation",
+        name: "Developer Relations Engineer",
+        occupationLocation: { "@type": "City", name: "London" },
+        skills: [...site.disciplines, "Technical writing", "Public speaking", "Community building"].join(", "),
+      },
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "Abubakar Tafawa Balewa University",
+      },
+      founder: { "@type": "Organization", name: "Web3 Afrika", url: site.links.web3afrika },
+      knowsAbout: [
+        "Developer Relations",
+        "Developer Experience",
+        "Model Context Protocol",
+        "AI agents",
+        "Zero-knowledge proofs",
+        "Blockchain interoperability",
+        "Technical writing",
+      ],
+      potentialAction: {
+        "@type": "ScheduleAction",
+        name: "Book a 15-minute call",
+        target: site.bookingUrl,
+      },
+      sameAs: [
+        site.links.github,
+        site.links.linkedin,
+        site.links.x,
+        site.links.blog,
+        site.links.youtube,
+        site.links.freecodecamp,
+        site.links.devto,
+        site.links.sessionize,
+        site.links.web3afrika,
+        site.links.linktree,
+      ],
+    },
   ],
 };
 
@@ -117,6 +161,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en-GB" className={sans.variable} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt" />
+        {process.env.NODE_ENV === "production" && (
+          <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
+        )}
       </head>
       <body>
         <a className="skip-link" href="#main">
@@ -127,7 +175,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SiteFooter />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {process.env.NODE_ENV === "production" && <GoogleAnalytics gaId={site.gaId} />}
       </body>

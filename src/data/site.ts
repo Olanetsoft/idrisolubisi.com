@@ -10,6 +10,9 @@ export const site = {
     "I founded **Web3 Afrika**, a community of 15,000+ builders across Africa, and my tutorials on freeCodeCamp and elsewhere have been read **more than ten million times**.",
   ],
   title: "Idris Olubisi — Senior Developer Relations Engineer",
+  /** Under 160 characters, for the search snippet. The long description feeds social cards and structured data. */
+  metaDescription:
+    "Senior Developer Relations Engineer, London. Built the Midnight MCP server, led DevRel at Axelar, founded Web3 Afrika. Open to senior DevRel, DX and AI roles.",
   description:
     "Idris Olubisi is a Senior Developer Relations Engineer in London. Built the open-source Midnight MCP server (10,000+ downloads, 11,900+ AI-agent tool calls), led cross-chain developer relations at Axelar, founded Web3 Afrika (15,000+ builders), freeCodeCamp author read 10M+ times.",
   url: "https://idrisolubisi.com",
