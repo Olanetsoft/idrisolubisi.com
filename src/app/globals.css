@@ -184,7 +184,6 @@ figure {
   align-items: center;
   min-height: 44px;
 }
-.identity-photo,
 .identity,
 .site-nav,
 .side-links {
@@ -304,19 +303,10 @@ figure {
     -webkit-backdrop-filter: none;
     overflow-y: auto;
   }
-  .identity-photo {
-    display: block;
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    object-position: 50% 15%;
-    border-radius: 3px;
-  }
   .header-bar {
     min-height: 0;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-top: -0.5rem;
   }
   .wordmark {
     min-height: 0;
@@ -374,21 +364,38 @@ figure {
 .hero {
   padding-block: clamp(3rem, 6vw, 5rem) 0;
 }
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
 .hero-copy {
   max-width: 62ch;
 }
 .hero-copy > * + * {
   margin-top: 1rem;
 }
-.portrait-mobile {
-  margin-bottom: 1.5rem;
-}
-.portrait-mobile img {
-  width: 96px;
-  height: 96px;
+.portrait img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
   object-fit: cover;
   object-position: 50% 15%;
-  border-radius: 3px;
+  border: 1px solid var(--line);
+}
+@media (max-width: 860px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .portrait {
+    order: -1;
+  }
+  .portrait img {
+    width: 128px;
+    height: 128px;
+  }
 }
 .status {
   font-size: 0.875rem;
@@ -446,12 +453,6 @@ figure {
   font-size: 0.875rem;
   color: var(--text-3);
 }
-@media (min-width: 1100px) {
-  .portrait-mobile {
-    display: none;
-  }
-}
-
 /* ---------- sections: one grid everywhere ---------- */
 
 .section {

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/data/site";
 import { MobileMenu } from "./MobileMenu";
@@ -13,21 +12,12 @@ const social = [
 ];
 
 /**
- * On wide screens: the identity column (portrait, name, title, status,
- * sections, profiles). Below 1100px: a compact bar with a Menu button.
+ * On wide screens: the identity column (name, title, status, sections,
+ * profiles). Below 1100px: a compact bar with a Menu button.
  */
 export function SiteHeader() {
   return (
     <header className="site-header">
-      <Image
-        className="identity-photo"
-        src="/images/idris-portrait.jpg"
-        alt=""
-        width={1407}
-        height={1600}
-        sizes="120px"
-        priority
-      />
       <div className="header-bar">
         <Link href="/" className="wordmark" aria-label={`${site.name}, home`}>
           {site.name}
