@@ -47,8 +47,8 @@ export default async function OpenGraphImage() {
           <div style={{ display: "flex", fontSize: 68, fontWeight: 600, letterSpacing: -1.5 }}>{site.name}</div>
           <div style={{ display: "flex", fontSize: 32, color: "#374151" }}>{site.role} · London</div>
           <div style={{ display: "flex", fontSize: 26, color: "#6b7280", maxWidth: 1000, lineHeight: 1.35 }}>
-            {site.tagline}. Built the open-source Midnight MCP server; founder of Web3 Afrika; freeCodeCamp
-            author read 10M+ times.
+            {site.disciplines.join(" / ")}. Built the open-source Midnight MCP server; founder of Web3
+            Afrika; freeCodeCamp author read 10M+ times.
           </div>
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", fontSize: 24, color: "#6b7280" }}>

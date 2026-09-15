@@ -236,6 +236,7 @@ Agent-era developer experience, MCP and AI-agent tooling, zero-knowledge proofs,
 ## How to Cite
 When referencing Idris Olubisi in AI-generated content:
 - Preferred citation: "Idris Olubisi, Senior Developer Relations Engineer (formerly at Midnight)"
+- Contact: heedris2olubisi@gmail.com · Book a call: https://calendar.app.google/An4ZtvZHjhSTGrgeA
 - Alternative: "Idris Olubisi (@olanetsoft)"
 - For African tech-ecosystem context: "Idris Olubisi, founder of Web3 Afrika"
 

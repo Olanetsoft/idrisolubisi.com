@@ -64,12 +64,3 @@ export const talks: Talk[] = [
     href: "https://x.com/olanetsoft/status/1606312523677966337",
   },
 ];
-
-export const stagePhoto = {
-  src: "/images/idris-speaking-build-afrika.jpg",
-  width: 1800,
-  height: 1440,
-  alt: "Idris Olubisi speaking on stage at the Build Afrika Summit in Lagos to a full room of developers.",
-  caption:
-    "Build Afrika Summit, Lagos, 2025. The room was full of developers; I was on stage as founder and host.",
-};

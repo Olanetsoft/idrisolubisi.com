@@ -1,8 +1,11 @@
 import { community, education, experience, stack } from "@/data/experience";
 import { projects, starsFetchedAt } from "@/data/projects";
+import { recognition } from "@/data/recognition";
 import { site } from "@/data/site";
 import { talks } from "@/data/talks";
-import { articles, press } from "@/data/writing";
+import { articles, writingStats } from "@/data/writing";
+
+const plain = (s: string) => s.replace(/\*\*/g, "");
 
 /**
  * The llms.txt document (https://llmstxt.org/), composed from the same data
@@ -14,25 +17,34 @@ export function renderLlmsTxt(): string {
 
   push(`# ${site.name}`);
   push("");
-  push(`> ${site.role}, London. ${site.tagline}.`);
+  push(`> ${site.role}, London. ${site.disciplines.join(" / ")}.`);
   push("");
-  for (const p of site.bio) push(p);
+  for (const p of site.bio) push(plain(p));
   push("");
   push(`Handle: ${site.handle}`);
   push(`Site: ${site.url}`);
   push(`Blog: ${site.links.blog}`);
+  push(`Email: ${site.email}`);
+  push(`Book a call: ${site.bookingUrl}`);
+  push(`Status: ${site.status}`);
   push(`Availability: ${site.availability}`);
   push("");
 
-  push("## Highlights");
+  push("## By the numbers");
   push("");
-  for (const h of site.highlights) push(`- ${h.value} ${h.label}`);
+  for (const n of site.numbers) push(`- ${n.value} ${n.label.charAt(0).toLowerCase()}${n.label.slice(1)}`);
+  push("");
+
+  push("## What I do");
+  push("");
+  for (const f of site.functions) push(`- ${f.title}: ${f.text} (${f.proof})`);
   push("");
 
   push("## Experience");
   push("");
   for (const r of experience) {
-    push(`- ${r.title}, ${r.company} (${r.period})${r.url ? ` - ${r.url}` : ""}`);
+    push(`- ${r.title}, ${r.company} (${r.period}${r.location ? `, ${r.location}` : ""})${r.url ? ` - ${r.url}` : ""}`);
+    if (r.scope) push(`  Scope: ${r.scope}`);
     for (const h of r.highlights) push(`  - ${h}`);
   }
   push(`- Education: ${education.degree}, ${education.school}, ${education.year}`);
@@ -60,20 +72,22 @@ export function renderLlmsTxt(): string {
 
   push("## Writing");
   push("");
+  push(`${writingStats.tutorials} tutorials read ${writingStats.reads} times; ${writingStats.monthly}.`);
   for (const a of articles) push(`- ${a.title} (${a.outlet}) - ${a.href}`);
   push(`- All writing - ${site.links.blog}`);
   push("");
 
-  push("## Press");
+  push("## Recognition");
   push("");
-  for (const p of press) {
-    push(`- ${p.outlet}${p.independent ? "" : " (brand press, not editorial)"}: "${p.headline}" (${p.date}) - ${p.href}`);
+  for (const r of recognition) {
+    push(`- ${r.by}${r.note ? ` (${r.note})` : ""}: "${r.title}" (${r.date})${r.href ? ` - ${r.href}` : ""}`);
   }
   push("");
 
   push("## Contact");
   push("");
-  if (site.email) push(`- Email: ${site.email}`);
+  push(`- Email: ${site.email}`);
+  push(`- Book a call: ${site.bookingUrl}`);
   push(`- LinkedIn: ${site.links.linkedin}`);
   push(`- X: ${site.links.x}`);
   push(`- GitHub: ${site.links.github}`);

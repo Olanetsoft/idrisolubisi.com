@@ -1,35 +1,37 @@
 import Image from "next/image";
 import { site } from "@/data/site";
+import { Bold } from "./Bold";
 
 export function Hero() {
   return (
     <section className="hero" id="about" aria-labelledby="hero-title">
       <div className="container hero-grid">
-        <figure className="portrait">
-          <Image
-            src="/images/idris-portrait.jpg"
-            alt="Idris Olubisi"
-            width={1407}
-            height={1600}
-            priority
-            sizes="(max-width: 760px) 120px, 176px"
-          />
-        </figure>
         <div className="hero-copy">
-          <h1 id="hero-title">{site.name}</h1>
-          <p className="role">
-            {site.role} · {site.location.split(",")[0]}
+          <p className="status">
+            <span className="status-dot" aria-hidden="true" />
+            {site.status}
           </p>
-          <p className="tagline">{site.tagline}</p>
+          <h1 id="hero-title">{site.name}</h1>
+          <p className="disciplines" aria-label="Disciplines">
+            {site.disciplines.map((d, i) => (
+              <span key={d}>
+                {i > 0 && <span className="slash">/</span>}
+                {d}
+              </span>
+            ))}
+          </p>
           {site.bio.map((p) => (
             <p className="bio" key={p}>
-              {p}
+              <Bold text={p} />
             </p>
           ))}
           <p className="availability">{site.availability}</p>
           <div className="actions">
-            <a className="btn btn-primary" href={site.resumeUrl}>
-              Download CV
+            <a className="btn btn-primary" href={site.bookingUrl}>
+              Book a 15-min call
+            </a>
+            <a className="btn" href={site.resumeUrl}>
+              CV (PDF)
             </a>
             <a className="btn" href={site.links.linkedin} rel="me">
               LinkedIn
@@ -37,16 +39,29 @@ export function Hero() {
             <a className="btn" href={site.links.github} rel="me">
               GitHub
             </a>
+            <a className="btn" href={`mailto:${site.email}`}>
+              Email
+            </a>
           </div>
         </div>
+        <figure className="portrait">
+          <Image
+            src="/images/idris-portrait.jpg"
+            alt="Idris Olubisi"
+            width={1407}
+            height={1600}
+            priority
+            sizes="(max-width: 860px) 128px, 220px"
+          />
+        </figure>
       </div>
 
       <div className="container">
-        <ul className="highlights" aria-label="Highlights">
-          {site.highlights.map((h) => (
-            <li key={h.label}>
-              <span className="value">{h.value}</span>
-              <span className="label">{h.label}</span>
+        <ul className="numbers" aria-label="By the numbers">
+          {site.numbers.map((n) => (
+            <li key={n.label}>
+              <span className="value">{n.value}</span>
+              <span className="label">{n.label}</span>
             </li>
           ))}
         </ul>

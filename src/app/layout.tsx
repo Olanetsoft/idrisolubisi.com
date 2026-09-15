@@ -85,6 +85,7 @@ const personJsonLd = {
   url: site.url,
   image: `${site.url}/images/idris-portrait.jpg`,
   jobTitle: site.role,
+  email: site.email,
   description: site.description,
   address: { "@type": "PostalAddress", addressLocality: "London", addressCountry: "GB" },
   alumniOf: {
