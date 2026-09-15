@@ -1,7 +1,7 @@
 import { Contact } from "@/components/Contact";
 import { Experience } from "@/components/Experience";
 import { Hero } from "@/components/Hero";
-import { Projects } from "@/components/Projects";
+import { Interests } from "@/components/Interests";
 import { Recognition } from "@/components/Recognition";
 import { Speaking } from "@/components/Speaking";
 import { WhatIDo } from "@/components/WhatIDo";
@@ -13,7 +13,7 @@ export default function HomePage() {
       <Hero />
       <WhatIDo />
       <Experience />
-      <Projects />
+      <Interests />
       <Speaking />
       <Writing />
       <Recognition />

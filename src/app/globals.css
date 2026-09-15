@@ -555,6 +555,36 @@ figure {
   }
 }
 
+/* ---------- interests ---------- */
+
+.interest-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 2rem;
+  padding-top: 0.6rem;
+}
+.interest-list li {
+  display: flex;
+  flex-direction: column;
+  padding-block: 0.55rem;
+  border-top: 1px solid var(--line);
+}
+.interest-list li:nth-child(-n + 2) {
+  border-top: 0;
+}
+.interest-list a {
+  font-weight: 600;
+}
+@media (max-width: 760px) {
+  .interest-list {
+    grid-template-columns: 1fr;
+    padding-top: 0;
+  }
+  .interest-list li:nth-child(2) {
+    border-top: 1px solid var(--line);
+  }
+}
+
 /* ---------- contact ---------- */
 
 .email {

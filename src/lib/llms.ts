@@ -1,4 +1,5 @@
 import { community, education, experience, stack } from "@/data/experience";
+import { domain, interests } from "@/data/interests";
 import { projects, starsFetchedAt } from "@/data/projects";
 import { recognition } from "@/data/recognition";
 import { site } from "@/data/site";
@@ -50,7 +51,12 @@ export function renderLlmsTxt(): string {
   for (const g of stack) push(`- ${g.label}: ${g.items.join(", ")}`);
   push("");
 
-  push("## Projects");
+  push("## Current tech interests");
+  push("");
+  for (const i of interests) push(`- ${i.name} - ${domain(i.url)}`);
+  push("");
+
+  push("## Open source and products");
   push("");
   for (const p of projects) {
     const stars = typeof p.stars === "number" ? ` (${p.stars} stars, ${starsFetchedAt})` : "";

@@ -66,7 +66,7 @@ export const site = {
     { label: "About", href: "/#about" },
     { label: "What I do", href: "/#what-i-do" },
     { label: "Experience", href: "/#experience" },
-    { label: "Projects", href: "/#projects" },
+    { label: "Interests", href: "/#interests" },
     { label: "Speaking", href: "/#speaking" },
     { label: "Writing", href: "/#writing" },
     { label: "Recognition", href: "/#recognition" },
