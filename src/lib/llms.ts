@@ -5,8 +5,6 @@ import { site } from "@/data/site";
 import { talks } from "@/data/talks";
 import { articles, writingStats } from "@/data/writing";
 
-const plain = (s: string) => s.replace(/\*\*/g, "");
-
 /**
  * The llms.txt document (https://llmstxt.org/), composed from the same data
  * the page renders so the two cannot drift. Served at /llms.txt.
@@ -19,7 +17,7 @@ export function renderLlmsTxt(): string {
   push("");
   push(`> ${site.role}, London. ${site.disciplines.join(" / ")}.`);
   push("");
-  for (const p of site.bio) push(plain(p));
+  for (const p of site.bio) push(p);
   push("");
   push(`Handle: ${site.handle}`);
   push(`Site: ${site.url}`);

@@ -23,10 +23,10 @@ async function loadGoogleFont(family: string, weight: 400 | 600): Promise<OgFont
 }
 
 export default async function OpenGraphImage() {
-  const fonts = (await Promise.all([loadGoogleFont("Geist", 600), loadGoogleFont("Geist", 400)])).filter(
+  const fonts = (await Promise.all([loadGoogleFont("IBM Plex Sans", 600), loadGoogleFont("IBM Plex Sans", 400)])).filter(
     (f): f is OgFont => f !== null,
   );
-  const family = fonts.length ? "Geist" : "Helvetica, Arial, sans-serif";
+  const family = fonts.length ? "IBM Plex Sans" : "Helvetica, Arial, sans-serif";
 
   return new ImageResponse(
     (
@@ -38,20 +38,20 @@ export default async function OpenGraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "72px 80px",
-          background: "#ffffff",
-          color: "#111827",
+          background: "#faf9f6",
+          color: "#1c1b19",
           fontFamily: family,
         }}
       >
         <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
-          <div style={{ display: "flex", fontSize: 68, fontWeight: 600, letterSpacing: -1.5 }}>{site.name}</div>
-          <div style={{ display: "flex", fontSize: 32, color: "#374151" }}>{site.role} · London</div>
-          <div style={{ display: "flex", fontSize: 26, color: "#6b7280", maxWidth: 1000, lineHeight: 1.35 }}>
+          <div style={{ display: "flex", fontSize: 68, fontWeight: 600, letterSpacing: 0 }}>{site.name}</div>
+          <div style={{ display: "flex", fontSize: 32, color: "#4a4741" }}>{site.role} · London</div>
+          <div style={{ display: "flex", fontSize: 26, color: "#6e6a63", maxWidth: 1000, lineHeight: 1.35 }}>
             {site.disciplines.join(" / ")}. Built the open-source Midnight MCP server; founder of Web3
             Afrika; freeCodeCamp author read 10M+ times.
           </div>
         </div>
-        <div style={{ display: "flex", justifyContent: "space-between", fontSize: 24, color: "#6b7280" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", fontSize: 24, color: "#6e6a63" }}>
           <div style={{ display: "flex" }}>idrisolubisi.com</div>
           <div style={{ display: "flex" }}>@olanetsoft</div>
         </div>

@@ -4,7 +4,7 @@ import { useSyncExternalStore } from "react";
 
 type Theme = "light" | "dark";
 
-const THEME_COLOR: Record<Theme, string> = { light: "#ffffff", dark: "#0f1115" };
+const THEME_COLOR: Record<Theme, string> = { light: "#faf9f6", dark: "#151411" };
 const listeners = new Set<() => void>();
 
 // Light is the default; dark is an explicit choice.

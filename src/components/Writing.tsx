@@ -4,26 +4,28 @@ import { articles, writingStats } from "@/data/writing";
 export function Writing() {
   return (
     <section className="section" id="writing" aria-labelledby="writing-title">
-      <div className="container">
-        <div className="section-head">
-          <div>
-            <h2 id="writing-title">Selected writing</h2>
-            <p className="section-intro">
-              {writingStats.tutorials} tutorials, read {writingStats.reads} times.
-            </p>
-          </div>
-          <a className="see-all" href={site.links.blog}>
-            All posts →
-          </a>
-        </div>
-        <ul className="article-list">
-          {articles.map((a) => (
-            <li key={a.href}>
-              <a href={a.href}>{a.title}</a>
-              <span className="meta">{a.outlet}</span>
+      <div className="container section-grid">
+        <h2 id="writing-title">Selected writing</h2>
+        <div>
+          <p className="section-intro">
+            {writingStats.tutorials} tutorials, read {writingStats.reads} times.
+          </p>
+          <ul className="rows">
+            {articles.map((a) => (
+              <li className="row" key={a.href}>
+                <p className="row-label">{a.outlet}</p>
+                <div className="row-body">
+                  <p className="title">
+                    <a href={a.href}>{a.title}</a>
+                  </p>
+                </div>
+              </li>
+            ))}
+            <li className="row-more">
+              <a href={site.links.blog}>All posts →</a>
             </li>
-          ))}
-        </ul>
+          </ul>
+        </div>
       </div>
     </section>
   );

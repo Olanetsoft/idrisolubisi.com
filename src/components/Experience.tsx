@@ -5,43 +5,45 @@ import { site } from "@/data/site";
 export function Experience() {
   return (
     <section className="section" id="experience" aria-labelledby="experience-title">
-      <div className="container">
-        <div className="section-head">
-          <h2 id="experience-title">Experience</h2>
-          <a className="see-all" href={site.resumeUrl}>
-            Full CV (PDF) →
-          </a>
-        </div>
-        <ol className="timeline">
-          {experience.map((r) => (
-            <li className="role-item" key={`${r.company}-${r.period}`}>
-              <p className="period">{r.period}</p>
-              <h3>
-                {r.url ? <a href={r.url}>{r.company}</a> : r.company}
-                <span className="role-title"> · {r.title}</span>
-              </h3>
+      <div className="container section-grid">
+        <h2 id="experience-title">Experience</h2>
+        <div>
+          <ol className="rows">
+            {experience.map((r) => (
+              <li className="row" key={`${r.company}-${r.period}`}>
+                <p className="row-label">{r.period}</p>
+                <div className="row-body">
+                  <h3 className="title">
+                    {r.url ? <a href={r.url}>{r.company}</a> : r.company}
+                    <span className="role-title"> · {r.title}</span>
+                  </h3>
+                </div>
+              </li>
+            ))}
+            <li className="row-more">
+              <a href={site.resumeUrl}>Full CV (PDF) →</a>
             </li>
-          ))}
-        </ol>
+          </ol>
 
-        <dl className="facts">
-          <div>
-            <dt>Community</dt>
-            <dd>
-              {community.map((c, i) => (
-                <span key={c.org}>
-                  <a href={c.href}>{c.org}</a> ({c.role}){i < community.length - 1 ? "; " : ""}
-                </span>
-              ))}
-            </dd>
-          </div>
-          {stack.map((group) => (
-            <div key={group.label}>
-              <dt>{group.label}</dt>
-              <dd>{group.items.join(", ")}</dd>
+          <dl className="rows facts">
+            <div className="row">
+              <dt className="row-label">Community</dt>
+              <dd>
+                {community.map((c, i) => (
+                  <span key={c.org}>
+                    <a href={c.href}>{c.org}</a> ({c.role}){i < community.length - 1 ? "; " : ""}
+                  </span>
+                ))}
+              </dd>
             </div>
-          ))}
-        </dl>
+            {stack.map((group) => (
+              <div className="row" key={group.label}>
+                <dt className="row-label">{group.label}</dt>
+                <dd>{group.items.join(", ")}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
       </div>
     </section>
   );

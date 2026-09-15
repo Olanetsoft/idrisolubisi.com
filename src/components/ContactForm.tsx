@@ -46,27 +46,25 @@ export function ContactForm() {
           Don&apos;t fill this out: <input name="bot-field" tabIndex={-1} autoComplete="off" />
         </label>
       </p>
-      <div className="form-row">
-        <div className="field">
-          <label htmlFor="name">Name</label>
-          <input id="name" name="name" type="text" autoComplete="name" required />
-        </div>
-        <div className="field">
-          <label htmlFor="email">Email</label>
-          <input id="email" name="email" type="email" autoComplete="email" required />
-        </div>
+      <div className="field">
+        <label htmlFor="name">Name</label>
+        <input id="name" name="name" type="text" autoComplete="name" required />
       </div>
       <div className="field">
-        <label htmlFor="message">The problem, in a few lines</label>
+        <label htmlFor="email">Email</label>
+        <input id="email" name="email" type="email" autoComplete="email" required />
+      </div>
+      <div className="field">
+        <label htmlFor="message">Message</label>
         <textarea id="message" name="message" required />
       </div>
       <div className="form-actions">
-        <button type="submit" className="btn" disabled={status === "sending"}>
+        <button type="submit" className="btn-primary" disabled={status === "sending"}>
           {status === "sending" ? "Sending…" : "Send"}
         </button>
         <p id="form-status" className="form-status" role="status" aria-live="polite">
-          {status === "sent" && "Received. I will reply in writing."}
-          {status === "error" && "That did not send. Message me on LinkedIn or X instead."}
+          {status === "sent" && "Received. I will reply by email."}
+          {status === "error" && "That did not send. Email me instead."}
         </p>
       </div>
     </form>

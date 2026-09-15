@@ -1,6 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/data/site";
-import { LocalTime } from "./LocalTime";
 import { MobileMenu } from "./MobileMenu";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -13,12 +13,21 @@ const social = [
 ];
 
 /**
- * Fixed sidebar on wide screens (sections, then profiles, then local time);
- * a compact sticky bar with a Menu button below 1100px.
+ * On wide screens: the identity column (portrait, name, title, status,
+ * sections, profiles). Below 1100px: a compact bar with a Menu button.
  */
 export function SiteHeader() {
   return (
     <header className="site-header">
+      <Image
+        className="identity-photo"
+        src="/images/idris-portrait.jpg"
+        alt=""
+        width={1407}
+        height={1600}
+        sizes="120px"
+        priority
+      />
       <div className="header-bar">
         <Link href="/" className="wordmark" aria-label={`${site.name}, home`}>
           {site.name}
@@ -27,6 +36,10 @@ export function SiteHeader() {
           <ThemeToggle />
           <MobileMenu />
         </div>
+      </div>
+      <div className="identity">
+        <p>{site.role}</p>
+        <p>London · available now</p>
       </div>
       <nav className="site-nav" aria-label="Sections">
         {site.nav.map((item) => (
@@ -44,10 +57,6 @@ export function SiteHeader() {
         <a href={`mailto:${site.email}`}>Email</a>
         <a href={site.resumeUrl}>CV</a>
       </nav>
-      <div className="side-foot">
-        <LocalTime />
-        <p>London, UK</p>
-      </div>
     </header>
   );
 }

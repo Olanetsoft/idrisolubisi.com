@@ -3,16 +3,18 @@ import { site } from "@/data/site";
 export function WhatIDo() {
   return (
     <section className="section" id="what-i-do" aria-labelledby="what-i-do-title">
-      <div className="container">
+      <div className="container section-grid">
         <h2 id="what-i-do-title">What I do</h2>
-        <ul className="function-grid">
+        <dl className="rows">
           {site.functions.map((f) => (
-            <li className="card" key={f.title}>
-              <h3>{f.title}</h3>
-              <p>{f.text}</p>
-            </li>
+            <div className="row" key={f.title}>
+              <dt className="row-label strong">{f.title}</dt>
+              <dd className="row-body">
+                <p>{f.text}</p>
+              </dd>
+            </div>
           ))}
-        </ul>
+        </dl>
       </div>
     </section>
   );

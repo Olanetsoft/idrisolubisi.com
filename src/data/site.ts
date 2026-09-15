@@ -4,9 +4,9 @@ export const site = {
   role: "Senior Developer Relations Engineer",
   /** Shown as a slash-separated title line under the name. */
   disciplines: ["Developer Relations", "AI Engineer", "Developer Experience", "Solutions Engineering"],
-  /** Bio paragraphs. Text inside **double asterisks** is rendered bold. */
+  /** Bio paragraphs, plain prose. */
   bio: [
-    "I own the surface between an infrastructure product and the developers who build on it, and increasingly **their AI agents**. Seven years across backend engineering and developer relations, most recently at **Midnight** and **Axelar**; founder of **Web3 Afrika**, a community of 15,000+ builders. I am most satisfied when a developer I helped ships to production.",
+    "I own the surface between an infrastructure product and the developers who build on it, and increasingly their AI agents. Seven years across backend engineering and developer relations, most recently at Midnight and Axelar; founder of Web3 Afrika, a community of 15,000+ builders. I am most satisfied when a developer I helped ships to production.",
   ],
   title: "Idris Olubisi — Senior Developer Relations Engineer",
   /** Under 160 characters, for the search snippet. The long description feeds social cards and structured data. */
@@ -24,14 +24,11 @@ export const site = {
   resumeUrl: "/Idris-Olubisi-CV-2026.pdf",
   gaId: "G-7MMFT1BXJV",
   photoCredit: "Awesomeness by Oye",
-  /** Eight cells. Every figure is a real count; the source is in the label or the note. */
+  /** Three figures, one row. Every figure is a real count. */
   numbers: [
-    { value: "7", label: "Years in software" },
     { value: "11,900+", label: "AI-agent tool calls served" },
     { value: "10,000+", label: "MCP server downloads" },
-    { value: "15,000+", label: "Web3 Afrika builders" },
     { value: "10M+", label: "Tutorial reads" },
-    { value: "100,000+", label: "Developers engaged at Axelar" },
   ],
   /** What I actually do. One sentence each. */
   functions: [
