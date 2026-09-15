@@ -704,42 +704,31 @@ strong {
   overflow-x: auto;
   padding-bottom: 0.25rem;
 }
-.contrib-months {
-  display: grid;
-  grid-template-columns: repeat(53, 12px);
-  gap: 0 3px;
-  font-size: 0.6875rem;
-  color: var(--text-3);
-  margin-bottom: 0.35rem;
-  min-width: max-content;
+.contrib-svg {
+  display: block;
+  width: 100%;
+  min-width: 720px;
+  height: auto;
 }
-.contrib-grid {
-  display: flex;
-  gap: 3px;
-  min-width: max-content;
+.contrib-month {
+  fill: var(--text-3);
+  font-size: 11px;
+  font-family: inherit;
 }
-.contrib-week {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
+.contrib-l0 {
+  fill: var(--cell-0);
 }
-.contrib-day {
-  width: 12px;
-  height: 12px;
-  border-radius: 2px;
-  background: var(--cell-0);
+.contrib-l1 {
+  fill: var(--cell-1);
 }
-.contrib-day[data-level="1"] {
-  background: var(--cell-1);
+.contrib-l2 {
+  fill: var(--cell-2);
 }
-.contrib-day[data-level="2"] {
-  background: var(--cell-2);
+.contrib-l3 {
+  fill: var(--cell-3);
 }
-.contrib-day[data-level="3"] {
-  background: var(--cell-3);
-}
-.contrib-day[data-level="4"] {
-  background: var(--cell-4);
+.contrib-l4 {
+  fill: var(--cell-4);
 }
 
 /* ---------- speaking, writing, recognition ---------- */
