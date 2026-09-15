@@ -37,7 +37,7 @@ export function renderLlmsTxt(): string {
 
   push("## What I do");
   push("");
-  for (const f of site.functions) push(`- ${f.title}: ${f.text} (${f.proof})`);
+  for (const f of site.functions) push(`- ${f.title}: ${f.text}`);
   push("");
 
   push("## Experience");

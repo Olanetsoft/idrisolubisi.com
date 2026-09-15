@@ -6,13 +6,7 @@ export function Speaking() {
     <section className="section" id="speaking" aria-labelledby="speaking-title">
       <div className="container">
         <div className="section-head">
-          <div>
-            <h2 id="speaking-title">Speaking</h2>
-            <p className="section-intro">
-              Keynotes, talks and workshops on developer tooling, zero-knowledge, cross-chain
-              development and developer communities.
-            </p>
-          </div>
+          <h2 id="speaking-title">Speaking</h2>
           <a className="see-all" href={site.links.sessionize}>
             Speaker profile →
           </a>
@@ -26,7 +20,6 @@ export function Speaking() {
                 <p className="meta">
                   {t.kind} · {t.event}
                   {t.location && `, ${t.location}`}
-                  {t.note && ` · ${t.note}`}
                 </p>
               </div>
             </li>

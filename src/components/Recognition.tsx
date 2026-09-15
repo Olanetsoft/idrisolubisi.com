@@ -5,7 +5,6 @@ export function Recognition() {
     <section className="section" id="recognition" aria-labelledby="recognition-title">
       <div className="container">
         <h2 id="recognition-title">Recognition</h2>
-        <p className="section-intro">Press coverage and endorsements.</p>
         <ul className="recognition-list">
           {recognition.map((r) => (
             <li key={r.title}>

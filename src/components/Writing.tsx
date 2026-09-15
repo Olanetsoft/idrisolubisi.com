@@ -1,5 +1,5 @@
 import { site } from "@/data/site";
-import { articles, platforms, writingStats } from "@/data/writing";
+import { articles, writingStats } from "@/data/writing";
 
 export function Writing() {
   return (
@@ -9,8 +9,7 @@ export function Writing() {
           <div>
             <h2 id="writing-title">Writing</h2>
             <p className="section-intro">
-              {writingStats.tutorials} tutorials read {writingStats.reads} times across{" "}
-              {platforms.slice(0, 4).join(", ")} and others; {writingStats.monthly}.
+              {writingStats.tutorials} tutorials, read {writingStats.reads} times.
             </p>
           </div>
           <a className="see-all" href={site.links.blog}>
@@ -21,10 +20,7 @@ export function Writing() {
           {articles.map((a) => (
             <li key={a.href}>
               <a href={a.href}>{a.title}</a>
-              <span className="meta">
-                {a.outlet}
-                {a.note && ` · ${a.note}`}
-              </span>
+              <span className="meta">{a.outlet}</span>
             </li>
           ))}
         </ul>

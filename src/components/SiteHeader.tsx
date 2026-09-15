@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { site } from "@/data/site";
 import { LocalTime } from "./LocalTime";
+import { MobileMenu } from "./MobileMenu";
 import { ThemeToggle } from "./ThemeToggle";
 
 const social = [
@@ -13,7 +14,7 @@ const social = [
 
 /**
  * Fixed sidebar on wide screens (sections, then profiles, then local time);
- * a sticky top bar with a swipeable nav row below 1100px.
+ * a compact sticky bar with a Menu button below 1100px.
  */
 export function SiteHeader() {
   return (
@@ -22,7 +23,10 @@ export function SiteHeader() {
         <Link href="/" className="wordmark" aria-label={`${site.name}, home`}>
           {site.name}
         </Link>
-        <ThemeToggle />
+        <div className="header-tools">
+          <ThemeToggle />
+          <MobileMenu />
+        </div>
       </div>
       <nav className="site-nav" aria-label="Sections">
         {site.nav.map((item) => (

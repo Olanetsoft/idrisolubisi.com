@@ -4,8 +4,9 @@ export type Role = {
   /** En dash, no spaces, so the period never wraps. */
   period: string;
   location?: string;
-  /** One line: what the role was hired for and what it became. */
-  scope?: string;
+  /** The one line shown on the site. */
+  scope: string;
+  /** Detail for the CV and /llms.txt; not rendered on the page. */
   highlights: string[];
   url?: string;
 };
@@ -19,10 +20,10 @@ export const experience: Role[] = [
     location: "Remote",
     url: "https://midnight.network/",
     scope:
-      "Hired for developer relations on a zero-knowledge blockchain; owned the AI-agent developer channel and partner onboarding.",
+      "Developer relations for a zero-knowledge blockchain: the MCP server, LLM-readable docs, Midnight Academy and partner onboarding.",
     highlights: [
-      "Built and open-sourced the Midnight MCP server: 30 tools, 10,000+ npm downloads, 11,900+ tool calls served to AI coding agents, a channel that did not exist before.",
-      "Re-architected the documentation for LLM retrieval (server-side rendering, llms.txt index) so coding agents see full content instead of an app shell.",
+      "Built and open-sourced the Midnight MCP server: 30 tools, 10,000+ npm downloads, 11,900+ tool calls served to AI coding agents.",
+      "Re-architected the documentation for LLM retrieval (server-side rendering, llms.txt index).",
       "Launched Midnight Academy, a three-tier Compact and zero-knowledge curriculum: 1,576 enrolled, 1,120+ certified.",
       "Tripled the content-bounty programme to 20 published tutorials from 12 contributors by gating submissions on code that compiles.",
       "Gave strategic partners integration support end to end: code reviews, debug sessions, architecture guidance, and structured friction reports to Engineering.",
@@ -35,7 +36,7 @@ export const experience: Role[] = [
     location: "Remote",
     url: "https://www.axelar.network/",
     scope:
-      "Hired to grow the cross-chain developer community; became the technical point of contact for partners integrating Axelar.",
+      "Grew the cross-chain developer community and was the technical point of contact for partners integrating Axelar.",
     highlights: [
       "Wrote foundry-axelar-gmp-example, the reference implementation for cross-chain messaging: setup time −55%, adopted by 500+ teams.",
       "Rewrote the documentation with interactive tutorials and troubleshooting guides; usage +120%, developer satisfaction 4.8/5.",
@@ -48,7 +49,7 @@ export const experience: Role[] = [
     title: "Developer Relations Engineer",
     period: "Jul 2022–Apr 2023",
     location: "Nairobi",
-    scope: "First developer-relations hire; built the developer programme from zero.",
+    scope: "First developer-relations hire; built the developer programme from zero across 18+ universities.",
     highlights: [
       "Cut developer onboarding time by 65% with a documentation-to-production workflow.",
       "Scaled the Mara Developer Campus Club from 0 to 18+ universities and reached 30,000+ developers across Africa.",
@@ -60,6 +61,7 @@ export const experience: Role[] = [
     title: "Backend Engineer",
     period: "Dec 2021–Jul 2022",
     location: "London, remote",
+    scope: "Payments microservice on Apache Kafka serving 50,000+ users; Stripe, PayPal and bank integrations.",
     highlights: [
       "Built a multi-tenant payments microservice on Apache Kafka serving 50,000+ users across web and mobile.",
       "Improved application performance by 63% and held 99.9% uptime under high-volume traffic with monitoring and alerting.",
@@ -71,6 +73,7 @@ export const experience: Role[] = [
     title: "Backend Engineer",
     period: "Feb 2021–Dec 2021",
     location: "Dallas, remote",
+    scope: "Automated data lake and Node.js, GraphQL and Neo4j services.",
     highlights: [
       "Designed an automated data lake processing 100 GB+ a month, saving 1,000+ hours of manual retrieval a year.",
       "Improved application performance by 50% on a Node.js, GraphQL, Neo4j and Elasticsearch stack.",
@@ -81,6 +84,7 @@ export const experience: Role[] = [
     title: "Backend Developer",
     period: "2020–2021",
     location: "Lagos",
+    scope: "Led a small team on payments and internal tooling in Node.js.",
     highlights: [
       "Led a team delivering a parser script generator, a talent pool and a customer payments application on Node.js, SQL, MongoDB, Redis and RabbitMQ.",
     ],
@@ -90,6 +94,7 @@ export const experience: Role[] = [
     title: "Software Developer / Support Analyst",
     period: "Apr 2019–2020",
     location: "Lagos",
+    scope: "SharePoint and .NET solutions for MTN Nigeria, NPDC and Access Bank.",
     highlights: [
       "Automated business processes for MTN Nigeria, NPDC and Access Bank, saving 900+ hours a year.",
       "Delivered custom SharePoint and .NET Core solutions with zero data loss across deployments.",

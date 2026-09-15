@@ -15,10 +15,7 @@ export function Contact() {
       <div className="container two-col">
         <div>
           <h2 id="contact-title">Contact</h2>
-          <p className="section-intro">
-            For roles, speaking or advising: book a call, email me, or send a message here. I reply
-            to everything specific.
-          </p>
+          <p className="section-intro">For roles, speaking or advising: book a call or email me.</p>
           <p className="email-line">
             <a className="email" href={`mailto:${site.email}`}>
               {site.email}

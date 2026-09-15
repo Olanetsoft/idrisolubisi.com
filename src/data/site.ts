@@ -3,11 +3,10 @@ export const site = {
   handle: "olanetsoft",
   role: "Senior Developer Relations Engineer",
   /** Shown as a slash-separated title line under the name. */
-  disciplines: ["Developer Relations", "AI Developer Tooling", "Developer Experience", "Solutions Engineering"],
+  disciplines: ["Developer Relations", "AI Engineer", "Developer Experience", "Solutions Engineering"],
   /** Bio paragraphs. Text inside **double asterisks** is rendered bold. */
   bio: [
-    "I own the surface between an infrastructure product and the developers who build on it, and increasingly **their AI agents**. At Midnight I built the open-source **Midnight MCP server** (10,000+ downloads, 11,900+ AI-agent tool calls), re-architected the documentation for LLM retrieval and launched Midnight Academy. Before that I led developer relations at **Axelar** for a global cross-chain developer community, and spent three years as a **backend engineer** on payments and data systems.",
-    "I founded **Web3 Afrika**, a community of 15,000+ builders across Africa, and my tutorials on freeCodeCamp and elsewhere have been read **more than ten million times**.",
+    "I own the surface between an infrastructure product and the developers who build on it, and increasingly **their AI agents**. Seven years across backend engineering and developer relations, most recently at **Midnight** and **Axelar**; founder of **Web3 Afrika**, a community of 15,000+ builders. I am most satisfied when a developer I helped ships to production.",
   ],
   title: "Idris Olubisi — Senior Developer Relations Engineer",
   /** Under 160 characters, for the search snippet. The long description feeds social cards and structured data. */
@@ -19,44 +18,40 @@ export const site = {
   location: "London, United Kingdom",
   email: "heedris2olubisi@gmail.com",
   bookingUrl: "https://calendar.app.google/An4ZtvZHjhSTGrgeA",
-  status: "London · open to remote or hybrid · UK Global Talent visa, no sponsorship needed",
+  status: "London · remote or hybrid · UK Global Talent visa",
   availability:
-    "Open to senior developer relations, developer advocacy, developer experience, developer success, forward-deployed engineering and AI-tooling roles. Available now.",
+    "Open to senior DevRel, developer experience, developer success, forward-deployed and AI engineering roles. Available now.",
   resumeUrl: "/Idris-Olubisi-CV-2026.pdf",
   gaId: "G-7MMFT1BXJV",
   photoCredit: "Awesomeness by Oye",
   /** Eight cells. Every figure is a real count; the source is in the label or the note. */
   numbers: [
-    { value: "7", label: "Years in software, three of them in developer relations" },
-    { value: "11,900+", label: "AI-agent tool calls served by the Midnight MCP server" },
-    { value: "10,000+", label: "MCP server downloads on npm" },
-    { value: "15,000+", label: "Builders in Web3 Afrika, the community I founded" },
-    { value: "10M+", label: "Reads of my tutorials across freeCodeCamp and other platforms" },
-    { value: "100,000+", label: "Developers engaged through Axelar programmes and events" },
-    { value: "2,300+", label: "GitHub stars across my repositories" },
-    { value: "3,600+", label: "GitHub contributions in the last twelve months" },
+    { value: "7", label: "Years in software" },
+    { value: "11,900+", label: "AI-agent tool calls served" },
+    { value: "10,000+", label: "MCP server downloads" },
+    { value: "15,000+", label: "Web3 Afrika builders" },
+    { value: "10M+", label: "Tutorial reads" },
+    { value: "100,000+", label: "Developers engaged at Axelar" },
+    { value: "2,300+", label: "GitHub stars" },
+    { value: "3,600+", label: "GitHub contributions, past year" },
   ],
-  /** What I actually do. One sentence and one proof line each. */
+  /** What I actually do. One sentence each. */
   functions: [
     {
       title: "Developer relations",
-      text: "Own the developer journey for an infrastructure product: docs, examples, programmes and the feedback loop back into Product and Engineering.",
-      proof: "100,000+ developers engaged at Axelar · 4.8/5 developer satisfaction · docs usage +120%",
+      text: "Docs, examples, programmes and the feedback loop from developers back into Product and Engineering.",
     },
     {
-      title: "AI developer tooling",
-      text: "Build the tooling that lets AI coding agents work with a new platform: MCP servers, LLM-readable docs and llms.txt, verified examples.",
-      proof: "Midnight MCP server: 30 tools, 10,000+ downloads, 11,900+ agent tool calls",
+      title: "AI engineering",
+      text: "MCP servers, LLM-readable documentation and the tooling that lets AI coding agents build on a new platform.",
     },
     {
       title: "Documentation and education",
-      text: "Write the tutorial that unblocks the developer, then the curriculum that turns readers into certified builders.",
-      proof: "Midnight Academy: 1,576 enrolled, 1,120+ certified · tutorials read 10M+ times",
+      text: "Tutorials that unblock developers, and curricula that turn readers into certified builders.",
     },
     {
       title: "Partner and solutions engineering",
-      text: "Sit with a partner team on the integration call, validate the architecture, review the code, and turn what blocks them into a report Engineering can act on.",
-      proof: "Reference implementation adopted by 500+ teams · cross-chain setup time −55%",
+      text: "Integration calls, architecture reviews and code reviews with partner teams, through to launch.",
     },
   ],
   links: {

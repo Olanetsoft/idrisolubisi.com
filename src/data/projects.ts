@@ -16,17 +16,16 @@ export const projects: Project[] = [
   {
     name: "midnight-mcp",
     description:
-      "Open-source MCP server for the Midnight blockchain: search contracts, compile Compact, read the docs from inside Claude, Cursor or Copilot. 10,000+ downloads on npm.",
+      "MCP server that lets Claude, Cursor and Copilot search contracts, compile Compact and read the Midnight docs.",
     href: "https://github.com/Olanetsoft/midnight-mcp",
     stars: 37,
     kind: "open-source",
-    status:
-      "Being wound down in favour of Midnight’s official Kapa MCP and Midnight Expert; the package still installs and every tool carries the migration notice.",
+    status: "Superseded by Midnight’s official Kapa MCP and Midnight Expert.",
   },
   {
     name: "foundry-axelar-gmp-example",
     description:
-      "Cross-chain general-message-passing reference implementation in Foundry and Solidity; cut dApp setup time 55% and was adopted by 500+ developers.",
+      "Reference implementation for cross-chain messaging on Axelar, adopted by 500+ teams.",
     href: "https://github.com/axelarnetwork/foundry-axelar-gmp-example",
     stars: 13,
     kind: "open-source",
@@ -35,14 +34,14 @@ export const projects: Project[] = [
   {
     name: "GiftDice",
     description:
-      "Consumer gift-exchange product with 3,000+ users across 20+ countries: Stripe payments, AI features, real-time multiplayer quizzes, PWA and push notifications. Built and maintained solo.",
+      "Gift-exchange product with 3,000+ users in 20+ countries, built and run solo.",
     href: "https://giftdice.com/",
     kind: "product",
   },
   {
     name: "SwoopAgent",
     description:
-      "Self-hosted, multi-tenant autonomous AI-agent platform on Base with embedded wallets, on-chain swaps and Stripe billing. Engineered for money-movement correctness: atomic execution, idempotency keys, rate limiting and an independent circuit breaker. Live with real users.",
+      "Multi-tenant AI-agent platform on Base with embedded wallets, on-chain swaps and Stripe billing.",
     kind: "product",
     note: "walkthrough on request",
   },
