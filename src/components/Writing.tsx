@@ -7,7 +7,7 @@ export function Writing() {
       <div className="container">
         <div className="section-head">
           <div>
-            <h2 id="writing-title">Writing</h2>
+            <h2 id="writing-title">Selected writing</h2>
             <p className="section-intro">
               {writingStats.tutorials} tutorials, read {writingStats.reads} times.
             </p>

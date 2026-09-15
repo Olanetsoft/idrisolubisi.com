@@ -32,8 +32,6 @@ export const site = {
     { value: "15,000+", label: "Web3 Afrika builders" },
     { value: "10M+", label: "Tutorial reads" },
     { value: "100,000+", label: "Developers engaged at Axelar" },
-    { value: "2,300+", label: "GitHub stars" },
-    { value: "3,600+", label: "GitHub contributions, past year" },
   ],
   /** What I actually do. One sentence each. */
   functions: [

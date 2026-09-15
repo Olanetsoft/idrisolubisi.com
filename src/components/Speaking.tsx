@@ -5,12 +5,11 @@ export function Speaking() {
   return (
     <section className="section" id="speaking" aria-labelledby="speaking-title">
       <div className="container">
-        <div className="section-head">
-          <h2 id="speaking-title">Speaking</h2>
-          <a className="see-all" href={site.links.sessionize}>
-            Speaker profile →
-          </a>
-        </div>
+        <h2 id="speaking-title">Selected speaking</h2>
+        <p className="section-intro">
+          Recordings on <a href={site.links.youtube}>YouTube</a>; full list on{" "}
+          <a href={site.links.sessionize}>Sessionize</a>.
+        </p>
         <ol className="talk-list">
           {talks.map((t) => (
             <li key={`${t.event}-${t.title}`}>
@@ -25,9 +24,6 @@ export function Speaking() {
             </li>
           ))}
         </ol>
-        <p className="after">
-          Recordings on <a href={site.links.youtube}>YouTube</a>.
-        </p>
       </div>
     </section>
   );

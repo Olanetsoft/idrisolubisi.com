@@ -49,7 +49,7 @@ export function renderLlmsTxt(): string {
   }
   push(`- Education: ${education.degree}, ${education.school}, ${education.year}`);
   push(`- Community: ${community.map((c) => `${c.role}, ${c.org}`).join("; ")}`);
-  push(`- Stack: ${stack.join(", ")}`);
+  for (const g of stack) push(`- ${g.label}: ${g.items.join(", ")}`);
   push("");
 
   push("## Projects");

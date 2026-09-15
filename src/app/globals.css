@@ -503,7 +503,7 @@ strong {
 }
 .numbers {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: clamp(2.5rem, 5vw, 3.5rem);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -517,10 +517,10 @@ strong {
   border-right: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
-.numbers li:nth-child(4n) {
+.numbers li:nth-child(3n) {
   border-right: 0;
 }
-.numbers li:nth-last-child(-n + 4) {
+.numbers li:nth-last-child(-n + 3) {
   border-bottom: 0;
 }
 .numbers .value {
@@ -552,13 +552,13 @@ strong {
   .numbers {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .numbers li:nth-child(4n) {
+  .numbers li:nth-child(3n) {
     border-right: 1px solid var(--border);
   }
   .numbers li:nth-child(2n) {
     border-right: 0;
   }
-  .numbers li:nth-last-child(-n + 4) {
+  .numbers li:nth-last-child(-n + 3) {
     border-bottom: 1px solid var(--border);
   }
   .numbers li:nth-last-child(-n + 2) {
@@ -656,9 +656,15 @@ strong {
 .role-item {
   display: grid;
   grid-template-columns: 160px minmax(0, 1fr);
-  gap: 0.35rem 1.5rem;
-  padding-block: 1.1rem;
+  gap: 0.2rem 1.5rem;
+  padding-block: 0.9rem;
   border-top: 1px solid var(--border);
+}
+.role-item h3 {
+  font-weight: 500;
+}
+.role-item h3 a {
+  font-weight: 600;
 }
 .role-title {
   font-weight: 400;
@@ -780,12 +786,15 @@ strong {
 .recognition-list {
   margin-top: 1.5rem;
 }
-.talk-list li,
-.recognition-list li {
+.talk-list li {
   display: grid;
   grid-template-columns: 160px minmax(0, 1fr);
   gap: 0.25rem 1.5rem;
   padding-block: 1rem;
+  border-top: 1px solid var(--border);
+}
+.recognition-list li {
+  padding-block: 0.9rem;
   border-top: 1px solid var(--border);
 }
 .talk-list h3,
@@ -799,8 +808,7 @@ strong {
   margin-top: 0.2rem;
 }
 @media (max-width: 600px) {
-  .talk-list li,
-  .recognition-list li {
+  .talk-list li {
     grid-template-columns: 1fr;
   }
 }

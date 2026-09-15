@@ -8,14 +8,11 @@ export function Recognition() {
         <ul className="recognition-list">
           {recognition.map((r) => (
             <li key={r.title}>
-              <p className="period">{r.date}</p>
-              <div>
-                <p className="recognition-title">{r.href ? <a href={r.href}>{r.title}</a> : r.title}</p>
-                <p className="meta">
-                  {r.by}
-                  {r.note && ` · ${r.note}`}
-                </p>
-              </div>
+              <p className="recognition-title">{r.href ? <a href={r.href}>{r.title}</a> : r.title}</p>
+              <p className="meta">
+                {r.by}
+                {r.note && ` · ${r.note}`}
+              </p>
             </li>
           ))}
         </ul>

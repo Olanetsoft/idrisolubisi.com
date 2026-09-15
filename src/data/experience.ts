@@ -115,14 +115,24 @@ export const community = [
 ];
 
 export const stack = [
-  "TypeScript",
-  "Node.js",
-  "Python",
-  "Solidity and Foundry",
-  "Compact and zero-knowledge circuits",
-  "MCP servers and agent tooling",
-  "Docs-as-code and llms.txt",
-  "PostgreSQL",
-  "Kafka",
-  "Docker",
+  {
+    label: "Languages and frameworks",
+    items: ["TypeScript", "JavaScript", "Node.js", "React", "Next.js", "Vue.js", "Express"],
+  },
+  {
+    label: "Web3",
+    items: ["Solidity", "Rust", "Foundry", "Ethers.js", "Compact and zero-knowledge circuits", "cross-chain messaging"],
+  },
+  {
+    label: "AI",
+    items: ["MCP servers", "Claude and OpenAI APIs", "LangChain", "RAG", "prompt engineering", "n8n"],
+  },
+  {
+    label: "Data and infrastructure",
+    items: ["PostgreSQL", "MongoDB", "GraphQL", "Redis", "RabbitMQ", "Kafka", "Elasticsearch", "Docker", "GCP", "Azure", "Linux"],
+  },
+  {
+    label: "Developer relations",
+    items: ["Docusaurus", "docs-as-code", "llms.txt", "Postman", "Discord and Slack community management", "Google Analytics"],
+  },
 ];
