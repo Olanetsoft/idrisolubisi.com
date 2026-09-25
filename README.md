@@ -13,6 +13,7 @@ npm run build       # production build
 npm run lint
 npm run typecheck
 npm run format
+npm run cv          # refresh the CV PDF from the Google Doc
 ```
 
 Requires Node 22 (see `.nvmrc`). Node 20.9 or later also works.
@@ -34,7 +35,7 @@ Requires Node 22 (see `.nvmrc`). Node 20.9 or later also works.
 | Social preview image                                            | `src/app/opengraph-image.tsx`                                                                                    |
 | Favicon and home-screen icons                                   | `src/app/icon.svg`, `favicon.ico`, `apple-icon.png`, `manifest.ts`; `public/icon-192.png`, `public/icon-512.png` |
 | Sitemap and robots                                              | `src/app/sitemap.ts`, `src/app/robots.ts`                                                                        |
-| CV (Google Doc link)                                            | `resumeUrl` in `src/data/site.ts`                                                                                |
+| CV PDF (refresh with `npm run cv`)                              | `public/Idris-Olubisi-CV.pdf`                                                                                    |
 | Portrait                                                        | `public/images/idris-portrait.jpg`                                                                               |
 | Archived 2020 post, served at `/how-to-create-react-app`        | `src/content/how-to-create-react-app.ts`                                                                         |
 

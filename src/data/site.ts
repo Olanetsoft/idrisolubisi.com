@@ -2,7 +2,7 @@ export const site = {
   name: "Idris Olubisi",
   handle: "olanetsoft",
   role: "Senior Developer Relations Engineer",
-  /** Shown as a slash-separated title line under the name. */
+  /** Used in /llms.txt and structured data; the page shows `role` as the headline. */
   disciplines: [
     "Developer Relations",
     "AI Engineer",
@@ -11,39 +11,40 @@ export const site = {
   ],
   /** Bio paragraphs, plain prose; [label](url) renders as a link. */
   bio: [
-    "I own the surface between an infrastructure product and the developers who build on it, and increasingly their AI agents. Seven years across backend engineering and developer relations, most recently at Midnight and Axelar; founder of [Web3 Afrika](https://web3afrika.com/). I am most satisfied when a developer I helped ships to production.",
+    "I help developers succeed on technical products. I build the tools, guides, and programs that take an engineer from first look to production, and I’ve done it for developer platforms in AI and blockchain since 2019. Most recently at Midnight and Axelar. Founder of [Web3 Afrika](https://web3afrika.com/), a developer community.",
   ],
-  title: "Idris Olubisi — Senior Developer Relations Engineer",
+  title: "Idris Olubisi, Senior Developer Relations Engineer",
   /** Under 160 characters, for the search snippet. The long description feeds social cards and structured data. */
   metaDescription:
-    "Senior Developer Relations Engineer, London. Built the Midnight MCP server, led DevRel at Axelar, founded Web3 Afrika. Open to senior DevRel, DX and AI roles.",
+    "Senior Developer Relations Engineer in London. I help developers succeed on technical products, most recently at Midnight and Axelar. Available now.",
   description:
-    "Idris Olubisi is a Senior Developer Relations Engineer in London. Built the open-source Midnight MCP server (10,000+ downloads, 11,900+ AI-agent tool calls), led cross-chain developer relations at Axelar, founded Web3 Afrika (15,000+ builders), freeCodeCamp author read 10M+ times.",
+    "Idris Olubisi is a Senior Developer Relations Engineer in London who helps developers succeed on technical products: the tools, guides and programs that take an engineer from first look to production, for developer platforms in AI and blockchain since 2019. Most recently at Midnight and Axelar. Founder of Web3 Afrika, a developer community.",
   url: "https://idrisolubisi.com",
   email: "heedris2olubisi@gmail.com",
   bookingUrl: "https://calendar.app.google/An4ZtvZHjhSTGrgeA",
   status: "UK Global Talent",
   availability:
-    "Open to senior DevRel, developer experience, developer success, forward-deployed and AI engineering roles. Available now.",
-  resumeUrl: "https://docs.google.com/document/d/1dcUOmgfnAsRihGTNqbpKRo_2-zF8boUz/edit",
+    "Open to developer relations, developer experience, developer support, solutions engineering, and AI engineering roles. Available now.",
+  /** View-only PDF, refreshed from the Google Doc with `npm run cv`. */
+  resumeUrl: "/Idris-Olubisi-CV.pdf",
   gaId: "G-7MMFT1BXJV",
   /** What I actually do. One sentence each. */
   functions: [
     {
       title: "Developer relations",
-      text: "Docs, examples, programmes and the feedback loop from developers back into Product and Engineering.",
+      text: "Help developers understand and adopt a product, and bring their feedback back to the product and engineering teams.",
     },
     {
-      title: "AI engineering",
-      text: "AI agents and harness engineering, agentic commerce, MCP servers, LLM-readable documentation and end-to-end AI solutions for developers and their agents.",
+      title: "Developer tools and AI",
+      text: "Build tools that make a product easier to use, including AI-powered tools and ones that run AI models locally.",
     },
     {
       title: "Documentation and education",
-      text: "Tutorials that unblock developers, and curricula that turn readers into certified builders.",
+      text: "Write guides and build courses that turn readers into working builders.",
     },
     {
-      title: "Partner engineering and solution architecture",
-      text: "Solution design and technical blueprints, integration calls, architecture and code reviews with partner teams, through to launch.",
+      title: "Partner and solutions engineering",
+      text: "Work directly with partner teams on design, integration, and code review, through to launch.",
     },
   ],
   links: {

@@ -3,13 +3,19 @@ export type Talk = {
   title: string;
   year: string;
   location?: string;
-  kind: "Keynote" | "Talk" | "Workshop" | "Fireside chat" | "Host";
+  kind: "Keynote" | "Talk" | "Workshop" | "Fireside chat" | "Host" | "Lecture";
   href?: string;
   note?: string;
 };
 
-/** Ordered by strength, keynote first. Rows without a title, year and link do not ship. */
+/** Newest first. Rows ship only with a confirmed title and year. */
 export const talks: Talk[] = [
+  {
+    event: "University of Zurich International Summer School",
+    title: "Guest lecture on Midnight",
+    year: "2026",
+    kind: "Lecture",
+  },
   {
     event: "Blockfest Africa 2025",
     title: "Beyond H-1B: Building Global Tech Careers from Africa",

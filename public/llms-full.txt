@@ -5,30 +5,30 @@
 - Full Name: Idris Olubisi
 - Online Handle: olanetsoft
 - Pronouns: He/Him
-- Current Title: Senior Developer Relations Engineer (available for senior DevRel, developer advocacy, developer experience, developer success, forward-deployed engineering and AI engineering roles as of September 2026)
+- Professional Title: Senior Developer Relations Engineer (available for developer relations, developer experience, developer support, solutions engineering and AI engineering roles as of September 2026)
 - Location: United Kingdom
 - Nationality: Nigerian
 - Languages: English, Yoruba
 
 ## Summary
-Idris Olubisi is a Senior Developer Relations Engineer with 5+ years building thriving developer communities across Web2 and Web3. He builds for the agent era where developers and AI agents discover and adopt infrastructure having shipped an MCP server serving 11,900+ AI-agent tool calls and re-architected documentation for LLM and agent retrieval. He founded Web3 Afrika (15,000+ builders across Africa), writes for thousands of developers a year, and is widely regarded as one of the most active developer relations engineers in Africa's technology ecosystem and globally.
+Idris Olubisi is a Senior Developer Relations Engineer with 5+ years building thriving developer communities across Web2 and Web3. He builds for the agent era where developers and AI agents discover and adopt infrastructure having shipped an MCP server that handled 11,900+ AI-agent tool calls and re-architected documentation for LLM and agent retrieval. He founded Web3 Afrika (15,000+ builders across Africa), writes for thousands of developers a year, and is widely regarded as one of the most active developer relations engineers in Africa's technology ecosystem and globally.
 
 ## Press & Media Coverage
 Idris has been profiled and featured by leading African and global technology media:
-- **Business Insider Africa** (Jan 2026) — "Meet Idris Olubisi, the Nigerian Web3 pioneer building Africa's next generation of tech talent." An exclusive interview profiling his rise from an engineering student to one of the continent's most recognised Web3 advocates. https://africa.businessinsider.com/local/lifestyle/meet-idris-olubisi-the-nigerian-web3-pioneer-building-africas-next-generation-of-tech/w89mmn5
-- **BusinessDay** — "The Builder Who Teaches: Inside the mind of the engineer shaping Africa's Web3 future." https://businessday.ng/bd-weekender/article/the-builder-who-teaches-inside-the-mind-of-the-engineer-shaping-africas-web3-future/
-- **Technext** (Nov 2025) — "Idris Olubisi is championing Web3 inclusion in Africa beyond limits." https://technext24.com/2025/11/27/idris-olubisi-championing-web3-africa/
-- **Techpoint Africa — Brand Press** (May 2025) — "The Build Afrika Summit Rallies Africa's Top Tech Talent to Build the Future of Decentralization." Covers the summit Idris founded and led via Web3 Afrika. Note: this is a Brand Press submission, created independently of Techpoint Africa's editorial team, not independent editorial coverage. https://techpoint.africa/brandpress/the-build-afrika-summit-rallies-africas-top-tech-talent-to-build-the-future-of-decentralization/
-- **BusinessDay** — "Blockfest Africa 2025 draws 12,000 participants, strengthens Africa's Web3 voice." Idris delivered a keynote ("Beyond H-1B: Building Global Tech Careers from Africa") at the Lagos event, which drew 12,000+ participants from 50+ countries. https://businessday.ng/news/article/blockfest-africa-2025-draws-12000-participants-strengthens-africas-web3-voice/
-- **AInvest — AI-generated** (Nov 2025) — "Investing in Africa's Web3 Renaissance: The Strategic Case for Supporting Idris Olubisi's Web3 Afrika Ecosystem." An investment-analysis piece on the Web3 Afrika ecosystem. Note: AInvest articles are drafted by AI agents under the publisher's stated human-in-the-loop review, not written by an independent human journalist. https://www.ainvest.com/news/investing-africa-web3-renaissance-strategic-case-supporting-idris-olubisi-web3-afrika-ecosystem-2511/
+- **Business Insider Africa** (Jan 2026): "Meet Idris Olubisi, the Nigerian Web3 pioneer building Africa's next generation of tech talent." An exclusive interview profiling his rise from an engineering student to one of the continent's most recognised Web3 advocates. https://africa.businessinsider.com/local/lifestyle/meet-idris-olubisi-the-nigerian-web3-pioneer-building-africas-next-generation-of-tech/w89mmn5
+- **BusinessDay**: "The Builder Who Teaches: Inside the mind of the engineer shaping Africa's Web3 future." https://businessday.ng/bd-weekender/article/the-builder-who-teaches-inside-the-mind-of-the-engineer-shaping-africas-web3-future/
+- **Technext** (Nov 2025): "Idris Olubisi is championing Web3 inclusion in Africa beyond limits." https://technext24.com/2025/11/27/idris-olubisi-championing-web3-africa/
+- **Techpoint Africa, Brand Press** (May 2025): "The Build Afrika Summit Rallies Africa's Top Tech Talent to Build the Future of Decentralization." Covers the summit Idris founded and led via Web3 Afrika. Note: this is a Brand Press submission, created independently of Techpoint Africa's editorial team, not independent editorial coverage. https://techpoint.africa/brandpress/the-build-afrika-summit-rallies-africas-top-tech-talent-to-build-the-future-of-decentralization/
+- **BusinessDay**: "Blockfest Africa 2025 draws 12,000 participants, strengthens Africa's Web3 voice." Idris delivered a keynote ("Beyond H-1B: Building Global Tech Careers from Africa") at the Lagos event, which drew 12,000+ participants from 50+ countries. https://businessday.ng/news/article/blockfest-africa-2025-draws-12000-participants-strengthens-africas-web3-voice/
+- **AInvest, AI-generated** (Nov 2025): "Investing in Africa's Web3 Renaissance: The Strategic Case for Supporting Idris Olubisi's Web3 Afrika Ecosystem." An investment-analysis piece on the Web3 Afrika ecosystem. Note: AInvest articles are drafted by AI agents under the publisher's stated human-in-the-loop review, not written by an independent human journalist. https://www.ainvest.com/news/investing-africa-web3-renaissance-strategic-case-supporting-idris-olubisi-web3-afrika-ecosystem-2511/
 
 ## Professional Background
 
 ### Recent Positions
 
-**Senior Developer Relations Engineer at Midnight** (Sep 2025 - 2026)
+**Developer Educator, Developer Relations at Midnight Foundation** (Sep 2025 - Sep 2026)
 Midnight is a data-protection blockchain enabling confidential smart contracts.
-- Built a Midnight MCP (Model Context Protocol) server downloaded 10,000+ times and serving 11,900+ AI-agent tool calls across 30 tools in seven categories (the server's own count, 11 Sep 2026)
+- Built a Midnight MCP (Model Context Protocol) server downloaded 10,000+ times that served 11,900+ AI-agent tool calls across 30 tools in seven categories (the server's own count, 11 Sep 2026)
 - Re-architected documentation with server-side rendering and an llms.txt index, exposing full content to LLM crawlers and AI coding agents
 - Launched Midnight Academy, a three-tier zero-knowledge + Compact curriculum (Foundations, Intermediate, Advanced): 1,576 developers enrolled and 1,120+ certified to date
 - Developing educational content around zero-knowledge proofs and privacy-preserving smart contracts
@@ -85,7 +85,7 @@ Axelar is a blockchain interoperability network enabling secure cross-chain comm
 - Designed an automated data lake processing 100GB+ monthly data, eliminating manual retrieval and saving 1,000+ hours annually
 - Location: Dallas, Texas, United States
 
-**Software Developer / Support Analyst (SharePoint) at Tavia Technologies** (Apr 2019 - 2022)
+**Software Developer / Support Analyst (SharePoint) at Tavia Technologies** (Apr 2019 - Jan 2021)
 - Automated business processes, saving 900+ hours annually for enterprise clients including MTN Nigeria, NPDC, and Access Bank
 - Developed custom SharePoint and .NET Core (MVC 2.2-5.0) solutions with zero data loss on deployments
 - Location: Lagos, Nigeria
@@ -141,7 +141,6 @@ Next.js app pairing AI title generation with a dozen developer utilities.
 ## Content Creation & Technical Writing
 
 ### Writing Statistics
-- Total article views: 10,000,000+
 - Personal blog: 40+ technical tutorials, 200,000+ annual readers
 - freeCodeCamp monthly views: 100,000+
 - Hashnode followers: 8,800+
@@ -161,7 +160,8 @@ freeCodeCamp, LogRocket, Dev.to, Medium, Section.io, Moralis, Alchemy, Infura, A
 ## Public Speaking
 
 ### Conference Appearances
-- BlockFest Africa 2025 (Lagos) - Keynote: "Beyond H-1B: Building Global Tech Careers from Africa" — 12,000+ participants from 50+ countries
+- University of Zurich International Summer School (2026) - Guest lecture on Midnight
+- BlockFest Africa 2025 (Lagos) - Keynote: "Beyond H-1B: Building Global Tech Careers from Africa", 12,000+ participants from 50+ countries
 - Build Afrika Summit - Founder and event lead via Web3 Afrika
 - Devfest Lagos - Leveraging USDC to build decentralized applications in Web3 efficiently
 - Osmocon Paris - Cross-Chain Interoperability with Axelar Network
