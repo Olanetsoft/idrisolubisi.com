@@ -82,19 +82,9 @@ export const experience: Role[] = [
     ],
   },
   {
-    company: "Hotels.ng",
-    title: "Backend Developer",
-    period: "2020–2021",
-    location: "Lagos",
-    scope: "Led a small team on payments and internal tooling in Node.js.",
-    highlights: [
-      "Led a team delivering a parser script generator, a talent pool and a customer payments application on Node.js, SQL, MongoDB, Redis and RabbitMQ.",
-    ],
-  },
-  {
     company: "Tavia Technologies",
     title: "Software Developer / Support Analyst",
-    period: "Apr 2019–2020",
+    period: "Apr 2019–2022",
     location: "Lagos",
     scope: "SharePoint and .NET solutions for MTN Nigeria, NPDC and Access Bank.",
     highlights: [
