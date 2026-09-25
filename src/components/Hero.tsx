@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { site } from "@/data/site";
+import { RichText } from "./RichText";
 
 export function Hero() {
   return (
@@ -23,7 +24,7 @@ export function Hero() {
             </p>
             {site.bio.map((p) => (
               <p className="bio" key={p}>
-                {p}
+                <RichText text={p} />
               </p>
             ))}
             <p className="availability">{site.availability}</p>
