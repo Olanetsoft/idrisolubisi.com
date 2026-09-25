@@ -544,16 +544,11 @@ figure {
   padding-top: 0.6rem;
 }
 .interest-list li {
-  display: flex;
-  flex-direction: column;
   padding-block: 0.55rem;
   border-top: 1px solid var(--line);
 }
 .interest-list li:nth-child(-n + 2) {
   border-top: 0;
-}
-.interest-list a {
-  font-weight: 600;
 }
 @media (max-width: 760px) {
   .interest-list {

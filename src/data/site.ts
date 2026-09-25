@@ -23,7 +23,6 @@ export const site = {
     "Open to senior DevRel, developer experience, developer success, forward-deployed and AI engineering roles. Available now.",
   resumeUrl: "/Idris-Olubisi-CV-2026.pdf",
   gaId: "G-7MMFT1BXJV",
-  photoCredit: "Awesomeness by Oye",
   /** What I actually do. One sentence each. */
   functions: [
     {

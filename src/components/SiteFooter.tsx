@@ -6,7 +6,7 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="container">
         <p>
-          © {year} {site.name} · Portrait by {site.photoCredit} · <a href="/llms.txt">llms.txt</a>
+          © {year} {site.name} · <a href="/llms.txt">llms.txt</a>
         </p>
       </div>
     </footer>

@@ -1,5 +1,5 @@
 import { community, education, experience, stack } from "@/data/experience";
-import { domain, interests } from "@/data/interests";
+import { interests } from "@/data/interests";
 import { projects, starsFetchedAt } from "@/data/projects";
 import { recognition } from "@/data/recognition";
 import { site } from "@/data/site";
@@ -48,7 +48,7 @@ export function renderLlmsTxt(): string {
 
   push("## Current tech interests");
   push("");
-  for (const i of interests) push(`- ${i.name} - ${domain(i.url)}`);
+  for (const name of interests) push(`- ${name}`);
   push("");
 
   push("## Open source and products");
