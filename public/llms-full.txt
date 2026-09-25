@@ -85,17 +85,10 @@ Axelar is a blockchain interoperability network enabling secure cross-chain comm
 - Designed an automated data lake processing 100GB+ monthly data, eliminating manual retrieval and saving 1,000+ hours annually
 - Location: Dallas, Texas, United States
 
-**Backend Developer at Hotels.ng** (May 2020 - Jan 2021)
-- Integrated backend functionality using Node.js, SQL, MongoDB, Redis, RabbitMQ, CronJobs
-- Led a team delivering a parser script generator, talent pool, and customer payment application
-- Location: Lagos, Nigeria
-
-**Software Developer / Support Analyst (SharePoint) at Tavia Technologies** (Apr 2019 - Apr 2020)
+**Software Developer / Support Analyst (SharePoint) at Tavia Technologies** (Apr 2019 - 2022)
 - Automated business processes, saving 900+ hours annually for enterprise clients including MTN Nigeria, NPDC, and Access Bank
 - Developed custom SharePoint and .NET Core (MVC 2.2-5.0) solutions with zero data loss on deployments
 - Location: Lagos, Nigeria
-
-Note on employment dates: some public sources list overlapping/rounded ranges for the 2019-2021 Tavia and Hotels.ng roles; the ranges above are the non-overlapping version.
 
 ## Selected Projects
 
