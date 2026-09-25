@@ -65,8 +65,8 @@ export default async function OpenGraphImage() {
             lineHeight: 1.35,
           }}
         >
-          {site.disciplines.join(" / ")}. Built the open-source Midnight MCP server; founder of Web3
-          Afrika; freeCodeCamp author read 10M+ times.
+          I help developers succeed on technical products. Most recently at Midnight and Axelar.
+          Founder of Web3 Afrika, a developer community.
         </div>
       </div>
       <div

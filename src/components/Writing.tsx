@@ -8,7 +8,7 @@ export function Writing() {
         <div className="section-head">
           <h2 id="writing-title">Selected writing</h2>
           <p className="section-intro">
-            {writingStats.tutorials} tutorials, read {writingStats.reads} times.
+            {writingStats.tutorials} tutorials, read by {writingStats.readers}.
           </p>
         </div>
         <div className="box">

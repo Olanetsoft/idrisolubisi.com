@@ -4,26 +4,25 @@ export type Role = {
   /** En dash, no spaces, so the period never wraps. */
   period: string;
   location?: string;
-  /** The one line shown on the site. */
+  /** Summary for /llms.txt; not rendered on the page. */
   scope: string;
   /** Detail for the CV and /llms.txt; not rendered on the page. */
   highlights: string[];
   url?: string;
 };
 
-// NOTE: confirm the exact end month of the Midnight role before publishing.
 export const experience: Role[] = [
   {
-    company: "Midnight",
-    title: "Senior Developer Relations Engineer",
-    period: "Sep 2025–2026",
+    company: "Midnight Foundation",
+    title: "Developer Educator, Developer Relations",
+    period: "Sep 2025–Sep 2026",
     location: "Remote",
     url: "https://midnight.network/",
     scope:
-      "Developer relations for a zero-knowledge blockchain: the MCP server, LLM-readable docs, Midnight Academy and partner onboarding.",
+      "Developer relations for a zero-knowledge blockchain: the MCP server, docs that AI tools can read, Midnight Academy and partner onboarding.",
     highlights: [
       "Built and open-sourced the Midnight MCP server: 30 tools, 10,000+ npm downloads, 11,900+ tool calls served to AI coding agents.",
-      "Re-architected the documentation for LLM retrieval (server-side rendering, llms.txt index).",
+      "Rebuilt the documentation so AI tools can read it (server-side rendering, llms.txt index).",
       "Launched Midnight Academy, a three-tier Compact and zero-knowledge curriculum: 1,576 enrolled, 1,120+ certified.",
       "Tripled the content-bounty programme to 20 published tutorials from 12 contributors by gating submissions on code that compiles.",
       "Gave strategic partners integration support end to end: code reviews, debug sessions, architecture guidance, and structured friction reports to Engineering.",
@@ -84,7 +83,7 @@ export const experience: Role[] = [
   {
     company: "Tavia Technologies",
     title: "Software Developer / Support Analyst",
-    period: "Apr 2019–2022",
+    period: "Apr 2019–Jan 2021",
     location: "Lagos",
     scope: "SharePoint and .NET solutions for MTN Nigeria, NPDC and Access Bank.",
     highlights: [

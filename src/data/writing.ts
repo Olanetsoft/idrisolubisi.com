@@ -53,6 +53,6 @@ export const platforms = [
 
 export const writingStats = {
   tutorials: "40+",
-  reads: "10M+",
-  monthly: "100,000+ a month on freeCodeCamp",
+  /** Matches the CV. */
+  readers: "200,000+ developers a year",
 };

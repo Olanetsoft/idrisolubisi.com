@@ -38,7 +38,7 @@ export function renderLlmsTxt(): string {
   push("");
   for (const r of experience) {
     push(
-      `- ${r.title}, ${r.company} (${r.period}${r.location ? `, ${r.location}` : ""})${r.url ? ` - ${r.url}` : ""}`,
+      `- ${r.title} at ${r.company} (${r.period}${r.location ? `, ${r.location}` : ""})${r.url ? ` - ${r.url}` : ""}`,
     );
     if (r.scope) push(`  Scope: ${r.scope}`);
     for (const h of r.highlights) push(`  - ${h}`);
@@ -73,9 +73,7 @@ export function renderLlmsTxt(): string {
 
   push("## Writing");
   push("");
-  push(
-    `${writingStats.tutorials} tutorials read ${writingStats.reads} times; ${writingStats.monthly}.`,
-  );
+  push(`${writingStats.tutorials} tutorials, read by ${writingStats.readers}.`);
   for (const a of articles) push(`- ${a.title} (${a.outlet}) - ${a.href}`);
   push(`- All writing - ${site.links.blog}`);
   push("");
@@ -96,7 +94,7 @@ export function renderLlmsTxt(): string {
   push(`- LinkedIn: ${site.links.linkedin}`);
   push(`- X: ${site.links.x}`);
   push(`- GitHub: ${site.links.github}`);
-  push(`- CV: ${site.resumeUrl}`);
+  push(`- CV (PDF): ${site.url}${site.resumeUrl}`);
   push("");
   push("## Citation");
   push("");

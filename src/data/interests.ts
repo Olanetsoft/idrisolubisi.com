@@ -5,7 +5,6 @@
  */
 export const interests = [
   "AI agents",
-  "harness engineering",
   "Model Context Protocol",
   "LangChain",
   "documentation for AI agents",

@@ -11,7 +11,8 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "cv": "node scripts/refresh-cv.mjs"
   },
   "dependencies": {
     "@next/third-parties": "^16.3.4",
@@ -25,6 +26,7 @@
     "@types/react-dom": "^19.3.0",
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.3.4",
+    "pdf-lib": "^1.17.1",
     "prettier": "^3.9.6",
     "typescript": "^6.0.3"
   }

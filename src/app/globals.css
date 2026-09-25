@@ -213,14 +213,11 @@ figure {
 .hero-copy h1 {
   margin-top: 0.5rem;
 }
-.disciplines {
-  font-size: 0.9375rem;
+.headline {
+  font-size: 1.25rem;
+  line-height: 1.35;
   color: var(--text-2);
   margin-top: 0.5rem;
-}
-.disciplines .sep {
-  color: var(--text-3);
-  margin-inline: 0.45rem;
 }
 .availability {
   color: var(--text-2);

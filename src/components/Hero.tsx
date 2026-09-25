@@ -10,18 +10,7 @@ export function Hero() {
           <div className="hero-copy">
             <p className="status">{site.status}</p>
             <h1 id="hero-title">{site.name}</h1>
-            <p className="disciplines" aria-label="Disciplines">
-              {site.disciplines.map((d, i) => (
-                <span key={d}>
-                  {i > 0 && (
-                    <span className="sep" aria-hidden="true">
-                      ·
-                    </span>
-                  )}
-                  {d}
-                </span>
-              ))}
-            </p>
+            <p className="headline">{site.role}</p>
             {site.bio.map((p) => (
               <p className="bio" key={p}>
                 <RichText text={p} />
@@ -30,7 +19,7 @@ export function Hero() {
             <p className="availability">{site.availability}</p>
             <div className="actions">
               <a href={site.bookingUrl}>Book a 15-min call</a>
-              <a href={site.resumeUrl}>CV</a>
+              <a href={site.resumeUrl}>CV (PDF)</a>
               <a href={`mailto:${site.email}`}>Email</a>
               <a href={site.links.linkedin} rel="me">
                 LinkedIn

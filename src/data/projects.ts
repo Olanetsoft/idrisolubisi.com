@@ -16,7 +16,7 @@ export const projects: Project[] = [
   {
     name: "midnight-mcp",
     description:
-      "MCP server that lets Claude, Cursor and Copilot search contracts, compile Compact and read the Midnight docs.",
+      "MCP server that let Claude, Cursor and Copilot search contracts, compile Compact and read the Midnight docs.",
     href: "https://github.com/Olanetsoft/midnight-mcp",
     stars: 37,
     kind: "open-source",
