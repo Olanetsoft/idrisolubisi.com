@@ -15,7 +15,6 @@ export const site = {
   description:
     "Idris Olubisi is a Senior Developer Relations Engineer in London. Built the open-source Midnight MCP server (10,000+ downloads, 11,900+ AI-agent tool calls), led cross-chain developer relations at Axelar, founded Web3 Afrika (15,000+ builders), freeCodeCamp author read 10M+ times.",
   url: "https://idrisolubisi.com",
-  location: "London, United Kingdom",
   email: "heedris2olubisi@gmail.com",
   bookingUrl: "https://calendar.app.google/An4ZtvZHjhSTGrgeA",
   status: "UK Global Talent",
@@ -53,6 +52,5 @@ export const site = {
     devto: "https://dev.to/olanetsoft",
     linktree: "https://linktr.ee/olanetsoft",
     web3afrika: "https://web3afrika.com/",
-    source: "https://github.com/Olanetsoft/idrisolubisi.com",
   },
 } as const;

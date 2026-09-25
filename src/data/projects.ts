@@ -25,7 +25,7 @@ export const projects: Project[] = [
   {
     name: "foundry-axelar-gmp-example",
     description:
-      "Reference implementation for cross-chain messaging on Axelar, adopted by 500+ teams.",
+      "Reference implementation for cross-chain messaging on Axelar, adopted by 500+ developers.",
     href: "https://github.com/axelarnetwork/foundry-axelar-gmp-example",
     stars: 13,
     kind: "open-source",

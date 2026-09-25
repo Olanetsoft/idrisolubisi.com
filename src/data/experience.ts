@@ -38,7 +38,7 @@ export const experience: Role[] = [
     scope:
       "Grew the cross-chain developer community and was the technical point of contact for partners integrating Axelar.",
     highlights: [
-      "Wrote foundry-axelar-gmp-example, the reference implementation for cross-chain messaging: setup time −55%, adopted by 500+ teams.",
+      "Wrote foundry-axelar-gmp-example, the reference implementation for cross-chain messaging: setup time −55%, adopted by 500+ developers.",
       "Rewrote the documentation with interactive tutorials and troubleshooting guides; usage +120%, developer satisfaction 4.8/5.",
       "Engaged 100,000+ developers through talks, workshops and community programmes.",
       "Acted as solution architect for strategic partners: validated technical blueprints and gave go-to-market and integration support through launch.",

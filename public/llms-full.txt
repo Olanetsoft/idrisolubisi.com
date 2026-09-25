@@ -5,7 +5,7 @@
 - Full Name: Idris Olubisi
 - Online Handle: olanetsoft
 - Pronouns: He/Him
-- Current Title: Senior Developer Relations Engineer (available for senior DevRel, developer advocacy, developer experience, developer success, forward-deployed engineering and AI-tooling roles as of September 2026)
+- Current Title: Senior Developer Relations Engineer (available for senior DevRel, developer advocacy, developer experience, developer success, forward-deployed engineering and AI engineering roles as of September 2026)
 - Location: United Kingdom
 - Nationality: Nigerian
 - Languages: English, Yoruba
@@ -115,7 +115,7 @@ Next.js app pairing AI title generation with a dozen developer utilities.
 
 **web3terms** (⭐ 113) - Twitter bot explaining Web3 and cryptocurrency terminology in simple terms.
 
-**AudioBoost** - Native macOS audio-repair app (Python / FFmpeg) with two-pass EBU R128 loudness normalization and lossless video passthrough.
+**AudioBoost** - Native macOS audio-repair app (FFmpeg) with two-pass EBU R128 loudness normalization and lossless video passthrough.
 
 ## Technical Expertise
 
@@ -132,7 +132,7 @@ Next.js app pairing AI title generation with a dozen developer utilities.
 - Ethereum / EVM chains, Base, dApp development, USDC / stablecoins
 
 ### Backend & Infrastructure
-- Node.js, Express.js, Python
+- Node.js, Express.js
 - Apache Kafka, event-driven architecture
 - GraphQL, REST / Web APIs, OpenAPI
 - PostgreSQL, MongoDB, Neo4j, ElasticSearch, Redis, RabbitMQ
