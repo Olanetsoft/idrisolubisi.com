@@ -11,9 +11,9 @@
   --line-strong: #b8b2a8;
   --focus: #1f5c46;
 
-  --container: 880px;
+  --container: 1040px;
   --gutter: clamp(1.25rem, 4vw, 3rem);
-  --label: 160px;
+  --label: 180px;
   --col-gap: 2rem;
   color-scheme: light;
 }
@@ -188,7 +188,7 @@ figure {
   align-items: start;
 }
 .hero-copy {
-  max-width: 62ch;
+  max-width: 64ch;
 }
 .hero-copy > * + * {
   margin-top: 1rem;
@@ -232,6 +232,13 @@ figure {
   display: inline-flex;
   align-items: center;
 }
+@media (max-width: 520px) {
+  .actions {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    column-gap: 2rem;
+  }
+}
 @media (max-width: 860px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -243,6 +250,9 @@ figure {
   .portrait img {
     width: 128px;
     height: 128px;
+  }
+  .availability {
+    font-size: 0.9375rem;
   }
 }
 
@@ -288,10 +298,12 @@ figure {
 }
 .row-body p {
   color: var(--text-2);
+  max-width: 68ch;
 }
 .row-body .title {
   color: var(--text);
   font-weight: 400;
+  line-height: 1.4;
 }
 .company {
   font-weight: 600;
@@ -314,20 +326,35 @@ figure {
   align-items: center;
 }
 .interests {
-  max-width: 62ch;
+  max-width: 68ch;
 }
 @media (max-width: 760px) {
+  .section {
+    padding-block: 2.75rem;
+  }
   .section-grid {
     grid-template-columns: 1fr;
   }
   .section-grid > h2 {
     padding-top: 0;
-    margin-bottom: 0.75rem;
-    font-size: 1.125rem;
+    margin-bottom: 1.25rem;
+    font-size: 1.375rem;
+  }
+  .section-intro {
+    margin-bottom: 1.5rem;
   }
   .row {
     grid-template-columns: 1fr;
-    gap: 0.1rem;
+    gap: 0.15rem;
+  }
+  .rows > * + * {
+    margin-top: 1.5rem;
+  }
+  .row-label.strong {
+    font-weight: 600;
+  }
+  .row-more {
+    margin-top: 1.75rem;
   }
 }
 
