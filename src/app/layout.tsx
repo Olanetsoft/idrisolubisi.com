@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Sans } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { SiteHeader } from "@/components/SiteHeader";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { SiteFooter } from "@/components/SiteFooter";
 import { community } from "@/data/experience";
 import { recognition } from "@/data/recognition";
@@ -185,10 +185,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         )}
       </head>
       <body>
-        <a className="skip-link" href="#main">
-          Skip to content
-        </a>
-        <SiteHeader />
+        <div className="theme-corner">
+          <ThemeToggle />
+        </div>
         <main id="main">{children}</main>
         <SiteFooter />
         <script

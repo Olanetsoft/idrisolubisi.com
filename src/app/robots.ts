@@ -24,8 +24,8 @@ const aiCrawlers = [
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      { userAgent: "*", allow: "/", disallow: ["/__forms.html"] },
-      { userAgent: aiCrawlers, allow: "/", disallow: ["/__forms.html"] },
+      { userAgent: "*", allow: "/" },
+      { userAgent: aiCrawlers, allow: "/" },
     ],
     sitemap: `${site.url}/sitemap.xml`,
     host: site.url,

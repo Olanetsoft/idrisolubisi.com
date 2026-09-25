@@ -29,9 +29,7 @@ export function Hero() {
             ))}
             <p className="availability">{site.availability}</p>
             <div className="actions">
-              <a className="btn-primary" href={site.bookingUrl}>
-                Book a 15-min call
-              </a>
+              <a href={site.bookingUrl}>Book a 15-min call</a>
               <a href={site.resumeUrl}>CV (PDF)</a>
               <a href={`mailto:${site.email}`}>Email</a>
               <a href={site.links.linkedin} rel="me">

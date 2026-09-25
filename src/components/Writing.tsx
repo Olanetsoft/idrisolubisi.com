@@ -22,7 +22,7 @@ export function Writing() {
               </li>
             ))}
             <li className="row-more">
-              <a href={site.links.blog}>All posts →</a>
+              <a href={site.links.blog}>All posts</a>
             </li>
           </ul>
         </div>

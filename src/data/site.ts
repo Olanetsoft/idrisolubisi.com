@@ -55,16 +55,4 @@ export const site = {
     web3afrika: "https://web3afrika.com/",
     source: "https://github.com/Olanetsoft/idrisolubisi.com",
   },
-  nav: [
-    { label: "About", href: "/#about" },
-    { label: "What I do", href: "/#what-i-do" },
-    { label: "Experience", href: "/#experience" },
-    { label: "Interests", href: "/#interests" },
-    { label: "Speaking", href: "/#speaking" },
-    { label: "Writing", href: "/#writing" },
-    { label: "Recognition", href: "/#recognition" },
-    { label: "Contact", href: "/#contact" },
-  ],
 } as const;
-
-export type NavItem = (typeof site.nav)[number];

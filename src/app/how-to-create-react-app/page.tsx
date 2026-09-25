@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { html } from "@/content/how-to-create-react-app";
 import { site } from "@/data/site";
 
@@ -29,6 +30,9 @@ const jsonLd = {
 export default function ArchivedPost() {
   return (
     <article className="container article">
+      <Link className="back-link" href="/">
+        ← Idris Olubisi
+      </Link>
       <header className="article-head">
         <h1>{title}</h1>
         <p className="meta">15 February 2020 · archived from my old blog</p>

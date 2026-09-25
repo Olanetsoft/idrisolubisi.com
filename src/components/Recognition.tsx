@@ -10,7 +10,7 @@ export function Recognition() {
             <li className="row" key={r.title}>
               <p className="row-label">
                 {r.by}
-                {r.note && ` · ${r.note}`}
+                {r.note && ` (${r.note})`}
               </p>
               <div className="row-body">
                 <p className="title">{r.href ? <a href={r.href}>{r.title}</a> : r.title}</p>

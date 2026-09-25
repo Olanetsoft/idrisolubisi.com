@@ -13,14 +13,14 @@ export function Experience() {
               <p className="row-label">{r.period}</p>
               <div className="row-body">
                 <h3 className="title">
-                  {r.url ? <a href={r.url}>{r.company}</a> : r.company}
-                  <span className="role-title"> · {r.title}</span>
+                  <span className="company">{r.company}</span>
+                  <span className="role-title">, {r.title}</span>
                 </h3>
               </div>
             </li>
           ))}
           <li className="row-more">
-            <a href={site.resumeUrl}>Full CV (PDF) →</a>
+            <a href={site.resumeUrl}>Full CV (PDF)</a>
           </li>
         </ol>
       </div>

@@ -18,7 +18,7 @@ export function Speaking() {
                 <div className="row-body">
                   <h3 className="title">{t.href ? <a href={t.href}>{t.title}</a> : t.title}</h3>
                   <p className="note">
-                    {t.kind} · {t.event}
+                    {t.kind} at {t.event}
                     {t.location && `, ${t.location}`}
                   </p>
                 </div>
