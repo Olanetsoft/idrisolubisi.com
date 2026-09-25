@@ -5,11 +5,13 @@ export function Writing() {
   return (
     <section className="section" id="writing" aria-labelledby="writing-title">
       <div className="container section-grid">
-        <h2 id="writing-title">Selected writing</h2>
-        <div>
+        <div className="section-head">
+          <h2 id="writing-title">Selected writing</h2>
           <p className="section-intro">
             {writingStats.tutorials} tutorials, read {writingStats.reads} times.
           </p>
+        </div>
+        <div className="box">
           <ul className="rows">
             {articles.map((a) => (
               <li className="row" key={a.href}>
@@ -21,10 +23,10 @@ export function Writing() {
                 </div>
               </li>
             ))}
-            <li className="row-more">
-              <a href={site.links.blog}>All posts</a>
-            </li>
           </ul>
+          <p className="row-more">
+            <a href={site.links.blog}>All posts</a>
+          </p>
         </div>
       </div>
     </section>

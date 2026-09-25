@@ -1,6 +1,6 @@
 /* idrisolubisi.com — set like a well-typeset CV. One typeface (IBM Plex Sans),
-   warm paper and ink. Sections and rows are separated by space and type, never
-   by rules or boxes. */
+   warm paper and ink. Section content sits in thin outlined boxes; there are no
+   free-standing rules, shadows or fills. */
 
 :root {
   --bg: #faf9f6;
@@ -11,10 +11,15 @@
   --line-strong: #b8b2a8;
   --focus: #1f5c46;
 
+  --box-line: #dcd6cc;
+
   --container: 1040px;
-  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --gutter: clamp(1rem, 4vw, 3rem);
   --label: 180px;
   --col-gap: 2rem;
+  --box-radius: 6px;
+  --box-pad: clamp(1rem, 2.5vw, 1.75rem);
+  --box-gap: clamp(0.75rem, 1.5vw, 1rem);
   color-scheme: light;
 }
 
@@ -25,6 +30,7 @@
   --text-2: #c7c2b8;
   --text-3: #9a958b;
   --line-strong: #4a463f;
+  --box-line: #3d3932;
   --focus: #6fbf95;
   color-scheme: dark;
 }
@@ -256,10 +262,10 @@ figure {
   }
 }
 
-/* ---------- sections: one grid everywhere, space instead of rules ---------- */
+/* ---------- sections: heading on the left, content in outlined boxes ---------- */
 
 .section {
-  padding-block: clamp(2.5rem, 5vw, 3.5rem);
+  padding-block: clamp(1.5rem, 3vw, 2.25rem);
 }
 .section-grid {
   display: grid;
@@ -267,31 +273,49 @@ figure {
   gap: 0 var(--col-gap);
   align-items: start;
 }
-.section-grid > h2 {
-  padding-top: 0.15rem;
+/* The heading sits level with the first line of text inside the box. */
+.section-head {
+  padding-top: calc(var(--box-pad) + 1px);
 }
 .section-intro {
-  color: var(--text-2);
-  margin-bottom: 1.25rem;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-3);
 }
+
+.box {
+  border: 1px solid var(--box-line);
+  border-radius: var(--box-radius);
+  padding: var(--box-pad);
+}
+.box-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--box-gap);
+}
+.box-title {
+  font-weight: 600;
+  line-height: 1.4;
+}
+.box-text {
+  margin-top: 0.4rem;
+  font-size: 1rem;
+  color: var(--text-2);
+}
+
 .row {
   display: grid;
   grid-template-columns: var(--label) minmax(0, 1fr);
   gap: 0.2rem 1.5rem;
 }
 .rows > * + * {
-  margin-top: 1.1rem;
+  margin-top: 1rem;
 }
 .row-label {
   font-size: 0.875rem;
   color: var(--text-3);
   padding-top: 0.2rem;
   font-variant-numeric: tabular-nums;
-}
-.row-label.strong {
-  font-size: 1rem;
-  color: var(--text);
-  padding-top: 0;
 }
 .row-body > * + * {
   margin-top: 0.15rem;
@@ -316,46 +340,17 @@ figure {
   color: var(--text-3);
 }
 .row-more {
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
 }
 .row-more a {
+  display: inline-block;
+  padding-block: 0.65rem;
+  margin-block: -0.65rem;
   font-size: 0.9375rem;
   color: var(--text-2);
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
 }
 .interests {
   max-width: 68ch;
-}
-@media (max-width: 760px) {
-  .section {
-    padding-block: 2.75rem;
-  }
-  .section-grid {
-    grid-template-columns: 1fr;
-  }
-  .section-grid > h2 {
-    padding-top: 0;
-    margin-bottom: 1.25rem;
-    font-size: 1.375rem;
-  }
-  .section-intro {
-    margin-bottom: 1.5rem;
-  }
-  .row {
-    grid-template-columns: 1fr;
-    gap: 0.15rem;
-  }
-  .rows > * + * {
-    margin-top: 1.5rem;
-  }
-  .row-label.strong {
-    font-weight: 600;
-  }
-  .row-more {
-    margin-top: 1.75rem;
-  }
 }
 
 /* ---------- contact ---------- */
@@ -363,13 +358,40 @@ figure {
 .contact-lines > * + * {
   margin-top: 0.75rem;
 }
-.contact-intro,
 .elsewhere {
   color: var(--text-2);
 }
 .email {
   font-size: 1.25rem;
   font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .section-grid {
+    grid-template-columns: 1fr;
+  }
+  .section-head {
+    padding-top: 0;
+    margin-bottom: 1rem;
+  }
+  .section-head h2 {
+    font-size: 1.375rem;
+  }
+}
+@media (max-width: 760px) {
+  .section {
+    padding-block: 1.75rem;
+  }
+  .box-grid {
+    grid-template-columns: 1fr;
+  }
+  .row {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+  .rows > * + * {
+    margin-top: 1.25rem;
+  }
 }
 
 /* ---------- archived post ---------- */
