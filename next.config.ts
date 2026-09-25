@@ -8,8 +8,9 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      // Old Gatsby-era paths, still in search indexes. Post slugs that exist on
-      // the Hashnode blog redirect to the post; the rest go to the blog home.
+      // Old Gatsby-era paths, still in search indexes. Each old post goes to its
+      // copy on the Hashnode blog or dev.to; /how-to-create-react-app has no
+      // other copy, so it is served from this site.
       { source: "/blog", destination: "https://blog.idrisolubisi.com/", permanent: true },
       { source: "/blog/:path*", destination: "https://blog.idrisolubisi.com/:path*", permanent: true },
       { source: "/page-2", destination: "/", permanent: true },
@@ -25,10 +26,11 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/Deploy-Your-Front-End-App-To-Netlify-in-4-minutes",
-        destination: "https://blog.idrisolubisi.com/",
+        destination: "https://dev.to/olanetsoft/how-to-deploy-your-front-end-app-to-netlify-doe",
         permanent: true,
       },
-      { source: "/how-to-create-react-app", destination: "https://blog.idrisolubisi.com/", permanent: true },
+      { source: "/sitemap-index.xml", destination: "/sitemap.xml", permanent: true },
+      { source: "/sitemap-0.xml", destination: "/sitemap.xml", permanent: true },
     ];
   },
   async headers() {

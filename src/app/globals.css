@@ -560,6 +560,61 @@ figure {
   }
 }
 
+/* ---------- archived post ---------- */
+
+.article {
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+  max-width: min(100% - 2 * var(--gutter), 68ch);
+}
+.article-head {
+  margin-bottom: 2rem;
+}
+.article-head h1 {
+  font-size: 2rem;
+  line-height: 1.2;
+}
+.article-head .meta {
+  margin-top: 0.5rem;
+}
+.article-body > * + * {
+  margin-top: 1rem;
+}
+.article-body h2,
+.article-body h3,
+.article-body h4 {
+  margin-top: 2rem;
+  font-size: 1.125rem;
+}
+.article-body ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+}
+.article-body li + li {
+  margin-top: 0.4rem;
+}
+.article-body img {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+.article-body hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin-top: 0.5rem;
+}
+.article-body code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.9em;
+  padding: 0.1em 0.35em;
+  background: var(--bg-2);
+  border-radius: 3px;
+}
+.article-foot {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  color: var(--text-2);
+}
+
 /* ---------- contact ---------- */
 
 .email {

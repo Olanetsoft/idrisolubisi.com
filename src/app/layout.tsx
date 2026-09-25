@@ -3,6 +3,8 @@ import { IBM_Plex_Sans } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { community } from "@/data/experience";
+import { recognition } from "@/data/recognition";
 import { site } from "@/data/site";
 import "./globals.css";
 
@@ -107,6 +109,8 @@ const jsonLd = {
       "@type": "Person",
       "@id": personId,
       name: site.name,
+      givenName: "Idris",
+      familyName: "Olubisi",
       alternateName: site.handle,
       url: site.url,
       image: `${site.url}/images/idris-portrait.jpg`,
@@ -127,6 +131,19 @@ const jsonLd = {
         name: "Abubakar Tafawa Balewa University",
       },
       founder: { "@type": "Organization", name: "Web3 Afrika", url: site.links.web3afrika },
+      memberOf: community
+        .filter((c) => c.role !== "Founder")
+        .map((c) => ({ "@type": "Organization", name: c.org, url: c.href })),
+      award: recognition.filter((r) => r.kind === "endorsement").map((r) => r.title),
+      subjectOf: recognition
+        .filter((r) => r.href && (r.kind === "press" || r.kind === "sponsored"))
+        .map((r) => ({
+          "@type": r.kind === "sponsored" ? "AdvertiserContentArticle" : "NewsArticle",
+          headline: r.title,
+          url: r.href,
+          datePublished: r.date,
+          publisher: { "@type": "Organization", name: r.by },
+        })),
       knowsAbout: [
         "Developer Relations",
         "Developer Experience",
