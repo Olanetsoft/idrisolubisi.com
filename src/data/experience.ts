@@ -49,7 +49,8 @@ export const experience: Role[] = [
     title: "Developer Relations Engineer",
     period: "Jul 2022–Apr 2023",
     location: "Nairobi",
-    scope: "First developer-relations hire; built the developer programme from zero across 18+ universities.",
+    scope:
+      "First developer-relations hire; built the developer programme from zero across 18+ universities.",
     highlights: [
       "Cut developer onboarding time by 65% with a documentation-to-production workflow.",
       "Scaled the Mara Developer Campus Club from 0 to 18+ universities and reached 30,000+ developers across Africa.",
@@ -61,7 +62,8 @@ export const experience: Role[] = [
     title: "Backend Engineer",
     period: "Dec 2021–Jul 2022",
     location: "London, remote",
-    scope: "Payments microservice on Apache Kafka serving 50,000+ users; Stripe, PayPal and bank integrations.",
+    scope:
+      "Payments microservice on Apache Kafka serving 50,000+ users; Stripe, PayPal and bank integrations.",
     highlights: [
       "Built a multi-tenant payments microservice on Apache Kafka serving 50,000+ users across web and mobile.",
       "Improved application performance by 63% and held 99.9% uptime under high-volume traffic with monitoring and alerting.",
@@ -121,18 +123,51 @@ export const stack = [
   },
   {
     label: "Web3",
-    items: ["Solidity", "Rust", "Foundry", "Ethers.js", "Compact and zero-knowledge circuits", "cross-chain messaging"],
+    items: [
+      "Solidity",
+      "Rust",
+      "Foundry",
+      "Ethers.js",
+      "Compact and zero-knowledge circuits",
+      "cross-chain messaging",
+    ],
   },
   {
     label: "AI",
-    items: ["MCP servers", "Claude and OpenAI APIs", "LangChain", "RAG", "prompt engineering", "n8n"],
+    items: [
+      "MCP servers",
+      "Claude and OpenAI APIs",
+      "LangChain",
+      "RAG",
+      "prompt engineering",
+      "n8n",
+    ],
   },
   {
     label: "Data and infrastructure",
-    items: ["PostgreSQL", "MongoDB", "GraphQL", "Redis", "RabbitMQ", "Kafka", "Elasticsearch", "Docker", "GCP", "Azure", "Linux"],
+    items: [
+      "PostgreSQL",
+      "MongoDB",
+      "GraphQL",
+      "Redis",
+      "RabbitMQ",
+      "Kafka",
+      "Elasticsearch",
+      "Docker",
+      "GCP",
+      "Azure",
+      "Linux",
+    ],
   },
   {
     label: "Developer relations",
-    items: ["Docusaurus", "docs-as-code", "llms.txt", "Postman", "Discord and Slack community management", "Google Analytics"],
+    items: [
+      "Docusaurus",
+      "docs-as-code",
+      "llms.txt",
+      "Postman",
+      "Discord and Slack community management",
+      "Google Analytics",
+    ],
   },
 ];

@@ -4,7 +4,8 @@ import { html } from "@/content/how-to-create-react-app";
 import { site } from "@/data/site";
 
 const title = "How To Create A React App - Stress Free";
-const description = "In this article, you will learn how to create a React app stress free in a couple of minutes.";
+const description =
+  "In this article, you will learn how to create a React app stress free in a couple of minutes.";
 const path = "/how-to-create-react-app";
 const published = "2020-02-15";
 
@@ -12,7 +13,13 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: path },
-  openGraph: { type: "article", url: `${site.url}${path}`, title, description, publishedTime: published },
+  openGraph: {
+    type: "article",
+    url: `${site.url}${path}`,
+    title,
+    description,
+    publishedTime: published,
+  },
 };
 
 const jsonLd = {
@@ -41,7 +48,10 @@ export default function ArchivedPost() {
       <p className="article-foot">
         More writing on <a href={site.links.blog}>blog.idrisolubisi.com</a>.
       </p>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </article>
   );
 }

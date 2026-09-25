@@ -1,6 +1,8 @@
 import { interests } from "@/data/interests";
 
-const sentence = new Intl.ListFormat("en-GB", { style: "long", type: "conjunction" }).format(interests);
+const sentence = new Intl.ListFormat("en-GB", { style: "long", type: "conjunction" }).format(
+  interests,
+);
 
 export function Interests() {
   return (

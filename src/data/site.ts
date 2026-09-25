@@ -3,7 +3,12 @@ export const site = {
   handle: "olanetsoft",
   role: "Senior Developer Relations Engineer",
   /** Shown as a slash-separated title line under the name. */
-  disciplines: ["Developer Relations", "AI Engineer", "Developer Experience", "Solutions Engineering"],
+  disciplines: [
+    "Developer Relations",
+    "AI Engineer",
+    "Developer Experience",
+    "Solutions Engineering",
+  ],
   /** Bio paragraphs, plain prose; [label](url) renders as a link. */
   bio: [
     "I own the surface between an infrastructure product and the developers who build on it, and increasingly their AI agents. Seven years across backend engineering and developer relations, most recently at Midnight and Axelar; founder of [Web3 Afrika](https://web3afrika.com/). I am most satisfied when a developer I helped ships to production.",

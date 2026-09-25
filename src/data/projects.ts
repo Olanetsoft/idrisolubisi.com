@@ -33,8 +33,7 @@ export const projects: Project[] = [
   },
   {
     name: "GiftDice",
-    description:
-      "Gift-exchange product with 3,000+ users in 20+ countries, built and run solo.",
+    description: "Gift-exchange product with 3,000+ users in 20+ countries, built and run solo.",
     href: "https://giftdice.com/",
     kind: "product",
   },
@@ -47,14 +46,16 @@ export const projects: Project[] = [
   },
   {
     name: "awesome-hackathon-projects",
-    description: "A curated list of hackathon project ideas, organised by technology and complexity.",
+    description:
+      "A curated list of hackathon project ideas, organised by technology and complexity.",
     href: "https://github.com/Olanetsoft/awesome-hackathon-projects",
     stars: 1816,
     kind: "open-source",
   },
   {
     name: "article-idea-generator",
-    description: "AI-powered article title generation plus a dozen small tools for technical writers.",
+    description:
+      "AI-powered article title generation plus a dozen small tools for technical writers.",
     href: "https://github.com/Olanetsoft/article-idea-generator",
     stars: 236,
     kind: "open-source",

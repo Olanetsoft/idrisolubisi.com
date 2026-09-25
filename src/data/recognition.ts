@@ -13,7 +13,8 @@ export type Recognition = {
 /** Press, endorsements and community roles. Newest first. */
 export const recognition: Recognition[] = [
   {
-    title: "Meet Idris Olubisi, the Nigerian Web3 pioneer building Africa’s next generation of tech talent",
+    title:
+      "Meet Idris Olubisi, the Nigerian Web3 pioneer building Africa’s next generation of tech talent",
     by: "Business Insider Africa",
     date: "2026-01-11",
     href: "https://africa.businessinsider.com/local/lifestyle/meet-idris-olubisi-the-nigerian-web3-pioneer-building-africas-next-generation-of-tech/w89mmn5",
@@ -41,7 +42,8 @@ export const recognition: Recognition[] = [
     kind: "press",
   },
   {
-    title: "The Build Afrika Summit rallies Africa’s top tech talent to build the future of decentralization",
+    title:
+      "The Build Afrika Summit rallies Africa’s top tech talent to build the future of decentralization",
     by: "Techpoint Africa",
     date: "2025-05-15",
     href: "https://techpoint.africa/brandpress/the-build-afrika-summit-rallies-africas-top-tech-talent-to-build-the-future-of-decentralization/",

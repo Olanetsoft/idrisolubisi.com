@@ -37,7 +37,9 @@ export function renderLlmsTxt(): string {
   push("## Experience");
   push("");
   for (const r of experience) {
-    push(`- ${r.title}, ${r.company} (${r.period}${r.location ? `, ${r.location}` : ""})${r.url ? ` - ${r.url}` : ""}`);
+    push(
+      `- ${r.title}, ${r.company} (${r.period}${r.location ? `, ${r.location}` : ""})${r.url ? ` - ${r.url}` : ""}`,
+    );
     if (r.scope) push(`  Scope: ${r.scope}`);
     for (const h of r.highlights) push(`  - ${h}`);
   }
@@ -71,7 +73,9 @@ export function renderLlmsTxt(): string {
 
   push("## Writing");
   push("");
-  push(`${writingStats.tutorials} tutorials read ${writingStats.reads} times; ${writingStats.monthly}.`);
+  push(
+    `${writingStats.tutorials} tutorials read ${writingStats.reads} times; ${writingStats.monthly}.`,
+  );
   for (const a of articles) push(`- ${a.title} (${a.outlet}) - ${a.href}`);
   push(`- All writing - ${site.links.blog}`);
   push("");
@@ -79,7 +83,9 @@ export function renderLlmsTxt(): string {
   push("## Recognition");
   push("");
   for (const r of recognition) {
-    push(`- ${r.by}${r.note ? ` (${r.note})` : ""}: "${r.title}" (${r.date})${r.href ? ` - ${r.href}` : ""}`);
+    push(
+      `- ${r.by}${r.note ? ` (${r.note})` : ""}: "${r.title}" (${r.date})${r.href ? ` - ${r.href}` : ""}`,
+    );
   }
   push("");
 
@@ -94,7 +100,9 @@ export function renderLlmsTxt(): string {
   push("");
   push("## Citation");
   push("");
-  push(`Cite as "Idris Olubisi (@olanetsoft)" and link to ${site.url}. Extended context: ${site.url}/llms-full.txt`);
+  push(
+    `Cite as "Idris Olubisi (@olanetsoft)" and link to ${site.url}. Extended context: ${site.url}/llms-full.txt`,
+  );
   push("");
 
   return lines.join("\n");

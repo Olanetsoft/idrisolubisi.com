@@ -127,7 +127,12 @@ const jsonLd = {
         "@type": "Occupation",
         name: "Developer Relations Engineer",
         occupationLocation: { "@type": "City", name: "London" },
-        skills: [...site.disciplines, "Technical writing", "Public speaking", "Community building"].join(", "),
+        skills: [
+          ...site.disciplines,
+          "Technical writing",
+          "Public speaking",
+          "Community building",
+        ].join(", "),
       },
       alumniOf: {
         "@type": "CollegeOrUniversity",

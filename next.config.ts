@@ -12,11 +12,16 @@ const nextConfig: NextConfig = {
       // copy on the Hashnode blog or dev.to; /how-to-create-react-app has no
       // other copy, so it is served from this site.
       { source: "/blog", destination: "https://blog.idrisolubisi.com/", permanent: true },
-      { source: "/blog/:path*", destination: "https://blog.idrisolubisi.com/:path*", permanent: true },
+      {
+        source: "/blog/:path*",
+        destination: "https://blog.idrisolubisi.com/:path*",
+        permanent: true,
+      },
       { source: "/page-2", destination: "/", permanent: true },
       {
         source: "/How-to-add-a-ReadMe-file-to-your-github-profile",
-        destination: "https://blog.idrisolubisi.com/how-to-add-a-readme-file-to-your-github-profile",
+        destination:
+          "https://blog.idrisolubisi.com/how-to-add-a-readme-file-to-your-github-profile",
         permanent: true,
       },
       {
