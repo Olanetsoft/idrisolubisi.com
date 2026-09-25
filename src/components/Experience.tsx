@@ -24,7 +24,7 @@ export function Experience() {
             ))}
           </ol>
           <p className="row-more">
-            <a href={site.resumeUrl}>Full CV (PDF)</a>
+            <a href={site.resumeUrl}>Full CV</a>
           </p>
         </div>
       </div>

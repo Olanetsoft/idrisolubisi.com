@@ -7,7 +7,6 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/check-cv.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",

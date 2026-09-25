@@ -25,7 +25,7 @@ export const site = {
   status: "UK Global Talent",
   availability:
     "Open to senior DevRel, developer experience, developer success, forward-deployed and AI engineering roles. Available now.",
-  resumeUrl: "/Idris-Olubisi-CV-2026.pdf",
+  resumeUrl: "https://docs.google.com/document/d/1dcUOmgfnAsRihGTNqbpKRo_2-zF8boUz/edit",
   gaId: "G-7MMFT1BXJV",
   /** What I actually do. One sentence each. */
   functions: [

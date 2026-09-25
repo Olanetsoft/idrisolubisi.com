@@ -96,7 +96,7 @@ export function renderLlmsTxt(): string {
   push(`- LinkedIn: ${site.links.linkedin}`);
   push(`- X: ${site.links.x}`);
   push(`- GitHub: ${site.links.github}`);
-  push(`- CV: ${site.url}${site.resumeUrl}`);
+  push(`- CV: ${site.resumeUrl}`);
   push("");
   push("## Citation");
   push("");
