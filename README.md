@@ -19,23 +19,24 @@ Requires Node 22 (see `.nvmrc`). Node 20.9 or later also works.
 
 ## Where things live
 
-| What                                                            | Where                                     |
-| --------------------------------------------------------------- | ----------------------------------------- |
-| Name, bio, availability, "What I do", links                     | `src/data/site.ts`                        |
-| Experience timeline                                             | `src/data/experience.ts`                  |
-| Current tech interests                                          | `src/data/interests.ts`                   |
-| Talks                                                           | `src/data/talks.ts`                       |
-| Articles and writing stats                                      | `src/data/writing.ts`                     |
-| Press and recognition                                           | `src/data/recognition.ts`                 |
-| Open-source projects (in `/llms.txt`, not on the page)          | `src/data/projects.ts`                    |
-| Styles and design tokens                                        | `src/app/globals.css`                     |
-| Browser-bar colours (keep in step with `--bg` in `globals.css`) | `src/lib/theme.ts`                        |
-| Metadata and structured data (JSON-LD)                          | `src/app/layout.tsx`                      |
-| Social preview image                                            | `src/app/opengraph-image.tsx`             |
-| Sitemap and robots                                              | `src/app/sitemap.ts`, `src/app/robots.ts` |
-| CV (Google Doc link)                                            | `resumeUrl` in `src/data/site.ts`         |
-| Portrait                                                        | `public/images/idris-portrait.jpg`        |
-| Archived 2020 post, served at `/how-to-create-react-app`        | `src/content/how-to-create-react-app.ts`  |
+| What                                                            | Where                                                                                                            |
+| --------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Name, bio, availability, "What I do", links                     | `src/data/site.ts`                                                                                               |
+| Experience timeline                                             | `src/data/experience.ts`                                                                                         |
+| Current tech interests                                          | `src/data/interests.ts`                                                                                          |
+| Talks                                                           | `src/data/talks.ts`                                                                                              |
+| Articles and writing stats                                      | `src/data/writing.ts`                                                                                            |
+| Press and recognition                                           | `src/data/recognition.ts`                                                                                        |
+| Open-source projects (in `/llms.txt`, not on the page)          | `src/data/projects.ts`                                                                                           |
+| Styles and design tokens                                        | `src/app/globals.css`                                                                                            |
+| Browser-bar colours (keep in step with `--bg` in `globals.css`) | `src/lib/theme.ts`                                                                                               |
+| Metadata and structured data (JSON-LD)                          | `src/app/layout.tsx`                                                                                             |
+| Social preview image                                            | `src/app/opengraph-image.tsx`                                                                                    |
+| Favicon and home-screen icons                                   | `src/app/icon.svg`, `favicon.ico`, `apple-icon.png`, `manifest.ts`; `public/icon-192.png`, `public/icon-512.png` |
+| Sitemap and robots                                              | `src/app/sitemap.ts`, `src/app/robots.ts`                                                                        |
+| CV (Google Doc link)                                            | `resumeUrl` in `src/data/site.ts`                                                                                |
+| Portrait                                                        | `public/images/idris-portrait.jpg`                                                                               |
+| Archived 2020 post, served at `/how-to-create-react-app`        | `src/content/how-to-create-react-app.ts`                                                                         |
 
 ## For AI agents and crawlers
 
