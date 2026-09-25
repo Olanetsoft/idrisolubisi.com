@@ -18,7 +18,7 @@ export const site = {
   location: "London, United Kingdom",
   email: "heedris2olubisi@gmail.com",
   bookingUrl: "https://calendar.app.google/An4ZtvZHjhSTGrgeA",
-  status: "London · remote or hybrid · UK Global Talent visa",
+  status: "UK Global Talent",
   availability:
     "Open to senior DevRel, developer experience, developer success, forward-deployed and AI engineering roles. Available now.",
   resumeUrl: "/Idris-Olubisi-CV-2026.pdf",
