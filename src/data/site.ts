@@ -24,12 +24,6 @@ export const site = {
   resumeUrl: "/Idris-Olubisi-CV-2026.pdf",
   gaId: "G-7MMFT1BXJV",
   photoCredit: "Awesomeness by Oye",
-  /** Three figures, one row. Every figure is a real count. */
-  numbers: [
-    { value: "11,900+", label: "AI-agent tool calls served" },
-    { value: "10,000+", label: "MCP server downloads" },
-    { value: "10M+", label: "Tutorial reads" },
-  ],
   /** What I actually do. One sentence each. */
   functions: [
     {
@@ -38,15 +32,15 @@ export const site = {
     },
     {
       title: "AI engineering",
-      text: "MCP servers, LLM-readable documentation and the tooling that lets AI coding agents build on a new platform.",
+      text: "AI agents and harness engineering, agentic commerce, MCP servers, LLM-readable documentation and end-to-end AI solutions for developers and their agents.",
     },
     {
       title: "Documentation and education",
       text: "Tutorials that unblock developers, and curricula that turn readers into certified builders.",
     },
     {
-      title: "Partner and solutions engineering",
-      text: "Integration calls, architecture reviews and code reviews with partner teams, through to launch.",
+      title: "Partner engineering and solution architecture",
+      text: "Solution design and technical blueprints, integration calls, architecture and code reviews with partner teams, through to launch.",
     },
   ],
   links: {

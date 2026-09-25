@@ -362,7 +362,7 @@ figure {
 /* ---------- hero ---------- */
 
 .hero {
-  padding-block: clamp(3rem, 6vw, 5rem) 0;
+  padding-block: clamp(3rem, 6vw, 5rem) clamp(2.5rem, 5vw, 3.5rem);
 }
 .hero-grid {
   display: grid;
@@ -431,27 +431,6 @@ figure {
   min-height: 44px;
   display: inline-flex;
   align-items: center;
-}
-.numbers {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 3.5rem;
-  margin-top: clamp(2.5rem, 5vw, 3.5rem);
-  padding-block: 1.25rem;
-  border-top: 1px solid var(--line);
-}
-.numbers li {
-  display: flex;
-  flex-direction: column;
-}
-.numbers .value {
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 1.2;
-}
-.numbers .label {
-  font-size: 0.875rem;
-  color: var(--text-3);
 }
 /* ---------- sections: one grid everywhere ---------- */
 

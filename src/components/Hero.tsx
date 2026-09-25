@@ -50,15 +50,6 @@ export function Hero() {
             />
           </figure>
         </div>
-
-        <ul className="numbers" aria-label="By the numbers">
-          {site.numbers.map((n) => (
-            <li key={n.label}>
-              <span className="value">{n.value}</span>
-              <span className="label">{n.label}</span>
-            </li>
-          ))}
-        </ul>
       </div>
     </section>
   );

@@ -29,11 +29,6 @@ export function renderLlmsTxt(): string {
   push(`Availability: ${site.availability}`);
   push("");
 
-  push("## By the numbers");
-  push("");
-  for (const n of site.numbers) push(`- ${n.value} ${n.label.charAt(0).toLowerCase()}${n.label.slice(1)}`);
-  push("");
-
   push("## What I do");
   push("");
   for (const f of site.functions) push(`- ${f.title}: ${f.text}`);
