@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { community } from "@/data/experience";
 import { recognition } from "@/data/recognition";
 import { site } from "@/data/site";
+import { THEME_COLOR } from "@/lib/theme";
 import "./globals.css";
 
 const sans = IBM_Plex_Sans({
@@ -75,10 +76,12 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#faf9f6",
+  themeColor: THEME_COLOR.light,
 };
 
-const themeScript = `(function(){try{if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();`;
+// Runs before paint: applies a saved dark choice, then matches the address bar
+// to the black page once the head has been parsed.
+const themeScript = `(function(){try{if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('meta[name="theme-color"]').forEach(function(m){m.content='${THEME_COLOR.dark}'})})}}catch(e){}})();`;
 
 // Google's profile-page structured data: a ProfilePage whose main entity is the
 // Person, plus the WebSite node. Stable @ids let crawlers merge the three.

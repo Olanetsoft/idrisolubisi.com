@@ -24,8 +24,8 @@
 }
 
 [data-theme="dark"] {
-  --bg: #151411;
-  --bg-2: #1e1c18;
+  --bg: #000000;
+  --bg-2: #121212;
   --text: #ece9e2;
   --text-2: #c7c2b8;
   --text-3: #9a958b;
@@ -238,11 +238,30 @@ figure {
   display: inline-flex;
   align-items: center;
 }
+/* Phones: the call is one full-width outlined button, the rest three equal ones. */
 @media (max-width: 520px) {
   .actions {
     display: grid;
-    grid-template-columns: repeat(2, max-content);
-    column-gap: 2rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+  .actions a {
+    justify-content: center;
+    min-height: 46px;
+    padding-inline: 0.5rem;
+    border: 1px solid var(--box-line);
+    border-radius: var(--box-radius);
+    color: var(--text);
+    text-decoration: none;
+  }
+  .actions a:first-child {
+    grid-column: 1 / -1;
+    border-color: var(--text);
+    font-weight: 600;
+  }
+  .actions a:active {
+    background: var(--bg-2);
   }
 }
 @media (max-width: 860px) {
