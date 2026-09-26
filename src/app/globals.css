@@ -1,17 +1,18 @@
-/* idrisolubisi.com — set like a well-typeset CV. One typeface (IBM Plex Sans),
-   warm paper and ink. Section content sits in thin outlined boxes; there are no
-   free-standing rules, shadows or fills. */
+/* idrisolubisi.com, set like a well-typeset CV. One typeface (IBM Plex Sans).
+   Dark by default (pure black and warm ink); a light "paper" theme is opt-in.
+   Section content sits in thin outlined boxes; there are no free-standing
+   rules, shadows or fills. */
 
 :root {
-  --bg: #faf9f6;
-  --bg-2: #f1efea;
-  --text: #1c1b19;
-  --text-2: #4a4741;
-  --text-3: #6e6a63;
-  --line-strong: #b8b2a8;
-  --focus: #1f5c46;
+  --bg: #000000;
+  --bg-2: #121212;
+  --text: #ece9e2;
+  --text-2: #c7c2b8;
+  --text-3: #9a958b;
+  --line-strong: #4a463f;
+  --focus: #6fbf95;
 
-  --box-line: #dcd6cc;
+  --box-line: #3d3932;
 
   --container: 1040px;
   --gutter: clamp(1rem, 4vw, 3rem);
@@ -20,19 +21,19 @@
   --box-radius: 6px;
   --box-pad: clamp(1rem, 2.5vw, 1.75rem);
   --box-gap: clamp(0.75rem, 1.5vw, 1rem);
-  color-scheme: light;
+  color-scheme: dark;
 }
 
-[data-theme="dark"] {
-  --bg: #000000;
-  --bg-2: #121212;
-  --text: #ece9e2;
-  --text-2: #c7c2b8;
-  --text-3: #9a958b;
-  --line-strong: #4a463f;
-  --box-line: #3d3932;
-  --focus: #6fbf95;
-  color-scheme: dark;
+[data-theme="light"] {
+  --bg: #faf9f6;
+  --bg-2: #f1efea;
+  --text: #1c1b19;
+  --text-2: #4a4741;
+  --text-3: #6e6a63;
+  --line-strong: #b8b2a8;
+  --box-line: #dcd6cc;
+  --focus: #1f5c46;
+  color-scheme: light;
 }
 
 /* ---------- base ---------- */
@@ -172,13 +173,14 @@ figure {
   width: 1.1rem;
   height: 1.1rem;
 }
-.icon-sun {
+/* Dark by default, so the button offers the sun (switch to light). */
+.icon-moon {
   display: none;
 }
-[data-theme="dark"] .icon-sun {
+[data-theme="light"] .icon-moon {
   display: block;
 }
-[data-theme="dark"] .icon-moon {
+[data-theme="light"] .icon-sun {
   display: none;
 }
 
@@ -497,7 +499,7 @@ figure {
     display: none;
   }
   :root,
-  [data-theme="dark"] {
+  [data-theme="light"] {
     --bg: #fff;
     --bg-2: #f4f4f4;
     --text: #000;
