@@ -55,7 +55,7 @@ export default async function OpenGraphImage() {
         <div style={{ display: "flex", fontSize: 68, fontWeight: 600, letterSpacing: 0 }}>
           {site.name}
         </div>
-        <div style={{ display: "flex", fontSize: 32, color: "#4a4741" }}>{site.role} · London</div>
+        <div style={{ display: "flex", fontSize: 32, color: "#4a4741" }}>{site.role} · UK</div>
         <div
           style={{
             display: "flex",
@@ -65,8 +65,8 @@ export default async function OpenGraphImage() {
             lineHeight: 1.35,
           }}
         >
-          I help developers succeed on technical products. Most recently at Midnight and Axelar.
-          Founder of Web3 Afrika, a developer community.
+          I help developers succeed on technical products. Founder of Web3 Afrika, a developer
+          community.
         </div>
       </div>
       <div

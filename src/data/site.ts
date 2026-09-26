@@ -14,11 +14,11 @@ export const site = {
     "I help developers succeed on technical products. I build the tools, guides, and programs that take an engineer from first look to production, and I’ve done it for developer platforms in AI and blockchain since 2019. Most recently at Midnight and Axelar. Founder of [Web3 Afrika](https://web3afrika.com/), a developer community.",
   ],
   title: "Idris Olubisi, Senior Developer Relations Engineer",
-  /** Under 160 characters, for the search snippet. The long description feeds social cards and structured data. */
+  /** Evergreen, no employer or availability: the search snippet and every social card. The long description feeds structured data. */
   metaDescription:
-    "Senior Developer Relations Engineer in London. I help developers succeed on technical products, most recently at Midnight and Axelar. Available now.",
+    "Senior Developer Relations Engineer in the UK. I help developers succeed on technical products.",
   description:
-    "Idris Olubisi is a Senior Developer Relations Engineer in London who helps developers succeed on technical products: the tools, guides and programs that take an engineer from first look to production, for developer platforms in AI and blockchain since 2019. Most recently at Midnight and Axelar. Founder of Web3 Afrika, a developer community.",
+    "Idris Olubisi is a Senior Developer Relations Engineer in the UK who helps developers succeed on technical products: the tools, guides and programs that take an engineer from first look to production, for developer platforms in AI and blockchain since 2019. Founder of Web3 Afrika, a developer community.",
   url: "https://idrisolubisi.com",
   email: "heedris2olubisi@gmail.com",
   bookingUrl: "https://calendar.app.google/An4ZtvZHjhSTGrgeA",

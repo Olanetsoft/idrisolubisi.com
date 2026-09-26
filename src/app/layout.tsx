@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     url: site.url,
     siteName: site.name,
     title: site.title,
-    description: site.description,
+    description: site.metaDescription,
     locale: "en_GB",
   },
   twitter: {
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     site: `@${site.handle}`,
     creator: `@${site.handle}`,
     title: site.title,
-    description: site.description,
+    description: site.metaDescription,
   },
   robots: {
     index: true,

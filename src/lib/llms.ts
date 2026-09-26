@@ -16,7 +16,7 @@ export function renderLlmsTxt(): string {
 
   push(`# ${site.name}`);
   push("");
-  push(`> ${site.role}, London. ${site.disciplines.join(" / ")}.`);
+  push(`> ${site.role}, United Kingdom. ${site.disciplines.join(" / ")}.`);
   push("");
   for (const p of site.bio) push(p);
   push("");
