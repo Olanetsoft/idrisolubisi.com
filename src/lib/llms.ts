@@ -66,14 +66,15 @@ export function renderLlmsTxt(): string {
   push("");
   for (const t of talks) {
     const where = [t.event, t.location, t.year].filter(Boolean).join(", ");
-    push(`- ${t.kind}: ${t.title} (${where})${t.href ? ` - ${t.href}` : ""}`);
+    const line = t.title ? `${t.title} (${where})` : where;
+    push(`- ${t.kind}: ${line}${t.href ? ` - ${t.href}` : ""}`);
   }
   push(`- Speaker profile - ${site.links.sessionize}`);
   push("");
 
   push("## Writing");
   push("");
-  push(`${writingStats.tutorials} tutorials, read by ${writingStats.readers}.`);
+  push(`${writingStats.tutorials} tutorials, read ${writingStats.reads} times.`);
   for (const a of articles) push(`- ${a.title} (${a.outlet}) - ${a.href}`);
   push(`- All writing - ${site.links.blog}`);
   push("");
