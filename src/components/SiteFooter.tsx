@@ -1,4 +1,5 @@
 import { site } from "@/data/site";
+import { Bloom } from "./Bloom";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -6,7 +7,7 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="container">
         <p>
-          © {year} {site.name} · <a href="/llms.txt">llms.txt</a>
+          <Bloom />© {year} {site.name} · <a href="/llms.txt">llms.txt</a>
         </p>
       </div>
     </footer>
