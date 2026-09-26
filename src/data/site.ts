@@ -11,14 +11,14 @@ export const site = {
   ],
   /** Bio paragraphs, plain prose; [label](url) renders as a link. */
   bio: [
-    "I help developers succeed on technical products. I build the tools, guides, and programs that take an engineer from first look to production, and I’ve done it for developer platforms in AI and blockchain since 2019. Most recently at Midnight and Axelar. Founder of [Web3 Afrika](https://web3afrika.com/), a developer community.",
+    "I help developers and builders succeed on technical products. I build the tools, guides, and programs that take an engineer from first look to production, and I’ve done it for developer platforms in AI and blockchain since 2019. Most recently at Midnight and Axelar. Founder of [Web3 Afrika](https://web3afrika.com/), a developer community.",
   ],
   title: "Idris Olubisi, Senior Developer Relations Engineer",
   /** Evergreen, no employer or availability: the search snippet and every social card. The long description feeds structured data. */
   metaDescription:
     "Idris Olubisi (olanetsoft) is a Senior Developer Relations Engineer, founder of Web3 Afrika (15,000+ builders), and freeCodeCamp author with tutorials read 10M+ times. Built the Midnight MCP server: 10,000+ downloads and 11,900+ AI-agent tool calls.",
   description:
-    "Idris Olubisi is a Senior Developer Relations Engineer in the UK who helps developers succeed on technical products: the tools, guides and programs that take an engineer from first look to production, for developer platforms in AI and blockchain since 2019. Founder of Web3 Afrika, a developer community.",
+    "Idris Olubisi is a Senior Developer Relations Engineer in the UK who helps developers and builders succeed on technical products: the tools, guides and programs that take an engineer from first look to production, for developer platforms in AI and blockchain since 2019. Founder of Web3 Afrika, a developer community.",
   url: "https://idrisolubisi.com",
   email: "heedris2olubisi@gmail.com",
   bookingUrl: "https://calendar.app.google/An4ZtvZHjhSTGrgeA",
@@ -32,7 +32,7 @@ export const site = {
   functions: [
     {
       title: "Developer relations",
-      text: "Help developers understand and adopt a product, and bring their feedback back to the product and engineering teams.",
+      text: "Help developers and builders understand and adopt a product, and bring their feedback back to the product and engineering teams.",
     },
     {
       title: "Developer tools and AI",

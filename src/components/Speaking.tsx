@@ -8,9 +8,8 @@ export function Speaking() {
         <div className="section-head">
           <h2 id="speaking-title">Selected speaking</h2>
           <p className="section-intro">
-            Recordings on <a href={site.links.youtube}>YouTube</a>, including the twelve-part
-            ‘Midnight for Developers’ series; full list on{" "}
-            <a href={site.links.sessionize}>Sessionize</a>.
+            Recordings on <a href={site.links.youtube}>YouTube</a>, including the ‘Midnight for
+            Developers’ series.
           </p>
         </div>
         <div className="box">

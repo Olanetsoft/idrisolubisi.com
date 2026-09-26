@@ -9,18 +9,8 @@ export type Talk = {
   note?: string;
 };
 
-/** Newest first. Never invent a title, year or link. */
+/** Newest first; within a year, by date where known. Never invent a title, year or link. */
 export const talks: Talk[] = [
-  {
-    event: "Devcon (Ethereum developer conference)",
-    year: "2024",
-    kind: "Speaker",
-  },
-  {
-    event: "ETHCC (Ethereum Community Conference)",
-    year: "2025",
-    kind: "Speaker",
-  },
   {
     event: "University of Zurich International Summer School",
     title: "Guest lecture on Midnight",
@@ -37,6 +27,17 @@ export const talks: Talk[] = [
     href: "https://businessday.ng/news/article/blockfest-africa-2025-draws-12000-participants-strengthens-africas-web3-voice/",
   },
   {
+    event: "Midnight",
+    title: "AI-assisted developer tooling and a live MCP server demo",
+    year: "2025",
+    kind: "Fireside chat",
+  },
+  {
+    event: "ETHCC (Ethereum Community Conference)",
+    year: "2025",
+    kind: "Speaker",
+  },
+  {
     event: "Build Afrika Summit",
     title: "Founder and host: Africa’s builders, protocols and partners in one room",
     year: "2025",
@@ -45,10 +46,9 @@ export const talks: Talk[] = [
     href: "https://techpoint.africa/brandpress/the-build-afrika-summit-rallies-africas-top-tech-talent-to-build-the-future-of-decentralization/",
   },
   {
-    event: "Midnight",
-    title: "AI-assisted developer tooling and a live MCP server demo",
-    year: "2025",
-    kind: "Fireside chat",
+    event: "Devcon (Ethereum developer conference)",
+    year: "2024",
+    kind: "Speaker",
   },
   {
     event: "Osmocon",
