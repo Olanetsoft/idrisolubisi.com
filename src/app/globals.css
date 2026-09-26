@@ -193,16 +193,29 @@ figure {
 .hero {
   padding-block: clamp(3.5rem, 8vw, 6rem) clamp(1rem, 3vw, 2rem);
 }
+/* Name block and photo share the first row; the intro, availability and
+   links follow. On desktop the photo spans both rows on the right. */
 .hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 220px;
-  gap: clamp(2rem, 5vw, 4rem);
+  grid-template-areas:
+    "head portrait"
+    "body portrait";
+  column-gap: clamp(2rem, 5vw, 4rem);
   align-items: start;
 }
-.hero-copy {
-  max-width: 64ch;
+.hero-head {
+  grid-area: head;
 }
-.hero-copy > * + * {
+.portrait {
+  grid-area: portrait;
+}
+.hero-body {
+  grid-area: body;
+  max-width: 64ch;
+  margin-top: 1rem;
+}
+.hero-body > * + * {
   margin-top: 1rem;
 }
 .portrait img {
@@ -216,7 +229,7 @@ figure {
   font-size: 0.875rem;
   color: var(--text-3);
 }
-.hero-copy h1 {
+.hero-head h1 {
   margin-top: 0.5rem;
 }
 .headline {
@@ -267,17 +280,37 @@ figure {
     background: var(--bg-2);
   }
 }
+/* Tablets and phones: the photo stays on the right, beside the name, and the
+   intro runs full width underneath in slightly smaller, airier type. */
 @media (max-width: 860px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
+  .hero {
+    padding-top: 4.5rem;
   }
-  .portrait {
-    order: -1;
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "head portrait"
+      "body body";
+    column-gap: 1rem;
+    align-items: center;
+  }
+  .hero-head h1 {
+    font-size: clamp(1.875rem, 8vw, 2.5rem);
+  }
+  .headline {
+    font-size: 1.0625rem;
+    text-wrap: balance;
   }
   .portrait img {
-    width: 128px;
-    height: 128px;
+    width: clamp(88px, 26vw, 128px);
+    height: clamp(88px, 26vw, 128px);
+  }
+  .hero-body {
+    margin-top: 1.5rem;
+  }
+  .bio {
+    font-size: 1rem;
+    line-height: 1.65;
   }
   .availability {
     font-size: 0.9375rem;
