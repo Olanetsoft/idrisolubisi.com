@@ -13,10 +13,12 @@ export type Talk = {
 export const talks: Talk[] = [
   {
     event: "Devcon (Ethereum developer conference)",
+    year: "2024",
     kind: "Speaker",
   },
   {
     event: "ETHCC (Ethereum Community Conference)",
+    year: "2025",
     kind: "Speaker",
   },
   {

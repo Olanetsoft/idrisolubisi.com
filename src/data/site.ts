@@ -32,11 +32,11 @@ export const site = {
   functions: [
     {
       title: "Developer relations",
-      text: "Docs, examples, programmes, hackathons, and the feedback loop from developers back into Product and Engineering.",
+      text: "Help developers understand and adopt a product, and bring their feedback back to the product and engineering teams.",
     },
     {
       title: "Developer tools and AI",
-      text: "Build tools that make a product easier to use, including AI-powered tools and ones that run AI models locally. I built the Midnight MCP server (10,000+ downloads) and SwoopAgent, a live platform of autonomous AI agents.",
+      text: "Build tools that make a product easier to use, including AI-powered tools and ones that run AI models locally.",
     },
     {
       title: "Documentation and education",
