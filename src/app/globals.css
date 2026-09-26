@@ -13,6 +13,8 @@
   --focus: #6fbf95;
 
   --box-line: #3d3932;
+  --petal: #d9a5b1;
+  --petal-center: #d8b36a;
 
   --container: 1040px;
   --gutter: clamp(1rem, 4vw, 3rem);
@@ -32,6 +34,8 @@
   --text-3: #6e6a63;
   --line-strong: #b8b2a8;
   --box-line: #dcd6cc;
+  --petal: #c98796;
+  --petal-center: #b98a34;
   --focus: #1f5c46;
   color-scheme: light;
 }
@@ -476,6 +480,53 @@ figure {
   padding-block: 2rem 2.5rem;
   font-size: 0.875rem;
   color: var(--text-3);
+}
+
+/* The footer flower: a bud until the footer is in view, then it opens petal
+   by petal. Hover sways it; a tap turns it by one petal. */
+.bloom {
+  display: inline-flex;
+  vertical-align: -0.3em;
+  /* A bigger tap target without moving the line. */
+  padding: 10px;
+  margin: -10px calc(0.45rem - 10px) -10px -10px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.bloom-flower,
+.bloom-petal,
+.bloom-center {
+  transform-box: view-box;
+  transform-origin: 12px 12px;
+}
+.bloom-flower {
+  transform: rotate(calc(var(--turn, 0) * 72deg));
+  transition: transform 900ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.bloom-petal {
+  fill: var(--petal);
+  fill-opacity: 0;
+  stroke: currentColor;
+  stroke-width: 1.1;
+  transform: scale(0.45) rotate(-24deg);
+  transition:
+    transform 800ms cubic-bezier(0.2, 0.8, 0.2, 1.15) calc(var(--i) * 70ms),
+    fill-opacity 800ms ease calc(var(--i) * 70ms);
+}
+.bloom-center {
+  fill: var(--petal-center);
+  transform: scale(0.6);
+  transition: transform 600ms ease 250ms;
+}
+.bloom.is-open .bloom-petal {
+  transform: none;
+  fill-opacity: 0.32;
+}
+.bloom.is-open .bloom-center {
+  transform: none;
+}
+.bloom.is-open:hover .bloom-petal {
+  transform: scale(1.08) rotate(7deg);
 }
 
 /* ---------- 404 ---------- */
