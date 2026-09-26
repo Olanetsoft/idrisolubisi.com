@@ -16,7 +16,7 @@ export const site = {
   title: "Idris Olubisi, Senior Developer Relations Engineer",
   /** Evergreen, no employer or availability: the search snippet and every social card. The long description feeds structured data. */
   metaDescription:
-    "Senior Developer Relations Engineer in the UK. I help developers succeed on technical products.",
+    "Idris Olubisi (olanetsoft) is a Senior Developer Relations Engineer, founder of Web3 Afrika, and freeCodeCamp author helping developers build with AI and Web3.",
   description:
     "Idris Olubisi is a Senior Developer Relations Engineer in the UK who helps developers succeed on technical products: the tools, guides and programs that take an engineer from first look to production, for developer platforms in AI and blockchain since 2019. Founder of Web3 Afrika, a developer community.",
   url: "https://idrisolubisi.com",
