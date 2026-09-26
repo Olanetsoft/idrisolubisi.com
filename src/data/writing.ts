@@ -53,6 +53,5 @@ export const platforms = [
 
 export const writingStats = {
   tutorials: "40+",
-  /** Matches the CV. */
-  readers: "200,000+ developers a year",
+  reads: "10M+",
 };

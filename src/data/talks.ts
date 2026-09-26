@@ -1,15 +1,24 @@
 export type Talk = {
   event: string;
-  title: string;
-  year: string;
+  /** Omitted when only the event and role are known; the event then stands as the title. */
+  title?: string;
+  year?: string;
   location?: string;
-  kind: "Keynote" | "Talk" | "Workshop" | "Fireside chat" | "Host" | "Lecture";
+  kind: "Keynote" | "Talk" | "Workshop" | "Fireside chat" | "Host" | "Lecture" | "Speaker";
   href?: string;
   note?: string;
 };
 
-/** Newest first. Rows ship only with a confirmed title and year. */
+/** Newest first. Never invent a title, year or link. */
 export const talks: Talk[] = [
+  {
+    event: "Devcon (Ethereum developer conference)",
+    kind: "Speaker",
+  },
+  {
+    event: "ETHCC (Ethereum Community Conference)",
+    kind: "Speaker",
+  },
   {
     event: "University of Zurich International Summer School",
     title: "Guest lecture on Midnight",
