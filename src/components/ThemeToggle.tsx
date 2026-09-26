@@ -5,9 +5,9 @@ import { THEME_COLOR, type Theme } from "@/lib/theme";
 
 const listeners = new Set<() => void>();
 
-// Light is the default; dark is an explicit choice.
+// Dark is the default; light is an explicit choice.
 function readTheme(): Theme {
-  return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+  return document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
 }
 
 function subscribe(onChange: () => void) {

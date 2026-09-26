@@ -47,7 +47,7 @@ Requires Node 22 (see `.nvmrc`). Node 20.9 or later also works.
 
 ## Design
 
-One typeface (IBM Plex Sans) on warm paper and ink. Each section has an open heading, with its content in a thin outlined box: no shadows, gradients or fills. Light by default; the dark theme is pure black and is remembered per visitor.
+One typeface (IBM Plex Sans) on warm paper and ink. Each section has an open heading, with its content in a thin outlined box: no shadows, gradients or fills. Dark by default, in pure black; visitors can switch to a light theme, and the choice is remembered.
 
 ## Deploy
 
