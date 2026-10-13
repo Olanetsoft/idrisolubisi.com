@@ -47,6 +47,7 @@ Empowering Web3 builders in Africa. Backed by Developer DAO.
 
 **Developer Relations Engineer at Axelar / Interop Labs** (Apr 2023 - Aug 2025)
 Axelar is a blockchain interoperability network enabling secure cross-chain communication.
+- First developer-relations engineer on the team, under the Head of Developer Relations
 - Embedded with partner engineering teams from discovery through production launch
 - Supported 100,000+ developers with hands-on integration debugging, rated 4.8/5
 - Built foundry-axelar-gmp-example, cutting integration setup time by 55% and driving 500+ weekly adoptions
@@ -67,6 +68,7 @@ Axelar is a blockchain interoperability network enabling secure cross-chain comm
 - Improved application performance by 63% through bottleneck analysis, code optimization, and microservices architecture
 - Sustained 99.9% uptime under high-volume traffic via comprehensive monitoring and alerting
 - Integrated 3rd-party payment APIs (Stripe, PayPal, bank accounts)
+- Built the authentication and encryption layer of the application
 - Location: Greater London, United Kingdom (Remote)
 
 **Backend Engineer (promoted to backend team lead) at PhilanthroLab** (Feb 2021 - Dec 2021)

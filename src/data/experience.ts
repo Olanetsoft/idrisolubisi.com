@@ -27,7 +27,7 @@ export const experience: Role[] = [
     company: "Axelar / Interop Labs",
     title: "Developer Relations Engineer",
     points: [
-      "Worked as solution architect inside partner engineering teams, from discovery to production launch.",
+      "First developer-relations engineer on the team, under the Head of Developer Relations. Worked as solution architect inside partner engineering teams, from discovery to production launch.",
       "Built a reference implementation that cut cross-chain integration setup time 55%, with 500+ weekly adoptions.",
       "Supported 100,000+ developers and builders through hands-on debugging, talks and workshops, rated 4.8/5.",
       "Grew documentation usage 120% with rewritten docs and interactive tutorials, and recorded live-coding and workshop videos.",
@@ -53,7 +53,7 @@ export const experience: Role[] = [
     points: [
       "Built a multi-tenant payment service on Apache Kafka for 50,000+ users, integrating Stripe, PayPal and bank payments.",
       "Improved application performance 63% through bottleneck analysis, caching and microservices, and held 99.9% uptime with monitoring and alerting.",
-      "Built APIs for high-volume traffic, helped implement authentication, encryption and secure data storage, and mentored three junior engineers on system design.",
+      "Built APIs for high-volume traffic and the authentication and encryption layer, and mentored three junior engineers on system design.",
     ],
     period: "Dec 2021–Jul 2022",
     location: "London, remote",
