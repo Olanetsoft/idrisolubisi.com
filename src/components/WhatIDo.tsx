@@ -3,9 +3,12 @@ import { site } from "@/data/site";
 export function WhatIDo() {
   return (
     <section className="section" id="what-i-do" aria-labelledby="what-i-do-title">
-      <div className="container section-grid">
+      <div className="container">
         <div className="section-head">
-          <h2 id="what-i-do-title">What I do</h2>
+          <h2 className="label" id="what-i-do-title">
+            <span className="label-index" aria-hidden="true" />
+            What I do
+          </h2>
         </div>
         <dl className="box-grid">
           {site.functions.map((f) => (

@@ -6,6 +6,7 @@ export const site = {
   disciplines: [
     "Developer Relations",
     "AI Engineer",
+    "Forward Deployed Engineering",
     "Developer Experience",
     "Solutions Engineering",
   ],
@@ -24,7 +25,7 @@ export const site = {
   bookingUrl: "https://calendar.app.google/An4ZtvZHjhSTGrgeA",
   status: "UK Global Talent",
   availability:
-    "Open to developer relations, developer experience, developer support, solutions engineering, and AI engineering roles. Available now.",
+    "Open to developer relations, AI engineering, forward deployed engineering, solutions engineering, developer experience and developer support roles.",
   /** View-only PDF, refreshed from the Google Doc with `npm run cv`. */
   resumeUrl: "/Idris-Olubisi-CV.pdf",
   gaId: "G-7MMFT1BXJV",

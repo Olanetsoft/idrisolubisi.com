@@ -1,18 +1,29 @@
 import type { ReactNode } from "react";
 
-/** Renders text with [label](url) spans as links. */
+/** Renders [label](url) as links and ==text== as a highlighted <mark>. */
 export function RichText({ text }: { text: string }): ReactNode {
-  const parts = text.split(/\[([^\]]+)\]\(([^)]+)\)/);
   const nodes: ReactNode[] = [];
-  for (let i = 0; i < parts.length; i += 3) {
-    nodes.push(parts[i]);
-    if (i + 1 < parts.length) {
+  const pattern = /\[([^\]]+)\]\(([^)]+)\)|==([^=]+)==/g;
+  let last = 0;
+  let match: RegExpExecArray | null;
+  while ((match = pattern.exec(text)) !== null) {
+    if (match.index > last) nodes.push(text.slice(last, match.index));
+    if (match[1] !== undefined) {
       nodes.push(
-        <a key={i} href={parts[i + 2]}>
-          {parts[i + 1]}
+        <a key={match.index} href={match[2]}>
+          {match[1]}
         </a>,
       );
+    } else {
+      nodes.push(<mark key={match.index}>{match[3]}</mark>);
     }
+    last = pattern.lastIndex;
   }
+  if (last < text.length) nodes.push(text.slice(last));
   return nodes;
+}
+
+/** Plain text with the markup removed, for meta tags and llms.txt. */
+export function plainText(text: string): string {
+  return text.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").replace(/==([^=]+)==/g, "$1");
 }

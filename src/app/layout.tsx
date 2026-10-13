@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { IBM_Plex_Sans } from "next/font/google";
+import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { community } from "@/data/experience";
 import { recognition } from "@/data/recognition";
@@ -13,6 +13,14 @@ const sans = IBM_Plex_Sans({
   subsets: ["latin"],
   weight: ["400", "600"],
   variable: "--font-sans",
+  display: "swap",
+});
+
+// One weight keeps the font payload small; the mono labels are all small caps-size text.
+const mono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-mono",
   display: "swap",
 });
 
@@ -184,7 +192,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-GB" className={sans.variable} suppressHydrationWarning>
+    <html lang="en-GB" className={`${sans.variable} ${mono.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt" />
@@ -193,9 +201,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         )}
       </head>
       <body>
-        <div className="theme-corner">
-          <ThemeToggle />
-        </div>
+        <a className="skip-link" href="#main">
+          Skip to content
+        </a>
+        <SiteHeader />
         <main id="main">{children}</main>
         <SiteFooter />
         <script

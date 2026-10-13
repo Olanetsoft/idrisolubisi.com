@@ -3,9 +3,12 @@ import { recognition } from "@/data/recognition";
 export function Recognition() {
   return (
     <section className="section" id="recognition" aria-labelledby="recognition-title">
-      <div className="container section-grid">
+      <div className="container">
         <div className="section-head">
-          <h2 id="recognition-title">Recognition</h2>
+          <h2 className="label" id="recognition-title">
+            <span className="label-index" aria-hidden="true" />
+            Recognition
+          </h2>
         </div>
         <div className="box">
           <ul className="rows">

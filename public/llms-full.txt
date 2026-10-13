@@ -5,13 +5,14 @@
 - Full Name: Idris Olubisi
 - Online Handle: olanetsoft
 - Pronouns: He/Him
-- Professional Title: Senior Developer Relations Engineer (available for developer relations, developer experience, developer support, solutions engineering and AI engineering roles as of September 2026)
+- Professional Title: Senior Developer Relations Engineer (available for developer relations, AI engineering, forward deployed engineering, solutions engineering, developer experience and developer support roles as of October 2026)
+- Tailored pages: AI Engineer https://idrisolubisi.com/ai-engineer, Forward Deployed Engineer https://idrisolubisi.com/forward-deployed
 - Location: United Kingdom
 - Nationality: Nigerian
 - Languages: English, Yoruba
 
 ## Summary
-Idris Olubisi is a Senior Developer Relations Engineer with 5+ years building thriving developer communities across Web2 and Web3. He builds for the agent era where developers and AI agents discover and adopt infrastructure having shipped an MCP server that handled 11,900+ AI-agent tool calls and re-architected documentation for LLM and agent retrieval. He founded Web3 Afrika (15,000+ builders across Africa), writes for thousands of developers a year, and is widely regarded as one of the most active developer relations engineers in Africa's technology ecosystem and globally.
+Idris Olubisi is a backend engineer turned developer relations engineer, now building agent systems: seven years across backend engineering and developer-facing work (2019 to 2026). He built the open-source Midnight MCP server (10,000+ downloads, 11,900+ AI-agent tool calls), re-architected documentation for AI retrieval, and built SwoopAgent, a multi-tenant platform where around 100 users trade real funds through Claude-powered agents. He founded Web3 Afrika (15,000+ builders across Africa), and his 40+ tutorials have been read 10M+ times.
 
 ## Press & Media Coverage
 Idris has been profiled and featured by leading African and global technology media:
@@ -28,13 +29,13 @@ Idris has been profiled and featured by leading African and global technology me
 
 **Developer Educator, Developer Relations at Midnight Foundation** (Sep 2025 - Sep 2026)
 Midnight is a data-protection blockchain enabling confidential smart contracts.
-- Built a Midnight MCP (Model Context Protocol) server downloaded 10,000+ times that served 11,900+ AI-agent tool calls across 30 tools in seven categories (the server's own count, 11 Sep 2026)
+- Built the Midnight MCP (Model Context Protocol) server, downloaded 10,000+ times, which served 11,900+ AI-agent tool calls; a hosted compiler acted as a verification gate so assistants returned code that compiles
 - Re-architected documentation with server-side rendering and an llms.txt index, exposing full content to LLM crawlers and AI coding agents
-- Launched Midnight Academy, a three-tier zero-knowledge + Compact curriculum (Foundations, Intermediate, Advanced): 1,576 developers enrolled and 1,120+ certified to date
-- Developing educational content around zero-knowledge proofs and privacy-preserving smart contracts
+- Developed the curriculum for Midnight Academy, three tiers of zero-knowledge and Compact content (Foundations, Intermediate, Advanced): 1,576 developers enrolled and 1,120+ certified
+- Developed educational content on zero-knowledge proofs and privacy-preserving smart contracts, including a 12-part video series
 - Tripled the content-bounty program to 20 published tutorials and 12 contributors by gating open submissions on compiling code
 - Built reference implementations and example dApps engineers use as starting points for building on Midnight
-- In 2026 Midnight standardised on two official tools, Kapa MCP and Midnight Expert, and midnight-mcp is being wound down; the package still installs and every tool carries the migration notice
+- In 2026 Midnight standardised on two official tools, Kapa MCP and Midnight Expert, and midnight-mcp was wound down
 - Remote, Full-time
 
 **Founder - Web3 Afrika** (May 2022 - Present)
@@ -43,24 +44,17 @@ Empowering Web3 builders in Africa. Backed by Developer DAO.
 - Organized events and workshops for knowledge sharing and skill development
 - Skills: Community Development, Community Management, Team Coordination, Community Outreach, Blockchain
 
-**Technical Writer at freeCodeCamp** (Jan 2021 - Present)
-FreeCodeCamp is a non-profit making web development accessible to anyone.
-- Published articles with 100k+ monthly views
-- Articles: https://www.freecodecamp.org/news/author/idris/
-- Freelance, San Francisco, California
-
 ### Previous Experience
 
 **Developer Relations Engineer at Axelar / Interop Labs** (Apr 2023 - Aug 2025)
 Axelar is a blockchain interoperability network enabling secure cross-chain communication.
-- Provided go-to-market (GTM) and integration support for strategic partners launching and scaling cross-chain applications
-- Engaged 100,000+ developers globally through talks, workshops, and community programs
+- First developer-relations hire
+- Embedded with partner engineering teams from discovery through production launch
+- Supported 100,000+ developers with hands-on integration debugging, rated 4.8/5
 - Built foundry-axelar-gmp-example, reducing cross-chain dApp setup time by 55% and driving 500+ developer adoptions
-- Acted as a key solution architect, designing and validating technical blueprints for projects building on Axelar
-- Achieved a 4.8/5 developer satisfaction score
 - Increased documentation usage by 120% through comprehensive rewrites and interactive tutorials
 - Location: Remote
-- Skills: Git, Technical Writing, Solidity, Rust, JavaScript, TypeScript, Developer Experience, Developer Relations, Public Speaking, Open-Source Development, Blockchain, API Documentation
+- Skills: Technical Writing, Solidity, Foundry, TypeScript, Developer Experience, Developer Relations, Public Speaking, Open-Source Development, API Documentation
 
 **Developer Relations Engineer at Mara** (Jul 2022 - Apr 2023)
 - Reduced developer onboarding time by 65% via an optimized documentation-to-production workflow
@@ -70,9 +64,6 @@ Axelar is a blockchain interoperability network enabling secure cross-chain comm
 - Established a feedback pipeline between the developer community and internal product teams
 - Location: Nairobi County, Kenya
 
-**Technical Author at LogRocket** (Mar 2022 - Mar 2023)
-- Freelance. Skills: Technical Writing, Solidity, Ethereum, Blockchain
-
 **Backend Engineer at Luna** (Dec 2021 - Jul 2022)
 - Built a multi-tenant payment microservice on Apache Kafka serving 50,000+ users across web and mobile via event-driven streaming
 - Improved application performance by 63% through bottleneck analysis, code optimization, and microservices architecture
@@ -80,7 +71,7 @@ Axelar is a blockchain interoperability network enabling secure cross-chain comm
 - Integrated 3rd-party payment APIs (Stripe, PayPal, bank accounts)
 - Location: Greater London, United Kingdom (Remote)
 
-**Backend Engineer at PhilanthroLab** (Feb 2021 - Dec 2021)
+**Backend Engineer (promoted to backend team lead) at PhilanthroLab** (Feb 2021 - Dec 2021)
 - Built web applications using Node.js, GraphQL, and Neo4j, improving performance by 50%
 - Designed an automated data lake processing 100GB+ monthly data, eliminating manual retrieval and saving 1,000+ hours annually
 - Location: Dallas, Texas, United States
@@ -90,53 +81,45 @@ Axelar is a blockchain interoperability network enabling secure cross-chain comm
 - Developed custom SharePoint and .NET Core (MVC 2.2-5.0) solutions with zero data loss on deployments
 - Location: Lagos, Nigeria
 
-## Selected Projects
+## Projects
 
-**SwoopAgent** - Self-hosted, multi-tenant autonomous AI-agent platform on Base
-Full-stack TypeScript (Next.js App Router, Drizzle, PostgreSQL, Redis) with Privy embedded wallets, 0x onchain swaps, and Stripe billing. Engineered for money-movement correctness: atomic execution, Redis idempotency keys, rate limiting, and an independent stop-loss / circuit-breaker safety net. Running live with real users.
+### The agent harness, end to end
+An agent that acts, the tools and verification it needs to act correctly, and a view over agents while they run.
 
-**GiftDice** - Consumer gift-exchange platform, 3,000+ users across 20+ countries
-Full-stack Next.js product with Stripe payments, AI features, real-time multiplayer (live quiz, leaderboards), PWA, and push notifications. Shipped and maintained solo.
+**SwoopAgent** (acts) - Multi-tenant platform where each user runs a Claude-powered agent that trades real money, on web and Telegram
+Agents propose; the backend validates, signs and executes. Closed a double-sell race with an optimistic-lock mutex, Redis idempotency keys and single-transaction writes. A safety layer checks every open position every 30 seconds and enforces stop-losses and a -15% circuit breaker. Around 100 users trading real funds. Stack: Next.js, TypeScript, Postgres, Redis, Docker.
 
-**foundry-axelar-gmp-example** - Cross-chain reference implementation
-Onchain general-message-passing example in Foundry / Solidity; cut dApp setup time 55% and drove 500+ developer adoptions.
+**Midnight MCP server** (verifies) - MCP server, built in a weekend, that let AI agents search Midnight code and compile it before answering
+A hosted compiler worked as a verification gate, so assistants returned code that compiles instead of confident wrong code. 10,000+ downloads, 11,900+ agent tool calls. Stack: TypeScript, MCP, Cloudflare Workers. https://github.com/Olanetsoft/midnight-mcp
 
-**article-idea-generator** (⭐ 221) - Open-source AI writing-tools suite
-Next.js app pairing AI title generation with a dozen developer utilities.
+**Agent Lookout** (observes) - Local dashboard for the Claude Code and Codex sessions on a machine, and which of them need you
+Flags Claude Code sessions waiting for approval with what they are asking, and jumps to the right VS Code window or tmux pane. Shipped October 2026, 1,100+ npm downloads in its first week. Run with `npx agent-lookout`. Stack: TypeScript, React, Vite, MCP. https://github.com/Olanetsoft/agent-lookout
 
-**awesome-hackathon-projects** (⭐ 1,600+) - Curated hackathon project ideas by technology and complexity.
-
-**web3terms** (⭐ 113) - Twitter bot explaining Web3 and cryptocurrency terminology in simple terms.
-
-**AudioBoost** - Native macOS audio-repair app (FFmpeg) with two-pass EBU R128 loudness normalization and lossless video passthrough.
+### More builds
+- **create-mn-app** - Scaffolding CLI that sets up a Midnight app with a Compact contract, a local devnet and deploy scripts. 9,000+ npm downloads, now maintained in the Midnight GitHub org.
+- **Compact Playground** - Compile API for Compact that adds Run buttons to code samples, so learners compile from the page.
+- **foundry-axelar-gmp-example** - Reference implementation for cross-chain calls and token transfers with Axelar GMP and Foundry. 500+ adoptions, 55% cut in integration setup time.
+- **GiftDice** - Gift exchange and wishlist platform with AI gift ideas, real-time party games and an installable PWA. 3,000+ users across 20+ countries. https://giftdice.com
+- **Article Idea Generator** - Open-source AI writing tool that turns a topic into article titles, plus free tools for writers. 60 forks and 11 contributors on GitHub.
+- **AudioBoost** - macOS app that fixes quiet video audio with two-pass EBU R128 loudness normalisation, without clipping.
+- Other open source: awesome-hackathon-projects (curated hackathon project ideas) and web3terms (a bot that explains Web3 terms in plain English).
 
 ## Technical Expertise
 
-### AI & Agent Tooling
-- MCP (Model Context Protocol) servers
-- AI coding-assistant integration (Claude, Cursor, Copilot)
-- LLM-accessible documentation (server-side rendering, llms.txt)
-- Agent retrieval and instrumentation
+### Agent harness
+Tool use and MCP servers, context management, orchestration, verification gates, human-in-the-loop approval, safety layers independent of the agent, agent session observability, Claude and OpenAI APIs, Claude Code, Cursor and Codex, local inference with Ollama, GGUF models and RAG.
 
-### Blockchain & Web3
-- Zero-knowledge proofs and privacy-preserving smart contracts (Midnight)
-- Cross-chain development (Axelar / Interop Labs)
-- Solidity, Rust, Foundry, Ethers.js, Web3.js
-- Ethereum / EVM chains, Base, dApp development, USDC / stablecoins
+### Backend
+TypeScript, Node.js, PostgreSQL, Redis, Apache Kafka, RabbitMQ, event-driven and microservice architectures, REST and GraphQL, WebSockets, Neo4j, Elasticsearch, .NET Core and SharePoint (earlier).
 
-### Backend & Infrastructure
-- Node.js, Express.js
-- Apache Kafka, event-driven architecture
-- GraphQL, REST / Web APIs, OpenAPI
-- PostgreSQL, MongoDB, Neo4j, ElasticSearch, Redis, RabbitMQ
-- Microservice architecture, Docker, GCP, Azure
+### Frontend
+React, Next.js, Vue, Vite, Vitest.
 
-### Frontend & Full-Stack
-- TypeScript, JavaScript (ES6+), React.js, Next.js (App Router), Vue.js
-- Tailwind CSS, PWA, real-time (WebSockets)
+### Web3
+Zero-knowledge proofs and privacy-preserving smart contracts (Midnight, Compact), cross-chain messaging (Axelar GMP), Solidity, Foundry, EVM chains, USDC.
 
-### DevRel Tooling
-- GitHub, Docusaurus, Postman, Discord / Slack community management, Google Analytics
+### Developer relations
+Documentation for developers and AI retrieval (server-side rendering, llms.txt), tutorials and video, workshops and talks, developer programmes, partner integrations, feedback pipelines to Product and Engineering.
 
 ## Content Creation & Technical Writing
 
@@ -159,18 +142,22 @@ freeCodeCamp, LogRocket, Dev.to, Medium, Section.io, Moralis, Alchemy, Infura, A
 
 ## Public Speaking
 
-### Conference Appearances
+### Conference Appearances (newest first)
 - University of Zurich International Summer School (2026) - Guest lecture on Midnight
-- BlockFest Africa 2025 (Lagos) - Keynote: "Beyond H-1B: Building Global Tech Careers from Africa", 12,000+ participants from 50+ countries
-- Build Afrika Summit - Founder and event lead via Web3 Afrika
-- Devfest Lagos - Leveraging USDC to build decentralized applications in Web3 efficiently
-- Osmocon Paris - Cross-Chain Interoperability with Axelar Network
-- CityJS Conference - JavaScript Supremacy: Building a scalable full-stack application with JavaScript
-- Mara Developer Campus Club - Building and Integrating USDC into Web Applications
+- Blockfest Africa 2025 (Lagos) - Keynote: "Beyond H-1B: Building Global Tech Careers from Africa", at an event with 12,000+ participants from 50+ countries
+- Midnight (2025) - Fireside chat: AI-assisted developer tooling and a demo of the Midnight MCP server
+- ETHCC (2025) - Speaker
+- Build Afrika Summit (2025, Lagos) - Founder and host, via Web3 Afrika
+- Devcon (2024) - Speaker
+- Osmocon (2023, Paris) - Cross-Chain Interoperability with Axelar Network
+- Mara Developer Campus Club (2022) - Workshop: Building and Integrating USDC into Web Applications
+- DevFest Lagos (2022) - Leveraging USDC to build decentralised applications in Web3 efficiently
+- CityJS Conference (2022) - JavaScript Supremacy: Building a scalable full-stack application with JavaScript
+Recorded workshops and talks: https://www.youtube.com/playlist?list=PLaZ7cT8J_HZbyPjlfLgFCCpA_rAbKaaqg
 Speaking profile: sessionize.com/olanetsoft
 
 ### Speaking Topics
-Agent-era developer experience, MCP and AI-agent tooling, zero-knowledge proofs, building cross-chain applications, technical writing for developers, building developer communities, and developer relations best practices.
+Agent systems and the harness around them, MCP and AI-agent tooling, zero-knowledge proofs, building cross-chain applications, technical writing for developers, building developer communities, and developer relations best practices.
 
 ## Open Source Contributions
 
@@ -193,14 +180,13 @@ Agent-era developer experience, MCP and AI-agent tooling, zero-knowledge proofs,
 ### Developer Reach
 - 11,900+ AI-agent tool calls served via the Midnight MCP server (10,000+ downloads)
 - 1,120+ developers certified via Midnight Academy (1,576 enrolled)
-- 100,000+ developers engaged globally (Axelar)
+- 100,000+ developers supported, rated 4.8/5 (Axelar)
 - 30,000+ developers reached across Africa (Mara)
 - 15,000+ Web3 builders in Web3 Afrika
 - 50,000+ members reached as backend community lead at SheCodeAfrica
 
 ### Documentation & Education
 - 120% increase in documentation usage at Axelar
-- 4.8/5 developer satisfaction score
 - 65% reduction in developer onboarding time (Mara)
 - 55% reduction in cross-chain dApp setup time
 
@@ -242,4 +228,4 @@ The information in this file has been verified against:
 - freeCodeCamp author page (freecodecamp.org/news/author/idris/)
 - Idris Olubisi's current résumé
 
-Last updated: September 2026
+Last updated: October 2026

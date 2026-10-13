@@ -28,7 +28,7 @@ export const talks: Talk[] = [
   },
   {
     event: "Midnight",
-    title: "AI-assisted developer tooling and a live MCP server demo",
+    title: "AI-assisted developer tooling and a demo of the Midnight MCP server",
     year: "2025",
     kind: "Fireside chat",
   },
@@ -59,6 +59,13 @@ export const talks: Talk[] = [
     href: "https://www.osmocon.com/#speakers",
   },
   {
+    event: "Mara Developer Campus Club",
+    title: "Building and integrating USDC into web applications",
+    year: "2022",
+    kind: "Workshop",
+    href: "https://x.com/olanetsoft/status/1606312523677966337",
+  },
+  {
     event: "DevFest Lagos",
     title: "Leveraging USDC to build decentralised applications in Web3 efficiently",
     year: "2022",
@@ -72,12 +79,5 @@ export const talks: Talk[] = [
     year: "2022",
     kind: "Talk",
     href: "https://x.com/olanetsoft/status/1580091101293477888",
-  },
-  {
-    event: "Mara Developer Campus Club",
-    title: "Building and integrating USDC into web applications",
-    year: "2022",
-    kind: "Workshop",
-    href: "https://x.com/olanetsoft/status/1606312523677966337",
   },
 ];

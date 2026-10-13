@@ -4,10 +4,13 @@ import { articles, writingStats } from "@/data/writing";
 export function Writing() {
   return (
     <section className="section" id="writing" aria-labelledby="writing-title">
-      <div className="container section-grid">
+      <div className="container">
         <div className="section-head">
-          <h2 id="writing-title">Selected writing</h2>
-          <p className="section-intro">
+          <h2 className="label" id="writing-title">
+            <span className="label-index" aria-hidden="true" />
+            Writing
+          </h2>
+          <p className="lede">
             {writingStats.tutorials} tutorials, read {writingStats.reads} times.
           </p>
         </div>

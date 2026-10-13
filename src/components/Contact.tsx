@@ -1,21 +1,31 @@
 import { site } from "@/data/site";
+import { StatusLine } from "./StatusLine";
+import { CopyButton } from "./CopyCommand";
 
 export function Contact() {
   return (
     <section className="section" id="contact" aria-labelledby="contact-title">
-      <div className="container section-grid">
+      <div className="container">
         <div className="section-head">
-          <h2 id="contact-title">Contact</h2>
-          <p className="section-intro">For roles, speaking or advising: book a call or email me.</p>
+          <h2 className="label" id="contact-title">
+            <span className="label-index" aria-hidden="true" />
+            Contact
+          </h2>
+          <p className="lede">For roles, speaking or advising.</p>
         </div>
-        <div className="box contact-lines">
-          <p>
+        <div className="box contact-box">
+          <StatusLine />
+          <p className="contact-email">
             <a className="email" href={`mailto:${site.email}`}>
               {site.email}
             </a>
+            <CopyButton value={site.email} label="Copy email address" />
           </p>
-          <p>
-            <a href={site.bookingUrl}>Book a 15-min call</a>
+          <p className="availability">{site.availability}</p>
+          <p className="contact-actions">
+            <a className="btn btn--primary" href={site.bookingUrl}>
+              Book a 15-min call
+            </a>
           </p>
           <p className="elsewhere">
             Also on{" "}
@@ -29,8 +39,8 @@ export function Contact() {
             ,{" "}
             <a href={site.links.x} rel="me">
               X
-            </a>
-            ,{" "}
+            </a>{" "}
+            (27,000+ followers),{" "}
             <a href={site.links.youtube} rel="me">
               YouTube
             </a>{" "}

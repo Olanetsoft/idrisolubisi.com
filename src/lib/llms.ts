@@ -1,6 +1,7 @@
 import { community, education, experience, stack } from "@/data/experience";
-import { interests } from "@/data/interests";
-import { projects, starsFetchedAt } from "@/data/projects";
+import { harnessIntro, projects } from "@/data/projects";
+import { githubFetchedAt, isPrivateRepo, starsFor } from "@/lib/generated";
+import { lenses, lensOrder } from "@/data/lenses";
 import { recognition } from "@/data/recognition";
 import { site } from "@/data/site";
 import { talks } from "@/data/talks";
@@ -26,7 +27,15 @@ export function renderLlmsTxt(): string {
   push(`Email: ${site.email}`);
   push(`Book a call: ${site.bookingUrl}`);
   push(`Status: ${site.status}`);
-  push(`Availability: ${site.availability}`);
+  push(`Availability: Available now. ${site.availability} No sponsorship needed.`);
+  push("");
+
+  push("## Roles");
+  push("");
+  for (const key of lensOrder) {
+    const lens = lenses[key];
+    push(`- ${lens.label}: ${lens.title} - ${site.url}${lens.path}`);
+  }
   push("");
 
   push("## What I do");
@@ -48,17 +57,20 @@ export function renderLlmsTxt(): string {
   for (const g of stack) push(`- ${g.label}: ${g.items.join(", ")}`);
   push("");
 
-  push("## Current tech interests");
+  push("## Projects");
   push("");
-  for (const name of interests) push(`- ${name}`);
-  push("");
-
-  push("## Open source and products");
+  push(`Agent harness: ${harnessIntro}`);
   push("");
   for (const p of projects) {
-    const stars = typeof p.stars === "number" ? ` (${p.stars} stars, ${starsFetchedAt})` : "";
-    push(`- ${p.name}: ${p.description}${stars}${p.href ? ` - ${p.href}` : ""}`);
-    if (p.status) push(`  Status: ${p.status}`);
+    const stars = p.githubRepo ? starsFor(p.githubRepo) : null;
+    const starNote = stars !== null ? ` ${stars} GitHub stars (${githubFetchedAt}).` : "";
+    push(
+      `- ${p.name}${p.group === "harness" ? " (agent harness)" : ""}: ${p.oneLine} ${p.proof}.${starNote}`,
+    );
+    const links = p.links.filter((l) => !isPrivateRepo(l.url));
+    push(
+      `  Stack: ${p.stack.join(", ")}.${links.length ? ` Links: ${links.map((l) => `${l.label} ${l.url}`).join(", ")}` : ""}`,
+    );
   }
   push("");
 

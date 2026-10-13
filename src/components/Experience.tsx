@@ -5,9 +5,15 @@ import { site } from "@/data/site";
 export function Experience() {
   return (
     <section className="section" id="experience" aria-labelledby="experience-title">
-      <div className="container section-grid">
+      <div className="container">
         <div className="section-head">
-          <h2 id="experience-title">Experience</h2>
+          <h2 className="label" id="experience-title">
+            <span className="label-index" aria-hidden="true" />
+            Experience
+          </h2>
+          <p className="lede">
+            Seven years: backend engineering, developer relations, then agents.
+          </p>
         </div>
         <div className="box">
           <ol className="rows">

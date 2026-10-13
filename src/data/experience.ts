@@ -21,9 +21,9 @@ export const experience: Role[] = [
     scope:
       "Developer relations for a zero-knowledge blockchain: the MCP server, docs that AI tools can read, Midnight Academy and partner onboarding.",
     highlights: [
-      "Built and open-sourced the Midnight MCP server: 30 tools, 10,000+ npm downloads, 11,900+ tool calls served to AI coding agents.",
+      "Built and open-sourced the Midnight MCP server: 10,000+ npm downloads, 11,900+ tool calls served to AI coding agents.",
       "Rebuilt the documentation so AI tools can read it (server-side rendering, llms.txt index).",
-      "Launched Midnight Academy, a three-tier Compact and zero-knowledge curriculum: 1,576 enrolled, 1,120+ certified.",
+      "Developed the curriculum for Midnight Academy, three tiers of Compact and zero-knowledge content: 1,576 enrolled, 1,120+ certified.",
       "Tripled the content-bounty programme to 20 published tutorials from 12 contributors by gating submissions on code that compiles.",
       "Gave strategic partners integration support end to end: code reviews, debug sessions, architecture guidance, and structured friction reports to Engineering.",
     ],
@@ -35,11 +35,11 @@ export const experience: Role[] = [
     location: "Remote",
     url: "https://www.axelar.network/",
     scope:
-      "Grew the cross-chain developer community and was the technical point of contact for partners integrating Axelar.",
+      "First developer-relations hire; grew the cross-chain developer community and was the technical point of contact for partners integrating Axelar.",
     highlights: [
       "Wrote foundry-axelar-gmp-example, the reference implementation for cross-chain messaging: setup time −55%, adopted by 500+ developers.",
-      "Rewrote the documentation with interactive tutorials and troubleshooting guides; usage +120%, developer satisfaction 4.8/5.",
-      "Engaged 100,000+ developers through talks, workshops and community programmes.",
+      "Rewrote the documentation with interactive tutorials and troubleshooting guides; documentation usage +120%.",
+      "Supported 100,000+ developers with hands-on integration debugging, rated 4.8/5.",
       "Acted as solution architect for strategic partners: validated technical blueprints and gave go-to-market and integration support through launch.",
     ],
   },
@@ -49,7 +49,7 @@ export const experience: Role[] = [
     period: "Jul 2022–Apr 2023",
     location: "Nairobi",
     scope:
-      "First developer-relations hire; built the developer programme from zero across 18+ universities.",
+      "Built the developer programme from zero across 18+ universities.",
     highlights: [
       "Cut developer onboarding time by 65% with a documentation-to-production workflow.",
       "Scaled the Mara Developer Campus Club from 0 to 18+ universities and reached 30,000+ developers across Africa.",
@@ -71,7 +71,7 @@ export const experience: Role[] = [
   },
   {
     company: "PhilanthroLab",
-    title: "Backend Engineer",
+    title: "Backend Engineer (promoted to backend team lead)",
     period: "Feb 2021–Dec 2021",
     location: "Dallas, remote",
     scope: "Automated data lake and Node.js, GraphQL and Neo4j services.",
@@ -107,56 +107,67 @@ export const community = [
 
 export const stack = [
   {
-    label: "Languages and frameworks",
-    items: ["TypeScript", "JavaScript", "Node.js", "React", "Next.js", "Vue.js", "Express"],
+    label: "Agent harness",
+    items: [
+      "tool use and MCP servers",
+      "context management",
+      "orchestration",
+      "verification gates",
+      "human-in-the-loop approval",
+      "safety layers independent of the agent",
+      "agent session observability",
+      "Claude and OpenAI APIs",
+      "Claude Code, Cursor and Codex",
+      "local inference with Ollama, GGUF models and RAG",
+    ],
+  },
+  {
+    label: "Backend",
+    items: [
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Redis",
+      "Apache Kafka",
+      "RabbitMQ",
+      "event-driven and microservice architectures",
+      "REST and GraphQL",
+      "WebSockets",
+      "Neo4j",
+      "Elasticsearch",
+      ".NET Core and SharePoint (earlier)",
+    ],
+  },
+  {
+    label: "Frontend",
+    items: ["React", "Next.js", "Vue", "Vite", "Vitest"],
+  },
+  {
+    label: "Correctness and reliability",
+    items: [
+      "atomic transactions",
+      "optimistic locking",
+      "idempotency keys",
+      "rate limiting",
+      "monitoring and alerting",
+      "performance profiling",
+      "zero-data-loss migrations",
+    ],
+  },
+  {
+    label: "Delivery",
+    items: [
+      "GitHub Actions CI",
+      "Docker",
+      "Cloudflare Workers and Vectorize",
+      "Vercel",
+      "Supabase",
+      "release runbooks",
+      "on-call rotations",
+    ],
   },
   {
     label: "Web3",
-    items: [
-      "Solidity",
-      "Rust",
-      "Foundry",
-      "Ethers.js",
-      "Compact and zero-knowledge circuits",
-      "cross-chain messaging",
-    ],
-  },
-  {
-    label: "AI",
-    items: [
-      "MCP servers",
-      "Claude and OpenAI APIs",
-      "LangChain",
-      "RAG",
-      "prompt engineering",
-      "n8n",
-    ],
-  },
-  {
-    label: "Data and infrastructure",
-    items: [
-      "PostgreSQL",
-      "MongoDB",
-      "GraphQL",
-      "Redis",
-      "RabbitMQ",
-      "Kafka",
-      "Elasticsearch",
-      "Docker",
-      "GCP",
-      "Azure",
-      "Linux",
-    ],
-  },
-  {
-    label: "Developer relations",
-    items: [
-      "Docusaurus",
-      "docs-as-code",
-      "llms.txt",
-      "Postman",
-      "Discord and Slack community management",
-      "Google Analytics",
-    ],
+    items: ["Solidity", "Foundry", "Compact and zero-knowledge circuits", "cross-chain messaging"],
   },
 ];
