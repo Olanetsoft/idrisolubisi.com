@@ -1,4 +1,5 @@
 import { harnessIntro, projects, type Project } from "@/data/projects";
+import { site } from "@/data/site";
 import { isPrivateRepo, starsFor } from "@/lib/generated";
 import { CopyCommand } from "./CopyCommand";
 
@@ -119,6 +120,11 @@ export function Projects() {
             <CompactCard key={p.key} project={p} />
           ))}
         </ul>
+        <p className="more-link">
+          <a href={site.links.github} rel="me">
+            More on GitHub
+          </a>
+        </p>
       </div>
     </section>
   );

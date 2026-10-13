@@ -2,6 +2,7 @@ import Image from "next/image";
 import { hero } from "@/data/hero";
 import { site } from "@/data/site";
 import { ActivityLog } from "./ActivityLog";
+import { HeroBackdrop } from "./HeroBackdrop";
 import { RichText } from "./RichText";
 import { StatusLine } from "./StatusLine";
 
@@ -9,7 +10,7 @@ export function Hero() {
   return (
     <section className="hero" id="about" aria-labelledby="hero-title">
       <div className="container hero-inner">
-        <div className="hero-bg" aria-hidden="true" />
+        <HeroBackdrop />
         <div className="hero-grid">
           <StatusLine />
           <div className="hero-id">
@@ -48,21 +49,11 @@ export function Hero() {
               GitHub
             </a>
           </div>
-          <dl className="metrics hero-metrics">
-            {hero.metrics.map((m) => (
-              <div className="metric" key={m.caption}>
-                <dt className="metric-source">{m.source}</dt>
-                <dd className="metric-value">
-                  {m.href ? (
-                    <a href={m.href}>
-                      {m.value}
-                      <span className="sr-only"> {m.caption}</span>
-                    </a>
-                  ) : (
-                    m.value
-                  )}
-                </dd>
-                <dd className="metric-caption">{m.caption}</dd>
+          <dl className="focus hero-focus">
+            {hero.focus.map((f, i) => (
+              <div className="focus-card" key={f.title} style={{ "--i": i } as React.CSSProperties}>
+                <dt className="focus-title">{f.title}</dt>
+                <dd className="focus-text">{f.text}</dd>
               </div>
             ))}
           </dl>

@@ -1,5 +1,5 @@
-// Build-time data pipeline: fetches GitHub repo stats and the YouTube playlist
-// feed, then writes them to src/data/generated/*.json for the site to import.
+// Build-time data pipeline: fetches GitHub repo stats and the follower count,
+// then writes them to src/data/generated/github.json for the site to import.
 // Run with: node scripts/fetch-data.mjs (optionally with GITHUB_TOKEN set).
 //
 // This script must never fail a build. Network or parse errors log a one-line
@@ -17,14 +17,15 @@ const REPOS = [
   "axelarnetwork/foundry-axelar-gmp-example",
   "Olanetsoft/article-idea-generator",
   "Olanetsoft/audioboost",
+  "midnightntwrk/example-zkloan",
+  "Olanetsoft/learn-compact",
+  "Olanetsoft/web3terms",
 ];
 const GITHUB_USER = "Olanetsoft";
-const PLAYLIST_ID = "PLaZ7cT8J_HZbyPjlfLgFCCpA_rAbKaaqg";
 const TIMEOUT_MS = 10_000;
 
 const OUT_DIR = new URL("../src/data/generated/", import.meta.url);
 const GITHUB_FILE = new URL("github.json", OUT_DIR);
-const VIDEOS_FILE = new URL("videos.json", OUT_DIR);
 
 const today = new Date().toISOString().slice(0, 10);
 const log = (msg) => console.log(`fetch-data: ${msg}`);
@@ -179,102 +180,9 @@ async function updateGithub() {
   );
 }
 
-// ---------------------------------------------------------------- YouTube
-
-const NAMED_ENTITIES = { amp: "&", quot: '"', apos: "'", lt: "<", gt: ">" };
-
-/** Decodes XML entities in a single pass so "&amp;lt;" correctly yields "&lt;". */
-function decodeEntities(text) {
-  return text.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (match, code) => {
-    if (code[0] === "#") {
-      const n =
-        code[1].toLowerCase() === "x" ? parseInt(code.slice(2), 16) : parseInt(code.slice(1), 10);
-      return Number.isFinite(n) && n <= 0x10ffff ? String.fromCodePoint(n) : match;
-    }
-    return NAMED_ENTITIES[code.toLowerCase()] ?? match;
-  });
-}
-
-/** The site forbids em-dashes; rewrite separator dashes into plain punctuation. */
-function sanitizeTitle(title) {
-  return title
-    .replace(/ — /g, ": ")
-    .replace(/\s*—\s*/g, ", ")
-    .replace(/ – /g, ": ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-function tagText(xml, tag) {
-  const match = xml.match(new RegExp(`<${tag}(?:\\s[^>]*)?>([\\s\\S]*?)</${tag}>`));
-  if (!match) return null;
-  const raw = match[1].replace(/^\s*<!\[CDATA\[([\s\S]*?)\]\]>\s*$/, "$1");
-  return decodeEntities(raw).trim();
-}
-
-function parseFeed(xml) {
-  const entries = xml.match(/<entry[\s>][\s\S]*?<\/entry>/g) ?? [];
-  const videos = [];
-  for (const entry of entries) {
-    const id = tagText(entry, "yt:videoId");
-    const rawTitle = tagText(entry, "title");
-    const publishedRaw = tagText(entry, "published");
-    if (!id || !/^[\w-]{6,}$/.test(id) || !rawTitle) continue;
-
-    const date = publishedRaw ? new Date(publishedRaw) : null;
-    const published = date && !Number.isNaN(date.getTime()) ? date.toISOString() : null;
-    const viewsAttr = entry.match(/<media:statistics\b[^>]*\bviews="(\d+)"/);
-
-    videos.push({
-      id,
-      title: sanitizeTitle(rawTitle),
-      rawTitle,
-      published,
-      views: viewsAttr ? Number(viewsAttr[1]) : null,
-      thumbnail: `https://i.ytimg.com/vi/${id}/hqdefault.jpg`,
-      url: `https://www.youtube.com/watch?v=${id}`,
-    });
-  }
-  return videos;
-}
-
-async function updateVideos() {
-  const empty = { fetchedAt: null, playlistId: PLAYLIST_ID, videos: [] };
-  let parsed;
-  try {
-    const res = await fetchWithTimeout(
-      `https://www.youtube.com/feeds/videos.xml?playlist_id=${PLAYLIST_ID}`,
-      { as: "text" },
-    );
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    parsed = parseFeed(res.body);
-    // A 200 with no parsable entries (consent page, outage) must not wipe data.
-    if (parsed.length === 0) throw new Error("feed contained no parsable entries");
-  } catch (err) {
-    warn(`youtube: ${describeError(err)}`);
-    await keepOrCreate(VIDEOS_FILE, empty, "videos.json");
-    return;
-  }
-
-  parsed.sort((a, b) => (b.published ?? "").localeCompare(a.published ?? ""));
-  for (const v of parsed) {
-    if (v.title !== v.rawTitle) log(`sanitized title: "${v.rawTitle}" -> "${v.title}"`);
-    delete v.rawTitle;
-  }
-  const videos = parsed;
-
-  await writeJson(VIDEOS_FILE, { fetchedAt: today, playlistId: PLAYLIST_ID, videos });
-  log(
-    `videos.json: ${videos.length} videos, newest ${videos[0].published?.slice(0, 10) ?? "unknown"}`,
-  );
-}
-
 // ---------------------------------------------------------------- main
 
-for (const [name, task] of [
-  ["github", updateGithub],
-  ["youtube", updateVideos],
-]) {
+for (const [name, task] of [["github", updateGithub]]) {
   try {
     await task();
   } catch (err) {

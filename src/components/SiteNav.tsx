@@ -11,14 +11,54 @@ const SECTIONS = [
   { id: "contact", label: "Contact" },
 ];
 
-/** Section links: they scroll in place on the home page and lead home elsewhere. */
+/**
+ * The section being read: the one crossing the middle of the screen. Only on
+ * the home page, where the sections exist.
+ */
+function useActiveSection(enabled: boolean): string | null {
+  const [active, setActive] = useState<string | null>(null);
+  useEffect(() => {
+    if (!enabled) return;
+    const sections = SECTIONS.map((s) => document.getElementById(s.id)).filter(
+      (el): el is HTMLElement => el !== null,
+    );
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) if (entry.isIntersecting) setActive(entry.target.id);
+      },
+      { rootMargin: "-45% 0px -50% 0px" },
+    );
+    sections.forEach((el) => io.observe(el));
+    const top = () => {
+      if (window.scrollY < 200) setActive(null);
+    };
+    window.addEventListener("scroll", top, { passive: true });
+    return () => {
+      io.disconnect();
+      window.removeEventListener("scroll", top);
+    };
+  }, [enabled]);
+  return active;
+}
+
+/**
+ * Section links: they scroll in place on the home page and lead home
+ * elsewhere. The section being read is marked, so the header doubles as a
+ * "you are here".
+ */
 export function SiteNav() {
   const pathname = usePathname();
-  const base = pathname === "/" ? "" : "/";
+  const onHome = pathname === "/";
+  const base = onHome ? "" : "/";
+  const active = useActiveSection(onHome);
   return (
     <nav className="site-nav" aria-label="Sections">
       {SECTIONS.map((s) => (
-        <a key={s.id} href={`${base}#${s.id}`}>
+        <a
+          key={s.id}
+          href={`${base}#${s.id}`}
+          aria-current={active === s.id ? "location" : undefined}
+        >
           {s.label}
         </a>
       ))}
@@ -44,7 +84,9 @@ export function BrandLink({ name }: { name: string }) {
  */
 export function MobileMenu() {
   const pathname = usePathname();
-  const base = pathname === "/" ? "" : "/";
+  const onHome = pathname === "/";
+  const base = onHome ? "" : "/";
+  const active = useActiveSection(onHome);
   const [open, setOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLElement>(null);
@@ -89,7 +131,12 @@ export function MobileMenu() {
         hidden={!open}
       >
         {SECTIONS.map((s) => (
-          <a key={s.id} href={`${base}#${s.id}`} onClick={() => setOpen(false)}>
+          <a
+            key={s.id}
+            href={`${base}#${s.id}`}
+            aria-current={active === s.id ? "location" : undefined}
+            onClick={() => setOpen(false)}
+          >
             {s.label}
           </a>
         ))}

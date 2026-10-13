@@ -4,10 +4,8 @@ export type Role = {
   /** En dash, no spaces, so the period never wraps. */
   period: string;
   location?: string;
-  /** Summary for /llms.txt; not rendered on the page. */
-  scope: string;
-  /** Detail for the CV and /llms.txt; not rendered on the page. */
-  highlights: string[];
+  /** Two to four checked points on what was done, with numbers. Used by /llms.txt; the page shows company, title and dates only. From the CV, the brief and the owner. */
+  points: string[];
   url?: string;
 };
 
@@ -15,80 +13,72 @@ export const experience: Role[] = [
   {
     company: "Midnight Foundation",
     title: "Developer Educator, Developer Relations",
+    points: [
+      "Built the Midnight MCP server so AI coding assistants wrote correct code: 10,000+ downloads, 11,900+ agent tool calls.",
+      "Led the docs overhaul for AI retrieval, ran the docs AI assistant and used 784 of its questions to plan new content.",
+      "Launched Midnight Academy (1,576 enrolled, 1,120+ certified), Compact by Example, a browser playground for compiling contracts and a 12-part video series.",
+      "Ran partner integrations and workshops, taught a University of Zurich session, and ran two bounty cohorts, the second publishing 20 tutorials.",
+    ],
     period: "Sep 2025–Sep 2026",
     location: "Remote",
     url: "https://midnight.network/",
-    scope:
-      "Developer relations for a zero-knowledge blockchain: the MCP server, docs that AI tools can read, Midnight Academy and partner onboarding.",
-    highlights: [
-      "Built and open-sourced the Midnight MCP server: 10,000+ npm downloads, 11,900+ tool calls served to AI coding agents.",
-      "Rebuilt the documentation so AI tools can read it (server-side rendering, llms.txt index).",
-      "Developed the curriculum for Midnight Academy, three tiers of Compact and zero-knowledge content: 1,576 enrolled, 1,120+ certified.",
-      "Tripled the content-bounty programme to 20 published tutorials from 12 contributors by gating submissions on code that compiles.",
-      "Gave strategic partners integration support end to end: code reviews, debug sessions, architecture guidance, and structured friction reports to Engineering.",
-    ],
   },
   {
     company: "Axelar / Interop Labs",
     title: "Developer Relations Engineer",
+    points: [
+      "Worked as solution architect inside partner engineering teams, from discovery to production launch.",
+      "Built a reference implementation that cut cross-chain integration setup time 55%, with 500+ weekly adoptions.",
+      "Supported 100,000+ developers and builders through hands-on debugging, talks and workshops, rated 4.8/5.",
+      "Grew documentation usage 120% with rewritten docs and interactive tutorials, and recorded live-coding and workshop videos.",
+    ],
     period: "Apr 2023–Aug 2025",
     location: "Remote",
     url: "https://www.axelar.network/",
-    scope:
-      "First developer-relations hire; grew the cross-chain developer community and was the technical point of contact for partners integrating Axelar.",
-    highlights: [
-      "Wrote foundry-axelar-gmp-example, the reference implementation for cross-chain messaging: setup time −55%, adopted by 500+ developers.",
-      "Rewrote the documentation with interactive tutorials and troubleshooting guides; documentation usage +120%.",
-      "Supported 100,000+ developers with hands-on integration debugging, rated 4.8/5.",
-      "Acted as solution architect for strategic partners: validated technical blueprints and gave go-to-market and integration support through launch.",
-    ],
   },
   {
     company: "Mara",
     title: "Developer Relations Engineer",
+    points: [
+      "Cut developer onboarding time 65% by redesigning the docs-to-production path, and set up a feedback pipeline into product.",
+      "Created Mara Academy's technical courses, growing it to 19,000+ active developers at 85% monthly retention.",
+      "Grew the campus club from 0 to 18+ universities, reached 30,000+ developers and builders across Africa, and managed strategic partners.",
+    ],
     period: "Jul 2022–Apr 2023",
     location: "Nairobi",
-    scope: "Built the developer programme from zero across 18+ universities.",
-    highlights: [
-      "Cut developer onboarding time by 65% with a documentation-to-production workflow.",
-      "Scaled the Mara Developer Campus Club from 0 to 18+ universities and reached 30,000+ developers across Africa.",
-      "Grew Mara Academy to 19,000+ active developers at 85% monthly retention, and set up the feedback pipeline from the community to Product.",
-    ],
   },
   {
     company: "Luna",
     title: "Backend Engineer",
+    points: [
+      "Built a multi-tenant payment service on Apache Kafka for 50,000+ users, integrating Stripe, PayPal and bank payments.",
+      "Improved application performance 63% through bottleneck analysis, caching and microservices, and held 99.9% uptime with monitoring and alerting.",
+      "Built APIs for high-volume traffic, helped implement authentication, encryption and secure data storage, and mentored three junior engineers on system design.",
+    ],
     period: "Dec 2021–Jul 2022",
     location: "London, remote",
-    scope:
-      "Payments microservice on Apache Kafka serving 50,000+ users; Stripe, PayPal and bank integrations.",
-    highlights: [
-      "Built a multi-tenant payments microservice on Apache Kafka serving 50,000+ users across web and mobile.",
-      "Improved application performance by 63% and held 99.9% uptime under high-volume traffic with monitoring and alerting.",
-      "Integrated Stripe, PayPal and bank-account payment flows; mentored three junior engineers.",
-    ],
   },
   {
     company: "PhilanthroLab",
     title: "Backend Engineer (promoted to backend team lead)",
+    points: [
+      "Built most of the backend infrastructure, shipped the MVP, and improved performance 50% with GraphQL, Node.js, Neo4j and Elasticsearch.",
+      "Promoted to backend team lead, then led technical programmes, system design, code reviews, documentation and architecture decisions.",
+      "Designed an automated data lake processing 100 GB+ a month, and automated workflows saving 1,000+ hours a year.",
+    ],
     period: "Feb 2021–Dec 2021",
     location: "Dallas, remote",
-    scope: "Automated data lake and Node.js, GraphQL and Neo4j services.",
-    highlights: [
-      "Designed an automated data lake processing 100 GB+ a month, saving 1,000+ hours of manual retrieval a year.",
-      "Improved application performance by 50% on a Node.js, GraphQL, Neo4j and Elasticsearch stack.",
-    ],
   },
   {
     company: "Tavia Technologies",
     title: "Software Developer / Support Analyst",
+    points: [
+      "Built enterprise SharePoint and .NET Core solutions for Access Bank (a leading bank in Africa) and MTN Nigeria (part of MTN Group, Africa's largest telecom company).",
+      "Automated business processes for these clients and NPDC (the exploration and production arm of NNPC, Nigeria's national oil company), saving 900+ hours a year.",
+      "Provided enterprise support, ran test-to-production deployments and database migrations with zero data loss, and wrote handover docs.",
+    ],
     period: "Apr 2019–Jan 2021",
     location: "Lagos",
-    scope: "SharePoint and .NET solutions for MTN Nigeria, NPDC and Access Bank.",
-    highlights: [
-      "Automated business processes for MTN Nigeria, NPDC and Access Bank, saving 900+ hours a year.",
-      "Delivered custom SharePoint and .NET Core solutions with zero data loss across deployments.",
-    ],
   },
 ];
 

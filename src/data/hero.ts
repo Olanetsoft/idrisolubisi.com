@@ -1,57 +1,53 @@
 import { site } from "./site";
 
 /**
- * The hero: one intro that covers every role, four numbers, and a rolling
- * log of short facts. Every figure comes from the owner's verified brief or
- * public data (npm, GitHub). No employer names in the intro, no em-dashes.
- * In the intro, ==text== marks the one highlighted clause and [label](url)
- * renders as a link.
+ * The hero: one intro that covers every role, four "what I do" cards (one
+ * per kind of role, in plain words; the numbers live in Experience and
+ * Projects), and a rolling log of short facts. Every figure comes from the owner's verified brief or public data.
+ * No employer names, no em-dashes. In the intro, ==text== marks the one
+ * highlighted clause and [label](url) renders as a link.
  */
-export type Metric = {
-  /** What the number is about, shown small above it. */
-  source: string;
-  value: string;
-  caption: string;
-  /** Section or project anchor the tile links to. */
-  href?: string;
+export type Focus = {
+  /** The role a hiring manager scans for. */
+  title: string;
+  /** What that work is, in plain words. */
+  text: string;
 };
 
-/** One line of the activity log: a tag and a true fact the tiles do not already show. */
+/** One line of the activity log: a tag and a true fact, usually a number, that the cards do not show. */
 export type LogLine = { tag: string; fact: string };
 
-export const hero: { headline: string; intro: string; metrics: Metric[]; log: LogLine[] } = {
+export const hero: { headline: string; intro: string; focus: Focus[]; log: LogLine[] } = {
   headline: site.role,
   intro: site.bio[0],
-  metrics: [
+  focus: [
     {
-      source: "Developer support",
-      value: "100,000+",
-      caption: "developers supported hands-on, rated 4.8/5",
-      href: "#experience",
+      title: "Developer relations",
+      text: "Docs, tutorials, explainer videos, talks and workshops that take developers and builders from first look to production.",
     },
     {
-      source: "Partner integrations",
-      value: "55%",
-      caption: "cut in integration setup time",
-      href: "#foundry-axelar-gmp-example",
+      title: "AI agent engineering",
+      text: "Production agents and the harness around them: MCP tools, verification, safety limits, human approval and dashboards that show what agents are doing.",
     },
     {
-      source: "MCP server",
-      value: "10,000+",
-      caption: "downloads, built so AI coding assistants write correct code",
-      href: "#midnight-mcp",
+      title: "Forward deployed engineering",
+      text: "Working inside partner engineering teams from discovery and solution architecture to production launch, then turning repeat problems into reference code and tooling.",
     },
     {
-      source: "Payments backend",
-      value: "50,000+",
-      caption: "users on a payment service I built, 99.9% uptime",
-      href: "#experience",
+      title: "Backend engineering",
+      text: "Production services and APIs: event-driven payments, multi-tenant systems, data pipelines, security hardening, race-condition fixes and monitoring.",
     },
   ],
   log: [
+    { tag: "developer-support", fact: "100,000+ developers helped, rated 4.8/5" },
+    { tag: "mcp-server", fact: "10,000+ downloads, 11,900+ agent tool calls" },
+    { tag: "integrations", fact: "setup time cut 55%, 500+ weekly adoptions" },
     { tag: "tutorials", fact: "10M+ reads across 40+ tutorials" },
+    { tag: "payments", fact: "50,000+ users at 99.9% uptime" },
+    { tag: "academy", fact: "1,120+ developers certified" },
     { tag: "swoopagent", fact: "every position checked every 30s" },
-    { tag: "partner-teams", fact: "embedded from discovery to production launch" },
+    { tag: "onboarding", fact: "developer onboarding time cut 65%" },
+    { tag: "docs", fact: "rebuilt so AI assistants can read them" },
     { tag: "agent-lookout", fact: "flags agent sessions waiting for approval" },
     { tag: "talks", fact: "spoken at Devcon and ETHCC" },
   ],

@@ -1,46 +1,34 @@
 import Image from "next/image";
 import { site } from "@/data/site";
 import { talks } from "@/data/talks";
-import { videos, type Video } from "@/lib/generated";
+import { featuredVideos } from "@/data/videos";
 
-const SERIES = "Midnight for Developers";
+type Talk = (typeof talks)[number];
 
-/** Label each recording from its title: an episode of the series, a workshop, or a talk. */
-function kindOf(video: Video): string {
-  if (video.title.startsWith(`${SERIES}:`)) return "Series";
-  if (/workshop|kickoff|onboarding|intro to/i.test(video.title)) return "Workshop";
-  return "Talk";
+const KIND: Record<Talk["kind"], string> = {
+  Keynote: "Keynote",
+  Talk: "Talk",
+  Workshop: "Workshop",
+  "Fireside chat": "Fireside chat",
+  Host: "Host",
+  Lecture: "Guest lecture",
+  Speaker: "Speaker",
+};
+
+/** "Blockfest Africa", without a trailing year or a bracketed long name; the year has its own column. */
+function eventName(t: Talk): string {
+  return t.event.replace(/\s*\(.*\)$/, "").replace(/\s+\d{4}$/, "");
 }
 
-/**
- * Drop the series prefix (the label already says it) and any YouTube-style
- * subtitle after a spaced "|" or "-", so a title reads cleanly and is never
- * cut off at a dangling separator.
- */
-function titleOf(video: Video): string {
-  const title = video.title.startsWith(`${SERIES}:`)
-    ? video.title.slice(SERIES.length + 1).trim()
-    : video.title;
-  return title.split(/\s+[|\u2013-]\s+/)[0];
-}
-
-const date = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short", year: "numeric" });
-
-/** "Devcon 2024", "Blockfest Africa 2025 (keynote)", for the on-stage row. */
-function stageName(t: (typeof talks)[number]): string {
-  const event = t.event.replace(/\s*\(.*\)$/, "");
-  const name = !t.year || event.includes(t.year) ? event : `${event} ${t.year}`;
-  const format: Partial<Record<(typeof talks)[number]["kind"], string>> = {
-    Keynote: "keynote",
-    "Fireside chat": "fireside chat",
-    Host: "host",
-    Workshop: "workshop",
-  };
-  return format[t.kind] ? `${name} (${format[t.kind]})` : name;
+/** "Keynote · Beyond H-1B: ...", or just the title when it already says what the role was. */
+function roleLine(t: Talk): string {
+  const kind = KIND[t.kind];
+  if (!t.title) return kind;
+  const firstWord = kind.split(" ").pop()!.toLowerCase();
+  return t.title.toLowerCase().includes(firstWord) ? t.title : `${kind} · ${t.title}`;
 }
 
 export function Talks() {
-  const recent = videos.slice(0, 6);
   return (
     <section className="section" id="talks" aria-labelledby="talks-title">
       <div className="container">
@@ -51,55 +39,55 @@ export function Talks() {
           </h2>
           <p className="lede">Recorded workshops, talks and live builds.</p>
           <p className="lede-sub">
-            Recordings on <a href={site.links.youtube}>YouTube</a>, including the ‘{SERIES}’ series.
+            Recordings on <a href={site.links.youtube}>YouTube</a>.
           </p>
         </div>
-        <div className="stages">
-          <p className="stages-label" id="stages-label">
-            On stage at
-          </p>
-          <ul className="stage-list" aria-labelledby="stages-label">
-            {talks.map((t) => (
-              <li key={`${t.event}-${t.title ?? t.kind}`} className="stage">
-                {t.href ? <a href={t.href}>{stageName(t)}</a> : stageName(t)}
-              </li>
-            ))}
-          </ul>
-        </div>
-        {recent.length > 0 && (
-          <ul className="videos">
-            {recent.map((v) => (
-              <li key={v.id} className="video">
-                <a className="video-link" href={v.url}>
-                  <span className="video-thumb">
-                    <Image
-                      src={v.thumbnail}
-                      alt=""
-                      width={480}
-                      height={360}
-                      sizes="(max-width: 759px) 128px, (max-width: 1023px) 45vw, 336px"
-                    />
+        <ul className="videos">
+          {featuredVideos.map((v) => (
+            <li key={v.id} className="video">
+              <a
+                className="video-link"
+                href={`https://www.youtube.com/watch?v=${v.id}${v.start ? `&t=${v.start}s` : ""}`}
+              >
+                <span className="video-thumb">
+                  <Image
+                    src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`}
+                    alt=""
+                    width={480}
+                    height={360}
+                    sizes="(max-width: 759px) 128px, (max-width: 1023px) 45vw, 336px"
+                  />
+                </span>
+                <span className="video-text">
+                  <span className="video-title">{v.title}</span>
+                  <span className="video-meta">
+                    {v.kind} <span aria-hidden="true">·</span> {v.context}{" "}
+                    <span aria-hidden="true">·</span> {v.year}
                   </span>
-                  <span className="video-text">
-                    <span className="video-title">{titleOf(v)}</span>
-                    <span className="video-meta">
-                      {kindOf(v)}
-                      {v.published && (
-                        <>
-                          {" "}
-                          <span aria-hidden="true">·</span> {date.format(new Date(v.published))}
-                        </>
-                      )}
-                    </span>
-                  </span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        )}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
         <p className="more-link">
           <a href={site.links.youtube}>All videos on YouTube</a>
         </p>
+        <h3 className="group-label stages-label">On stage</h3>
+        <div className="box">
+          <ul className="stage-grid">
+            {talks.map((t) => (
+              <li key={`${t.event}-${t.title ?? t.kind}`} className="stage">
+                <span className="stage-year">{t.year}</span>
+                <span className="stage-body">
+                  <span className="stage-event">
+                    {t.href ? <a href={t.href}>{eventName(t)}</a> : eventName(t)}
+                  </span>
+                  <span className="stage-role">{roleLine(t)}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );

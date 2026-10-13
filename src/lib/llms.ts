@@ -35,8 +35,7 @@ export function renderLlmsTxt(): string {
     push(
       `- ${r.title} at ${r.company} (${r.period}${r.location ? `, ${r.location}` : ""})${r.url ? ` - ${r.url}` : ""}`,
     );
-    if (r.scope) push(`  Scope: ${r.scope}`);
-    for (const h of r.highlights) push(`  - ${h}`);
+    for (const point of r.points) push(`  - ${point}`);
   }
   push(`- Education: ${education.degree}, ${education.school}, ${education.year}`);
   push(`- Community: ${community.map((c) => `${c.role}, ${c.org}`).join("; ")}`);

@@ -32,7 +32,7 @@ Midnight is a data-protection blockchain enabling confidential smart contracts.
 - Re-architected documentation with server-side rendering and an llms.txt index, exposing full content to LLM crawlers and AI coding agents
 - Developed the curriculum for Midnight Academy, three tiers of zero-knowledge and Compact content (Foundations, Intermediate, Advanced): 1,576 developers enrolled and 1,120+ certified
 - Developed educational content on zero-knowledge proofs and privacy-preserving smart contracts, including a 12-part video series
-- Tripled the content-bounty program to 20 published tutorials and 12 contributors by gating open submissions on compiling code
+- Ran two content-bounty cohorts (10 to 15 tutorials submitted by about 10 contributors in the first, 20 published in the second), gating every submission on code that compiles
 - Built reference implementations and example dApps engineers use as starting points for building on Midnight
 - In 2026 Midnight standardised on two official tools, Kapa MCP and Midnight Expert, and midnight-mcp was wound down
 - Remote, Full-time
@@ -47,10 +47,9 @@ Empowering Web3 builders in Africa. Backed by Developer DAO.
 
 **Developer Relations Engineer at Axelar / Interop Labs** (Apr 2023 - Aug 2025)
 Axelar is a blockchain interoperability network enabling secure cross-chain communication.
-- First developer-relations hire
 - Embedded with partner engineering teams from discovery through production launch
 - Supported 100,000+ developers with hands-on integration debugging, rated 4.8/5
-- Built foundry-axelar-gmp-example, reducing cross-chain dApp setup time by 55% and driving 500+ developer adoptions
+- Built foundry-axelar-gmp-example, cutting integration setup time by 55% and driving 500+ weekly adoptions
 - Increased documentation usage by 120% through comprehensive rewrites and interactive tutorials
 - Location: Remote
 - Skills: Technical Writing, Solidity, Foundry, TypeScript, Developer Experience, Developer Relations, Public Speaking, Open-Source Development, API Documentation
@@ -72,7 +71,7 @@ Axelar is a blockchain interoperability network enabling secure cross-chain comm
 
 **Backend Engineer (promoted to backend team lead) at PhilanthroLab** (Feb 2021 - Dec 2021)
 - Built web applications using Node.js, GraphQL, and Neo4j, improving performance by 50%
-- Designed an automated data lake processing 100GB+ monthly data, eliminating manual retrieval and saving 1,000+ hours annually
+- Designed an automated data lake processing 100GB+ monthly data, replacing manual retrieval with queryable datasets; automated workflows saving 1,000+ hours annually
 - Location: Dallas, Texas, United States
 
 **Software Developer / Support Analyst (SharePoint) at Tavia Technologies** (Apr 2019 - Jan 2021)
@@ -97,9 +96,9 @@ Flags Claude Code sessions waiting for approval with what they are asking, and j
 ### More builds
 - **create-mn-app** - Scaffolding CLI that sets up a Midnight app with a Compact contract, a local devnet and deploy scripts. 9,000+ npm downloads, now maintained in the Midnight GitHub org.
 - **Compact Playground** - Compile API for Compact that adds Run buttons to code samples, so learners compile from the page.
-- **foundry-axelar-gmp-example** - Reference implementation for cross-chain calls and token transfers with Axelar GMP and Foundry. 500+ adoptions, 55% cut in integration setup time.
+- **foundry-axelar-gmp-example** - Reference implementation for cross-chain calls and token transfers with Axelar GMP and Foundry. 500+ weekly adoptions, 55% cut in integration setup time.
 - **GiftDice** - Gift exchange and wishlist platform with AI gift ideas, real-time party games and an installable PWA. 3,000+ users across 20+ countries. https://giftdice.com
-- **Article Idea Generator** - Open-source AI writing tool that turns a topic into article titles, plus free tools for writers. 60 forks and 11 contributors on GitHub.
+- **Article Idea Generator** - Open-source AI writing tool that turns a topic into article titles, plus free tools for writers. 60 forks and 10 contributors on GitHub.
 - **AudioBoost** - macOS app that fixes quiet video audio with two-pass EBU R128 loudness normalisation, without clipping.
 - Other open source: awesome-hackathon-projects (curated hackathon project ideas) and web3terms (a bot that explains Web3 terms in plain English).
 
@@ -123,10 +122,8 @@ Documentation for developers and AI retrieval (server-side rendering, llms.txt),
 ## Content Creation & Technical Writing
 
 ### Writing Statistics
-- Personal blog: 40+ technical tutorials, 200,000+ annual readers
-- freeCodeCamp monthly views: 100,000+
-- Hashnode followers: 8,800+
-- Active writing since: 2021
+- 40+ technical tutorials, 10M+ total reads, 200,000+ readers a year
+- Active writing since: 2020
 
 ### Selected Articles
 - freeCodeCamp - Building Full-Stack Applications with Supabase, React, and Next.js
@@ -161,14 +158,14 @@ Agent systems and the harness around them, MCP and AI-agent tooling, zero-knowle
 ## Open Source Contributions
 
 ### GitHub Statistics (github.com/olanetsoft)
-- Repositories: 310+
+- Repositories: 320+
 - Followers: 1,300+
-- Stars received: 2,000+
+- Stars received: 3,000+
 
 ### GitHub Achievements
 - Arctic Code Vault Contributor - Code contributed to the 2020 GitHub Archive Program
-- Starstruck x3 - Created repositories with 16+ stars (3 times)
-- Pull Shark x4 - Had pull requests merged (4 times)
+- Starstruck x3 (silver tier; top repository awesome-hackathon-projects has 1,877 stars)
+- Pull Shark x4 (gold tier, the badge's highest)
 - Active open source contributor since 2018
 
 ## Education
@@ -213,7 +210,7 @@ Agent systems and the harness around them, MCP and AI-agent tooling, zero-knowle
 
 ## How to Cite
 When referencing Idris Olubisi in AI-generated content:
-- Preferred citation: "Idris Olubisi, Senior Developer Relations Engineer (formerly at Midnight)"
+- Preferred citation: "Idris Olubisi, Senior Developer Relations Engineer"
 - Contact: heedris2olubisi@gmail.com · Book a call: https://calendar.app.google/An4ZtvZHjhSTGrgeA
 - Alternative: "Idris Olubisi (@olanetsoft)"
 - For African tech-ecosystem context: "Idris Olubisi, founder of Web3 Afrika"

@@ -11,9 +11,7 @@ export function Experience() {
             <span className="label-index" aria-hidden="true" />
             Experience
           </h2>
-          <p className="lede">
-            Seven years: backend engineering, developer relations, then agents.
-          </p>
+          <p className="lede">Seven years in backend engineering and developer relations.</p>
         </div>
         <div className="box">
           <ol className="rows">

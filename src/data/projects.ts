@@ -116,7 +116,7 @@ export const projects: Project[] = [
     group: "more",
     oneLine:
       "Reference implementation for cross-chain calls and token transfers with Axelar GMP and Foundry.",
-    proof: "500+ adoptions, 55% cut in integration setup time",
+    proof: "500+ weekly adoptions, 55% cut in integration setup time",
     stack: ["Solidity", "Foundry", "Axelar GMP"],
     badge: "Reference",
     links: [
@@ -142,7 +142,7 @@ export const projects: Project[] = [
     group: "more",
     oneLine:
       "Open-source AI writing tool that turns a topic into article titles, plus free tools for writers.",
-    proof: "60 forks and 11 contributors on GitHub",
+    proof: "60 forks and 10 contributors on GitHub",
     stack: ["Next.js", "TypeScript", "OpenAI API", "Supabase"],
     badge: "Open source",
     links: [
@@ -162,5 +162,46 @@ export const projects: Project[] = [
     badge: "Open source",
     links: [{ label: "GitHub", url: "https://github.com/Olanetsoft/audioboost" }],
     githubRepo: "Olanetsoft/audioboost",
+  },
+  {
+    key: "zk-loan",
+    name: "ZK Loan",
+    group: "more",
+    oneLine:
+      "Midnight's reference lending app (contract, CLI, React UI and signing API) that scores loans on credit data the lender never sees.",
+    proof: "Top contributor, 51 of 107 commits, including a fix for a signature-forgery bug",
+    stack: ["TypeScript", "Compact", "React", "Docker"],
+    badge: "Reference",
+    links: [{ label: "GitHub", url: "https://github.com/midnightntwrk/example-zkloan" }],
+    githubRepo: "midnightntwrk/example-zkloan",
+    hideStars: true,
+  },
+  {
+    key: "learn-compact",
+    name: "Learn Compact",
+    group: "more",
+    oneLine:
+      "Interactive book and hands-on exercises for Compact, Midnight's zero-knowledge contract language, with code you compile on the page.",
+    proof: "22 chapters and 17 exercises, compiled in the page through Compact Playground",
+    stack: ["Compact", "mdBook", "JavaScript"],
+    badge: "Live",
+    links: [
+      { label: "Site", url: "https://learn-compact.netlify.app" },
+      { label: "GitHub", url: "https://github.com/Olanetsoft/learn-compact" },
+    ],
+    githubRepo: "Olanetsoft/learn-compact",
+    hideStars: true,
+  },
+  {
+    key: "web3terms",
+    name: "web3terms",
+    group: "more",
+    oneLine:
+      "Twitter bot and REST API that explain web3 terms in plain English, built in the open with the community.",
+    proof: "97 merged pull requests from 31 contributors, 215 terms",
+    stack: ["Node.js", "Express", "Jest"],
+    badge: "Open source",
+    links: [{ label: "GitHub", url: "https://github.com/Olanetsoft/web3terms" }],
+    githubRepo: "Olanetsoft/web3terms",
   },
 ];

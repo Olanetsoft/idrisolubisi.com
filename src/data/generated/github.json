@@ -4,7 +4,7 @@
   "repos": {
     "Olanetsoft/swoopagent-claw": {
       "stars": null,
-      "language": null,
+      "language": "TypeScript",
       "private": true,
       "url": "https://github.com/Olanetsoft/swoopagent-claw"
     },
@@ -15,7 +15,7 @@
       "url": "https://github.com/Olanetsoft/midnight-mcp"
     },
     "Olanetsoft/agent-lookout": {
-      "stars": 5,
+      "stars": 6,
       "language": "TypeScript",
       "private": false,
       "url": "https://github.com/Olanetsoft/agent-lookout"
@@ -55,6 +55,24 @@
       "language": "Python",
       "private": false,
       "url": "https://github.com/Olanetsoft/audioboost"
+    },
+    "midnightntwrk/example-zkloan": {
+      "stars": 7,
+      "language": "TypeScript",
+      "private": false,
+      "url": "https://github.com/midnightntwrk/example-zkloan"
+    },
+    "Olanetsoft/learn-compact": {
+      "stars": 3,
+      "language": "CSS",
+      "private": false,
+      "url": "https://github.com/Olanetsoft/learn-compact"
+    },
+    "Olanetsoft/web3terms": {
+      "stars": 116,
+      "language": "JavaScript",
+      "private": false,
+      "url": "https://github.com/Olanetsoft/web3terms"
     }
   }
 }

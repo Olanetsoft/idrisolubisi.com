@@ -15,18 +15,18 @@ export function Contact() {
         </div>
         <div className="box contact-box">
           <StatusLine />
-          <p className="contact-email">
-            <a className="email" href={`mailto:${site.email}`}>
-              {site.email}
-            </a>
-            <CopyButton value={site.email} label="Copy email address" />
-          </p>
           <p className="availability">{site.availability}</p>
-          <p className="contact-actions">
+          <div className="contact-actions">
             <a className="btn btn--primary" href={site.bookingUrl}>
               Book a 15-min call
             </a>
-          </p>
+            <p className="contact-email">
+              <a className="email" href={`mailto:${site.email}`}>
+                {site.email}
+              </a>
+              <CopyButton value={site.email} label="Copy email address" />
+            </p>
+          </div>
           <p className="elsewhere">
             Also on{" "}
             <a href={site.links.linkedin} rel="me">
