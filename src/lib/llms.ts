@@ -1,7 +1,6 @@
 import { community, education, experience, stack } from "@/data/experience";
 import { harnessIntro, projects } from "@/data/projects";
 import { githubFetchedAt, isPrivateRepo, starsFor } from "@/lib/generated";
-import { lenses, lensOrder } from "@/data/lenses";
 import { recognition } from "@/data/recognition";
 import { site } from "@/data/site";
 import { talks } from "@/data/talks";
@@ -19,7 +18,7 @@ export function renderLlmsTxt(): string {
   push("");
   push(`> ${site.role}, United Kingdom. ${site.disciplines.join(" / ")}.`);
   push("");
-  for (const p of site.bio) push(p);
+  for (const p of site.bio) push(p.replace(/==([^=]+)==/g, "$1"));
   push("");
   push(`Handle: ${site.handle}`);
   push(`Site: ${site.url}`);
@@ -28,19 +27,6 @@ export function renderLlmsTxt(): string {
   push(`Book a call: ${site.bookingUrl}`);
   push(`Status: ${site.status}`);
   push(`Availability: Available now. ${site.availability} No sponsorship needed.`);
-  push("");
-
-  push("## Roles");
-  push("");
-  for (const key of lensOrder) {
-    const lens = lenses[key];
-    push(`- ${lens.label}: ${lens.title} - ${site.url}${lens.path}`);
-  }
-  push("");
-
-  push("## What I do");
-  push("");
-  for (const f of site.functions) push(`- ${f.title}: ${f.text}`);
   push("");
 
   push("## Experience");

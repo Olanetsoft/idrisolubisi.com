@@ -87,8 +87,7 @@ export function Talks() {
                       {v.published && (
                         <>
                           {" "}
-                          <span aria-hidden="true">·</span>{" "}
-                          {date.format(new Date(v.published))}
+                          <span aria-hidden="true">·</span> {date.format(new Date(v.published))}
                         </>
                       )}
                     </span>

@@ -10,16 +10,16 @@ export const site = {
     "Developer Experience",
     "Solutions Engineering",
   ],
-  /** Bio paragraphs, plain prose; [label](url) renders as a link. */
+  /** The hero intro: one paragraph, no employer names. [label](url) renders as a link, ==text== as the one highlight. */
   bio: [
-    "I help developers and builders succeed on technical products. I build the tools, guides, and programs that take an engineer from first look to production, and I’ve done it for developer platforms in AI and blockchain since 2019. Most recently at Midnight and Axelar. Founder of [Web3 Afrika](https://web3afrika.com/), a developer community.",
+    "I work alongside the developers and builders using a product, ==find the step that actually costs them time==, and ship the fix. I’ve done it since 2019, writing tutorials and production code across backend engineering and developer relations. Now I build AI agents and their safety checks: around 100 people trade real money through agents on a platform I built.",
   ],
   title: "Idris Olubisi, Senior Developer Relations Engineer",
   /** Evergreen, no employer or availability: the search snippet and every social card. The long description feeds structured data. */
   metaDescription:
     "Idris Olubisi (olanetsoft) is a Senior Developer Relations Engineer, founder of Web3 Afrika, and freeCodeCamp author with tutorials read 10M+ times. Built the Midnight MCP server: 10,000+ downloads and 11,900+ AI-agent tool calls.",
   description:
-    "Idris Olubisi is a Senior Developer Relations Engineer in the UK who helps developers and builders succeed on technical products: the tools, guides and programs that take an engineer from first look to production, for developer platforms in AI and blockchain since 2019. Founder of Web3 Afrika, a developer community.",
+    "Idris Olubisi is a UK-based engineer in developer relations, AI and forward deployed engineering. He works alongside developers and builders, finds the step that costs them time, and ships the fix. Since 2019 he has written tutorials and production code; now he builds AI agents and their safety checks.",
   url: "https://idrisolubisi.com",
   email: "heedris2olubisi@gmail.com",
   bookingUrl: "https://calendar.app.google/An4ZtvZHjhSTGrgeA",
@@ -29,25 +29,6 @@ export const site = {
   /** View-only PDF, refreshed from the Google Doc with `npm run cv`. */
   resumeUrl: "/Idris-Olubisi-CV.pdf",
   gaId: "G-7MMFT1BXJV",
-  /** What I actually do. One sentence each. */
-  functions: [
-    {
-      title: "Developer relations",
-      text: "Help developers and builders understand and adopt a product, and bring their feedback back to the product and engineering teams.",
-    },
-    {
-      title: "Developer tools and AI",
-      text: "Build tools that make a product easier to use, including AI-powered tools and ones that run AI models locally.",
-    },
-    {
-      title: "Documentation and education",
-      text: "Tutorials and videos that unblock developers, and curricula that turn readers into certified builders.",
-    },
-    {
-      title: "Partner and solutions engineering",
-      text: "Work directly with partner teams on design, integration, and code review, through to launch.",
-    },
-  ],
   links: {
     github: "https://github.com/Olanetsoft",
     linkedin: "https://www.linkedin.com/in/idris-olubisi/",

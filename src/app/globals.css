@@ -445,7 +445,6 @@ figure {
     "status status"
     "id portrait"
     "pitch portrait"
-    "lens lens"
     "actions actions"
     "metrics metrics"
     "log log";
@@ -468,13 +467,9 @@ figure {
   margin-top: 1.25rem;
   max-width: 62ch;
 }
-.hero-grid > .lens {
-  grid-area: lens;
-  margin-top: 1.75rem;
-}
 .hero-grid > .actions {
   grid-area: actions;
-  margin-top: 1.5rem;
+  margin-top: 1.75rem;
 }
 .hero-metrics {
   grid-area: metrics;
@@ -549,16 +544,6 @@ figure {
   color: var(--text);
   font-weight: 400;
 }
-/* "Applied AI Engineer · Agent Harness": on phones the second half takes its
-   own line instead of leaving the dot at the end of the first. */
-@media (max-width: 759px) {
-  .headline-sep {
-    display: none;
-  }
-  .headline-sub {
-    display: block;
-  }
-}
 .pitch {
   font-size: 1.0625rem;
   line-height: 1.6;
@@ -587,86 +572,6 @@ figure {
   object-position: 50% 15%;
 }
 
-/* Lens variants are stacked in one cell; only the active one shows, and the
-   cell keeps the height of the tallest, so switching never moves the page. */
-.lens-stack {
-  display: grid;
-}
-.lens-variant {
-  grid-area: 1 / 1;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(0.25rem);
-  transition:
-    opacity 120ms ease-out,
-    transform 120ms ease-out,
-    visibility 0s linear 120ms;
-}
-.lens-variant.is-active {
-  opacity: 1;
-  visibility: visible;
-  transform: none;
-  transition:
-    opacity var(--dur-2) var(--ease) 100ms,
-    transform var(--dur-2) var(--ease) 100ms,
-    visibility 0s;
-}
-
-/* "Hiring for" segmented control */
-.lens {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.75rem 1rem;
-}
-.lens-label {
-  font: 500 0.75rem/1.4 var(--font-mono-stack);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-3);
-}
-.seg {
-  display: inline-grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 1fr;
-  gap: 3px;
-  padding: 3px;
-  background: var(--bg);
-  border: 1px solid var(--box-line);
-  border-radius: calc(var(--box-radius) + 3px);
-}
-.seg-option {
-  appearance: none;
-  display: grid;
-  place-items: center;
-  min-height: 40px;
-  padding: 0.375rem 0.875rem;
-  background: none;
-  border: 1px solid transparent;
-  border-radius: var(--box-radius);
-  font: inherit;
-  font-size: 0.875rem;
-  line-height: 1.2;
-  text-align: center;
-  color: var(--text-3);
-  cursor: pointer;
-  transition:
-    color var(--dur-1),
-    border-color var(--dur-1);
-}
-@media (hover: hover) {
-  .seg-option:hover {
-    color: var(--text-2);
-  }
-}
-.seg-option[aria-checked="true"] {
-  color: var(--text);
-  border-color: var(--text-3);
-}
-.seg-option:focus-visible {
-  outline-offset: 2px;
-}
-
 /* Calls to action */
 .actions {
   display: flex;
@@ -690,11 +595,14 @@ figure {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--box-gap);
 }
+/* Tiles share row heights through subgrid, so a label that wraps to two
+   lines never pushes its number below the number in the next tile. */
 .metric {
   display: grid;
-  grid-template-rows: auto auto 1fr;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
   align-content: start;
-  gap: 0.375rem;
+  row-gap: 0.375rem;
   padding: 1rem 1.125rem 1.125rem;
   background: var(--bg);
   border: 1px solid var(--box-line);
@@ -729,9 +637,6 @@ figure {
   font-size: 0.875rem;
   line-height: 1.4;
   color: var(--text-2);
-}
-.lens-variant.is-active .metric {
-  animation: none;
 }
 
 /* Activity log */
@@ -813,7 +718,6 @@ figure {
       "status status"
       "id portrait"
       "pitch pitch"
-      "lens lens"
       "actions actions"
       "metrics metrics"
       "log log";
@@ -839,18 +743,6 @@ figure {
   .pitch {
     font-size: 1rem;
     line-height: 1.65;
-  }
-  .lens {
-    display: grid;
-    gap: 0.5rem;
-  }
-  .seg {
-    display: grid;
-    width: 100%;
-  }
-  .seg-option {
-    min-height: 48px;
-    padding-inline: 0.5rem;
   }
   .hero-metrics {
     margin-top: 2rem;
@@ -1416,28 +1308,6 @@ main {
   }
 }
 
-/* ---------- what I do ---------- */
-
-.box-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--box-gap);
-}
-.box-title {
-  font-weight: 600;
-  line-height: 1.4;
-}
-.box-text {
-  margin-top: 0.4rem;
-  font-size: 1rem;
-  color: var(--text-2);
-}
-@media (max-width: 759px) {
-  .box-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* ---------- contact ---------- */
 
 .contact-box {
@@ -1602,7 +1472,6 @@ main {
   .site-header,
   .hero-bg,
   .log,
-  .lens,
   .skip-link {
     display: none;
   }

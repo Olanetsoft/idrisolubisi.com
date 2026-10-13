@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import { lenses } from "@/data/lenses";
 
 const SECTIONS = [
   { id: "work", label: "Work" },
@@ -12,15 +11,10 @@ const SECTIONS = [
   { id: "contact", label: "Contact" },
 ];
 
-const homePaths = new Set(Object.values(lenses).map((l) => l.path));
-
-/**
- * Section links. On the home page and the tailored lens URLs they scroll in
- * place, so a tailored link keeps its lens; elsewhere they lead home.
- */
+/** Section links: they scroll in place on the home page and lead home elsewhere. */
 export function SiteNav() {
   const pathname = usePathname();
-  const base = homePaths.has(pathname) ? "" : "/";
+  const base = pathname === "/" ? "" : "/";
   return (
     <nav className="site-nav" aria-label="Sections">
       {SECTIONS.map((s) => (
@@ -35,7 +29,7 @@ export function SiteNav() {
 /** The name in the header: back to the top on the home page, home elsewhere. */
 export function BrandLink({ name }: { name: string }) {
   const pathname = usePathname();
-  const onHome = homePaths.has(pathname);
+  const onHome = pathname === "/";
   return (
     <a className="brand" href={onHome ? "#about" : "/"}>
       {name}
@@ -50,7 +44,7 @@ export function BrandLink({ name }: { name: string }) {
  */
 export function MobileMenu() {
   const pathname = usePathname();
-  const base = homePaths.has(pathname) ? "" : "/";
+  const base = pathname === "/" ? "" : "/";
   const [open, setOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLElement>(null);

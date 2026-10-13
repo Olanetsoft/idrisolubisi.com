@@ -1,5 +1,21 @@
-import { HomePage } from "@/components/HomePage";
+import { Contact } from "@/components/Contact";
+import { Experience } from "@/components/Experience";
+import { Hero } from "@/components/Hero";
+import { Projects } from "@/components/Projects";
+import { Recognition } from "@/components/Recognition";
+import { Talks } from "@/components/Talks";
+import { Writing } from "@/components/Writing";
 
-export default function Page() {
-  return <HomePage lens="devrel" />;
+export default function HomePage() {
+  return (
+    <>
+      <Hero />
+      <Projects />
+      <Talks />
+      <Experience />
+      <Writing />
+      <Recognition />
+      <Contact />
+    </>
+  );
 }

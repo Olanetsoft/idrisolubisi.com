@@ -1,7 +1,9 @@
 import Image from "next/image";
+import { hero } from "@/data/hero";
 import { site } from "@/data/site";
+import { ActivityLog } from "./ActivityLog";
+import { RichText } from "./RichText";
 import { StatusLine } from "./StatusLine";
-import { LensBio, LensLog, LensMetrics, LensSwitch, LensTitle } from "./HeroLens";
 
 export function Hero() {
   return (
@@ -12,7 +14,7 @@ export function Hero() {
           <StatusLine />
           <div className="hero-id">
             <h1 id="hero-title">{site.name}</h1>
-            <LensTitle />
+            {hero.headline && <p className="headline">{hero.headline}</p>}
           </div>
           <figure className="portrait">
             <Image
@@ -25,9 +27,10 @@ export function Hero() {
             />
           </figure>
           <div className="hero-pitch">
-            <LensBio />
+            <p className="pitch">
+              <RichText text={hero.intro} />
+            </p>
           </div>
-          <LensSwitch />
           <div className="actions">
             <a className="btn btn--primary" href={site.bookingUrl}>
               Book a 15-min call
@@ -45,10 +48,25 @@ export function Hero() {
               GitHub
             </a>
           </div>
-          <div className="hero-metrics">
-            <LensMetrics />
-          </div>
-          <LensLog />
+          <dl className="metrics hero-metrics">
+            {hero.metrics.map((m) => (
+              <div className="metric" key={m.caption}>
+                <dt className="metric-source">{m.source}</dt>
+                <dd className="metric-value">
+                  {m.href ? (
+                    <a href={m.href}>
+                      {m.value}
+                      <span className="sr-only"> {m.caption}</span>
+                    </a>
+                  ) : (
+                    m.value
+                  )}
+                </dd>
+                <dd className="metric-caption">{m.caption}</dd>
+              </div>
+            ))}
+          </dl>
+          <ActivityLog lines={hero.log} />
         </div>
       </div>
     </section>

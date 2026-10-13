@@ -48,8 +48,7 @@ export const experience: Role[] = [
     title: "Developer Relations Engineer",
     period: "Jul 2022–Apr 2023",
     location: "Nairobi",
-    scope:
-      "Built the developer programme from zero across 18+ universities.",
+    scope: "Built the developer programme from zero across 18+ universities.",
     highlights: [
       "Cut developer onboarding time by 65% with a documentation-to-production workflow.",
       "Scaled the Mara Developer Campus Club from 0 to 18+ universities and reached 30,000+ developers across Africa.",
