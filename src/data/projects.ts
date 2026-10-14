@@ -28,6 +28,10 @@ export type Project = {
   layer?: "Act" | "Verify" | "Observe";
   /** How it works, in a line or two. Not shown on the page; used in /llms-full.txt. */
   detail?: string;
+  /** The few words on the card, under the name. */
+  tagline: string;
+  /** The card image in public/images/work/: a screenshot of the site, the repo's own image, its code or (private repos) a diagram. */
+  image: string;
 };
 
 export const harnessIntro =
@@ -48,6 +52,8 @@ export const projects: Project[] = [
     githubRepo: "Olanetsoft/swoopagent-claw",
     detail:
       "Agents propose; the backend validates, signs and executes. Closed a double-sell race with an optimistic-lock mutex, Redis idempotency keys and single-transaction writes. A safety layer checks every open position every 30 seconds and enforces stop-losses and a -15% circuit breaker.",
+    tagline: "Claude trading agents behind a safety layer",
+    image: "/images/work/swoopagent.jpg",
   },
   {
     key: "midnight-mcp",
@@ -66,6 +72,8 @@ export const projects: Project[] = [
     githubRepo: "Olanetsoft/midnight-mcp",
     detail:
       "A hosted compiler worked as a verification gate, so assistants returned code that compiles instead of confident wrong code. In 2026 Midnight standardised on two official tools, Kapa MCP and Midnight Expert, and the server was wound down.",
+    tagline: "Let AI agents search and compile Midnight code",
+    image: "/images/work/midnight-mcp.jpg",
   },
   {
     key: "agent-lookout",
@@ -86,6 +94,8 @@ export const projects: Project[] = [
     command: "npx agent-lookout",
     detail:
       "Flags Claude Code sessions waiting for approval with what they are asking, and jumps to the right VS Code window or tmux pane. Shipped October 2026.",
+    tagline: "One screen for every agent session that needs you",
+    image: "/images/work/agent-lookout.jpg",
   },
   {
     key: "create-mn-app",
@@ -103,6 +113,8 @@ export const projects: Project[] = [
     githubRepo: "midnightntwrk/create-mn-app",
     command: "npx create-mn-app@latest my-app",
     detail: "Now maintained in the Midnight GitHub organisation.",
+    tagline: "A Midnight app, devnet and deploy scripts in one command",
+    image: "/images/work/create-mn-app.jpg",
   },
   {
     key: "compact-playground",
@@ -115,6 +127,8 @@ export const projects: Project[] = [
     badge: "Open source",
     links: [{ label: "GitHub", url: "https://github.com/Olanetsoft/compact-playground" }],
     githubRepo: "Olanetsoft/compact-playground",
+    tagline: "The compile API behind Run buttons and the MCP server",
+    image: "/images/work/compact-playground.jpg",
   },
   {
     key: "foundry-axelar-gmp-example",
@@ -129,6 +143,8 @@ export const projects: Project[] = [
     ],
     githubRepo: "axelarnetwork/foundry-axelar-gmp-example",
     hideStars: true,
+    tagline: "Foundry examples of cross-chain calls with Axelar",
+    image: "/images/work/foundry-axelar-gmp-example.jpg",
   },
   {
     key: "giftdice",
@@ -140,6 +156,8 @@ export const projects: Project[] = [
     stack: ["TypeScript", "Next.js", "Supabase", "Redis", "OpenAI API"],
     badge: "Live",
     links: [{ label: "Site", url: "https://giftdice.com" }],
+    tagline: "Gift exchanges and wishlists with AI gift ideas",
+    image: "/images/work/giftdice.jpg",
   },
   {
     key: "article-idea-generator",
@@ -154,6 +172,8 @@ export const projects: Project[] = [
       { label: "GitHub", url: "https://github.com/Olanetsoft/article-idea-generator" },
     ],
     githubRepo: "Olanetsoft/article-idea-generator",
+    tagline: "Turns a topic into article titles",
+    image: "/images/work/article-idea-generator.jpg",
   },
   {
     key: "audioboost",
@@ -166,6 +186,8 @@ export const projects: Project[] = [
     links: [{ label: "GitHub", url: "https://github.com/Olanetsoft/audioboost" }],
     githubRepo: "Olanetsoft/audioboost",
     detail: "Two-pass EBU R128 loudness normalisation with lossless video passthrough.",
+    tagline: "Fixes quiet video audio on macOS",
+    image: "/images/work/audioboost.jpg",
   },
   {
     key: "zk-loan",
@@ -179,6 +201,8 @@ export const projects: Project[] = [
     links: [{ label: "GitHub", url: "https://github.com/midnightntwrk/example-zkloan" }],
     githubRepo: "midnightntwrk/example-zkloan",
     hideStars: true,
+    tagline: "Loans scored on data the lender never sees",
+    image: "/images/work/zk-loan.jpg",
   },
   {
     key: "learn-compact",
@@ -195,6 +219,8 @@ export const projects: Project[] = [
     ],
     githubRepo: "Olanetsoft/learn-compact",
     hideStars: true,
+    tagline: "An interactive book that teaches Compact",
+    image: "/images/work/learn-compact.jpg",
   },
   {
     key: "web3terms",
@@ -206,6 +232,8 @@ export const projects: Project[] = [
     badge: "Open source",
     links: [{ label: "GitHub", url: "https://github.com/Olanetsoft/web3terms" }],
     githubRepo: "Olanetsoft/web3terms",
+    tagline: "A bot and API that explain Web3 terms",
+    image: "/images/work/web3terms.jpg",
   },
 ];
 

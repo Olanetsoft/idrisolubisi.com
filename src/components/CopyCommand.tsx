@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 /**
  * Copy text to the clipboard. Uses the Clipboard API, and falls back to a
@@ -38,40 +38,6 @@ function useCopied(): [boolean, () => void] {
     window.setTimeout(() => setCopied(false), 1600);
   };
   return [copied, flash];
-}
-
-/** A one-line command with a copy button, e.g. `npx agent-lookout`. */
-export function CopyCommand({ command }: { command: string }) {
-  const [copied, flash] = useCopied();
-  const codeRef = useRef<HTMLElement>(null);
-
-  const copy = async () => {
-    if (await copyText(command)) return flash();
-    // No clipboard access at all: select the text so it can be copied by hand.
-    const node = codeRef.current;
-    const selection = window.getSelection();
-    if (node && selection) {
-      const range = document.createRange();
-      range.selectNodeContents(node);
-      selection.removeAllRanges();
-      selection.addRange(range);
-    }
-  };
-
-  return (
-    <div className="cmd" data-copied={copied || undefined}>
-      <span className="cmd-prompt" aria-hidden="true">
-        $
-      </span>
-      <code ref={codeRef}>{command}</code>
-      <button type="button" onClick={copy} aria-label={`Copy ${command}`}>
-        {copied ? "Copied" : "Copy"}
-      </button>
-      <span className="sr-only" aria-live="polite">
-        {copied ? "Copied to clipboard" : ""}
-      </span>
-    </div>
-  );
 }
 
 /** A small "Copy" button for a value shown next to it, such as an email address. */

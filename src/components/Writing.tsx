@@ -29,7 +29,6 @@ export function Writing() {
                   {a.title}
                 </a>
               </h3>
-              {a.note && <p className="card-note">{a.note}</p>}
             </li>
           ))}
         </ul>

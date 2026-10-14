@@ -23,14 +23,6 @@ function eventName(t: Talk): string {
   return t.event.replace(/\s*\(.*\)$/, "").replace(/\s+\d{4}$/, "");
 }
 
-/** "Keynote · Beyond H-1B: ...", or just the title when it already says what the role was. */
-function roleLine(t: Talk): string {
-  const kind = KIND[t.kind];
-  if (!t.title) return kind;
-  const firstWord = kind.split(" ").pop()!.toLowerCase();
-  return t.title.toLowerCase().includes(firstWord) ? t.title : `${kind} · ${t.title}`;
-}
-
 /** "Lagos, 2025": the kind unless the label or title already says it, the city unless the event names it, the year. */
 function highlightMeta(t: Talk): string {
   const kind = KIND[t.kind];
@@ -101,25 +93,32 @@ export function Talks() {
           </a>
           <a href={site.links.sessionize}>Speaker profile on Sessionize</a>
         </p>
-        <h3 className="group-label stages-label">On stage</h3>
-        <div className="box">
-          <ul className="stage-grid">
-            {stages.map((t) => (
-              <li key={`${t.event}-${t.title ?? t.kind}`} className="stage">
+        <h3 className="group-label">
+          On stage <span aria-hidden="true">·</span> {stages.length}
+        </h3>
+        <ul className="row-list stage-list">
+          {stages.map((t) => {
+            const city = t.location && !eventName(t).includes(t.location) ? t.location : undefined;
+            return (
+              <li key={`${t.event}-${t.title ?? t.kind}`} className="row-item stage-row">
                 <span className="stage-year">{t.year}</span>
-                <span className="stage-body">
-                  <span className="stage-event">
-                    {t.href ? <a href={t.href}>{eventName(t)}</a> : eventName(t)}
-                  </span>
-                  <span className="stage-role">{roleLine(t)}</span>
-                  {t.location && !eventName(t).includes(t.location) && (
-                    <span className="stage-city">{t.location}</span>
+                <span className="stage-event">
+                  {t.href ? (
+                    <a className="card-link" href={t.href}>
+                      {eventName(t)}
+                    </a>
+                  ) : (
+                    eventName(t)
                   )}
                 </span>
+                <span className="stage-kind">
+                  <span className="sr-only">, </span>
+                  {[KIND[t.kind], city].filter(Boolean).join(" · ")}
+                </span>
               </li>
-            ))}
-          </ul>
-        </div>
+            );
+          })}
+        </ul>
       </div>
     </section>
   );

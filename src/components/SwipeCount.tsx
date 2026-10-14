@@ -11,7 +11,7 @@ export function SwipeCount({ total }: { total: number }) {
   const [current, setCurrent] = useState(1);
   useEffect(() => {
     const row = document.querySelector<HTMLElement>(".more");
-    const first = row?.querySelector<HTMLElement>(".ccard");
+    const first = row?.querySelector<HTMLElement>(":scope > li");
     if (!row || !first) return;
     let frame = 0;
     const onScroll = () => {
@@ -25,7 +25,7 @@ export function SwipeCount({ total }: { total: number }) {
     // Tabbing to a card that is mostly off screen brings it fully into view.
     const onFocus = (event: FocusEvent) => {
       (event.target as Element)
-        .closest<HTMLElement>(".ccard")
+        .closest<HTMLElement>(".more > li")
         ?.scrollIntoView({ inline: "start", block: "nearest" });
     };
     row.addEventListener("scroll", onScroll, { passive: true });

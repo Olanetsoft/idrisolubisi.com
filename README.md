@@ -48,6 +48,7 @@ One page, in this order: the hero (intro, status line and four "What I do" cards
 | `/llms.txt` and `/llms-full.txt`                                              | `src/lib/llms.ts`, `src/lib/llms-full.ts`                                                                                  |
 | CV PDF (refresh with `npm run cv`)                                            | `public/Idris-Olubisi-CV.pdf`                                                                                              |
 | Portrait                                                                      | `public/images/idris-portrait.jpg`                                                                                         |
+| Card pictures (1280x800 JPEG; set `image` in projects.ts or experience.ts)    | `public/images/work/`, `public/images/community/`                                                                          |
 | humans.txt                                                                    | `public/humans.txt`                                                                                                        |
 | Archived 2020 post, served at `/how-to-create-react-app`                      | `src/content/how-to-create-react-app.ts`, images in `public/archive/`                                                      |
 
@@ -72,7 +73,7 @@ Updated by hand, not by the build: the X, LinkedIn and Hashnode follower counts,
 
 ## Design
 
-IBM Plex Sans for content and IBM Plex Mono for labels and metadata. Dark by default, in pure black with warm ink; visitors can switch to a light "paper" theme, and the choice is remembered. Content sits on raised cards with a hairline border, over faint film grain and a few soft colour glows, and the header frosts once the page scrolls. On a desktop with a mouse, cards catch a soft light under the pointer and lean slightly toward it, lists light up row by row, and pointing at a stack chip lights every project that uses it. Talk videos play in a dialog on the page and load YouTube only on click. The theme switch spreads out in a circle where view transitions are supported. Motion is off for reduced-motion users, and print has its own styles. One small flourish: a line-drawn flower in the footer (`src/components/Bloom.tsx`) opens when the footer scrolls into view.
+IBM Plex Sans for content and IBM Plex Mono for labels and metadata. Dark by default, in pure black with warm ink; visitors can switch to a light "paper" theme, and the choice is remembered. Content sits on raised cards with a hairline border, over faint film grain and a few soft colour glows, and the header frosts once the page scrolls. On a desktop with a mouse, cards catch a soft light under the pointer and lean slightly toward it, and lists light up row by row. Projects, more builds and community are picture cards: each one is a single link with a screenshot of the site, the repo's own image or its code, a name, a few words and one number. Talk videos play in a dialog on the page and load YouTube only on click. The theme switch spreads out in a circle where view transitions are supported. Motion is off for reduced-motion users, and print has its own styles. One small flourish: a line-drawn flower in the footer (`src/components/Bloom.tsx`) opens when the footer scrolls into view.
 
 ## Deploy
 

@@ -1,0 +1,92 @@
+import Image from "next/image";
+import type { ReactNode } from "react";
+
+type WorkCardProps = {
+  /** Where the whole card goes. Without it the card is still, with no tilt (a private repo). */
+  href?: string;
+  rel?: string;
+  image: string;
+  /** Alt text only when the card is not a link; on a link the visible name labels it. */
+  alt?: string;
+  sizes: string;
+  /** A short mono tag on the image: the harness layer or a community role. */
+  tag?: string;
+  name: string;
+  badge?: ReactNode;
+  line: string;
+  /** One proof line: bold on featured cards, mono elsewhere. */
+  proof?: string;
+  /** Extra words for screen readers, such as where the link goes. */
+  srExtra?: string;
+  /** Shown after the proof, such as "Private repo". */
+  note?: string;
+  size?: "feature" | "default" | "sm";
+};
+
+/**
+ * One card for projects, more builds and community: a 16:10 screenshot set
+ * just inside the raised card, then a name, one line and one number. The
+ * whole card is a single link, with nothing interactive inside it.
+ */
+export function WorkCard({
+  href,
+  rel,
+  image,
+  alt = "",
+  sizes,
+  tag,
+  name,
+  badge,
+  line,
+  proof,
+  srExtra,
+  note,
+  size = "default",
+}: WorkCardProps) {
+  const className = [
+    "work-card",
+    size === "feature" && "work-card--feature",
+    size === "sm" && "work-card--sm",
+    "spot",
+    href && "tilt",
+  ]
+    .filter(Boolean)
+    .join(" ");
+  const body = (
+    <>
+      <span className="work-media">
+        <Image src={image} alt={href ? "" : alt} width={1280} height={800} sizes={sizes} />
+        {tag && (
+          <span className="media-tag" aria-hidden="true">
+            {tag}
+          </span>
+        )}
+      </span>
+      <span className="work-body">
+        <span className="work-head">
+          <span className="work-name">
+            <span className="work-name-text">{name}</span>
+          </span>
+          {badge}
+        </span>
+        {srExtra && <span className="sr-only">, {srExtra}</span>}
+        <span className="work-line">{line}</span>
+        {(proof || note) && (
+          <span className="work-foot">
+            {proof && (
+              <span className={size === "feature" ? "work-proof" : "work-meta"}>{proof}</span>
+            )}
+            {note && <span className="pcard-note">{note}</span>}
+          </span>
+        )}
+      </span>
+    </>
+  );
+  return href ? (
+    <a className={className} href={href} rel={rel}>
+      {body}
+    </a>
+  ) : (
+    <div className={className}>{body}</div>
+  );
+}

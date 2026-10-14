@@ -1,106 +1,45 @@
-import { harnessIntro, projects, type Project } from "@/data/projects";
+import { projects, type Project } from "@/data/projects";
 import { site } from "@/data/site";
-import { isPrivateRepo, shownStars } from "@/lib/generated";
-import { CopyCommand } from "./CopyCommand";
-import { ChipMatch } from "./ChipMatch";
+import { isPrivateRepo } from "@/lib/generated";
 import { SwipeCount } from "./SwipeCount";
-import { BrandIcon, STACK_ICONS, UiIcon } from "./icons";
+import { BrandIcon } from "./icons";
 import { SectionLabel } from "./SectionLabel";
-
-const number = new Intl.NumberFormat("en-GB");
+import { WorkCard } from "./WorkCard";
 
 /** Links that resolve for a visitor: a private repo would 404, so it is left out until it is public. */
 const publicLinks = (project: Project) => project.links.filter((l) => !isPrivateRepo(l.url));
-
-/** The tech logo for a stack item, or a plug for MCP, or nothing. */
-function StackIcon({ item }: { item: string }) {
-  if (item === "MCP") return <UiIcon name="plug" size={13} />;
-  const brand = STACK_ICONS[item];
-  return brand ? <BrandIcon name={brand} size={13} /> : null;
-}
 
 function Badge({ badge }: { badge: NonNullable<Project["badge"]> }) {
   return <span className={badge === "Live" ? "badge badge--live" : "badge"}>{badge}</span>;
 }
 
-function FeaturedCard({ project }: { project: Project }) {
-  const stars = shownStars(project);
-  const links = publicLinks(project);
-  const privateRepo = links.length < project.links.length;
-  return (
-    <li className="pcard spot tilt" id={project.key}>
-      <div className="pcard-top">
-        <span className="pcard-layer">[ {project.layer} ]</span>
-        {project.badge && <Badge badge={project.badge} />}
-      </div>
-      <h4 className="pcard-name">{project.name}</h4>
-      <p className="pcard-what">{project.oneLine}</p>
-      {project.proof && <p className="pcard-proof">{project.proof}</p>}
-      <ul className="chips" aria-label="Stack">
-        {project.stack.map((s) => (
-          <li className="chip" key={s} data-chip={s}>
-            <StackIcon item={s} />
-            {s}
-          </li>
-        ))}
-      </ul>
-      <div className="pcard-foot">
-        {project.command && <CopyCommand command={project.command} />}
-        {links.length > 0 && (
-          <span className="pcard-links">
-            {links.map((l) => (
-              <a key={l.url} href={l.url}>
-                {l.label}
-                <span className="sr-only">: {project.name}</span>
-              </a>
-            ))}
-          </span>
-        )}
-        {privateRepo && <span className="pcard-note">Private repo</span>}
-        {stars !== null && <span className="stars">{number.format(stars)} stars</span>}
-      </div>
-    </li>
-  );
-}
+const FEATURE_SIZES = "(max-width: 759px) calc(100vw - 32px), (max-width: 1023px) 60vw, 380px";
+const MORE_SIZES = "(max-width: 759px) 80vw, (max-width: 1023px) 46vw, 380px";
 
-function CompactCard({ project }: { project: Project }) {
-  const stars = shownStars(project);
-  const [primary, ...rest] = publicLinks(project);
+/** A project as a card: its picture, name, a few words and one number; the card opens the project. */
+function ProjectCard({ project, feature }: { project: Project; feature?: boolean }) {
+  const [primary] = publicLinks(project);
+  const isPrivate = !primary && project.links.length > 0;
   return (
-    <li className="ccard spot tilt" id={project.key}>
-      <div className="ccard-top">
-        <h4 className="ccard-name">
-          {primary ? (
-            <a className="ccard-link" href={primary.url}>
-              {project.name}
-            </a>
-          ) : (
-            project.name
-          )}
-        </h4>
-        {project.badge && <Badge badge={project.badge} />}
-      </div>
-      <p className="ccard-what">{project.oneLine}</p>
-      {project.proof && <p className="ccard-proof">{project.proof}</p>}
-      <ul className="chips chips--sm" aria-label="Stack">
-        {project.stack.map((item) => (
-          <li className="chip" key={item} data-chip={item}>
-            <StackIcon item={item} />
-            {item}
-          </li>
-        ))}
-      </ul>
-      {(rest.length > 0 || stars !== null) && (
-        <p className="ccard-foot">
-          {rest.map((l) => (
-            <a key={l.url} href={l.url}>
-              {l.label}
-              <span className="sr-only">: {project.name}</span>
-            </a>
-          ))}
-          {stars !== null && <span className="stars">{number.format(stars)} stars</span>}
-        </p>
-      )}
+    <li id={project.key}>
+      <WorkCard
+        href={primary?.url}
+        image={project.image}
+        alt={
+          isPrivate
+            ? "Diagram: a Claude agent proposes trades; the backend validates, signs and executes them; a safety layer checks every 30 seconds"
+            : undefined
+        }
+        sizes={feature ? FEATURE_SIZES : MORE_SIZES}
+        tag={feature && project.layer ? `[ ${project.layer} ]` : undefined}
+        name={project.name}
+        badge={project.badge && <Badge badge={project.badge} />}
+        line={project.tagline}
+        proof={project.proof}
+        srExtra={primary ? `opens ${primary.label}` : undefined}
+        note={isPrivate ? "Private repo" : undefined}
+        size={feature ? "feature" : "default"}
+      />
     </li>
   );
 }
@@ -113,16 +52,14 @@ export function Projects() {
       <div className="container">
         <div className="section-head">
           <SectionLabel id="work">Projects</SectionLabel>
-          <ChipMatch />
           <p className="lede">The agent harness, end to end.</p>
-          <p className="lede-sub">{harnessIntro}</p>
         </div>
         <h3 className="group-label">
           Agent harness <span aria-hidden="true">·</span> {harness.length}
         </h3>
         <ul className="harness">
           {harness.map((p) => (
-            <FeaturedCard key={p.key} project={p} />
+            <ProjectCard key={p.key} project={p} feature />
           ))}
         </ul>
         <h3 className="group-label">
@@ -134,12 +71,18 @@ export function Projects() {
         </h3>
         <ul className="more">
           {more.map((p) => (
-            <CompactCard key={p.key} project={p} />
+            <ProjectCard key={p.key} project={p} />
           ))}
-          <li className="ccard more-tail">
-            <a className="ccard-link" href={site.links.github} rel="me">
-              <BrandIcon name="github" size={28} />
-              <span className="more-tail-text">More on GitHub</span>
+          <li className="more-tail">
+            <a className="work-card spot tilt" href={site.links.github} rel="me">
+              <span className="work-media work-media--tail">
+                <BrandIcon name="github" size={28} />
+              </span>
+              <span className="work-body">
+                <span className="work-name">
+                  <span className="work-name-text">More on GitHub</span>
+                </span>
+              </span>
             </a>
           </li>
         </ul>

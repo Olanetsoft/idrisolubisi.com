@@ -49,6 +49,3 @@ export function UiIcon({ name, size = 16 }: { name: UiName; size?: number }) {
     </svg>
   );
 }
-
-/** The brand logo for a stack item on a project card, when there is one. */
-export const STACK_ICONS: Record<string, BrandName> = data.stack as Record<string, BrandName>;
