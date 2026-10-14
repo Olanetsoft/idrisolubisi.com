@@ -45,11 +45,11 @@ export function Hero() {
               Email
             </a>
             <a className="action-link" href={site.links.linkedin} rel="me">
-              <BrandIcon name="linkedin" />
+              <BrandIcon name="linkedin" size={17} />
               LinkedIn
             </a>
             <a className="action-link" href={site.links.github} rel="me">
-              <BrandIcon name="github" />
+              <BrandIcon name="github" size={17} />
               GitHub
             </a>
           </div>

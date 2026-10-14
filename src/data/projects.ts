@@ -66,8 +66,8 @@ export const projects: Project[] = [
     name: "Agent Lookout",
     group: "harness",
     oneLine:
-      "Local dashboard for the Claude Code and Codex sessions on a machine: which need you, what they are asking, and a jump to the right window.",
-    proof: "Shipped, with 1,100+ npm downloads in its first week",
+      "Local dashboard for the Claude Code and Codex sessions on a machine: shows which need you and what they are asking, and jumps to the right window.",
+    proof: "1,100+ npm downloads in its first week",
     stack: ["TypeScript", "React", "Vite", "Node.js", "Electron", "MCP"],
     badge: "npm",
     links: [
@@ -136,8 +136,7 @@ export const projects: Project[] = [
     key: "article-idea-generator",
     name: "Article Idea Generator",
     group: "more",
-    oneLine:
-      "Open-source AI writing tool that turns a topic into article titles, plus free tools for writers.",
+    oneLine: "AI writing tool that turns a topic into article titles, plus free tools for writers.",
     proof: "60 forks and 10 contributors",
     stack: ["TypeScript", "Next.js", "Supabase", "OpenAI API", "Tailwind CSS"],
     badge: "Open source",
@@ -163,7 +162,7 @@ export const projects: Project[] = [
     name: "ZK Loan",
     group: "more",
     oneLine:
-      "Midnight's reference lending app that scores loans on credit data the lender never sees.",
+      "Midnight’s example lending app that scores loans on credit data the lender never sees.",
     proof: "Top contributor, 51 of 107 commits, including a security fix",
     stack: ["TypeScript", "Compact", "React", "Vite", "Docker"],
     badge: "Reference",
@@ -176,7 +175,7 @@ export const projects: Project[] = [
     name: "Learn Compact",
     group: "more",
     oneLine:
-      "Interactive book and exercises that teach Compact, Midnight's zero-knowledge contract language, with code you compile on the page.",
+      "Interactive book and exercises that teach Compact, Midnight’s zero-knowledge contract language, with code you compile on the page.",
     proof: "22 chapters and 17 exercises",
     stack: ["Compact", "mdBook", "JavaScript", "Netlify"],
     badge: "Live",
@@ -191,8 +190,7 @@ export const projects: Project[] = [
     key: "web3terms",
     name: "web3terms",
     group: "more",
-    oneLine:
-      "Twitter bot and REST API that explain web3 terms in plain English, built in the open with the community.",
+    oneLine: "Twitter bot and REST API that explain Web3 terms in plain English.",
     proof: "97 merged pull requests from 31 contributors",
     stack: ["JavaScript", "Node.js", "Express", "Twitter API", "Jest"],
     badge: "Open source",

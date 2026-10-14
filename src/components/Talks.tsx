@@ -37,9 +37,7 @@ export function Talks() {
         <div className="section-head">
           <SectionLabel id="talks">Talks and workshops</SectionLabel>
           <p className="lede">Recorded workshops, talks and live builds.</p>
-          <p className="lede-sub">
-            Recordings on <a href={site.links.youtube}>YouTube</a>.
-          </p>
+          <p className="lede-sub">Recordings on YouTube.</p>
         </div>
         <ul className="videos">
           {featuredVideos.map((v) => (
@@ -54,14 +52,14 @@ export function Talks() {
                     alt=""
                     width={480}
                     height={360}
-                    sizes="(max-width: 759px) 128px, (max-width: 1023px) 45vw, 336px"
+                    sizes="(max-width: 759px) 128px, (max-width: 1023px) 30vw, 336px"
                   />
                 </span>
                 <span className="video-text">
                   <span className="video-title">{v.title}</span>
+                  <span className="sr-only">,</span>
                   <span className="video-meta">
-                    {v.kind}&nbsp;<span aria-hidden="true">·</span> {v.context}&nbsp;
-                    <span aria-hidden="true">·</span> {v.year}
+                    {v.kind}, {v.context}, {v.year}
                   </span>
                 </span>
               </a>
@@ -71,7 +69,7 @@ export function Talks() {
         <p className="more-link more-links">
           <a href={site.links.youtube}>
             <BrandIcon name="youtube" />
-            All videos on YouTube
+            All talks on YouTube
           </a>
           <a href={site.links.sessionize}>Speaker profile on Sessionize</a>
         </p>
@@ -86,7 +84,9 @@ export function Talks() {
                     {t.href ? <a href={t.href}>{eventName(t)}</a> : eventName(t)}
                   </span>
                   <span className="stage-role">{roleLine(t)}</span>
-                  {t.location && <span className="stage-city">{t.location}</span>}
+                  {t.location && !eventName(t).includes(t.location) && (
+                    <span className="stage-city">{t.location}</span>
+                  )}
                 </span>
               </li>
             ))}

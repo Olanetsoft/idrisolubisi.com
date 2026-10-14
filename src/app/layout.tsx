@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     "Web3 Afrika",
     "freeCodeCamp author",
     "Technical writer",
-    "London",
+    "UK",
   ],
   authors: [{ name: site.name, url: site.url }],
   creator: site.name,
@@ -128,13 +128,13 @@ const jsonLd = {
       jobTitle: site.role,
       email: site.email,
       description: site.description,
-      address: { "@type": "PostalAddress", addressLocality: "London", addressCountry: "GB" },
+      address: { "@type": "PostalAddress", addressCountry: "GB" },
       nationality: { "@type": "Country", name: "Nigeria" },
       knowsLanguage: ["en", "yo"],
       hasOccupation: {
         "@type": "Occupation",
-        name: "Developer Relations Engineer",
-        occupationLocation: { "@type": "City", name: "London" },
+        name: site.role,
+        occupationLocation: { "@type": "Country", name: "United Kingdom" },
         skills: [
           ...site.disciplines,
           "Technical writing",
@@ -179,7 +179,7 @@ const jsonLd = {
         site.links.linkedin,
         site.links.x,
         site.links.blog,
-        site.links.youtube,
+        site.links.youtubeChannel,
         site.links.freecodecamp,
         site.links.devto,
         site.links.sessionize,
@@ -202,7 +202,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://blog.idrisolubisi.com/rss.xml"
           title="Idris Olubisi's blog"
         />
-        <link rel="preload" href="/icons.svg" as="image" type="image/svg+xml" />
         {process.env.NODE_ENV === "production" && (
           <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
         )}

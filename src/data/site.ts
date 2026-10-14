@@ -34,6 +34,7 @@ export const site = {
     x: "https://x.com/olanetsoft",
     blog: "https://blog.idrisolubisi.com/",
     youtube: "https://www.youtube.com/playlist?list=PLaZ7cT8J_HZbyPjlfLgFCCpA_rAbKaaqg",
+    youtubeChannel: "https://www.youtube.com/@olanetsoft",
     sessionize: "https://sessionize.com/olanetsoft",
     freecodecamp: "https://www.freecodecamp.org/news/author/olanetsoft/",
     devto: "https://dev.to/olanetsoft",

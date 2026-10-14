@@ -2,14 +2,14 @@ import { site } from "@/data/site";
 import { Bloom } from "./Bloom";
 
 const SECTIONS = [
-  { href: "/#work", label: "Work" },
+  { href: "/#work", label: "Projects" },
   { href: "/#talks", label: "Talks" },
   { href: "/#experience", label: "Experience" },
   { href: "/#writing", label: "Writing" },
   { href: "/#contact", label: "Contact" },
 ];
 
-/** A short sitemap: where to go next, how to reach him, and when the site was last built. */
+/** A short sitemap, his handles on pages without the Contact box, and when the site was last built. */
 export function SiteFooter() {
   const now = new Date();
   const updated = new Intl.DateTimeFormat("en-GB", { month: "short", year: "numeric" }).format(now);
@@ -24,7 +24,6 @@ export function SiteFooter() {
               </a>
             ))}
             <a href={site.resumeUrl}>CV (PDF)</a>
-            <a href={site.bookingUrl}>Book a call</a>
           </nav>
           <p className="footer-handles">
             <a href={site.links.github} rel="me">
@@ -39,8 +38,11 @@ export function SiteFooter() {
           </p>
         </div>
         <div className="footer-meta">
-          <p>
-            <Bloom />© {now.getFullYear()} {site.name} · Last updated {updated} ·{" "}
+          <p className="footer-copy">
+            <span>
+              <Bloom />© {now.getFullYear()} {site.name}
+            </span>
+            <span>Last updated {updated}</span>
             <a href="/llms.txt">llms.txt</a>
           </p>
           <p>

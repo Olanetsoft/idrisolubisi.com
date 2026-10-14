@@ -227,7 +227,6 @@
     "OpenZeppelin": "openzeppelin",
     "Tailwind CSS": "tailwindcss",
     "Netlify": "netlify",
-    "Vitest": "vitest",
-    "Twitter API": "x"
+    "Vitest": "vitest"
   }
 }

@@ -1,15 +1,8 @@
 import { site } from "@/data/site";
 import { platforms, writingList, writingStats } from "@/data/writing";
+import { monthYear } from "@/lib/format";
 import { blogPosts } from "@/lib/generated";
 import { SectionLabel } from "./SectionLabel";
-
-const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
-/** "2022-01" becomes "Jan 2022", the same month style as the experience dates. */
-function monthYear(date: string): string {
-  const [year, month] = date.split("-");
-  return `${MONTHS[Number(month) - 1]} ${year}`;
-}
 
 export function Writing() {
   return (

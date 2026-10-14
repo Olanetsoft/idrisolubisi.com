@@ -1,20 +1,12 @@
 import { harnessIntro, projects, type Project } from "@/data/projects";
 import { site } from "@/data/site";
-import { isPrivateRepo, starsFor } from "@/lib/generated";
+import { isPrivateRepo, shownStars } from "@/lib/generated";
 import { CopyCommand } from "./CopyCommand";
 import { SwipeCount } from "./SwipeCount";
 import { BrandIcon, STACK_ICONS, UiIcon } from "./icons";
 import { SectionLabel } from "./SectionLabel";
 
-/** Live star counts only when they help: 100 or more. */
-const STAR_FLOOR = 100;
 const number = new Intl.NumberFormat("en-GB");
-
-function starsOf(project: Project): number | null {
-  if (!project.githubRepo || project.hideStars) return null;
-  const stars = starsFor(project.githubRepo);
-  return stars !== null && stars >= STAR_FLOOR ? stars : null;
-}
 
 /** Links that resolve for a visitor: a private repo would 404, so it is left out until it is public. */
 const publicLinks = (project: Project) => project.links.filter((l) => !isPrivateRepo(l.url));
@@ -31,7 +23,7 @@ function Badge({ badge }: { badge: NonNullable<Project["badge"]> }) {
 }
 
 function FeaturedCard({ project }: { project: Project }) {
-  const stars = starsOf(project);
+  const stars = shownStars(project);
   const links = publicLinks(project);
   const privateRepo = links.length < project.links.length;
   return (
@@ -40,7 +32,7 @@ function FeaturedCard({ project }: { project: Project }) {
         <span className="pcard-layer">[ {project.layer} ]</span>
         {project.badge && <Badge badge={project.badge} />}
       </div>
-      <h3 className="pcard-name">{project.name}</h3>
+      <h4 className="pcard-name">{project.name}</h4>
       <p className="pcard-what">{project.oneLine}</p>
       {project.proof && <p className="pcard-proof">{project.proof}</p>}
       <ul className="chips" aria-label="Stack">
@@ -58,6 +50,7 @@ function FeaturedCard({ project }: { project: Project }) {
             {links.map((l) => (
               <a key={l.url} href={l.url}>
                 {l.label}
+                <span className="sr-only">: {project.name}</span>
               </a>
             ))}
           </span>
@@ -70,12 +63,12 @@ function FeaturedCard({ project }: { project: Project }) {
 }
 
 function CompactCard({ project }: { project: Project }) {
-  const stars = starsOf(project);
+  const stars = shownStars(project);
   const [primary, ...rest] = publicLinks(project);
   return (
     <li className="ccard spot tilt" id={project.key}>
       <div className="ccard-top">
-        <h3 className="ccard-name">
+        <h4 className="ccard-name">
           {primary ? (
             <a className="ccard-link" href={primary.url}>
               {project.name}
@@ -83,7 +76,7 @@ function CompactCard({ project }: { project: Project }) {
           ) : (
             project.name
           )}
-        </h3>
+        </h4>
         {project.badge && <Badge badge={project.badge} />}
       </div>
       <p className="ccard-what">{project.oneLine}</p>
@@ -101,6 +94,7 @@ function CompactCard({ project }: { project: Project }) {
           {rest.map((l) => (
             <a key={l.url} href={l.url}>
               {l.label}
+              <span className="sr-only">: {project.name}</span>
             </a>
           ))}
           {stars !== null && <span className="stars">{number.format(stars)} stars</span>}
@@ -121,18 +115,21 @@ export function Projects() {
           <p className="lede">The agent harness, end to end.</p>
           <p className="lede-sub">{harnessIntro}</p>
         </div>
-        <p className="group-label">
+        <h3 className="group-label">
           Agent harness <span aria-hidden="true">·</span> {harness.length}
-        </p>
+        </h3>
         <ul className="harness">
           {harness.map((p) => (
             <FeaturedCard key={p.key} project={p} />
           ))}
         </ul>
-        <p className="group-label">
-          More builds <span aria-hidden="true">·</span> {more.length}
+        <h3 className="group-label">
+          More builds{" "}
+          <span className="group-count">
+            <span aria-hidden="true">·</span> {more.length}
+          </span>
           <SwipeCount total={more.length} />
-        </p>
+        </h3>
         <ul className="more">
           {more.map((p) => (
             <CompactCard key={p.key} project={p} />

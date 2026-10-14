@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { site } from "@/data/site";
 
 const SECTIONS = [
-  { id: "work", label: "Work" },
+  { id: "work", label: "Projects" },
   { id: "talks", label: "Talks" },
   { id: "experience", label: "Experience" },
   { id: "writing", label: "Writing" },
@@ -114,11 +114,19 @@ export function MobileMenu() {
         return;
       setOpen(false);
     };
+    // Tabbing out of the panel closes it, so focus never sits under the scrim.
+    const onFocus = (event: FocusEvent) => {
+      const target = event.target as Node;
+      if (panelRef.current?.contains(target) || buttonRef.current?.contains(target)) return;
+      setOpen(false);
+    };
     document.addEventListener("keydown", onKey);
     document.addEventListener("pointerdown", onPointer);
+    document.addEventListener("focusin", onFocus);
     return () => {
       document.removeEventListener("keydown", onKey);
       document.removeEventListener("pointerdown", onPointer);
+      document.removeEventListener("focusin", onFocus);
     };
   }, [open]);
 

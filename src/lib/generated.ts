@@ -49,6 +49,14 @@ export function starsFor(repo: string): number | null {
   return statsByKey.get(normalizeRepo(repo))?.stars ?? null;
 }
 
+/** Live star counts only when they help: 100 or more, and never on a card that hides them. */
+export const STAR_FLOOR = 100;
+export function shownStars(project: { githubRepo?: string; hideStars?: boolean }): number | null {
+  if (!project.githubRepo || project.hideStars) return null;
+  const stars = starsFor(project.githubRepo);
+  return stars !== null && stars >= STAR_FLOOR ? stars : null;
+}
+
 /** A post from the blog's RSS feed: date as YYYY-MM, newest first. */
 export type BlogPost = { title: string; url: string; date: string };
 

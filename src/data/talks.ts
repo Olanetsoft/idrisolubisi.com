@@ -19,7 +19,7 @@ export const talks: Talk[] = [
   },
   {
     event: "Blockfest Africa 2025",
-    title: "Beyond H-1B: Building Global Tech Careers from Africa",
+    title: "Beyond H-1B: building global tech careers from Africa",
     year: "2025",
     location: "Lagos",
     kind: "Keynote",
@@ -33,13 +33,13 @@ export const talks: Talk[] = [
     kind: "Fireside chat",
   },
   {
-    event: "ETHCC (Ethereum Community Conference)",
+    event: "EthCC (Ethereum Community Conference)",
     year: "2025",
     kind: "Speaker",
   },
   {
     event: "Build Afrika Summit",
-    title: "Founder and host: Africa’s builders, protocols and partners in one room",
+    title: "Founder and host",
     year: "2025",
     location: "Lagos",
     kind: "Host",
@@ -52,7 +52,7 @@ export const talks: Talk[] = [
   },
   {
     event: "Osmocon",
-    title: "Cross-Chain Interoperability with Axelar Network",
+    title: "Cross-chain interoperability with Axelar Network",
     year: "2023",
     location: "Paris",
     kind: "Talk",
@@ -75,7 +75,7 @@ export const talks: Talk[] = [
   },
   {
     event: "CityJS Conference",
-    title: "JavaScript Supremacy: Building a scalable full-stack application with JavaScript",
+    title: "JavaScript supremacy: building a scalable full-stack application with JavaScript",
     year: "2022",
     location: "Lagos",
     kind: "Talk",

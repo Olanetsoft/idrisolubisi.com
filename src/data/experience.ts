@@ -16,7 +16,7 @@ export const experience: Role[] = [
     company: "Midnight Foundation",
     title: "Developer Educator, Developer Relations",
     summary:
-      "Built the Midnight MCP server (==10,000+ downloads==, ==11,900+ agent tool calls==) and led the docs overhaul for AI retrieval, including the docs AI assistant, whose 784 questions shaped new content. Launched Midnight Academy (==1,576 enrolled, 1,120+ certified==) and a 12-part video series, built create-mn-app, Compact Playground and Compact by Example, kept example repos current with CI and on-call, and ran partner integrations, workshops and two content-bounty cohorts.",
+      "Built the Midnight MCP server (==10,000+ downloads==, ==11,900+ agent tool calls==) and led the docs overhaul for AI retrieval, including the docs AI assistant, and used the 784 questions it received to plan new content. Launched Midnight Academy (==1,576 enrolled, 1,120+ certified==) and a 12-part video series, built create-mn-app, Compact Playground and Compact by Example, kept example repos current with CI and on-call, and ran partner integrations, workshops and two content-bounty cohorts.",
     points: [
       "Built the Midnight MCP server so AI coding assistants wrote correct code: 10,000+ downloads, 11,900+ agent tool calls.",
       "Led the docs overhaul for AI retrieval, including the docs AI assistant, and used its 784 questions to plan new docs and videos.",
@@ -46,10 +46,10 @@ export const experience: Role[] = [
     company: "Mara",
     title: "Developer Relations Engineer",
     summary:
-      "Cut developer onboarding time ==65%== by redesigning the docs-to-production path. Created Mara Academy's technical courses, growing it to ==19,000+ active developers== at ==85% monthly retention==. Built the campus club from ==0 to 18+ universities== in Kenya and Nigeria, reached ==30,000+ developers== through conferences, hackathons and workshops, set up the feedback pipeline into product and managed strategic partners.",
+      "Cut developer onboarding time ==65%== by redesigning the docs-to-production path. Created Mara Academy’s technical courses, growing it to ==19,000+ active developers== at ==85% monthly retention==. Built the campus club from ==0 to 18+ universities== in Kenya and Nigeria, reached ==30,000+ developers== through conferences, hackathons and workshops, set up the feedback pipeline into product and managed strategic partners.",
     points: [
       "Cut developer onboarding time 65% by redesigning the docs-to-production path, and set up a feedback pipeline into product.",
-      "Created Mara Academy's technical courses, growing it to 19,000+ active developers at 85% monthly retention.",
+      "Created Mara Academy’s technical courses, growing it to 19,000+ active developers at 85% monthly retention.",
       "Grew the campus club from 0 to 18+ universities, reached 30,000+ developers and builders across Africa, and managed strategic partners.",
     ],
     period: "Jul 2022–Apr 2023",
@@ -72,7 +72,7 @@ export const experience: Role[] = [
     company: "PhilanthroLab",
     title: "Backend Engineer (promoted to backend team lead)",
     summary:
-      "Built most of the backend infrastructure and shipped the MVP, then was ==promoted to backend team lead==, leading technical programmes, system design, code reviews, documentation and architecture decisions. Designed an automated data lake processing ==100 GB+ a month==, improved performance ==50%== with GraphQL, Node.js, Neo4j and Elasticsearch, and automated workflows saving ==1,000+ hours a year==.",
+      "Built most of the backend infrastructure and shipped the MVP, then led technical programmes, system design, code reviews, documentation and architecture decisions. Designed an automated data lake processing ==100 GB+ a month==, improved performance ==50%== with GraphQL, Node.js, Neo4j and Elasticsearch, and automated workflows saving ==1,000+ hours a year==.",
     points: [
       "Built most of the backend infrastructure, shipped the MVP, and improved performance 50% with GraphQL, Node.js, Neo4j and Elasticsearch.",
       "Promoted to backend team lead, then led technical programmes, system design, code reviews, documentation and architecture decisions.",
@@ -85,10 +85,10 @@ export const experience: Role[] = [
     company: "Tavia Technologies",
     title: "Software Developer / Support Analyst",
     summary:
-      "Built .NET Core and SharePoint solutions for Access Bank (a leading bank in Africa), MTN Nigeria (part of MTN Group, Africa's largest mobile operator) and NPDC (NNPC's exploration and production arm), automating processes that saved ==900+ hours a year==. Provided technical support and issue resolution, ran test-to-production deployments and database migrations with ==zero data loss==, and wrote handover docs.",
+      "Built .NET Core and SharePoint solutions for Access Bank, MTN Nigeria (part of MTN Group, Africa’s largest mobile operator) and NPDC (the exploration and production arm of NNPC, Nigeria’s national oil company), automating processes that saved ==900+ hours a year==. Provided technical support and issue resolution, ran test-to-production deployments and database migrations with ==zero data loss==, and wrote handover docs.",
     points: [
-      "Built enterprise SharePoint and .NET Core solutions for Access Bank (a leading bank in Africa) and MTN Nigeria (part of MTN Group, Africa's largest mobile operator).",
-      "Automated business processes for these clients and NPDC (the exploration and production arm of NNPC, Nigeria's national oil company), saving 900+ hours a year.",
+      "Built enterprise SharePoint and .NET Core solutions for Access Bank and MTN Nigeria (part of MTN Group, Africa’s largest mobile operator).",
+      "Automated business processes for these clients and NPDC (the exploration and production arm of NNPC, Nigeria’s national oil company), saving 900+ hours a year.",
       "Provided enterprise support, ran test-to-production deployments and database migrations with zero data loss, and wrote handover docs.",
     ],
     period: "Apr 2019–Jan 2021",

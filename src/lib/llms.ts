@@ -1,6 +1,7 @@
 import { community, education, experience, stack } from "@/data/experience";
 import { harnessIntro, projects } from "@/data/projects";
-import { blogPosts, githubFetchedAt, isPrivateRepo, starsFor } from "@/lib/generated";
+import { monthYear } from "@/lib/format";
+import { blogPosts, githubFetchedAt, isPrivateRepo, shownStars } from "@/lib/generated";
 import { recognition } from "@/data/recognition";
 import { site } from "@/data/site";
 import { talks } from "@/data/talks";
@@ -37,6 +38,7 @@ export function renderLlmsTxt(): string {
     );
     for (const point of r.points) push(`  - ${point}`);
   }
+  push("", "## Community and education", "");
   push(`- Education: ${education.degree}, ${education.school}, ${education.year}`);
   const line = (c: (typeof community)[number]) =>
     `${c.role}, ${c.org}${c.note ? ` (${c.note})` : ""}`;
@@ -52,6 +54,7 @@ export function renderLlmsTxt(): string {
       .map(line)
       .join("; ")}`,
   );
+  push("", "## Skills", "");
   for (const g of stack) push(`- ${g.label}: ${g.items.join(", ")}`);
   push("");
 
@@ -60,8 +63,11 @@ export function renderLlmsTxt(): string {
   push(`Agent harness: ${harnessIntro}`);
   push("");
   for (const p of projects) {
-    const stars = p.githubRepo ? starsFor(p.githubRepo) : null;
-    const starNote = stars !== null ? ` ${stars} GitHub stars (${githubFetchedAt}).` : "";
+    const stars = shownStars(p);
+    const starNote =
+      stars !== null && githubFetchedAt
+        ? ` ${stars} GitHub stars (${monthYear(githubFetchedAt)}).`
+        : "";
     push(
       `- ${p.name}${p.group === "harness" ? " (agent harness)" : ""}: ${p.oneLine}${p.proof ? ` ${p.proof}.` : ""}${starNote}`,
     );
@@ -75,9 +81,13 @@ export function renderLlmsTxt(): string {
   push("## Speaking");
   push("");
   for (const t of talks) {
-    const where = [t.event, t.location, t.year].filter(Boolean).join(", ");
+    // No year or city twice ("Blockfest Africa 2025, 2025"), and no role twice ("Host: Founder and host").
+    const event = t.event.replace(/\s+\d{4}$/, "");
+    const city = t.location && !event.includes(t.location) ? t.location : undefined;
+    const where = [event, city, t.year].filter(Boolean).join(", ");
     const line = t.title ? `${t.title} (${where})` : where;
-    push(`- ${t.kind}: ${line}${t.href ? ` - ${t.href}` : ""}`);
+    const prefix = t.title?.toLowerCase().includes(t.kind.toLowerCase()) ? "" : `${t.kind}: `;
+    push(`- ${prefix}${line}${t.href ? ` - ${t.href}` : ""}`);
   }
   push(`- Speaker profile - ${site.links.sessionize}`);
   push("");
@@ -85,7 +95,8 @@ export function renderLlmsTxt(): string {
   push("## Writing");
   push("");
   push(`${writingStats.tutorials} tutorials, read ${writingStats.reads} times.`);
-  for (const a of writingList(blogPosts)) push(`- ${a.title} (${a.outlet}, ${a.date}) - ${a.href}`);
+  for (const a of writingList(blogPosts))
+    push(`- ${a.title} (${a.outlet}, ${monthYear(a.date)}) - ${a.href}`);
   push(`- All writing - ${site.links.blog}`);
   push("");
 
@@ -100,8 +111,6 @@ export function renderLlmsTxt(): string {
 
   push("## Contact");
   push("");
-  push(`- Email: ${site.email}`);
-  push(`- Book a call: ${site.bookingUrl}`);
   push(`- LinkedIn: ${site.links.linkedin}`);
   push(`- X: ${site.links.x}`);
   push(`- GitHub: ${site.links.github}`);

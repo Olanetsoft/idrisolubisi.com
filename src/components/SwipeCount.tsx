@@ -22,10 +22,18 @@ export function SwipeCount({ total }: { total: number }) {
         setCurrent(Math.min(total, Math.round(row.scrollLeft / step) + 1));
       });
     };
+    // Tabbing to a card that is mostly off screen brings it fully into view.
+    const onFocus = (event: FocusEvent) => {
+      (event.target as Element)
+        .closest<HTMLElement>(".ccard")
+        ?.scrollIntoView({ inline: "start", block: "nearest" });
+    };
     row.addEventListener("scroll", onScroll, { passive: true });
+    row.addEventListener("focusin", onFocus);
     return () => {
       cancelAnimationFrame(frame);
       row.removeEventListener("scroll", onScroll);
+      row.removeEventListener("focusin", onFocus);
     };
   }, [total]);
   return (
