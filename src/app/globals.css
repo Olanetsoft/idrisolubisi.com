@@ -1051,11 +1051,12 @@ main {
 .focus-card,
 .pcard,
 .ccard,
+.highlight,
 .socials a {
   background: var(--surface);
   box-shadow: inset 0 1px 0 var(--surface-hi);
 }
-[data-theme="light"] :is(.box, .focus-card, .pcard, .ccard, .socials a) {
+[data-theme="light"] :is(.box, .focus-card, .pcard, .ccard, .highlight, .socials a) {
   box-shadow:
     0 1px 0 rgb(28 27 25 / 0.04),
     0 1px 3px rgb(28 27 25 / 0.05);
@@ -1082,7 +1083,8 @@ main {
   }
   .focus-card.tilt:hover,
   .pcard.tilt:hover,
-  .ccard.tilt:hover {
+  .ccard.tilt:hover,
+  .highlight.tilt:hover {
     border-color: var(--line-strong);
     box-shadow:
       inset 0 1px 0 var(--surface-hi),
@@ -1482,6 +1484,65 @@ main {
   }
   .video-title {
     font-size: 0.9375rem;
+  }
+}
+
+/* Talks opens with two cards: the latest appearance and the keynote. They
+   leave the On stage list below, so nothing shows twice. */
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--box-gap);
+  margin-bottom: clamp(1.75rem, 3vw, 2.5rem);
+}
+.highlight {
+  display: grid;
+  align-content: start;
+  gap: 0.3rem;
+  padding: var(--box-pad);
+  border: 1px solid var(--box-line);
+  border-radius: var(--box-radius);
+}
+.highlight-label {
+  margin-bottom: 0.5rem;
+  font: 500 0.6875rem/1.4 var(--font-mono-stack);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+.highlight-event {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-wrap: balance;
+}
+.highlight-event a {
+  text-decoration-color: var(--line-strong);
+}
+.highlight-event a:hover {
+  text-decoration-color: currentColor;
+}
+.highlight-title {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--text-2);
+  text-wrap: pretty;
+}
+.highlight-meta {
+  margin-top: 0.35rem;
+  font: 400 0.6875rem/1.5 var(--font-mono-stack);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+.highlight-note {
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: var(--text-3);
+}
+@media (max-width: 759px) {
+  .highlights {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -2116,6 +2177,7 @@ body:has(.contact-box) .footer-handles {
   .section-head,
   .pcard,
   .ccard,
+  .highlight,
   .video,
   .section .box {
     animation: rise linear both;
@@ -2125,6 +2187,7 @@ body:has(.contact-box) .footer-handles {
   .section-head:focus-within,
   .pcard:focus-within,
   .ccard:focus-within,
+  .highlight:focus-within,
   .video:focus-within,
   .section .box:focus-within {
     animation: none;
@@ -2357,6 +2420,7 @@ body:has(.contact-box) .footer-handles {
   .row,
   .community-item,
   .video,
+  .highlight,
   .section-head,
   .contact-box {
     break-inside: avoid;

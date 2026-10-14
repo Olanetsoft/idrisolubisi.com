@@ -7,6 +7,8 @@ export type Talk = {
   kind: "Keynote" | "Talk" | "Workshop" | "Fireside chat" | "Host" | "Lecture" | "Speaker";
   href?: string;
   note?: string;
+  /** Shown as a card at the top of Talks instead of in the On stage list. */
+  highlight?: "Latest" | "Keynote";
 };
 
 /** Newest first; within a year, by date where known. Never invent a title, year or link. */
@@ -16,6 +18,7 @@ export const talks: Talk[] = [
     title: "Guest lecture on Midnight",
     year: "2026",
     kind: "Lecture",
+    highlight: "Latest",
   },
   {
     event: "Midnight",
@@ -30,6 +33,7 @@ export const talks: Talk[] = [
     location: "Lagos",
     kind: "Keynote",
     note: "12,000 participants from 50+ countries",
+    highlight: "Keynote",
     href: "https://businessday.ng/news/article/blockfest-africa-2025-draws-12000-participants-strengthens-africas-web3-voice/",
   },
   {

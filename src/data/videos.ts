@@ -17,6 +17,8 @@ export type FeaturedVideo = {
   year: string;
   /** Seconds into the video where his part starts, for shared recordings. */
   start?: number;
+  /** A YouTube thumbnail other than hqdefault, when the default frame is unclear. */
+  thumb?: string;
 };
 
 export const featuredVideos: FeaturedVideo[] = [
@@ -62,6 +64,7 @@ export const featuredVideos: FeaturedVideo[] = [
     kind: "Explainer",
     context: "AI tools",
     year: "2026",
+    thumb: "hq3",
   },
   {
     id: "f-rWEHVmfDw",

@@ -30,7 +30,18 @@ function roleLine(t: Talk): string {
   return t.title.toLowerCase().includes(firstWord) ? t.title : `${kind} · ${t.title}`;
 }
 
+/** "Lagos, 2025": the kind unless the label or title already says it, the city unless the event names it, the year. */
+function highlightMeta(t: Talk): string {
+  const kind = KIND[t.kind];
+  const said = `${t.highlight} ${t.title ?? ""}`.toLowerCase();
+  const showKind = !said.includes(kind.split(" ").pop()!.toLowerCase());
+  const city = t.location && !eventName(t).includes(t.location) ? t.location : undefined;
+  return [showKind ? kind : undefined, city, t.year].filter(Boolean).join(", ");
+}
+
 export function Talks() {
+  const highlights = talks.filter((t) => t.highlight);
+  const stages = talks.filter((t) => !t.highlight);
   return (
     <section className="section" id="talks" aria-labelledby="talks-title">
       <div className="container">
@@ -38,6 +49,19 @@ export function Talks() {
           <SectionLabel id="talks">Talks and workshops</SectionLabel>
           <p className="lede">Tutorials, workshops and explainers.</p>
         </div>
+        <ul className="highlights">
+          {highlights.map((t) => (
+            <li key={t.event} className="highlight spot tilt">
+              <p className="highlight-label">{t.highlight}</p>
+              <p className="highlight-event">
+                {t.href ? <a href={t.href}>{eventName(t)}</a> : eventName(t)}
+              </p>
+              {t.title && <p className="highlight-title">{t.title}</p>}
+              <p className="highlight-meta">{highlightMeta(t)}</p>
+              {t.note && <p className="highlight-note">{t.note}</p>}
+            </li>
+          ))}
+        </ul>
         <ul className="videos">
           {featuredVideos.map((v) => (
             <li key={v.id} className="video">
@@ -47,7 +71,7 @@ export function Talks() {
               >
                 <span className="video-thumb tilt">
                   <Image
-                    src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`}
+                    src={`https://i.ytimg.com/vi/${v.id}/${v.thumb ?? "hqdefault"}.jpg`}
                     alt=""
                     width={480}
                     height={360}
@@ -75,7 +99,7 @@ export function Talks() {
         <h3 className="group-label stages-label">On stage</h3>
         <div className="box">
           <ul className="stage-grid">
-            {talks.map((t) => (
+            {stages.map((t) => (
               <li key={`${t.event}-${t.title ?? t.kind}`} className="stage">
                 <span className="stage-year">{t.year}</span>
                 <span className="stage-body">
