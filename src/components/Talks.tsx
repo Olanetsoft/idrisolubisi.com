@@ -2,6 +2,7 @@ import Image from "next/image";
 import { site } from "@/data/site";
 import { talks } from "@/data/talks";
 import { featuredVideos } from "@/data/videos";
+import { BrandIcon } from "./icons";
 
 type Talk = (typeof talks)[number];
 
@@ -57,6 +58,9 @@ export function Talks() {
                     height={360}
                     sizes="(max-width: 759px) 128px, (max-width: 1023px) 45vw, 336px"
                   />
+                  <span className="video-badge">
+                    <BrandIcon name="youtube" size={22} />
+                  </span>
                 </span>
                 <span className="video-text">
                   <span className="video-title">{v.title}</span>
@@ -70,7 +74,10 @@ export function Talks() {
           ))}
         </ul>
         <p className="more-link">
-          <a href={site.links.youtube}>All videos on YouTube</a>
+          <a href={site.links.youtube}>
+            <BrandIcon name="youtube" />
+            All videos on YouTube
+          </a>
         </p>
         <h3 className="group-label stages-label">On stage</h3>
         <div className="box">

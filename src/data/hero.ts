@@ -1,3 +1,4 @@
+import type { UiName } from "@/components/icons";
 import { site } from "./site";
 
 /**
@@ -12,6 +13,8 @@ export type Focus = {
   title: string;
   /** What that work is, in plain words. */
   text: string;
+  /** Small icon beside the title. */
+  icon: UiName;
 };
 
 /** One line of the activity log: a tag and a true fact, usually a number, that the cards do not show. */
@@ -23,23 +26,27 @@ export const hero: { headline: string; intro: string; focus: Focus[]; log: LogLi
   focus: [
     {
       title: "Developer relations",
+      icon: "megaphone",
       text: "Docs, tutorials, explainer videos, talks and workshops that take developers and builders from first look to production.",
     },
     {
       title: "AI agent engineering",
+      icon: "robot",
       text: "Production agents and the harness around them: MCP tools, verification, safety limits, human approval and dashboards that show what agents are doing.",
     },
     {
       title: "Forward deployed engineering",
+      icon: "people",
       text: "Working inside partner engineering teams from discovery and solution architecture to production launch, then turning repeat problems into reference code and tooling.",
     },
     {
       title: "Backend engineering",
+      icon: "hddStack",
       text: "Production services and APIs: event-driven payments, multi-tenant systems, data pipelines, security hardening, race-condition fixes and monitoring.",
     },
   ],
   log: [
-    { tag: "developer-support", fact: "100,000+ developers helped, rated 4.8/5" },
+    { tag: "developer-support", fact: "100,000+ developers supported, rated 4.8/5" },
     { tag: "mcp-server", fact: "10,000+ downloads, 11,900+ agent tool calls" },
     { tag: "integrations", fact: "setup time cut 55%, 500+ weekly adoptions" },
     { tag: "tutorials", fact: "10M+ reads across 40+ tutorials" },

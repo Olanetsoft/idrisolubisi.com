@@ -1,10 +1,10 @@
 {
-  "fetchedAt": "2026-10-13",
+  "fetchedAt": "2026-10-14",
   "followers": 1319,
   "repos": {
     "Olanetsoft/swoopagent-claw": {
       "stars": null,
-      "language": "TypeScript",
+      "language": null,
       "private": true,
       "url": "https://github.com/Olanetsoft/swoopagent-claw"
     },

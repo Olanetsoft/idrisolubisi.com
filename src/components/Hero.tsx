@@ -3,6 +3,7 @@ import { hero } from "@/data/hero";
 import { site } from "@/data/site";
 import { ActivityLog } from "./ActivityLog";
 import { HeroBackdrop } from "./HeroBackdrop";
+import { BrandIcon, UiIcon } from "./icons";
 import { RichText } from "./RichText";
 import { StatusLine } from "./StatusLine";
 
@@ -37,22 +38,29 @@ export function Hero() {
               Book a 15-min call
             </a>
             <a className="btn" href={site.resumeUrl}>
+              <UiIcon name="fileEarmarkText" />
               CV (PDF)
             </a>
             <a className="action-link" href={`mailto:${site.email}`}>
+              <UiIcon name="envelope" />
               Email
             </a>
             <a className="action-link" href={site.links.linkedin} rel="me">
+              <BrandIcon name="linkedin" />
               LinkedIn
             </a>
             <a className="action-link" href={site.links.github} rel="me">
+              <BrandIcon name="github" />
               GitHub
             </a>
           </div>
           <dl className="focus hero-focus">
             {hero.focus.map((f, i) => (
               <div className="focus-card" key={f.title} style={{ "--i": i } as React.CSSProperties}>
-                <dt className="focus-title">{f.title}</dt>
+                <dt className="focus-title">
+                  <UiIcon name={f.icon} size={18} />
+                  {f.title}
+                </dt>
                 <dd className="focus-text">{f.text}</dd>
               </div>
             ))}

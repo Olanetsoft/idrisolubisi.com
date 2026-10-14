@@ -1,6 +1,15 @@
 import { site } from "@/data/site";
 import { StatusLine } from "./StatusLine";
 import { CopyButton } from "./CopyCommand";
+import { BrandIcon, type BrandName } from "./icons";
+
+const SOCIALS: { label: string; href: string; icon: BrandName; note?: string }[] = [
+  { label: "LinkedIn", href: site.links.linkedin, icon: "linkedin" },
+  { label: "GitHub", href: site.links.github, icon: "github" },
+  { label: "X", href: site.links.x, icon: "x", note: "27,000+ followers" },
+  { label: "YouTube", href: site.links.youtube, icon: "youtube" },
+  { label: "Blog", href: site.links.blog, icon: "hashnode" },
+];
 
 export function Contact() {
   return (
@@ -27,29 +36,17 @@ export function Contact() {
               <CopyButton value={site.email} label="Copy email address" />
             </p>
           </div>
-          <p className="elsewhere">
-            Also on{" "}
-            <a href={site.links.linkedin} rel="me">
-              LinkedIn
-            </a>
-            ,{" "}
-            <a href={site.links.github} rel="me">
-              GitHub
-            </a>
-            ,{" "}
-            <a href={site.links.x} rel="me">
-              X
-            </a>{" "}
-            (27,000+ followers),{" "}
-            <a href={site.links.youtube} rel="me">
-              YouTube
-            </a>{" "}
-            and{" "}
-            <a href={site.links.blog} rel="me">
-              my blog
-            </a>
-            .
-          </p>
+          <ul className="socials" aria-label="Elsewhere">
+            {SOCIALS.map((link) => (
+              <li key={link.label}>
+                <a href={link.href} rel="me">
+                  <BrandIcon name={link.icon} size={18} />
+                  <span>{link.label}</span>
+                  {link.note && <span className="social-note">{link.note}</span>}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

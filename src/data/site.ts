@@ -5,10 +5,9 @@ export const site = {
   /** Used in /llms.txt and structured data; the page shows `role` as the headline. */
   disciplines: [
     "Developer Relations",
-    "AI Engineer",
+    "AI Engineering",
     "Forward Deployed Engineering",
-    "Developer Experience",
-    "Solutions Engineering",
+    "Backend Engineering",
   ],
   /** The hero intro: one paragraph, no employer names. [label](url) renders as a link, ==text== as the one highlight. */
   bio: [
@@ -25,7 +24,7 @@ export const site = {
   bookingUrl: "https://calendar.app.google/An4ZtvZHjhSTGrgeA",
   status: "UK Global Talent",
   availability:
-    "Open to developer relations, AI engineering, forward deployed engineering, solutions engineering, developer experience and developer support roles.",
+    "Open to senior developer relations, AI engineering, forward deployed engineering and backend engineering roles.",
   /** View-only PDF, refreshed from the Google Doc with `npm run cv`. */
   resumeUrl: "/Idris-Olubisi-CV.pdf",
   gaId: "G-7MMFT1BXJV",
@@ -36,7 +35,7 @@ export const site = {
     blog: "https://blog.idrisolubisi.com/",
     youtube: "https://www.youtube.com/playlist?list=PLaZ7cT8J_HZbyPjlfLgFCCpA_rAbKaaqg",
     sessionize: "https://sessionize.com/olanetsoft",
-    freecodecamp: "https://www.freecodecamp.org/news/author/idris/",
+    freecodecamp: "https://www.freecodecamp.org/news/author/olanetsoft/",
     devto: "https://dev.to/olanetsoft",
     linktree: "https://linktr.ee/olanetsoft",
     web3afrika: "https://web3afrika.com/",

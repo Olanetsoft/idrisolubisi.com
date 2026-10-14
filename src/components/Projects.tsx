@@ -2,6 +2,7 @@ import { harnessIntro, projects, type Project } from "@/data/projects";
 import { site } from "@/data/site";
 import { isPrivateRepo, starsFor } from "@/lib/generated";
 import { CopyCommand } from "./CopyCommand";
+import { BrandIcon, STACK_ICONS, UiIcon } from "./icons";
 
 /** Live star counts only when they help: 100 or more. */
 const STAR_FLOOR = 100;
@@ -15,6 +16,13 @@ function starsOf(project: Project): number | null {
 
 /** Links that resolve for a visitor: a private repo would 404, so it is left out until it is public. */
 const publicLinks = (project: Project) => project.links.filter((l) => !isPrivateRepo(l.url));
+
+/** The tech logo for a stack item, or a plug for MCP, or nothing. */
+function StackIcon({ item }: { item: string }) {
+  if (item === "MCP") return <UiIcon name="plug" size={13} />;
+  const brand = STACK_ICONS[item];
+  return brand ? <BrandIcon name={brand} size={13} /> : null;
+}
 
 function Badge({ badge }: { badge: NonNullable<Project["badge"]> }) {
   return <span className={badge === "Live" ? "badge badge--live" : "badge"}>{badge}</span>;
@@ -30,11 +38,11 @@ function FeaturedCard({ project }: { project: Project }) {
       </div>
       <h3 className="pcard-name">{project.name}</h3>
       <p className="pcard-what">{project.oneLine}</p>
-      <p className="pcard-proof">{project.proof}</p>
-      {project.how && <p className="pcard-how">{project.how}</p>}
+      {project.proof && <p className="pcard-proof">{project.proof}</p>}
       <ul className="chips" aria-label="Stack">
         {project.stack.map((s) => (
           <li className="chip" key={s}>
+            <StackIcon item={s} />
             {s}
           </li>
         ))}
@@ -72,11 +80,16 @@ function CompactCard({ project }: { project: Project }) {
         {project.badge && <Badge badge={project.badge} />}
       </div>
       <p className="ccard-what">{project.oneLine}</p>
-      <p className="ccard-proof">{project.proof}</p>
-      <p className="ccard-stack">
-        {project.stack.join(", ")}
-        {stars !== null && <span className="stars">, {number.format(stars)} stars</span>}
-      </p>
+      {project.proof && <p className="ccard-proof">{project.proof}</p>}
+      <ul className="ccard-stack" aria-label="Stack">
+        {project.stack.map((item) => (
+          <li key={item}>
+            <StackIcon item={item} />
+            {item}
+          </li>
+        ))}
+        {stars !== null && <li className="stars">{number.format(stars)} stars</li>}
+      </ul>
       {rest.length > 0 && (
         <p className="ccard-more">
           {rest.map((l) => (
@@ -122,6 +135,7 @@ export function Projects() {
         </ul>
         <p className="more-link">
           <a href={site.links.github} rel="me">
+            <BrandIcon name="github" />
             More on GitHub
           </a>
         </p>

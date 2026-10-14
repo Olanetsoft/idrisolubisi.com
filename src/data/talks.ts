@@ -56,7 +56,7 @@ export const talks: Talk[] = [
     year: "2023",
     location: "Paris",
     kind: "Talk",
-    href: "https://www.osmocon.com/#speakers",
+    href: "https://www.youtube.com/watch?v=MyhX9-F51V4",
   },
   {
     event: "Mara Developer Campus Club",
@@ -67,7 +67,7 @@ export const talks: Talk[] = [
   },
   {
     event: "DevFest Lagos",
-    title: "Leveraging USDC to build decentralised applications in Web3 efficiently",
+    title: "Leveraging USDC to efficiently build decentralised applications in Web3",
     year: "2022",
     location: "Lagos",
     kind: "Talk",
@@ -77,6 +77,7 @@ export const talks: Talk[] = [
     event: "CityJS Conference",
     title: "JavaScript Supremacy: Building a scalable full-stack application with JavaScript",
     year: "2022",
+    location: "Lagos",
     kind: "Talk",
     href: "https://x.com/olanetsoft/status/1580091101293477888",
   },

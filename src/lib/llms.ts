@@ -50,7 +50,7 @@ export function renderLlmsTxt(): string {
     const stars = p.githubRepo ? starsFor(p.githubRepo) : null;
     const starNote = stars !== null ? ` ${stars} GitHub stars (${githubFetchedAt}).` : "";
     push(
-      `- ${p.name}${p.group === "harness" ? " (agent harness)" : ""}: ${p.oneLine} ${p.proof}.${starNote}`,
+      `- ${p.name}${p.group === "harness" ? " (agent harness)" : ""}: ${p.oneLine}${p.proof ? ` ${p.proof}.` : ""}${starNote}`,
     );
     const links = p.links.filter((l) => !isPrivateRepo(l.url));
     push(
@@ -72,7 +72,7 @@ export function renderLlmsTxt(): string {
   push("## Writing");
   push("");
   push(`${writingStats.tutorials} tutorials, read ${writingStats.reads} times.`);
-  for (const a of articles) push(`- ${a.title} (${a.outlet}) - ${a.href}`);
+  for (const a of articles) push(`- ${a.title} (${a.outlet}, ${a.date}) - ${a.href}`);
   push(`- All writing - ${site.links.blog}`);
   push("");
 

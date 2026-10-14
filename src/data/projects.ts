@@ -12,7 +12,8 @@ export type Project = {
   name: string;
   group: "harness" | "more";
   oneLine: string;
-  proof: string;
+  /** One line of proof, ideally a number. Optional when there is nothing worth saying. */
+  proof?: string;
   stack: string[];
   badge?: "Live" | "Open source" | "npm" | "Reference";
   links: ProjectLink[];
@@ -24,8 +25,6 @@ export type Project = {
   command?: string;
   /** Featured cards: which part of the agent harness this is. */
   layer?: "Act" | "Verify" | "Observe";
-  /** Featured cards: one engineering detail, the senior signal. */
-  how?: string;
 };
 
 export const harnessIntro =
@@ -35,12 +34,11 @@ export const projects: Project[] = [
   {
     key: "swoopagent",
     layer: "Act",
-    how: "Agents propose; the backend validates, signs and executes. Closed a double-sell race with an optimistic-lock mutex, Redis idempotency keys and single-transaction writes.",
     name: "SwoopAgent",
     group: "harness",
     oneLine:
-      "Multi-tenant platform where each user runs a Claude-powered agent that trades real money, on web and Telegram.",
-    proof: "Around 100 users trading real funds, every open position checked every 30 seconds",
+      "Multi-tenant platform where each user runs a Claude-powered agent that trades real money on web and Telegram, with the backend checking and executing every trade.",
+    proof: "Around 100 users trading real funds",
     stack: ["Next.js", "TypeScript", "Postgres", "Redis", "Docker"],
     badge: "Live",
     links: [{ label: "GitHub", url: "https://github.com/Olanetsoft/swoopagent-claw" }],
@@ -49,7 +47,6 @@ export const projects: Project[] = [
   {
     key: "midnight-mcp",
     layer: "Verify",
-    how: "A hosted compiler worked as a verification gate, so assistants returned code that compiles instead of confident wrong code.",
     name: "Midnight MCP server",
     group: "harness",
     oneLine:
@@ -66,12 +63,11 @@ export const projects: Project[] = [
   {
     key: "agent-lookout",
     layer: "Observe",
-    how: "Flags Claude Code sessions waiting for approval with what they are asking, and jumps to the right VS Code window or tmux pane.",
     name: "Agent Lookout",
     group: "harness",
     oneLine:
-      "Local dashboard for the Claude Code and Codex sessions on a machine, and which of them need you.",
-    proof: "Shipped October 2026, 1,100+ npm downloads in its first week",
+      "Local dashboard for the Claude Code and Codex sessions on a machine: which need you, what they are asking, and a jump to the right window.",
+    proof: "Shipped, with 1,100+ npm downloads in its first week",
     stack: ["TypeScript", "React", "Vite", "MCP"],
     badge: "npm",
     links: [
@@ -88,7 +84,7 @@ export const projects: Project[] = [
     group: "more",
     oneLine:
       "Scaffolding CLI that sets up a Midnight app with a Compact contract, a local devnet and deploy scripts.",
-    proof: "9,000+ npm downloads, now maintained in the Midnight GitHub org",
+    proof: "9,000+ npm downloads",
     stack: ["TypeScript", "Node.js", "Docker", "Compact"],
     badge: "npm",
     links: [
@@ -103,9 +99,9 @@ export const projects: Project[] = [
     name: "Compact Playground",
     group: "more",
     oneLine:
-      "Compile API for Compact that adds Run buttons to code samples, so learners compile from the page.",
-    proof: "Powers the Run buttons in Learn Compact, with multi-version compiles in one request",
-    stack: ["TypeScript", "Hono", "Docker"],
+      "Compile API for Compact that adds Run buttons to code samples and was the hosted compiler behind the Midnight MCP server.",
+    proof: "Original author and maintainer",
+    stack: ["TypeScript", "Node.js", "Hono", "Docker"],
     badge: "Open source",
     links: [{ label: "GitHub", url: "https://github.com/Olanetsoft/compact-playground" }],
     githubRepo: "Olanetsoft/compact-playground",
@@ -142,7 +138,7 @@ export const projects: Project[] = [
     group: "more",
     oneLine:
       "Open-source AI writing tool that turns a topic into article titles, plus free tools for writers.",
-    proof: "60 forks and 10 contributors on GitHub",
+    proof: "60 forks and 10 contributors",
     stack: ["Next.js", "TypeScript", "OpenAI API", "Supabase"],
     badge: "Open source",
     links: [
@@ -156,8 +152,7 @@ export const projects: Project[] = [
     name: "AudioBoost",
     group: "more",
     oneLine:
-      "macOS app that fixes quiet video audio with two-pass EBU R128 loudness normalisation, without clipping.",
-    proof: "Three loudness presets: -14, -16 and -23 LUFS",
+      "macOS app that fixes quiet video audio with loudness normalisation, without clipping.",
     stack: ["FFmpeg", "macOS"],
     badge: "Open source",
     links: [{ label: "GitHub", url: "https://github.com/Olanetsoft/audioboost" }],
@@ -168,8 +163,8 @@ export const projects: Project[] = [
     name: "ZK Loan",
     group: "more",
     oneLine:
-      "Midnight's reference lending app (contract, CLI, React UI and signing API) that scores loans on credit data the lender never sees.",
-    proof: "Top contributor, 51 of 107 commits, including a fix for a signature-forgery bug",
+      "Midnight's reference lending app that scores loans on credit data the lender never sees.",
+    proof: "Top contributor, 51 of 107 commits, including a security fix",
     stack: ["TypeScript", "Compact", "React", "Docker"],
     badge: "Reference",
     links: [{ label: "GitHub", url: "https://github.com/midnightntwrk/example-zkloan" }],
@@ -181,8 +176,8 @@ export const projects: Project[] = [
     name: "Learn Compact",
     group: "more",
     oneLine:
-      "Interactive book and hands-on exercises for Compact, Midnight's zero-knowledge contract language, with code you compile on the page.",
-    proof: "22 chapters and 17 exercises, compiled in the page through Compact Playground",
+      "Interactive book and exercises that teach Compact, Midnight's zero-knowledge contract language, with code you compile on the page.",
+    proof: "22 chapters and 17 exercises",
     stack: ["Compact", "mdBook", "JavaScript"],
     badge: "Live",
     links: [
@@ -198,7 +193,7 @@ export const projects: Project[] = [
     group: "more",
     oneLine:
       "Twitter bot and REST API that explain web3 terms in plain English, built in the open with the community.",
-    proof: "97 merged pull requests from 31 contributors, 215 terms",
+    proof: "97 merged pull requests from 31 contributors",
     stack: ["Node.js", "Express", "Jest"],
     badge: "Open source",
     links: [{ label: "GitHub", url: "https://github.com/Olanetsoft/web3terms" }],

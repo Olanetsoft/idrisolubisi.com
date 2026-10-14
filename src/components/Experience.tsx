@@ -1,7 +1,7 @@
 import { experience } from "@/data/experience";
 import { site } from "@/data/site";
 
-/** The arc, not the detail: dates, company, title. The CV carries the rest. */
+/** Dates, company, title and one paragraph on everything done in the role. The CV carries the full detail. */
 export function Experience() {
   return (
     <section className="section" id="experience" aria-labelledby="experience-title">
@@ -23,6 +23,7 @@ export function Experience() {
                     <span className="company">{r.company}</span>
                     <span className="role-title">, {r.title}</span>
                   </h3>
+                  <p className="row-summary">{r.summary}</p>
                 </div>
               </li>
             ))}
