@@ -13,11 +13,23 @@ function Badge({ badge }: { badge: NonNullable<Project["badge"]> }) {
   return <span className={badge === "Live" ? "badge badge--live" : "badge"}>{badge}</span>;
 }
 
-const FEATURE_SIZES = "(max-width: 759px) calc(100vw - 32px), (max-width: 1023px) 60vw, 380px";
-const MORE_SIZES = "(max-width: 759px) 80vw, (max-width: 1023px) 46vw, 380px";
+const LEAD_SIZES =
+  "(max-width: 759px) calc(100vw - 32px), (max-width: 1023px) 55vw, (max-width: 1295px) 29vw, 380px";
+const FEATURE_SIZES =
+  "(max-width: 759px) calc(100vw - 32px), (max-width: 1023px) 44vw, (max-width: 1295px) 29vw, 380px";
+const MORE_SIZES =
+  "(max-width: 759px) 74vw, (max-width: 1023px) 44vw, (max-width: 1295px) 29vw, 380px";
 
 /** A project as a card: its picture, name, a few words and one number; the card opens the project. */
-function ProjectCard({ project, feature }: { project: Project; feature?: boolean }) {
+function ProjectCard({
+  project,
+  feature,
+  lead,
+}: {
+  project: Project;
+  feature?: boolean;
+  lead?: boolean;
+}) {
   const [primary] = publicLinks(project);
   const isPrivate = !primary && project.links.length > 0;
   return (
@@ -25,18 +37,16 @@ function ProjectCard({ project, feature }: { project: Project; feature?: boolean
       <WorkCard
         href={primary?.url}
         image={project.image}
-        alt={
-          isPrivate
-            ? "Diagram: a Claude agent proposes trades; the backend validates, signs and executes them; a safety layer checks every 30 seconds"
-            : undefined
-        }
-        sizes={feature ? FEATURE_SIZES : MORE_SIZES}
+        alt={primary ? undefined : project.imageAlt}
+        sizes={lead ? LEAD_SIZES : feature ? FEATURE_SIZES : MORE_SIZES}
         tag={feature && project.layer ? `[ ${project.layer} ]` : undefined}
         name={project.name}
         badge={project.badge && <Badge badge={project.badge} />}
         line={project.tagline}
         proof={project.proof}
-        srExtra={primary ? `opens ${primary.label}` : undefined}
+        srExtra={
+          primary ? `opens ${primary.label === "Site" ? "the site" : primary.label}` : undefined
+        }
         note={isPrivate ? "Private repo" : undefined}
         size={feature ? "feature" : "default"}
       />
@@ -58,8 +68,8 @@ export function Projects() {
           Agent harness <span aria-hidden="true">·</span> {harness.length}
         </h3>
         <ul className="harness">
-          {harness.map((p) => (
-            <ProjectCard key={p.key} project={p} feature />
+          {harness.map((p, i) => (
+            <ProjectCard key={p.key} project={p} feature lead={i === 0} />
           ))}
         </ul>
         <h3 className="group-label">

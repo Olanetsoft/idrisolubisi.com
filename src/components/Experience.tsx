@@ -45,7 +45,7 @@ export function Experience() {
               <WorkCard
                 href={c.href}
                 image={c.image}
-                sizes="(max-width: 1023px) 46vw, 290px"
+                sizes="(max-width: 1023px) 44vw, (max-width: 1295px) 21vw, 272px"
                 tag={c.role}
                 name={c.org}
                 badge={c.current && <span className="badge badge--live">Now</span>}

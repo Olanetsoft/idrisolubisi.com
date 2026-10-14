@@ -45,7 +45,7 @@ export function Talks() {
         <VideoDialog />
         <ul className="highlights">
           {highlights.map((t) => (
-            <li key={t.event} className="highlight spot tilt">
+            <li key={t.event} className={t.href ? "highlight spot tilt" : "highlight spot"}>
               <p className="highlight-label">{t.highlight}</p>
               <p className="highlight-event">
                 {t.href ? <a href={t.href}>{eventName(t)}</a> : eventName(t)}

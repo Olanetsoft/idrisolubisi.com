@@ -24,7 +24,7 @@ export function Hero() {
               width={1407}
               height={1600}
               priority
-              sizes="(max-width: 1023px) 133px, 200px"
+              sizes="(max-width: 519px) 26vw, (max-width: 1023px) 133px, 200px"
             />
           </figure>
           <div className="hero-pitch">

@@ -62,24 +62,27 @@ export function WorkCard({
           </span>
         )}
       </span>
-      <span className="work-body">
-        <span className="work-head">
-          <span className="work-name">
+      <div className="work-body">
+        <div className="work-head">
+          <h4 className="work-name">
             <span className="work-name-text">{name}</span>
-          </span>
+          </h4>
           {badge}
-        </span>
-        {srExtra && <span className="sr-only">, {srExtra}</span>}
+        </div>
+        {srExtra && <span className="sr-only">, {srExtra}.</span>}
         <span className="work-line">{line}</span>
         {(proof || note) && (
           <span className="work-foot">
             {proof && (
-              <span className={size === "feature" ? "work-proof" : "work-meta"}>{proof}</span>
+              <span className={size === "feature" ? "work-proof" : "work-meta"}>
+                <span className="sr-only">. </span>
+                {proof}
+              </span>
             )}
             {note && <span className="pcard-note">{note}</span>}
           </span>
         )}
-      </span>
+      </div>
     </>
   );
   return href ? (

@@ -32,6 +32,8 @@ export type Project = {
   tagline: string;
   /** The card image in public/images/work/: a screenshot of the site, the repo's own image, its code or (private repos) a diagram. */
   image: string;
+  /** Alt text for the image when the card is not a link (a private repo). */
+  imageAlt?: string;
 };
 
 export const harnessIntro =
@@ -54,6 +56,8 @@ export const projects: Project[] = [
       "Agents propose; the backend validates, signs and executes. Closed a double-sell race with an optimistic-lock mutex, Redis idempotency keys and single-transaction writes. A safety layer checks every open position every 30 seconds and enforces stop-losses and a -15% circuit breaker.",
     tagline: "Claude trading agents behind a safety layer",
     image: "/images/work/swoopagent.jpg",
+    imageAlt:
+      "Diagram: a Claude agent proposes trades; the backend validates, signs and executes them; a safety layer with stop-losses and a -15% circuit breaker checks every 30 seconds",
   },
   {
     key: "midnight-mcp",
