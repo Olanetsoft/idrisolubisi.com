@@ -6,7 +6,6 @@ import blogJson from "@/data/generated/blog.json";
 export type RepoStats = {
   /** null for private repos or when the stats could not be fetched */
   stars: number | null;
-  language: string | null;
   private: boolean;
   url: string;
 };
@@ -21,7 +20,7 @@ type GithubFile = {
 // Plain annotations (not casts) so a shape change in the JSON fails typecheck.
 const github: GithubFile = githubJson;
 
-export const githubStats: Record<string, RepoStats> = github.repos;
+const githubStats: Record<string, RepoStats> = github.repos;
 export const githubFollowers: number | null = github.followers;
 export const githubFetchedAt: string | null = github.fetchedAt;
 
@@ -45,12 +44,12 @@ export function isPrivateRepo(url: string): boolean {
 }
 
 /** Star count for "owner/repo" (or a github.com URL); null if private or unknown. */
-export function starsFor(repo: string): number | null {
+function starsFor(repo: string): number | null {
   return statsByKey.get(normalizeRepo(repo))?.stars ?? null;
 }
 
 /** Live star counts only when they help: 100 or more, and never on a card that hides them. */
-export const STAR_FLOOR = 100;
+const STAR_FLOOR = 100;
 export function shownStars(project: { githubRepo?: string; hideStars?: boolean }): number | null {
   if (!project.githubRepo || project.hideStars) return null;
   const stars = starsFor(project.githubRepo);

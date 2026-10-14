@@ -130,7 +130,7 @@ export function renderLlmsFullTxt(): string {
   push("## Recognition", "");
   for (const r of recognition) {
     push(
-      `- ${r.by}: "${r.title}" (${dated(r.date)})${r.detail ? `. ${r.detail}` : ""}${r.href ? ` - ${r.href}` : ""}`,
+      `- ${r.by}${r.note ? ` (${r.note})` : ""}: "${r.title}" (${dated(r.date)})${r.detail ? `. ${r.detail}` : ""}${r.href ? ` - ${r.href}` : ""}`,
     );
   }
   push("");

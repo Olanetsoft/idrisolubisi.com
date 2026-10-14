@@ -215,11 +215,6 @@ figure {
   transform: none;
 }
 
-/* Small mono metadata: labels, status, dates, sources, chips. */
-.mono {
-  font-family: var(--font-mono-stack);
-}
-
 /* ---------- icons ---------- */
 
 .brand-icon {
@@ -257,17 +252,6 @@ figure {
   color: var(--bg);
   border-color: var(--text);
   font-weight: 600;
-}
-.btn--sm {
-  position: relative;
-  min-height: 36px;
-  padding: 0 0.75rem;
-  font-size: 0.875rem;
-}
-.btn--sm::after {
-  content: "";
-  position: absolute;
-  inset: -4px;
 }
 @media (hover: hover) {
   .btn:hover {

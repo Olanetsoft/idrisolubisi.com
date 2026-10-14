@@ -13,7 +13,6 @@ const REPOS = [
   "Olanetsoft/midnight-mcp",
   "Olanetsoft/agent-lookout",
   "midnightntwrk/create-mn-app",
-  "Olanetsoft/create-mn-app",
   "Olanetsoft/compact-playground",
   "axelarnetwork/foundry-axelar-gmp-example",
   "Olanetsoft/article-idea-generator",
@@ -96,7 +95,7 @@ async function fetchRepo(repo) {
     });
     if (res.status === 404) {
       // Private repos are invisible (404) to unauthenticated callers.
-      return { ok: true, stats: { stars: null, language: null, private: true, url: fallbackUrl } };
+      return { ok: true, stats: { stars: null, private: true, url: fallbackUrl } };
     }
     if (!res.ok) {
       warn(`github ${repo}: HTTP ${res.status}`);
@@ -109,7 +108,6 @@ async function fetchRepo(repo) {
       stats: {
         stars:
           isPrivate || typeof data.stargazers_count !== "number" ? null : data.stargazers_count,
-        language: typeof data.language === "string" ? data.language : null,
         private: isPrivate,
         url: typeof data.html_url === "string" ? data.html_url : fallbackUrl,
       },
@@ -166,7 +164,6 @@ async function updateGithub() {
       ? result.stats
       : (previous?.repos?.[repo] ?? {
           stars: null,
-          language: null,
           private: false,
           url: `https://github.com/${repo}`,
         });

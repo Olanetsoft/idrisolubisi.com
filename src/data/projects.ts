@@ -1,8 +1,9 @@
 /**
  * Projects, in the owner's card format: name, one line on what it is, one line
  * of proof, stack, links. The agent-harness trio leads as one body of work.
- * Star counts are not stored here; they are fetched at build time
- * (scripts/fetch-data.mjs) for every card with a public `githubRepo`.
+ * Star counts are not stored here; they are fetched at build time by
+ * scripts/fetch-data.mjs for each repo in its REPOS list, so add a new
+ * card's `githubRepo` there too (that is also how private links are hidden).
  * No em-dashes. The Midnight MCP server is always described in the past tense.
  */
 export type ProjectLink = { label: string; url: string };

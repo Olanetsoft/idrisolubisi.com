@@ -22,8 +22,3 @@ export function RichText({ text }: { text: string }): ReactNode {
   if (last < text.length) nodes.push(text.slice(last));
   return nodes;
 }
-
-/** Plain text with the markup removed, for meta tags and llms.txt. */
-export function plainText(text: string): string {
-  return text.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").replace(/==([^=]+)==/g, "$1");
-}
