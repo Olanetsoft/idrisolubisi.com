@@ -1,6 +1,7 @@
 import { site } from "@/data/site";
 import { platforms, writingList, writingStats } from "@/data/writing";
 import { blogPosts } from "@/lib/generated";
+import { SectionLabel } from "./SectionLabel";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -15,10 +16,7 @@ export function Writing() {
     <section className="section" id="writing" aria-labelledby="writing-title">
       <div className="container">
         <div className="section-head">
-          <h2 className="label" id="writing-title">
-            <span className="label-index" aria-hidden="true" />
-            Writing
-          </h2>
+          <SectionLabel id="writing">Writing</SectionLabel>
           <p className="lede">
             {writingStats.tutorials} tutorials, read {writingStats.reads} times.
           </p>

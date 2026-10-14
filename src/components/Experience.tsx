@@ -1,6 +1,7 @@
-import { community, experience } from "@/data/experience";
+import { community, education, experience } from "@/data/experience";
 import { site } from "@/data/site";
 import { RichText } from "./RichText";
+import { SectionLabel } from "./SectionLabel";
 
 /**
  * A timeline: dates, then company and title, then one paragraph on everything
@@ -12,10 +13,7 @@ export function Experience() {
     <section className="section" id="experience" aria-labelledby="experience-title">
       <div className="container">
         <div className="section-head">
-          <h2 className="label" id="experience-title">
-            <span className="label-index" aria-hidden="true" />
-            Experience
-          </h2>
+          <SectionLabel id="experience">Experience</SectionLabel>
           <p className="lede">Seven years in backend engineering and developer relations.</p>
         </div>
         <div className="box timeline-box">
@@ -48,6 +46,12 @@ export function Experience() {
                 </li>
               ))}
             </ul>
+          </div>
+          <div className="education">
+            <h3 className="group-label">Education</h3>
+            <p className="education-line">
+              {education.degree}, {education.school}, {education.year}
+            </p>
           </div>
           <p className="row-more">
             <a href={site.resumeUrl}>Full CV (PDF)</a>

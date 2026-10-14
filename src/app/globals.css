@@ -140,6 +140,10 @@ button {
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 }
+::selection {
+  background: var(--text);
+  color: var(--bg);
+}
 :is(a, button):focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 3px;
@@ -393,6 +397,38 @@ figure {
   font-size: 1.0625rem;
   text-decoration: none;
 }
+.mobile-menu:not([hidden]) {
+  animation: menu-in 200ms var(--ease) both;
+}
+.mobile-menu:not([hidden]) > a {
+  animation: rise 280ms var(--ease) both;
+  animation-delay: calc(40ms + var(--i, 0) * 28ms);
+}
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    translate: 0 -6px;
+  }
+  to {
+    opacity: 1;
+    translate: none;
+  }
+}
+.menu-scrim {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 100dvh;
+  background: rgb(0 0 0 / 0.6);
+  animation: fade-in 200ms linear both;
+}
+.menu-scrim[hidden] {
+  display: none;
+}
+[data-theme="light"] .menu-scrim {
+  background: rgb(28 27 25 / 0.25);
+}
 @media (max-width: 759px) {
   .site-nav {
     display: none;
@@ -416,7 +452,8 @@ figure {
   }
 }
 @media (min-width: 760px) {
-  .mobile-menu {
+  .mobile-menu,
+  .menu-scrim {
     display: none;
   }
 }
@@ -450,10 +487,19 @@ figure {
 @keyframes header-line {
   from {
     background-color: transparent;
+    -webkit-backdrop-filter: blur(0) saturate(1);
+    backdrop-filter: blur(0) saturate(1);
   }
   to {
-    background-color: var(--bg);
+    background-color: color-mix(in oklab, var(--bg) 78%, transparent);
+    -webkit-backdrop-filter: blur(14px) saturate(1.4);
+    backdrop-filter: blur(14px) saturate(1.4);
     border-bottom-color: var(--box-line);
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .site-header {
+    animation: none;
   }
 }
 
@@ -890,6 +936,28 @@ main {
 .label-index::before {
   content: "[ " counter(section, decimal-leading-zero) " / " var(--sections) " ]";
 }
+.label-link {
+  display: inline-flex;
+  gap: 0.75rem;
+  align-items: baseline;
+  text-decoration: none;
+}
+.label-hash {
+  color: var(--text-3);
+  opacity: 0;
+  transition: opacity var(--dur-1);
+}
+@media (hover: hover) {
+  .label-link:hover {
+    color: var(--text);
+  }
+  .label-link:hover .label-hash {
+    opacity: 1;
+  }
+}
+.label-link:focus-visible .label-hash {
+  opacity: 1;
+}
 .lede {
   margin-top: 0.75rem;
   font-size: clamp(1.5rem, 1.05rem + 1.6vw, 2.375rem);
@@ -906,8 +974,9 @@ main {
 .swipe-hint {
   display: none;
 }
-/* The last card in the phone swipe row; on wider screens the link below the grid does this job. */
-.more-tail {
+/* The last card in the phone swipe row; on wider screens the link below the grid does this job.
+   Two classes, so it beats .ccard { display: grid } further down. */
+.ccard.more-tail {
   display: none;
 }
 @media (max-width: 759px) {
@@ -1102,6 +1171,15 @@ main {
   font-size: 0.875rem;
   color: var(--text-2);
 }
+.pcard-note {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font: 400 0.6875rem/1.4 var(--font-mono-stack);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
 .stars {
   font: 400 0.75rem/1 var(--font-mono-stack);
   color: var(--text-3);
@@ -1214,10 +1292,6 @@ main {
 @media (hover: hover) {
   .ccard:hover {
     border-color: var(--line-strong);
-  }
-  .ccard:hover .ccard-link {
-    text-decoration: underline;
-    text-decoration-color: currentColor;
   }
 }
 .ccard-top {
@@ -1577,6 +1651,17 @@ main {
 .community-label {
   margin-bottom: 1rem;
 }
+.education {
+  margin-top: 1.75rem;
+  padding: 0 0.75rem 0.25rem 2.25rem;
+}
+.education .group-label {
+  margin-bottom: 0.4rem;
+}
+.education-line {
+  font-size: 0.9375rem;
+  color: var(--text-2);
+}
 .community-list {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1590,10 +1675,6 @@ main {
 }
 .community-head a {
   text-decoration: none;
-}
-.community-head a:hover {
-  text-decoration: underline;
-  text-decoration-color: currentColor;
 }
 .community-role {
   margin-top: 0.15rem;
@@ -1680,9 +1761,20 @@ main {
 .row-body .title a {
   text-decoration: none;
 }
-.row-body .title a:hover {
-  text-decoration: underline;
-  text-decoration-color: currentColor;
+/* Quiet title links (writing, recognition, community, more builds) draw a
+   1px line in from the left on hover instead of snapping an underline on. */
+.row-body .title a,
+.community-head a,
+.ccard-name .ccard-link {
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+  transition: background-size 280ms var(--ease);
+}
+@media (hover: hover) {
+  .row-body .title a:hover,
+  .community-head a:hover,
+  .ccard:hover .ccard-name .ccard-link {
+    background-size: 100% 1px;
+  }
 }
 .company {
   font-weight: 600;
@@ -2095,7 +2187,7 @@ main {
     scroll-snap-align: start;
     animation: none;
   }
-  .more-tail {
+  .ccard.more-tail {
     display: grid;
     place-items: center;
   }
@@ -2145,5 +2237,66 @@ main {
   }
   .video-meta {
     letter-spacing: 0.03em;
+  }
+}
+
+/* ---------- print and Save as PDF ---------- */
+
+/* Paper is narrower than 760px, so the phone rules apply; undo the parts
+   that lose content on paper (the sideways row, thumbnails, buttons). */
+@media print {
+  .more {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-columns: auto;
+    overflow: visible;
+    margin-inline: 0;
+    padding: 0;
+  }
+  .swipe-hint,
+  .ccard.more-tail,
+  .theme-toggle,
+  .menu-button,
+  .mobile-menu,
+  .menu-scrim,
+  .copy-button,
+  .cmd button,
+  .bloom,
+  .video-thumb,
+  .label-hash {
+    display: none !important;
+  }
+  .btn--primary {
+    background: none;
+    color: var(--text);
+    border-color: var(--text);
+  }
+  .videos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem 1.5rem;
+  }
+  .video-link {
+    grid-template-columns: 1fr;
+  }
+  .focus-card,
+  .pcard,
+  .ccard,
+  .tl-item,
+  .stage,
+  .row,
+  .community-item,
+  .video {
+    break-inside: avoid;
+  }
+  .section-head,
+  .section-head > *,
+  .group-label {
+    break-after: avoid;
+  }
+  .section {
+    padding-top: 2rem;
+  }
+  .tilt {
+    transform: none !important;
   }
 }

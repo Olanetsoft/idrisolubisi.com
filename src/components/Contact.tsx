@@ -2,6 +2,7 @@ import { site } from "@/data/site";
 import { StatusLine } from "./StatusLine";
 import { CopyButton } from "./CopyCommand";
 import { BrandIcon, type BrandName } from "./icons";
+import { SectionLabel } from "./SectionLabel";
 
 const SOCIALS: { label: string; href: string; icon: BrandName; note?: string }[] = [
   { label: "LinkedIn", href: site.links.linkedin, icon: "linkedin" },
@@ -16,10 +17,7 @@ export function Contact() {
     <section className="section" id="contact" aria-labelledby="contact-title">
       <div className="container">
         <div className="section-head">
-          <h2 className="label" id="contact-title">
-            <span className="label-index" aria-hidden="true" />
-            Contact
-          </h2>
+          <SectionLabel id="contact">Contact</SectionLabel>
           <p className="lede">For roles, speaking or advising.</p>
         </div>
         <div className="box contact-box">

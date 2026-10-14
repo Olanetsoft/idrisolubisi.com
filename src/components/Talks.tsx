@@ -3,6 +3,7 @@ import { site } from "@/data/site";
 import { talks } from "@/data/talks";
 import { featuredVideos } from "@/data/videos";
 import { BrandIcon } from "./icons";
+import { SectionLabel } from "./SectionLabel";
 
 type Talk = (typeof talks)[number];
 
@@ -34,10 +35,7 @@ export function Talks() {
     <section className="section" id="talks" aria-labelledby="talks-title">
       <div className="container">
         <div className="section-head">
-          <h2 className="label" id="talks-title">
-            <span className="label-index" aria-hidden="true" />
-            Talks and workshops
-          </h2>
+          <SectionLabel id="talks">Talks and workshops</SectionLabel>
           <p className="lede">Recorded workshops, talks and live builds.</p>
           <p className="lede-sub">
             Recordings on <a href={site.links.youtube}>YouTube</a>.

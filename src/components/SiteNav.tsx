@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { usePathname } from "next/navigation";
 import { site } from "@/data/site";
 
@@ -20,12 +20,14 @@ function useActiveSection(enabled: boolean): string | null {
   const [active, setActive] = useState<string | null>(null);
   useEffect(() => {
     if (!enabled) return;
-    const sections = SECTIONS.map((s) => document.getElementById(s.id)).filter(
-      (el): el is HTMLElement => el !== null,
-    );
+    // Every section is watched, so one without a nav item (Recognition)
+    // clears the mark instead of leaving the previous item underlined.
+    const navIds = new Set(SECTIONS.map((s) => s.id));
+    const sections = Array.from(document.querySelectorAll<HTMLElement>("main section[id]"));
     const io = new IntersectionObserver(
       (entries) => {
-        for (const entry of entries) if (entry.isIntersecting) setActive(entry.target.id);
+        for (const entry of entries)
+          if (entry.isIntersecting) setActive(navIds.has(entry.target.id) ? entry.target.id : null);
       },
       { rootMargin: "-45% 0px -50% 0px" },
     );
@@ -92,6 +94,7 @@ export function MobileMenu() {
   const [open, setOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLElement>(null);
+  const scrimRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!open) return;
@@ -102,7 +105,13 @@ export function MobileMenu() {
     };
     const onPointer = (event: PointerEvent) => {
       const target = event.target as Node;
-      if (panelRef.current?.contains(target) || buttonRef.current?.contains(target)) return;
+      // A tap on the scrim closes through its own click, so it never reaches a link underneath.
+      if (
+        panelRef.current?.contains(target) ||
+        buttonRef.current?.contains(target) ||
+        scrimRef.current?.contains(target)
+      )
+        return;
       setOpen(false);
     };
     document.addEventListener("keydown", onKey);
@@ -123,8 +132,15 @@ export function MobileMenu() {
         aria-controls="mobile-menu"
         onClick={() => setOpen((o) => !o)}
       >
-        Menu
+        {open ? "Close" : "Menu"}
       </button>
+      <div
+        ref={scrimRef}
+        className="menu-scrim"
+        aria-hidden="true"
+        hidden={!open}
+        onClick={() => setOpen(false)}
+      />
       <nav
         ref={panelRef}
         id="mobile-menu"
@@ -132,17 +148,22 @@ export function MobileMenu() {
         aria-label="Sections"
         hidden={!open}
       >
-        {SECTIONS.map((s) => (
+        {SECTIONS.map((s, i) => (
           <a
             key={s.id}
             href={`${base}#${s.id}`}
             aria-current={active === s.id ? "location" : undefined}
             onClick={() => setOpen(false)}
+            style={{ "--i": i } as CSSProperties}
           >
             {s.label}
           </a>
         ))}
-        <a href={site.links.blog} onClick={() => setOpen(false)}>
+        <a
+          href={site.links.blog}
+          onClick={() => setOpen(false)}
+          style={{ "--i": SECTIONS.length } as CSSProperties}
+        >
           Blog
         </a>
       </nav>

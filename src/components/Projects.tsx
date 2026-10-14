@@ -4,6 +4,7 @@ import { isPrivateRepo, starsFor } from "@/lib/generated";
 import { CopyCommand } from "./CopyCommand";
 import { SwipeCount } from "./SwipeCount";
 import { BrandIcon, STACK_ICONS, UiIcon } from "./icons";
+import { SectionLabel } from "./SectionLabel";
 
 /** Live star counts only when they help: 100 or more. */
 const STAR_FLOOR = 100;
@@ -31,6 +32,8 @@ function Badge({ badge }: { badge: NonNullable<Project["badge"]> }) {
 
 function FeaturedCard({ project }: { project: Project }) {
   const stars = starsOf(project);
+  const links = publicLinks(project);
+  const privateRepo = links.length < project.links.length;
   return (
     <li className="pcard spot tilt" id={project.key}>
       <div className="pcard-top">
@@ -50,13 +53,16 @@ function FeaturedCard({ project }: { project: Project }) {
       </ul>
       <div className="pcard-foot">
         {project.command && <CopyCommand command={project.command} />}
-        <span className="pcard-links">
-          {publicLinks(project).map((l) => (
-            <a key={l.url} href={l.url}>
-              {l.label}
-            </a>
-          ))}
-        </span>
+        {links.length > 0 && (
+          <span className="pcard-links">
+            {links.map((l) => (
+              <a key={l.url} href={l.url}>
+                {l.label}
+              </a>
+            ))}
+          </span>
+        )}
+        {privateRepo && <span className="pcard-note">Private repo</span>}
         {stars !== null && <span className="stars">{number.format(stars)} stars</span>}
       </div>
     </li>
@@ -111,10 +117,7 @@ export function Projects() {
     <section className="section" id="work" aria-labelledby="work-title">
       <div className="container">
         <div className="section-head">
-          <h2 className="label" id="work-title">
-            <span className="label-index" aria-hidden="true" />
-            Projects
-          </h2>
+          <SectionLabel id="work">Projects</SectionLabel>
           <p className="lede">The agent harness, end to end.</p>
           <p className="lede-sub">{harnessIntro}</p>
         </div>

@@ -1,14 +1,12 @@
 import { recognition } from "@/data/recognition";
+import { SectionLabel } from "./SectionLabel";
 
 export function Recognition() {
   return (
     <section className="section" id="recognition" aria-labelledby="recognition-title">
       <div className="container">
         <div className="section-head">
-          <h2 className="label" id="recognition-title">
-            <span className="label-index" aria-hidden="true" />
-            Recognition
-          </h2>
+          <SectionLabel id="recognition">Recognition</SectionLabel>
         </div>
         <div className="box">
           <ul className="rows">
