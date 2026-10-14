@@ -1,7 +1,7 @@
 import { recognition } from "@/data/recognition";
 import { SectionLabel } from "./SectionLabel";
 
-/** Press, honours and interviews, each on its own card: who, then the headline. */
+/** Press, honours and interviews as a scannable list: who, then the headline. */
 export function Recognition() {
   return (
     <section className="section" id="recognition" aria-labelledby="recognition-title">
@@ -9,9 +9,9 @@ export function Recognition() {
         <div className="section-head">
           <SectionLabel id="recognition">Recognition</SectionLabel>
         </div>
-        <ul className="card-grid card-grid--2">
+        <ul className="row-list">
           {recognition.map((r) => (
-            <li className="rcard card spot tilt" key={r.title}>
+            <li className="row-item" key={r.title}>
               <p className="card-kicker">
                 {r.by}
                 {r.note && ` (${r.note})`}

@@ -1832,7 +1832,7 @@ main {
   gap: 0 1.75rem;
 }
 
-/* ---------- cards: writing, recognition, community, experience ---------- */
+/* ---------- cards and rows: experience, community, writing, recognition ---------- */
 
 /* One item per card, on the same raised surface as the project cards. The
    title's link stretches over the whole card, and the title draws a line in
@@ -1858,24 +1858,63 @@ main {
       0 18px 36px -24px var(--lift-shadow);
   }
 }
-.card-grid {
+/* Lists people scan (writing, recognition): rows on hairlines, two columns on
+   wide screens, one on phones. A row lights up and its title underlines on
+   hover; the whole row is the link. */
+.row-list {
   display: grid;
-  gap: var(--box-gap);
-}
-.card-grid--2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 3rem;
 }
-.card-grid--3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.row-item {
+  position: relative;
+  padding: 1.05rem 0 1.15rem;
+  border-top: 1px solid var(--box-line);
 }
-@media (max-width: 1023px) {
-  .card-grid--3 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+.row-item::before {
+  content: "";
+  position: absolute;
+  inset: 0 -0.75rem;
+  border-radius: var(--box-radius);
+  background: var(--spot);
+  opacity: 0;
+  transition: opacity var(--dur-1);
+  pointer-events: none;
+}
+/* Only rows that link somewhere light up, so a plain row never looks clickable. */
+@media (hover: hover) {
+  .row-item:has(.card-link):hover::before {
+    opacity: 1;
+  }
+}
+.row-item:has(.card-link:focus-visible) {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: var(--box-radius);
+}
+/* Writing on wide screens: the date and outlet in a column of their own. */
+@media (min-width: 1024px) {
+  .row-list--dated .row-item {
+    display: grid;
+    grid-template-columns: 6.25rem minmax(0, 1fr);
+    column-gap: 1rem;
+  }
+  .row-list--dated .card-kicker {
+    grid-row: 1 / span 2;
+    flex-direction: column;
+    gap: 0.2rem;
+    margin: 0;
+    padding-top: 0.25rem;
+  }
+  .row-list--dated .card-kicker > [aria-hidden] {
+    display: none;
+  }
+  .row-list--dated .card-note {
+    grid-column: 2;
   }
 }
 @media (max-width: 759px) {
-  .card-grid--2,
-  .card-grid--3 {
+  .row-list {
     grid-template-columns: 1fr;
   }
 }
@@ -1932,6 +1971,7 @@ main {
 }
 @media (hover: hover) {
   .card:hover .card-link,
+  .row-item:hover .card-link,
   .ccard:hover .ccard-name .ccard-link {
     background-size: 100% 1px;
   }
@@ -2195,6 +2235,7 @@ body:has(.contact-box) .footer-handles {
   .ccard,
   .highlight,
   .card,
+  .row-list,
   .video,
   .section .box {
     animation: rise linear both;
@@ -2206,6 +2247,7 @@ body:has(.contact-box) .footer-handles {
   .ccard:focus-within,
   .highlight:focus-within,
   .card:focus-within,
+  .row-list:focus-within,
   .video:focus-within,
   .section .box:focus-within {
     animation: none;
@@ -2390,6 +2432,7 @@ body:has(.contact-box) .footer-handles {
   .pcard,
   .ccard,
   .card,
+  .row-item,
   .stage,
   .video,
   .highlight,

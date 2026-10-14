@@ -16,9 +16,9 @@ export function Writing() {
             <span className="published-label">Published on</span> {platforms.join(", ")}
           </p>
         </div>
-        <ul className="card-grid card-grid--3">
+        <ul className="row-list row-list--dated">
           {writingList(blogPosts).map((a) => (
-            <li className="wcard card spot tilt" key={a.href}>
+            <li className="row-item" key={a.href}>
               <p className="card-kicker">
                 <time dateTime={a.date}>{monthYear(a.date)}</time>
                 <span aria-hidden="true">·</span>
