@@ -1,6 +1,7 @@
 import { site } from "@/data/site";
 import { platforms, writingList, writingStats } from "@/data/writing";
 import { monthYear } from "@/lib/format";
+import { BrandIcon } from "./icons";
 import { blogPosts } from "@/lib/generated";
 import { SectionLabel } from "./SectionLabel";
 
@@ -37,7 +38,10 @@ export function Writing() {
             ))}
           </ul>
           <p className="row-more">
-            <a href={site.links.blog}>All posts on blog.idrisolubisi.com</a>
+            <a href={site.links.blog}>
+              <BrandIcon name="hashnode" />
+              All posts on blog.idrisolubisi.com
+            </a>
           </p>
         </div>
       </div>

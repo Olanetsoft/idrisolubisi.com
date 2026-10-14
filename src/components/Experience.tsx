@@ -1,6 +1,7 @@
 import { community, education, experience } from "@/data/experience";
 import { site } from "@/data/site";
 import { RichText } from "./RichText";
+import { UiIcon } from "./icons";
 import { SectionLabel } from "./SectionLabel";
 
 /**
@@ -54,7 +55,10 @@ export function Experience() {
             </p>
           </div>
           <p className="row-more">
-            <a href={site.resumeUrl}>Full CV (PDF)</a>
+            <a href={site.resumeUrl}>
+              <UiIcon name="fileText" />
+              Full CV (PDF)
+            </a>
           </p>
         </div>
       </div>

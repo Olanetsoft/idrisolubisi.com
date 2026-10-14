@@ -1826,7 +1826,9 @@ main {
   margin-top: 1.25rem;
 }
 .row-more a {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   padding-block: 0.65rem;
   margin-block: -0.65rem;
   font-size: 0.9375rem;
@@ -2211,14 +2213,7 @@ body:has(.contact-box) .footer-handles {
 
 @media (min-width: 760px) {
   .contact-box {
-    justify-items: center;
-    text-align: center;
     padding-block: clamp(2.5rem, 6vw, 4.5rem);
-  }
-  .contact-box .status-label,
-  .contact-actions,
-  .socials {
-    justify-content: center;
   }
 }
 

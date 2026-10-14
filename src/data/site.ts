@@ -5,7 +5,7 @@ export const site = {
   /** Used in /llms.txt and structured data; the page shows `role` as the headline. */
   disciplines: [
     "Developer Relations",
-    "AI Engineering",
+    "AI Agent Engineering",
     "Forward Deployed Engineering",
     "Backend Engineering",
   ],
@@ -16,15 +16,33 @@ export const site = {
   title: "Idris Olubisi, Senior Developer Relations Engineer",
   /** Evergreen, no employer or availability: the search snippet and every social card. The long description feeds structured data. */
   metaDescription:
-    "Idris Olubisi (olanetsoft) is a Senior Developer Relations Engineer, founder of Web3 Afrika, and freeCodeCamp author with tutorials read 10M+ times. Built the Midnight MCP server: 10,000+ downloads and 11,900+ AI-agent tool calls.",
+    "Idris Olubisi (olanetsoft), Senior Developer Relations Engineer who builds AI agents. Built the Midnight MCP server: 10,000+ downloads. Founder of Web3 Afrika.",
   description:
     "Idris Olubisi is a UK-based backend engineer who moved into developer relations and now builds AI agents. For seven years he has worked alongside developers and builders, finding the step that costs them time and shipping the fix: docs and tutorials, partner integrations or production code.",
+  /** For /llms-full.txt. */
+  profile: {
+    pronouns: "He/Him",
+    nationality: "Nigerian",
+    languages: ["English", "Yoruba"],
+    writingSince: "2020",
+  },
+  /** The longer summary for /llms-full.txt. Every figure here is also on the page. */
+  summary:
+    "Idris Olubisi is a backend engineer turned developer relations engineer, now building agent systems: seven years across backend engineering and developer-facing work (2019 to 2026). He built the open-source Midnight MCP server (10,000+ downloads, 11,900+ AI-agent tool calls), re-architected documentation for AI retrieval, and built SwoopAgent, a multi-tenant platform where around 100 users trade real funds through Claude-powered agents. He founded Web3 Afrika (15,000+ builders across Africa), and his 40+ tutorials have been read 10M+ times.",
+  /** Checked on github.com on 14 Oct 2026; followers come live from the build. */
+  github: {
+    publicRepos: "320+",
+    achievements: [
+      "Pull Shark x4 (gold tier)",
+      "Starstruck x3 (silver tier; top repository awesome-hackathon-projects)",
+    ],
+  },
   url: "https://idrisolubisi.com",
   email: "heedris2olubisi@gmail.com",
   bookingUrl: "https://calendar.app.google/An4ZtvZHjhSTGrgeA",
   status: "UK Global Talent",
   availability:
-    "Open to senior developer relations, AI engineering, forward deployed engineering and backend engineering roles.",
+    "Open to senior developer relations, AI agent engineering, forward deployed engineering and backend engineering roles.",
   /** View-only PDF, refreshed from the Google Doc with `npm run cv`. */
   resumeUrl: "/Idris-Olubisi-CV.pdf",
   gaId: "G-7MMFT1BXJV",

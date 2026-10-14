@@ -20,7 +20,7 @@ export const hero: { headline: string; intro: string; focus: Focus[] } = {
   focus: [
     {
       title: "Developer relations",
-      text: "Docs, tutorials, explainer videos, talks and workshops that take developers and builders from first look to production.",
+      text: "Docs, tutorials, explainer videos, talks and workshops that take developers and builders from first look to shipping.",
     },
     {
       title: "AI agent engineering",
@@ -28,7 +28,7 @@ export const hero: { headline: string; intro: string; focus: Focus[] } = {
     },
     {
       title: "Forward deployed engineering",
-      text: "Working inside partner engineering teams from discovery and solution architecture to production launch, then turning repeat problems into reference code and tooling.",
+      text: "Working inside partner engineering teams from discovery and solution architecture to launch, then turning repeat problems into reference code and tooling.",
     },
     {
       title: "Backend engineering",

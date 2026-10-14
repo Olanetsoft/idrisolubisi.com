@@ -9,6 +9,8 @@ export type Role = {
   /** The same work as checked points, for /llms.txt. From the CV, the brief and the owner. */
   points: string[];
   url?: string;
+  /** What the company does, in one line, for /llms-full.txt. */
+  about?: string;
 };
 
 export const experience: Role[] = [
@@ -19,13 +21,14 @@ export const experience: Role[] = [
       "Built the Midnight MCP server (==10,000+ downloads==, ==11,900+ agent tool calls==) and led the docs overhaul for AI retrieval, including the docs AI assistant, and used the 784 questions it received to plan new content. Launched Midnight Academy (==1,576 enrolled, 1,120+ certified==) and a 12-part video series, built create-mn-app, Compact Playground and Compact by Example, kept example repos current with CI and on-call, and ran partner integrations, workshops and two content-bounty cohorts.",
     points: [
       "Built the Midnight MCP server so AI coding assistants wrote correct code: 10,000+ downloads, 11,900+ agent tool calls.",
-      "Led the docs overhaul for AI retrieval, including the docs AI assistant, and used its 784 questions to plan new docs and videos.",
+      "Led the docs overhaul for AI retrieval (server-side rendering and an llms.txt index), including the docs AI assistant, and used its 784 questions to plan new docs and videos.",
       "Launched Midnight Academy (1,576 enrolled, 1,120+ certified), Compact by Example, a browser playground for compiling contracts and a 12-part video series.",
-      "Ran partner integrations and workshops, taught a University of Zurich session, and ran two bounty cohorts, the second publishing 20 tutorials.",
+      "Ran partner integrations and workshops, taught a University of Zurich session, and ran two bounty cohorts, the second publishing 20 tutorials, with every submission gated on code that compiles.",
     ],
     period: "Sep 2025–Sep 2026",
     location: "Remote",
     url: "https://midnight.network/",
+    about: "Midnight is a data-protection blockchain for confidential smart contracts.",
   },
   {
     company: "Axelar / Interop Labs",
@@ -41,6 +44,7 @@ export const experience: Role[] = [
     period: "Apr 2023–Aug 2025",
     location: "Remote",
     url: "https://www.axelar.network/",
+    about: "Axelar is a blockchain interoperability network for secure cross-chain communication.",
   },
   {
     company: "Mara",
@@ -109,6 +113,10 @@ export const community: {
   href: string;
   note?: string;
   current: boolean;
+  /** Start date, for /llms-full.txt. */
+  since?: string;
+  /** More context, for /llms-full.txt. */
+  detail?: string;
 }[] = [
   {
     org: "Web3 Afrika",
@@ -116,6 +124,7 @@ export const community: {
     href: "https://web3afrika.com/",
     note: "15,000+ builders across Africa, backed by Developer DAO",
     current: true,
+    since: "May 2022",
   },
   {
     org: "Blockfest Africa",
@@ -128,7 +137,7 @@ export const community: {
     org: "SheCodeAfrica",
     role: "Backend community lead",
     href: "https://shecodeafrica.org/",
-    note: "Led the backend community and its programmes; 50,000+ members across 15 African countries",
+    note: "Ran the backend programmes; SheCodeAfrica has 50,000+ members across 15 African countries",
     current: false,
   },
   {
@@ -137,6 +146,7 @@ export const community: {
     href: "https://oscafrica.org/",
     note: "Received the OSCA Hero award",
     current: false,
+    detail: "Yaba, Lagos: open source, technical writing and OSCAFEST organising",
   },
 ];
 

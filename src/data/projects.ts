@@ -25,10 +25,12 @@ export type Project = {
   command?: string;
   /** Featured cards: which part of the agent harness this is. */
   layer?: "Act" | "Verify" | "Observe";
+  /** How it works, in a line or two. Not shown on the page; used in /llms-full.txt. */
+  detail?: string;
 };
 
 export const harnessIntro =
-  "An agent that acts, the tools and verification it needs to act correctly, and a view over agents while they run.";
+  "An agent that acts, the tools and verification that keep it correct, and a view over agents while they run.";
 
 export const projects: Project[] = [
   {
@@ -43,6 +45,8 @@ export const projects: Project[] = [
     badge: "Live",
     links: [{ label: "GitHub", url: "https://github.com/Olanetsoft/swoopagent-claw" }],
     githubRepo: "Olanetsoft/swoopagent-claw",
+    detail:
+      "Agents propose; the backend validates, signs and executes. Closed a double-sell race with an optimistic-lock mutex, Redis idempotency keys and single-transaction writes. A safety layer checks every open position every 30 seconds and enforces stop-losses and a -15% circuit breaker.",
   },
   {
     key: "midnight-mcp",
@@ -59,6 +63,8 @@ export const projects: Project[] = [
       { label: "npm", url: "https://www.npmjs.com/package/midnight-mcp" },
     ],
     githubRepo: "Olanetsoft/midnight-mcp",
+    detail:
+      "A hosted compiler worked as a verification gate, so assistants returned code that compiles instead of confident wrong code. In 2026 Midnight standardised on two official tools, Kapa MCP and Midnight Expert, and the server was wound down.",
   },
   {
     key: "agent-lookout",
@@ -77,6 +83,8 @@ export const projects: Project[] = [
     ],
     githubRepo: "Olanetsoft/agent-lookout",
     command: "npx agent-lookout",
+    detail:
+      "Flags Claude Code sessions waiting for approval with what they are asking, and jumps to the right VS Code window or tmux pane. Shipped October 2026.",
   },
   {
     key: "create-mn-app",
@@ -93,6 +101,7 @@ export const projects: Project[] = [
     ],
     githubRepo: "midnightntwrk/create-mn-app",
     command: "npx create-mn-app@latest my-app",
+    detail: "Now maintained in the Midnight GitHub organisation.",
   },
   {
     key: "compact-playground",
@@ -138,10 +147,10 @@ export const projects: Project[] = [
     oneLine: "AI writing tool that turns a topic into article titles, plus free tools for writers.",
     proof: "60 forks and 10 contributors",
     stack: ["TypeScript", "Next.js", "Supabase", "OpenAI API", "Tailwind CSS"],
-    badge: "Open source",
+    badge: "Live",
     links: [
-      { label: "GitHub", url: "https://github.com/Olanetsoft/article-idea-generator" },
       { label: "Site", url: "https://www.articleideagenerator.com" },
+      { label: "GitHub", url: "https://github.com/Olanetsoft/article-idea-generator" },
     ],
     githubRepo: "Olanetsoft/article-idea-generator",
   },
@@ -155,6 +164,7 @@ export const projects: Project[] = [
     badge: "Open source",
     links: [{ label: "GitHub", url: "https://github.com/Olanetsoft/audioboost" }],
     githubRepo: "Olanetsoft/audioboost",
+    detail: "Two-pass EBU R128 loudness normalisation with lossless video passthrough.",
   },
   {
     key: "zk-loan",
@@ -174,8 +184,8 @@ export const projects: Project[] = [
     name: "Learn Compact",
     group: "more",
     oneLine:
-      "Interactive book and exercises that teach Compact, Midnight’s zero-knowledge contract language, with code you compile on the page.",
-    proof: "22 chapters and 17 exercises",
+      "Interactive book and exercises that teach Compact, Midnight’s zero-knowledge contract language.",
+    proof: "9 chapters and 17 exercises",
     stack: ["Compact", "mdBook", "JavaScript", "Netlify"],
     badge: "Live",
     links: [
@@ -195,5 +205,14 @@ export const projects: Project[] = [
     badge: "Open source",
     links: [{ label: "GitHub", url: "https://github.com/Olanetsoft/web3terms" }],
     githubRepo: "Olanetsoft/web3terms",
+  },
+];
+
+/** Open-source work not shown as a card; listed in /llms-full.txt. */
+export const otherOpenSource = [
+  {
+    name: "awesome-hackathon-projects",
+    url: "https://github.com/Olanetsoft/awesome-hackathon-projects",
+    what: "curated hackathon project ideas",
   },
 ];

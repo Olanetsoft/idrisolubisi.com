@@ -18,6 +18,12 @@ export const talks: Talk[] = [
     kind: "Lecture",
   },
   {
+    event: "Midnight",
+    title: "AI-assisted developer tooling and a demo of the Midnight MCP server",
+    year: "2025",
+    kind: "Fireside chat",
+  },
+  {
     event: "Blockfest Africa 2025",
     title: "Beyond H-1B: building global tech careers from Africa",
     year: "2025",
@@ -25,12 +31,6 @@ export const talks: Talk[] = [
     kind: "Keynote",
     note: "12,000 participants from 50+ countries",
     href: "https://businessday.ng/news/article/blockfest-africa-2025-draws-12000-participants-strengthens-africas-web3-voice/",
-  },
-  {
-    event: "Midnight",
-    title: "AI-assisted developer tooling and a demo of the Midnight MCP server",
-    year: "2025",
-    kind: "Fireside chat",
   },
   {
     event: "EthCC (Ethereum Community Conference)",
@@ -81,4 +81,14 @@ export const talks: Talk[] = [
     kind: "Talk",
     href: "https://x.com/olanetsoft/status/1580091101293477888",
   },
+];
+
+/** What he speaks about, for /llms-full.txt. */
+export const speakingTopics = [
+  "agent systems and the harness around them",
+  "MCP and AI-agent tooling",
+  "zero-knowledge proofs",
+  "building cross-chain applications",
+  "technical writing for developers",
+  "building developer communities",
 ];

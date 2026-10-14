@@ -36,7 +36,7 @@ export function Talks() {
       <div className="container">
         <div className="section-head">
           <SectionLabel id="talks">Talks and workshops</SectionLabel>
-          <p className="lede">Recorded workshops, talks and live builds.</p>
+          <p className="lede">Tutorials, workshops and explainers.</p>
         </div>
         <ul className="videos">
           {featuredVideos.map((v) => (

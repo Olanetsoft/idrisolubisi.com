@@ -65,8 +65,8 @@ export default async function OpenGraphImage() {
             lineHeight: 1.35,
           }}
         >
-          Founder of Web3 Afrika and freeCodeCamp author, helping developers and builders succeed
-          with AI and Web3.
+          Backend engineer turned developer relations, now building AI agents. Founder of Web3
+          Afrika and freeCodeCamp author.
         </div>
       </div>
       <div
