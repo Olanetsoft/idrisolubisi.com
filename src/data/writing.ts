@@ -76,6 +76,7 @@ export const platforms = [
   "freeCodeCamp",
   "LogRocket",
   "Dev.to",
+  "Medium",
   "Moralis",
   "Section",
   "Alchemy",
@@ -85,7 +86,6 @@ export const platforms = [
 ];
 
 export const writingStats = {
-  tutorials: "40+",
   reads: "10M+",
 };
 

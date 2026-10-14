@@ -25,7 +25,7 @@ export function Contact() {
           <p className="availability">{site.availability}</p>
           <div className="contact-actions">
             <a className="btn btn--primary" href={site.bookingUrl}>
-              Book a 15-min call
+              Book a 30-min call
             </a>
             <p className="contact-email">
               <a className="email" href={`mailto:${site.email}`}>

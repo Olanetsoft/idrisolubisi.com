@@ -171,7 +171,7 @@ const jsonLd = {
       ],
       potentialAction: {
         "@type": "ScheduleAction",
-        name: "Book a 15-minute call",
+        name: "Book a 30-minute call",
         target: site.bookingUrl,
       },
       sameAs: [
@@ -182,6 +182,8 @@ const jsonLd = {
         site.links.youtubeChannel,
         site.links.freecodecamp,
         site.links.devto,
+        site.links.logrocket,
+        site.links.medium,
         site.links.sessionize,
         site.links.web3afrika,
         site.links.linktree,

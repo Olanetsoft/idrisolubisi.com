@@ -34,7 +34,7 @@ export function Hero() {
           </div>
           <div className="actions">
             <a className="btn btn--primary" href={site.bookingUrl}>
-              Book a 15-min call
+              Book a 30-min call
             </a>
             <a className="btn" href={site.resumeUrl}>
               <UiIcon name="fileText" size={17} />

@@ -94,7 +94,10 @@ export function renderLlmsTxt(): string {
 
   push("## Writing");
   push("");
-  push(`${writingStats.tutorials} tutorials, read ${writingStats.reads} times.`);
+  push(`Tutorials read ${writingStats.reads} times.`);
+  push(
+    `Author pages: freeCodeCamp ${site.links.freecodecamp}, Dev.to ${site.links.devto}, LogRocket ${site.links.logrocket}, Medium ${site.links.medium}`,
+  );
   for (const a of writingList(blogPosts))
     push(`- ${a.title} (${a.outlet}, ${monthYear(a.date)}) - ${a.href}`);
   push(`- All writing - ${site.links.blog}`);

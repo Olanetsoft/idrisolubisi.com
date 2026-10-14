@@ -1,7 +1,7 @@
 import { site } from "@/data/site";
 import { platforms, writingList, writingStats } from "@/data/writing";
 import { monthYear } from "@/lib/format";
-import { BrandIcon } from "./icons";
+import { BrandIcon, UiIcon } from "./icons";
 import { blogPosts } from "@/lib/generated";
 import { SectionLabel } from "./SectionLabel";
 
@@ -11,9 +11,7 @@ export function Writing() {
       <div className="container">
         <div className="section-head">
           <SectionLabel id="writing">Writing</SectionLabel>
-          <p className="lede">
-            {writingStats.tutorials} tutorials, read {writingStats.reads} times.
-          </p>
+          <p className="lede">Tutorials read {writingStats.reads} times.</p>
           <p className="lede-sub published-on">
             <span className="published-label">Published on</span> {platforms.join(", ")}
           </p>
@@ -37,10 +35,26 @@ export function Writing() {
               </li>
             ))}
           </ul>
-          <p className="row-more">
+          <p className="row-more more-links">
             <a href={site.links.blog}>
               <BrandIcon name="hashnode" />
               All posts on blog.idrisolubisi.com
+            </a>
+            <a href={site.links.freecodecamp} rel="me">
+              <BrandIcon name="freecodecamp" />
+              freeCodeCamp
+            </a>
+            <a href={site.links.devto} rel="me">
+              <BrandIcon name="devto" />
+              Dev.to
+            </a>
+            <a href={site.links.logrocket}>
+              <UiIcon name="article" />
+              LogRocket
+            </a>
+            <a href={site.links.medium} rel="me">
+              <BrandIcon name="medium" />
+              Medium
             </a>
           </p>
         </div>

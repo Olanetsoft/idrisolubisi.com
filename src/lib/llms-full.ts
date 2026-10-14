@@ -88,9 +88,7 @@ export function renderLlmsFullTxt(): string {
   push("");
 
   push("## Writing", "");
-  push(
-    `${writingStats.tutorials} tutorials, read ${writingStats.reads} times. Writing since ${site.profile.writingSince}.`,
-  );
+  push(`Tutorials read ${writingStats.reads} times. Writing since ${site.profile.writingSince}.`);
   push(`Published on ${platforms.join(", ")}.`);
   push("");
   for (const a of writingList(blogPosts)) {
@@ -138,6 +136,8 @@ export function renderLlmsFullTxt(): string {
   push(`- YouTube: ${bare(site.links.youtubeChannel)}`);
   push(`- Dev.to: ${bare(site.links.devto)}`);
   push(`- freeCodeCamp: ${bare(site.links.freecodecamp)}`);
+  push(`- LogRocket: ${bare(site.links.logrocket)}`);
+  push(`- Medium: ${bare(site.links.medium)}`);
   push(`- Sessionize: ${bare(site.links.sessionize)}`);
   push("");
 
