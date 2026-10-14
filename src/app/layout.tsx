@@ -150,16 +150,24 @@ const jsonLd = {
       memberOf: community
         .filter((c) => c.role !== "Founder")
         .map((c) => ({ "@type": "Organization", name: c.org, url: c.href })),
-      award: recognition.filter((r) => r.kind === "endorsement").map((r) => r.title),
+      award: recognition
+        .filter((r) => r.kind === "endorsement" || r.kind === "award")
+        .map((r) => `${r.by}: ${r.title}`),
       subjectOf: recognition
-        .filter((r) => r.href && (r.kind === "press" || r.kind === "sponsored"))
-        .map((r) => ({
-          "@type": r.kind === "sponsored" ? "AdvertiserContentArticle" : "NewsArticle",
-          headline: r.title,
-          url: r.href,
-          datePublished: r.date,
-          publisher: { "@type": "Organization", name: r.by },
-        })),
+        .filter(
+          (r) => r.href && (r.kind === "press" || r.kind === "sponsored" || r.kind === "interview"),
+        )
+        .map((r) =>
+          r.kind === "interview"
+            ? { "@type": "VideoObject", name: r.title, url: r.href, uploadDate: r.date }
+            : {
+                "@type": r.kind === "sponsored" ? "AdvertiserContentArticle" : "NewsArticle",
+                headline: r.title,
+                url: r.href,
+                datePublished: r.date,
+                publisher: { "@type": "Organization", name: r.by },
+              },
+        ),
       knowsAbout: [
         "Developer Relations",
         "Developer Experience",

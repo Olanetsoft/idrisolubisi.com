@@ -4,13 +4,15 @@ export type Recognition = {
   /** ISO 8601 (year, year-month or full date); used in structured data, not shown on the page. */
   date: string;
   href?: string;
-  /** press and sponsored become subjectOf articles in structured data; endorsement becomes an award. */
-  kind: "press" | "sponsored" | "endorsement" | "badge";
+  /** press, sponsored and interview become subjectOf items in structured data; endorsement and award become awards. */
+  kind: "press" | "sponsored" | "interview" | "endorsement" | "award";
   /** Set for sponsored or brand-press placements; surfaced as a disclosure. */
   note?: string;
+  /** More context for /llms.txt and /llms-full.txt; not shown on the page. */
+  detail?: string;
 };
 
-/** Independent press and the UK Global Talent endorsement. Newest first. */
+/** Independent press, honours and interviews, strongest first. The page shows no dates. */
 export const recognition: Recognition[] = [
   {
     title:
@@ -39,5 +41,35 @@ export const recognition: Recognition[] = [
     by: "Tech Nation / UK Home Office",
     date: "2024",
     kind: "endorsement",
+  },
+  {
+    title: "Named a Top Contributor four times",
+    by: "freeCodeCamp",
+    date: "2025-11-25",
+    href: "https://www.freecodecamp.org/news/freecodecamp-top-open-source-contributors-2025/",
+    kind: "award",
+    detail: "On freeCodeCamp’s top contributor lists for 2021, 2022, 2023 and 2025",
+  },
+  {
+    title: "Interview: Web3 Afrika, empowering African Web3 builders",
+    by: "Developer DAO / DevNTell",
+    date: "2024-11-08",
+    href: "https://www.youtube.com/watch?v=CS9BSzfiMLo",
+    kind: "interview",
+  },
+  {
+    title: "Idris Olubisi’s journey from coding on a phone to building developer communities",
+    by: "The Geek Circle",
+    date: "2026-02-12",
+    href: "https://thegeekcircle.com/idris-olubisi/",
+    kind: "press",
+  },
+  {
+    title:
+      "“Web3 does not replace existing technologies but increases the range of solutions”: key takeaways from the Web3 Lagos Conference",
+    by: "Technext",
+    date: "2022-10-11",
+    href: "https://technext24.com/crypto/key-takes-from-web3-lagos-conference/",
+    kind: "press",
   },
 ];

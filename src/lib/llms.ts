@@ -107,7 +107,7 @@ export function renderLlmsTxt(): string {
   push("");
   for (const r of recognition) {
     push(
-      `- ${r.by}${r.note ? ` (${r.note})` : ""}: "${r.title}" (${/^\d{4}-\d{2}/.test(r.date) ? monthYear(r.date) : r.date})${r.href ? ` - ${r.href}` : ""}`,
+      `- ${r.by}${r.note ? ` (${r.note})` : ""}: "${r.title}" (${/^\d{4}-\d{2}/.test(r.date) ? monthYear(r.date) : r.date})${r.detail ? `. ${r.detail}` : ""}${r.href ? ` - ${r.href}` : ""}`,
     );
   }
   push("");
