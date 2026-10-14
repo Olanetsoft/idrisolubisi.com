@@ -5,7 +5,13 @@ import { site } from "@/data/site";
 import { speakingTopics, talks } from "@/data/talks";
 import { platforms, writingList, writingStats } from "@/data/writing";
 import { monthYear } from "@/lib/format";
-import { blogPosts, githubFetchedAt, githubFollowers, isPrivateRepo } from "@/lib/generated";
+import {
+  blogPosts,
+  githubFetchedAt,
+  githubFollowers,
+  isPrivateRepo,
+  shownStars,
+} from "@/lib/generated";
 
 const number = new Intl.NumberFormat("en-GB");
 const plain = (text: string) => text.replace(/==([^=]+)==/g, "$1");
@@ -35,7 +41,7 @@ export function renderLlmsFullTxt(): string {
   push(`- Location: United Kingdom (${site.status})`);
   push(`- Nationality: ${site.profile.nationality}`);
   push(`- Languages: ${site.profile.languages.join(", ")}`);
-  push(`- Availability: Available now. ${site.availability} No sponsorship needed.`);
+  push(`- Availability: Available now. ${site.availability} No sponsorship needed in the UK.`);
   push("");
 
   push("## Summary", "");
@@ -54,7 +60,10 @@ export function renderLlmsFullTxt(): string {
   push("## Community", "");
   for (const c of community) {
     const when = c.current ? (c.since ? `${c.since} to now` : "current") : "past";
-    const more = c.note && c.detail ? `${c.note} (${c.detail})` : (c.note ?? c.detail);
+    const more =
+      c.note && c.detail
+        ? `${c.detail}; ${c.note.charAt(0).toLowerCase()}${c.note.slice(1)}`
+        : (c.note ?? c.detail);
     push(`- ${c.role}, ${c.org} (${when})${more ? `: ${more}` : ""} - ${c.href}`);
   }
   push("");
@@ -74,6 +83,10 @@ export function renderLlmsFullTxt(): string {
       push(`**${p.name}**${p.layer ? ` (${p.layer.toLowerCase()})` : ""}: ${p.oneLine}`);
       if (p.detail) push(p.detail);
       if (p.proof) push(`${p.proof}.`);
+      const stars = shownStars(p);
+      if (stars !== null && githubFetchedAt) {
+        push(`${number.format(stars)} GitHub stars (${monthYear(githubFetchedAt)}).`);
+      }
       push(`Stack: ${p.stack.join(", ")}.`);
       if (p.command) push(`Run: \`${p.command}\``);
       if (links.length) push(links.map((l) => `${l.label}: ${l.url}`).join(" | "));
@@ -92,7 +105,9 @@ export function renderLlmsFullTxt(): string {
   push(`Published on ${platforms.join(", ")}.`);
   push("");
   for (const a of writingList(blogPosts)) {
-    push(`- ${a.title} (${a.outlet}, ${monthYear(a.date)}) - ${a.href}`);
+    push(
+      `- ${a.title} (${a.outlet}, ${monthYear(a.date)}${a.note ? `; ${a.note}` : ""}) - ${a.href}`,
+    );
   }
   push(`- All posts - ${site.links.blog}`);
   push("");
@@ -132,7 +147,7 @@ export function renderLlmsFullTxt(): string {
   push(`- Blog: ${bare(site.links.blog)}`);
   push(`- GitHub: ${bare(site.links.github)}`);
   push(`- LinkedIn: ${bare(site.links.linkedin)}`);
-  push(`- X: ${bare(site.links.x)}`);
+  push(`- X: ${bare(site.links.x)} (${site.profile.xFollowers} followers)`);
   push(`- YouTube: ${bare(site.links.youtubeChannel)}`);
   push(`- Dev.to: ${bare(site.links.devto)}`);
   push(`- freeCodeCamp: ${bare(site.links.freecodecamp)}`);
@@ -145,6 +160,12 @@ export function renderLlmsFullTxt(): string {
   push(`- Email: ${site.email}`);
   push(`- Book a call: ${site.bookingUrl}`);
   push(`- CV (PDF): ${site.url}${site.resumeUrl}`);
+  push("");
+
+  push("## Sources", "");
+  push(
+    `Checked against his LinkedIn (${bare(site.links.linkedin)}), GitHub (${bare(site.links.github)}), Sessionize (${bare(site.links.sessionize)}), Hashnode blog (${bare(site.links.blog)}) and freeCodeCamp author page (${bare(site.links.freecodecamp)}).`,
+  );
   push("");
 
   push("## Citation", "");

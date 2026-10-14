@@ -25,6 +25,7 @@ export const site = {
     nationality: "Nigerian",
     languages: ["English", "Yoruba"],
     writingSince: "2020",
+    xFollowers: "27,000+",
   },
   /** The longer summary for /llms-full.txt. Every figure here is also on the page. */
   summary:
@@ -33,8 +34,8 @@ export const site = {
   github: {
     publicRepos: "320+",
     achievements: [
-      "Pull Shark x4 (gold tier)",
-      "Starstruck x3 (silver tier; top repository awesome-hackathon-projects)",
+      "Pull Shark x4 (gold tier, the badge’s highest)",
+      "Starstruck x3 (silver tier; top repository awesome-hackathon-projects, 1,877 stars in Oct 2026)",
     ],
   },
   url: "https://idrisolubisi.com",

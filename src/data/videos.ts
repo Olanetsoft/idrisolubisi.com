@@ -31,7 +31,7 @@ export const featuredVideos: FeaturedVideo[] = [
     id: "oBxiSKL4NeA",
     title: "Build and ship your first MCP server",
     kind: "Workshop",
-    context: "AI engineering",
+    context: "AI agent engineering",
     year: "2026",
     start: 828,
   },

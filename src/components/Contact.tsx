@@ -7,7 +7,7 @@ import { SectionLabel } from "./SectionLabel";
 const SOCIALS: { label: string; href: string; icon: BrandName; note?: string }[] = [
   { label: "LinkedIn", href: site.links.linkedin, icon: "linkedin" },
   { label: "GitHub", href: site.links.github, icon: "github" },
-  { label: "X", href: site.links.x, icon: "x", note: "27,000+ followers" },
+  { label: "X", href: site.links.x, icon: "x", note: `${site.profile.xFollowers} followers` },
   { label: "YouTube", href: site.links.youtube, icon: "youtube" },
   { label: "Blog", href: site.links.blog, icon: "hashnode" },
 ];

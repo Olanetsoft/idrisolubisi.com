@@ -27,7 +27,7 @@ export function renderLlmsTxt(): string {
   push(`Email: ${site.email}`);
   push(`Book a call: ${site.bookingUrl}`);
   push(`Status: ${site.status}`);
-  push(`Availability: Available now. ${site.availability} No sponsorship needed.`);
+  push(`Availability: Available now. ${site.availability} No sponsorship needed in the UK.`);
   push("");
 
   push("## Experience");

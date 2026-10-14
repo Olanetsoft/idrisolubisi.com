@@ -1825,6 +1825,10 @@ main {
 .row-more {
   margin-top: 1.25rem;
 }
+/* Wrapped rows of links sit far enough apart that their 44px tap areas never overlap. */
+.row-more.more-links {
+  row-gap: 1.3rem;
+}
 .row-more a {
   display: inline-flex;
   align-items: center;
@@ -2208,12 +2212,6 @@ body:has(.contact-box) .footer-handles {
   }
   #writing .row-label {
     padding-top: 0;
-  }
-}
-
-@media (min-width: 760px) {
-  .contact-box {
-    padding-block: clamp(2.5rem, 6vw, 4.5rem);
   }
 }
 
