@@ -146,9 +146,13 @@ export function renderLlmsFullTxt(): string {
 
   push("## Online presence", "");
   push(`- Website: ${bare(site.url)}`);
-  push(`- Blog: ${bare(site.links.blog)}`);
+  push(
+    `- Blog: ${bare(site.links.blog)}${site.profile.hashnodeFollowers ? ` (${site.profile.hashnodeFollowers} followers on Hashnode)` : ""}`,
+  );
   push(`- GitHub: ${bare(site.links.github)}`);
-  push(`- LinkedIn: ${bare(site.links.linkedin)}`);
+  push(
+    `- LinkedIn: ${bare(site.links.linkedin)}${site.profile.linkedinFollowers ? ` (${site.profile.linkedinFollowers} followers)` : ""}`,
+  );
   push(`- X: ${bare(site.links.x)} (${site.profile.xFollowers} followers)`);
   push(`- YouTube: ${bare(site.links.youtubeChannel)}`);
   push(`- Dev.to: ${bare(site.links.devto)}`);

@@ -646,6 +646,12 @@ figure {
   margin-top: 1.25rem;
   max-width: 62ch;
 }
+/* Desktop: the intro spreads across the column beside the photo. */
+@media (min-width: 1024px) {
+  .hero-pitch {
+    max-width: none;
+  }
+}
 .hero-grid > .actions {
   grid-area: actions;
   margin-top: 1.75rem;

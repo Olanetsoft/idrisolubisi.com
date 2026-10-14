@@ -26,9 +26,9 @@ export const site = {
     languages: ["English", "Yoruba"],
     writingSince: "2020",
     xFollowers: "27,000+",
-    /** His LinkedIn and Hashnode follower counts, shown in Contact once he confirms them. */
-    linkedinFollowers: undefined as string | undefined,
-    hashnodeFollowers: undefined as string | undefined,
+    /** His LinkedIn and Hashnode follower counts, confirmed by him on 14 Oct 2026. */
+    linkedinFollowers: "13,000+" as string | undefined,
+    hashnodeFollowers: "9,000+" as string | undefined,
   },
   /** The longer summary for /llms-full.txt. Every figure here is also on the page. */
   summary:
