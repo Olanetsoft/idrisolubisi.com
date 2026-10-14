@@ -180,7 +180,7 @@ Agent systems and the harness around them, MCP and AI-agent tooling, zero-knowle
 - 100,000+ developers supported, rated 4.8/5 (Axelar)
 - 30,000+ developers reached across Africa (Mara)
 - 15,000+ Web3 builders in Web3 Afrika
-- 50,000+ members reached as backend community lead at SheCodeAfrica
+- 50,000+ members reached as former backend community lead at SheCodeAfrica
 
 ### Documentation & Education
 - 120% increase in documentation usage at Axelar
@@ -189,8 +189,9 @@ Agent systems and the harness around them, MCP and AI-agent tooling, zero-knowle
 
 ## Community & Mentorship
 - Founder, Web3 Afrika: 15,000+ builders across Africa
-- Backend Community Lead, SheCodeAfrica: 50,000+ members across 15 African countries
-- OSCA Hero, Yaba (Lagos): open source, technical writing, and OSCAFEST organizing
+- Partnerships lead, Blockfest Africa: leads the partnership team for the whole event (12,000 participants in 2025)
+- Former backend community lead, SheCodeAfrica: led the backend community and its programmes (50,000+ members across 15 African countries)
+- Volunteer, Open Source Community Africa (Yaba, Lagos): open source, technical writing and OSCAFEST organising; received the OSCA Hero award
 
 ## Online Presence
 

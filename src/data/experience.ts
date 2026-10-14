@@ -102,10 +102,42 @@ export const education = {
   year: "2018",
 };
 
-export const community = [
-  { org: "Web3 Afrika", role: "Founder", href: "https://web3afrika.com/" },
-  { org: "SheCodeAfrica", role: "backend community lead", href: "https://shecodeafrica.org/" },
-  { org: "Open Source Community Africa", role: "OSCA Hero, Yaba", href: "https://oscafrica.org/" },
+/** Communities and events outside his jobs: current ones first, then past. Figures are his confirmed numbers. */
+export const community: {
+  org: string;
+  role: string;
+  href: string;
+  note?: string;
+  current: boolean;
+}[] = [
+  {
+    org: "Web3 Afrika",
+    role: "Founder",
+    href: "https://web3afrika.com/",
+    note: "15,000+ builders across Africa, backed by Developer DAO",
+    current: true,
+  },
+  {
+    org: "Blockfest Africa",
+    role: "Partnerships lead",
+    href: "https://blockfestafrica.com/",
+    note: "Leads the partnership team for the whole event; 12,000 participants in 2025",
+    current: true,
+  },
+  {
+    org: "SheCodeAfrica",
+    role: "Backend community lead",
+    href: "https://shecodeafrica.org/",
+    note: "Led the backend community and its programmes; 50,000+ members across 15 African countries",
+    current: false,
+  },
+  {
+    org: "Open Source Community Africa",
+    role: "Volunteer",
+    href: "https://oscafrica.org/",
+    note: "Received the OSCA Hero award",
+    current: false,
+  },
 ];
 
 export const stack = [

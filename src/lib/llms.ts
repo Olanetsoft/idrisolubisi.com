@@ -38,7 +38,20 @@ export function renderLlmsTxt(): string {
     for (const point of r.points) push(`  - ${point}`);
   }
   push(`- Education: ${education.degree}, ${education.school}, ${education.year}`);
-  push(`- Community: ${community.map((c) => `${c.role}, ${c.org}`).join("; ")}`);
+  const line = (c: (typeof community)[number]) =>
+    `${c.role}, ${c.org}${c.note ? ` (${c.note})` : ""}`;
+  push(
+    `- Community, current: ${community
+      .filter((c) => c.current)
+      .map(line)
+      .join("; ")}`,
+  );
+  push(
+    `- Community, past: ${community
+      .filter((c) => !c.current)
+      .map(line)
+      .join("; ")}`,
+  );
   for (const g of stack) push(`- ${g.label}: ${g.items.join(", ")}`);
   push("");
 
