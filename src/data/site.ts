@@ -18,7 +18,7 @@ export const site = {
   metaDescription:
     "Idris Olubisi (olanetsoft), Senior Developer Relations Engineer who builds AI agents. Built the Midnight MCP server: 10,000+ downloads. Founder of Web3 Afrika.",
   description:
-    "Idris Olubisi is a UK-based backend engineer who moved into developer relations and now builds AI agents. For seven years he has worked alongside developers and builders, finding the step that costs them time and shipping the fix: docs and tutorials, partner integrations or production code.",
+    "Idris Olubisi is a London-based backend engineer who moved into developer relations and now builds AI agents. For seven years he has worked alongside developers and builders, finding the step that costs them time and shipping the fix: docs and tutorials, partner integrations or production code.",
   /** For /llms-full.txt. */
   profile: {
     pronouns: "He/Him",
@@ -41,6 +41,7 @@ export const site = {
   url: "https://idrisolubisi.com",
   email: "heedris2olubisi@gmail.com",
   bookingUrl: "https://calendar.app.google/An4ZtvZHjhSTGrgeA",
+  location: "London",
   status: "UK Global Talent",
   availability:
     "Open to senior developer relations, AI agent engineering, forward deployed engineering and backend engineering roles.",
@@ -60,6 +61,7 @@ export const site = {
     logrocket: "https://blog.logrocket.com/author/idrisolubisi/",
     medium: "https://medium.com/@olanetsoft",
     linktree: "https://linktr.ee/olanetsoft",
+    source: "https://github.com/Olanetsoft/idrisolubisi.com",
     web3afrika: "https://web3afrika.com/",
   },
 } as const;

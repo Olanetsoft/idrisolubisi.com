@@ -17,7 +17,7 @@ export function renderLlmsTxt(): string {
 
   push(`# ${site.name}`);
   push("");
-  push(`> ${site.role}, United Kingdom. ${site.disciplines.join(" / ")}.`);
+  push(`> ${site.role}, ${site.location}, United Kingdom. ${site.disciplines.join(" / ")}.`);
   push("");
   for (const p of site.bio) push(p.replace(/==([^=]+)==/g, "$1"));
   push("");

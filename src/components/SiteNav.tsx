@@ -9,6 +9,7 @@ const SECTIONS = [
   { id: "talks", label: "Talks" },
   { id: "experience", label: "Experience" },
   { id: "writing", label: "Writing" },
+  { id: "recognition", label: "Recognition" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -20,7 +21,7 @@ function useActiveSection(enabled: boolean): string | null {
   const [active, setActive] = useState<string | null>(null);
   useEffect(() => {
     if (!enabled) return;
-    // Every section is watched, so one without a nav item (Recognition)
+    // Every section is watched, so one without a nav item (the hero)
     // clears the mark instead of leaving the previous item underlined.
     const navIds = new Set(SECTIONS.map((s) => s.id));
     const sections = Array.from(document.querySelectorAll<HTMLElement>("main section[id]"));

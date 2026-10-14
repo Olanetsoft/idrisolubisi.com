@@ -467,6 +467,15 @@ figure {
     display: none;
   }
 }
+/* Small tablets: seven nav items fit beside the name and the call button. */
+@media (min-width: 760px) and (max-width: 899px) {
+  .site-nav {
+    gap: 0.75rem;
+  }
+  .site-header-inner {
+    gap: 1rem;
+  }
+}
 /* On the home page the name in the header appears once the hero name has
    scrolled away, and a hairline appears once the page moves. No JS. */
 @supports (animation-timeline: scroll()) {

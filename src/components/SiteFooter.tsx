@@ -6,6 +6,7 @@ const SECTIONS = [
   { href: "/#talks", label: "Talks" },
   { href: "/#experience", label: "Experience" },
   { href: "/#writing", label: "Writing" },
+  { href: "/#recognition", label: "Recognition" },
   { href: "/#contact", label: "Contact" },
 ];
 
@@ -44,6 +45,7 @@ export function SiteFooter() {
             </span>
             <span>Last updated {updated}</span>
             <a href="/llms.txt">llms.txt</a>
+            <a href={site.links.source}>Site source</a>
           </p>
           <p>
             <a href="#top">Back to top</a>

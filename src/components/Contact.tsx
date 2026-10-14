@@ -1,5 +1,4 @@
 import { site } from "@/data/site";
-import { StatusLine } from "./StatusLine";
 import { CopyButton } from "./CopyCommand";
 import { BrandIcon, type BrandName } from "./icons";
 import { SectionLabel } from "./SectionLabel";
@@ -21,7 +20,6 @@ export function Contact() {
           <p className="lede">For roles, speaking or advising.</p>
         </div>
         <div className="box contact-box">
-          <StatusLine />
           <p className="availability">{site.availability}</p>
           <div className="contact-actions">
             <a className="btn btn--primary" href={site.bookingUrl}>

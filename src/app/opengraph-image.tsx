@@ -55,7 +55,9 @@ export default async function OpenGraphImage() {
         <div style={{ display: "flex", fontSize: 68, fontWeight: 600, letterSpacing: 0 }}>
           {site.name}
         </div>
-        <div style={{ display: "flex", fontSize: 32, color: "#4a4741" }}>{site.role} · UK</div>
+        <div style={{ display: "flex", fontSize: 32, color: "#4a4741" }}>
+          {site.role} · {site.location}, UK
+        </div>
         <div
           style={{
             display: "flex",

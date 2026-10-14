@@ -38,7 +38,7 @@ export function renderLlmsFullTxt(): string {
   push(`- Pronouns: ${site.profile.pronouns}`);
   push(`- Title: ${site.role}`);
   push(`- Disciplines: ${site.disciplines.join(", ")}`);
-  push(`- Location: United Kingdom (${site.status})`);
+  push(`- Location: ${site.location}, United Kingdom (${site.status})`);
   push(`- Nationality: ${site.profile.nationality}`);
   push(`- Languages: ${site.profile.languages.join(", ")}`);
   push(`- Availability: Available now. ${site.availability} No sponsorship needed in the UK.`);
