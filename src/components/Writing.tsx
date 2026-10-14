@@ -1,5 +1,5 @@
 import { site } from "@/data/site";
-import { articles, writingStats } from "@/data/writing";
+import { articles, platforms, writingStats } from "@/data/writing";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -20,6 +20,9 @@ export function Writing() {
           </h2>
           <p className="lede">
             {writingStats.tutorials} tutorials, read {writingStats.reads} times.
+          </p>
+          <p className="lede-sub published-on">
+            <span className="published-label">Published on</span> {platforms.join(", ")}
           </p>
         </div>
         <div className="box">

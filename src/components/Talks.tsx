@@ -70,11 +70,12 @@ export function Talks() {
             </li>
           ))}
         </ul>
-        <p className="more-link">
+        <p className="more-link more-links">
           <a href={site.links.youtube}>
             <BrandIcon name="youtube" />
             All videos on YouTube
           </a>
+          <a href={site.links.sessionize}>Speaker profile on Sessionize</a>
         </p>
         <h3 className="group-label stages-label">On stage</h3>
         <div className="box">
@@ -87,6 +88,7 @@ export function Talks() {
                     {t.href ? <a href={t.href}>{eventName(t)}</a> : eventName(t)}
                   </span>
                   <span className="stage-role">{roleLine(t)}</span>
+                  {t.location && <span className="stage-city">{t.location}</span>}
                 </span>
               </li>
             ))}

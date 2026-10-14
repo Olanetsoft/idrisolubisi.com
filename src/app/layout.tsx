@@ -201,7 +201,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
         )}
       </head>
-      <body>
+      <body id="top">
         <a className="skip-link" href="#main">
           Skip to content
         </a>

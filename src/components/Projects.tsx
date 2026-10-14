@@ -2,6 +2,7 @@ import { harnessIntro, projects, type Project } from "@/data/projects";
 import { site } from "@/data/site";
 import { isPrivateRepo, starsFor } from "@/lib/generated";
 import { CopyCommand } from "./CopyCommand";
+import { SwipeCount } from "./SwipeCount";
 import { BrandIcon, STACK_ICONS, UiIcon } from "./icons";
 
 /** Live star counts only when they help: 100 or more. */
@@ -127,17 +128,20 @@ export function Projects() {
         </ul>
         <p className="group-label">
           More builds <span aria-hidden="true">·</span> {more.length}
-          <span className="swipe-hint" aria-hidden="true">
-            {" "}
-            · swipe
-          </span>
+          <SwipeCount total={more.length} />
         </p>
         <ul className="more">
           {more.map((p) => (
             <CompactCard key={p.key} project={p} />
           ))}
+          <li className="ccard more-tail">
+            <a className="ccard-link" href={site.links.github} rel="me">
+              <BrandIcon name="github" size={28} />
+              <span className="more-tail-text">More on GitHub</span>
+            </a>
+          </li>
         </ul>
-        <p className="more-link">
+        <p className="more-link more-link--github">
           <a href={site.links.github} rel="me">
             <BrandIcon name="github" />
             More on GitHub

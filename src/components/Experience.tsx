@@ -1,4 +1,4 @@
-import { experience } from "@/data/experience";
+import { community, experience } from "@/data/experience";
 import { site } from "@/data/site";
 import { RichText } from "./RichText";
 
@@ -34,6 +34,21 @@ export function Experience() {
               </li>
             ))}
           </ol>
+          <div className="community">
+            <h3 className="group-label community-label">Community</h3>
+            <ul className="community-list">
+              {community.map((c) => (
+                <li className="community-item" key={c.org}>
+                  <p className="community-head">
+                    <a href={c.href}>{c.org}</a>
+                    {c.current && <span className="badge badge--live">Now</span>}
+                  </p>
+                  <p className="community-role">{c.role}</p>
+                  {c.note && <p className="community-note">{c.note}</p>}
+                </li>
+              ))}
+            </ul>
+          </div>
           <p className="row-more">
             <a href={site.resumeUrl}>Full CV (PDF)</a>
           </p>

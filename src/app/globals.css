@@ -437,9 +437,14 @@ figure {
 @keyframes fade-in {
   from {
     opacity: 0;
+    visibility: hidden;
+  }
+  1% {
+    visibility: visible;
   }
   to {
     opacity: 1;
+    visibility: visible;
   }
 }
 @keyframes header-line {
@@ -843,6 +848,7 @@ figure {
 
 main {
   counter-reset: section;
+  --sections: "06";
 }
 .section {
   position: relative;
@@ -882,7 +888,7 @@ main {
   color: var(--text-3);
 }
 .label-index::before {
-  content: "[ " counter(section, decimal-leading-zero) " ]";
+  content: "[ " counter(section, decimal-leading-zero) " / " var(--sections) " ]";
 }
 .lede {
   margin-top: 0.75rem;
@@ -898,6 +904,10 @@ main {
   color: var(--text-2);
 }
 .swipe-hint {
+  display: none;
+}
+/* The last card in the phone swipe row; on wider screens the link below the grid does this job. */
+.more-tail {
   display: none;
 }
 @media (max-width: 759px) {
@@ -1559,6 +1569,83 @@ main {
   }
 }
 
+/* Community, under the timeline: current roles marked "Now", then past. */
+.community {
+  margin-top: 1.5rem;
+  padding: 0 0.75rem 0.25rem 2.25rem;
+}
+.community-label {
+  margin-bottom: 1rem;
+}
+.community-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem 2rem;
+}
+.community-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+.community-head a {
+  text-decoration: none;
+}
+.community-head a:hover {
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+}
+.community-role {
+  margin-top: 0.15rem;
+  font-size: 0.9375rem;
+  color: var(--text-2);
+}
+.community-note {
+  margin-top: 0.3rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-3);
+}
+@media (max-width: 1023px) {
+  .community-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 759px) {
+  .community {
+    padding-inline: 0.25rem;
+  }
+  .community-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Writing: where the tutorials were published, as words, never a logo wall. */
+.published-on {
+  max-width: none;
+  font-size: 0.9375rem;
+}
+.published-label {
+  font: 500 0.6875rem/1.4 var(--font-mono-stack);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-right: 0.35rem;
+}
+
+/* Talks: the city sits quietly after the role. */
+.stage-city {
+  font: 400 0.6875rem/1.5 var(--font-mono-stack);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+.more-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.75rem;
+}
+
 /* ---------- boxes of rows: experience, writing, recognition ---------- */
 
 .row {
@@ -1748,6 +1835,43 @@ main {
   padding-block: clamp(3rem, 7vw, 5.5rem) 2.5rem;
   font-size: 0.875rem;
   color: var(--text-3);
+}
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.25rem 2rem;
+  margin-bottom: 1.5rem;
+}
+.footer-nav,
+.footer-handles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+}
+.footer-nav a,
+.footer-handles a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  color: var(--text-2);
+  text-decoration: none;
+}
+.footer-nav a:hover,
+.footer-handles a:hover {
+  color: var(--text);
+}
+.footer-handles a {
+  font: 400 0.75rem/1 var(--font-mono-stack);
+  letter-spacing: 0.02em;
+}
+.footer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
 }
 
 /* The footer flower: a bud until the footer is in view, then it opens petal
@@ -1954,6 +2078,20 @@ main {
   .more > .ccard {
     scroll-snap-align: start;
     animation: none;
+  }
+  .more-tail {
+    display: grid;
+    place-items: center;
+  }
+  .more-tail .ccard-link {
+    display: grid;
+    justify-items: center;
+    gap: 0.6rem;
+    color: var(--text-2);
+    font-weight: 600;
+  }
+  .more-link--github {
+    display: none;
   }
   /* Experience text gets the width it needs. */
   .timeline-box {
