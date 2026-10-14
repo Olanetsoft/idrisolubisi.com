@@ -61,8 +61,9 @@ export function Hero() {
                 style={{ "--i": i } as React.CSSProperties}
               >
                 <dt className="focus-title">
-                  <span className="focus-icon">
-                    <UiIcon name={f.icon} size={22} />
+                  <span className="focus-index" aria-hidden="true">
+                    <span className="focus-accent" />
+                    {String(i + 1).padStart(2, "0")}
                   </span>
                   {f.title}
                 </dt>

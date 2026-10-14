@@ -1,4 +1,3 @@
-import type { UiName } from "@/components/icons";
 import { site } from "./site";
 
 /**
@@ -13,8 +12,6 @@ export type Focus = {
   title: string;
   /** What that work is, in plain words. */
   text: string;
-  /** Small icon beside the title. */
-  icon: UiName;
 };
 
 export const hero: { headline: string; intro: string; focus: Focus[] } = {
@@ -23,22 +20,18 @@ export const hero: { headline: string; intro: string; focus: Focus[] } = {
   focus: [
     {
       title: "Developer relations",
-      icon: "chalkboardTeacher",
       text: "Docs, tutorials, explainer videos, talks and workshops that take developers and builders from first look to production.",
     },
     {
       title: "AI agent engineering",
-      icon: "robot",
       text: "Production agents and the harness around them: MCP tools, verification, safety limits, human approval and dashboards that show what agents are doing.",
     },
     {
       title: "Forward deployed engineering",
-      icon: "handshake",
       text: "Working inside partner engineering teams from discovery and solution architecture to production launch, then turning repeat problems into reference code and tooling.",
     },
     {
       title: "Backend engineering",
-      icon: "hardDrives",
       text: "Production services and APIs: event-driven payments, multi-tenant systems, data pipelines, security hardening, race-condition fixes and monitoring.",
     },
   ],
