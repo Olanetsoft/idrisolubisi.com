@@ -110,8 +110,7 @@ export const projects: Project[] = [
     key: "foundry-axelar-gmp-example",
     name: "Foundry Axelar GMP example",
     group: "more",
-    oneLine:
-      "Reference implementation for cross-chain calls and token transfers with Axelar GMP and Foundry.",
+    oneLine: "Working Foundry examples of cross-chain calls and token transfers with Axelar GMP.",
     proof: "500+ weekly adoptions, 55% cut in integration setup time",
     stack: ["Solidity", "Foundry", "Axelar GMP", "Axelar ITS", "OpenZeppelin"],
     badge: "Reference",

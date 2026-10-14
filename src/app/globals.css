@@ -429,13 +429,15 @@ figure {
 [data-theme="light"] .menu-scrim {
   background: rgb(28 27 25 / 0.25);
 }
-.site-header:has(.menu-button[aria-expanded="true"]) {
-  animation: none;
-  background: var(--bg);
-  border-bottom-color: var(--box-line);
-}
-body:has(.menu-button[aria-expanded="true"]) .brand {
-  animation: none;
+@media (max-width: 759px) {
+  .site-header:has(.menu-button[aria-expanded="true"]) {
+    animation: none;
+    background: var(--bg);
+    border-bottom-color: var(--box-line);
+  }
+  body:has(.menu-button[aria-expanded="true"]) .brand {
+    animation: none;
+  }
 }
 @media (max-width: 759px) {
   .site-nav {
@@ -2267,6 +2269,9 @@ body:has(.contact-box) .footer-handles {
   .footer-handles a {
     min-height: 44px;
   }
+  .footer-meta {
+    row-gap: 1.75rem;
+  }
   .footer-meta a {
     display: inline-block;
     padding-block: 13px;
@@ -2349,8 +2354,16 @@ body:has(.contact-box) .footer-handles {
   .stage,
   .row,
   .community-item,
-  .video {
+  .video,
+  .section-head,
+  .contact-box {
     break-inside: avoid;
+  }
+  .group-count {
+    display: inline;
+  }
+  .more-link--github {
+    display: block;
   }
   .section-head,
   .section-head > *,

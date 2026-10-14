@@ -120,13 +120,18 @@ export function MobileMenu() {
       if (panelRef.current?.contains(target) || buttonRef.current?.contains(target)) return;
       setOpen(false);
     };
+    // A phone rotated to landscape crosses into the desktop nav: close the menu.
+    const wide = window.matchMedia("(min-width: 760px)");
+    const onWide = () => wide.matches && setOpen(false);
     document.addEventListener("keydown", onKey);
     document.addEventListener("pointerdown", onPointer);
     document.addEventListener("focusin", onFocus);
+    wide.addEventListener("change", onWide);
     return () => {
       document.removeEventListener("keydown", onKey);
       document.removeEventListener("pointerdown", onPointer);
       document.removeEventListener("focusin", onFocus);
+      wide.removeEventListener("change", onWide);
     };
   }, [open]);
 
