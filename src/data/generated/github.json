@@ -1,0 +1,61 @@
+{
+  "fetchedAt": "2026-10-14",
+  "followers": 1319,
+  "repos": {
+    "Olanetsoft/swoopagent-claw": {
+      "stars": null,
+      "private": true,
+      "url": "https://github.com/Olanetsoft/swoopagent-claw"
+    },
+    "Olanetsoft/midnight-mcp": {
+      "stars": 37,
+      "private": false,
+      "url": "https://github.com/Olanetsoft/midnight-mcp"
+    },
+    "Olanetsoft/agent-lookout": {
+      "stars": 6,
+      "private": false,
+      "url": "https://github.com/Olanetsoft/agent-lookout"
+    },
+    "midnightntwrk/create-mn-app": {
+      "stars": 9,
+      "private": false,
+      "url": "https://github.com/midnightntwrk/create-mn-app"
+    },
+    "Olanetsoft/compact-playground": {
+      "stars": 3,
+      "private": false,
+      "url": "https://github.com/Olanetsoft/compact-playground"
+    },
+    "axelarnetwork/foundry-axelar-gmp-example": {
+      "stars": 13,
+      "private": false,
+      "url": "https://github.com/axelarnetwork/foundry-axelar-gmp-example"
+    },
+    "Olanetsoft/article-idea-generator": {
+      "stars": 235,
+      "private": false,
+      "url": "https://github.com/Olanetsoft/article-idea-generator"
+    },
+    "Olanetsoft/audioboost": {
+      "stars": 2,
+      "private": false,
+      "url": "https://github.com/Olanetsoft/audioboost"
+    },
+    "midnightntwrk/example-zkloan": {
+      "stars": 7,
+      "private": false,
+      "url": "https://github.com/midnightntwrk/example-zkloan"
+    },
+    "Olanetsoft/learn-compact": {
+      "stars": 3,
+      "private": false,
+      "url": "https://github.com/Olanetsoft/learn-compact"
+    },
+    "Olanetsoft/web3terms": {
+      "stars": 116,
+      "private": false,
+      "url": "https://github.com/Olanetsoft/web3terms"
+    }
+  }
+}

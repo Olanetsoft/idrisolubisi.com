@@ -1,44 +1,75 @@
 import { site } from "@/data/site";
+import { githubFollowers } from "@/lib/generated";
+import { CopyButton } from "./CopyCommand";
+import { BrandIcon, UiIcon, type BrandName } from "./icons";
+import { SectionLabel } from "./SectionLabel";
+
+/** "1,300+" from the live count, rounded down to the hundred so it never overstates. */
+const roundedDown = (n: number | null) =>
+  n === null ? undefined : `${new Intl.NumberFormat("en-GB").format(Math.floor(n / 100) * 100)}+`;
+
+const followers = (count?: string) => (count ? `${count} followers` : undefined);
+
+const SOCIALS: { label: string; href: string; icon: BrandName; note?: string }[] = [
+  {
+    label: "LinkedIn",
+    href: site.links.linkedin,
+    icon: "linkedin",
+    note: followers(site.profile.linkedinFollowers),
+  },
+  {
+    label: "GitHub",
+    href: site.links.github,
+    icon: "github",
+    note: followers(roundedDown(githubFollowers)),
+  },
+  { label: "X", href: site.links.x, icon: "x", note: followers(site.profile.xFollowers) },
+  { label: "YouTube", href: site.links.youtube, icon: "youtube" },
+  {
+    label: "Blog",
+    href: site.links.blog,
+    icon: "hashnode",
+    note: followers(site.profile.hashnodeFollowers),
+  },
+];
 
 export function Contact() {
   return (
     <section className="section" id="contact" aria-labelledby="contact-title">
-      <div className="container section-grid">
+      <div className="container">
         <div className="section-head">
-          <h2 id="contact-title">Contact</h2>
-          <p className="section-intro">For roles, speaking or advising: book a call or email me.</p>
+          <SectionLabel id="contact">Contact</SectionLabel>
+          <p className="lede">For roles, speaking or advising.</p>
         </div>
-        <div className="box contact-lines">
-          <p>
-            <a className="email" href={`mailto:${site.email}`}>
-              {site.email}
+        <div className="box contact-box">
+          <p className="availability">{site.availability} No sponsorship needed in the UK.</p>
+          <div className="contact-actions">
+            <a className="btn btn--primary" href={site.bookingUrl}>
+              Book a 30-min call
             </a>
-          </p>
-          <p>
-            <a href={site.bookingUrl}>Book a 15-min call</a>
-          </p>
-          <p className="elsewhere">
-            Also on{" "}
-            <a href={site.links.linkedin} rel="me">
-              LinkedIn
+            <p className="contact-email">
+              <a className="email" href={`mailto:${site.email}`}>
+                {site.email}
+              </a>
+              <CopyButton value={site.email} label="Copy email address" />
+            </p>
+          </div>
+          <ul className="socials" aria-label="Elsewhere">
+            {SOCIALS.map((link) => (
+              <li key={link.label}>
+                <a href={link.href} rel="me">
+                  <BrandIcon name={link.icon} size={18} />
+                  <span>{link.label}</span>
+                  {link.note && <span className="social-note">{link.note}</span>}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="more-link press-photos">
+            <a href={site.links.photos}>
+              <UiIcon name="image" />
+              Headshots and photos for organisers and press
             </a>
-            ,{" "}
-            <a href={site.links.github} rel="me">
-              GitHub
-            </a>
-            ,{" "}
-            <a href={site.links.x} rel="me">
-              X
-            </a>
-            ,{" "}
-            <a href={site.links.youtube} rel="me">
-              YouTube
-            </a>{" "}
-            and{" "}
-            <a href={site.links.blog} rel="me">
-              my blog
-            </a>
-            .
           </p>
         </div>
       </div>

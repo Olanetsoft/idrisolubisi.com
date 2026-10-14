@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { IBM_Plex_Sans } from "next/font/google";
+import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { community } from "@/data/experience";
 import { recognition } from "@/data/recognition";
@@ -13,6 +13,14 @@ const sans = IBM_Plex_Sans({
   subsets: ["latin"],
   weight: ["400", "600"],
   variable: "--font-sans",
+  display: "swap",
+});
+
+// One weight keeps the font payload small; the mono labels are all small caps-size text.
+const mono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-mono",
   display: "swap",
 });
 
@@ -28,6 +36,7 @@ export const metadata: Metadata = {
     "olanetsoft",
     "Senior Developer Relations Engineer",
     "Developer Advocate",
+    "Developer Educator",
     "Forward Deployed Engineer",
     "Developer Success",
     "AI Engineer",
@@ -120,13 +129,13 @@ const jsonLd = {
       jobTitle: site.role,
       email: site.email,
       description: site.description,
-      address: { "@type": "PostalAddress", addressLocality: "London", addressCountry: "GB" },
+      address: { "@type": "PostalAddress", addressLocality: site.location, addressCountry: "GB" },
       nationality: { "@type": "Country", name: "Nigeria" },
       knowsLanguage: ["en", "yo"],
       hasOccupation: {
         "@type": "Occupation",
-        name: "Developer Relations Engineer",
-        occupationLocation: { "@type": "City", name: "London" },
+        name: site.role,
+        occupationLocation: { "@type": "City", name: site.location },
         skills: [
           ...site.disciplines,
           "Technical writing",
@@ -142,18 +151,27 @@ const jsonLd = {
       memberOf: community
         .filter((c) => c.role !== "Founder")
         .map((c) => ({ "@type": "Organization", name: c.org, url: c.href })),
-      award: recognition.filter((r) => r.kind === "endorsement").map((r) => r.title),
+      award: recognition
+        .filter((r) => r.kind === "endorsement" || r.kind === "award")
+        .map((r) => `${r.by}: ${r.title}`),
       subjectOf: recognition
-        .filter((r) => r.href && (r.kind === "press" || r.kind === "sponsored"))
-        .map((r) => ({
-          "@type": r.kind === "sponsored" ? "AdvertiserContentArticle" : "NewsArticle",
-          headline: r.title,
-          url: r.href,
-          datePublished: r.date,
-          publisher: { "@type": "Organization", name: r.by },
-        })),
+        .filter(
+          (r) => r.href && (r.kind === "press" || r.kind === "sponsored" || r.kind === "interview"),
+        )
+        .map((r) =>
+          r.kind === "interview"
+            ? { "@type": "VideoObject", name: r.title, url: r.href, uploadDate: r.date }
+            : {
+                "@type": r.kind === "sponsored" ? "AdvertiserContentArticle" : "NewsArticle",
+                headline: r.title,
+                url: r.href,
+                datePublished: r.date,
+                publisher: { "@type": "Organization", name: r.by },
+              },
+        ),
       knowsAbout: [
         "Developer Relations",
+        "Developer education",
         "Developer Experience",
         "Model Context Protocol",
         "AI agents",
@@ -163,7 +181,7 @@ const jsonLd = {
       ],
       potentialAction: {
         "@type": "ScheduleAction",
-        name: "Book a 15-minute call",
+        name: "Book a 30-minute call",
         target: site.bookingUrl,
       },
       sameAs: [
@@ -171,9 +189,11 @@ const jsonLd = {
         site.links.linkedin,
         site.links.x,
         site.links.blog,
-        site.links.youtube,
+        site.links.youtubeChannel,
         site.links.freecodecamp,
         site.links.devto,
+        site.links.logrocket,
+        site.links.medium,
         site.links.sessionize,
         site.links.web3afrika,
         site.links.linktree,
@@ -184,18 +204,27 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-GB" className={sans.variable} suppressHydrationWarning>
+    <html lang="en-GB" className={`${sans.variable} ${mono.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt" />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          href="https://blog.idrisolubisi.com/rss.xml"
+          title="Idris Olubisi's blog"
+        />
         {process.env.NODE_ENV === "production" && (
           <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
         )}
       </head>
-      <body>
-        <div className="theme-corner">
-          <ThemeToggle />
-        </div>
+      {/* Extensions such as Grammarly add attributes to <body> before React loads;
+          this ignores those attribute differences on this one element only. */}
+      <body id="top" suppressHydrationWarning>
+        <a className="skip-link" href="#main">
+          Skip to content
+        </a>
+        <SiteHeader />
         <main id="main">{children}</main>
         <SiteFooter />
         <script

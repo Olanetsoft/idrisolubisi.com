@@ -4,59 +4,69 @@ export const site = {
   role: "Senior Developer Relations Engineer",
   /** Used in /llms.txt and structured data; the page shows `role` as the headline. */
   disciplines: [
-    "Developer Relations",
-    "AI Engineer",
-    "Developer Experience",
-    "Solutions Engineering",
+    "Developer Relations and Education",
+    "AI Agent Engineering",
+    "Forward Deployed Engineering",
+    "Backend Engineering",
   ],
-  /** Bio paragraphs, plain prose; [label](url) renders as a link. */
+  /** The hero intro: one paragraph, no employer names. [label](url) renders as a link, ==text== as the one highlight. */
   bio: [
-    "I help developers and builders succeed on technical products. I build the tools, guides, and programs that take an engineer from first look to production, and I’ve done it for developer platforms in AI and blockchain since 2019. Most recently at Midnight and Axelar. Founder of [Web3 Afrika](https://web3afrika.com/), a developer community.",
+    "I’m a backend engineer who moved into developer relations and now builds AI agents. For seven years I’ve worked alongside the developers and builders using a product, ==finding the step that actually costs them time== and shipping the fix: courses, docs and tutorials, partner integrations or production code.",
   ],
   title: "Idris Olubisi, Senior Developer Relations Engineer",
   /** Evergreen, no employer or availability: the search snippet and every social card. The long description feeds structured data. */
   metaDescription:
-    "Idris Olubisi (olanetsoft) is a Senior Developer Relations Engineer, founder of Web3 Afrika, and freeCodeCamp author with tutorials read 10M+ times. Built the Midnight MCP server: 10,000+ downloads and 11,900+ AI-agent tool calls.",
+    "Idris Olubisi (olanetsoft), Senior Developer Relations Engineer and educator who builds AI agents. Built the Midnight MCP server: 10,000+ downloads.",
   description:
-    "Idris Olubisi is a Senior Developer Relations Engineer in the UK who helps developers and builders succeed on technical products: the tools, guides and programs that take an engineer from first look to production, for developer platforms in AI and blockchain since 2019. Founder of Web3 Afrika, a developer community.",
+    "Idris Olubisi is a London-based backend engineer who moved into developer relations and now builds AI agents. For seven years he has worked alongside developers and builders, finding the step that costs them time and shipping the fix: courses, docs and tutorials, partner integrations or production code.",
+  /** For /llms-full.txt. */
+  profile: {
+    pronouns: "He/Him",
+    nationality: "Nigerian",
+    languages: ["English", "Yoruba"],
+    writingSince: "2020",
+    xFollowers: "27,000+",
+    /** His LinkedIn and Hashnode follower counts, confirmed by him on 14 Oct 2026. */
+    linkedinFollowers: "13,000+" as string | undefined,
+    hashnodeFollowers: "9,000+" as string | undefined,
+  },
+  /** The longer summary for /llms-full.txt. Every figure here is also on the page. */
+  summary:
+    "Idris Olubisi is a backend engineer turned developer relations engineer, now building agent systems: seven years across backend engineering and developer-facing work (2019 to 2026). He built the open-source Midnight MCP server (10,000+ downloads, 11,900+ AI-agent tool calls), re-architected documentation for AI retrieval, and built SwoopAgent, a multi-tenant platform where around 100 users trade real funds through Claude-powered agents. He founded Web3 Afrika (15,000+ builders across Africa), and his tutorials have been read 10M+ times.",
+  /** Checked on github.com on 14 Oct 2026; followers come live from the build. */
+  github: {
+    publicRepos: "320+",
+    achievements: [
+      "Pull Shark x4 (gold tier, the badge’s highest)",
+      "Starstruck x3 (silver tier; top repository awesome-hackathon-projects, 1,877 stars in Oct 2026)",
+    ],
+  },
   url: "https://idrisolubisi.com",
   email: "heedris2olubisi@gmail.com",
   bookingUrl: "https://calendar.app.google/An4ZtvZHjhSTGrgeA",
+  location: "London",
   status: "UK Global Talent",
   availability:
-    "Open to developer relations, developer experience, developer support, solutions engineering, and AI engineering roles. Available now.",
+    "Open to senior developer relations, developer education, AI agent engineering, forward deployed engineering and backend engineering roles.",
   /** View-only PDF, refreshed from the Google Doc with `npm run cv`. */
   resumeUrl: "/Idris-Olubisi-CV.pdf",
   gaId: "G-7MMFT1BXJV",
-  /** What I actually do. One sentence each. */
-  functions: [
-    {
-      title: "Developer relations",
-      text: "Help developers and builders understand and adopt a product, and bring their feedback back to the product and engineering teams.",
-    },
-    {
-      title: "Developer tools and AI",
-      text: "Build tools that make a product easier to use, including AI-powered tools and ones that run AI models locally.",
-    },
-    {
-      title: "Documentation and education",
-      text: "Tutorials and videos that unblock developers, and curricula that turn readers into certified builders.",
-    },
-    {
-      title: "Partner and solutions engineering",
-      text: "Work directly with partner teams on design, integration, and code review, through to launch.",
-    },
-  ],
   links: {
     github: "https://github.com/Olanetsoft",
     linkedin: "https://www.linkedin.com/in/idris-olubisi/",
     x: "https://x.com/olanetsoft",
     blog: "https://blog.idrisolubisi.com/",
     youtube: "https://www.youtube.com/playlist?list=PLaZ7cT8J_HZbyPjlfLgFCCpA_rAbKaaqg",
+    youtubeChannel: "https://www.youtube.com/@olanetsoft",
     sessionize: "https://sessionize.com/olanetsoft",
-    freecodecamp: "https://www.freecodecamp.org/news/author/idris/",
+    freecodecamp: "https://www.freecodecamp.org/news/author/olanetsoft/",
     devto: "https://dev.to/olanetsoft",
+    logrocket: "https://blog.logrocket.com/author/idrisolubisi/",
+    medium: "https://medium.com/@olanetsoft",
     linktree: "https://linktr.ee/olanetsoft",
+    source: "https://github.com/Olanetsoft/idrisolubisi.com",
+    /** Public Google Drive gallery: headshots and event photos for organisers and press. */
+    photos: "https://drive.google.com/drive/folders/13CfM9w-Axf46n5B4a06F1M3M7SZ7yJcd",
     web3afrika: "https://web3afrika.com/",
   },
 } as const;

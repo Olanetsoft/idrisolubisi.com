@@ -28,6 +28,40 @@ function setTheme(next: Theme) {
   listeners.forEach((l) => l());
 }
 
+/**
+ * Switch theme. Where the browser supports view transitions, the new theme
+ * spreads out in a circle from the button; otherwise, and for reduced-motion
+ * users, it switches at once.
+ */
+function toggleTheme(button: HTMLElement) {
+  const next: Theme = readTheme() === "dark" ? "light" : "dark";
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!document.startViewTransition || reduced) {
+    setTheme(next);
+    return;
+  }
+  const box = button.getBoundingClientRect();
+  const x = box.left + box.width / 2;
+  const y = box.top + box.height / 2;
+  const radius = Math.hypot(
+    Math.max(x, window.innerWidth - x),
+    Math.max(y, window.innerHeight - y),
+  );
+  const transition = document.startViewTransition(() => setTheme(next));
+  transition.ready
+    .then(() => {
+      document.documentElement.animate(
+        { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${radius}px at ${x}px ${y}px)`] },
+        {
+          duration: 520,
+          easing: "cubic-bezier(0.2, 0.8, 0.2, 1)",
+          pseudoElement: "::view-transition-new(root)",
+        },
+      );
+    })
+    .catch(() => {});
+}
+
 export function ThemeToggle() {
   const theme = useSyncExternalStore(subscribe, readTheme, () => null);
   const label =
@@ -41,7 +75,7 @@ export function ThemeToggle() {
     <button
       type="button"
       className="theme-toggle"
-      onClick={() => setTheme(readTheme() === "dark" ? "light" : "dark")}
+      onClick={(event) => toggleTheme(event.currentTarget)}
       aria-label={label}
       title={label}
     >

@@ -1,23 +1,23 @@
 import { Contact } from "@/components/Contact";
 import { Experience } from "@/components/Experience";
 import { Hero } from "@/components/Hero";
-import { Interests } from "@/components/Interests";
+import { Projects } from "@/components/Projects";
+import { Spotlight } from "@/components/Spotlight";
 import { Recognition } from "@/components/Recognition";
-import { Speaking } from "@/components/Speaking";
-import { WhatIDo } from "@/components/WhatIDo";
+import { Talks } from "@/components/Talks";
 import { Writing } from "@/components/Writing";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <WhatIDo />
+      <Projects />
+      <Talks />
       <Experience />
-      <Interests />
-      <Speaking />
       <Writing />
       <Recognition />
       <Contact />
+      <Spotlight />
     </>
   );
 }

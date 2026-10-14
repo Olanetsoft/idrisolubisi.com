@@ -4,159 +4,242 @@ export type Role = {
   /** En dash, no spaces, so the period never wraps. */
   period: string;
   location?: string;
-  /** Summary for /llms.txt; not rendered on the page. */
-  scope: string;
-  /** Detail for the CV and /llms.txt; not rendered on the page. */
+  /** What was done in the role, as short points on the card. ==text== marks a figure or key fact to bold. */
   highlights: string[];
+  /** The same work as checked points, for /llms.txt. From the CV, the brief and the owner. */
+  points: string[];
   url?: string;
+  /** What the company does, in one line, for /llms-full.txt. */
+  about?: string;
 };
 
 export const experience: Role[] = [
   {
     company: "Midnight Foundation",
     title: "Developer Educator, Developer Relations",
+    highlights: [
+      "Built the Midnight MCP server (==10,000+ downloads==, ==11,900+ agent tool calls==).",
+      "Led the docs overhaul for AI retrieval, including the docs AI assistant, and used the 784 questions it received to plan new content.",
+      "Launched Midnight Academy (==1,576 enrolled, 1,120+ certified==) and a 12-part video series.",
+      "Built create-mn-app, Compact Playground and Compact by Example, and kept example repos current with CI and on-call.",
+      "Ran partner integrations, workshops and two content-bounty cohorts.",
+    ],
+    points: [
+      "Built the Midnight MCP server so AI coding assistants wrote correct code: 10,000+ downloads, 11,900+ agent tool calls.",
+      "Led the docs overhaul for AI retrieval (server-side rendering and an llms.txt index), including the docs AI assistant, and used its 784 questions to plan new docs and videos.",
+      "Launched Midnight Academy, a three-tier zero-knowledge and Compact curriculum (Foundations, Intermediate, Advanced) with 1,576 enrolled and 1,120+ certified, plus Compact by Example, a browser playground for compiling contracts and a 12-part video series.",
+      "Ran partner integrations and workshops, taught a University of Zurich session, and ran two bounty cohorts, the second publishing 20 tutorials, with every submission gated on code that compiles.",
+    ],
     period: "Sep 2025–Sep 2026",
     location: "Remote",
     url: "https://midnight.network/",
-    scope:
-      "Developer relations for a zero-knowledge blockchain: the MCP server, docs that AI tools can read, Midnight Academy and partner onboarding.",
-    highlights: [
-      "Built and open-sourced the Midnight MCP server: 30 tools, 10,000+ npm downloads, 11,900+ tool calls served to AI coding agents.",
-      "Rebuilt the documentation so AI tools can read it (server-side rendering, llms.txt index).",
-      "Launched Midnight Academy, a three-tier Compact and zero-knowledge curriculum: 1,576 enrolled, 1,120+ certified.",
-      "Tripled the content-bounty programme to 20 published tutorials from 12 contributors by gating submissions on code that compiles.",
-      "Gave strategic partners integration support end to end: code reviews, debug sessions, architecture guidance, and structured friction reports to Engineering.",
-    ],
+    about: "Midnight is a data-protection blockchain for confidential smart contracts.",
   },
   {
     company: "Axelar / Interop Labs",
     title: "Developer Relations Engineer",
+    highlights: [
+      "==First developer-relations engineer on the team==, under the Head of Developer Relations.",
+      "Embedded with partner engineering teams as solution architect, from discovery to production launch.",
+      "Built a Foundry reference implementation that cut cross-chain integration setup time ==55%== (==500+ weekly developer activations==).",
+      "Supported ==100,000+ developers== through debugging, talks and workshops at ==4.8/5 satisfaction==.",
+      "Tracked the onboarding funnel to remove adoption blockers, and grew docs usage ==120%==.",
+    ],
+    points: [
+      "First developer-relations engineer on the team, under the Head of Developer Relations. Worked as solution architect inside partner engineering teams, from discovery to production launch.",
+      "Built a reference implementation that cut cross-chain integration setup time 55%, with 500+ weekly developer activations.",
+      "Supported 100,000+ developers and builders through hands-on debugging, talks and workshops, rated 4.8/5.",
+      "Grew documentation usage 120% with rewritten docs and interactive tutorials, and recorded live-coding and workshop videos.",
+    ],
     period: "Apr 2023–Aug 2025",
     location: "Remote",
     url: "https://www.axelar.network/",
-    scope:
-      "Grew the cross-chain developer community and was the technical point of contact for partners integrating Axelar.",
-    highlights: [
-      "Wrote foundry-axelar-gmp-example, the reference implementation for cross-chain messaging: setup time −55%, adopted by 500+ developers.",
-      "Rewrote the documentation with interactive tutorials and troubleshooting guides; usage +120%, developer satisfaction 4.8/5.",
-      "Engaged 100,000+ developers through talks, workshops and community programmes.",
-      "Acted as solution architect for strategic partners: validated technical blueprints and gave go-to-market and integration support through launch.",
-    ],
+    about: "Axelar is a blockchain interoperability network for secure cross-chain communication.",
   },
   {
     company: "Mara",
     title: "Developer Relations Engineer",
+    highlights: [
+      "Cut developer onboarding time ==65%== by redesigning the docs-to-production path.",
+      "Created Mara Academy’s technical courses, growing it to ==19,000+ active developers== at ==85% monthly retention==.",
+      "Built the campus club from ==0 to 18+ universities== in Kenya and Nigeria, and reached ==30,000+ developers== through conferences, hackathons and workshops.",
+      "Set up the feedback pipeline into product and managed strategic partners.",
+    ],
+    points: [
+      "Cut developer onboarding time 65% by redesigning the docs-to-production path, and set up a feedback pipeline into product.",
+      "Created Mara Academy’s technical courses, growing it to 19,000+ active developers at 85% monthly retention.",
+      "Grew the campus club from 0 to 18+ universities, reached 30,000+ developers and builders across Africa, and managed strategic partners.",
+    ],
     period: "Jul 2022–Apr 2023",
     location: "Nairobi",
-    scope:
-      "First developer-relations hire; built the developer programme from zero across 18+ universities.",
-    highlights: [
-      "Cut developer onboarding time by 65% with a documentation-to-production workflow.",
-      "Scaled the Mara Developer Campus Club from 0 to 18+ universities and reached 30,000+ developers across Africa.",
-      "Grew Mara Academy to 19,000+ active developers at 85% monthly retention, and set up the feedback pipeline from the community to Product.",
-    ],
   },
   {
     company: "Luna",
     title: "Backend Engineer",
+    highlights: [
+      "Built a multi-tenant payment service on Apache Kafka for ==50,000+ users==, integrating Stripe, PayPal and bank payments.",
+      "Built the ==authentication and encryption layer==.",
+      "Improved performance ==63%== through caching and a move to microservices, and held ==99.9% uptime== with monitoring and alerting.",
+      "Mentored three junior engineers on system design.",
+    ],
+    points: [
+      "Built a multi-tenant payment service on Apache Kafka for 50,000+ users across web and mobile, integrating Stripe, PayPal and bank payments.",
+      "Improved application performance 63% through bottleneck analysis, caching and microservices, and held 99.9% uptime with monitoring and alerting.",
+      "Built APIs for high-volume traffic and the authentication and encryption layer, and mentored three junior engineers on system design.",
+    ],
     period: "Dec 2021–Jul 2022",
     location: "London, remote",
-    scope:
-      "Payments microservice on Apache Kafka serving 50,000+ users; Stripe, PayPal and bank integrations.",
-    highlights: [
-      "Built a multi-tenant payments microservice on Apache Kafka serving 50,000+ users across web and mobile.",
-      "Improved application performance by 63% and held 99.9% uptime under high-volume traffic with monitoring and alerting.",
-      "Integrated Stripe, PayPal and bank-account payment flows; mentored three junior engineers.",
-    ],
   },
   {
     company: "PhilanthroLab",
-    title: "Backend Engineer",
+    title: "Backend Engineer (promoted to backend team lead)",
+    highlights: [
+      "Built most of the backend infrastructure and shipped the MVP.",
+      "Then led technical programmes, system design, code reviews, documentation and architecture decisions.",
+      "Designed an automated data lake processing ==100 GB+ a month==.",
+      "Improved performance ==50%== with GraphQL, Node.js, Neo4j and Elasticsearch, and automated workflows saving ==1,000+ hours a year==.",
+    ],
+    points: [
+      "Built most of the backend infrastructure, shipped the MVP, and improved performance 50% with GraphQL, Node.js, Neo4j and Elasticsearch.",
+      "Promoted to backend team lead, then led technical programmes, system design, code reviews, documentation and architecture decisions.",
+      "Designed an automated data lake processing 100 GB+ a month, and automated workflows saving 1,000+ hours a year.",
+    ],
     period: "Feb 2021–Dec 2021",
     location: "Dallas, remote",
-    scope: "Automated data lake and Node.js, GraphQL and Neo4j services.",
-    highlights: [
-      "Designed an automated data lake processing 100 GB+ a month, saving 1,000+ hours of manual retrieval a year.",
-      "Improved application performance by 50% on a Node.js, GraphQL, Neo4j and Elasticsearch stack.",
-    ],
   },
   {
     company: "Tavia Technologies",
     title: "Software Developer / Support Analyst",
+    highlights: [
+      "Built .NET Core and SharePoint solutions for Access Bank, MTN Nigeria (part of MTN Group, Africa’s largest mobile operator) and NPDC (the exploration and production arm of NNPC, Nigeria’s national oil company).",
+      "Automated processes for these clients, saving ==900+ hours a year==.",
+      "Ran test-to-production deployments and database migrations with ==zero data loss==.",
+      "Provided technical support and issue resolution, and wrote handover docs.",
+    ],
+    points: [
+      "Built enterprise SharePoint and .NET Core (MVC 2.2 to 5.0) solutions for Access Bank and MTN Nigeria (part of MTN Group, Africa’s largest mobile operator).",
+      "Automated business processes for these clients and NPDC (the exploration and production arm of NNPC, Nigeria’s national oil company), saving 900+ hours a year.",
+      "Provided enterprise support, ran test-to-production deployments and database migrations with zero data loss, and wrote handover docs.",
+    ],
     period: "Apr 2019–Jan 2021",
     location: "Lagos",
-    scope: "SharePoint and .NET solutions for MTN Nigeria, NPDC and Access Bank.",
-    highlights: [
-      "Automated business processes for MTN Nigeria, NPDC and Access Bank, saving 900+ hours a year.",
-      "Delivered custom SharePoint and .NET Core solutions with zero data loss across deployments.",
-    ],
   },
 ];
 
 export const education = {
   degree: "B.Eng. Electrical & Electronics Engineering",
-  school: "Abubakar Tafawa Balewa University, Bauchi",
+  school: "Abubakar Tafawa Balewa University, Bauchi, Nigeria",
   year: "2018",
 };
 
-export const community = [
-  { org: "Web3 Afrika", role: "Founder", href: "https://web3afrika.com/" },
-  { org: "SheCodeAfrica", role: "backend community lead", href: "https://shecodeafrica.org/" },
-  { org: "Open Source Community Africa", role: "OSCA Hero, Yaba", href: "https://oscafrica.org/" },
+/** Communities and events outside his jobs: current ones first, then past. Figures are his confirmed numbers. */
+export const community: {
+  org: string;
+  role: string;
+  href: string;
+  note?: string;
+  current: boolean;
+  /** Start date, for /llms-full.txt. */
+  since?: string;
+  /** More context, for /llms-full.txt. */
+  detail?: string;
+}[] = [
+  {
+    org: "Web3 Afrika",
+    role: "Founder",
+    href: "https://web3afrika.com/",
+    note: "15,000+ builders across Africa, backed by Developer DAO",
+    current: true,
+    since: "May 2022",
+    detail: "Organises events and workshops, including the Build Afrika Summit",
+  },
+  {
+    org: "Blockfest Africa",
+    role: "Partnerships lead",
+    href: "https://blockfestafrica.com/",
+    note: "Leads the partnership team for the whole event; 12,000 participants in 2025",
+    current: true,
+  },
+  {
+    org: "SheCodeAfrica",
+    role: "Backend community lead",
+    href: "https://shecodeafrica.org/",
+    note: "Ran the backend programmes; SheCodeAfrica has 50,000+ members across 15 African countries",
+    current: false,
+  },
+  {
+    org: "Open Source Community Africa",
+    role: "Volunteer",
+    href: "https://oscafrica.org/",
+    note: "Received the OSCA Hero award",
+    current: false,
+    detail: "Yaba, Lagos: open source, technical writing and OSCAFEST organising",
+  },
 ];
 
 export const stack = [
   {
-    label: "Languages and frameworks",
-    items: ["TypeScript", "JavaScript", "Node.js", "React", "Next.js", "Vue.js", "Express"],
+    label: "Agent harness",
+    items: [
+      "tool use and MCP servers",
+      "context management",
+      "orchestration",
+      "verification gates",
+      "human-in-the-loop approval",
+      "safety layers independent of the agent",
+      "agent session observability",
+      "Claude and OpenAI APIs",
+      "Claude Code, Cursor and Codex",
+      "local inference with Ollama, GGUF models and RAG",
+    ],
+  },
+  {
+    label: "Backend",
+    items: [
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Redis",
+      "Apache Kafka",
+      "RabbitMQ",
+      "event-driven and microservice architectures",
+      "REST and GraphQL",
+      "WebSockets",
+      "Neo4j",
+      "Elasticsearch",
+      ".NET Core and SharePoint (earlier)",
+    ],
+  },
+  {
+    label: "Frontend",
+    items: ["React", "Next.js", "Vue", "Vite", "Vitest"],
+  },
+  {
+    label: "Correctness and reliability",
+    items: [
+      "atomic transactions",
+      "optimistic locking",
+      "idempotency keys",
+      "rate limiting",
+      "monitoring and alerting",
+      "performance profiling",
+      "zero-data-loss migrations",
+    ],
+  },
+  {
+    label: "Delivery",
+    items: [
+      "GitHub Actions CI",
+      "Docker",
+      "Cloudflare Workers and Vectorize",
+      "Vercel",
+      "Supabase",
+      "release runbooks",
+      "on-call rotations",
+    ],
   },
   {
     label: "Web3",
-    items: [
-      "Solidity",
-      "Rust",
-      "Foundry",
-      "Ethers.js",
-      "Compact and zero-knowledge circuits",
-      "cross-chain messaging",
-    ],
-  },
-  {
-    label: "AI",
-    items: [
-      "MCP servers",
-      "Claude and OpenAI APIs",
-      "LangChain",
-      "RAG",
-      "prompt engineering",
-      "n8n",
-    ],
-  },
-  {
-    label: "Data and infrastructure",
-    items: [
-      "PostgreSQL",
-      "MongoDB",
-      "GraphQL",
-      "Redis",
-      "RabbitMQ",
-      "Kafka",
-      "Elasticsearch",
-      "Docker",
-      "GCP",
-      "Azure",
-      "Linux",
-    ],
-  },
-  {
-    label: "Developer relations",
-    items: [
-      "Docusaurus",
-      "docs-as-code",
-      "llms.txt",
-      "Postman",
-      "Discord and Slack community management",
-      "Google Analytics",
-    ],
+    items: ["Solidity", "Foundry", "Compact and zero-knowledge circuits", "cross-chain messaging"],
   },
 ];

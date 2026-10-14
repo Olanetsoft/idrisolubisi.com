@@ -7,6 +7,8 @@ export type Talk = {
   kind: "Keynote" | "Talk" | "Workshop" | "Fireside chat" | "Host" | "Lecture" | "Speaker";
   href?: string;
   note?: string;
+  /** Shown as a card at the top of Talks instead of in the On stage list. */
+  highlight?: "Latest" | "Keynote";
 };
 
 /** Newest first; within a year, by date where known. Never invent a title, year or link. */
@@ -16,30 +18,33 @@ export const talks: Talk[] = [
     title: "Guest lecture on Midnight",
     year: "2026",
     kind: "Lecture",
+    highlight: "Latest",
+  },
+  {
+    event: "Midnight",
+    title:
+      "Bi-weekly fireside chats on AI-assisted developer tooling, including a demo of the Midnight MCP server",
+    year: "2025–26",
+    kind: "Fireside chat",
   },
   {
     event: "Blockfest Africa 2025",
-    title: "Beyond H-1B: Building Global Tech Careers from Africa",
+    title: "Beyond H-1B: building global tech careers from Africa",
     year: "2025",
     location: "Lagos",
     kind: "Keynote",
     note: "12,000 participants from 50+ countries",
+    highlight: "Keynote",
     href: "https://businessday.ng/news/article/blockfest-africa-2025-draws-12000-participants-strengthens-africas-web3-voice/",
   },
   {
-    event: "Midnight",
-    title: "AI-assisted developer tooling and a live MCP server demo",
-    year: "2025",
-    kind: "Fireside chat",
-  },
-  {
-    event: "ETHCC (Ethereum Community Conference)",
+    event: "EthCC (Ethereum Community Conference)",
     year: "2025",
     kind: "Speaker",
   },
   {
     event: "Build Afrika Summit",
-    title: "Founder and host: Africa’s builders, protocols and partners in one room",
+    title: "Founder and host",
     year: "2025",
     location: "Lagos",
     kind: "Host",
@@ -52,26 +57,11 @@ export const talks: Talk[] = [
   },
   {
     event: "Osmocon",
-    title: "Cross-Chain Interoperability with Axelar Network",
+    title: "Cross-chain interoperability with Axelar Network",
     year: "2023",
     location: "Paris",
     kind: "Talk",
-    href: "https://www.osmocon.com/#speakers",
-  },
-  {
-    event: "DevFest Lagos",
-    title: "Leveraging USDC to build decentralised applications in Web3 efficiently",
-    year: "2022",
-    location: "Lagos",
-    kind: "Talk",
-    href: "https://www.youtube.com/watch?v=yPr8Zs0-S9o",
-  },
-  {
-    event: "CityJS Conference",
-    title: "JavaScript Supremacy: Building a scalable full-stack application with JavaScript",
-    year: "2022",
-    kind: "Talk",
-    href: "https://x.com/olanetsoft/status/1580091101293477888",
+    href: "https://www.youtube.com/watch?v=MyhX9-F51V4",
   },
   {
     event: "Mara Developer Campus Club",
@@ -80,4 +70,30 @@ export const talks: Talk[] = [
     kind: "Workshop",
     href: "https://x.com/olanetsoft/status/1606312523677966337",
   },
+  {
+    event: "DevFest Lagos",
+    title: "Leveraging USDC to efficiently build decentralised applications in Web3",
+    year: "2022",
+    location: "Lagos",
+    kind: "Talk",
+    href: "https://www.youtube.com/watch?v=yPr8Zs0-S9o",
+  },
+  {
+    event: "CityJS Conference",
+    title: "JavaScript supremacy: building a scalable full-stack application with JavaScript",
+    year: "2022",
+    location: "Lagos",
+    kind: "Talk",
+    href: "https://x.com/olanetsoft/status/1580091101293477888",
+  },
+];
+
+/** What he speaks about, for /llms-full.txt. */
+export const speakingTopics = [
+  "agent systems and the harness around them",
+  "MCP and AI-agent tooling",
+  "zero-knowledge proofs",
+  "building cross-chain applications",
+  "technical writing for developers",
+  "building developer communities",
 ];

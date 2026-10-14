@@ -38,7 +38,7 @@ export default function ArchivedPost() {
   return (
     <article className="container article">
       <Link className="back-link" href="/">
-        ← Idris Olubisi
+        Home
       </Link>
       <header className="article-head">
         <h1>{title}</h1>

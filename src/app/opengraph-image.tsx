@@ -55,7 +55,9 @@ export default async function OpenGraphImage() {
         <div style={{ display: "flex", fontSize: 68, fontWeight: 600, letterSpacing: 0 }}>
           {site.name}
         </div>
-        <div style={{ display: "flex", fontSize: 32, color: "#4a4741" }}>{site.role} · UK</div>
+        <div style={{ display: "flex", fontSize: 32, color: "#4a4741" }}>
+          {site.role} · {site.location}, UK
+        </div>
         <div
           style={{
             display: "flex",
@@ -65,8 +67,8 @@ export default async function OpenGraphImage() {
             lineHeight: 1.35,
           }}
         >
-          Founder of Web3 Afrika and freeCodeCamp author, helping developers and builders succeed
-          with AI and Web3.
+          Backend engineer turned developer relations engineer and educator, now building AI agents.
+          Founder of Web3 Afrika and freeCodeCamp author.
         </div>
       </div>
       <div

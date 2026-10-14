@@ -1,10 +1,11 @@
 import { community, education, experience, stack } from "@/data/experience";
-import { interests } from "@/data/interests";
-import { projects, starsFetchedAt } from "@/data/projects";
+import { harnessIntro, projects } from "@/data/projects";
+import { monthYear } from "@/lib/format";
+import { blogPosts, githubFetchedAt, isPrivateRepo, shownStars } from "@/lib/generated";
 import { recognition } from "@/data/recognition";
 import { site } from "@/data/site";
 import { talks } from "@/data/talks";
-import { articles, writingStats } from "@/data/writing";
+import { writingList, writingStats } from "@/data/writing";
 
 /**
  * The llms.txt document (https://llmstxt.org/), composed from the same data
@@ -16,9 +17,9 @@ export function renderLlmsTxt(): string {
 
   push(`# ${site.name}`);
   push("");
-  push(`> ${site.role}, United Kingdom. ${site.disciplines.join(" / ")}.`);
+  push(`> ${site.role}, ${site.location}, United Kingdom. ${site.disciplines.join(" / ")}.`);
   push("");
-  for (const p of site.bio) push(p);
+  for (const p of site.bio) push(p.replace(/==([^=]+)==/g, "$1"));
   push("");
   push(`Handle: ${site.handle}`);
   push(`Site: ${site.url}`);
@@ -26,12 +27,7 @@ export function renderLlmsTxt(): string {
   push(`Email: ${site.email}`);
   push(`Book a call: ${site.bookingUrl}`);
   push(`Status: ${site.status}`);
-  push(`Availability: ${site.availability}`);
-  push("");
-
-  push("## What I do");
-  push("");
-  for (const f of site.functions) push(`- ${f.title}: ${f.text}`);
+  push(`Availability: Available now. ${site.availability} No sponsorship needed in the UK.`);
   push("");
 
   push("## Experience");
@@ -40,42 +36,70 @@ export function renderLlmsTxt(): string {
     push(
       `- ${r.title} at ${r.company} (${r.period}${r.location ? `, ${r.location}` : ""})${r.url ? ` - ${r.url}` : ""}`,
     );
-    if (r.scope) push(`  Scope: ${r.scope}`);
-    for (const h of r.highlights) push(`  - ${h}`);
+    for (const point of r.points) push(`  - ${point}`);
   }
+  push("", "## Community and education", "");
   push(`- Education: ${education.degree}, ${education.school}, ${education.year}`);
-  push(`- Community: ${community.map((c) => `${c.role}, ${c.org}`).join("; ")}`);
+  const line = (c: (typeof community)[number]) =>
+    `${c.role}, ${c.org}${c.note ? ` (${c.note})` : ""}`;
+  push(
+    `- Community, current: ${community
+      .filter((c) => c.current)
+      .map(line)
+      .join("; ")}`,
+  );
+  push(
+    `- Community, past: ${community
+      .filter((c) => !c.current)
+      .map(line)
+      .join("; ")}`,
+  );
+  push("", "## Skills", "");
   for (const g of stack) push(`- ${g.label}: ${g.items.join(", ")}`);
   push("");
 
-  push("## Current tech interests");
+  push("## Projects");
   push("");
-  for (const name of interests) push(`- ${name}`);
-  push("");
-
-  push("## Open source and products");
+  push(`Agent harness: ${harnessIntro}`);
   push("");
   for (const p of projects) {
-    const stars = typeof p.stars === "number" ? ` (${p.stars} stars, ${starsFetchedAt})` : "";
-    push(`- ${p.name}: ${p.description}${stars}${p.href ? ` - ${p.href}` : ""}`);
-    if (p.status) push(`  Status: ${p.status}`);
+    const stars = shownStars(p);
+    const starNote =
+      stars !== null && githubFetchedAt
+        ? ` ${stars} GitHub stars (${monthYear(githubFetchedAt)}).`
+        : "";
+    push(
+      `- ${p.name}${p.group === "harness" ? " (agent harness)" : ""}: ${p.oneLine}${p.proof ? ` ${p.proof}.` : ""}${starNote}`,
+    );
+    const links = p.links.filter((l) => !isPrivateRepo(l.url));
+    push(
+      `  Stack: ${p.stack.join(", ")}.${links.length ? ` Links: ${links.map((l) => `${l.label} ${l.url}`).join(", ")}` : ""}`,
+    );
   }
   push("");
 
   push("## Speaking");
   push("");
   for (const t of talks) {
-    const where = [t.event, t.location, t.year].filter(Boolean).join(", ");
+    // No year or city twice ("Blockfest Africa 2025, 2025"), and no role twice ("Host: Founder and host").
+    const event = t.event.replace(/\s+\d{4}$/, "");
+    const city = t.location && !event.includes(t.location) ? t.location : undefined;
+    const where = [event, city, t.year].filter(Boolean).join(", ");
     const line = t.title ? `${t.title} (${where})` : where;
-    push(`- ${t.kind}: ${line}${t.href ? ` - ${t.href}` : ""}`);
+    const prefix = t.title?.toLowerCase().includes(t.kind.toLowerCase()) ? "" : `${t.kind}: `;
+    push(`- ${prefix}${line}${t.href ? ` - ${t.href}` : ""}`);
   }
   push(`- Speaker profile - ${site.links.sessionize}`);
   push("");
 
   push("## Writing");
   push("");
-  push(`${writingStats.tutorials} tutorials, read ${writingStats.reads} times.`);
-  for (const a of articles) push(`- ${a.title} (${a.outlet}) - ${a.href}`);
+  push(`Tutorials read ${writingStats.reads} times.`);
+  push(
+    `Author pages: freeCodeCamp ${site.links.freecodecamp}, Dev.to ${site.links.devto}, LogRocket ${site.links.logrocket}, Medium ${site.links.medium}`,
+  );
+  for (const a of writingList(blogPosts))
+    push(`- ${a.title} (${a.outlet}, ${monthYear(a.date)}) - ${a.href}`);
   push(`- All writing - ${site.links.blog}`);
   push("");
 
@@ -83,19 +107,18 @@ export function renderLlmsTxt(): string {
   push("");
   for (const r of recognition) {
     push(
-      `- ${r.by}${r.note ? ` (${r.note})` : ""}: "${r.title}" (${r.date})${r.href ? ` - ${r.href}` : ""}`,
+      `- ${r.by}${r.note ? ` (${r.note})` : ""}: "${r.title}" (${/^\d{4}-\d{2}/.test(r.date) ? monthYear(r.date) : r.date})${r.detail ? `. ${r.detail}` : ""}${r.href ? ` - ${r.href}` : ""}`,
     );
   }
   push("");
 
   push("## Contact");
   push("");
-  push(`- Email: ${site.email}`);
-  push(`- Book a call: ${site.bookingUrl}`);
   push(`- LinkedIn: ${site.links.linkedin}`);
   push(`- X: ${site.links.x}`);
   push(`- GitHub: ${site.links.github}`);
   push(`- CV (PDF): ${site.url}${site.resumeUrl}`);
+  push(`- Headshots and photos for organisers and press: ${site.links.photos}`);
   push("");
   push("## Citation");
   push("");
