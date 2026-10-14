@@ -19,8 +19,8 @@ export const hero: { headline: string; intro: string; focus: Focus[] } = {
   intro: site.bio[0],
   focus: [
     {
-      title: "Developer relations",
-      text: "Docs, tutorials, explainer videos, talks and workshops that take developers and builders from first look to shipping.",
+      title: "Developer relations and education",
+      text: "Courses, docs, tutorials, explainer videos, talks and workshops that take developers and builders from first look to shipping.",
     },
     {
       title: "AI agent engineering",

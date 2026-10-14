@@ -36,6 +36,7 @@ export const metadata: Metadata = {
     "olanetsoft",
     "Senior Developer Relations Engineer",
     "Developer Advocate",
+    "Developer Educator",
     "Forward Deployed Engineer",
     "Developer Success",
     "AI Engineer",
@@ -170,6 +171,7 @@ const jsonLd = {
         ),
       knowsAbout: [
         "Developer Relations",
+        "Developer education",
         "Developer Experience",
         "Model Context Protocol",
         "AI agents",
