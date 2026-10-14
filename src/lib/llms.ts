@@ -1,10 +1,10 @@
 import { community, education, experience, stack } from "@/data/experience";
 import { harnessIntro, projects } from "@/data/projects";
-import { githubFetchedAt, isPrivateRepo, starsFor } from "@/lib/generated";
+import { blogPosts, githubFetchedAt, isPrivateRepo, starsFor } from "@/lib/generated";
 import { recognition } from "@/data/recognition";
 import { site } from "@/data/site";
 import { talks } from "@/data/talks";
-import { articles, writingStats } from "@/data/writing";
+import { writingList, writingStats } from "@/data/writing";
 
 /**
  * The llms.txt document (https://llmstxt.org/), composed from the same data
@@ -85,7 +85,7 @@ export function renderLlmsTxt(): string {
   push("## Writing");
   push("");
   push(`${writingStats.tutorials} tutorials, read ${writingStats.reads} times.`);
-  for (const a of articles) push(`- ${a.title} (${a.outlet}, ${a.date}) - ${a.href}`);
+  for (const a of writingList(blogPosts)) push(`- ${a.title} (${a.outlet}, ${a.date}) - ${a.href}`);
   push(`- All writing - ${site.links.blog}`);
   push("");
 

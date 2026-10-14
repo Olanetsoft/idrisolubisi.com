@@ -2044,6 +2044,22 @@ main {
   #recognition .row {
     grid-template-columns: 1fr;
   }
+}
+
+/* Two columns on a tablet leave the titles too narrow beside the date, so the
+   date sits above the title until the frame is wide enough. */
+@media (min-width: 760px) and (max-width: 1023px) {
+  #writing .row {
+    grid-template-columns: 1fr;
+    align-content: start;
+    gap: 0.15rem;
+  }
+  #writing .row-label {
+    padding-top: 0;
+  }
+}
+
+@media (min-width: 760px) {
   .contact-box {
     justify-items: center;
     text-align: center;

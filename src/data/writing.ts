@@ -7,7 +7,7 @@ export type Article = {
   note?: string;
 };
 
-/** Newest first. */
+/** Newest first. Posts from his own blog have outlet "Blog". */
 export const articles: Article[] = [
   {
     title: "Midnight MCP: AI-assisted development for Compact smart contracts",
@@ -20,6 +20,24 @@ export const articles: Article[] = [
     outlet: "freeCodeCamp",
     href: "https://www.freecodecamp.org/news/how-to-fix-the-python-enoent-error-when-setting-up-mcp-servers-a-complete-guide/",
     date: "2025-08",
+  },
+  {
+    title: "Building your first token: a Solidity speedrun",
+    outlet: "Blog",
+    href: "https://blog.idrisolubisi.com/building-your-first-token-a-solidity-speedrun",
+    date: "2025-08",
+  },
+  {
+    title: "How to set up cross-chain messaging between EVM and Cosmos",
+    outlet: "Blog",
+    href: "https://blog.idrisolubisi.com/how-to-set-up-cross-chain-messaging-between-evm-and-cosmos",
+    date: "2024-11",
+  },
+  {
+    title: "How Merkle proofs work",
+    outlet: "Blog",
+    href: "https://blog.idrisolubisi.com/how-merkle-proofs-work",
+    date: "2024-05",
   },
   {
     title: "How to use cloud functions to automate GitHub moderation",
@@ -70,3 +88,15 @@ export const writingStats = {
   tutorials: "40+",
   reads: "10M+",
 };
+
+/**
+ * The curated list plus any blog post newer than its newest entry, so new
+ * posts appear on the next build without editing this file.
+ */
+export function writingList(posts: { title: string; url: string; date: string }[]): Article[] {
+  const newest = articles.reduce((max, a) => (a.date > max ? a.date : max), "");
+  const fresh = posts
+    .filter((p) => p.date > newest)
+    .map((p) => ({ title: p.title, outlet: "Blog", href: p.url, date: p.date }));
+  return [...fresh, ...articles];
+}

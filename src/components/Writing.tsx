@@ -1,5 +1,6 @@
 import { site } from "@/data/site";
-import { articles, platforms, writingStats } from "@/data/writing";
+import { platforms, writingList, writingStats } from "@/data/writing";
+import { blogPosts } from "@/lib/generated";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -27,7 +28,7 @@ export function Writing() {
         </div>
         <div className="box">
           <ul className="rows">
-            {articles.map((a) => (
+            {writingList(blogPosts).map((a) => (
               <li className="row" key={a.href}>
                 <p className="row-label">
                   <time dateTime={a.date}>{monthYear(a.date)}</time>
@@ -45,7 +46,7 @@ export function Writing() {
             ))}
           </ul>
           <p className="row-more">
-            <a href={site.links.blog}>All posts</a>
+            <a href={site.links.blog}>All posts on blog.idrisolubisi.com</a>
           </p>
         </div>
       </div>

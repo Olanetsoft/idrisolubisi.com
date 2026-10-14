@@ -1,6 +1,7 @@
 // Typed access to build-time data written by scripts/fetch-data.mjs.
 // The JSON files are committed, so the site still builds when a fetch fails.
 import githubJson from "@/data/generated/github.json";
+import blogJson from "@/data/generated/blog.json";
 
 export type RepoStats = {
   /** null for private repos or when the stats could not be fetched */
@@ -47,3 +48,10 @@ export function isPrivateRepo(url: string): boolean {
 export function starsFor(repo: string): number | null {
   return statsByKey.get(normalizeRepo(repo))?.stars ?? null;
 }
+
+/** A post from the blog's RSS feed: date as YYYY-MM, newest first. */
+export type BlogPost = { title: string; url: string; date: string };
+
+type BlogFile = { fetchedAt: string | null; feed: string; posts: BlogPost[] };
+const blog: BlogFile = blogJson;
+export const blogPosts: BlogPost[] = blog.posts;

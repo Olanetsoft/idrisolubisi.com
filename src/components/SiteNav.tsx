@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
+import { site } from "@/data/site";
 
 const SECTIONS = [
   { id: "work", label: "Work" },
@@ -62,6 +63,7 @@ export function SiteNav() {
           {s.label}
         </a>
       ))}
+      <a href={site.links.blog}>Blog</a>
     </nav>
   );
 }
@@ -140,6 +142,9 @@ export function MobileMenu() {
             {s.label}
           </a>
         ))}
+        <a href={site.links.blog} onClick={() => setOpen(false)}>
+          Blog
+        </a>
       </nav>
     </>
   );
