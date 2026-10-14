@@ -10,6 +10,12 @@ export type Article = {
 /** Newest first. Posts from his own blog have outlet "Blog". */
 export const articles: Article[] = [
   {
+    title: "Why Africa’s Web3 future must be built on Web2 fundamentals",
+    outlet: "TechCabal",
+    href: "https://techcabal.com/2026/03/26/africas-web3-will-be-built-on-web2/",
+    date: "2026-03",
+  },
+  {
     title: "Midnight MCP: AI-assisted development for Compact smart contracts",
     outlet: "Dev.to",
     href: "https://dev.to/devsofmidnight/midnight-mcp-ai-assisted-development-for-compact-smart-contracts-37i",
@@ -74,6 +80,7 @@ export const articles: Article[] = [
 
 export const platforms = [
   "freeCodeCamp",
+  "TechCabal",
   "LogRocket",
   "Dev.to",
   "Medium",
