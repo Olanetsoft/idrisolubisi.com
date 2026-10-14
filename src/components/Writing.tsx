@@ -16,48 +16,45 @@ export function Writing() {
             <span className="published-label">Published on</span> {platforms.join(", ")}
           </p>
         </div>
-        <div className="box">
-          <ul className="rows">
-            {writingList(blogPosts).map((a) => (
-              <li className="row" key={a.href}>
-                <p className="row-label">
-                  <time dateTime={a.date}>{monthYear(a.date)}</time>
-                </p>
-                <div className="row-body">
-                  <p className="title">
-                    <a href={a.href}>{a.title}</a>
-                  </p>
-                  <p className="meta">
-                    {a.outlet}
-                    {a.note && ` · ${a.note}`}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ul>
-          <p className="row-more more-links">
-            <a href={site.links.blog}>
-              <BrandIcon name="hashnode" />
-              All posts on blog.idrisolubisi.com
-            </a>
-            <a href={site.links.freecodecamp} rel="me">
-              <BrandIcon name="freecodecamp" />
-              freeCodeCamp
-            </a>
-            <a href={site.links.devto} rel="me">
-              <BrandIcon name="devto" />
-              Dev.to
-            </a>
-            <a href={site.links.logrocket}>
-              <UiIcon name="article" />
-              LogRocket
-            </a>
-            <a href={site.links.medium} rel="me">
-              <BrandIcon name="medium" />
-              Medium
-            </a>
-          </p>
-        </div>
+        <ul className="card-grid card-grid--3">
+          {writingList(blogPosts).map((a) => (
+            <li className="wcard card spot tilt" key={a.href}>
+              <p className="card-kicker">
+                <time dateTime={a.date}>{monthYear(a.date)}</time>
+                <span aria-hidden="true">·</span>
+                {a.outlet}
+              </p>
+              <h3 className="card-title">
+                <a className="card-link" href={a.href}>
+                  {a.title}
+                </a>
+              </h3>
+              {a.note && <p className="card-note">{a.note}</p>}
+            </li>
+          ))}
+        </ul>
+        <p className="more-link more-links">
+          <a href={site.links.blog}>
+            <BrandIcon name="hashnode" />
+            All posts on blog.idrisolubisi.com
+          </a>
+          <a href={site.links.freecodecamp} rel="me">
+            <BrandIcon name="freecodecamp" />
+            freeCodeCamp
+          </a>
+          <a href={site.links.devto} rel="me">
+            <BrandIcon name="devto" />
+            Dev.to
+          </a>
+          <a href={site.links.logrocket}>
+            <UiIcon name="article" />
+            LogRocket
+          </a>
+          <a href={site.links.medium} rel="me">
+            <BrandIcon name="medium" />
+            Medium
+          </a>
+        </p>
       </div>
     </section>
   );

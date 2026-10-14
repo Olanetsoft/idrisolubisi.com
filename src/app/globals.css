@@ -1052,11 +1052,12 @@ main {
 .pcard,
 .ccard,
 .highlight,
+.card,
 .socials a {
   background: var(--surface);
   box-shadow: inset 0 1px 0 var(--surface-hi);
 }
-[data-theme="light"] :is(.box, .focus-card, .pcard, .ccard, .highlight, .socials a) {
+[data-theme="light"] :is(.box, .focus-card, .pcard, .ccard, .highlight, .card, .socials a) {
   box-shadow:
     0 1px 0 rgb(28 27 25 / 0.04),
     0 1px 3px rgb(28 27 25 / 0.05);
@@ -1084,7 +1085,8 @@ main {
   .focus-card.tilt:hover,
   .pcard.tilt:hover,
   .ccard.tilt:hover,
-  .highlight.tilt:hover {
+  .highlight.tilt:hover,
+  .card.tilt:hover {
     border-color: var(--line-strong);
     box-shadow:
       inset 0 1px 0 var(--surface-hi),
@@ -1598,22 +1600,21 @@ main {
 
 /* ---------- experience timeline ---------- */
 
-/* Three columns on a wide screen (dates, company and title, what was done),
-   threaded on a rail with a dot per role. The rail draws itself down and each
-   dot lights up as the reader scrolls through. */
-.timeline-box {
-  padding-block: clamp(0.75rem, 2vw, 1.25rem);
-}
+/* Each role is its own card, threaded on a rail with a dot per role. The rail
+   draws itself down and each dot lights up as the reader scrolls through.
+   Inside a card: company, title and dates, then a few short points. */
 .timeline {
   position: relative;
   display: grid;
+  gap: var(--box-gap);
+  padding-left: 1.75rem;
 }
 .timeline::before {
   content: "";
   position: absolute;
   left: 5px;
-  top: 2rem;
-  bottom: 2rem;
+  top: 1.75rem;
+  bottom: 1.75rem;
   width: 1px;
   background: linear-gradient(
     to bottom,
@@ -1624,24 +1625,15 @@ main {
   transform-origin: top;
 }
 .tl-item {
-  position: relative;
   display: grid;
-  grid-template-columns: 9.5rem minmax(0, 17rem) minmax(0, 1fr);
-  gap: 0.3rem 2rem;
+  grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+  gap: 0.75rem 2.5rem;
   align-items: start;
-  padding: 1.35rem 0.75rem 1.35rem 2.25rem;
-  border-radius: var(--box-radius);
-  transition: background-color var(--dur-2) var(--ease);
-}
-@media (hover: hover) {
-  .tl-item:hover {
-    background: var(--spot);
-  }
 }
 .tl-dot {
   position: absolute;
-  left: 0;
-  top: 1.65rem;
+  left: calc(-1.75rem - 1px);
+  top: 1.6rem;
   width: 11px;
   height: 11px;
   border-radius: 50%;
@@ -1652,37 +1644,65 @@ main {
   border-color: var(--tint-2);
   box-shadow: 0 0 0 4px color-mix(in oklab, var(--tint-2) 22%, transparent);
 }
+@media (hover: hover) {
+  .tl-item:hover .tl-dot {
+    border-color: var(--tint-2);
+    background: color-mix(in oklab, var(--tint-2) 35%, var(--bg));
+  }
+}
+.tl-company {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.tl-role {
+  margin-top: 0.2rem;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--text-2);
+}
 .tl-date {
-  padding-top: 0.2rem;
+  margin-top: 0.6rem;
   font: 400 0.75rem/1.5 var(--font-mono-stack);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--text-3);
   font-variant-numeric: tabular-nums;
 }
-.tl-company {
-  font-size: 1.0625rem;
-  font-weight: 600;
-  line-height: 1.35;
-}
-.tl-role {
-  margin-top: 0.15rem;
+.tl-points {
+  display: grid;
+  gap: 0.55rem;
+  max-width: 72ch;
   font-size: 0.9375rem;
-  line-height: 1.45;
+  line-height: 1.6;
   color: var(--text-2);
 }
-.tl-summary mark {
+.tl-points li {
+  position: relative;
+  padding-left: 1.1rem;
+}
+.tl-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.68em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--line-strong);
+  transition: background-color var(--dur-1);
+}
+@media (hover: hover) {
+  .tl-item:hover .tl-points li::before {
+    background: var(--tint-2);
+  }
+}
+.tl-points mark {
   background: none;
   color: var(--text);
   font-weight: 600;
   padding: 0;
   margin: 0;
-}
-.tl-summary {
-  font-size: 0.9375rem;
-  line-height: 1.65;
-  color: var(--text-2);
-  max-width: 70ch;
 }
 @supports (animation-timeline: view()) {
   @keyframes rail {
@@ -1716,79 +1736,41 @@ main {
 }
 @media (max-width: 1023px) {
   .tl-item {
-    grid-template-columns: 8.5rem minmax(0, 1fr);
-  }
-  .tl-summary {
-    grid-column: 2;
+    grid-template-columns: 1fr;
   }
 }
 @media (max-width: 759px) {
-  .tl-item {
-    grid-template-columns: 1fr;
-    gap: 0.25rem;
-    padding: 1.1rem 0.25rem 1.1rem 1.75rem;
+  .timeline {
+    padding-left: 0;
   }
-  .tl-summary {
-    grid-column: 1;
-    margin-top: 0.35rem;
-  }
+  .timeline::before,
   .tl-dot {
-    top: 1.4rem;
+    display: none;
   }
 }
 
-/* Community, under the timeline: current roles marked "Now", then past. */
-.community {
-  margin-top: 1.5rem;
-  padding: 0 0.75rem 0.25rem 2.25rem;
-}
-.community-label {
-  margin-bottom: 1rem;
-}
-.education {
-  margin-top: 1.75rem;
-  padding: 0 0.75rem 0.25rem 2.25rem;
-}
-.education .group-label {
-  margin-bottom: 0.4rem;
-}
-.education-line {
-  font-size: 0.9375rem;
-  color: var(--text-2);
-}
-.timeline-box > .row-more {
-  padding-left: 2.25rem;
-}
+/* Community, under the timeline: smaller cards, current roles marked "Now". */
 .community-list {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.25rem 2rem;
-}
-.community-item {
-  display: grid;
-  grid-template-rows: subgrid;
-  grid-row: span 3;
-  row-gap: 0;
-}
-.community-head {
-  align-self: end;
+  gap: var(--box-gap);
 }
 .community-head {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem 0.5rem;
+  font-size: 1.0625rem;
   font-weight: 600;
-}
-.community-head a {
-  text-decoration: none;
+  line-height: 1.3;
 }
 .community-role {
-  margin-top: 0.15rem;
+  margin-top: 0.35rem;
   font-size: 0.9375rem;
   color: var(--text-2);
 }
 .community-note {
-  margin-top: 0.3rem;
+  margin-top: 0.4rem;
   font-size: 0.875rem;
   line-height: 1.5;
   color: var(--text-3);
@@ -1799,16 +1781,29 @@ main {
   }
 }
 @media (max-width: 759px) {
-  .community,
-  .education {
-    padding-inline: 1.75rem 0.25rem;
-  }
-  .timeline-box > .row-more {
-    padding-left: 1.75rem;
-  }
   .community-list {
     grid-template-columns: 1fr;
   }
+}
+/* Education and the CV link close the section on one line. */
+.exp-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 2rem;
+  margin-top: 1.5rem;
+}
+.education-line {
+  font-size: 0.9375rem;
+  color: var(--text-2);
+}
+.education-line .group-label {
+  display: inline;
+  margin: 0 0.75rem 0 0;
+}
+.exp-foot .more-link {
+  margin-top: 0;
 }
 
 /* Writing: where the tutorials were published, as words, never a logo wall. */
@@ -1837,87 +1832,108 @@ main {
   gap: 0 1.75rem;
 }
 
-/* ---------- boxes of rows: experience, writing, recognition ---------- */
+/* ---------- cards: writing, recognition, community, experience ---------- */
 
-.row {
+/* One item per card, on the same raised surface as the project cards. The
+   title's link stretches over the whole card, and the title draws a line in
+   from the left when the card is hovered. */
+.card {
+  padding: clamp(1.125rem, 2vw, 1.5rem);
+  border: 1px solid var(--box-line);
+  border-radius: var(--box-radius);
+  transition:
+    border-color var(--dur-1),
+    box-shadow 300ms var(--ease),
+    transform 600ms var(--ease);
+}
+@media (hover: hover) {
+  .card:hover {
+    border-color: var(--line-strong);
+  }
+  /* Cards without tilt (the experience timeline) still lift a little. */
+  .card:not(.tilt):hover {
+    transform: translateY(-2px);
+    box-shadow:
+      inset 0 1px 0 var(--surface-hi),
+      0 18px 36px -24px var(--lift-shadow);
+  }
+}
+.card-grid {
   display: grid;
-  grid-template-columns: 168px minmax(0, 1fr);
-  gap: 0.2rem 1.5rem;
+  gap: var(--box-gap);
 }
-.rows > * + * {
-  margin-top: 1.5rem;
+.card-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
-.row-label {
-  padding-top: 0.25rem;
-  font: 400 0.75rem/1.5 var(--font-mono-stack);
-  letter-spacing: 0.04em;
+.card-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 1023px) {
+  .card-grid--3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 759px) {
+  .card-grid--2,
+  .card-grid--3 {
+    grid-template-columns: 1fr;
+  }
+}
+.card-kicker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+  margin-bottom: 0.6rem;
+  font: 500 0.6875rem/1.4 var(--font-mono-stack);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-3);
   font-variant-numeric: tabular-nums;
 }
-.row-body > * + * {
-  margin-top: 0.15rem;
-}
-.row-body p {
-  color: var(--text-2);
-  max-width: 68ch;
-}
-.row-body .title {
-  color: var(--text);
+.card-title {
   font-size: 1.0625rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.4;
+  text-wrap: pretty;
 }
-.row-body .title a {
+.card-note {
+  margin-top: 0.45rem;
+  font-size: 0.875rem;
+  color: var(--text-3);
+}
+.card-link {
   text-decoration: none;
 }
-/* Quiet title links (writing, recognition, community, more builds) draw a
-   1px line in from the left on hover instead of snapping an underline on. */
-.row-body .title a,
-.community-head a,
+.card-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--box-radius);
+}
+.card-link:focus-visible {
+  outline: none;
+}
+.card:has(.card-link:focus-visible) {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+/* Badges sit above the stretched link so they never steal its click. */
+.card .badge {
+  position: relative;
+  pointer-events: none;
+}
+
+/* Quiet title links draw a 1px line in from the left on hover instead of
+   snapping an underline on. */
+.card-link,
 .ccard-name .ccard-link {
   background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
   transition: background-size 280ms var(--ease);
 }
 @media (hover: hover) {
-  .row-body .title a:hover,
-  .community-head a:hover,
+  .card:hover .card-link,
   .ccard:hover .ccard-name .ccard-link {
     background-size: 100% 1px;
-  }
-}
-.company {
-  font-weight: 600;
-}
-.role-title {
-  color: var(--text-2);
-}
-.row-more {
-  margin-top: 1.25rem;
-}
-/* Wrapped rows of links sit far enough apart that their 44px tap areas never overlap. */
-.row-more.more-links {
-  row-gap: 1.3rem;
-}
-.row-more a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding-block: 0.65rem;
-  margin-block: -0.65rem;
-  font-size: 0.9375rem;
-  color: var(--text-2);
-}
-@media (max-width: 759px) {
-  .row {
-    grid-template-columns: 1fr;
-    gap: 0.15rem;
-  }
-  .row-label {
-    padding-top: 0;
-  }
-  .rows > * + * {
-    margin-top: 1.25rem;
   }
 }
 
@@ -2178,6 +2194,7 @@ body:has(.contact-box) .footer-handles {
   .pcard,
   .ccard,
   .highlight,
+  .card,
   .video,
   .section .box {
     animation: rise linear both;
@@ -2188,6 +2205,7 @@ body:has(.contact-box) .footer-handles {
   .pcard:focus-within,
   .ccard:focus-within,
   .highlight:focus-within,
+  .card:focus-within,
   .video:focus-within,
   .section .box:focus-within {
     animation: none;
@@ -2252,41 +2270,6 @@ body:has(.contact-box) .footer-handles {
   }
 }
 
-/* ---------- wide screens: fill the frames ---------- */
-
-@media (min-width: 760px) {
-  #writing .rows,
-  #recognition .rows {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.75rem 3rem;
-  }
-  #writing .rows > * + *,
-  #recognition .rows > * + * {
-    margin-top: 0;
-  }
-  #writing .row {
-    grid-template-columns: 6rem minmax(0, 1fr);
-  }
-  #recognition .row {
-    grid-template-columns: 1fr;
-    align-content: start;
-  }
-}
-
-/* Two columns on a tablet leave the titles too narrow beside the date, so the
-   date sits above the title until the frame is wide enough. */
-@media (min-width: 760px) and (max-width: 1023px) {
-  #writing .row {
-    grid-template-columns: 1fr;
-    align-content: start;
-    gap: 0.15rem;
-  }
-  #writing .row-label {
-    padding-top: 0;
-  }
-}
-
 /* ---------- phones ---------- */
 
 @media (max-width: 759px) {
@@ -2311,10 +2294,6 @@ body:has(.contact-box) .footer-handles {
     animation: none;
     padding: var(--box-pad);
   }
-  /* Experience text gets the width it needs. */
-  .timeline-box {
-    padding-inline: 0.75rem;
-  }
   /* The hero grid frames the name and fades out before the intro. */
   .hero-bg {
     -webkit-mask-image: radial-gradient(130% 440px at 50% 0, #000 30%, transparent 100%);
@@ -2324,11 +2303,6 @@ body:has(.contact-box) .footer-handles {
   .label-link {
     padding-block: 0.875rem;
     margin-block: -0.875rem;
-  }
-  .community-head a {
-    padding-block: 9px;
-    margin-block: -9px;
-    background-origin: content-box;
   }
   .footer-nav a,
   .footer-handles a {
@@ -2415,10 +2389,8 @@ body:has(.contact-box) .footer-handles {
   .focus-card,
   .pcard,
   .ccard,
-  .tl-item,
+  .card,
   .stage,
-  .row,
-  .community-item,
   .video,
   .highlight,
   .section-head,
