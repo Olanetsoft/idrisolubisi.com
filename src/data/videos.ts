@@ -1,9 +1,10 @@
 /**
  * The recordings shown under "Talks and workshops": a hand-picked mix across
- * the career rather than the latest uploads. Two Midnight tutorials (the most
- * watched), two Axelar workshops, an MCP workshop and an explainer. Every one
- * was checked to be public, with Idris on camera. Titles are cleaned up for
- * the card; no em-dashes.
+ * the career rather than the latest uploads. Midnight tutorials (the most
+ * watched) and his Midnight MCP explainer, Axelar workshops, an MCP workshop,
+ * an explainer and a DevRel interview. Every one was checked to be public, with Idris on camera.
+ * Titles are cleaned up for the card; no em-dashes. Ordered so neighbours in
+ * the 3x3 grid differ.
  */
 export type FeaturedVideo = {
   /** YouTube video id; the thumbnail and link are built from it. */
@@ -27,13 +28,6 @@ export const featuredVideos: FeaturedVideo[] = [
     year: "2026",
   },
   {
-    id: "v11GCdJ5ELE",
-    title: "Build a Multichain RWA Lending Platform",
-    kind: "Workshop",
-    context: "Axelar x Moralis",
-    year: "2024",
-  },
-  {
     id: "oBxiSKL4NeA",
     title: "Build and Ship Your First MCP Server",
     kind: "Workshop",
@@ -42,11 +36,25 @@ export const featuredVideos: FeaturedVideo[] = [
     start: 828,
   },
   {
-    id: "M6JfvY4-APE",
-    title: "Build a Farcaster Frame That Sends Multichain Messages",
+    id: "v11GCdJ5ELE",
+    title: "Build a Multichain RWA Lending Platform",
     kind: "Workshop",
-    context: "Axelar GMP",
+    context: "Axelar x Moralis",
     year: "2024",
+  },
+  {
+    id: "j6KF0qWJw08",
+    title: "Tracking and Troubleshooting Cross-Chain Transactions",
+    kind: "Workshop",
+    context: "Axelar",
+    year: "2024",
+  },
+  {
+    id: "oGDSMDejUkE",
+    title: "Midnight MCP: The AI Tool That Understands Compact",
+    kind: "Explainer",
+    context: "Midnight",
+    year: "2026",
   },
   {
     id: "u9jnQJQITfs",
@@ -54,6 +62,20 @@ export const featuredVideos: FeaturedVideo[] = [
     kind: "Explainer",
     context: "AI tools",
     year: "2026",
+  },
+  {
+    id: "f-rWEHVmfDw",
+    title: "Navigating DevRel in 2025",
+    kind: "Interview",
+    context: "Developer relations",
+    year: "2025",
+  },
+  {
+    id: "M6JfvY4-APE",
+    title: "Build a Farcaster Frame That Sends Multichain Messages",
+    kind: "Workshop",
+    context: "Axelar GMP",
+    year: "2024",
   },
   {
     id: "5BGkt7d6fNw",

@@ -31,7 +31,7 @@ function Badge({ badge }: { badge: NonNullable<Project["badge"]> }) {
 function FeaturedCard({ project }: { project: Project }) {
   const stars = starsOf(project);
   return (
-    <li className="pcard" id={project.key}>
+    <li className="pcard spot tilt" id={project.key}>
       <div className="pcard-top">
         <span className="pcard-layer">[ {project.layer} ]</span>
         {project.badge && <Badge badge={project.badge} />}
@@ -66,7 +66,7 @@ function CompactCard({ project }: { project: Project }) {
   const stars = starsOf(project);
   const [primary, ...rest] = publicLinks(project);
   return (
-    <li className="ccard" id={project.key}>
+    <li className="ccard spot tilt" id={project.key}>
       <div className="ccard-top">
         <h3 className="ccard-name">
           {primary ? (
@@ -81,22 +81,22 @@ function CompactCard({ project }: { project: Project }) {
       </div>
       <p className="ccard-what">{project.oneLine}</p>
       {project.proof && <p className="ccard-proof">{project.proof}</p>}
-      <ul className="ccard-stack" aria-label="Stack">
+      <ul className="chips chips--sm" aria-label="Stack">
         {project.stack.map((item) => (
-          <li key={item}>
+          <li className="chip" key={item}>
             <StackIcon item={item} />
             {item}
           </li>
         ))}
-        {stars !== null && <li className="stars">{number.format(stars)} stars</li>}
       </ul>
-      {rest.length > 0 && (
-        <p className="ccard-more">
+      {(rest.length > 0 || stars !== null) && (
+        <p className="ccard-foot">
           {rest.map((l) => (
             <a key={l.url} href={l.url}>
               {l.label}
             </a>
           ))}
+          {stars !== null && <span className="stars">{number.format(stars)} stars</span>}
         </p>
       )}
     </li>
@@ -127,6 +127,10 @@ export function Projects() {
         </ul>
         <p className="group-label">
           More builds <span aria-hidden="true">·</span> {more.length}
+          <span className="swipe-hint" aria-hidden="true">
+            {" "}
+            · swipe
+          </span>
         </p>
         <ul className="more">
           {more.map((p) => (

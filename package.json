@@ -7,14 +7,15 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/fetch-data.mjs",
+    "prebuild": "node scripts/fetch-data.mjs && node scripts/build-icons.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
     "cv": "node scripts/refresh-cv.mjs",
-    "data": "node scripts/fetch-data.mjs"
+    "data": "node scripts/fetch-data.mjs",
+    "icons": "node scripts/build-icons.mjs"
   },
   "dependencies": {
     "@next/third-parties": "^16.3.4",

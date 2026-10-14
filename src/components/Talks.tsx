@@ -50,7 +50,7 @@ export function Talks() {
                 className="video-link"
                 href={`https://www.youtube.com/watch?v=${v.id}${v.start ? `&t=${v.start}s` : ""}`}
               >
-                <span className="video-thumb">
+                <span className="video-thumb tilt">
                   <Image
                     src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`}
                     alt=""
@@ -58,14 +58,11 @@ export function Talks() {
                     height={360}
                     sizes="(max-width: 759px) 128px, (max-width: 1023px) 45vw, 336px"
                   />
-                  <span className="video-badge">
-                    <BrandIcon name="youtube" size={22} />
-                  </span>
                 </span>
                 <span className="video-text">
                   <span className="video-title">{v.title}</span>
                   <span className="video-meta">
-                    {v.kind} <span aria-hidden="true">·</span> {v.context}{" "}
+                    {v.kind}&nbsp;<span aria-hidden="true">·</span> {v.context}&nbsp;
                     <span aria-hidden="true">·</span> {v.year}
                   </span>
                 </span>

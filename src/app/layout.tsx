@@ -196,6 +196,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt" />
+        <link rel="preload" href="/icons.svg" as="image" type="image/svg+xml" />
         {process.env.NODE_ENV === "production" && (
           <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
         )}

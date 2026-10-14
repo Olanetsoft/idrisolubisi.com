@@ -1,7 +1,12 @@
 import { experience } from "@/data/experience";
 import { site } from "@/data/site";
+import { RichText } from "./RichText";
 
-/** Dates, company, title and one paragraph on everything done in the role. The CV carries the full detail. */
+/**
+ * A timeline: dates, then company and title, then one paragraph on everything
+ * done in the role, spread across the width so it reads as three columns on
+ * a wide screen. The CV carries the full detail.
+ */
 export function Experience() {
   return (
     <section className="section" id="experience" aria-labelledby="experience-title">
@@ -13,18 +18,19 @@ export function Experience() {
           </h2>
           <p className="lede">Seven years in backend engineering and developer relations.</p>
         </div>
-        <div className="box">
-          <ol className="rows">
+        <div className="box timeline-box">
+          <ol className="timeline">
             {experience.map((r) => (
-              <li className="row" key={`${r.company}-${r.period}`}>
-                <p className="row-label">{r.period}</p>
-                <div className="row-body">
-                  <h3 className="title">
-                    <span className="company">{r.company}</span>
-                    <span className="role-title">, {r.title}</span>
-                  </h3>
-                  <p className="row-summary">{r.summary}</p>
+              <li className="tl-item" key={`${r.company}-${r.period}`}>
+                <span className="tl-dot" aria-hidden="true" />
+                <p className="tl-date">{r.period}</p>
+                <div className="tl-head">
+                  <h3 className="tl-company">{r.company}</h3>
+                  <p className="tl-role">{r.title}</p>
                 </div>
+                <p className="tl-summary">
+                  <RichText text={r.summary} />
+                </p>
               </li>
             ))}
           </ol>
