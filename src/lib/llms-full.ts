@@ -162,6 +162,7 @@ export function renderLlmsFullTxt(): string {
   push(`- Email: ${site.email}`);
   push(`- Book a call: ${site.bookingUrl}`);
   push(`- CV (PDF): ${site.url}${site.resumeUrl}`);
+  push(`- Headshots and photos for organisers and press: ${site.links.photos}`);
   push("");
 
   push("## Sources", "");

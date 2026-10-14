@@ -670,13 +670,15 @@ figure {
   content: "·" / "";
   margin-right: 0.625rem;
 }
-@media (max-width: 520px) {
-  .status-item:last-child {
-    flex-basis: 100%;
-    padding-left: calc(6px + 0.625rem);
+/* Phones: slightly smaller so the three items stay on one line at 360px. */
+@media (max-width: 480px) {
+  .status-label {
+    gap: 0.25rem 0.5rem;
+    font-size: 0.6875rem;
+    letter-spacing: 0.06em;
   }
-  .status-item:last-child::before {
-    content: none;
+  .status-item + .status-item::before {
+    margin-right: 0.5rem;
   }
 }
 .live-dot {
@@ -695,6 +697,25 @@ figure {
   border: 1px solid var(--live);
   opacity: 0;
   animation: ping 2.4s var(--ease) 600ms 1;
+}
+.live-dot::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid var(--live);
+  opacity: 0;
+}
+.status-label .live-dot + .status-item {
+  transition: color var(--dur-2);
+}
+@media (hover: hover) {
+  .status-label:hover .live-dot::before {
+    animation: ping 1.4s var(--ease) 1;
+  }
+  .status-label:hover .live-dot + .status-item {
+    color: var(--live);
+  }
 }
 @keyframes ping {
   from {
@@ -1311,6 +1332,28 @@ main {
 .copy-button:hover {
   color: var(--text);
 }
+/* After a copy: "Copied" in live green, and the command box or email
+   underline follows for the same moment, then everything settles back. */
+.cmd,
+.email {
+  transition:
+    border-color var(--dur-2),
+    text-decoration-color var(--dur-2);
+}
+.cmd button,
+.copy-button {
+  transition: color var(--dur-2);
+}
+.cmd[data-copied] {
+  border-color: color-mix(in oklab, var(--live) 60%, var(--box-line));
+}
+.cmd[data-copied] button,
+.copy-button[data-copied] {
+  color: var(--live);
+}
+.contact-email:has(.copy-button[data-copied]) .email {
+  text-decoration-color: var(--live);
+}
 
 /* Compact cards: the whole card is one link (the name's link is stretched),
    and the stack is one quiet mono line. */
@@ -1560,6 +1603,7 @@ main {
   gap: 1.25rem 2.5rem;
 }
 .stage {
+  position: relative;
   display: grid;
   grid-template-columns: 3.25rem minmax(0, 1fr);
   gap: 0 0.75rem;
@@ -1569,6 +1613,7 @@ main {
   font: 400 0.75rem/1.5 var(--font-mono-stack);
   color: var(--text-3);
   font-variant-numeric: tabular-nums;
+  transition: color var(--dur-1);
 }
 .stage-body {
   display: grid;
@@ -1584,6 +1629,33 @@ main {
 }
 .stage-event a:hover {
   text-decoration-color: currentColor;
+}
+.stage-event a::after {
+  content: "";
+  position: absolute;
+  inset: -0.5rem -0.75rem;
+  border-radius: var(--box-radius);
+}
+.stage::before {
+  content: "";
+  position: absolute;
+  inset: -0.5rem -0.75rem;
+  border-radius: var(--box-radius);
+  background: var(--spot);
+  opacity: 0;
+  transition: opacity var(--dur-1);
+  pointer-events: none;
+}
+@media (hover: hover) {
+  .stage:has(a):hover::before {
+    opacity: 1;
+  }
+  .stage:has(a):hover .stage-event a {
+    text-decoration-color: currentColor;
+  }
+  .stage:has(a):hover .stage-year {
+    color: var(--text);
+  }
 }
 .stage-role {
   font-size: 0.875rem;
@@ -1983,6 +2055,9 @@ main {
   display: grid;
   gap: 1rem;
   justify-items: start;
+}
+.contact-box .press-photos {
+  margin-top: 0.25rem;
 }
 .contact-actions {
   display: flex;

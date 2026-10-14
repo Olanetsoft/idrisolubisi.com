@@ -1,14 +1,36 @@
 import { site } from "@/data/site";
+import { githubFollowers } from "@/lib/generated";
 import { CopyButton } from "./CopyCommand";
-import { BrandIcon, type BrandName } from "./icons";
+import { BrandIcon, UiIcon, type BrandName } from "./icons";
 import { SectionLabel } from "./SectionLabel";
 
+/** "1,300+" from the live count, rounded down to the hundred so it never overstates. */
+const roundedDown = (n: number | null) =>
+  n === null ? undefined : `${new Intl.NumberFormat("en-GB").format(Math.floor(n / 100) * 100)}+`;
+
+const followers = (count?: string) => (count ? `${count} followers` : undefined);
+
 const SOCIALS: { label: string; href: string; icon: BrandName; note?: string }[] = [
-  { label: "LinkedIn", href: site.links.linkedin, icon: "linkedin" },
-  { label: "GitHub", href: site.links.github, icon: "github" },
-  { label: "X", href: site.links.x, icon: "x", note: `${site.profile.xFollowers} followers` },
+  {
+    label: "LinkedIn",
+    href: site.links.linkedin,
+    icon: "linkedin",
+    note: followers(site.profile.linkedinFollowers),
+  },
+  {
+    label: "GitHub",
+    href: site.links.github,
+    icon: "github",
+    note: followers(roundedDown(githubFollowers)),
+  },
+  { label: "X", href: site.links.x, icon: "x", note: followers(site.profile.xFollowers) },
   { label: "YouTube", href: site.links.youtube, icon: "youtube" },
-  { label: "Blog", href: site.links.blog, icon: "hashnode" },
+  {
+    label: "Blog",
+    href: site.links.blog,
+    icon: "hashnode",
+    note: followers(site.profile.hashnodeFollowers),
+  },
 ];
 
 export function Contact() {
@@ -20,7 +42,7 @@ export function Contact() {
           <p className="lede">For roles, speaking or advising.</p>
         </div>
         <div className="box contact-box">
-          <p className="availability">{site.availability}</p>
+          <p className="availability">{site.availability} No sponsorship needed in the UK.</p>
           <div className="contact-actions">
             <a className="btn btn--primary" href={site.bookingUrl}>
               Book a 30-min call
@@ -43,6 +65,12 @@ export function Contact() {
               </li>
             ))}
           </ul>
+          <p className="more-link press-photos">
+            <a href={site.links.photos}>
+              <UiIcon name="image" />
+              Headshots and photos for organisers and press
+            </a>
+          </p>
         </div>
       </div>
     </section>

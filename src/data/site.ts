@@ -26,6 +26,9 @@ export const site = {
     languages: ["English", "Yoruba"],
     writingSince: "2020",
     xFollowers: "27,000+",
+    /** His LinkedIn and Hashnode follower counts, shown in Contact once he confirms them. */
+    linkedinFollowers: undefined as string | undefined,
+    hashnodeFollowers: undefined as string | undefined,
   },
   /** The longer summary for /llms-full.txt. Every figure here is also on the page. */
   summary:
@@ -62,6 +65,8 @@ export const site = {
     medium: "https://medium.com/@olanetsoft",
     linktree: "https://linktr.ee/olanetsoft",
     source: "https://github.com/Olanetsoft/idrisolubisi.com",
+    /** Public Google Drive gallery: headshots and event photos for organisers and press. */
+    photos: "https://drive.google.com/drive/folders/13CfM9w-Axf46n5B4a06F1M3M7SZ7yJcd",
     web3afrika: "https://web3afrika.com/",
   },
 } as const;

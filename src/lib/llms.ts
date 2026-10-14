@@ -118,6 +118,7 @@ export function renderLlmsTxt(): string {
   push(`- X: ${site.links.x}`);
   push(`- GitHub: ${site.links.github}`);
   push(`- CV (PDF): ${site.url}${site.resumeUrl}`);
+  push(`- Headshots and photos for organisers and press: ${site.links.photos}`);
   push("");
   push("## Citation");
   push("");

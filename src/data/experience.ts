@@ -95,7 +95,7 @@ export const experience: Role[] = [
     title: "Backend Engineer (promoted to backend team lead)",
     highlights: [
       "Built most of the backend infrastructure and shipped the MVP.",
-      "Led technical programmes, system design, code reviews, documentation and architecture decisions.",
+      "Then led technical programmes, system design, code reviews, documentation and architecture decisions.",
       "Designed an automated data lake processing ==100 GB+ a month==.",
       "Improved performance ==50%== with GraphQL, Node.js, Neo4j and Elasticsearch, and automated workflows saving ==1,000+ hours a year==.",
     ],
@@ -112,7 +112,7 @@ export const experience: Role[] = [
     title: "Software Developer / Support Analyst",
     highlights: [
       "Built .NET Core and SharePoint solutions for Access Bank, MTN Nigeria (part of MTN Group, Africa’s largest mobile operator) and NPDC (the exploration and production arm of NNPC, Nigeria’s national oil company).",
-      "Automated processes that saved ==900+ hours a year==.",
+      "Automated processes for these clients, saving ==900+ hours a year==.",
       "Ran test-to-production deployments and database migrations with ==zero data loss==.",
       "Provided technical support and issue resolution, and wrote handover docs.",
     ],

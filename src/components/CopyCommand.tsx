@@ -59,7 +59,7 @@ export function CopyCommand({ command }: { command: string }) {
   };
 
   return (
-    <div className="cmd">
+    <div className="cmd" data-copied={copied || undefined}>
       <span className="cmd-prompt" aria-hidden="true">
         $
       </span>
@@ -82,6 +82,7 @@ export function CopyButton({ value, label }: { value: string; label: string }) {
       <button
         type="button"
         className="copy-button"
+        data-copied={copied || undefined}
         aria-label={label}
         onClick={async () => {
           if (await copyText(value)) flash();
