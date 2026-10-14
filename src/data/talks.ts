@@ -22,8 +22,9 @@ export const talks: Talk[] = [
   },
   {
     event: "Midnight",
-    title: "AI-assisted developer tooling and a demo of the Midnight MCP server",
-    year: "2025",
+    title:
+      "Bi-weekly fireside chats on AI-assisted developer tooling, including a demo of the Midnight MCP server",
+    year: "2025–26",
     kind: "Fireside chat",
   },
   {
