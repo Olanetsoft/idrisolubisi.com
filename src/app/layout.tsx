@@ -218,7 +218,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
         )}
       </head>
-      <body id="top">
+      {/* Extensions such as Grammarly add attributes to <body> before React loads;
+          this ignores those attribute differences on this one element only. */}
+      <body id="top" suppressHydrationWarning>
         <a className="skip-link" href="#main">
           Skip to content
         </a>
