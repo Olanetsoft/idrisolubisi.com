@@ -1,6 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState, type CSSProperties } from "react";
+import {
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type RefObject,
+} from "react";
 import { usePathname } from "next/navigation";
 import { site } from "@/data/site";
 
@@ -55,8 +62,11 @@ export function SiteNav() {
   const onHome = pathname === "/";
   const base = onHome ? "" : "/";
   const active = useActiveSection(onHome);
+  const navRef = useRef<HTMLElement>(null);
+  const barRef = useRef<HTMLSpanElement>(null);
+  useGlideIndicator(active, navRef, barRef);
   return (
-    <nav className="site-nav" aria-label="Sections">
+    <nav className="site-nav" aria-label="Sections" ref={navRef} data-glide="">
       {SECTIONS.map((s) => (
         <a
           key={s.id}
@@ -67,8 +77,45 @@ export function SiteNav() {
         </a>
       ))}
       <a href={site.links.blog}>Blog</a>
+      <span className="nav-indicator" aria-hidden="true" ref={barRef} />
     </nav>
   );
+}
+
+/**
+ * One underline that glides from section to section as the reader scrolls,
+ * instead of jumping. It appears in place (no slide in from the left) when a
+ * section first becomes current, and follows the link if the layout changes.
+ */
+function useGlideIndicator(
+  active: string | null,
+  navRef: RefObject<HTMLElement | null>,
+  barRef: RefObject<HTMLSpanElement | null>,
+) {
+  const shown = useRef(false);
+  useLayoutEffect(() => {
+    const nav = navRef.current;
+    const bar = barRef.current;
+    if (!nav || !bar) return;
+    const place = (animate: boolean) => {
+      const link = nav.querySelector<HTMLElement>("a[aria-current]");
+      if (!link) {
+        bar.dataset.on = "false";
+        shown.current = false;
+        return;
+      }
+      if (!animate || !shown.current) bar.dataset.snap = "";
+      bar.style.setProperty("--ind-x", `${link.offsetLeft}px`);
+      bar.style.setProperty("--ind-w", `${link.offsetWidth}px`);
+      bar.dataset.on = "true";
+      shown.current = true;
+      requestAnimationFrame(() => delete bar.dataset.snap);
+    };
+    place(true);
+    const ro = new ResizeObserver(() => place(false));
+    ro.observe(nav);
+    return () => ro.disconnect();
+  }, [active, navRef, barRef]);
 }
 
 /** The name in the header: back to the top on the home page, home elsewhere. */

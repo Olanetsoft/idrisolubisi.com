@@ -4,6 +4,7 @@ import { talks } from "@/data/talks";
 import { featuredVideos } from "@/data/videos";
 import { BrandIcon } from "./icons";
 import { SectionLabel } from "./SectionLabel";
+import { VideoDialog } from "./VideoDialog";
 
 type Talk = (typeof talks)[number];
 
@@ -49,6 +50,7 @@ export function Talks() {
           <SectionLabel id="talks">Talks and workshops</SectionLabel>
           <p className="lede">Tutorials, workshops and explainers.</p>
         </div>
+        <VideoDialog />
         <ul className="highlights">
           {highlights.map((t) => (
             <li key={t.event} className="highlight spot tilt">
@@ -68,6 +70,9 @@ export function Talks() {
               <a
                 className="video-link"
                 href={`https://www.youtube.com/watch?v=${v.id}${v.start ? `&t=${v.start}s` : ""}`}
+                data-video-id={v.id}
+                data-video-start={v.start}
+                data-video-title={v.title}
               >
                 <span className="video-thumb tilt">
                   <Image

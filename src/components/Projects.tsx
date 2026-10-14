@@ -2,6 +2,7 @@ import { harnessIntro, projects, type Project } from "@/data/projects";
 import { site } from "@/data/site";
 import { isPrivateRepo, shownStars } from "@/lib/generated";
 import { CopyCommand } from "./CopyCommand";
+import { ChipMatch } from "./ChipMatch";
 import { SwipeCount } from "./SwipeCount";
 import { BrandIcon, STACK_ICONS, UiIcon } from "./icons";
 import { SectionLabel } from "./SectionLabel";
@@ -37,7 +38,7 @@ function FeaturedCard({ project }: { project: Project }) {
       {project.proof && <p className="pcard-proof">{project.proof}</p>}
       <ul className="chips" aria-label="Stack">
         {project.stack.map((s) => (
-          <li className="chip" key={s}>
+          <li className="chip" key={s} data-chip={s}>
             <StackIcon item={s} />
             {s}
           </li>
@@ -83,7 +84,7 @@ function CompactCard({ project }: { project: Project }) {
       {project.proof && <p className="ccard-proof">{project.proof}</p>}
       <ul className="chips chips--sm" aria-label="Stack">
         {project.stack.map((item) => (
-          <li className="chip" key={item}>
+          <li className="chip" key={item} data-chip={item}>
             <StackIcon item={item} />
             {item}
           </li>
@@ -112,6 +113,7 @@ export function Projects() {
       <div className="container">
         <div className="section-head">
           <SectionLabel id="work">Projects</SectionLabel>
+          <ChipMatch />
           <p className="lede">The agent harness, end to end.</p>
           <p className="lede-sub">{harnessIntro}</p>
         </div>

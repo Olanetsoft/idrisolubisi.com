@@ -309,6 +309,7 @@ figure {
   opacity: 1 !important;
 }
 .site-nav {
+  position: relative;
   display: flex;
   gap: 1.25rem;
 }
@@ -328,6 +329,32 @@ figure {
   text-decoration-thickness: 1px;
   text-underline-offset: 0.5em;
   text-decoration-color: var(--text-3);
+}
+/* With script, one underline glides between links instead of each link
+   drawing its own. */
+.site-nav[data-glide] a[aria-current] {
+  text-decoration: none;
+}
+.nav-indicator {
+  position: absolute;
+  left: 0;
+  bottom: 9px;
+  width: var(--ind-w, 0);
+  height: 1px;
+  background: var(--text-3);
+  transform: translateX(var(--ind-x, 0));
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 420ms var(--ease),
+    width 420ms var(--ease),
+    opacity var(--dur-2);
+}
+.nav-indicator[data-on="true"] {
+  opacity: 1;
+}
+.nav-indicator[data-snap] {
+  transition: opacity var(--dur-2);
 }
 .site-header-actions {
   display: flex;
@@ -1296,6 +1323,27 @@ main {
   border: 1px solid var(--box-line);
   border-radius: 6px;
   color: var(--text-2);
+  transition:
+    color var(--dur-1),
+    border-color var(--dur-1),
+    background-color var(--dur-1);
+}
+/* Pointing at a chip lights the same chip on every project that uses it,
+   and the other projects step back (see ChipMatch.tsx). */
+.ccard .chips {
+  position: relative;
+}
+/* A filter, not opacity: the scroll reveal animates opacity and would win. */
+:is(.pcard, .ccard) {
+  transition-property: border-color, box-shadow, transform, filter;
+}
+#work[data-chip] :is(.pcard, .ccard):not(.more-tail):not([data-chip-match]) {
+  filter: opacity(0.4);
+}
+#work[data-chip] .chip[data-chip-match] {
+  color: var(--text);
+  border-color: var(--line-strong);
+  background: var(--spot);
 }
 
 .cmd {
@@ -1536,6 +1584,86 @@ main {
   .video-title {
     font-size: 0.9375rem;
   }
+}
+
+/* Videos play on the page, in a dialog over a dimmed backdrop. */
+.video-dialog {
+  width: min(960px, calc(100vw - 2 * var(--gutter)));
+  max-width: none;
+  padding: 0;
+  border: 1px solid var(--box-line);
+  border-radius: var(--box-radius);
+  background: var(--bg);
+  color: var(--text);
+  box-shadow: 0 30px 80px -30px rgb(0 0 0 / 0.6);
+}
+.video-dialog[open] {
+  animation: dialog-in 260ms var(--ease) both;
+}
+.video-dialog::backdrop {
+  background: rgb(0 0 0 / 0.72);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.video-dialog-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+}
+.video-dialog-title {
+  min-width: 0;
+  font-size: 0.9375rem;
+  color: var(--text-2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.video-dialog-close {
+  flex: none;
+  min-height: 44px;
+  padding: 0 0.75rem;
+  background: none;
+  border: 0;
+  color: var(--text-2);
+  font: 500 0.75rem/1 var(--font-mono-stack);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.video-dialog-close:hover {
+  color: var(--text);
+}
+.video-dialog-frame {
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+.video-dialog-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-dialog-foot {
+  padding: 0.25rem 1rem 0.5rem;
+  font-size: 0.875rem;
+}
+.video-dialog-foot a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--text-2);
 }
 
 /* Talks opens with two cards: the latest appearance and the keynote. They
