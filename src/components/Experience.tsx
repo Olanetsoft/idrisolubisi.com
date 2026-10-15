@@ -1,13 +1,18 @@
 import { community, education, experience } from "@/data/experience";
 import { site } from "@/data/site";
-import { RichText } from "./RichText";
 import { UiIcon } from "./icons";
 import { SectionLabel } from "./SectionLabel";
+import { WorkCard } from "./WorkCard";
+
+/** "Feb 2021–Dec 2021" becomes "2021"; "Apr 2023–Aug 2025" becomes "2023–2025". */
+function years(period: string): string {
+  const [from, to] = period.split("–").map((part) => part.match(/\d{4}/)?.[0]);
+  return !to || from === to ? (from ?? period) : `${from}–${to}`;
+}
 
 /**
- * A timeline of cards: each role is its own card on a rail, with company,
- * title and dates, then a few short points with the figures in bold. The
- * community roles follow as smaller cards. The CV carries the full detail.
+ * Experience as a short list: title, company and years for each role. The
+ * CV carries the detail. Community follows as picture cards.
  */
 export function Experience() {
   return (
@@ -17,37 +22,37 @@ export function Experience() {
           <SectionLabel id="experience">Experience</SectionLabel>
           <p className="lede">Seven years in backend engineering and developer relations.</p>
         </div>
-        <ol className="timeline">
+        <ol className="xp-list">
           {experience.map((r) => (
-            <li className="tl-item card spot" key={`${r.company}-${r.period}`}>
-              <span className="tl-dot" aria-hidden="true" />
-              <div className="tl-head">
-                <h3 className="tl-company">{r.company}</h3>
-                <p className="tl-role">{r.title}</p>
-                <p className="tl-date">{r.period}</p>
-              </div>
-              <ul className="tl-points">
-                {r.highlights.map((h) => (
-                  <li key={h}>
-                    <RichText text={h} />
-                  </li>
-                ))}
-              </ul>
+            <li className="xp-row" key={`${r.company}-${r.period}`}>
+              <span className="xp-title">{r.title}</span>
+              <span className="xp-where">
+                <span className="xp-company">{r.company}</span>
+                <span className="xp-years">
+                  <span className="sr-only">, </span>
+                  {years(r.period)}
+                </span>
+              </span>
             </li>
           ))}
         </ol>
-        <h3 className="group-label">Community</h3>
-        <ul className="community-list">
+        <h3 className="group-label">
+          Community <span aria-hidden="true">·</span> {community.length}
+        </h3>
+        <ul className="community-grid">
           {community.map((c) => (
-            <li className="community-item card spot tilt" key={c.org}>
-              <p className="community-head">
-                <a className="card-link" href={c.href}>
-                  {c.org}
-                </a>
-                {c.current && <span className="badge badge--live">Now</span>}
-              </p>
-              <p className="community-role">{c.role}</p>
-              {c.note && <p className="community-note">{c.note}</p>}
+            <li key={c.org}>
+              <WorkCard
+                href={c.href}
+                image={c.image}
+                sizes="(max-width: 1023px) 44vw, (max-width: 1295px) 21vw, 272px"
+                tag={c.role}
+                name={c.org}
+                badge={c.current && <span className="badge badge--live">Now</span>}
+                line={c.summary}
+                srExtra={c.role}
+                size="sm"
+              />
             </li>
           ))}
         </ul>

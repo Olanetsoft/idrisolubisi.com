@@ -24,6 +24,13 @@
   /* Surfaces, light and glows */
   --surface: rgb(255 255 255 / 0.025);
   --surface-hi: rgb(255 255 255 / 0.06);
+  /* Card images: the well behind a loading picture, its 1px bezel, and the
+     slight dim at rest that lifts on hover. */
+  --well: #0b0b0d;
+  --media-line: rgb(255 255 255 / 0.08);
+  --media-dim: brightness(0.86) saturate(0.9);
+  --tag-bg: rgb(0 0 0 / 0.62);
+  --tag-ink: #ece9e2;
   --spot: rgb(255 255 255 / 0.06);
   --spot-edge: rgb(255 255 255 / 0.28);
   --glow-a: rgb(167 139 250 / 0.16);
@@ -69,6 +76,9 @@
   --tint-4: #1d4ed8;
   --surface: #ffffff;
   --surface-hi: rgb(255 255 255 / 1);
+  --well: #e9e5dc;
+  --media-line: rgb(28 27 25 / 0.12);
+  --media-dim: none;
   --spot: rgb(28 27 25 / 0.035);
   --spot-edge: rgb(28 27 25 / 0.22);
   --glow-a: rgb(124 58 237 / 0.08);
@@ -96,7 +106,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-h) + 1rem);
+  scroll-padding-block: calc(var(--header-h) + 1rem) 1rem;
   background: var(--bg);
 }
 
@@ -1032,22 +1042,13 @@ main {
   display: none;
 }
 /* The tenth card in the two-column tablet grid and the last card in the phone
-   swipe row; from 1024px the link below the grid does this job.
-   Two classes, so it beats .ccard { display: grid } further down. */
-.ccard.more-tail {
+   swipe row; from 1024px the link below the grid does this job. */
+.more > .more-tail {
   display: none;
 }
 @media (max-width: 1023px) {
-  .ccard.more-tail {
+  .more > .more-tail {
     display: grid;
-    place-content: center;
-  }
-  .more-tail .ccard-link {
-    display: grid;
-    justify-items: center;
-    gap: 0.6rem;
-    color: var(--text-2);
-    font-weight: 600;
   }
   .more-link--github {
     display: none;
@@ -1087,15 +1088,13 @@ main {
 }
 .box,
 .focus-card,
-.pcard,
-.ccard,
 .highlight,
-.card,
+.work-card,
 .socials a {
   background: var(--surface);
   box-shadow: inset 0 1px 0 var(--surface-hi);
 }
-[data-theme="light"] :is(.box, .focus-card, .pcard, .ccard, .highlight, .card, .socials a) {
+[data-theme="light"] :is(.box, .focus-card, .highlight, .work-card, .socials a) {
   box-shadow:
     0 1px 0 rgb(28 27 25 / 0.04),
     0 1px 3px rgb(28 27 25 / 0.05);
@@ -1121,10 +1120,8 @@ main {
       border-color var(--dur-1);
   }
   .focus-card.tilt:hover,
-  .pcard.tilt:hover,
-  .ccard.tilt:hover,
   .highlight.tilt:hover,
-  .card.tilt:hover {
+  .work-card.tilt:hover {
     border-color: var(--line-strong);
     box-shadow:
       inset 0 1px 0 var(--surface-hi),
@@ -1183,71 +1180,186 @@ main {
 
 /* ---------- projects ---------- */
 
-.harness {
+/* Projects, more builds and community share one card: a 16:10 picture set
+   just inside the raised card, then a name, a few words and one number. The
+   whole card is a single link (WorkCard.tsx). */
+.harness,
+.more {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--box-gap);
 }
-/* Featured cards share row heights through subgrid, so names, proof lines
-   and stacks line up across the three. */
-.pcard {
+.harness > li,
+.more > li,
+.community-grid > li {
   display: grid;
-  grid-template-rows: subgrid;
-  grid-row: span 6;
-  row-gap: 0.625rem;
-  padding: var(--box-pad);
+}
+.work-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 6px;
   border: 1px solid var(--box-line);
   border-radius: var(--box-radius);
-  transition: border-color var(--dur-1);
+  color: inherit;
+  text-decoration: none;
 }
-@media (hover: hover) {
-  .pcard:hover {
-    border-color: var(--line-strong);
-  }
+.work-media {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--well);
 }
-.pcard-top {
-  display: flex;
+.work-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0;
+}
+.work-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px var(--media-line);
+  pointer-events: none;
+}
+.work-media--tail {
+  display: grid;
+  place-items: center;
+  color: var(--text-2);
+}
+/* The More on GitHub card: icon and label centred, no empty picture well. */
+.more-tail > .work-card {
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
+  gap: 12px;
 }
-.pcard-layer {
+.more-tail .work-media--tail {
+  aspect-ratio: auto;
+  width: auto;
+  background: none;
+}
+.more-tail .work-media--tail::after {
+  display: none;
+}
+.more-tail .work-body {
+  flex: none;
+  padding: 0;
+}
+.media-tag {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  z-index: 1;
+  max-width: calc(100% - 16px);
+  padding: 4px 7px;
+  border-radius: 4px;
+  background: var(--tag-bg);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  color: var(--tag-ink);
   font: 500 0.6875rem/1.2 var(--font-mono-stack);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--text-3);
 }
-.pcard-name {
-  font-size: 1.125rem;
+@media (prefers-reduced-transparency: reduce) {
+  .media-tag {
+    background: #000;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
 }
-.pcard-what {
-  font-size: 0.9375rem;
-  line-height: 1.5;
-  color: var(--text-2);
+/* The body fills the card, so the proof lines sit on one baseline across a row. */
+.work-body {
+  display: grid;
+  flex: 1 0 auto;
+  grid-template-rows: auto auto 1fr;
+  align-content: start;
+  gap: 4px;
+  padding: 14px 10px 10px;
 }
-.pcard-proof {
-  font-size: 0.9375rem;
-  line-height: 1.45;
+/* The badge never drops under the name; a long name wraps beside it. */
+.work-head {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 6px 12px;
+}
+.work-head > .badge {
+  flex: none;
+  margin-top: 1px;
+}
+.work-name {
+  min-width: 0;
+  font-size: 1rem;
   font-weight: 600;
+  line-height: 1.35;
 }
-.pcard-foot {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.25rem 1.25rem;
-  align-self: end;
+.work-card--feature .work-name {
+  font-size: 1.125rem;
+  line-height: 1.3;
 }
-.pcard-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 1rem;
+.work-name-text {
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+  transition: background-size 280ms var(--ease);
 }
-.pcard-links a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
+.work-line {
+  text-wrap: pretty;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   font-size: 0.875rem;
+  line-height: 1.45;
   color: var(--text-2);
+}
+.work-card--feature .work-line {
+  font-size: 0.9375rem;
+}
+.work-foot {
+  align-self: end;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 12px;
+  margin-top: 6px;
+}
+.work-proof {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text);
+}
+.work-meta {
+  font: 400 0.75rem/1.45 var(--font-mono-stack);
+  letter-spacing: 0.02em;
+  color: var(--text-3);
+  text-wrap: pretty;
+}
+.work-foot .pcard-note {
+  min-height: 0;
+}
+@media (hover: hover) {
+  a.work-card .work-media img {
+    filter: var(--media-dim);
+    transition:
+      transform 600ms var(--ease),
+      filter 300ms var(--ease);
+  }
+  a.work-card:is(:hover, :focus-visible) .work-media img {
+    filter: none;
+    transform: scale(1.025);
+  }
+  a.work-card:hover .work-name-text {
+    background-size: 100% 1px;
+  }
 }
 .pcard-note {
   display: inline-flex;
@@ -1257,13 +1369,6 @@ main {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-3);
-}
-.stars {
-  font: 400 0.75rem/1 var(--font-mono-stack);
-  color: var(--text-3);
-}
-.pcard-foot .stars {
-  margin-left: auto;
 }
 
 .badge {
@@ -1291,70 +1396,9 @@ main {
   border-radius: 50%;
   background: currentColor;
 }
-
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: start;
-  gap: 0.375rem;
-}
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.375rem;
-  font: 400 0.75rem/1 var(--font-mono-stack);
-  padding: 0.3125rem 0.5rem;
-  border: 1px solid var(--box-line);
-  border-radius: 6px;
-  color: var(--text-2);
-  transition:
-    color var(--dur-1),
-    border-color var(--dur-1),
-    background-color var(--dur-1);
-}
 /* Pointing at a chip lights the same chip on every project that uses it,
    and the other projects step back (see ChipMatch.tsx). */
-.ccard .chips {
-  position: relative;
-}
 /* A filter, not opacity: the scroll reveal animates opacity and would win. */
-:is(.pcard, .ccard) {
-  transition-property: border-color, box-shadow, transform, filter;
-}
-#work[data-chip] :is(.pcard, .ccard):not(.more-tail):not([data-chip-match]) {
-  filter: opacity(0.4);
-}
-#work[data-chip] .chip[data-chip-match] {
-  color: var(--text);
-  border-color: var(--line-strong);
-  background: var(--spot);
-}
-
-.cmd {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  width: 100%;
-  min-height: 44px;
-  padding: 0 0.25rem 0 0.75rem;
-  border: 1px solid var(--box-line);
-  border-radius: var(--box-radius);
-  font: 400 0.8125rem/1 var(--font-mono-stack);
-}
-.cmd code {
-  flex: 1;
-  min-width: 0;
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
-  font: inherit;
-  line-height: 1.5;
-}
-.cmd-prompt {
-  color: var(--text-3);
-  user-select: none;
-}
-.cmd button,
 .copy-button {
   min-height: 40px;
   padding: 0 0.625rem;
@@ -1366,26 +1410,19 @@ main {
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-.cmd button:hover,
 .copy-button:hover {
   color: var(--text);
 }
 /* After a copy: "Copied" in live green, and the command box or email
    underline follows for the same moment, then everything settles back. */
-.cmd,
 .email {
   transition:
     border-color var(--dur-2),
     text-decoration-color var(--dur-2);
 }
-.cmd button,
 .copy-button {
   transition: color var(--dur-2);
 }
-.cmd[data-copied] {
-  border-color: color-mix(in oklab, var(--live) 60%, var(--box-line));
-}
-.cmd[data-copied] button,
 .copy-button[data-copied] {
   color: var(--live);
 }
@@ -1393,107 +1430,34 @@ main {
   text-decoration-color: var(--live);
 }
 
-/* Compact cards: the whole card is one link (the name's link is stretched),
-   and the stack is one quiet mono line. */
-.more {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--box-gap);
-}
-.ccard {
-  position: relative;
-  display: grid;
-  align-content: start;
-  gap: 0.45rem;
-  padding: 1.375rem;
-  border: 1px solid var(--box-line);
-  border-radius: var(--box-radius);
-  transition: border-color var(--dur-1);
-}
-@media (hover: hover) {
-  .ccard:hover {
-    border-color: var(--line-strong);
-  }
-}
-.ccard-top {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 0.75rem;
-}
-.ccard-name {
-  font-size: 1rem;
-  line-height: 1.35;
-}
-.ccard-link {
-  text-decoration: none;
-}
-.ccard-link::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: var(--box-radius);
-}
-.ccard-link:focus-visible {
-  outline: none;
-}
-.ccard:has(.ccard-link:focus-visible) {
-  outline: 2px solid var(--focus);
-  outline-offset: 3px;
-}
-.ccard-what {
-  font-size: 0.9375rem;
-  line-height: 1.5;
-  color: var(--text-2);
-}
-.ccard-proof {
-  font-size: 0.875rem;
-  font-weight: 600;
-}
-
-.chips--sm {
-  margin-top: 0.35rem;
-  gap: 0.3rem;
-}
-.chips--sm .chip {
-  padding: 0.25rem 0.45rem;
-  font-size: 0.6875rem;
-}
-.ccard-foot {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0 1rem;
-  margin-block: -0.25rem -0.75rem;
-}
-.ccard-foot a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  font-size: 0.875rem;
-  color: var(--text-2);
-}
-.ccard-foot .stars {
-  margin-left: auto;
-}
-
+/* Tablets: the first harness card spans the row with its picture beside the
+   text; the other two and the more builds sit two to a row. */
 @media (max-width: 1023px) {
-  .harness {
-    grid-template-columns: 1fr;
-  }
-  .pcard {
-    grid-row: auto;
-    grid-template-rows: none;
-  }
+  .harness,
   .more {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  .harness > li:first-child {
+    grid-column: 1 / -1;
+  }
+  .harness > li:first-child > .work-card {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    align-items: center;
+  }
+  .harness > li:first-child .work-body {
+    padding: 16px 20px;
+  }
 }
 @media (max-width: 759px) {
-  .more {
+  .harness {
     grid-template-columns: 1fr;
+  }
+  .harness > li:first-child > .work-card {
+    display: flex;
+  }
+  .harness > li:first-child .work-body {
+    padding: 14px 10px 10px;
   }
 }
 
@@ -1682,6 +1646,13 @@ main {
 .highlight-event a {
   text-decoration-color: var(--line-strong);
 }
+/* The whole Keynote card is the link. */
+.highlight-event a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
 .highlight-event a:hover {
   text-decoration-color: currentColor;
 }
@@ -1709,282 +1680,160 @@ main {
   }
 }
 
-/* On stage: year, event, then the role or talk title underneath. Two
-   columns on wide screens so ten events read as a short list, not a wall. */
-.stages-label {
-  margin-top: 2.75rem;
-  font-weight: 400;
+/* On stage: one line per event (year, event, kind and city), as hairline
+   rows; a row with a link lights up like the Writing rows. */
+.row-item.stage-row {
+  padding: 0.875rem 0;
 }
-.stage-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.25rem 2.5rem;
-}
-.stage {
-  position: relative;
-  display: grid;
-  grid-template-columns: 3.25rem minmax(0, 1fr);
-  gap: 0 0.75rem;
-}
-.stage-year {
-  padding-top: 0.2rem;
-  font: 400 0.75rem/1.5 var(--font-mono-stack);
-  color: var(--text-3);
-  font-variant-numeric: tabular-nums;
-  transition: color var(--dur-1);
-}
-.stage-body {
-  display: grid;
-  align-content: start;
-  gap: 0.125rem;
-}
-.stage-event {
-  font-size: 1rem;
-  line-height: 1.4;
-}
-.stage-event a {
+/* Events that link out are underlined at rest, so touch screens see them too. */
+.stage-event .card-link {
+  background: none;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
   text-decoration-color: var(--line-strong);
-}
-.stage-event a:hover {
-  text-decoration-color: currentColor;
-}
-.stage-event a::after {
-  content: "";
-  position: absolute;
-  inset: -0.5rem -0.75rem;
-  border-radius: var(--box-radius);
-}
-.stage::before {
-  content: "";
-  position: absolute;
-  inset: -0.5rem -0.75rem;
-  border-radius: var(--box-radius);
-  background: var(--spot);
-  opacity: 0;
-  transition: opacity var(--dur-1);
-  pointer-events: none;
+  text-underline-offset: 0.2em;
 }
 @media (hover: hover) {
-  .stage:has(a):hover::before {
-    opacity: 1;
-  }
-  .stage:has(a):hover .stage-event a {
+  .row-item:hover .stage-event .card-link {
     text-decoration-color: currentColor;
   }
-  .stage:has(a):hover .stage-year {
-    color: var(--text);
-  }
 }
-.stage-role {
-  font-size: 0.875rem;
-  line-height: 1.45;
-  text-wrap: pretty;
-  color: var(--text-3);
-}
-@media (max-width: 759px) {
-  .stage-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-}
-
-/* ---------- experience timeline ---------- */
-
-/* Each role is its own card, threaded on a rail with a dot per role. The rail
-   draws itself down and each dot lights up as the reader scrolls through.
-   Inside a card: company, title and dates, then a few short points. */
-.timeline {
-  position: relative;
+.stage-row {
   display: grid;
-  gap: var(--box-gap);
-  padding-left: 1.75rem;
+  grid-template-columns: 4.25rem minmax(0, 1fr) auto;
+  column-gap: 1rem;
+  align-items: baseline;
+  padding: 0.75rem 0;
 }
-.tl-item {
-  /* Where the dot sits: the card's top padding plus half the company line. */
-  --dot-y: calc(clamp(1.125rem, 2vw, 1.5rem) + 0.73rem);
-  display: grid;
-  grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
-  gap: 0.75rem 2.5rem;
-  align-items: start;
-}
-/* The rail: one segment per role, from its dot down to the next one, so the
-   line stops at the oldest role instead of running on past it. */
-.tl-item:not(:last-child) .tl-head::before {
-  content: "";
-  position: absolute;
-  left: calc(-1.75rem + 4px);
-  top: calc(var(--dot-y) + 5.5px);
-  bottom: calc(-1 * (var(--box-gap) + 2px + var(--dot-y)));
-  width: 1px;
-  background: var(--line-strong);
-  transform-origin: top;
-}
-.tl-item:first-child .tl-head::before {
-  background: linear-gradient(
-    color-mix(in oklab, var(--tint-2) 70%, transparent),
-    var(--line-strong)
-  );
-}
-.tl-dot {
-  position: absolute;
-  left: calc(-1.75rem - 1px);
-  top: calc(var(--dot-y) - 5.5px);
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: var(--bg);
-  border: 2px solid var(--line-strong);
-}
-.tl-item:first-child .tl-dot {
-  border-color: var(--tint-2);
-  box-shadow: 0 0 0 4px color-mix(in oklab, var(--tint-2) 22%, transparent);
-}
-@media (hover: hover) {
-  .tl-item:hover .tl-dot {
-    border-color: var(--tint-2);
-    background: color-mix(in oklab, var(--tint-2) 35%, var(--bg));
-  }
-}
-.tl-company {
-  font-size: 1.125rem;
-  font-weight: 600;
-  line-height: 1.3;
-}
-.tl-role {
-  margin-top: 0.2rem;
-  font-size: 0.9375rem;
-  line-height: 1.45;
-  color: var(--text-2);
-}
-.tl-date {
-  margin-top: 0.6rem;
-  font: 400 0.75rem/1.5 var(--font-mono-stack);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+.stage-year {
+  font: 400 0.75rem/1.4 var(--font-mono-stack);
   color: var(--text-3);
   font-variant-numeric: tabular-nums;
 }
-.tl-points {
-  display: grid;
-  gap: 0.55rem;
-  max-width: 72ch;
+.stage-event {
   font-size: 0.9375rem;
-  line-height: 1.6;
-  color: var(--text-2);
-}
-.tl-points li {
-  position: relative;
-  padding-left: 1.1rem;
-}
-.tl-points li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.68em;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--line-strong);
-  transition: background-color var(--dur-1);
-}
-@media (hover: hover) {
-  .tl-item:hover .tl-points li::before {
-    background: var(--tint-2);
-  }
-}
-.tl-points mark {
-  background: none;
+  font-weight: 500;
+  line-height: 1.4;
   color: var(--text);
-  font-weight: 600;
-  padding: 0;
-  margin: 0;
+  text-wrap: pretty;
 }
-@supports (animation-timeline: view()) {
-  @keyframes rail {
-    from {
-      transform: scaleY(0);
-    }
-    to {
-      transform: scaleY(1);
-    }
-  }
-  @keyframes dot-on {
-    from {
-      border-color: var(--line-strong);
-      background: var(--bg);
-    }
-    to {
-      border-color: var(--tint-2);
-      background: color-mix(in oklab, var(--tint-2) 35%, var(--bg));
-    }
-  }
-  .tl-item:not(:last-child) .tl-head::before {
-    animation: rail linear both;
-    animation-timeline: view();
-    animation-range: entry 40% cover 60%;
-  }
-  .tl-dot {
-    animation: dot-on linear both;
-    animation-timeline: view();
-    animation-range: entry 60% cover 45%;
-  }
-}
-@media (max-width: 1023px) {
-  .tl-item {
-    grid-template-columns: 1fr;
-  }
+.stage-kind {
+  font: 500 0.6875rem/1.4 var(--font-mono-stack);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  text-align: right;
+  white-space: nowrap;
 }
 @media (max-width: 759px) {
-  .timeline {
-    padding-left: 0;
+  .stage-row {
+    grid-template-columns: 3.75rem minmax(0, 1fr);
+    row-gap: 2px;
   }
-  .tl-head::before,
-  .tl-dot {
-    display: none;
+  .stage-kind {
+    grid-column: 2;
+    text-align: left;
+    white-space: normal;
   }
 }
 
-/* Community, under the timeline: smaller cards, current roles marked "Now". */
-.community-list {
+/* ---------- experience ---------- */
+
+/* One hairline row per role: title, then company and years. The CV has the
+   detail. */
+.xp-list {
+  display: grid;
+}
+.xp-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 3rem;
+  align-items: baseline;
+  padding: 0.875rem 0;
+  border-top: 1px solid var(--box-line);
+}
+.xp-row:last-child {
+  border-bottom: 1px solid var(--box-line);
+}
+.xp-title {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--text);
+  text-wrap: pretty;
+}
+.xp-where {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  min-width: 0;
+}
+.xp-company {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--text-2);
+}
+.xp-years {
+  flex: none;
+  font: 400 0.75rem/1.4 var(--font-mono-stack);
+  letter-spacing: 0.04em;
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+@media (max-width: 759px) {
+  .xp-row {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 2px;
+    padding: 0.75rem 0;
+  }
+  .xp-title,
+  .xp-company {
+    font-size: 0.9375rem;
+  }
+}
+
+/* Community: four picture cards, current roles marked "Now". */
+.community-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--box-gap);
 }
-.community-item {
-  display: grid;
-  grid-template-rows: subgrid;
-  grid-row: span 3;
-  row-gap: 0;
-}
-.community-head {
-  align-self: end;
-  font-size: 1.0625rem;
-  font-weight: 600;
-  line-height: 1.3;
-}
-.community-head .badge {
-  margin-left: 0.5rem;
-  vertical-align: 0.1em;
-}
-.community-role {
-  margin-top: 0.35rem;
+.work-card--sm .work-name {
   font-size: 0.9375rem;
-  color: var(--text-2);
-}
-.community-note {
-  margin-top: 0.4rem;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  color: var(--text-3);
 }
 @media (max-width: 1023px) {
-  .community-list {
+  .community-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 @media (max-width: 759px) {
-  .community-list {
-    grid-template-columns: 1fr;
+  .community-grid {
+    gap: 10px;
+  }
+  .work-card--sm .work-body {
+    padding: 10px 6px 6px;
+  }
+  .work-card--sm .work-name {
+    font-size: 0.875rem;
+  }
+  .work-card--sm .work-line {
+    font-size: 0.8125rem;
+    -webkit-line-clamp: 3;
+  }
+  .work-card--sm .media-tag {
+    left: 4px;
+    bottom: 4px;
+    max-width: calc(100% - 8px);
+    padding: 3px 4px;
+    font-size: 0.625rem;
+    letter-spacing: 0;
+  }
+  .work-card--sm .work-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
   }
 }
 /* Education and the CV link close the section on one line. */
@@ -2021,13 +1870,6 @@ main {
   margin-right: 0.35rem;
 }
 
-/* Talks: the city sits quietly after the role. */
-.stage-city {
-  font: 400 0.6875rem/1.5 var(--font-mono-stack);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-3);
-}
 .more-links {
   display: flex;
   flex-wrap: wrap;
@@ -2042,36 +1884,8 @@ main {
 /* One item per card, on the same raised surface as the project cards. The
    title's link stretches over the whole card, and the title draws a line in
    from the left when the card is hovered. */
-.card {
-  padding: clamp(1.125rem, 2vw, 1.5rem);
-  border: 1px solid var(--box-line);
-  border-radius: var(--box-radius);
-  transition:
-    border-color var(--dur-1),
-    box-shadow 300ms var(--ease),
-    transform 600ms var(--ease);
-}
 @media (hover: hover) {
-  .card:hover {
-    border-color: var(--line-strong);
-  }
-  .card:hover .card-link::after,
-  .ccard:hover .ccard-link::after {
-    bottom: -8px;
-  }
-  .tl-item:hover .tl-head::after {
-    content: "";
-    position: absolute;
-    inset: auto 0 -8px;
-    height: 8px;
-  }
   /* Cards without tilt (the experience timeline) still lift a little. */
-  .card:not(.tilt):hover {
-    transform: translateY(-2px);
-    box-shadow:
-      inset 0 1px 0 var(--surface-hi),
-      0 18px 36px -24px var(--lift-shadow);
-  }
 }
 /* Lists people scan (writing, recognition): rows on hairlines, two columns on
    wide screens, one on phones. A row lights up and its title underlines on
@@ -2114,7 +1928,7 @@ main {
     column-gap: 1rem;
   }
   .row-list--dated .card-kicker {
-    grid-row: 1 / span 2;
+    grid-row: 1;
     flex-direction: column;
     gap: 0.2rem;
     margin: 0;
@@ -2122,9 +1936,6 @@ main {
   }
   .row-list--dated .card-kicker > [aria-hidden] {
     display: none;
-  }
-  .row-list--dated .card-note {
-    grid-column: 2;
   }
 }
 @media (max-width: 759px) {
@@ -2149,19 +1960,18 @@ main {
   line-height: 1.4;
   text-wrap: pretty;
 }
-.card-note {
-  margin-top: 0.45rem;
-  font-size: 0.875rem;
-  color: var(--text-3);
+/* In the Writing and Recognition lists a title takes at most two lines. */
+.row-list .card-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .card-link {
   text-decoration: none;
   scroll-margin-block: 3rem 3.5rem;
 }
 /* Community cards keep the role and note below the link. */
-.community-item .card-link {
-  scroll-margin-bottom: 10rem;
-}
 .card-link::after {
   content: "";
   position: absolute;
@@ -2171,27 +1981,16 @@ main {
 .card-link:focus-visible {
   outline: none;
 }
-.card:has(.card-link:focus-visible) {
-  outline: 2px solid var(--focus);
-  outline-offset: 3px;
-}
 /* Badges sit above the stretched link so they never steal its click. */
-.card .badge {
-  position: relative;
-  pointer-events: none;
-}
 
 /* Quiet title links draw a 1px line in from the left on hover instead of
    snapping an underline on. */
-.card-link,
-.ccard-name .ccard-link {
+.card-link {
   background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
   transition: background-size 280ms var(--ease);
 }
 @media (hover: hover) {
-  .card:hover .card-link,
-  .row-item:hover .card-link,
-  .ccard:hover .ccard-name .ccard-link {
+  .row-item:hover .card-link {
     background-size: 100% 1px;
   }
 }
@@ -2453,10 +2252,9 @@ body:has(.contact-box) .footer-handles {
    CSS (scroll-driven animations); browsers without them show it in place. */
 @supports (animation-timeline: view()) {
   .section-head,
-  .pcard,
-  .ccard,
   .highlight,
-  .card,
+  .work-card,
+  .xp-list,
   .row-list,
   .video,
   .section .box {
@@ -2465,10 +2263,9 @@ body:has(.contact-box) .footer-handles {
     animation-range: entry 0% entry 35%;
   }
   .section-head:focus-within,
-  .pcard:focus-within,
-  .ccard:focus-within,
   .highlight:focus-within,
-  .card:focus-within,
+  .work-card:focus-within,
+  .work-card:focus-visible,
   .row-list:focus-within,
   .video:focus-within,
   .section .box:focus-within {
@@ -2535,8 +2332,9 @@ body:has(.contact-box) .footer-handles {
     animation: none !important;
   }
   .tilt:hover,
-  .card:not(.tilt):hover {
-    transform: none;
+  a.work-card .work-media img,
+  .video-thumb img {
+    transform: none !important;
   }
 }
 
@@ -2559,10 +2357,11 @@ body:has(.contact-box) .footer-handles {
   .more::-webkit-scrollbar {
     display: none;
   }
-  .more > .ccard {
+  .more > li {
     scroll-snap-align: start;
+  }
+  .more > li > .work-card {
     animation: none;
-    padding: var(--box-pad);
   }
   /* The hero grid frames the name and fades out before the intro. */
   .hero-bg {
@@ -2594,24 +2393,8 @@ body:has(.contact-box) .footer-handles {
     align-items: center;
     min-height: 44px;
   }
-  .copy-button,
-  .cmd button {
+  .copy-button {
     min-height: 44px;
-  }
-  .stage-event a {
-    display: inline-block;
-    padding-block: 0.75rem;
-    margin-block: -0.75rem;
-  }
-  .pcard-links a,
-  .ccard-foot a {
-    position: relative;
-  }
-  .pcard-links a::after,
-  .ccard-foot a::after {
-    content: "";
-    position: absolute;
-    inset: 0 -8px;
   }
   .video-meta {
     letter-spacing: 0.03em;
@@ -2632,13 +2415,13 @@ body:has(.contact-box) .footer-handles {
     padding: 0;
   }
   .swipe-hint,
-  .ccard.more-tail,
+  .more-tail,
+  .work-media,
   .theme-toggle,
   .menu-button,
   .mobile-menu,
   .menu-scrim,
   .copy-button,
-  .cmd button,
   .bloom,
   .video-thumb,
   .label-hash {
@@ -2657,11 +2440,9 @@ body:has(.contact-box) .footer-handles {
     grid-template-columns: 1fr;
   }
   .focus-card,
-  .pcard,
-  .ccard,
-  .card,
+  .work-card,
+  .xp-row,
   .row-item,
-  .stage,
   .video,
   .highlight,
   .section-head,
@@ -2671,14 +2452,12 @@ body:has(.contact-box) .footer-handles {
   .group-count {
     display: inline;
   }
-  .tl-points li::before,
-  .badge--live::before,
-  .tl-head::before {
+  .badge--live::before {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
-  .community-list,
-  .row-list {
+  .row-list,
+  .community-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .more-link--github {

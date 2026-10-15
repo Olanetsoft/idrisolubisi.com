@@ -141,6 +141,10 @@ export const community: {
   current: boolean;
   /** Start date, for /llms-full.txt. */
   since?: string;
+  /** Screenshot of the organisation's site, in public/images/community/. */
+  image: string;
+  /** The one line on the card. */
+  summary: string;
   /** More context, for /llms-full.txt. */
   detail?: string;
 }[] = [
@@ -152,6 +156,8 @@ export const community: {
     current: true,
     since: "May 2022",
     detail: "Organises events and workshops, including the Build Afrika Summit",
+    image: "/images/community/web3afrika.jpg",
+    summary: "15,000+ builders across Africa",
   },
   {
     org: "Blockfest Africa",
@@ -159,6 +165,8 @@ export const community: {
     href: "https://blockfestafrica.com/",
     note: "Leads the partnership team for the whole event; 12,000 participants in 2025",
     current: true,
+    image: "/images/community/blockfest.jpg",
+    summary: "12,000 participants in 2025",
   },
   {
     org: "SheCodeAfrica",
@@ -166,6 +174,8 @@ export const community: {
     href: "https://shecodeafrica.org/",
     note: "Ran the backend programmes; SheCodeAfrica has 50,000+ members across 15 African countries",
     current: false,
+    image: "/images/community/shecodeafrica.jpg",
+    summary: "50,000+ members across 15 countries",
   },
   {
     org: "Open Source Community Africa",
@@ -174,6 +184,8 @@ export const community: {
     note: "Received the OSCA Hero award",
     current: false,
     detail: "Yaba, Lagos: open source, technical writing and OSCAFEST organising",
+    image: "/images/community/osca.jpg",
+    summary: "Received the OSCA Hero award",
   },
 ];
 
