@@ -289,8 +289,28 @@ figure {
   gap: 1.5rem;
   height: 100%;
 }
-.brand {
+/* The name and, beside it, the live dot that the hero's status dot hands
+   over to as it scrolls under the header (see "dock" below). */
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
   margin-right: auto;
+  min-width: 0;
+}
+.header-live {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--live);
+}
+@media (max-width: 480px) {
+  .brand-lockup {
+    gap: 0.5rem;
+  }
+}
+.brand {
   font-weight: 600;
   font-size: 0.9375rem;
   text-decoration: none;
@@ -453,7 +473,8 @@ figure {
     background: var(--bg);
     border-bottom-color: var(--box-line);
   }
-  body:has(.menu-button[aria-expanded="true"]) .brand {
+  body:has(.menu-button[aria-expanded="true"]) .brand,
+  body:has(.menu-button[aria-expanded="true"]) .header-live {
     animation: none;
   }
 }
@@ -488,7 +509,7 @@ figure {
 /* Small tablets: seven nav items fit beside the name and the call button. */
 @media (min-width: 760px) and (max-width: 899px) {
   .site-nav {
-    gap: 0.75rem;
+    gap: 0.625rem;
   }
   .site-header-inner {
     gap: 1rem;
@@ -506,6 +527,147 @@ figure {
     animation: header-line linear both;
     animation-timeline: scroll(root);
     animation-range: 0 24px;
+  }
+}
+/* Home page, scroll-driven, no JS. The hero's live dot hands over to the
+   header dot as the status line slides under the header, one pixel of travel
+   per pixel scrolled. The header hairline is a run trace: one segment per
+   numbered section, amber while it is being read (at the same reading line as
+   the nav underline), grey once read, plain until then. timeline-scope is
+   not additive, so every name shared with the header is declared here once. */
+.trace {
+  display: none;
+}
+@supports (timeline-scope: --a) and (animation-timeline: view()) {
+  body:has(.hero) {
+    timeline-scope:
+      --status, --sec-work, --sec-talks, --sec-experience, --sec-writing, --sec-recognition,
+      --sec-contact;
+  }
+  .hero .status-label {
+    view-timeline: --status block;
+    view-timeline-inset: var(--header-h) 0;
+  }
+  body:has(.hero) .header-live {
+    animation: dock linear both;
+    animation-timeline: --status;
+    animation-range: exit 8px exit calc(8px + var(--header-h) / 2);
+  }
+
+  #work {
+    view-timeline: --sec-work block;
+  }
+  #talks {
+    view-timeline: --sec-talks block;
+  }
+  #experience {
+    view-timeline: --sec-experience block;
+  }
+  #writing {
+    view-timeline: --sec-writing block;
+  }
+  #recognition {
+    view-timeline: --sec-recognition block;
+  }
+  #contact {
+    view-timeline: --sec-contact block;
+  }
+  body:has(.hero) .site-header {
+    border-bottom-color: transparent !important;
+  }
+  body:has(.hero) .trace {
+    position: absolute;
+    inset: auto 0 -1px;
+    height: 1px;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    column-gap: 3px;
+    pointer-events: none;
+    animation: fade-in linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 24px;
+  }
+  .trace > span {
+    position: relative;
+    overflow: hidden;
+    background: var(--box-line);
+  }
+  .trace > span::before,
+  .trace > span::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+  .trace > span::after {
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    animation: trace-run linear both;
+    animation-range: cover 50vh cover calc(100% - 50vh);
+  }
+  .trace > span::before {
+    z-index: 1;
+    background: var(--text-3);
+    opacity: 0;
+    animation: trace-done linear both;
+    animation-range: cover calc(100% - 50vh) cover calc(100% - 50vh + 1px);
+  }
+  .trace > span:nth-child(1)::before,
+  .trace > span:nth-child(1)::after {
+    animation-timeline: --sec-work;
+  }
+  .trace > span:nth-child(2)::before,
+  .trace > span:nth-child(2)::after {
+    animation-timeline: --sec-talks;
+  }
+  .trace > span:nth-child(3)::before,
+  .trace > span:nth-child(3)::after {
+    animation-timeline: --sec-experience;
+  }
+  .trace > span:nth-child(4)::before,
+  .trace > span:nth-child(4)::after {
+    animation-timeline: --sec-writing;
+  }
+  .trace > span:nth-child(5)::before,
+  .trace > span:nth-child(5)::after {
+    animation-timeline: --sec-recognition;
+  }
+  /* Contact sits above the footer, so it completes once fully on screen. */
+  .trace > span:nth-child(6)::after {
+    animation-timeline: --sec-contact;
+    animation-range: cover 50vh entry 100%;
+  }
+  .trace > span:nth-child(6)::before {
+    display: none;
+  }
+}
+@keyframes dock {
+  from {
+    opacity: 0;
+    transform: translateY(calc(var(--header-h) / 2));
+  }
+  20% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes trace-run {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes trace-done {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 @keyframes fade-in {
@@ -635,6 +797,58 @@ figure {
 }
 .hero-bg[data-glow="on"]::after {
   opacity: 1;
+}
+/* One ring of lit grid lines goes out from the live dot when it pings on
+   load (and again when the status line is pointed at). The ring is a soft
+   annulus scaled up from the dot; the mask keeps only the grid lines, so it
+   reads as the grid lighting up, not as a coloured ripple. The backdrop
+   starts 8 cells left of and 3 cells above the hero, and the dot is centred
+   on the status line. */
+.hero-pulse {
+  position: absolute;
+  inset: 0;
+  overflow: clip;
+  pointer-events: none;
+  --ox: calc(var(--cell) * 8 + 3px);
+  --oy: calc(var(--cell) * 3 + 0.525rem);
+  --r: calc(100cqi + 12rem);
+  -webkit-mask-image:
+    linear-gradient(to right, #000 1px, transparent 1px),
+    linear-gradient(to bottom, #000 1px, transparent 1px);
+  mask-image:
+    linear-gradient(to right, #000 1px, transparent 1px),
+    linear-gradient(to bottom, #000 1px, transparent 1px);
+  -webkit-mask-size: var(--cell) var(--cell);
+  mask-size: var(--cell) var(--cell);
+}
+@media (max-width: 480px) {
+  .hero-pulse {
+    --oy: calc(var(--cell) * 3 + 0.48rem);
+  }
+}
+.hero-pulse-ring {
+  position: absolute;
+  left: calc(var(--ox) - var(--r));
+  top: calc(var(--oy) - var(--r));
+  width: calc(var(--r) * 2);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, transparent 55%, var(--grid-glow) 96%, transparent);
+  opacity: 0;
+  animation: grid-pulse 2.4s cubic-bezier(0.3, 0.6, 0.3, 1) 600ms;
+}
+@keyframes grid-pulse {
+  from {
+    transform: scale(0.02);
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  to {
+    transform: none;
+    opacity: 0;
+  }
 }
 .hero-grid {
   display: grid;
@@ -2331,6 +2545,9 @@ body:has(.contact-box) .footer-handles {
   }
 }
 @media (prefers-reduced-motion: reduce) {
+  .trace {
+    display: none !important;
+  }
   html {
     scroll-behavior: auto;
   }
