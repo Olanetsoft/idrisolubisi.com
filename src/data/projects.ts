@@ -30,7 +30,11 @@ export type Project = {
   detail?: string;
   /** The few words on the card, under the name. */
   tagline: string;
-  /** The card image in public/images/work/: a screenshot of the site, the repo's own image, its code or (private repos) a diagram. */
+  /**
+   * The card image in public/images/work/: a screenshot of the site, the GitHub
+   * or npm page, the README, the project's X account, the repo's own image, its
+   * code or (private repos) a diagram.
+   */
   image: string;
   /** Alt text for the image when the card is not a link (a private repo). */
   imageAlt?: string;
