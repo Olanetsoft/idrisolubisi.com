@@ -1006,7 +1006,8 @@ figure {
   object-position: 50% 15%;
 }
 
-/* Calls to action */
+/* Calls to action: one call and the CV. Email and profiles live in Contact
+   and the footer, so the hero offers one clear next step. */
 .actions {
   display: flex;
   flex-wrap: wrap;
@@ -1015,13 +1016,6 @@ figure {
 }
 .actions .btn + .btn {
   margin-left: -0.75rem;
-}
-.action-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  min-height: 44px;
-  font-size: 0.9375rem;
 }
 
 /* What I do: one card per kind of role, a hiring manager's keyword first,
@@ -1123,36 +1117,18 @@ figure {
     padding: var(--box-pad);
   }
 }
-/* Phones: the call is one full-width button; CV, Email, LinkedIn and GitHub
-   share one row as equal outlined buttons. */
+/* Phones: the call and the CV share one row, the call taking the room. */
 @media (max-width: 520px) {
   .actions {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr) auto;
     gap: 0.625rem;
   }
   .actions .btn + .btn {
     margin-left: 0;
   }
-  .actions .btn--primary {
-    grid-column: 1 / -1;
-  }
-  .actions .btn:not(.btn--primary),
-  .action-link {
-    flex-direction: column;
-    gap: 0.3rem;
-    justify-content: center;
-    min-height: 62px;
-    padding-inline: 0.25rem;
-    border: 1px solid var(--box-line);
-    border-radius: var(--box-radius);
-    color: var(--text);
-    text-decoration: none;
-    font-size: 0.875rem;
-    white-space: nowrap;
-  }
-  .action-link:active {
-    background: var(--bg-2);
+  .actions .btn {
+    min-height: 52px;
   }
 }
 

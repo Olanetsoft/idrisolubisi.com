@@ -2,7 +2,7 @@ import Image from "next/image";
 import { hero } from "@/data/hero";
 import { site } from "@/data/site";
 import { HeroBackdrop } from "./HeroBackdrop";
-import { BrandIcon, UiIcon } from "./icons";
+import { UiIcon } from "./icons";
 import { RichText } from "./RichText";
 import { StatusLine } from "./StatusLine";
 
@@ -39,18 +39,6 @@ export function Hero() {
             <a className="btn" href={site.resumeUrl}>
               <UiIcon name="fileText" size={17} />
               CV (PDF)
-            </a>
-            <a className="action-link" href={`mailto:${site.email}`}>
-              <UiIcon name="envelope" size={17} />
-              Email
-            </a>
-            <a className="action-link" href={site.links.linkedin} rel="me">
-              <BrandIcon name="linkedin" size={17} />
-              LinkedIn
-            </a>
-            <a className="action-link" href={site.links.github} rel="me">
-              <BrandIcon name="github" size={17} />
-              GitHub
             </a>
           </div>
           <dl className="focus hero-focus">
