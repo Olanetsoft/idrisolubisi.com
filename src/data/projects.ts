@@ -135,7 +135,7 @@ export const projects: Project[] = [
     badge: "Open source",
     links: [{ label: "GitHub", url: "https://github.com/Olanetsoft/compact-playground" }],
     githubRepo: "Olanetsoft/compact-playground",
-    tagline: "The compile API behind Run buttons and the MCP server",
+    tagline: "The compile API behind Run buttons, which also powered the MCP server",
     image: "/images/work/compact-playground.jpg",
   },
   {
