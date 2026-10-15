@@ -1,15 +1,18 @@
-import { community, education, experience, stack } from "@/data/experience";
-import { harnessIntro, projects } from "@/data/projects";
-import { monthYear } from "@/lib/format";
-import { blogPosts, githubFetchedAt, isPrivateRepo, shownStars } from "@/lib/generated";
+import { experience } from "@/data/experience";
+import { projects } from "@/data/projects";
 import { recognition } from "@/data/recognition";
 import { site } from "@/data/site";
-import { talks } from "@/data/talks";
-import { writingList, writingStats } from "@/data/writing";
+import { writingStats } from "@/data/writing";
+import { monthYear } from "@/lib/format";
+import { isPrivateRepo } from "@/lib/generated";
+
+const plain = (text: string) => text.replace(/==([^=]+)==/g, "$1");
 
 /**
- * The llms.txt document (https://llmstxt.org/), composed from the same data
- * the page renders so the two cannot drift. Served at /llms.txt.
+ * The llms.txt document (https://llmstxt.org/): a short index for AI agents,
+ * composed from the same data the page renders so the two cannot drift. The
+ * detail (every role's results, project stacks, talks, skills) lives in
+ * /llms-full.txt. Served at /llms.txt.
  */
 export function renderLlmsTxt(): string {
   const lines: string[] = [];
@@ -19,112 +22,60 @@ export function renderLlmsTxt(): string {
   push("");
   push(`> ${site.role}, ${site.location}, United Kingdom. ${site.disciplines.join(" / ")}.`);
   push("");
-  for (const p of site.bio) push(p.replace(/==([^=]+)==/g, "$1"));
+  push(`Last updated ${monthYear(new Date().toISOString())}.`);
   push("");
-  push(`Handle: ${site.handle}`);
-  push(`Site: ${site.url}`);
-  push(`Blog: ${site.links.blog}`);
+  for (const p of site.bio) push(plain(p));
+  push("");
+  push(`Availability: Available now. ${site.availability}`);
   push(`Email: ${site.email}`);
   push(`Book a call: ${site.bookingUrl}`);
-  push(`Status: ${site.status}`);
-  push(`Availability: Available now. ${site.availability} No sponsorship needed in the UK.`);
   push("");
 
-  push("## Experience");
-  push("");
-  for (const r of experience) {
-    push(
-      `- ${r.title} at ${r.company} (${r.period}${r.location ? `, ${r.location}` : ""})${r.url ? ` - ${r.url}` : ""}`,
-    );
-    for (const point of r.points) push(`  - ${point}`);
-  }
-  push("", "## Community and education", "");
-  push(`- Education: ${education.degree}, ${education.school}, ${education.year}`);
-  const line = (c: (typeof community)[number]) =>
-    `${c.role}, ${c.org}${c.note ? ` (${c.note})` : ""}`;
-  push(
-    `- Community, current: ${community
-      .filter((c) => c.current)
-      .map(line)
-      .join("; ")}`,
-  );
-  push(
-    `- Community, past: ${community
-      .filter((c) => !c.current)
-      .map(line)
-      .join("; ")}`,
-  );
-  push("", "## Skills", "");
-  for (const g of stack) push(`- ${g.label}: ${g.items.join(", ")}`);
+  push("## Experience", "");
+  for (const r of experience) push(`- ${r.title}, ${r.company} (${r.period})`);
   push("");
 
-  push("## Projects");
-  push("");
-  push(`Agent harness: ${harnessIntro}`);
-  push("");
+  push("## Projects", "");
   for (const p of projects) {
-    const stars = shownStars(p);
-    const starNote =
-      stars !== null && githubFetchedAt
-        ? ` ${stars} GitHub stars (${monthYear(githubFetchedAt)}).`
-        : "";
-    push(
-      `- ${p.name}${p.group === "harness" ? " (agent harness)" : ""}: ${p.oneLine}${p.proof ? ` ${p.proof}.` : ""}${starNote}`,
-    );
-    const links = p.links.filter((l) => !isPrivateRepo(l.url));
-    push(
-      `  Stack: ${p.stack.join(", ")}.${links.length ? ` Links: ${links.map((l) => `${l.label} ${l.url}`).join(", ")}` : ""}`,
-    );
+    const [link] = p.links.filter((l) => !isPrivateRepo(l.url));
+    const name = link ? `[${p.name}](${link.url})` : p.name;
+    const harness = p.group === "harness" ? " (agent harness)" : "";
+    push(`- ${name}${harness}: ${p.tagline}.${p.proof ? ` ${p.proof}.` : ""}`);
   }
   push("");
 
-  push("## Speaking");
-  push("");
-  for (const t of talks) {
-    // No year or city twice ("Blockfest Africa 2025, 2025"), and no role twice ("Host: Founder and host").
-    const event = t.event.replace(/\s+\d{4}$/, "");
-    const city = t.location && !event.includes(t.location) ? t.location : undefined;
-    const where = [event, city, t.year].filter(Boolean).join(", ");
-    const line = t.title ? `${t.title} (${where})` : where;
-    const prefix = t.title?.toLowerCase().includes(t.kind.toLowerCase()) ? "" : `${t.kind}: `;
-    push(`- ${prefix}${line}${t.href ? ` - ${t.href}` : ""}`);
-  }
-  push(`- Speaker profile - ${site.links.sessionize}`);
-  push("");
-
-  push("## Writing");
-  push("");
-  push(`Tutorials read ${writingStats.reads} times.`);
+  push("## Writing and speaking", "");
+  push(`- [Blog](${site.links.blog}): tutorials read ${writingStats.reads} times`);
   push(
-    `Author pages: freeCodeCamp ${site.links.freecodecamp}, Dev.to ${site.links.devto}, LogRocket ${site.links.logrocket}, Medium ${site.links.medium}`,
+    `- Author pages: [freeCodeCamp](${site.links.freecodecamp}), [Dev.to](${site.links.devto}), [LogRocket](${site.links.logrocket}), [Medium](${site.links.medium})`,
   );
-  for (const a of writingList(blogPosts))
-    push(`- ${a.title} (${a.outlet}, ${monthYear(a.date)}) - ${a.href}`);
-  push(`- All writing - ${site.links.blog}`);
+  push(`- [Talks and workshops on YouTube](${site.links.youtube})`);
+  push(`- [Speaker profile](${site.links.sessionize})`);
   push("");
 
-  push("## Recognition");
-  push("");
+  push("## Recognition", "");
   for (const r of recognition) {
-    push(
-      `- ${r.by}${r.note ? ` (${r.note})` : ""}: "${r.title}" (${/^\d{4}-\d{2}/.test(r.date) ? monthYear(r.date) : r.date})${r.detail ? `. ${r.detail}` : ""}${r.href ? ` - ${r.href}` : ""}`,
-    );
+    const by = `${r.by}${r.note ? ` (${r.note})` : ""}`;
+    push(`- ${r.href ? `[${by}](${r.href})` : by}: "${r.title}"`);
   }
   push("");
 
-  push("## Contact");
+  push("## Profiles", "");
+  push(`- [GitHub](${site.links.github})`);
+  push(`- [LinkedIn](${site.links.linkedin})`);
+  push(`- [X](${site.links.x})`);
+  push(`- [CV (PDF)](${site.url}${site.resumeUrl})`);
+  push(`- [Headshots and photos for organisers and press](${site.links.photos})`);
   push("");
-  push(`- LinkedIn: ${site.links.linkedin}`);
-  push(`- X: ${site.links.x}`);
-  push(`- GitHub: ${site.links.github}`);
-  push(`- CV (PDF): ${site.url}${site.resumeUrl}`);
-  push(`- Headshots and photos for organisers and press: ${site.links.photos}`);
-  push("");
-  push("## Citation");
-  push("");
+
+  push("## Optional", "");
   push(
-    `Cite as "Idris Olubisi (@olanetsoft)" and link to ${site.url}. Extended context: ${site.url}/llms-full.txt`,
+    `- [Extended context](${site.url}/llms-full.txt): every role with its results, all projects with stacks and links, talks, writing, skills and recognition`,
   );
+  push("");
+
+  push("## Citation", "");
+  push(`Cite as "${site.name} (@${site.handle})" and link to ${site.url}.`);
   push("");
 
   return lines.join("\n");

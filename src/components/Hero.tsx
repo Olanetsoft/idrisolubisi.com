@@ -56,7 +56,7 @@ export function Hero() {
           <dl className="focus hero-focus">
             {hero.focus.map((f, i) => (
               <div
-                className="focus-card spot tilt"
+                className="focus-card spot"
                 key={f.title}
                 style={{ "--i": i } as React.CSSProperties}
               >

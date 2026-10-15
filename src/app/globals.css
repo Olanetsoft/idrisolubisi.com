@@ -2,8 +2,10 @@
    metadata (IBM Plex Mono). Dark by default (pure black and warm ink); a light
    "paper" theme is opt-in. Content sits on raised surfaces with a hairline
    border and a soft top highlight, over a page with a little film grain and
-   a few faint colour glows. No free-standing rules or drop shadows. Green is
-   kept for things that are true right now (available, live). */
+   a faint warm glow. No free-standing rules or drop shadows. Amber is the one
+   accent colour (section numbers, the nav underline, the highlighted clause,
+   the main button's hover); green is kept for things that are true right now
+   (available, live). */
 
 :root {
   --bg: #000000;
@@ -17,10 +19,7 @@
   --live-line: color-mix(in oklab, var(--live) 42%, transparent);
   --grid: rgb(236 233 226 / 0.07);
   --grid-glow: rgb(236 233 226 / 0.55);
-  --tint-1: #e9b44c;
-  --tint-2: #a78bfa;
-  --tint-3: #4fd1c5;
-  --tint-4: #60a5fa;
+  --accent: #e9b44c;
   /* Surfaces, light and glows */
   --surface: rgb(255 255 255 / 0.025);
   --surface-hi: rgb(255 255 255 / 0.06);
@@ -33,9 +32,9 @@
   --tag-ink: #ece9e2;
   --spot: rgb(255 255 255 / 0.06);
   --spot-edge: rgb(255 255 255 / 0.28);
-  --glow-a: rgb(167 139 250 / 0.16);
-  --glow-b: rgb(79 209 197 / 0.1);
-  --glow-c: rgb(96 165 250 / 0.1);
+  --glow-a: rgb(233 180 76 / 0.11);
+  --glow-b: rgb(236 233 226 / 0.045);
+  --glow-c: rgb(236 233 226 / 0.04);
   --grain: 0.045;
   --lift-shadow: rgb(0 0 0 / 0.9);
 
@@ -70,10 +69,7 @@
   --live: #1d7a50;
   --grid: rgb(28 27 25 / 0.07);
   --grid-glow: rgb(28 27 25 / 0.4);
-  --tint-1: #a16207;
-  --tint-2: #6d28d9;
-  --tint-3: #0f766e;
-  --tint-4: #1d4ed8;
+  --accent: #8f5a0a;
   --surface: #ffffff;
   --surface-hi: rgb(255 255 255 / 1);
   --well: #e9e5dc;
@@ -81,9 +77,9 @@
   --media-dim: none;
   --spot: rgb(28 27 25 / 0.035);
   --spot-edge: rgb(28 27 25 / 0.22);
-  --glow-a: rgb(124 58 237 / 0.08);
-  --glow-b: rgb(15 118 110 / 0.06);
-  --glow-c: rgb(29 78 216 / 0.06);
+  --glow-a: rgb(201 138 30 / 0.1);
+  --glow-b: rgb(28 27 25 / 0.03);
+  --glow-c: rgb(28 27 25 / 0.03);
   --grain: 0.035;
   --lift-shadow: rgb(60 50 30 / 0.28);
   color-scheme: light;
@@ -268,8 +264,9 @@ figure {
     border-color: var(--line-strong);
   }
   .btn--primary:hover {
-    background: var(--text-2);
-    border-color: var(--text-2);
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg);
   }
 }
 .btn:active {
@@ -335,7 +332,7 @@ figure {
   bottom: 9px;
   width: var(--ind-w, 0);
   height: 1px;
-  background: var(--text-3);
+  background: var(--accent);
   transform: translateX(var(--ind-x, 0));
   opacity: 0;
   pointer-events: none;
@@ -656,7 +653,7 @@ figure {
 }
 .hero-id {
   grid-area: id;
-  margin-top: 1rem;
+  margin-top: 1.25rem;
 }
 .portrait {
   grid-area: portrait;
@@ -664,7 +661,7 @@ figure {
 }
 .hero-pitch {
   grid-area: pitch;
-  margin-top: 1.25rem;
+  margin-top: 1.75rem;
   max-width: 62ch;
 }
 /* Desktop: the intro spreads across the column beside the photo. */
@@ -675,11 +672,11 @@ figure {
 }
 .hero-grid > .actions {
   grid-area: actions;
-  margin-top: 1.75rem;
+  margin-top: 2.5rem;
 }
 .hero-focus {
   grid-area: focus;
-  margin-top: 2.5rem;
+  margin-top: 3.5rem;
 }
 
 .status-label {
@@ -773,14 +770,8 @@ figure {
   color: var(--text-2);
 }
 .pitch mark {
-  background: var(--bg-2);
-  color: var(--text);
-  padding: 0.05em 0.2em;
-  margin-inline: -0.2em;
-  border-radius: 3px;
-}
-[data-theme="light"] .pitch mark {
-  background: #ebe6dc;
+  background: none;
+  color: var(--accent);
 }
 
 /* The ring sits inside the box (padding plus border), so it lines up with
@@ -800,7 +791,7 @@ figure {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.5rem 1.25rem;
+  gap: 0.75rem 1.75rem;
 }
 .actions .btn + .btn {
   margin-left: -0.75rem;
@@ -840,18 +831,6 @@ figure {
   font-weight: 600;
   line-height: 1.3;
 }
-.focus-card:nth-child(1) {
-  --tint: var(--tint-1);
-}
-.focus-card:nth-child(2) {
-  --tint: var(--tint-2);
-}
-.focus-card:nth-child(3) {
-  --tint: var(--tint-3);
-}
-.focus-card:nth-child(4) {
-  --tint: var(--tint-4);
-}
 .focus-index {
   display: flex;
   align-items: center;
@@ -866,7 +845,7 @@ figure {
   width: 22px;
   height: 2px;
   border-radius: 2px;
-  background: var(--tint);
+  background: var(--accent);
 }
 .focus-text {
   font-size: 0.9375rem;
@@ -897,7 +876,7 @@ figure {
     padding: 4px;
   }
   .hero-pitch {
-    margin-top: 1.25rem;
+    margin-top: 1.5rem;
   }
   .focus {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -912,7 +891,7 @@ figure {
     line-height: 1.65;
   }
   .hero-focus {
-    margin-top: 2rem;
+    margin-top: 2.75rem;
   }
   .focus {
     grid-template-columns: 1fr;
@@ -930,7 +909,7 @@ figure {
   .actions {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 0.5rem;
+    gap: 0.625rem;
   }
   .actions .btn + .btn {
     margin-left: 0;
@@ -969,6 +948,10 @@ main {
   counter-increment: section;
   padding-block: clamp(3.5rem, 8vw, 7rem) 0;
 }
+/* Projects follows the hero cards closely: the hero spends its space inside. */
+#work.section {
+  padding-top: clamp(2.5rem, 5vw, 4.5rem);
+}
 #work::before,
 #contact::before {
   content: "";
@@ -998,7 +981,7 @@ main {
   color: var(--text-2);
 }
 .label-index {
-  color: var(--text-3);
+  color: var(--accent);
 }
 .label-index::before {
   content: "[ " counter(section, decimal-leading-zero) " / " var(--sections) " ]";
@@ -1101,8 +1084,8 @@ main {
 }
 
 /* Cards that lean toward the pointer and lift forward (see Spotlight.tsx):
-   a few degrees of tilt, a deeper shadow and a faint glow in the card's own
-   colour, so they read as objects rather than frames. */
+   a few degrees of tilt, a deeper shadow and a faint glow, so they read as
+   objects rather than frames. */
 .tilt {
   transform: none;
   transition:
@@ -1119,14 +1102,13 @@ main {
       box-shadow 300ms var(--ease),
       border-color var(--dur-1);
   }
-  .focus-card.tilt:hover,
   .highlight.tilt:hover,
   .work-card.tilt:hover {
     border-color: var(--line-strong);
     box-shadow:
       inset 0 1px 0 var(--surface-hi),
       0 22px 44px -26px var(--lift-shadow),
-      0 0 40px -22px color-mix(in oklab, var(--tint, var(--text-3)) 40%, transparent);
+      0 0 40px -22px color-mix(in oklab, var(--text-3) 40%, transparent);
   }
   .video-thumb.tilt:hover {
     box-shadow: 0 24px 50px -22px var(--lift-shadow);
@@ -2273,6 +2255,33 @@ body:has(.contact-box) .footer-handles {
   }
 }
 
+/* A shared link to one card (/#midnight-mcp) marks it once on arrival. */
+@keyframes target-mark {
+  from {
+    outline-color: var(--accent);
+  }
+  to {
+    outline-color: transparent;
+  }
+}
+:is(.harness, .more, .community-grid) > li:target {
+  border-radius: var(--box-radius);
+  outline: 1px solid transparent;
+  outline-offset: 4px;
+  animation: target-mark 2.4s var(--ease) 0.6s both;
+}
+
+/* Touch screens have no hover, so a tap shows a brief press state. */
+@media (hover: none) {
+  .work-card:active,
+  .highlight:has(a:active),
+  .row-item:has(.card-link:active),
+  .socials a:active {
+    background: var(--spot);
+    border-color: var(--line-strong);
+  }
+}
+
 /* Video thumbnails lean in a little on hover. */
 .video-thumb img {
   transition: transform 700ms var(--ease);
@@ -2335,6 +2344,9 @@ body:has(.contact-box) .footer-handles {
   a.work-card .work-media img,
   .video-thumb img {
     transform: none !important;
+  }
+  :is(.harness, .more, .community-grid) > li:target {
+    outline-color: var(--line-strong);
   }
 }
 
@@ -2468,7 +2480,8 @@ body:has(.contact-box) .footer-handles {
   .group-label {
     break-after: avoid;
   }
-  .section {
+  .section,
+  #work.section {
     padding-top: 2rem;
   }
   .tilt {

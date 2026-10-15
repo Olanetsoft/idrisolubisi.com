@@ -80,7 +80,7 @@ export const projects: Project[] = [
     githubRepo: "Olanetsoft/midnight-mcp",
     detail:
       "A hosted compiler worked as a verification gate, so assistants returned code that compiles instead of confident wrong code. In 2026 Midnight standardised on two official tools, Kapa MCP and Midnight Expert, and the server was wound down.",
-    tagline: "Let AI agents search and compile Midnight code",
+    tagline: "Gave AI agents Midnight code search and a compile check",
     image: "/images/work/midnight-mcp.jpg",
   },
   {
@@ -143,7 +143,7 @@ export const projects: Project[] = [
     name: "Foundry Axelar GMP example",
     group: "more",
     oneLine: "Working Foundry examples of cross-chain calls and token transfers with Axelar GMP.",
-    proof: "500+ weekly developer activations, 55% cut in integration setup time",
+    proof: "55% cut in integration setup time, 500+ weekly developer activations",
     stack: ["Solidity", "Foundry", "Axelar GMP", "Axelar ITS", "OpenZeppelin"],
     badge: "Reference",
     links: [

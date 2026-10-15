@@ -13,9 +13,12 @@ const MAX_TILT = 5; // degrees
  */
 export function Spotlight() {
   useEffect(() => {
+    // iOS Safari only shows the tap state (:active) when a touch listener exists.
+    const noop = () => {};
+    document.addEventListener("touchstart", noop, { passive: true });
     const finePointer = window.matchMedia("(pointer: fine)").matches;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (!finePointer || reduced) return;
+    if (!finePointer || reduced) return () => document.removeEventListener("touchstart", noop);
 
     let frame = 0;
     let current: HTMLElement | null = null;
@@ -54,6 +57,7 @@ export function Spotlight() {
     document.documentElement.addEventListener("pointerleave", leave);
     return () => {
       cancelAnimationFrame(frame);
+      document.removeEventListener("touchstart", noop);
       document.removeEventListener("pointermove", move);
       document.documentElement.removeEventListener("pointerleave", leave);
     };
