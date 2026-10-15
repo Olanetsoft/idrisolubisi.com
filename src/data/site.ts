@@ -11,14 +11,14 @@ export const site = {
   ],
   /** The hero intro: one paragraph, no employer names. [label](url) renders as a link, ==text== as the one highlight. */
   bio: [
-    "I’m a backend engineer who moved into developer relations and now builds AI agents. For seven years I’ve worked alongside the developers and builders using a product, ==finding the step that actually costs them time== and shipping the fix: courses, docs and tutorials, partner integrations or production code.",
+    "I’m a backend engineer who moved into developer relations and now builds AI agents. For seven years I’ve worked alongside the developers and builders using a product, ==finding the step that actually costs them time== and shipping the fix, whether that’s courses, docs and tutorials, partner integrations and solution architecture, or production code.",
   ],
   title: "Idris Olubisi, Senior Developer Relations Engineer",
   /** Evergreen, no employer or availability: the search snippet and every social card. The long description feeds structured data. */
   metaDescription:
     "Idris Olubisi (olanetsoft), Senior Developer Relations Engineer and educator who builds AI agents. Built the Midnight MCP server: 10,000+ downloads.",
   description:
-    "Idris Olubisi is a London-based backend engineer who moved into developer relations and now builds AI agents. For seven years he has worked alongside developers and builders, finding the step that costs them time and shipping the fix: courses, docs and tutorials, partner integrations or production code.",
+    "Idris Olubisi is a London-based backend engineer who moved into developer relations and now builds AI agents. For seven years he has worked alongside developers and builders, finding the step that costs them time and shipping the fix, whether that’s courses, docs and tutorials, partner integrations and solution architecture, or production code.",
   /** For /llms-full.txt. */
   profile: {
     pronouns: "He/Him",
@@ -47,7 +47,7 @@ export const site = {
   location: "London",
   status: "UK Global Talent",
   availability:
-    "Open to senior developer relations, developer education, AI agent engineering, forward deployed engineering and backend engineering roles.",
+    "Open to senior developer relations, developer education, AI agent engineering, forward deployed engineering and backend engineering roles, permanent or contract. Remote first from London, and open to hybrid or on-site. UK Global Talent visa, so no sponsorship needed.",
   /** View-only PDF, refreshed from the Google Doc with `npm run cv`. */
   resumeUrl: "/Idris-Olubisi-CV.pdf",
   gaId: "G-7MMFT1BXJV",

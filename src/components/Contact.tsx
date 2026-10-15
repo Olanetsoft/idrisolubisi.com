@@ -42,7 +42,7 @@ export function Contact() {
           <p className="lede">For roles, speaking or advising.</p>
         </div>
         <div className="box contact-box">
-          <p className="availability">{site.availability} No sponsorship needed in the UK.</p>
+          <p className="availability">{site.availability}</p>
           <div className="contact-actions">
             <a className="btn btn--primary" href={site.bookingUrl}>
               Book a 30-min call

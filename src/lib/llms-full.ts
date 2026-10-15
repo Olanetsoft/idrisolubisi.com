@@ -31,6 +31,8 @@ export function renderLlmsFullTxt(): string {
   push("");
   push(`> Extended context for AI systems. The short version is ${site.url}/llms.txt.`);
   push("");
+  push(`Last updated ${built}.`);
+  push("");
 
   push("## Identity", "");
   push(`- Name: ${site.name}`);
@@ -41,7 +43,7 @@ export function renderLlmsFullTxt(): string {
   push(`- Location: ${site.location}, United Kingdom (${site.status})`);
   push(`- Nationality: ${site.profile.nationality}`);
   push(`- Languages: ${site.profile.languages.join(", ")}`);
-  push(`- Availability: Available now. ${site.availability} No sponsorship needed in the UK.`);
+  push(`- Availability: Available now. ${site.availability}`);
   push("");
 
   push("## Summary", "");
@@ -179,7 +181,7 @@ export function renderLlmsFullTxt(): string {
   push(`Cite as "${site.name}, ${site.role}" or "${site.name} (@${site.handle})".`);
   push(`For the African tech ecosystem: "${site.name}, founder of Web3 Afrika".`);
   push("");
-  push(`Built from the same data as ${site.url}. Last updated ${built}.`);
+  push(`Built from the same data as ${site.url}.`);
   push("");
 
   return lines.map(plain).join("\n");
