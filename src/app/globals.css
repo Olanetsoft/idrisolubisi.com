@@ -272,6 +272,11 @@ figure {
 .btn:active {
   background: var(--bg-2);
 }
+.btn--primary:active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
 
 /* ---------- header ---------- */
 
@@ -319,7 +324,7 @@ figure {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.5em;
-  text-decoration-color: var(--text-3);
+  text-decoration-color: var(--accent);
 }
 /* With script, one underline glides between links instead of each link
    drawing its own. */
@@ -406,7 +411,7 @@ figure {
 .mobile-menu a[aria-current] {
   text-decoration: underline;
   text-underline-offset: 0.35em;
-  text-decoration-color: var(--text-3);
+  text-decoration-color: var(--accent);
 }
 .mobile-menu a {
   display: flex;
@@ -772,6 +777,7 @@ figure {
 .pitch mark {
   background: none;
   color: var(--accent);
+  font-weight: 600;
 }
 
 /* The ring sits inside the box (padding plus border), so it lines up with
@@ -2264,11 +2270,11 @@ body:has(.contact-box) .footer-handles {
     outline-color: transparent;
   }
 }
-:is(.harness, .more, .community-grid) > li:target {
+:is(.harness, .more) > li:target {
   border-radius: var(--box-radius);
-  outline: 1px solid transparent;
+  outline: 2px solid transparent;
   outline-offset: 4px;
-  animation: target-mark 2.4s var(--ease) 0.6s both;
+  animation: target-mark 1.8s ease-in 1.2s both;
 }
 
 /* Touch screens have no hover, so a tap shows a brief press state. */
@@ -2328,6 +2334,7 @@ body:has(.contact-box) .footer-handles {
     --text-3: #555;
     --box-line: #d4d4d4;
     --line-strong: #8a8a8a;
+    --accent: #8f5a0a;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -2345,8 +2352,8 @@ body:has(.contact-box) .footer-handles {
   .video-thumb img {
     transform: none !important;
   }
-  :is(.harness, .more, .community-grid) > li:target {
-    outline-color: var(--line-strong);
+  :is(.harness, .more) > li:target {
+    outline-color: var(--accent);
   }
 }
 

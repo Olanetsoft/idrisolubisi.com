@@ -47,7 +47,7 @@ export const site = {
   location: "London",
   status: "UK Global Talent",
   availability:
-    "Open to senior developer relations, developer education, AI agent engineering, forward deployed engineering and backend engineering roles, permanent or contract. Remote first from London, and open to hybrid or on-site. UK Global Talent visa, so no sponsorship needed.",
+    "Open to senior developer relations, developer education, AI agent engineering, forward deployed engineering and backend engineering roles, permanent or contract. Remote first from London, and open to hybrid or on-site. UK Global Talent visa, so no sponsorship needed in the UK.",
   /** View-only PDF, refreshed from the Google Doc with `npm run cv`. */
   resumeUrl: "/Idris-Olubisi-CV.pdf",
   gaId: "G-7MMFT1BXJV",
