@@ -41,10 +41,16 @@ export function MoreToggle({ listId, hidden }: { listId: string; hidden: number 
       aria-controls={listId}
       onClick={() => {
         const next = !open;
+        const list = document.getElementById(listId);
+        list?.toggleAttribute("data-open", next);
         setOpen(next);
-        // Closing from below would leave the button far down the page.
-        if (!next)
+        if (next) {
+          // The revealed cards come before this button, so Tab would skip them.
+          list?.querySelector<HTMLElement>(":scope > [data-extra] a")?.focus();
+        } else {
+          // Closing from below would leave the button far down the page.
           requestAnimationFrame(() => button.current?.scrollIntoView({ block: "nearest" }));
+        }
       }}
     >
       {open ? "Show fewer" : `Show ${hidden} more`}

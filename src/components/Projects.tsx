@@ -79,10 +79,7 @@ export function Projects() {
           ))}
         </ul>
         <h3 className="group-label">
-          More builds{" "}
-          <span className="group-count">
-            <span aria-hidden="true">·</span> {more.length}
-          </span>
+          More builds <span aria-hidden="true">·</span> {more.length}
         </h3>
         <ul className="more" id="more-builds">
           {more.map((p, i) => (
