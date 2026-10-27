@@ -17,8 +17,7 @@ const LEAD_SIZES =
   "(max-width: 759px) calc(100vw - 32px), (max-width: 1023px) 55vw, (max-width: 1295px) 29vw, 380px";
 const FEATURE_SIZES =
   "(max-width: 759px) calc(100vw - 32px), (max-width: 1023px) 44vw, (max-width: 1295px) 29vw, 380px";
-const MORE_SIZES =
-  "(max-width: 759px) 74vw, (max-width: 1023px) 44vw, (max-width: 1295px) 29vw, 380px";
+const MORE_SIZES = "(max-width: 759px) calc(100vw - 32px), (max-width: 1295px) 30vw, 380px";
 
 /** More builds shows this many cards; a button reveals the rest. */
 const MORE_SHOWN = 3;
@@ -89,18 +88,6 @@ export function Projects() {
           {more.map((p, i) => (
             <ProjectCard key={p.key} project={p} extra={i >= MORE_SHOWN} />
           ))}
-          <li className="more-tail">
-            <a className="work-card spot tilt" href={site.links.github} rel="me">
-              <span className="work-media work-media--tail">
-                <BrandIcon name="github" size={28} />
-              </span>
-              <span className="work-body">
-                <span className="work-name">
-                  <span className="work-name-text">More on GitHub</span>
-                </span>
-              </span>
-            </a>
-          </li>
         </ul>
         <div className="more-actions">
           {more.length > MORE_SHOWN && (

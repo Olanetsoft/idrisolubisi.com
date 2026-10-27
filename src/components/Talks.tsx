@@ -4,6 +4,7 @@ import { stagePhotos, talks } from "@/data/talks";
 import { featuredVideos } from "@/data/videos";
 import { BrandIcon } from "./icons";
 import { SectionLabel } from "./SectionLabel";
+import { PhotoDialog } from "./PhotoDialog";
 import { VideoDialog } from "./VideoDialog";
 
 type Talk = (typeof talks)[number];
@@ -42,25 +43,28 @@ export function Talks() {
           <SectionLabel id="talks">Talks and workshops</SectionLabel>
           <p className="lede">On stage and on camera.</p>
         </div>
+        <PhotoDialog photos={stagePhotos} />
         <div className="stage-photos">
           {stagePhotos.map((p, i) => (
             <figure
               key={p.src}
               className={i === 0 ? "stage-photo stage-photo--lead" : "stage-photo"}
             >
-              <Image
-                src={p.src}
-                alt={p.alt}
-                width={p.width}
-                height={p.height}
-                sizes={
-                  i === 0
-                    ? "(max-width: 759px) calc(100vw - 32px), (max-width: 1295px) 62vw, 780px"
-                    : "(max-width: 759px) 46vw, (max-width: 1295px) 31vw, 390px"
-                }
-                style={p.position ? { objectPosition: p.position } : undefined}
-              />
-              <figcaption className="media-tag">{p.tag}</figcaption>
+              <a className="stage-photo-link" href={p.src} data-photo={i}>
+                <Image
+                  src={p.src}
+                  alt={p.alt}
+                  width={p.width}
+                  height={p.height}
+                  sizes={
+                    i === 0
+                      ? "(max-width: 759px) calc(100vw - 32px), (max-width: 1295px) 62vw, 780px"
+                      : "(max-width: 759px) 46vw, (max-width: 1295px) 31vw, 390px"
+                  }
+                  style={p.position ? { objectPosition: p.position } : undefined}
+                />
+              </a>
+              <figcaption className="stage-tag">{p.tag}</figcaption>
             </figure>
           ))}
         </div>

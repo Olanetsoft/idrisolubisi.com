@@ -156,7 +156,7 @@ export const community: {
     current: true,
     since: "May 2022",
     detail: "Organises events and workshops, including the Build Afrika Summit",
-    image: "/images/community/web3afrika-build-afrika.jpg",
+    image: "/images/community/web3afrika.jpg",
     summary: "15,000+ builders across Africa",
   },
   {

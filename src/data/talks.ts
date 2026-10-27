@@ -116,14 +116,15 @@ export const stagePhotos: StagePhoto[] = [
     height: 739,
     alt: "Idris presenting from the stage to rows of developers at long tables, with cameras and lights around the room",
     tag: "Web3 Developer Roadshow · Mara × Circle",
-    position: "88% 50%",
+    position: "96% 50%",
   },
   {
-    src: "/images/talks/mara-roadshow-room.jpg",
+    src: "/images/talks/build-afrika.jpg",
     width: 1600,
-    height: 739,
-    alt: "The roadshow hall from the back: hundreds of developers facing a screen titled What is a Blockchain?, with Idris on stage",
-    tag: "Web3 Developer Roadshow · Mara × Circle",
+    height: 1280,
+    alt: "Idris speaking at a lectern at Build Afrika, to a room of developers",
+    tag: "Build Afrika · Lagos 2025",
+    position: "40% 55%",
   },
 ];
 

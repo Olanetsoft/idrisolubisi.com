@@ -1142,19 +1142,6 @@ main {
   max-width: 62ch;
   color: var(--text-2);
 }
-/* The last slot of the two-column tablet grid links to GitHub; on desktop
-   and phones the link beside the More builds button does that job. */
-.more > .more-tail {
-  display: none;
-}
-@media (min-width: 760px) and (max-width: 1023px) {
-  .more > .more-tail {
-    display: grid;
-  }
-  .more-link--github {
-    display: none;
-  }
-}
 /* More builds shows its first cards; the button under the list opens the
    rest (MoreToggle.tsx). Without script, and on paper, every card shows. */
 .more:not([data-open]) > li[data-extra] {
@@ -1353,29 +1340,6 @@ main {
   box-shadow: inset 0 0 0 1px var(--media-line);
   pointer-events: none;
 }
-.work-media--tail {
-  display: grid;
-  place-items: center;
-  color: var(--text-2);
-}
-/* The More on GitHub card: icon and label centred, no empty picture well. */
-.more-tail > .work-card {
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-}
-.more-tail .work-media--tail {
-  aspect-ratio: auto;
-  width: auto;
-  background: none;
-}
-.more-tail .work-media--tail::after {
-  display: none;
-}
-.more-tail .work-body {
-  flex: none;
-  padding: 0;
-}
 .media-tag {
   position: absolute;
   left: 8px;
@@ -1556,10 +1520,10 @@ main {
 }
 
 /* Tablets: the first harness card spans the row with its picture beside the
-   text; the other two and the more builds sit two to a row. */
+   text and the other two sit two to a row; More builds keeps one row of
+   three, as on desktop. */
 @media (max-width: 1023px) {
-  .harness,
-  .more {
+  .harness {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .harness > li:first-child {
@@ -2122,9 +2086,9 @@ main {
 }
 
 /* Talks opens with photographs of him on stage: the keynote large on the
-   left, two from the roadshow stacked beside it. Square to the grid, no
-   frame; the tag names the event. Phones: the keynote full width, the other
-   two side by side under it. */
+   left, two more stacked beside it, each a link that opens the photo whole
+   (PhotoDialog.tsx). The tag names the event. Phones: the keynote full
+   width, the other two side by side under it with their captions below. */
 .stage-photos {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
@@ -2134,36 +2098,110 @@ main {
 }
 .stage-photo {
   position: relative;
+  display: grid;
   margin: 0;
-  overflow: hidden;
-  border-radius: var(--box-radius);
-  background: var(--well);
 }
 .stage-photo--lead {
   grid-row: 1 / -1;
+}
+.stage-photo-link {
+  position: relative;
+  display: block;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: var(--box-radius);
+  background: var(--well);
+  cursor: zoom-in;
+}
+.stage-photo--lead .stage-photo-link {
   aspect-ratio: 3 / 2;
 }
-.stage-photo img {
+.stage-photo-link img {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 700ms var(--ease);
+}
+@media (hover: hover) {
+  .stage-photo-link:hover img {
+    transform: scale(1.03);
+  }
+}
+.stage-photo-link:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+.stage-tag {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  max-width: calc(100% - 16px);
+  padding: 4px 7px;
+  border-radius: 4px;
+  background: var(--tag-bg);
+  color: var(--tag-ink);
+  font: 500 var(--fs-meta)/1.2 var(--font-mono-stack);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  pointer-events: none;
 }
 @media (max-width: 759px) {
   .stage-photos {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: none;
+    gap: 1rem 0.75rem;
   }
   .stage-photo--lead {
     grid-column: 1 / -1;
     grid-row: auto;
   }
-  .stage-photo:not(.stage-photo--lead) {
-    aspect-ratio: 4 / 3;
+  .stage-photo {
+    align-content: start;
+    gap: 0.5rem;
   }
-  .stage-photo:not(.stage-photo--lead) .media-tag {
-    display: none;
+  .stage-photo-link {
+    height: auto;
   }
+  .stage-photo:not(.stage-photo--lead) .stage-photo-link {
+    aspect-ratio: 4 / 5;
+  }
+  /* Phones: every caption goes under its picture, in the text face. */
+  .stage-tag {
+    position: static;
+    max-width: none;
+    padding: 0;
+    background: none;
+    color: var(--text-2);
+    font:
+      400 var(--fs-meta)/1.4 var(--font-sans),
+      sans-serif;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+}
+
+/* The photo dialog shares the video dialog's frame; the photo shows whole. */
+.photo-dialog-frame {
+  display: grid;
+  place-items: center;
+  background: #000;
+}
+.photo-dialog-frame img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: calc(100dvh - 9rem);
+  object-fit: contain;
+}
+.photo-dialog-foot {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0.5rem;
 }
 
 /* Recognition opens with its three strongest pieces set large, apart by
@@ -2571,6 +2609,7 @@ body:has(.contact-box) .footer-handles {
   }
   .tilt:hover,
   a.work-card .work-media img,
+  .stage-photo-link img,
   .video-thumb img {
     transform: none !important;
   }
@@ -2636,7 +2675,6 @@ body:has(.contact-box) .footer-handles {
     display: grid !important;
   }
   .more-toggle,
-  .more-tail,
   .work-media,
   .theme-toggle,
   .menu-button,
