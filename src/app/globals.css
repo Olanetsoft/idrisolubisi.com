@@ -1034,7 +1034,8 @@ figure {
 }
 @media (max-width: 759px) {
   .hero h1 {
-    font-size: clamp(1.75rem, 1.2rem + 3vw, 2.25rem);
+    font-size: clamp(2.125rem, 1.4rem + 3.6vw, 2.75rem);
+    letter-spacing: -0.035em;
   }
   .pitch {
     font-size: 1rem;
@@ -1141,26 +1142,36 @@ main {
   max-width: 62ch;
   color: var(--text-2);
 }
-.swipe-hint {
+/* More builds shows its first cards; the button under the list opens the
+   rest (MoreToggle.tsx). Without script, and on paper, every card shows. */
+.more:not([data-open]) > li[data-extra] {
   display: none;
 }
-/* The tenth card in the two-column tablet grid and the last card in the phone
-   swipe row; from 1024px the link below the grid does this job. */
-.more > .more-tail {
-  display: none;
-}
-@media (max-width: 1023px) {
-  .more > .more-tail {
+@media (scripting: none) {
+  .more:not([data-open]) > li[data-extra] {
     display: grid;
   }
-  .more-link--github {
+  .more-toggle {
     display: none;
   }
 }
-@media (max-width: 759px) {
-  .swipe-hint {
-    display: inline;
-  }
+.more-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+  margin-top: 1.25rem;
+}
+.more-actions .more-link {
+  margin-top: 0;
+}
+/* A real button, so drop the browser's grey fill and system font. */
+.more-toggle {
+  appearance: none;
+  background: none;
+  font: inherit;
+  font-size: 0.9375rem;
+  cursor: pointer;
 }
 .group-label {
   margin-bottom: 0.75rem;
@@ -1328,29 +1339,6 @@ main {
   border-radius: inherit;
   box-shadow: inset 0 0 0 1px var(--media-line);
   pointer-events: none;
-}
-.work-media--tail {
-  display: grid;
-  place-items: center;
-  color: var(--text-2);
-}
-/* The More on GitHub card: icon and label centred, no empty picture well. */
-.more-tail > .work-card {
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-}
-.more-tail .work-media--tail {
-  aspect-ratio: auto;
-  width: auto;
-  background: none;
-}
-.more-tail .work-media--tail::after {
-  display: none;
-}
-.more-tail .work-body {
-  flex: none;
-  padding: 0;
 }
 .media-tag {
   position: absolute;
@@ -1532,10 +1520,10 @@ main {
 }
 
 /* Tablets: the first harness card spans the row with its picture beside the
-   text; the other two and the more builds sit two to a row. */
+   text and the other two sit two to a row; More builds keeps one row of
+   three, as on desktop. */
 @media (max-width: 1023px) {
-  .harness,
-  .more {
+  .harness {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .harness > li:first-child {
@@ -2097,6 +2085,125 @@ main {
   }
 }
 
+/* Talks opens with photographs of him on stage: the keynote large on the
+   left, two more stacked beside it, each a link that opens the photo whole
+   (PhotoDialog.tsx). The tag names the event. Phones: the keynote full
+   width, the other two side by side under it with their captions below. */
+.stage-photos {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: var(--box-gap);
+  margin-bottom: clamp(1.75rem, 3.5vw, 2.75rem);
+}
+.stage-photo {
+  position: relative;
+  display: grid;
+  margin: 0;
+}
+.stage-photo--lead {
+  grid-row: 1 / -1;
+}
+.stage-photo-link {
+  position: relative;
+  display: block;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: var(--box-radius);
+  background: var(--well);
+  cursor: zoom-in;
+}
+.stage-photo--lead .stage-photo-link {
+  aspect-ratio: 3 / 2;
+}
+.stage-photo-link img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms var(--ease);
+}
+@media (hover: hover) {
+  .stage-photo-link:hover img {
+    transform: scale(1.03);
+  }
+}
+.stage-photo-link:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+.stage-tag {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  max-width: calc(100% - 16px);
+  padding: 4px 7px;
+  border-radius: 4px;
+  background: var(--tag-bg);
+  color: var(--tag-ink);
+  font: 500 var(--fs-meta)/1.2 var(--font-mono-stack);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+@media (max-width: 759px) {
+  .stage-photos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+    gap: 1rem 0.75rem;
+  }
+  .stage-photo--lead {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+  .stage-photo {
+    align-content: start;
+    gap: 0.5rem;
+  }
+  .stage-photo-link {
+    height: auto;
+  }
+  .stage-photo:not(.stage-photo--lead) .stage-photo-link {
+    aspect-ratio: 4 / 5;
+  }
+  /* Phones: every caption goes under its picture, in the text face. */
+  .stage-tag {
+    position: static;
+    max-width: none;
+    padding: 0;
+    background: none;
+    color: var(--text-2);
+    font:
+      400 var(--fs-meta)/1.4 var(--font-sans),
+      sans-serif;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+}
+
+/* The photo dialog shares the video dialog's frame; the photo shows whole. */
+.photo-dialog-frame {
+  display: grid;
+  place-items: center;
+  background: #000;
+}
+.photo-dialog-frame img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: calc(100dvh - 9rem);
+  object-fit: contain;
+}
+.photo-dialog-foot {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0.5rem;
+}
+
 /* Recognition opens with its three strongest pieces set large, apart by
    space rather than rules; the rest follow as rows. */
 .press-lead {
@@ -2502,6 +2609,7 @@ body:has(.contact-box) .footer-handles {
   }
   .tilt:hover,
   a.work-card .work-media img,
+  .stage-photo-link img,
   .video-thumb img {
     transform: none !important;
   }
@@ -2513,27 +2621,9 @@ body:has(.contact-box) .footer-handles {
 /* ---------- phones ---------- */
 
 @media (max-width: 759px) {
-  /* More builds: a swipe row with the next card peeking in, not nine stacked cards. */
+  /* More builds: one card per row, the first three, then the button. */
   .more {
-    grid-template-columns: none;
-    grid-auto-flow: column;
-    grid-auto-columns: 82%;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    scroll-snap-type: x mandatory;
-    scroll-padding-inline: var(--gutter);
-    margin-inline: calc(var(--gutter) * -1);
-    padding: 0.375rem var(--gutter) 0.75rem;
-    scrollbar-width: none;
-  }
-  .more::-webkit-scrollbar {
-    display: none;
-  }
-  .more > li {
-    scroll-snap-align: start;
-  }
-  .more > li > .work-card {
-    animation: none;
+    grid-template-columns: 1fr;
   }
   /* The hero grid frames the name and fades out before the intro. */
   .hero-bg {
@@ -2579,15 +2669,12 @@ body:has(.contact-box) .footer-handles {
    that lose content on paper (the sideways row, thumbnails, buttons). */
 @media print {
   .more {
-    grid-auto-flow: row;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-columns: auto;
-    overflow: visible;
-    margin-inline: 0;
-    padding: 0;
   }
-  .swipe-hint,
-  .more-tail,
+  .more > li[data-extra] {
+    display: grid !important;
+  }
+  .more-toggle,
   .work-media,
   .theme-toggle,
   .menu-button,
