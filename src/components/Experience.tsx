@@ -36,9 +36,7 @@ export function Experience() {
             </li>
           ))}
         </ol>
-        <h3 className="group-label">
-          Community <span aria-hidden="true">·</span> {community.length}
-        </h3>
+        <h3 className="group-label">Community</h3>
         <ul className="community-grid">
           {community.map((c) => (
             <li key={c.org}>

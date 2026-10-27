@@ -119,9 +119,7 @@ export function Talks() {
           </a>
           <a href={site.links.sessionize}>Speaker profile on Sessionize</a>
         </p>
-        <h3 className="group-label">
-          On stage <span aria-hidden="true">·</span> {stages.length}
-        </h3>
+        <h3 className="group-label">On stage</h3>
         <ul className="row-list stage-list">
           {stages.map((t) => {
             const city = t.location && !eventName(t).includes(t.location) ? t.location : undefined;
