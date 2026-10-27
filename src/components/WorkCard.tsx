@@ -9,6 +9,8 @@ type WorkCardProps = {
   /** Alt text only when the card is not a link; on a link the visible name labels it. */
   alt?: string;
   sizes: string;
+  /** On the first screen: load at once, at high priority (the lead harness card). */
+  eager?: boolean;
   /** A short mono tag on the image: the harness layer or a community role. */
   tag?: string;
   name: string;
@@ -34,6 +36,7 @@ export function WorkCard({
   image,
   alt = "",
   sizes,
+  eager,
   tag,
   name,
   badge,
@@ -55,7 +58,15 @@ export function WorkCard({
   const body = (
     <>
       <span className="work-media">
-        <Image src={image} alt={href ? "" : alt} width={1280} height={800} sizes={sizes} />
+        <Image
+          src={image}
+          alt={href ? "" : alt}
+          width={1280}
+          height={800}
+          sizes={sizes}
+          loading={eager ? "eager" : undefined}
+          fetchPriority={eager ? "high" : undefined}
+        />
         {tag && (
           <span className="media-tag" aria-hidden="true">
             {tag}

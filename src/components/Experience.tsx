@@ -20,7 +20,7 @@ export function Experience() {
       <div className="container">
         <div className="section-head">
           <SectionLabel id="experience">Experience</SectionLabel>
-          <p className="lede">Seven years in backend engineering and developer relations.</p>
+          <p className="lede">Seven years, backend to developer relations.</p>
         </div>
         <ol className="xp-list">
           {experience.map((r) => (

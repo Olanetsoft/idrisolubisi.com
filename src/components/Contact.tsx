@@ -42,35 +42,37 @@ export function Contact() {
           <p className="lede">For roles, speaking or advising.</p>
         </div>
         <div className="box contact-box">
-          <p className="availability">{site.availability}</p>
-          <div className="contact-actions">
+          <div className="contact-main">
+            <p className="availability">{site.availability}</p>
             <a className="btn btn--primary" href={site.bookingUrl}>
               Book a 30-min call
             </a>
+          </div>
+          <div className="contact-side">
             <p className="contact-email">
               <a className="email" href={`mailto:${site.email}`}>
                 {site.email}
               </a>
               <CopyButton value={site.email} label="Copy email address" />
             </p>
+            <ul className="socials" aria-label="Elsewhere">
+              {SOCIALS.map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} rel="me">
+                    <BrandIcon name={link.icon} size={18} />
+                    <span>{link.label}</span>
+                    {link.note && <span className="social-note">{link.note}</span>}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <p className="more-link press-photos">
+              <a href={site.links.photos}>
+                <UiIcon name="image" />
+                Headshots and photos for organisers and press
+              </a>
+            </p>
           </div>
-          <ul className="socials" aria-label="Elsewhere">
-            {SOCIALS.map((link) => (
-              <li key={link.label}>
-                <a href={link.href} rel="me">
-                  <BrandIcon name={link.icon} size={18} />
-                  <span>{link.label}</span>
-                  {link.note && <span className="social-note">{link.note}</span>}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <p className="more-link press-photos">
-            <a href={site.links.photos}>
-              <UiIcon name="image" />
-              Headshots and photos for organisers and press
-            </a>
-          </p>
         </div>
       </div>
     </section>

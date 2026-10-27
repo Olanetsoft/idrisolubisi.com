@@ -40,7 +40,7 @@ export function Talks() {
       <div className="container">
         <div className="section-head">
           <SectionLabel id="talks">Talks and workshops</SectionLabel>
-          <p className="lede">Tutorials, workshops and explainers.</p>
+          <p className="lede">On stage and on camera.</p>
         </div>
         <VideoDialog />
         <ul className="highlights">

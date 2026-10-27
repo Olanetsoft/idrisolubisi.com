@@ -23,7 +23,7 @@ export function Hero() {
               alt="Idris Olubisi"
               width={1407}
               height={1600}
-              priority
+              loading="eager"
               sizes="(max-width: 519px) 26vw, (max-width: 1023px) 133px, 200px"
             />
           </figure>
@@ -41,24 +41,6 @@ export function Hero() {
               CV (PDF)
             </a>
           </div>
-          <dl className="focus hero-focus">
-            {hero.focus.map((f, i) => (
-              <div
-                className="focus-card spot"
-                key={f.title}
-                style={{ "--i": i } as React.CSSProperties}
-              >
-                <dt className="focus-title">
-                  <span className="focus-index" aria-hidden="true">
-                    <span className="focus-accent" />
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  {f.title}
-                </dt>
-                <dd className="focus-text">{f.text}</dd>
-              </div>
-            ))}
-          </dl>
         </div>
       </div>
     </section>
