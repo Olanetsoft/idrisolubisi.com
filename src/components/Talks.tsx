@@ -71,7 +71,7 @@ export function Talks() {
         <VideoDialog />
         <ul className="highlights">
           {highlights.map((t) => (
-            <li key={t.event} className={t.href ? "highlight spot tilt" : "highlight spot"}>
+            <li key={t.event} className="highlight">
               <p className="highlight-label">{t.highlight}</p>
               <p className="highlight-event">
                 {t.href ? <a href={t.href}>{eventName(t)}</a> : eventName(t)}
@@ -92,7 +92,7 @@ export function Talks() {
                 data-video-start={v.start}
                 data-video-title={v.title}
               >
-                <span className="video-thumb tilt">
+                <span className="video-thumb">
                   <Image
                     src={`https://i.ytimg.com/vi/${v.id}/${v.thumb ?? "hqdefault"}.jpg`}
                     alt=""

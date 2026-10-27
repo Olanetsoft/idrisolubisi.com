@@ -33,8 +33,6 @@
   --spot: rgb(255 255 255 / 0.06);
   --spot-edge: rgb(255 255 255 / 0.28);
   --glow-a: rgb(233 180 76 / 0.11);
-  --glow-b: rgb(236 233 226 / 0.045);
-  --glow-c: rgb(236 233 226 / 0.04);
   --grain: 0.045;
   --lift-shadow: rgb(0 0 0 / 0.9);
 
@@ -80,8 +78,6 @@
   --spot: rgb(28 27 25 / 0.035);
   --spot-edge: rgb(28 27 25 / 0.22);
   --glow-a: rgb(201 138 30 / 0.1);
-  --glow-b: rgb(28 27 25 / 0.03);
-  --glow-c: rgb(28 27 25 / 0.03);
   --grain: 0.035;
   --lift-shadow: rgb(60 50 30 / 0.28);
   color-scheme: light;
@@ -765,10 +761,7 @@ figure {
   inset: 0;
   z-index: -2;
   pointer-events: none;
-  background:
-    radial-gradient(42% 46% at 18% 6%, var(--glow-a), transparent 70%),
-    radial-gradient(38% 40% at 86% 14%, var(--glow-b), transparent 70%),
-    radial-gradient(40% 30% at 55% 78%, var(--glow-c), transparent 70%);
+  background: radial-gradient(42% 46% at 18% 6%, var(--glow-a), transparent 70%);
 }
 .hero-inner {
   position: relative;
@@ -1146,22 +1139,6 @@ main {
 #work.section {
   padding-top: clamp(2.5rem, 5vw, 4.5rem);
 }
-#work::before,
-#contact::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  pointer-events: none;
-}
-#work::before {
-  inset: 0 0 auto;
-  height: 900px;
-  background: radial-gradient(48% 42% at 50% 40%, var(--glow-c), transparent 72%);
-}
-#contact::before {
-  inset: 0;
-  background: radial-gradient(40% 50% at 20% 70%, var(--glow-a), transparent 72%);
-}
 .section-head {
   margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
 }
@@ -1311,16 +1288,12 @@ main {
       box-shadow 300ms var(--ease),
       border-color var(--dur-1);
   }
-  .highlight.tilt:hover,
   .work-card.tilt:hover {
     border-color: var(--line-strong);
     box-shadow:
       inset 0 1px 0 var(--surface-hi),
       0 22px 44px -26px var(--lift-shadow),
       0 0 40px -22px color-mix(in oklab, var(--text-3) 40%, transparent);
-  }
-  .video-thumb.tilt:hover {
-    box-shadow: 0 24px 50px -22px var(--lift-shadow);
   }
 }
 
@@ -1569,9 +1542,6 @@ main {
   border-radius: 50%;
   background: currentColor;
 }
-/* Pointing at a chip lights the same chip on every project that uses it,
-   and the other projects step back (see ChipMatch.tsx). */
-/* A filter, not opacity: the scroll reveal animates opacity and would win. */
 .copy-button {
   min-height: 40px;
   padding: 0 0.625rem;
@@ -1796,6 +1766,7 @@ main {
   margin-bottom: clamp(1.75rem, 3vw, 2.5rem);
 }
 .highlight {
+  position: relative;
   display: grid;
   align-content: start;
   gap: 0.3rem;
@@ -2599,33 +2570,6 @@ body:has(.contact-box) .footer-handles {
   }
 }
 
-/* Further down, each block rises into place as it scrolls into view. Pure
-   CSS (scroll-driven animations); browsers without them show it in place. */
-@supports (animation-timeline: view()) {
-  .section-head,
-  .highlight,
-  .work-card,
-  .xp-list,
-  .row-list,
-  .press-lead,
-  .video,
-  .section .box {
-    animation: rise linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 35%;
-  }
-  .section-head:focus-within,
-  .highlight:focus-within,
-  .work-card:focus-within,
-  .work-card:focus-visible,
-  .row-list:focus-within,
-  .press-lead:focus-within,
-  .video:focus-within,
-  .section .box:focus-within {
-    animation: none;
-  }
-}
-
 /* A shared link to one card (/#midnight-mcp) marks it once on arrival. */
 @keyframes target-mark {
   from {
@@ -2675,9 +2619,7 @@ body:has(.contact-box) .footer-handles {
 
 @media print {
   body::before,
-  .hero::before,
-  #work::before,
-  #contact::before {
+  .hero::before {
     display: none;
   }
   *,

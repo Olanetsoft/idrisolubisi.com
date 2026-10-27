@@ -2,7 +2,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 
 type WorkCardProps = {
-  /** Where the whole card goes. Without it the card is still, with no tilt (a private repo). */
+  /** Where the whole card goes. Without it the card is still: no light, no tilt (a private repo). */
   href?: string;
   rel?: string;
   image: string;
@@ -50,7 +50,7 @@ export function WorkCard({
     "work-card",
     size === "feature" && "work-card--feature",
     size === "sm" && "work-card--sm",
-    "spot",
+    href && "spot",
     href && "tilt",
   ]
     .filter(Boolean)
