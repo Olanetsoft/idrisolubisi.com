@@ -1192,10 +1192,10 @@ main {
 }
 .group-label {
   margin-bottom: 0.75rem;
-  font: 400 var(--fs-meta)/1.4 var(--font-mono-stack);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-3);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-2);
 }
 * + .group-label {
   margin-top: 2.5rem;
@@ -1469,8 +1469,6 @@ main {
   align-items: center;
   min-height: 44px;
   font: 400 var(--fs-meta)/1.4 var(--font-mono-stack);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--text-3);
 }
 
@@ -1483,8 +1481,6 @@ main {
   border: 1px solid var(--line);
   border-radius: 999px;
   font: 400 var(--fs-meta)/1 var(--font-mono-stack);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--text-2);
   white-space: nowrap;
 }
@@ -1507,8 +1503,6 @@ main {
   color: var(--text-3);
   cursor: pointer;
   font: 400 var(--fs-meta)/1 var(--font-mono-stack);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 .copy-button:hover {
   color: var(--text);
@@ -1604,8 +1598,6 @@ main {
 }
 .video-meta {
   font: 400 var(--fs-meta)/1.2 var(--font-mono-stack);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--text-3);
 }
 @media (hover: hover) {
@@ -1686,8 +1678,6 @@ main {
   border: 0;
   color: var(--text-2);
   font: 400 var(--fs-meta)/1 var(--font-mono-stack);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   cursor: pointer;
 }
 .video-dialog-close:hover {
@@ -1734,8 +1724,6 @@ main {
 .highlight-label {
   margin-bottom: 0.5rem;
   font: 400 var(--fs-meta)/1.4 var(--font-mono-stack);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--text-3);
 }
 .highlight-event {
@@ -1766,8 +1754,6 @@ main {
 .highlight-meta {
   margin-top: 0.35rem;
   font: 400 var(--fs-meta)/1.5 var(--font-mono-stack);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--text-3);
 }
 .highlight-note {
@@ -1820,8 +1806,6 @@ main {
 }
 .stage-kind {
   font: 400 var(--fs-meta)/1.4 var(--font-mono-stack);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--text-3);
   text-align: right;
   white-space: nowrap;
@@ -1966,8 +1950,6 @@ main {
 }
 .published-label {
   font: 400 var(--fs-meta)/1.4 var(--font-mono-stack);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--text-3);
   margin-right: 0.35rem;
 }
@@ -2051,8 +2033,6 @@ main {
   gap: 0.25rem 0.5rem;
   margin-bottom: 0.6rem;
   font: 400 var(--fs-meta)/1.4 var(--font-mono-stack);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--text-3);
   font-variant-numeric: tabular-nums;
 }
@@ -2661,9 +2641,6 @@ body:has(.contact-box) .footer-handles {
   }
   .copy-button {
     min-height: 44px;
-  }
-  .video-meta {
-    letter-spacing: 0.03em;
   }
 }
 

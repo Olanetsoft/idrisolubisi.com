@@ -69,17 +69,13 @@ export function Projects() {
         <div className="section-head">
           <SectionLabel id="work">Projects</SectionLabel>
         </div>
-        <h3 className="group-label">
-          Agent harness <span aria-hidden="true">·</span> {harness.length}
-        </h3>
+        <h3 className="group-label">Agent harness</h3>
         <ul className="harness">
           {harness.map((p, i) => (
             <ProjectCard key={p.key} project={p} feature lead={i === 0} />
           ))}
         </ul>
-        <h3 className="group-label">
-          More builds <span aria-hidden="true">·</span> {more.length}
-        </h3>
+        <h3 className="group-label">More builds</h3>
         <ul className="more" id="more-builds">
           {more.map((p, i) => (
             <ProjectCard key={p.key} project={p} extra={i >= MORE_SHOWN} />
