@@ -141,7 +141,7 @@ export const community: {
   current: boolean;
   /** Start date, for /llms-full.txt. */
   since?: string;
-  /** Screenshot of the organisation's site, in public/images/community/. */
+  /** A photo of him at their event, or a screenshot of their site, in public/images/community/ (1280x800). */
   image: string;
   /** The one line on the card. */
   summary: string;
@@ -156,7 +156,7 @@ export const community: {
     current: true,
     since: "May 2022",
     detail: "Organises events and workshops, including the Build Afrika Summit",
-    image: "/images/community/web3afrika.jpg",
+    image: "/images/community/web3afrika-build-afrika.jpg",
     summary: "15,000+ builders across Africa",
   },
   {
@@ -165,7 +165,7 @@ export const community: {
     href: "https://blockfestafrica.com/",
     note: "Leads the partnership team for the whole event; 12,000 participants in 2025",
     current: true,
-    image: "/images/community/blockfest.jpg",
+    image: "/images/community/blockfest-stage.jpg",
     summary: "12,000 participants in 2025",
   },
   {

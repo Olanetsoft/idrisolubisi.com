@@ -89,6 +89,44 @@ export const talks: Talk[] = [
 ];
 
 /** What he speaks about, for /llms-full.txt. */
+/** Photographs of him on stage, his own, opening the Talks section. The first one leads, larger. */
+export type StagePhoto = {
+  src: string;
+  width: number;
+  height: number;
+  alt: string;
+  /** A short tag on the picture: the event, and the city and year when known. */
+  tag: string;
+  /** Where the crop centres, as CSS object-position (the speaker is off-centre in some). */
+  position?: string;
+};
+
+export const stagePhotos: StagePhoto[] = [
+  {
+    src: "/images/talks/blockfest-keynote.jpg",
+    width: 1600,
+    height: 1066,
+    alt: "Idris at a clear lectern, speaking to a full hall at Blockfest Africa",
+    tag: "Keynote · Blockfest Africa · Lagos 2025",
+    position: "70% 50%",
+  },
+  {
+    src: "/images/talks/mara-roadshow-stage.jpg",
+    width: 1600,
+    height: 739,
+    alt: "Idris presenting from the stage to rows of developers at long tables, with cameras and lights around the room",
+    tag: "Web3 Developer Roadshow · Mara × Circle",
+    position: "88% 50%",
+  },
+  {
+    src: "/images/talks/mara-roadshow-room.jpg",
+    width: 1600,
+    height: 739,
+    alt: "The roadshow hall from the back: hundreds of developers facing a screen titled What is a Blockchain?, with Idris on stage",
+    tag: "Web3 Developer Roadshow · Mara × Circle",
+  },
+];
+
 export const speakingTopics = [
   "agent systems and the harness around them",
   "MCP and AI-agent tooling",

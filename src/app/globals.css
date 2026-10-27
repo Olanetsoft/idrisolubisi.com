@@ -1034,7 +1034,8 @@ figure {
 }
 @media (max-width: 759px) {
   .hero h1 {
-    font-size: clamp(1.75rem, 1.2rem + 3vw, 2.25rem);
+    font-size: clamp(2.125rem, 1.4rem + 3.6vw, 2.75rem);
+    letter-spacing: -0.035em;
   }
   .pitch {
     font-size: 1rem;
@@ -1141,15 +1142,12 @@ main {
   max-width: 62ch;
   color: var(--text-2);
 }
-.swipe-hint {
-  display: none;
-}
-/* The tenth card in the two-column tablet grid and the last card in the phone
-   swipe row; from 1024px the link below the grid does this job. */
+/* The last slot of the two-column tablet grid links to GitHub; on desktop
+   and phones the link beside the More builds button does that job. */
 .more > .more-tail {
   display: none;
 }
-@media (max-width: 1023px) {
+@media (min-width: 760px) and (max-width: 1023px) {
   .more > .more-tail {
     display: grid;
   }
@@ -1157,10 +1155,36 @@ main {
     display: none;
   }
 }
-@media (max-width: 759px) {
-  .swipe-hint {
-    display: inline;
+/* More builds shows its first cards; the button under the list opens the
+   rest (MoreToggle.tsx). Without script, and on paper, every card shows. */
+.more:not([data-open]) > li[data-extra] {
+  display: none;
+}
+@media (scripting: none) {
+  .more:not([data-open]) > li[data-extra] {
+    display: grid;
   }
+  .more-toggle {
+    display: none;
+  }
+}
+.more-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+  margin-top: 1.25rem;
+}
+.more-actions .more-link {
+  margin-top: 0;
+}
+/* A real button, so drop the browser's grey fill and system font. */
+.more-toggle {
+  appearance: none;
+  background: none;
+  font: inherit;
+  font-size: 0.9375rem;
+  cursor: pointer;
 }
 .group-label {
   margin-bottom: 0.75rem;
@@ -2097,6 +2121,51 @@ main {
   }
 }
 
+/* Talks opens with photographs of him on stage: the keynote large on the
+   left, two from the roadshow stacked beside it. Square to the grid, no
+   frame; the tag names the event. Phones: the keynote full width, the other
+   two side by side under it. */
+.stage-photos {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: var(--box-gap);
+  margin-bottom: clamp(1.75rem, 3.5vw, 2.75rem);
+}
+.stage-photo {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--box-radius);
+  background: var(--well);
+}
+.stage-photo--lead {
+  grid-row: 1 / -1;
+  aspect-ratio: 3 / 2;
+}
+.stage-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 759px) {
+  .stage-photos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+  }
+  .stage-photo--lead {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+  .stage-photo:not(.stage-photo--lead) {
+    aspect-ratio: 4 / 3;
+  }
+  .stage-photo:not(.stage-photo--lead) .media-tag {
+    display: none;
+  }
+}
+
 /* Recognition opens with its three strongest pieces set large, apart by
    space rather than rules; the rest follow as rows. */
 .press-lead {
@@ -2513,27 +2582,9 @@ body:has(.contact-box) .footer-handles {
 /* ---------- phones ---------- */
 
 @media (max-width: 759px) {
-  /* More builds: a swipe row with the next card peeking in, not nine stacked cards. */
+  /* More builds: one card per row, the first three, then the button. */
   .more {
-    grid-template-columns: none;
-    grid-auto-flow: column;
-    grid-auto-columns: 82%;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    scroll-snap-type: x mandatory;
-    scroll-padding-inline: var(--gutter);
-    margin-inline: calc(var(--gutter) * -1);
-    padding: 0.375rem var(--gutter) 0.75rem;
-    scrollbar-width: none;
-  }
-  .more::-webkit-scrollbar {
-    display: none;
-  }
-  .more > li {
-    scroll-snap-align: start;
-  }
-  .more > li > .work-card {
-    animation: none;
+    grid-template-columns: 1fr;
   }
   /* The hero grid frames the name and fades out before the intro. */
   .hero-bg {
@@ -2579,14 +2630,12 @@ body:has(.contact-box) .footer-handles {
    that lose content on paper (the sideways row, thumbnails, buttons). */
 @media print {
   .more {
-    grid-auto-flow: row;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-columns: auto;
-    overflow: visible;
-    margin-inline: 0;
-    padding: 0;
   }
-  .swipe-hint,
+  .more > li[data-extra] {
+    display: grid !important;
+  }
+  .more-toggle,
   .more-tail,
   .work-media,
   .theme-toggle,

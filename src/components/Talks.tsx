@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { site } from "@/data/site";
-import { talks } from "@/data/talks";
+import { stagePhotos, talks } from "@/data/talks";
 import { featuredVideos } from "@/data/videos";
 import { BrandIcon } from "./icons";
 import { SectionLabel } from "./SectionLabel";
@@ -41,6 +41,28 @@ export function Talks() {
         <div className="section-head">
           <SectionLabel id="talks">Talks and workshops</SectionLabel>
           <p className="lede">On stage and on camera.</p>
+        </div>
+        <div className="stage-photos">
+          {stagePhotos.map((p, i) => (
+            <figure
+              key={p.src}
+              className={i === 0 ? "stage-photo stage-photo--lead" : "stage-photo"}
+            >
+              <Image
+                src={p.src}
+                alt={p.alt}
+                width={p.width}
+                height={p.height}
+                sizes={
+                  i === 0
+                    ? "(max-width: 759px) calc(100vw - 32px), (max-width: 1295px) 62vw, 780px"
+                    : "(max-width: 759px) 46vw, (max-width: 1295px) 31vw, 390px"
+                }
+                style={p.position ? { objectPosition: p.position } : undefined}
+              />
+              <figcaption className="media-tag">{p.tag}</figcaption>
+            </figure>
+          ))}
         </div>
         <VideoDialog />
         <ul className="highlights">

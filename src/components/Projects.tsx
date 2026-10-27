@@ -1,8 +1,8 @@
 import { projects, type Project } from "@/data/projects";
 import { site } from "@/data/site";
 import { isPrivateRepo } from "@/lib/generated";
-import { SwipeCount } from "./SwipeCount";
 import { BrandIcon } from "./icons";
+import { MoreToggle } from "./MoreToggle";
 import { SectionLabel } from "./SectionLabel";
 import { WorkCard } from "./WorkCard";
 
@@ -20,20 +20,26 @@ const FEATURE_SIZES =
 const MORE_SIZES =
   "(max-width: 759px) 74vw, (max-width: 1023px) 44vw, (max-width: 1295px) 29vw, 380px";
 
+/** More builds shows this many cards; a button reveals the rest. */
+const MORE_SHOWN = 3;
+
 /** A project as a card: its picture, name, a few words and one number; the card opens the project. */
 function ProjectCard({
   project,
   feature,
   lead,
+  extra,
 }: {
   project: Project;
   feature?: boolean;
   lead?: boolean;
+  /** Beyond the first few more builds: hidden until the list is opened. */
+  extra?: boolean;
 }) {
   const [primary] = publicLinks(project);
   const isPrivate = !primary && project.links.length > 0;
   return (
-    <li id={project.key}>
+    <li id={project.key} data-extra={extra || undefined}>
       <WorkCard
         href={primary?.url}
         image={project.image}
@@ -78,11 +84,10 @@ export function Projects() {
           <span className="group-count">
             <span aria-hidden="true">·</span> {more.length}
           </span>
-          <SwipeCount total={more.length} />
         </h3>
-        <ul className="more">
-          {more.map((p) => (
-            <ProjectCard key={p.key} project={p} />
+        <ul className="more" id="more-builds">
+          {more.map((p, i) => (
+            <ProjectCard key={p.key} project={p} extra={i >= MORE_SHOWN} />
           ))}
           <li className="more-tail">
             <a className="work-card spot tilt" href={site.links.github} rel="me">
@@ -97,12 +102,17 @@ export function Projects() {
             </a>
           </li>
         </ul>
-        <p className="more-link more-link--github">
-          <a href={site.links.github} rel="me">
-            <BrandIcon name="github" />
-            More on GitHub
-          </a>
-        </p>
+        <div className="more-actions">
+          {more.length > MORE_SHOWN && (
+            <MoreToggle listId="more-builds" hidden={more.length - MORE_SHOWN} />
+          )}
+          <p className="more-link more-link--github">
+            <a href={site.links.github} rel="me">
+              <BrandIcon name="github" />
+              More on GitHub
+            </a>
+          </p>
+        </div>
       </div>
     </section>
   );
