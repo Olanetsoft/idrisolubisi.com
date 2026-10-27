@@ -39,6 +39,7 @@ function ProjectCard({
         image={project.image}
         alt={primary ? undefined : project.imageAlt}
         sizes={lead ? LEAD_SIZES : feature ? FEATURE_SIZES : MORE_SIZES}
+        eager={lead}
         tag={feature && project.layer ? `[ ${project.layer} ]` : undefined}
         name={project.name}
         badge={project.badge && <Badge badge={project.badge} />}

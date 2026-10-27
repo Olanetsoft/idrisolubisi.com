@@ -43,6 +43,8 @@
   --petal-center: #d8b36a;
 
   --font-mono-stack: var(--font-mono), ui-monospace, "SF Mono", Menlo, monospace;
+  /* The smallest text on the page: labels, kickers, dates and tags. */
+  --fs-meta: 0.8125rem;
   --container: 1200px;
   --gutter: clamp(1rem, 4vw, 3rem);
   --box-radius: 10px;
@@ -556,7 +558,7 @@ figure {
   body:has(.hero) .header-live {
     animation: dock linear both;
     animation-timeline: --status;
-    animation-range: exit 8px exit calc(8px + var(--header-h) / 2);
+    animation-range: exit 10px exit calc(10px + var(--header-h) / 2);
   }
 
   #work {
@@ -815,7 +817,7 @@ figure {
   overflow: clip;
   pointer-events: none;
   --ox: calc(var(--cell) * 8 + 3px);
-  --oy: calc(var(--cell) * 3 + 0.525rem);
+  --oy: calc(var(--cell) * 3 + 0.6125rem);
   --r: calc(100cqi + 12rem);
   -webkit-mask-image:
     linear-gradient(to right, #000 1px, transparent 1px),
@@ -825,11 +827,6 @@ figure {
     linear-gradient(to bottom, #000 1px, transparent 1px);
   -webkit-mask-size: var(--cell) var(--cell);
   mask-size: var(--cell) var(--cell);
-}
-@media (max-width: 480px) {
-  .hero-pulse {
-    --oy: calc(var(--cell) * 3 + 0.48rem);
-  }
 }
 .hero-pulse-ring {
   position: absolute;
@@ -862,8 +859,7 @@ figure {
     "status status"
     "id portrait"
     "pitch portrait"
-    "actions actions"
-    "focus focus";
+    "actions actions";
   column-gap: clamp(2rem, 6vw, 5rem);
   align-items: start;
 }
@@ -893,20 +889,15 @@ figure {
   grid-area: actions;
   margin-top: 2.5rem;
 }
-.hero-focus {
-  grid-area: focus;
-  margin-top: 3.5rem;
-}
 
 .status-label {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.25rem 0.625rem;
-  font: 500 0.75rem/1.4 var(--font-mono-stack);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-3);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--text-2);
 }
 .status-item + .status-item::before {
   content: "·";
@@ -917,8 +908,6 @@ figure {
 @media (max-width: 480px) {
   .status-label {
     gap: 0.25rem 0.5rem;
-    font-size: 0.6875rem;
-    letter-spacing: 0.06em;
   }
   .status-item + .status-item::before {
     margin-right: 0.5rem;
@@ -1018,55 +1007,6 @@ figure {
   margin-left: -0.75rem;
 }
 
-/* What I do: one card per kind of role, a hiring manager's keyword first,
-   then the work in plain words. Cards share row heights through subgrid, so
-   the text starts at the same height when a title wraps. */
-.focus {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: var(--box-gap);
-}
-.focus-card {
-  display: grid;
-  grid-template-rows: subgrid;
-  grid-row: span 2;
-  row-gap: 0.6rem;
-  padding: 1.375rem 1.375rem 1.5rem;
-  border: 1px solid var(--box-line);
-  border-radius: var(--box-radius);
-  transition: border-color var(--dur-1);
-}
-.focus-title {
-  display: grid;
-  justify-items: start;
-  align-content: start;
-  gap: 0.85rem;
-  font-size: 1.0625rem;
-  font-weight: 600;
-  line-height: 1.3;
-}
-.focus-index {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font: 500 0.75rem/1 var(--font-mono-stack);
-  letter-spacing: 0.08em;
-  color: var(--text-3);
-  font-variant-numeric: tabular-nums;
-}
-.focus-accent {
-  display: block;
-  width: 22px;
-  height: 2px;
-  border-radius: 2px;
-  background: var(--accent);
-}
-.focus-text {
-  font-size: 0.9375rem;
-  line-height: 1.5;
-  color: var(--text-2);
-}
-
 /* Tablets and phones: the photo stays on the right of the name; everything
    else runs full width underneath. */
 @media (max-width: 1023px) {
@@ -1076,8 +1016,7 @@ figure {
       "status status"
       "id portrait"
       "pitch pitch"
-      "actions actions"
-      "focus focus";
+      "actions actions";
     column-gap: 1rem;
     align-items: center;
   }
@@ -1092,9 +1031,6 @@ figure {
   .hero-pitch {
     margin-top: 1.5rem;
   }
-  .focus {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 @media (max-width: 759px) {
   .hero h1 {
@@ -1103,18 +1039,6 @@ figure {
   .pitch {
     font-size: 1rem;
     line-height: 1.65;
-  }
-  .hero-focus {
-    margin-top: 2.75rem;
-  }
-  .focus {
-    grid-template-columns: 1fr;
-  }
-  .focus-card {
-    grid-row: auto;
-    grid-template-rows: none;
-    row-gap: 0.5rem;
-    padding: var(--box-pad);
   }
 }
 /* Phones: the call and the CV share one row, the call taking the room. */
@@ -1171,7 +1095,7 @@ main {
   display: flex;
   gap: 0.75rem;
   align-items: baseline;
-  font: 500 0.75rem/1.4 var(--font-mono-stack);
+  font: 500 var(--fs-meta)/1.4 var(--font-mono-stack);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-2);
@@ -1240,7 +1164,7 @@ main {
 }
 .group-label {
   margin-bottom: 0.75rem;
-  font: 500 0.6875rem/1.4 var(--font-mono-stack);
+  font: 500 var(--fs-meta)/1.4 var(--font-mono-stack);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-3);
@@ -1266,14 +1190,13 @@ main {
   padding: var(--box-pad);
 }
 .box,
-.focus-card,
 .highlight,
 .work-card,
 .socials a {
   background: var(--surface);
   box-shadow: inset 0 1px 0 var(--surface-hi);
 }
-[data-theme="light"] :is(.box, .focus-card, .highlight, .work-card, .socials a) {
+[data-theme="light"] :is(.box, .highlight, .work-card, .socials a) {
   box-shadow:
     0 1px 0 rgb(28 27 25 / 0.04),
     0 1px 3px rgb(28 27 25 / 0.05);
@@ -1441,7 +1364,7 @@ main {
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   color: var(--tag-ink);
-  font: 500 0.6875rem/1.2 var(--font-mono-stack);
+  font: 500 var(--fs-meta)/1.2 var(--font-mono-stack);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -1516,9 +1439,9 @@ main {
   color: var(--text);
 }
 .work-meta {
-  font: 400 0.75rem/1.45 var(--font-mono-stack);
-  letter-spacing: 0.02em;
-  color: var(--text-3);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--text-2);
   text-wrap: pretty;
 }
 .work-foot .pcard-note {
@@ -1543,7 +1466,7 @@ main {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  font: 400 0.6875rem/1.4 var(--font-mono-stack);
+  font: 400 var(--fs-meta)/1.4 var(--font-mono-stack);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-3);
@@ -1553,11 +1476,11 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
-  height: 1.375rem;
+  height: 1.5rem;
   padding: 0 0.5rem;
   border: 1px solid var(--box-line);
   border-radius: 999px;
-  font: 500 0.6875rem/1 var(--font-mono-stack);
+  font: 500 var(--fs-meta)/1 var(--font-mono-stack);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-2);
@@ -1584,7 +1507,7 @@ main {
   border: 0;
   color: var(--text-3);
   cursor: pointer;
-  font: 500 0.6875rem/1 var(--font-mono-stack);
+  font: 500 var(--fs-meta)/1 var(--font-mono-stack);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -1681,7 +1604,7 @@ main {
   overflow: hidden;
 }
 .video-meta {
-  font: 500 0.6875rem/1.2 var(--font-mono-stack);
+  font: 500 var(--fs-meta)/1.2 var(--font-mono-stack);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-3);
@@ -1763,7 +1686,7 @@ main {
   background: none;
   border: 0;
   color: var(--text-2);
-  font: 500 0.75rem/1 var(--font-mono-stack);
+  font: 500 var(--fs-meta)/1 var(--font-mono-stack);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
@@ -1810,7 +1733,7 @@ main {
 }
 .highlight-label {
   margin-bottom: 0.5rem;
-  font: 500 0.6875rem/1.4 var(--font-mono-stack);
+  font: 500 var(--fs-meta)/1.4 var(--font-mono-stack);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-3);
@@ -1842,7 +1765,7 @@ main {
 }
 .highlight-meta {
   margin-top: 0.35rem;
-  font: 400 0.6875rem/1.5 var(--font-mono-stack);
+  font: 400 var(--fs-meta)/1.5 var(--font-mono-stack);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-3);
@@ -1884,7 +1807,7 @@ main {
   padding: 0.75rem 0;
 }
 .stage-year {
-  font: 400 0.75rem/1.4 var(--font-mono-stack);
+  font: 400 var(--fs-meta)/1.4 var(--font-mono-stack);
   color: var(--text-3);
   font-variant-numeric: tabular-nums;
 }
@@ -1896,7 +1819,7 @@ main {
   text-wrap: pretty;
 }
 .stage-kind {
-  font: 500 0.6875rem/1.4 var(--font-mono-stack);
+  font: 500 var(--fs-meta)/1.4 var(--font-mono-stack);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-3);
@@ -1954,7 +1877,7 @@ main {
 }
 .xp-years {
   flex: none;
-  font: 400 0.75rem/1.4 var(--font-mono-stack);
+  font: 400 var(--fs-meta)/1.4 var(--font-mono-stack);
   letter-spacing: 0.04em;
   color: var(--text-3);
   font-variant-numeric: tabular-nums;
@@ -2004,9 +1927,10 @@ main {
     left: 4px;
     bottom: 4px;
     max-width: calc(100% - 8px);
-    padding: 3px 4px;
-    font-size: 0.625rem;
+    padding: 3px 5px;
+    font-family: var(--font-sans), sans-serif;
     letter-spacing: 0;
+    text-transform: none;
   }
   .work-card--sm .work-head {
     flex-direction: column;
@@ -2041,7 +1965,7 @@ main {
   font-size: 0.9375rem;
 }
 .published-label {
-  font: 500 0.6875rem/1.4 var(--font-mono-stack);
+  font: 500 var(--fs-meta)/1.4 var(--font-mono-stack);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-3);
@@ -2126,7 +2050,7 @@ main {
   flex-wrap: wrap;
   gap: 0.25rem 0.5rem;
   margin-bottom: 0.6rem;
-  font: 500 0.6875rem/1.4 var(--font-mono-stack);
+  font: 500 var(--fs-meta)/1.4 var(--font-mono-stack);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-3);
@@ -2173,21 +2097,60 @@ main {
   }
 }
 
+/* Recognition opens with its three strongest pieces set large, apart by
+   space rather than rules; the rest follow as rows. */
+.press-lead {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.75rem clamp(1.5rem, 3vw, 3rem);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+.press-item {
+  position: relative;
+}
+.press-title {
+  font-size: clamp(1.1875rem, 1rem + 0.6vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.012em;
+  text-wrap: pretty;
+}
+@media (hover: hover) {
+  .press-item:hover .card-link {
+    background-size: 100% 1px;
+  }
+}
+.press-item:has(.card-link:focus-visible) {
+  outline: 2px solid var(--focus);
+  outline-offset: 6px;
+  border-radius: 4px;
+}
+@media (max-width: 1023px) {
+  .press-lead {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ---------- contact ---------- */
 
 .contact-box {
   display: grid;
-  gap: 1rem;
+  gap: 1.5rem clamp(2rem, 5vw, 4rem);
+}
+.contact-main,
+.contact-side {
+  display: grid;
+  align-content: start;
   justify-items: start;
+  gap: 1rem;
 }
 .contact-box .press-photos {
   margin-top: 0.25rem;
 }
-.contact-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.75rem 1.25rem;
+@media (min-width: 1024px) {
+  .contact-box {
+    grid-template-columns: minmax(0, 62ch) minmax(0, 1fr);
+  }
 }
 .contact-email {
   display: flex;
@@ -2196,8 +2159,8 @@ main {
   gap: 0 0.25rem;
 }
 .email {
-  font-size: 0.9375rem;
-  color: var(--text-2);
+  font-size: 1.25rem;
+  color: var(--text);
   overflow-wrap: anywhere;
 }
 .availability {
@@ -2326,7 +2289,7 @@ main {
   color: var(--text);
 }
 .footer-handles a {
-  font: 400 0.75rem/1 var(--font-mono-stack);
+  font: 400 var(--fs-meta)/1 var(--font-mono-stack);
   letter-spacing: 0.02em;
 }
 /* The Contact box already links these, so the home page leaves them out. */
@@ -2410,7 +2373,6 @@ body:has(.contact-box) .footer-handles {
 
 /* ---------- motion ---------- */
 
-/* The four "what I do" cards settle in one after another on load. */
 @keyframes rise {
   from {
     opacity: 0;
@@ -2421,10 +2383,6 @@ body:has(.contact-box) .footer-handles {
     translate: none;
   }
 }
-.focus-card {
-  animation: rise 640ms var(--ease) both;
-  animation-delay: calc(180ms + var(--i, 0) * 90ms);
-}
 
 /* Further down, each block rises into place as it scrolls into view. Pure
    CSS (scroll-driven animations); browsers without them show it in place. */
@@ -2434,6 +2392,7 @@ body:has(.contact-box) .footer-handles {
   .work-card,
   .xp-list,
   .row-list,
+  .press-lead,
   .video,
   .section .box {
     animation: rise linear both;
@@ -2445,6 +2404,7 @@ body:has(.contact-box) .footer-handles {
   .work-card:focus-within,
   .work-card:focus-visible,
   .row-list:focus-within,
+  .press-lead:focus-within,
   .video:focus-within,
   .section .box:focus-within {
     animation: none;
@@ -2651,7 +2611,6 @@ body:has(.contact-box) .footer-handles {
   .video-link {
     grid-template-columns: 1fr;
   }
-  .focus-card,
   .work-card,
   .xp-row,
   .row-item,

@@ -5,7 +5,15 @@ const config = [
   ...nextVitals,
   ...nextTs,
   {
-    ignores: [".next/**", "out/**", "node_modules/**", "next-env.d.ts"],
+    // .claude holds local agent skills and .taste-skill their reports; neither ships.
+    ignores: [
+      ".next/**",
+      "out/**",
+      "node_modules/**",
+      "next-env.d.ts",
+      ".claude/**",
+      ".taste-skill/**",
+    ],
   },
 ];
 
