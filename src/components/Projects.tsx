@@ -68,7 +68,6 @@ export function Projects() {
       <div className="container">
         <div className="section-head">
           <SectionLabel id="work">Projects</SectionLabel>
-          <p className="lede">The agent harness, end to end.</p>
         </div>
         <h3 className="group-label">
           Agent harness <span aria-hidden="true">·</span> {harness.length}

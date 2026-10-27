@@ -41,14 +41,6 @@ export function Hero() {
               CV (PDF)
             </a>
           </div>
-          <dl className="roles" aria-label="What I do">
-            {hero.roles.map((r) => (
-              <div className="role" key={r.title}>
-                <dt className="role-title">{r.title}</dt>
-                <dd className="role-text">{r.text}</dd>
-              </div>
-            ))}
-          </dl>
         </div>
       </div>
     </section>

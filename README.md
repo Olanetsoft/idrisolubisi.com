@@ -23,14 +23,14 @@ Requires Node 22 (see `.nvmrc`). Node 20.9 or later also works. `npm run dev` fe
 
 ## The page
 
-One page, in this order: the hero (status line, name and role, one intro, the call and the CV, then the four kinds of role in one row), Projects, Talks and workshops, Experience (with Community and Education), Writing, Recognition and Contact. The header links every section after the hero, plus the blog; an underline glides to the section being read.
+One page, in this order: the hero (status line, name and role, one intro, the call and the CV), Projects, Talks and workshops, Experience (with Community and Education), Writing, Recognition and Contact. The header links every section after the hero, plus the blog; an underline glides to the section being read.
 
 ## Where things live
 
 | What                                                                          | Where                                                                                                                      |
 | ----------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | Name, intro, availability, links, hand-kept follower counts, the long summary | `src/data/site.ts`                                                                                                         |
-| Hero headline, intro and the four roles                                       | `src/data/hero.ts`                                                                                                         |
+| Hero headline and intro                                                       | `src/data/hero.ts`                                                                                                         |
 | Projects: the agent harness and More builds                                   | `src/data/projects.ts`                                                                                                     |
 | Talks, the Latest and Keynote cards, speaking topics                          | `src/data/talks.ts`                                                                                                        |
 | Videos under Talks and workshops                                              | `src/data/videos.ts`                                                                                                       |
