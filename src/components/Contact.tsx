@@ -41,7 +41,7 @@ export function Contact() {
           <SectionLabel id="contact">Contact</SectionLabel>
           <p className="lede">For roles, speaking or advising.</p>
         </div>
-        <div className="box contact-box">
+        <div className="contact-box">
           <div className="contact-main">
             <p className="availability">{site.availability}</p>
             <a className="btn btn--primary" href={site.bookingUrl}>
