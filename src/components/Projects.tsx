@@ -27,11 +27,14 @@ function ProjectCard({
   project,
   feature,
   lead,
+  step,
   extra,
 }: {
   project: Project;
   feature?: boolean;
   lead?: boolean;
+  /** The harness card's place in the sequence (1 Act, 2 Verify, 3 Observe). */
+  step?: number;
   /** Beyond the first few more builds: hidden until the list is opened. */
   extra?: boolean;
 }) {
@@ -39,13 +42,17 @@ function ProjectCard({
   const isPrivate = !primary && project.links.length > 0;
   return (
     <li id={project.key} data-extra={extra || undefined}>
+      {step && project.layer && (
+        <p className="step">
+          <span className="step-num">{String(step).padStart(2, "0")}</span> {project.layer}
+        </p>
+      )}
       <WorkCard
         href={primary?.url}
         image={project.image}
         alt={primary ? undefined : project.imageAlt}
         sizes={lead ? LEAD_SIZES : feature ? FEATURE_SIZES : MORE_SIZES}
         eager={lead}
-        tag={feature && project.layer ? `[ ${project.layer} ]` : undefined}
         name={project.name}
         badge={project.badge && <Badge badge={project.badge} />}
         line={project.tagline}
@@ -72,7 +79,7 @@ export function Projects() {
         <h3 className="group-label">Agent harness</h3>
         <ul className="harness">
           {harness.map((p, i) => (
-            <ProjectCard key={p.key} project={p} feature lead={i === 0} />
+            <ProjectCard key={p.key} project={p} feature lead={i === 0} step={i + 1} />
           ))}
         </ul>
         <h3 className="group-label">More builds</h3>
