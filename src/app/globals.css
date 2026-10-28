@@ -61,7 +61,11 @@
   --radius: 10px;
   --box-gap: clamp(0.875rem, 1.6vw, 1.25rem);
   --header-h: 56px;
+  /* Space above a section says how it relates to the one before it. */
   --space-work: clamp(2.5rem, 5vw, 4.5rem); /* hero to Projects */
+  --space-base: clamp(3.5rem, 8vw, 7rem); /* a change of topic: Talks, Experience */
+  --space-tight: clamp(3rem, 6vw, 5rem); /* related lists: Writing, Recognition */
+  --space-loose: clamp(5rem, 11vw, 10rem); /* before Contact, the conversion */
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
   --dur-1: 150ms;
   --dur-2: 220ms;
@@ -1091,11 +1095,18 @@ main {
   position: relative;
   isolation: isolate;
   counter-increment: section;
-  padding-block: clamp(3.5rem, 8vw, 7rem) 0;
+  padding-block: var(--space-base) 0;
 }
 /* Projects follows the hero's call closely: the hero spends its space inside. */
 #work.section {
   padding-top: var(--space-work);
+}
+#writing.section,
+#recognition.section {
+  padding-top: var(--space-tight);
+}
+#contact.section {
+  padding-top: var(--space-loose);
 }
 .section-head {
   margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
@@ -2734,7 +2745,10 @@ body:has(.contact-box) .footer-handles {
     break-after: avoid;
   }
   .section,
-  #work.section {
+  #work.section,
+  #writing.section,
+  #recognition.section,
+  #contact.section {
     padding-top: 2rem;
   }
   .tilt {
