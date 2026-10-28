@@ -70,22 +70,12 @@ export const talks: Talk[] = [
     href: "https://speakerdeck.com/olanetsoft/zk-identity-for-the-unbanked-building-sybil-resistant-systems-without-kyc",
   },
   {
-    event: "EthCC (Ethereum Community Conference)",
-    year: "2025",
-    kind: "Speaker",
-  },
-  {
     event: "Build Afrika Summit",
     title: "Founder and host",
     year: "2025",
     location: "Lagos",
     kind: "Host",
     href: "https://techpoint.africa/brandpress/the-build-afrika-summit-rallies-africas-top-tech-talent-to-build-the-future-of-decentralization/",
-  },
-  {
-    event: "Devcon (Ethereum developer conference)",
-    year: "2024",
-    kind: "Speaker",
   },
   {
     event: "Web3 Lagos Conference 2024",
