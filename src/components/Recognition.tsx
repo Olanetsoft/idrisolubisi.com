@@ -28,7 +28,6 @@ export function Recognition() {
       <div className="container">
         <div className="section-head">
           <SectionLabel id="recognition">Recognition</SectionLabel>
-          <p className="lede">Covered by Business Insider Africa and BusinessDay.</p>
         </div>
         <ul className="press-lead">
           {lead.map((r) => (

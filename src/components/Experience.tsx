@@ -42,7 +42,7 @@ export function Experience() {
               <WorkCard
                 href={c.href}
                 image={c.image}
-                sizes="(max-width: 759px) 46vw, (max-width: 1295px) 23vw, 290px"
+                sizes="(max-width: 759px) 46vw, (max-width: 1023px) 23vw, 230px"
                 tag={c.role}
                 name={c.org}
                 line={c.summary}

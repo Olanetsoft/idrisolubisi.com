@@ -8,11 +8,11 @@ import { WorkCard } from "./WorkCard";
 /** Links that resolve for a visitor: a private repo would 404, so it is left out until it is public. */
 const publicLinks = (project: Project) => project.links.filter((l) => !isPrivateRepo(l.url));
 
-/** Four cards to a row (two on phones), so each picture is about a quarter of the page. */
-const CARD_SIZES = "(max-width: 759px) 46vw, (max-width: 1295px) 23vw, 290px";
+/** Three cards to a row in the 960px page column (two on phones, the first spanning). */
+const CARD_SIZES = "(max-width: 759px) 46vw, (max-width: 1023px) 30vw, 310px";
 
 /** More builds shows one row of cards; a button reveals the rest. */
-const MORE_SHOWN = 4;
+const MORE_SHOWN = 3;
 
 /** A project as a card: its picture, name, a few words and one number; the card opens the project. */
 function ProjectCard({

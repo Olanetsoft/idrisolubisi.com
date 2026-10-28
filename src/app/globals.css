@@ -55,7 +55,7 @@
   --fs-chrome: 0.875rem; /* header nav and header call only */
   --fs-meta: 0.8125rem; /* mono labels, dates, card lines */
   --fs-tag: 0.6875rem; /* tags over pictures: the smallest text */
-  --container: 1200px;
+  --container: 960px; /* one centred column: every section shares both edges */
   --gutter: clamp(1rem, 4vw, 3rem);
   --radius: 6px;
   --box-gap: clamp(0.875rem, 1.6vw, 1.25rem);
@@ -1164,13 +1164,14 @@ main {
   max-width: 62ch;
   color: var(--text-2);
 }
-/* More builds shows its first cards; the button under the list opens the
-   rest (MoreToggle.tsx). Without script, and on paper, every card shows. */
-.more:not([data-open]) > li[data-extra] {
+/* More builds and the talk videos show their first row; the button under
+   each list opens the rest (MoreToggle.tsx). Without script, and on paper,
+   every item shows. */
+:is(.more, .videos):not([data-open]) > li[data-extra] {
   display: none;
 }
 @media (scripting: none) {
-  .more:not([data-open]) > li[data-extra] {
+  :is(.more, .videos):not([data-open]) > li[data-extra] {
     display: grid;
   }
   .more-toggle {
@@ -1305,12 +1306,12 @@ main {
 
 /* Projects, more builds and community share one small card: a 16:9 picture
    set just inside the raised card, then a name, a few words and one number.
-   The whole card is a single link (WorkCard.tsx). Four to a row from tablets
-   up, so the three harness cards leave the fourth column open; two on phones. */
+   The whole card is a single link (WorkCard.tsx). Projects and talk videos
+   sit three to a row across the page column; two on phones. */
 .harness,
 .more {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--box-gap);
 }
 .harness > li,
@@ -1524,9 +1525,9 @@ main {
   text-decoration-color: var(--live);
 }
 
-/* Phones: two to a row. The first harness card spans the row with its
-   picture beside the text, and the other two sit under it side by side;
-   stacked rows get a taller gap so each step header sits with its own card. */
+/* Phones: two to a row. The first card of each list spans the row with its
+   picture beside the text, so the three cards shown fill two rows; stacked
+   harness rows get a taller gap so each step header sits with its own card. */
 @media (max-width: 759px) {
   .harness,
   .more {
@@ -1536,15 +1537,15 @@ main {
   .harness {
     row-gap: 1.5rem;
   }
-  .harness > li:first-child {
+  :is(.harness, .more) > li:first-child {
     grid-column: 1 / -1;
   }
-  .harness > li:first-child > .work-card {
+  :is(.harness, .more) > li:first-child > .work-card {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: center;
   }
-  .harness > li:first-child .work-body {
+  :is(.harness, .more) > li:first-child .work-body {
     padding: 8px 10px;
   }
   .work-body {
@@ -1556,13 +1557,8 @@ main {
 
 .videos {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.5rem var(--box-gap);
-}
-@media (max-width: 1023px) {
-  .videos {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 }
 .video-link {
   display: grid;
@@ -2241,9 +2237,10 @@ main {
 .contact-box .press-photos {
   margin-top: 0.25rem;
 }
+/* Two even columns, so the email address fits on one line in the 960px page. */
 @media (min-width: 1024px) {
   .contact-box {
-    grid-template-columns: minmax(0, 62ch) minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 .contact-email {
@@ -2626,12 +2623,12 @@ body:has(.contact-box) .footer-handles {
   .more {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  /* No pictures on paper, so the spanning first harness card is text only. */
-  .harness > li:first-child > .work-card {
+  /* No pictures on paper, so the spanning first card of a list is text only. */
+  :is(.harness, .more) > li:first-child > .work-card {
     display: flex;
     align-items: stretch;
   }
-  .more > li[data-extra] {
+  :is(.more, .videos) > li[data-extra] {
     display: grid !important;
   }
   .more-toggle,

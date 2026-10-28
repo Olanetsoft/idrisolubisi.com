@@ -2,11 +2,15 @@ import Image from "next/image";
 import { site } from "@/data/site";
 import { stagePhotos, talks } from "@/data/talks";
 import { featuredVideos } from "@/data/videos";
+import { MoreToggle } from "./MoreToggle";
 import { SectionLabel } from "./SectionLabel";
 import { PhotoDialog } from "./PhotoDialog";
 import { VideoDialog } from "./VideoDialog";
 
 type Talk = (typeof talks)[number];
+
+/** The talk videos show two rows; a button reveals the rest. */
+const VIDEOS_SHOWN = 6;
 
 const KIND: Record<Talk["kind"], string> = {
   Keynote: "Keynote",
@@ -57,8 +61,8 @@ export function Talks() {
                   height={p.height}
                   sizes={
                     i === 0
-                      ? "(max-width: 759px) calc(100vw - 32px), (max-width: 1295px) 62vw, 780px"
-                      : "(max-width: 759px) 46vw, (max-width: 1295px) 31vw, 390px"
+                      ? "(max-width: 759px) calc(100vw - 32px), (max-width: 1023px) 62vw, 640px"
+                      : "(max-width: 759px) 46vw, (max-width: 1023px) 31vw, 320px"
                   }
                   style={p.position ? { objectPosition: p.position } : undefined}
                 />
@@ -81,9 +85,9 @@ export function Talks() {
             </li>
           ))}
         </ul>
-        <ul className="videos">
-          {featuredVideos.map((v) => (
-            <li key={v.id} className="video">
+        <ul className="videos" id="talk-videos">
+          {featuredVideos.map((v, i) => (
+            <li key={v.id} className="video" data-extra={i >= VIDEOS_SHOWN || undefined}>
               <a
                 className="video-link"
                 href={`https://www.youtube.com/watch?v=${v.id}${v.start ? `&t=${v.start}s` : ""}`}
@@ -97,7 +101,7 @@ export function Talks() {
                     alt=""
                     width={480}
                     height={360}
-                    sizes="(max-width: 759px) 112px, (max-width: 1023px) 30vw, 290px"
+                    sizes="(max-width: 759px) 112px, (max-width: 1023px) 30vw, 310px"
                   />
                 </span>
                 <span className="video-text">
@@ -111,10 +115,15 @@ export function Talks() {
             </li>
           ))}
         </ul>
-        <p className="more-link more-links">
-          <a href={site.links.youtube}>All talks on YouTube</a>
-          <a href={site.links.sessionize}>Speaker profile on Sessionize</a>
-        </p>
+        <div className="more-actions">
+          {featuredVideos.length > VIDEOS_SHOWN && (
+            <MoreToggle listId="talk-videos" hidden={featuredVideos.length - VIDEOS_SHOWN} />
+          )}
+          <p className="more-link more-links">
+            <a href={site.links.youtube}>All talks on YouTube</a>
+            <a href={site.links.sessionize}>Speaker profile on Sessionize</a>
+          </p>
+        </div>
         <h3 className="group-label">On stage</h3>
         <ul className="row-list stage-list">
           {stages.map((t) => {
