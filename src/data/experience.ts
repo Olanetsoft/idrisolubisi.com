@@ -4,9 +4,7 @@ export type Role = {
   /** En dash, no spaces, so the period never wraps. */
   period: string;
   location?: string;
-  /** What was done in the role, as short points on the card. ==text== marks a figure or key fact to bold. */
-  highlights: string[];
-  /** The same work as checked points, for /llms.txt. From the CV, the brief and the owner. */
+  /** The work in each role as short points, for /llms-full.txt only (not shown on the page). From the CV, the brief and the owner. */
   points: string[];
   url?: string;
   /** What the company does, in one line, for /llms-full.txt. */
@@ -17,13 +15,6 @@ export const experience: Role[] = [
   {
     company: "Midnight Foundation",
     title: "Developer Educator, Developer Relations",
-    highlights: [
-      "Built the Midnight MCP server (==10,000+ downloads==, ==11,900+ agent tool calls==).",
-      "Led the docs overhaul for AI retrieval, including the docs AI assistant, and used the 784 questions it received to plan new content.",
-      "Launched Midnight Academy (==1,576 enrolled, 1,120+ certified==) and a 12-part video series.",
-      "Built create-mn-app, Compact Playground and Compact by Example, and kept example repos current with CI and on-call.",
-      "Ran partner integrations, workshops and two content-bounty cohorts.",
-    ],
     points: [
       "Built the Midnight MCP server so AI coding assistants wrote correct code: 10,000+ downloads, 11,900+ agent tool calls.",
       "Led the docs overhaul for AI retrieval (server-side rendering and an llms.txt index), including the docs AI assistant, and used its 784 questions to plan new docs and videos.",
@@ -38,13 +29,6 @@ export const experience: Role[] = [
   {
     company: "Axelar / Interop Labs",
     title: "Developer Relations Engineer",
-    highlights: [
-      "==First developer-relations engineer on the team==, under the Head of Developer Relations.",
-      "Embedded with partner engineering teams as solution architect, from discovery to production launch.",
-      "Built a Foundry reference implementation that cut cross-chain integration setup time ==55%== (==500+ weekly developer activations==).",
-      "Supported ==100,000+ developers== through debugging, talks and workshops at ==4.8/5 satisfaction==.",
-      "Tracked the onboarding funnel to remove adoption blockers, and grew docs usage ==120%==.",
-    ],
     points: [
       "First developer-relations engineer on the team, under the Head of Developer Relations. Worked as solution architect inside partner engineering teams, from discovery to production launch.",
       "Built a reference implementation that cut cross-chain integration setup time 55%, with 500+ weekly developer activations.",
@@ -59,12 +43,6 @@ export const experience: Role[] = [
   {
     company: "Mara",
     title: "Developer Relations Engineer",
-    highlights: [
-      "Cut developer onboarding time ==65%== by redesigning the docs-to-production path.",
-      "Created Mara Academy’s technical courses, growing it to ==19,000+ active developers== at ==85% monthly retention==.",
-      "Built the campus club from ==0 to 18+ universities== in Kenya and Nigeria, and reached ==30,000+ developers== through conferences, hackathons and workshops.",
-      "Set up the feedback pipeline into product and managed strategic partners.",
-    ],
     points: [
       "Cut developer onboarding time 65% by redesigning the docs-to-production path, and set up a feedback pipeline into product.",
       "Created Mara Academy’s technical courses, growing it to 19,000+ active developers at 85% monthly retention.",
@@ -76,12 +54,6 @@ export const experience: Role[] = [
   {
     company: "Luna",
     title: "Backend Engineer",
-    highlights: [
-      "Built a multi-tenant payment service on Apache Kafka for ==50,000+ users==, integrating Stripe, PayPal and bank payments.",
-      "Built the ==authentication and encryption layer==.",
-      "Improved performance ==63%== through caching and a move to microservices, and held ==99.9% uptime== with monitoring and alerting.",
-      "Mentored three junior engineers on system design.",
-    ],
     points: [
       "Built a multi-tenant payment service on Apache Kafka for 50,000+ users across web and mobile, integrating Stripe, PayPal and bank payments.",
       "Improved application performance 63% through bottleneck analysis, caching and microservices, and held 99.9% uptime with monitoring and alerting.",
@@ -93,12 +65,6 @@ export const experience: Role[] = [
   {
     company: "PhilanthroLab",
     title: "Backend Engineer (promoted to backend team lead)",
-    highlights: [
-      "Built most of the backend infrastructure and shipped the MVP.",
-      "Then led technical programmes, system design, code reviews, documentation and architecture decisions.",
-      "Designed an automated data lake processing ==100 GB+ a month==.",
-      "Improved performance ==50%== with GraphQL, Node.js, Neo4j and Elasticsearch, and automated workflows saving ==1,000+ hours a year==.",
-    ],
     points: [
       "Built most of the backend infrastructure, shipped the MVP, and improved performance 50% with GraphQL, Node.js, Neo4j and Elasticsearch.",
       "Promoted to backend team lead, then led technical programmes, system design, code reviews, documentation and architecture decisions.",
@@ -110,12 +76,6 @@ export const experience: Role[] = [
   {
     company: "Tavia Technologies",
     title: "Software Developer / Support Analyst",
-    highlights: [
-      "Built .NET Core and SharePoint solutions for Access Bank, MTN Nigeria (part of MTN Group, Africa’s largest mobile operator) and NPDC (the exploration and production arm of NNPC, Nigeria’s national oil company).",
-      "Automated processes for these clients, saving ==900+ hours a year==.",
-      "Ran test-to-production deployments and database migrations with ==zero data loss==.",
-      "Provided technical support and issue resolution, and wrote handover docs.",
-    ],
     points: [
       "Built enterprise SharePoint and .NET Core (MVC 2.2 to 5.0) solutions for Access Bank and MTN Nigeria (part of MTN Group, Africa’s largest mobile operator).",
       "Automated business processes for these clients and NPDC (the exploration and production arm of NNPC, Nigeria’s national oil company), saving 900+ hours a year.",

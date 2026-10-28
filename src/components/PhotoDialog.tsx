@@ -7,8 +7,9 @@ import type { StagePhoto } from "@/data/talks";
 /**
  * The stage photos open larger on the page: a click on one shows it whole
  * (not cropped) in a dialog, with its caption. Previous and Next, or the
- * arrow keys, move between them; Escape, Close or a click outside closes it,
- * and focus returns to the photo. A modified click or no script opens the
+ * arrow keys, move between them, and a screen reader hears which photo is
+ * showing; Escape, Close or a click outside closes it, and focus returns to
+ * the photo. A modified click or no script opens the
  * image file as a normal link.
  */
 export function PhotoDialog({ photos }: { photos: StagePhoto[] }) {
@@ -54,6 +55,10 @@ export function PhotoDialog({ photos }: { photos: StagePhoto[] }) {
           Close
         </button>
       </div>
+      {/* Says which photo is showing after Previous, Next or an arrow key. */}
+      <p className="sr-only" aria-live="polite">
+        {photo && index !== null ? `Photo ${index + 1} of ${photos.length}: ${photo.tag}` : ""}
+      </p>
       <div className="photo-dialog-frame">
         {photo && (
           <Image
