@@ -4,21 +4,45 @@ export type Talk = {
   title?: string;
   year?: string;
   location?: string;
-  kind: "Keynote" | "Talk" | "Workshop" | "Fireside chat" | "Host" | "Lecture" | "Speaker";
+  kind:
+    "Keynote" | "Talk" | "Workshop" | "Panel" | "Fireside chat" | "Host" | "Lecture" | "Speaker";
   href?: string;
   note?: string;
   /** Shown as a card at the top of Talks instead of in the On stage list. */
-  highlight?: "Latest" | "Keynote";
+  highlight?: "Latest" | "Keynote" | "Guest lecture";
 };
 
 /** Newest first; within a year, by date where known. Never invent a title, year or link. */
 export const talks: Talk[] = [
   {
+    event: "Ogun Digital Summit 2026",
+    year: "2026",
+    location: "Abeokuta",
+    kind: "Speaker",
+    href: "https://www.ogundigitalsummit.com/speaker",
+  },
+  {
+    event: "DevFest Ilorin 2026",
+    title: "Open source, community and content as a career engine",
+    year: "2026",
+    location: "Ilorin",
+    kind: "Talk",
+    href: "https://devfestilorin.com/",
+  },
+  {
+    event: "Blockfest Africa 2026",
+    title: "Build your first AI agent: from prompt to autonomous action",
+    year: "2026",
+    location: "Lagos",
+    kind: "Workshop",
+    href: "https://blockfestafrica.com/schedule",
+  },
+  {
     event: "University of Zurich International Summer School",
     title: "Guest lecture on Midnight",
     year: "2026",
     kind: "Lecture",
-    highlight: "Latest",
+    highlight: "Guest lecture",
   },
   {
     event: "Midnight",
@@ -38,9 +62,12 @@ export const talks: Talk[] = [
     href: "https://businessday.ng/news/article/blockfest-africa-2025-draws-12000-participants-strengthens-africas-web3-voice/",
   },
   {
-    event: "EthCC (Ethereum Community Conference)",
+    event: "ETH Enugu 2025",
+    title: "ZK identity for the unbanked: building Sybil-resistant systems without KYC",
     year: "2025",
-    kind: "Speaker",
+    location: "Enugu",
+    kind: "Talk",
+    href: "https://speakerdeck.com/olanetsoft/zk-identity-for-the-unbanked-building-sybil-resistant-systems-without-kyc",
   },
   {
     event: "Build Afrika Summit",
@@ -51,9 +78,85 @@ export const talks: Talk[] = [
     href: "https://techpoint.africa/brandpress/the-build-afrika-summit-rallies-africas-top-tech-talent-to-build-the-future-of-decentralization/",
   },
   {
-    event: "Devcon (Ethereum developer conference)",
+    event: "Web3 Lagos Conference 2024",
+    title: "DePIN in Africa: blockchain solutions for real-world challenges",
     year: "2024",
-    kind: "Speaker",
+    location: "Lagos",
+    kind: "Talk",
+    href: "https://speakerdeck.com/olanetsoft/depin-in-africa-blockchain-solutions-for-real-world-challenges",
+  },
+  {
+    event: "TIL Conf 2024",
+    title: "Building the future web: from websites to dApps with JavaScript",
+    year: "2024",
+    location: "Online",
+    kind: "Talk",
+    href: "https://www.youtube.com/watch?v=-BLxkNvtmOc&t=11500s",
+  },
+  {
+    event: "DevFest Lagos 2023",
+    title: "Building a secure interchain messaging dApp: a technical deep dive",
+    year: "2023",
+    location: "Lagos",
+    kind: "Talk",
+    href: "https://2023.devfestlagos.com/schedule",
+  },
+  {
+    event: "Code Africa Conference 2023",
+    title: "Smart contract development with Solidity: a beginner’s guide",
+    year: "2023",
+    location: "Online",
+    kind: "Talk",
+    href: "https://speakerdeck.com/olanetsoft/smart-contract-development-with-solidity-a-beginners-guide",
+  },
+  {
+    event: "DevFest Uyo 2023",
+    title: "Navigating the frontiers of high technology: trends, challenges and opportunities",
+    year: "2023",
+    location: "Uyo",
+    kind: "Panel",
+    href: "https://gdg.community.dev/events/details/google-gdg-uyo-presents-devfest-uyo-2023",
+  },
+  {
+    event: "Google Developer Student Club, University of Lagos",
+    title: "Initiating your open source Web3 journey",
+    year: "2023",
+    location: "Lagos",
+    kind: "Talk",
+    href: "https://speakerdeck.com/olanetsoft/initiating-your-open-source-web3-journey",
+  },
+  {
+    event: "Polygon Guild Abuja",
+    title: "Build a full-stack interchain dApp on Polygon with Axelar",
+    year: "2023",
+    location: "Abuja",
+    kind: "Workshop",
+    href: "https://speakerdeck.com/olanetsoft/polygon-guild-abuja-workshop",
+  },
+  {
+    event: "Web3 Lagos Conference 2023",
+    title: "Breaking into DevRel",
+    year: "2023",
+    location: "Lagos",
+    kind: "Talk",
+    href: "https://speakerdeck.com/olanetsoft/breaking-into-devrel",
+  },
+  {
+    event: "Web3 Lagos Conference 2023",
+    title: "Building a full-stack interchain dApp with Axelar",
+    year: "2023",
+    location: "Lagos",
+    kind: "Workshop",
+    href: "https://speakerdeck.com/olanetsoft/web3-lagos-building-a-full-stack-interchain-dapp-with-axelar",
+  },
+  {
+    event: "CMX Connect Ilorin",
+    title:
+      "Fostering inclusive communities: empowering diverse voices for creativity and innovation",
+    year: "2023",
+    location: "Ilorin",
+    kind: "Talk",
+    href: "https://www.youtube.com/watch?v=5Vkob-nlioI",
   },
   {
     event: "Osmocon",
@@ -62,6 +165,14 @@ export const talks: Talk[] = [
     location: "Paris",
     kind: "Talk",
     href: "https://www.youtube.com/watch?v=MyhX9-F51V4",
+  },
+  {
+    event: "OSCAFEST 2023",
+    title: "Demystifying Web3: a guide to blockchain interoperability",
+    year: "2023",
+    location: "Lagos",
+    kind: "Talk",
+    href: "https://www.youtube.com/watch?v=o07nwFkce-Q",
   },
   {
     event: "Mara Developer Campus Club",
@@ -79,12 +190,51 @@ export const talks: Talk[] = [
     href: "https://www.youtube.com/watch?v=yPr8Zs0-S9o",
   },
   {
+    event: "DevFest Ajah 2022",
+    year: "2022",
+    location: "Lagos",
+    kind: "Speaker",
+    href: "https://gdg.community.dev/events/details/google-gdg-ajah-presents-devfest-ajah-2022/",
+  },
+  {
+    event: "DevFest Nairobi 2022",
+    title: "A deep dive into stablecoins in web applications",
+    year: "2022",
+    location: "Nairobi",
+    kind: "Talk",
+    href: "https://gdg.community.dev/events/details/google-gdg-nairobi-presents-devfest-nairobi-2022/",
+  },
+  {
+    event: "Web3 Developer Roadshow (Mara × Circle)",
+    title: "The power of Circle APIs, and building and deploying a USDC-based smart contract",
+    year: "2022",
+    location: "Lagos and Nairobi",
+    kind: "Workshop",
+    href: "https://blog.idrisolubisi.com/dev-retro-2022-the-highs-and-lows-of-a-year-to-remember",
+  },
+  {
     event: "CityJS Conference",
     title: "JavaScript supremacy: building a scalable full-stack application with JavaScript",
     year: "2022",
     location: "Lagos",
     kind: "Talk",
     href: "https://x.com/olanetsoft/status/1580091101293477888",
+  },
+  {
+    event: "Web3 Lagos Conference 2022",
+    title: "The Web3 stack",
+    year: "2022",
+    location: "Lagos",
+    kind: "Talk",
+    href: "https://technext24.com/crypto/key-takes-from-web3-lagos-conference/",
+  },
+  {
+    event: "OSCAFEST 2022",
+    title: "How to indulge your need for technical writing as a developer",
+    year: "2022",
+    location: "Lagos",
+    kind: "Talk",
+    href: "https://www.youtube.com/watch?v=iPdtAjb_4b0",
   },
 ];
 
@@ -114,7 +264,7 @@ export const stagePhotos: StagePhoto[] = [
     width: 1600,
     height: 739,
     alt: "Idris presenting from the stage to rows of developers at long tables, with cameras and lights around the room",
-    tag: "Web3 Developer Roadshow · Mara × Circle",
+    tag: "Web3 Developer Roadshow · Mara × Circle · 2022",
     position: "96% 50%",
   },
   {

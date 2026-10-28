@@ -12,10 +12,14 @@ type Talk = (typeof talks)[number];
 /** The talk videos show two rows; a button reveals the rest. */
 const VIDEOS_SHOWN = 6;
 
+/** The On stage list shows the most recent rows; a button reveals the rest. */
+const STAGES_SHOWN = 10;
+
 const KIND: Record<Talk["kind"], string> = {
   Keynote: "Keynote",
   Talk: "Talk",
   Workshop: "Workshop",
+  Panel: "Panel",
   "Fireside chat": "Fireside chat",
   Host: "Host",
   Lecture: "Guest lecture",
@@ -125,11 +129,15 @@ export function Talks() {
           </p>
         </div>
         <h3 className="group-label">On stage</h3>
-        <ul className="row-list stage-list">
-          {stages.map((t) => {
+        <ul className="row-list stage-list" id="on-stage">
+          {stages.map((t, i) => {
             const city = t.location && !eventName(t).includes(t.location) ? t.location : undefined;
             return (
-              <li key={`${t.event}-${t.title ?? t.kind}`} className="row-item stage-row">
+              <li
+                key={`${t.event}-${t.title ?? t.kind}`}
+                className="row-item stage-row"
+                data-extra={i >= STAGES_SHOWN || undefined}
+              >
                 <span className="stage-year">{t.year}</span>
                 <span className="stage-event">
                   {t.href ? (
@@ -148,6 +156,11 @@ export function Talks() {
             );
           })}
         </ul>
+        {stages.length > STAGES_SHOWN && (
+          <div className="more-actions">
+            <MoreToggle listId="on-stage" hidden={stages.length - STAGES_SHOWN} />
+          </div>
+        )}
       </div>
     </section>
   );

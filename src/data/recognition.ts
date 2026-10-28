@@ -58,6 +58,20 @@ export const recognition: Recognition[] = [
     kind: "interview",
   },
   {
+    title: "Open source leadership: what Web3 Afrika is teaching the world about collaboration",
+    by: "Crest Africa",
+    date: "2025-11-18",
+    href: "https://crestafrica.com/open-source-leadership-what-web3-afrika-is-teaching-the-world-aboutcollaboration/",
+    kind: "press",
+  },
+  {
+    title: "Podcast: building communities and cross-chain dapps",
+    by: "Building Onchain",
+    date: "2024-06-24",
+    href: "https://creators.spotify.com/pod/show/paloma0842/episodes/Building-communities-and-cross-chain-dapps-wIdris-Olubisi-e2l7oq5",
+    kind: "interview",
+  },
+  {
     title: "Idris Olubisi’s journey from coding on a phone to building developer communities",
     by: "The Geek Circle",
     date: "2026-02-12",

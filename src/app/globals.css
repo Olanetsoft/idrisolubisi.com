@@ -1164,14 +1164,14 @@ main {
   max-width: 62ch;
   color: var(--text-2);
 }
-/* More builds and the talk videos show their first row; the button under
-   each list opens the rest (MoreToggle.tsx). Without script, and on paper,
+/* More builds, the talk videos and the On stage list show their first rows;
+   the button under each list opens the rest (MoreToggle.tsx). Without script, and on paper,
    every item shows. */
-:is(.more, .videos):not([data-open]) > li[data-extra] {
+:is(.more, .videos, .stage-list):not([data-open]) > li[data-extra] {
   display: none;
 }
 @media (scripting: none) {
-  :is(.more, .videos):not([data-open]) > li[data-extra] {
+  :is(.more, .videos, .stage-list):not([data-open]) > li[data-extra] {
     display: grid;
   }
   .more-toggle {
@@ -2628,7 +2628,7 @@ body:has(.contact-box) .footer-handles {
     display: flex;
     align-items: stretch;
   }
-  :is(.more, .videos) > li[data-extra] {
+  :is(.more, .videos, .stage-list) > li[data-extra] {
     display: grid !important;
   }
   .more-toggle,
