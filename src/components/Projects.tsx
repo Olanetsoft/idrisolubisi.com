@@ -8,18 +8,11 @@ import { WorkCard } from "./WorkCard";
 /** Links that resolve for a visitor: a private repo would 404, so it is left out until it is public. */
 const publicLinks = (project: Project) => project.links.filter((l) => !isPrivateRepo(l.url));
 
-function Badge({ badge }: { badge: NonNullable<Project["badge"]> }) {
-  return <span className={badge === "Live" ? "badge badge--live" : "badge"}>{badge}</span>;
-}
+/** Four cards to a row (two on phones), so each picture is about a quarter of the page. */
+const CARD_SIZES = "(max-width: 759px) 46vw, (max-width: 1295px) 23vw, 290px";
 
-const LEAD_SIZES =
-  "(max-width: 759px) calc(100vw - 32px), (max-width: 1023px) 55vw, (max-width: 1295px) 29vw, 380px";
-const FEATURE_SIZES =
-  "(max-width: 759px) calc(100vw - 32px), (max-width: 1023px) 44vw, (max-width: 1295px) 29vw, 380px";
-const MORE_SIZES = "(max-width: 759px) calc(100vw - 32px), (max-width: 1295px) 30vw, 380px";
-
-/** More builds shows this many cards; a button reveals the rest. */
-const MORE_SHOWN = 3;
+/** More builds shows one row of cards; a button reveals the rest. */
+const MORE_SHOWN = 4;
 
 /** A project as a card: its picture, name, a few words and one number; the card opens the project. */
 function ProjectCard({
@@ -38,7 +31,6 @@ function ProjectCard({
   extra?: boolean;
 }) {
   const [primary] = publicLinks(project);
-  const isPrivate = !primary && project.links.length > 0;
   return (
     <li id={project.key} data-extra={extra || undefined}>
       {step && project.layer && (
@@ -50,16 +42,14 @@ function ProjectCard({
         href={primary?.url}
         image={project.image}
         alt={primary ? undefined : project.imageAlt}
-        sizes={lead ? LEAD_SIZES : feature ? FEATURE_SIZES : MORE_SIZES}
+        sizes={CARD_SIZES}
         eager={lead}
         name={project.name}
-        badge={project.badge && <Badge badge={project.badge} />}
         line={project.tagline}
         proof={project.proof}
         srExtra={
           primary ? `opens ${primary.label === "Site" ? "the site" : primary.label}` : undefined
         }
-        note={isPrivate ? "Private repo" : undefined}
         size={feature ? "feature" : "default"}
       />
     </li>
