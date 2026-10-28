@@ -97,7 +97,7 @@ export function Talks() {
                     alt=""
                     width={480}
                     height={360}
-                    sizes="(max-width: 759px) 128px, (max-width: 1023px) 30vw, 336px"
+                    sizes="(max-width: 759px) 112px, (max-width: 1023px) 30vw, 290px"
                   />
                 </span>
                 <span className="video-text">
