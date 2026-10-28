@@ -16,7 +16,6 @@ export type Project = {
   /** One line of proof, ideally a number. Optional when there is nothing worth saying. */
   proof?: string;
   stack: string[];
-  badge?: "Live" | "Open source" | "npm" | "Reference";
   links: ProjectLink[];
   /** "owner/repo": star count (in /llms-full.txt) and private-link hiding. */
   githubRepo?: string;
@@ -53,7 +52,6 @@ export const projects: Project[] = [
       "Multi-tenant platform where each user runs a Claude-powered agent that trades real money on web and Telegram, with the backend checking and executing every trade.",
     proof: "Around 100 users trading real funds",
     stack: ["TypeScript", "Next.js", "Postgres", "Redis", "Docker", "Claude API"],
-    badge: "Live",
     links: [{ label: "GitHub", url: "https://github.com/Olanetsoft/swoopagent-claw" }],
     githubRepo: "Olanetsoft/swoopagent-claw",
     detail:
@@ -72,7 +70,6 @@ export const projects: Project[] = [
       "MCP server, built in a weekend, that let AI agents search Midnight code and compile it before answering.",
     proof: "10,000+ downloads, 11,900+ agent tool calls",
     stack: ["TypeScript", "MCP", "Hono", "Cloudflare Workers", "Vectorize", "OpenAI API"],
-    badge: "Open source",
     links: [
       { label: "GitHub", url: "https://github.com/Olanetsoft/midnight-mcp" },
       { label: "npm", url: "https://www.npmjs.com/package/midnight-mcp" },
@@ -92,7 +89,6 @@ export const projects: Project[] = [
       "Local dashboard for the Claude Code and Codex sessions on a machine: shows which need you and what they are asking, and jumps to the right window.",
     proof: "1,100+ npm downloads in its first week",
     stack: ["TypeScript", "React", "Vite", "Node.js", "Electron", "MCP"],
-    badge: "npm",
     links: [
       { label: "GitHub", url: "https://github.com/Olanetsoft/agent-lookout" },
       { label: "Site", url: "https://agent-lookout.vercel.app" },
@@ -113,7 +109,6 @@ export const projects: Project[] = [
       "Scaffolding CLI that sets up a Midnight app with a Compact contract, a local devnet and deploy scripts.",
     proof: "9,000+ npm downloads",
     stack: ["TypeScript", "Node.js", "Compact", "Docker", "Midnight.js"],
-    badge: "npm",
     links: [
       { label: "GitHub", url: "https://github.com/midnightntwrk/create-mn-app" },
       { label: "npm", url: "https://www.npmjs.com/package/create-mn-app" },
@@ -132,7 +127,6 @@ export const projects: Project[] = [
       "Compile API for Compact that adds Run buttons to code samples and was the hosted compiler behind the Midnight MCP server.",
     proof: "Original author and maintainer",
     stack: ["TypeScript", "Node.js", "Hono", "Compact", "Docker", "Vitest"],
-    badge: "Open source",
     links: [{ label: "GitHub", url: "https://github.com/Olanetsoft/compact-playground" }],
     githubRepo: "Olanetsoft/compact-playground",
     tagline: "The compile API behind Run buttons, which also powered the MCP server",
@@ -145,7 +139,6 @@ export const projects: Project[] = [
     oneLine: "Working Foundry examples of cross-chain calls and token transfers with Axelar GMP.",
     proof: "55% cut in integration setup time, 500+ weekly developer activations",
     stack: ["Solidity", "Foundry", "Axelar GMP", "Axelar ITS", "OpenZeppelin"],
-    badge: "Reference",
     links: [
       { label: "GitHub", url: "https://github.com/axelarnetwork/foundry-axelar-gmp-example" },
     ],
@@ -162,7 +155,6 @@ export const projects: Project[] = [
       "Gift exchange and wishlist platform with AI gift ideas, real-time party games and an installable PWA.",
     proof: "3,000+ users across 20+ countries",
     stack: ["TypeScript", "Next.js", "Supabase", "Redis", "OpenAI API"],
-    badge: "Live",
     links: [{ label: "Site", url: "https://giftdice.com" }],
     tagline: "Gift exchanges and wishlists with AI gift ideas",
     image: "/images/work/giftdice.jpg",
@@ -174,7 +166,6 @@ export const projects: Project[] = [
     oneLine: "AI writing tool that turns a topic into article titles, plus free tools for writers.",
     proof: "60 forks and 10 contributors",
     stack: ["TypeScript", "Next.js", "Supabase", "OpenAI API", "Tailwind CSS"],
-    badge: "Live",
     links: [
       { label: "Site", url: "https://www.articleideagenerator.com" },
       { label: "GitHub", url: "https://github.com/Olanetsoft/article-idea-generator" },
@@ -190,7 +181,6 @@ export const projects: Project[] = [
     oneLine:
       "macOS app that fixes quiet video audio with loudness normalisation, without clipping.",
     stack: ["FFmpeg", "macOS"],
-    badge: "Open source",
     links: [{ label: "GitHub", url: "https://github.com/Olanetsoft/audioboost" }],
     githubRepo: "Olanetsoft/audioboost",
     detail: "Two-pass EBU R128 loudness normalisation with lossless video passthrough.",
@@ -205,7 +195,6 @@ export const projects: Project[] = [
       "Midnight’s example lending app that scores loans on credit data the lender never sees.",
     proof: "Top contributor, 51 of 107 commits, including a security fix",
     stack: ["TypeScript", "Compact", "React", "Vite", "Docker"],
-    badge: "Reference",
     links: [{ label: "GitHub", url: "https://github.com/midnightntwrk/example-zkloan" }],
     githubRepo: "midnightntwrk/example-zkloan",
     hideStars: true,
@@ -220,7 +209,6 @@ export const projects: Project[] = [
       "Interactive book and exercises that teach Compact, Midnight’s zero-knowledge contract language.",
     proof: "9 chapters and 17 exercises",
     stack: ["Compact", "mdBook", "JavaScript", "Netlify"],
-    badge: "Live",
     links: [
       { label: "Site", url: "https://learn-compact.netlify.app" },
       { label: "GitHub", url: "https://github.com/Olanetsoft/learn-compact" },
@@ -237,7 +225,6 @@ export const projects: Project[] = [
     oneLine: "Twitter bot and REST API that explain Web3 terms in plain English.",
     proof: "97 merged pull requests from 31 contributors",
     stack: ["JavaScript", "Node.js", "Express", "Twitter API", "Jest"],
-    badge: "Open source",
     links: [{ label: "GitHub", url: "https://github.com/Olanetsoft/web3terms" }],
     githubRepo: "Olanetsoft/web3terms",
     tagline: "A bot and API that explain Web3 terms",

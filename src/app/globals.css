@@ -20,7 +20,6 @@
   --focus-width: 2px;
   --focus-offset: 3px;
   --live: #7bcf9f;
-  --live-line: color-mix(in oklab, var(--live) 42%, transparent);
   --grid: rgb(236 233 226 / 0.07);
   --grid-glow: rgb(236 233 226 / 0.55);
   --accent: #e9b44c;
@@ -47,15 +46,16 @@
   --shadow-overlay: 0 30px 80px -30px rgb(0 0 0 / 0.6);
 
   --font-mono-stack: var(--font-mono), ui-monospace, "SF Mono", Menlo, monospace;
-  /* Seven sizes, each with one job (no others; weights 400 and 600 only). */
+  /* Eight sizes, each with one job (no others; weights 400 and 600 only). */
   --fs-display: clamp(2.125rem, 1.4rem + 3.6vw, 4.5rem); /* the name */
   --fs-title: clamp(1.5rem, 1.05rem + 1.6vw, 2.375rem); /* section statements */
   --fs-sub: clamp(1.125rem, 1rem + 0.6vw, 1.5rem); /* role line, lead titles, email */
   --fs-body: 1.0625rem; /* running text, list titles, card names */
   --fs-small: 0.9375rem; /* card lines, buttons, captions, footer */
   --fs-chrome: 0.875rem; /* header nav and header call only */
-  --fs-meta: 0.8125rem; /* mono labels, dates, tags: the smallest text */
-  --container: 1200px;
+  --fs-meta: 0.8125rem; /* mono labels, dates, card lines */
+  --fs-tag: 0.6875rem; /* tags over pictures: the smallest text */
+  --container: 960px; /* one centred column: every section shares both edges */
   --gutter: clamp(1rem, 4vw, 3rem);
   --radius: 6px;
   --box-gap: clamp(0.875rem, 1.6vw, 1.25rem);
@@ -1164,13 +1164,14 @@ main {
   max-width: 62ch;
   color: var(--text-2);
 }
-/* More builds shows its first cards; the button under the list opens the
-   rest (MoreToggle.tsx). Without script, and on paper, every card shows. */
-.more:not([data-open]) > li[data-extra] {
+/* More builds and the talk videos show their first row; the button under
+   each list opens the rest (MoreToggle.tsx). Without script, and on paper,
+   every item shows. */
+:is(.more, .videos):not([data-open]) > li[data-extra] {
   display: none;
 }
 @media (scripting: none) {
-  .more:not([data-open]) > li[data-extra] {
+  :is(.more, .videos):not([data-open]) > li[data-extra] {
     display: grid;
   }
   .more-toggle {
@@ -1303,9 +1304,10 @@ main {
 
 /* ---------- projects ---------- */
 
-/* Projects, more builds and community share one card: a 16:9 picture set
-   just inside the raised card, then a name, a few words and one number. The
-   whole card is a single link (WorkCard.tsx). */
+/* Projects, more builds and community share one small card: a 16:9 picture
+   set just inside the raised card, then a name, a few words and one number.
+   The whole card is a single link (WorkCard.tsx). Projects and talk videos
+   sit three to a row across the page column; two on phones. */
 .harness,
 .more {
   display: grid;
@@ -1404,14 +1406,14 @@ main {
   bottom: 8px;
   z-index: 1;
   max-width: calc(100% - 16px);
-  padding: 4px 7px;
-  border-radius: 4px;
+  padding: 3px 5px;
+  border-radius: 3px;
   background: var(--tag-bg);
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   color: var(--tag-ink);
-  font: 400 var(--fs-meta)/1.2 var(--font-mono-stack);
-  letter-spacing: 0.08em;
+  font: 400 var(--fs-tag)/1.2 var(--font-mono-stack);
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 @media (prefers-reduced-transparency: reduce) {
@@ -1427,23 +1429,12 @@ main {
   flex: 1 0 auto;
   grid-template-rows: auto auto 1fr;
   align-content: start;
-  gap: 4px;
-  padding: 12px 8px 8px;
-}
-/* The badge never drops under the name; a long name wraps beside it. */
-.work-head {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 6px 12px;
-}
-.work-head > .badge {
-  flex: none;
+  gap: 3px;
+  padding: 10px 6px 6px;
 }
 .work-name {
   min-width: 0;
-  font-size: var(--fs-body);
+  font-size: var(--fs-small);
   font-weight: 600;
   line-height: 1.35;
 }
@@ -1460,12 +1451,12 @@ main {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  font-size: var(--fs-small);
+  font-size: var(--fs-meta);
   line-height: 1.45;
   color: var(--text-2);
 }
-@media (min-width: 760px) and (max-width: 1023px) {
-  .more .work-line {
+@media (max-width: 1023px) {
+  .work-line {
     -webkit-line-clamp: 3;
   }
 }
@@ -1479,19 +1470,16 @@ main {
   margin-top: 6px;
 }
 .work-proof {
-  font-size: var(--fs-small);
+  font-size: var(--fs-meta);
   font-weight: 600;
   line-height: 1.4;
   color: var(--text);
 }
 .work-meta {
-  font-size: var(--fs-small);
+  font-size: var(--fs-meta);
   line-height: 1.4;
   color: var(--text-2);
   text-wrap: pretty;
-}
-.work-foot .pcard-note {
-  min-height: 0;
 }
 @media (hover: hover) {
   a.work-card .work-media img {
@@ -1507,36 +1495,6 @@ main {
   a.work-card:hover .work-name-text {
     background-size: 100% 1px;
   }
-}
-.pcard-note {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  font: 400 var(--fs-meta)/1.4 var(--font-mono-stack);
-  color: var(--text-3);
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.375rem;
-  font: 400 var(--fs-meta)/1 var(--font-mono-stack);
-  color: var(--text-3);
-  white-space: nowrap;
-}
-.badge--live {
-  height: 1.5rem;
-  padding: 0 0.5rem;
-  border: 1px solid var(--live-line);
-  border-radius: 999px;
-  color: var(--live);
-}
-.badge--live::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: currentColor;
 }
 .copy-button {
   min-height: 40px;
@@ -1567,38 +1525,31 @@ main {
   text-decoration-color: var(--live);
 }
 
-/* Tablets: the first harness card spans the row with its picture beside the
-   text and the other two sit two to a row; More builds keeps one row of
-   three, as on desktop. */
-@media (max-width: 1023px) {
-  /* Stacked cards get a taller row gap, so each step header sits with its
-     own card rather than the one above. */
-  .harness {
+/* Phones: two to a row. The first card of each list spans the row with its
+   picture beside the text, so the three cards shown fill two rows; stacked
+   harness rows get a taller gap so each step header sits with its own card. */
+@media (max-width: 759px) {
+  .harness,
+  .more {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    row-gap: 1.75rem;
+    gap: 10px;
   }
-  .harness > li:first-child {
+  .harness {
+    row-gap: 1.5rem;
+  }
+  :is(.harness, .more) > li:first-child {
     grid-column: 1 / -1;
   }
-  .harness > li:first-child > .work-card {
+  :is(.harness, .more) > li:first-child > .work-card {
     display: grid;
-    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: center;
   }
-  .harness > li:first-child .work-body {
-    padding: 16px 20px;
+  :is(.harness, .more) > li:first-child .work-body {
+    padding: 8px 10px;
   }
-}
-@media (max-width: 759px) {
-  .harness {
-    grid-template-columns: 1fr;
-  }
-  .harness > li:first-child > .work-card {
-    display: flex;
-    align-items: stretch;
-  }
-  .harness > li:first-child .work-body {
-    padding: 12px 8px 8px;
+  .work-body {
+    padding: 8px 4px 4px;
   }
 }
 
@@ -1607,7 +1558,7 @@ main {
 .videos {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.75rem var(--box-gap);
+  gap: 1.5rem var(--box-gap);
 }
 .video-link {
   display: grid;
@@ -1661,7 +1612,7 @@ main {
     gap: 1rem;
   }
   .video-link {
-    grid-template-columns: 128px minmax(0, 1fr);
+    grid-template-columns: 112px minmax(0, 1fr);
     align-items: center;
     gap: 0.875rem;
   }
@@ -1920,30 +1871,17 @@ main {
   }
 }
 
-/* Community: four picture cards, current roles marked "Now". */
+/* Community: four picture cards, the same size as the project cards; the
+   tag on each picture is his role. */
 .community-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--box-gap);
 }
-.work-card--sm .work-name {
-  font-size: var(--fs-small);
-}
-@media (max-width: 1023px) {
-  .community-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
 @media (max-width: 759px) {
   .community-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
-  }
-  .work-card--sm .work-body {
-    padding: 10px 6px 6px;
-  }
-  .work-card--sm .work-line {
-    font-size: var(--fs-meta);
-    -webkit-line-clamp: 3;
   }
   .work-card--sm .media-tag {
     left: 4px;
@@ -1953,11 +1891,6 @@ main {
     font-family: var(--font-sans), sans-serif;
     letter-spacing: 0;
     text-transform: none;
-  }
-  .work-card--sm .work-head {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
   }
 }
 /* Education and the CV link close the section on one line. */
@@ -2183,12 +2116,12 @@ main {
   left: 8px;
   bottom: 8px;
   max-width: calc(100% - 16px);
-  padding: 4px 7px;
-  border-radius: 4px;
+  padding: 3px 5px;
+  border-radius: 3px;
   background: var(--tag-bg);
   color: var(--tag-ink);
-  font: 400 var(--fs-meta)/1.2 var(--font-mono-stack);
-  letter-spacing: 0.08em;
+  font: 400 var(--fs-tag)/1.2 var(--font-mono-stack);
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   pointer-events: none;
 }
@@ -2304,9 +2237,10 @@ main {
 .contact-box .press-photos {
   margin-top: 0.25rem;
 }
+/* Two even columns, so the email address fits on one line in the 960px page. */
 @media (min-width: 1024px) {
   .contact-box {
-    grid-template-columns: minmax(0, 62ch) minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 .contact-email {
@@ -2649,10 +2583,6 @@ body:has(.contact-box) .footer-handles {
 /* ---------- phones ---------- */
 
 @media (max-width: 759px) {
-  /* More builds: one card per row, the first three, then the button. */
-  .more {
-    grid-template-columns: 1fr;
-  }
   /* The hero grid frames the name and fades out before the intro. */
   .hero-bg {
     -webkit-mask-image: radial-gradient(130% 440px at 50% 0, #000 30%, transparent 100%);
@@ -2693,7 +2623,12 @@ body:has(.contact-box) .footer-handles {
   .more {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .more > li[data-extra] {
+  /* No pictures on paper, so the spanning first card of a list is text only. */
+  :is(.harness, .more) > li:first-child > .work-card {
+    display: flex;
+    align-items: stretch;
+  }
+  :is(.more, .videos) > li[data-extra] {
     display: grid !important;
   }
   .more-toggle,
@@ -2729,10 +2664,6 @@ body:has(.contact-box) .footer-handles {
   .section-head,
   .contact-box {
     break-inside: avoid;
-  }
-  .badge--live::before {
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
   }
   .row-list,
   .community-grid {

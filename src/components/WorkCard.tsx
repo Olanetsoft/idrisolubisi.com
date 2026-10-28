@@ -1,5 +1,4 @@
 import Image from "next/image";
-import type { ReactNode } from "react";
 
 type WorkCardProps = {
   /** Where the whole card goes. Without it the card is still: no light, no tilt (a private repo). */
@@ -14,14 +13,11 @@ type WorkCardProps = {
   /** A short mono tag on the image: a community role. */
   tag?: string;
   name: string;
-  badge?: ReactNode;
   line: string;
   /** One proof line: bold on featured cards, mono elsewhere. */
   proof?: string;
   /** Extra words for screen readers, such as where the link goes. */
   srExtra?: string;
-  /** Shown after the proof, such as "Private repo". */
-  note?: string;
   size?: "feature" | "default" | "sm";
 };
 
@@ -40,11 +36,9 @@ export function WorkCard({
   eager,
   tag,
   name,
-  badge,
   line,
   proof,
   srExtra,
-  note,
   size = "default",
 }: WorkCardProps) {
   const className = [
@@ -75,23 +69,17 @@ export function WorkCard({
         )}
       </span>
       <div className="work-body">
-        <div className="work-head">
-          <h4 className="work-name">
-            <span className="work-name-text">{name}</span>
-          </h4>
-          {badge}
-        </div>
+        <h4 className="work-name">
+          <span className="work-name-text">{name}</span>
+        </h4>
         {srExtra && <span className="sr-only">, {srExtra}.</span>}
         <span className="work-line">{line}</span>
-        {(proof || note) && (
+        {proof && (
           <span className="work-foot">
-            {proof && (
-              <span className={size === "feature" ? "work-proof" : "work-meta"}>
-                <span className="sr-only">. </span>
-                {proof}
-              </span>
-            )}
-            {note && <span className="pcard-note">{note}</span>}
+            <span className={size === "feature" ? "work-proof" : "work-meta"}>
+              <span className="sr-only">. </span>
+              {proof}
+            </span>
           </span>
         )}
       </div>

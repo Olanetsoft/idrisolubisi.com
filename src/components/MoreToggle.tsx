@@ -3,10 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 
 /**
- * The button under More builds: the list shows its first cards and this
- * reveals the rest (the extra cards carry data-extra, see globals.css). All
- * cards stay in the HTML, so search, print and no-script visitors get every
- * one. A link straight to a hidden card (/#audioboost) opens the list first.
+ * The button under More builds and the talk videos: the list shows its first
+ * row and this reveals the rest (the extra items carry data-extra, see
+ * globals.css). Every item stays in the HTML, so search, print and no-script
+ * visitors get all of them. A link straight to a hidden item (/#audioboost)
+ * opens the list first.
  */
 export function MoreToggle({ listId, hidden }: { listId: string; hidden: number }) {
   const [open, setOpen] = useState(false);
