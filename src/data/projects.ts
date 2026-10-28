@@ -59,7 +59,7 @@ export const projects: Project[] = [
     detail:
       "Agents propose; the backend validates, signs and executes. Closed a double-sell race with an optimistic-lock mutex, Redis idempotency keys and single-transaction writes. A safety layer checks every open position every 30 seconds and enforces stop-losses and a -15% circuit breaker.",
     tagline: "Claude trading agents behind a safety layer",
-    image: "/images/work/swoopagent-diagram.jpg",
+    image: "/images/work/swoopagent-flow.jpg",
     imageAlt:
       "Diagram: a Claude agent proposes trades; the backend validates, signs and executes them; a safety layer with stop-losses and a -15% circuit breaker checks every 30 seconds",
   },

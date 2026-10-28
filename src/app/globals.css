@@ -1303,7 +1303,7 @@ main {
 
 /* ---------- projects ---------- */
 
-/* Projects, more builds and community share one card: a 16:10 picture set
+/* Projects, more builds and community share one card: a 16:9 picture set
    just inside the raised card, then a name, a few words and one number. The
    whole card is a single link (WorkCard.tsx). */
 .harness,
@@ -1378,7 +1378,7 @@ main {
 .work-media {
   position: relative;
   display: block;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9; /* pictures are 16:10, pinned to the top, so only the bottom is trimmed */
   overflow: hidden;
   border-radius: calc(var(--radius) - 4px); /* concentric with the card */
   background: var(--well);
@@ -1428,7 +1428,7 @@ main {
   grid-template-rows: auto auto 1fr;
   align-content: start;
   gap: 4px;
-  padding: 14px 10px 10px;
+  padding: 12px 8px 8px;
 }
 /* The badge never drops under the name; a long name wraps beside it. */
 .work-head {
@@ -1598,7 +1598,7 @@ main {
     align-items: stretch;
   }
   .harness > li:first-child .work-body {
-    padding: 14px 10px 10px;
+    padding: 12px 8px 8px;
   }
 }
 

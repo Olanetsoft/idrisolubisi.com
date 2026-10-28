@@ -26,9 +26,10 @@ type WorkCardProps = {
 };
 
 /**
- * One card for projects, more builds and community: a 16:10 screenshot set
- * just inside the raised card, then a name, one line and one number. The
- * whole card is a single link, with nothing interactive inside it.
+ * One card for projects, more builds and community: a 16:10 screenshot,
+ * shown 16:9 with its top kept, just inside the raised card, then a name, one
+ * line and one number. The whole card is a single link, with nothing
+ * interactive inside it.
  */
 export function WorkCard({
   href,
