@@ -11,7 +11,7 @@ type WorkCardProps = {
   sizes: string;
   /** On the first screen: load at once, at high priority (the lead harness card). */
   eager?: boolean;
-  /** A short mono tag on the image: the harness layer or a community role. */
+  /** A short mono tag on the image: a community role. */
   tag?: string;
   name: string;
   badge?: ReactNode;

@@ -88,7 +88,6 @@ export const talks: Talk[] = [
   },
 ];
 
-/** What he speaks about, for /llms-full.txt. */
 /** Photographs of him on stage, his own, opening the Talks section. The first one leads, larger. */
 export type StagePhoto = {
   src: string;
@@ -128,6 +127,7 @@ export const stagePhotos: StagePhoto[] = [
   },
 ];
 
+/** What he speaks about, for /llms-full.txt. */
 export const speakingTopics = [
   "agent systems and the harness around them",
   "MCP and AI-agent tooling",

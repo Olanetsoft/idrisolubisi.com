@@ -2,10 +2,11 @@
    metadata (IBM Plex Mono). Dark by default (pure black and warm ink); a light
    "paper" theme is opt-in. Only the picture cards are raised (a hairline
    border and a soft top highlight); everything else sits on the page, over
-   a little film grain and a faint warm glow behind the hero. No free-standing rules or drop shadows. Amber is the one
-   accent colour (section numbers, the nav underline, the highlighted clause,
-   the main button's hover); green is kept for things that are true right now
-   (available, live). */
+   a little film grain and a faint warm glow behind the hero. No drop shadows.
+   Amber is the one accent colour (section numbers, the harness step numbers
+   and rail, the nav underline, the highlighted clause, the main button's
+   hover, the footer flower); green is kept for things that are true right
+   now (available, live). */
 
 :root {
   --bg: #000000;
@@ -1570,8 +1571,11 @@ main {
    text and the other two sit two to a row; More builds keeps one row of
    three, as on desktop. */
 @media (max-width: 1023px) {
+  /* Stacked cards get a taller row gap, so each step header sits with its
+     own card rather than the one above. */
   .harness {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 1.75rem;
   }
   .harness > li:first-child {
     grid-column: 1 / -1;
@@ -1591,6 +1595,7 @@ main {
   }
   .harness > li:first-child > .work-card {
     display: flex;
+    align-items: stretch;
   }
   .harness > li:first-child .work-body {
     padding: 14px 10px 10px;
@@ -2716,6 +2721,7 @@ body:has(.contact-box) .footer-handles {
     grid-template-columns: 1fr;
   }
   .work-card,
+  .harness > li,
   .xp-row,
   .row-item,
   .video,
@@ -2737,8 +2743,17 @@ body:has(.contact-box) .footer-handles {
   }
   .section-head,
   .section-head > *,
-  .group-label {
+  .group-label,
+  .step {
     break-after: avoid;
+  }
+  /* Print skips backgrounds, so the step rail becomes a border on paper. */
+  .step {
+    border-bottom: 1px solid var(--line-strong);
+  }
+  .step::before,
+  .step::after {
+    display: none;
   }
   .section,
   #work.section,

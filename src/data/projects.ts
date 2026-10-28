@@ -18,9 +18,9 @@ export type Project = {
   stack: string[];
   badge?: "Live" | "Open source" | "npm" | "Reference";
   links: ProjectLink[];
-  /** "owner/repo" for the live star count. */
+  /** "owner/repo": star count (in /llms-full.txt) and private-link hiding. */
   githubRepo?: string;
-  /** Hide the live star count on this card. */
+  /** Leave this repo's star count out of /llms-full.txt. */
   hideStars?: boolean;
   /** One-line install or run command, shown with a copy button. */
   command?: string;

@@ -8,17 +8,31 @@ const description =
   "In this article, you will learn how to create a React app stress free in a couple of minutes.";
 const path = "/how-to-create-react-app";
 const published = "2020-02-15";
+const image = "/archive/how-to-create-react-app/react-introduction-pic.jpg";
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: path },
+  // A page's openGraph and twitter replace the root ones whole, so the shared
+  // fields are repeated here; without twitter, X would show the homepage's.
   openGraph: {
     type: "article",
     url: `${site.url}${path}`,
+    siteName: site.name,
+    locale: "en_GB",
     title,
     description,
     publishedTime: published,
+    images: [{ url: image, width: 850, height: 370 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: `@${site.handle}`,
+    creator: `@${site.handle}`,
+    title,
+    description,
+    images: [image],
   },
 };
 
@@ -30,7 +44,7 @@ const jsonLd = {
   datePublished: published,
   url: `${site.url}${path}`,
   mainEntityOfPage: `${site.url}${path}`,
-  image: `${site.url}/archive/how-to-create-react-app/react.png`,
+  image: `${site.url}${image}`,
   author: { "@id": `${site.url}/#person` },
 };
 

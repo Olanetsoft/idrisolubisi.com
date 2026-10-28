@@ -89,8 +89,10 @@ export const viewport: Viewport = {
 };
 
 // Runs before paint: dark is the default, so this only applies a saved light
-// choice, then matches the address bar once the head has been parsed.
-const themeScript = `(function(){try{if(localStorage.getItem('theme')==='light'){document.documentElement.setAttribute('data-theme','light');document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('meta[name="theme-color"]').forEach(function(m){m.content='${THEME_COLOR.light}'})})}}catch(e){}})();`;
+// choice. Then it keeps the address-bar colour on the current theme: once the
+// head is parsed, and again whenever navigation re-inserts the theme-color
+// meta with its dark default.
+const themeScript = `(function(){try{if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-theme','light')}catch(e){}function s(){var c=document.documentElement.getAttribute('data-theme')==='light'?'${THEME_COLOR.light}':'${THEME_COLOR.dark}';document.querySelectorAll('meta[name="theme-color"]').forEach(function(m){if(m.content!==c)m.content=c})}document.addEventListener('DOMContentLoaded',function(){s();new MutationObserver(s).observe(document.head,{childList:true,subtree:true,attributes:true,attributeFilter:['content']})})})();`;
 
 // Google's profile-page structured data: a ProfilePage whose main entity is the
 // Person, plus the WebSite node. Stable @ids let crawlers merge the three.

@@ -38,7 +38,7 @@ One page, in this order: the hero (status line, name and role, one intro, the ca
 | Curated articles, "Published on" platforms, writing stats                     | `src/data/writing.ts`                                                                                                      |
 | Press, awards and interviews                                                  | `src/data/recognition.ts`                                                                                                  |
 | Build-time data (written by `npm run data`, do not edit by hand)              | `src/data/generated/github.json`, `src/data/generated/blog.json`, typed in `src/lib/generated.ts`                          |
-| Logos and icons                                                               | `src/components/icon-data.json`, built into `public/icons.svg` by `npm run icons`; used through `src/components/icons.tsx` |
+| Brand marks                                                                   | `src/components/icon-data.json`, built into `public/icons.svg` by `npm run icons`; used through `src/components/icons.tsx` |
 | Styles and design tokens                                                      | `src/app/globals.css`                                                                                                      |
 | Browser-bar colours (keep in step with `--bg` in `globals.css`)               | `src/lib/theme.ts`                                                                                                         |
 | Metadata and structured data (JSON-LD)                                        | `src/app/layout.tsx`                                                                                                       |
@@ -56,12 +56,12 @@ One page, in this order: the hero (status line, name and role, one intro, the ca
 
 `scripts/fetch-data.mjs` runs before every build and writes two committed files:
 
-- `src/data/generated/github.json`: stars and visibility for each repo in its `REPOS` list, plus the GitHub follower count. A project card shows its stars only from 100 up, and a link to a private repo is left out until the repo is public.
+- `src/data/generated/github.json`: stars and visibility for each repo in its `REPOS` list, plus the GitHub follower count. Cards show no star counts; /llms-full.txt lists a repo's stars from 100 up. A link to a private repo is left out until the repo is public.
 - `src/data/generated/blog.json`: posts from the blog's RSS feed (`https://blog.idrisolubisi.com/rss.xml`). Any post newer than the newest article in `src/data/writing.ts` appears at the top of Writing.
 
 The script never fails a build. On a network or parse error it keeps the last good file. Set `GITHUB_TOKEN` (a token with no scopes is enough) locally or in Netlify's environment variables to avoid GitHub's unauthenticated rate limit. A local build rewrites both files, so commit or discard them.
 
-When you add a project with a `githubRepo`, add the same `owner/repo` to `REPOS` in `scripts/fetch-data.mjs`. Without it the card gets no star count, and a private repo's link is not hidden.
+When you add a project with a `githubRepo`, add the same `owner/repo` to `REPOS` in `scripts/fetch-data.mjs`. Without it /llms-full.txt gets no star count, and a private repo's link is not hidden.
 
 Updated by hand, not by the build: the X, LinkedIn and Hashnode follower counts, the public repo count and the GitHub achievements in `src/data/site.ts`.
 
