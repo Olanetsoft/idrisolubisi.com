@@ -81,7 +81,7 @@ export const projects: Project[] = [
     detail:
       "A hosted compiler worked as a verification gate, so assistants returned code that compiles instead of confident wrong code. In 2026 Midnight standardised on two official tools, Kapa MCP and Midnight Expert, and the server was wound down.",
     tagline: "Gave AI agents Midnight code search and a compile check",
-    image: "/images/work/midnight-mcp.jpg",
+    image: "/images/work/midnight-mcp-repo.jpg",
   },
   {
     key: "agent-lookout",
