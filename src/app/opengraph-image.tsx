@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 import { site } from "@/data/site";
+import { COLORS } from "@/lib/tokens";
 
 export const alt = site.title;
 export const size = { width: 1200, height: 630 };
@@ -31,6 +32,9 @@ async function loadGoogleFont(family: string, weight: 400 | 600): Promise<OgFont
   }
 }
 
+// The share image uses the dark theme, the site's default.
+const C = COLORS.dark;
+
 export default async function OpenGraphImage() {
   const fonts = (
     await Promise.all([loadGoogleFont("IBM Plex Sans", 600), loadGoogleFont("IBM Plex Sans", 400)])
@@ -46,8 +50,11 @@ export default async function OpenGraphImage() {
         flexDirection: "column",
         justifyContent: "space-between",
         padding: "72px 80px",
-        background: "#faf9f6",
-        color: "#1c1b19",
+        background: C.bg,
+        backgroundImage:
+          "linear-gradient(rgb(236 233 226 / 0.07) 1px, transparent 1px), linear-gradient(90deg, rgb(236 233 226 / 0.07) 1px, transparent 1px)",
+        backgroundSize: "64px 64px",
+        color: C.text,
         fontFamily: family,
       }}
     >
@@ -55,14 +62,14 @@ export default async function OpenGraphImage() {
         <div style={{ display: "flex", fontSize: 68, fontWeight: 600, letterSpacing: 0 }}>
           {site.name}
         </div>
-        <div style={{ display: "flex", fontSize: 32, color: "#4a4741" }}>
+        <div style={{ display: "flex", fontSize: 32, color: C.text2 }}>
           {site.role} · {site.location}, UK
         </div>
         <div
           style={{
             display: "flex",
             fontSize: 26,
-            color: "#6e6a63",
+            color: C.text3,
             maxWidth: 1000,
             lineHeight: 1.35,
           }}
@@ -72,9 +79,9 @@ export default async function OpenGraphImage() {
         </div>
       </div>
       <div
-        style={{ display: "flex", justifyContent: "space-between", fontSize: 24, color: "#6e6a63" }}
+        style={{ display: "flex", justifyContent: "space-between", fontSize: 24, color: C.text3 }}
       >
-        <div style={{ display: "flex" }}>idrisolubisi.com</div>
+        <div style={{ display: "flex", color: C.accent }}>idrisolubisi.com</div>
         <div style={{ display: "flex" }}>@olanetsoft</div>
       </div>
     </div>,
