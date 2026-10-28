@@ -58,6 +58,13 @@ export const recognition: Recognition[] = [
     kind: "interview",
   },
   {
+    title: "Podcast: building communities and cross-chain dapps",
+    by: "Building Onchain",
+    date: "2024-06-24",
+    href: "https://creators.spotify.com/pod/show/paloma0842/episodes/Building-communities-and-cross-chain-dapps-wIdris-Olubisi-e2l7oq5",
+    kind: "interview",
+  },
+  {
     title: "Idris Olubisi’s journey from coding on a phone to building developer communities",
     by: "The Geek Circle",
     date: "2026-02-12",

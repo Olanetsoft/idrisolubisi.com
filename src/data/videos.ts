@@ -4,7 +4,7 @@
  * watched) and his Midnight MCP explainer, Axelar workshops, an MCP workshop,
  * an explainer and a DevRel interview. Every one was checked to be public, with Idris on camera.
  * Titles are cleaned up for the card; no em-dashes. Ordered so neighbours in
- * the 3x3 grid differ.
+ * the grid (three to a row, two rows shown) differ.
  */
 export type FeaturedVideo = {
   /** YouTube video id; the thumbnail and link are built from it. */
@@ -83,6 +83,48 @@ export const featuredVideos: FeaturedVideo[] = [
   {
     id: "5BGkt7d6fNw",
     title: "Midnight UTXO and account model",
+    kind: "Tutorial",
+    context: "Midnight",
+    year: "2025",
+  },
+  {
+    id: "9p8n4SBtwRQ",
+    title: "Build on Midnight kickoff workshop",
+    kind: "Workshop",
+    context: "Major League Hacking",
+    year: "2026",
+  },
+  {
+    id: "o07nwFkce-Q",
+    title: "Demystifying Web3: a guide to blockchain interoperability",
+    kind: "Talk",
+    context: "OSCAFEST",
+    year: "2023",
+  },
+  {
+    id: "5loZw3iDOuo",
+    title: "Build a multichain tax contract with ITS",
+    kind: "Workshop",
+    context: "Axelar",
+    year: "2024",
+  },
+  {
+    id: "GoatYgMcyj0",
+    title: "Introduction to blockchain",
+    kind: "Workshop",
+    context: "GitHub Campus Experts x Midnight",
+    year: "2026",
+  },
+  {
+    id: "zKS0DYVOGEA",
+    title: "A career path in Web3 as a developer",
+    kind: "Workshop",
+    context: "Web3 Afrika",
+    year: "2023",
+  },
+  {
+    id: "NTvxu_Ap9Eg",
+    title: "Build privacy-preserving blockchain apps",
     kind: "Tutorial",
     context: "Midnight",
     year: "2025",
