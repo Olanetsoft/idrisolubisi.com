@@ -86,7 +86,7 @@ Netlify builds the site with `@netlify/plugin-nextjs` (see `netlify.toml`). The 
 
 ## Credits
 
-Brand logos from [Simple Icons](https://simpleicons.org) (CC0). Two-tone icons from [Phosphor](https://phosphoricons.com) (MIT).
+Brand marks from [Simple Icons](https://simpleicons.org) (CC0), shown only on the Contact profile links and drawn in the text colour.
 
 ## License
 

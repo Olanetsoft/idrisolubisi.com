@@ -13,7 +13,7 @@ let symbols = "";
 for (const [name, brand] of Object.entries(data.brands)) {
   symbols += `<symbol id="b-${name}" viewBox="0 0 24 24"><path d="${esc(brand.path)}"/></symbol>`;
 }
-for (const [name, paths] of Object.entries(data.ui)) {
+for (const [name, paths] of Object.entries(data.ui ?? {})) {
   const body = paths
     .map((p) => `<path d="${esc(p.d)}"${p.tone ? ' opacity="0.22"' : ""}/>`)
     .join("");
@@ -22,5 +22,5 @@ for (const [name, paths] of Object.entries(data.ui)) {
 const svg = `<svg xmlns="http://www.w3.org/2000/svg"><defs>${symbols}</defs></svg>\n`;
 await writeFile(new URL("../public/icons.svg", import.meta.url), svg);
 console.log(
-  `build-icons: ${Object.keys(data.brands).length + Object.keys(data.ui).length} icons, ${svg.length} bytes`,
+  `build-icons: ${Object.keys(data.brands).length + Object.keys(data.ui ?? {}).length} icons, ${svg.length} bytes`,
 );

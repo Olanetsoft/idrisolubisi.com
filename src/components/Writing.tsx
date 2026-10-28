@@ -1,7 +1,6 @@
 import { site } from "@/data/site";
 import { platforms, writingList, writingStats } from "@/data/writing";
 import { monthYear } from "@/lib/format";
-import { BrandIcon, UiIcon } from "./icons";
 import { blogPosts } from "@/lib/generated";
 import { SectionLabel } from "./SectionLabel";
 
@@ -33,24 +32,15 @@ export function Writing() {
           ))}
         </ul>
         <p className="more-link more-links">
-          <a href={site.links.blog}>
-            <BrandIcon name="hashnode" />
-            All posts on blog.idrisolubisi.com
-          </a>
+          <a href={site.links.blog}>All posts on blog.idrisolubisi.com</a>
           <a href={site.links.freecodecamp} rel="me">
-            <BrandIcon name="freecodecamp" />
             freeCodeCamp
           </a>
           <a href={site.links.devto} rel="me">
-            <BrandIcon name="devto" />
             Dev.to
           </a>
-          <a href={site.links.logrocket}>
-            <UiIcon name="article" />
-            LogRocket
-          </a>
+          <a href={site.links.logrocket}>LogRocket</a>
           <a href={site.links.medium} rel="me">
-            <BrandIcon name="medium" />
             Medium
           </a>
         </p>

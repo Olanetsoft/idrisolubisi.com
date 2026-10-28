@@ -1,7 +1,6 @@
 import { projects, type Project } from "@/data/projects";
 import { site } from "@/data/site";
 import { isPrivateRepo } from "@/lib/generated";
-import { BrandIcon } from "./icons";
 import { MoreToggle } from "./MoreToggle";
 import { SectionLabel } from "./SectionLabel";
 import { WorkCard } from "./WorkCard";
@@ -87,7 +86,6 @@ export function Projects() {
           )}
           <p className="more-link more-link--github">
             <a href={site.links.github} rel="me">
-              <BrandIcon name="github" />
               More on GitHub
             </a>
           </p>
