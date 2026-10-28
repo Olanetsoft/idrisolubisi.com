@@ -237,15 +237,16 @@ figure {
 
 /* ---------- icons ---------- */
 
+/* Brand marks are drawn in the text colour: no brand blues or reds. */
 .brand-icon {
   flex: none;
-  fill: var(--brand);
+  fill: currentColor;
 }
-[data-theme="light"] .brand-icon {
-  fill: var(--brand-light, var(--brand));
+.socials .brand-icon {
+  color: var(--text-2);
 }
-.ui-icon {
-  flex: none;
+.socials a:hover .brand-icon {
+  color: var(--text);
 }
 
 /* ---------- buttons ---------- */
@@ -745,8 +746,8 @@ figure {
   color: var(--text);
 }
 .theme-toggle svg {
-  width: 1.1rem;
-  height: 1.1rem;
+  width: 1.125rem;
+  height: 1.125rem;
 }
 /* Dark by default, so the button offers the sun (switch to light). */
 .icon-moon {

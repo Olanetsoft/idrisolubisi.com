@@ -2,7 +2,6 @@ import Image from "next/image";
 import { site } from "@/data/site";
 import { stagePhotos, talks } from "@/data/talks";
 import { featuredVideos } from "@/data/videos";
-import { BrandIcon } from "./icons";
 import { SectionLabel } from "./SectionLabel";
 import { PhotoDialog } from "./PhotoDialog";
 import { VideoDialog } from "./VideoDialog";
@@ -113,10 +112,7 @@ export function Talks() {
           ))}
         </ul>
         <p className="more-link more-links">
-          <a href={site.links.youtube}>
-            <BrandIcon name="youtube" />
-            All talks on YouTube
-          </a>
+          <a href={site.links.youtube}>All talks on YouTube</a>
           <a href={site.links.sessionize}>Speaker profile on Sessionize</a>
         </p>
         <h3 className="group-label">On stage</h3>

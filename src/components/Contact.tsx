@@ -1,7 +1,7 @@
 import { site } from "@/data/site";
 import { githubFollowers } from "@/lib/generated";
 import { CopyButton } from "./CopyCommand";
-import { BrandIcon, UiIcon, type BrandName } from "./icons";
+import { BrandIcon, type BrandName } from "./icons";
 import { SectionLabel } from "./SectionLabel";
 
 /** "1,300+" from the live count, rounded down to the hundred so it never overstates. */
@@ -67,10 +67,7 @@ export function Contact() {
               ))}
             </ul>
             <p className="more-link press-photos">
-              <a href={site.links.photos}>
-                <UiIcon name="image" />
-                Headshots and photos for organisers and press
-              </a>
+              <a href={site.links.photos}>Headshots and photos for organisers and press</a>
             </p>
           </div>
         </div>

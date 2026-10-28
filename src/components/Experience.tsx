@@ -1,6 +1,5 @@
 import { community, education, experience } from "@/data/experience";
 import { site } from "@/data/site";
-import { UiIcon } from "./icons";
 import { SectionLabel } from "./SectionLabel";
 import { WorkCard } from "./WorkCard";
 
@@ -60,10 +59,7 @@ export function Experience() {
             {education.degree}, {education.school}, {education.year}
           </p>
           <p className="more-link">
-            <a href={site.resumeUrl}>
-              <UiIcon name="fileText" />
-              Full CV (PDF)
-            </a>
+            <a href={site.resumeUrl}>Full CV (PDF)</a>
           </p>
         </div>
       </div>

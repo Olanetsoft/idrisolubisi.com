@@ -2,7 +2,6 @@ import Image from "next/image";
 import { hero } from "@/data/hero";
 import { site } from "@/data/site";
 import { HeroBackdrop } from "./HeroBackdrop";
-import { UiIcon } from "./icons";
 import { RichText } from "./RichText";
 import { StatusLine } from "./StatusLine";
 
@@ -37,7 +36,6 @@ export function Hero() {
               Book a 30-min call
             </a>
             <a className="btn" href={site.resumeUrl}>
-              <UiIcon name="fileText" size={17} />
               CV (PDF)
             </a>
           </div>
