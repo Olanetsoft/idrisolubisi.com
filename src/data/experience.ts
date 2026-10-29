@@ -134,7 +134,7 @@ export const community: {
     href: "https://shecodeafrica.org/",
     note: "Ran the backend programmes; SheCodeAfrica has 50,000+ members across 15 African countries",
     current: false,
-    image: "/images/community/shecodeafrica.jpg",
+    image: "/images/community/shecodeafrica-hero.jpg",
     summary: "50,000+ members across 15 countries",
   },
   {

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { site } from "@/data/site";
-import { stagePhotos, talks } from "@/data/talks";
+import { isUpcoming, stagePhotos, talks } from "@/data/talks";
 import { featuredVideos } from "@/data/videos";
 import { MoreToggle } from "./MoreToggle";
 import { SectionLabel } from "./SectionLabel";
@@ -9,7 +9,7 @@ import { VideoDialog } from "./VideoDialog";
 
 type Talk = (typeof talks)[number];
 
-/** The talk videos show two rows; a button reveals the rest. */
+/** The talk videos show the first six; a button reveals the rest. */
 const VIDEOS_SHOWN = 6;
 
 /** The On stage list shows the most recent rows; a button reveals the rest. */
@@ -121,7 +121,11 @@ export function Talks() {
         </ul>
         <div className="more-actions">
           {featuredVideos.length > VIDEOS_SHOWN && (
-            <MoreToggle listId="talk-videos" hidden={featuredVideos.length - VIDEOS_SHOWN} />
+            <MoreToggle
+              listId="talk-videos"
+              hidden={featuredVideos.length - VIDEOS_SHOWN}
+              noun="talk videos"
+            />
           )}
           <p className="more-link more-links">
             <a href={site.links.youtube}>All talks on YouTube</a>
@@ -132,25 +136,32 @@ export function Talks() {
         <ul className="row-list stage-list" id="on-stage">
           {stages.map((t, i) => {
             const city = t.location && !eventName(t).includes(t.location) ? t.location : undefined;
+            const kind = [KIND[t.kind], city, isUpcoming(t) && "upcoming"].filter(Boolean);
+            // A linked row reads as one link with the year and kind in its name,
+            // so the three Web3 Lagos rows don't share one name.
+            const linkOnly = t.href ? true : undefined;
             return (
               <li
                 key={`${t.event}-${t.title ?? t.kind}`}
                 className="row-item stage-row"
                 data-extra={i >= STAGES_SHOWN || undefined}
               >
-                <span className="stage-year">{t.year}</span>
+                <span className="stage-year" aria-hidden={linkOnly}>
+                  {t.year}
+                </span>
                 <span className="stage-event">
                   {t.href ? (
                     <a className="card-link" href={t.href}>
                       {eventName(t)}
+                      <span className="sr-only">, {[...kind, t.year].join(", ")}</span>
                     </a>
                   ) : (
                     eventName(t)
                   )}
                 </span>
-                <span className="stage-kind">
+                <span className="stage-kind" aria-hidden={linkOnly}>
                   <span className="sr-only">, </span>
-                  {[KIND[t.kind], city].filter(Boolean).join(" · ")}
+                  {kind.join(" · ")}
                 </span>
               </li>
             );
@@ -158,7 +169,7 @@ export function Talks() {
         </ul>
         {stages.length > STAGES_SHOWN && (
           <div className="more-actions">
-            <MoreToggle listId="on-stage" hidden={stages.length - STAGES_SHOWN} />
+            <MoreToggle listId="on-stage" hidden={stages.length - STAGES_SHOWN} noun="events" />
           </div>
         )}
       </div>

@@ -9,8 +9,15 @@ export type Talk = {
   href?: string;
   note?: string;
   /** Shown as a card at the top of Talks instead of in the On stage list. */
-  highlight?: "Latest" | "Keynote" | "Guest lecture";
+  highlight?: "Keynote" | "Guest lecture";
+  /** For an event still to come: its last day (ISO). Until then it is marked upcoming. */
+  date?: string;
 };
+
+/** Worked out when the page is built, and again each day (see page.tsx). */
+export function isUpcoming(t: Talk): boolean {
+  return Boolean(t.date && t.date >= new Date().toISOString().slice(0, 10));
+}
 
 /** Newest first; within a year, by date where known. Never invent a title, year or link. */
 export const talks: Talk[] = [
@@ -20,6 +27,7 @@ export const talks: Talk[] = [
     location: "Abeokuta",
     kind: "Speaker",
     href: "https://www.ogundigitalsummit.com/speaker",
+    date: "2026-11-26",
   },
   {
     event: "DevFest Ilorin 2026",
@@ -28,6 +36,7 @@ export const talks: Talk[] = [
     location: "Ilorin",
     kind: "Talk",
     href: "https://devfestilorin.com/",
+    date: "2026-11-07",
   },
   {
     event: "Blockfest Africa 2026",
@@ -39,7 +48,7 @@ export const talks: Talk[] = [
   },
   {
     event: "University of Zurich International Summer School",
-    title: "Guest lecture on Midnight",
+    title: "On Midnight",
     year: "2026",
     kind: "Lecture",
     highlight: "Guest lecture",
@@ -154,7 +163,7 @@ export const talks: Talk[] = [
     title:
       "Fostering inclusive communities: empowering diverse voices for creativity and innovation",
     year: "2023",
-    location: "Ilorin",
+    location: "Online",
     kind: "Talk",
     href: "https://www.youtube.com/watch?v=5Vkob-nlioI",
   },
@@ -264,7 +273,7 @@ export const stagePhotos: StagePhoto[] = [
     width: 1600,
     height: 739,
     alt: "Idris presenting from the stage to rows of developers at long tables, with cameras and lights around the room",
-    tag: "Web3 Developer Roadshow · Mara × Circle · 2022",
+    tag: "Mara × Circle roadshow · 2022",
     position: "96% 50%",
   },
   {
