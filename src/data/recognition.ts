@@ -4,8 +4,8 @@ export type Recognition = {
   /** ISO 8601 (year, year-month or full date); used in structured data, not shown on the page. */
   date: string;
   href?: string;
-  /** press, sponsored and interview become subjectOf items in structured data; endorsement and award become awards. */
-  kind: "press" | "sponsored" | "interview" | "endorsement" | "award";
+  /** press, sponsored, interview (video) and podcast become subjectOf items in structured data; endorsement and award become awards. */
+  kind: "press" | "sponsored" | "interview" | "podcast" | "endorsement" | "award";
   /** Set for sponsored or brand-press placements; surfaced as a disclosure. */
   note?: string;
   /** More context for /llms.txt and /llms-full.txt; not shown on the page. */
@@ -68,8 +68,8 @@ export const recognition: Recognition[] = [
     title: "Podcast: building communities and cross-chain dapps",
     by: "Building Onchain",
     date: "2024-06-24",
-    href: "https://creators.spotify.com/pod/show/paloma0842/episodes/Building-communities-and-cross-chain-dapps-wIdris-Olubisi-e2l7oq5",
-    kind: "interview",
+    href: "https://creators.spotify.com/pod/profile/paloma0842/episodes/Building-communities-and-cross-chain-dapps-wIdris-Olubisi-e2l7oq5",
+    kind: "podcast",
   },
   {
     title: "Idris Olubisi’s journey from coding on a phone to building developer communities",

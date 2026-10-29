@@ -3,13 +3,22 @@
 import { useEffect, useRef, useState } from "react";
 
 /**
- * The button under More builds and the talk videos: the list shows its first
- * row and this reveals the rest (the extra items carry data-extra, see
- * globals.css). Every item stays in the HTML, so search, print and no-script
- * visitors get all of them. A link straight to a hidden item (/#audioboost)
- * opens the list first.
+ * The button under More builds, the talk videos and On stage: each list shows
+ * its first items and this reveals the rest (the extra items carry data-extra,
+ * see globals.css). Every item stays in the HTML, so search, print and
+ * no-script visitors get all of them. A link straight to a hidden More builds
+ * card (/#audioboost) opens the list first; videos and events have no ids.
+ * `noun` names the list for screen readers: "Show 6 more builds".
  */
-export function MoreToggle({ listId, hidden }: { listId: string; hidden: number }) {
+export function MoreToggle({
+  listId,
+  hidden,
+  noun,
+}: {
+  listId: string;
+  hidden: number;
+  noun: string;
+}) {
   const [open, setOpen] = useState(false);
   const button = useRef<HTMLButtonElement>(null);
 
@@ -55,6 +64,7 @@ export function MoreToggle({ listId, hidden }: { listId: string; hidden: number 
       }}
     >
       {open ? "Show fewer" : `Show ${hidden} more`}
+      <span className="sr-only"> {noun}</span>
     </button>
   );
 }

@@ -79,7 +79,7 @@ export function Projects() {
         </ul>
         <div className="more-actions">
           {more.length > MORE_SHOWN && (
-            <MoreToggle listId="more-builds" hidden={more.length - MORE_SHOWN} />
+            <MoreToggle listId="more-builds" hidden={more.length - MORE_SHOWN} noun="builds" />
           )}
           <p className="more-link more-link--github">
             <a href={site.links.github} rel="me">

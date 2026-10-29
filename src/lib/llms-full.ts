@@ -2,7 +2,7 @@ import { community, education, experience, stack } from "@/data/experience";
 import { harnessIntro, otherOpenSource, projects } from "@/data/projects";
 import { recognition } from "@/data/recognition";
 import { site } from "@/data/site";
-import { speakingTopics, talks } from "@/data/talks";
+import { isUpcoming, speakingTopics, talks } from "@/data/talks";
 import { platforms, writingList, writingStats } from "@/data/writing";
 import { monthYear } from "@/lib/format";
 import {
@@ -116,9 +116,9 @@ export function renderLlmsFullTxt(): string {
 
   push("## Speaking", "");
   for (const t of talks) {
-    const event = t.event.replace(/\s+\d{4}$/, "");
+    const event = t.event.replace(/\s*\((.*)\)$/, ", $1").replace(/\s+\d{4}$/, "");
     const city = t.location && !event.includes(t.location) ? t.location : undefined;
-    const where = [event, city, t.year].filter(Boolean).join(", ");
+    const where = [event, city, t.year, isUpcoming(t) && "upcoming"].filter(Boolean).join(", ");
     const line = t.title ? `${t.title} (${where})` : where;
     const prefix = t.title?.toLowerCase().includes(t.kind.toLowerCase()) ? "" : `${t.kind}: `;
     push(`- ${prefix}${line}${t.note ? `. ${t.note}` : ""}${t.href ? ` - ${t.href}` : ""}`);

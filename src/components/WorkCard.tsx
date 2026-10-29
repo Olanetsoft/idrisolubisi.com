@@ -14,7 +14,7 @@ type WorkCardProps = {
   tag?: string;
   name: string;
   line: string;
-  /** One proof line: bold on featured cards, mono elsewhere. */
+  /** One proof line: bold on featured cards, regular elsewhere. */
   proof?: string;
   /** Extra words for screen readers, such as where the link goes. */
   srExtra?: string;

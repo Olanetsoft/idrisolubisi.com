@@ -158,18 +158,31 @@ const jsonLd = {
         .map((r) => `${r.by}: ${r.title}`),
       subjectOf: recognition
         .filter(
-          (r) => r.href && (r.kind === "press" || r.kind === "sponsored" || r.kind === "interview"),
+          (r) =>
+            r.href &&
+            (r.kind === "press" ||
+              r.kind === "sponsored" ||
+              r.kind === "interview" ||
+              r.kind === "podcast"),
         )
         .map((r) =>
           r.kind === "interview"
             ? { "@type": "VideoObject", name: r.title, url: r.href, uploadDate: r.date }
-            : {
-                "@type": r.kind === "sponsored" ? "AdvertiserContentArticle" : "NewsArticle",
-                headline: r.title,
-                url: r.href,
-                datePublished: r.date,
-                publisher: { "@type": "Organization", name: r.by },
-              },
+            : r.kind === "podcast"
+              ? {
+                  "@type": "PodcastEpisode",
+                  name: r.title,
+                  url: r.href,
+                  datePublished: r.date,
+                  partOfSeries: { "@type": "PodcastSeries", name: r.by },
+                }
+              : {
+                  "@type": r.kind === "sponsored" ? "AdvertiserContentArticle" : "NewsArticle",
+                  headline: r.title,
+                  url: r.href,
+                  datePublished: r.date,
+                  publisher: { "@type": "Organization", name: r.by },
+                },
         ),
       knowsAbout: [
         "Developer Relations",
