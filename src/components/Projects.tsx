@@ -11,8 +11,8 @@ const publicLinks = (project: Project) => project.links.filter((l) => !isPrivate
 /** How a card's link reads to screen readers, after "opens". */
 const OPENS: Record<string, string> = { Site: "the site", "Case study": "the case study" };
 
-/** Three cards to a row in the 960px page column (two on phones, the first spanning). */
-const CARD_SIZES = "(max-width: 759px) 46vw, (max-width: 1023px) 30vw, 310px";
+/** Three cards to a row in the 960px page column; on phones one row each, the picture 112px wide. */
+const CARD_SIZES = "(max-width: 759px) 112px, (max-width: 1023px) 30vw, 310px";
 
 /** More builds shows one row of cards; a button reveals the rest. */
 const MORE_SHOWN = 3;
@@ -78,9 +78,7 @@ export function Projects() {
           ))}
         </ul>
         <div className="more-actions">
-          {more.length > MORE_SHOWN && (
-            <MoreToggle listId="more-builds" hidden={more.length - MORE_SHOWN} noun="builds" />
-          )}
+          {more.length > MORE_SHOWN && <MoreToggle listId="more-builds" noun="builds" />}
           <p className="more-link more-link--github">
             <a href={site.links.github} rel="me">
               More on GitHub

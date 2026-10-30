@@ -126,11 +126,7 @@ export function Talks() {
         </ul>
         <div className="more-actions">
           {featuredVideos.length > VIDEOS_SHOWN && (
-            <MoreToggle
-              listId="talk-videos"
-              hidden={featuredVideos.length - VIDEOS_SHOWN}
-              noun="talk videos"
-            />
+            <MoreToggle listId="talk-videos" noun="talk videos" />
           )}
           <p className="more-link more-links">
             <a href={site.links.youtube}>All talks on YouTube</a>
@@ -174,7 +170,7 @@ export function Talks() {
         </ul>
         {stages.length > STAGES_SHOWN && (
           <div className="more-actions">
-            <MoreToggle listId="on-stage" hidden={stages.length - STAGES_SHOWN} noun="events" />
+            <MoreToggle listId="on-stage" noun="events" />
           </div>
         )}
       </div>

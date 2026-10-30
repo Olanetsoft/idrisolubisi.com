@@ -23,6 +23,7 @@ export function Hero() {
               width={1407}
               height={1600}
               loading="eager"
+              fetchPriority="high"
               sizes="(max-width: 759px) 168px, (max-width: 1023px) 235px, 300px"
             />
           </figure>
