@@ -9,14 +9,25 @@ export type Talk = {
   href?: string;
   note?: string;
   /** Shown as a card at the top of Talks instead of in the On stage list. */
-  highlight?: "Latest" | "Keynote" | "Guest lecture";
-  /** For an event still to come: its last day (ISO). Until then it is marked upcoming. */
+  highlight?: "Keynote" | "Guest lecture";
+  /**
+   * The event's last day (ISO). Give every new talk one: until that day it is
+   * marked upcoming, and once it has passed the newest dated talk becomes the
+   * Latest card at the top of Talks.
+   */
   date?: string;
 };
 
 /** Worked out when the page is built, and again each day (see page.tsx). */
 export function isUpcoming(t: Talk): boolean {
   return Boolean(t.date && t.date >= new Date().toISOString().slice(0, 10));
+}
+
+/** The most recent talk that has happened, for the Latest card; also rechecked daily. */
+export function latestTalk(): Talk | undefined {
+  return talks
+    .filter((t) => t.date && !t.highlight && !isUpcoming(t))
+    .sort((a, b) => (b.date ?? "").localeCompare(a.date ?? ""))[0];
 }
 
 /** Newest first; within a year, by date where known. Never invent a title, year or link. */
@@ -45,7 +56,7 @@ export const talks: Talk[] = [
     location: "Lagos",
     kind: "Workshop",
     href: "https://blockfestafrica.com/schedule",
-    highlight: "Latest",
+    date: "2026-10-22",
   },
   {
     event: "University of Zurich International Summer School",

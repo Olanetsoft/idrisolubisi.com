@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { site } from "@/data/site";
-import { isUpcoming, stagePhotos, talks } from "@/data/talks";
+import { isUpcoming, latestTalk, stagePhotos, talks } from "@/data/talks";
 import { featuredVideos } from "@/data/videos";
 import { MoreToggle } from "./MoreToggle";
 import { SectionLabel } from "./SectionLabel";
@@ -32,17 +32,22 @@ function eventName(t: Talk): string {
 }
 
 /** "Lagos, 2025": the kind unless the label or title already says it, the city unless the event names it, the year. */
-function highlightMeta(t: Talk): string {
+function highlightMeta(t: Talk, label: string): string {
   const kind = KIND[t.kind];
-  const said = `${t.highlight} ${t.title ?? ""}`.toLowerCase();
+  const said = `${label} ${t.title ?? ""}`.toLowerCase();
   const showKind = !said.includes(kind.split(" ").pop()!.toLowerCase());
   const city = t.location && !eventName(t).includes(t.location) ? t.location : undefined;
   return [showKind ? kind : undefined, city, t.year].filter(Boolean).join(", ");
 }
 
 export function Talks() {
-  const highlights = talks.filter((t) => t.highlight);
-  const stages = talks.filter((t) => !t.highlight);
+  // The Latest card is the newest talk that has happened, so it moves on by itself.
+  const latest = latestTalk();
+  const highlights = [
+    ...(latest ? [{ talk: latest, label: "Latest" }] : []),
+    ...talks.flatMap((t) => (t.highlight ? [{ talk: t, label: t.highlight }] : [])),
+  ];
+  const stages = talks.filter((t) => !t.highlight && t !== latest);
   return (
     <section className="section" id="talks" aria-labelledby="talks-title">
       <div className="container">
@@ -77,14 +82,14 @@ export function Talks() {
         </div>
         <VideoDialog />
         <ul className="highlights">
-          {highlights.map((t) => (
+          {highlights.map(({ talk: t, label }) => (
             <li key={t.event} className="highlight">
-              <p className="highlight-label">{t.highlight}</p>
+              <p className="highlight-label">{label}</p>
               <p className="highlight-event">
                 {t.href ? <a href={t.href}>{eventName(t)}</a> : eventName(t)}
               </p>
               {t.title && <p className="highlight-title">{t.title}</p>}
-              <p className="highlight-meta">{highlightMeta(t)}</p>
+              <p className="highlight-meta">{highlightMeta(t, label)}</p>
               {t.note && <p className="highlight-note">{t.note}</p>}
             </li>
           ))}
