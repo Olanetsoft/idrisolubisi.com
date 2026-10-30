@@ -1,11 +1,22 @@
+/** Every kind of event; the Talk type and the WebMCP list_talks tool both use it. */
+export const TALK_KINDS = [
+  "Keynote",
+  "Talk",
+  "Workshop",
+  "Panel",
+  "Fireside chat",
+  "Host",
+  "Lecture",
+  "Speaker",
+] as const;
+
 export type Talk = {
   event: string;
   /** Omitted when only the event and role are known; the event then stands as the title. */
   title?: string;
   year?: string;
   location?: string;
-  kind:
-    "Keynote" | "Talk" | "Workshop" | "Panel" | "Fireside chat" | "Host" | "Lecture" | "Speaker";
+  kind: (typeof TALK_KINDS)[number];
   href?: string;
   note?: string;
   /** Shown as a card at the top of Talks instead of in the On stage list. */

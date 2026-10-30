@@ -13,10 +13,11 @@ export function SiteHeader() {
           <span className="header-live" aria-hidden="true" />
           <BrandLink name={site.name} />
         </div>
-        <SiteNav />
+        {/* Passed in so the client nav does not pull the whole site data into the bundle. */}
+        <SiteNav blogUrl={site.links.blog} />
         <div className="site-header-actions">
           <ThemeToggle />
-          <MobileMenu />
+          <MobileMenu blogUrl={site.links.blog} />
           <a className="header-cta" href={site.bookingUrl}>
             Book a call
           </a>
