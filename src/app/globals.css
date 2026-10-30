@@ -2798,6 +2798,12 @@ main {
   font-size: var(--fs-small);
   color: var(--text-3);
 }
+/* Addresses and quoted titles can be one long word. */
+.readiness-status,
+.readiness-summary,
+.readiness-detail {
+  overflow-wrap: anywhere;
+}
 .readiness-status {
   margin-top: 1.25rem;
   font-size: var(--fs-small);
@@ -2834,17 +2840,21 @@ main {
 }
 .readiness-head {
   display: flex;
-  flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
   gap: 0.25rem 1rem;
 }
+/* The badge keeps its place on the right; a long name wraps instead, so the
+   statuses read down one column on phones. */
 .readiness-name {
+  min-width: 0;
   font-weight: 600;
 }
 /* The label says it in words; the dot only repeats it: green, amber, or an
    empty ring for something that needs work. */
 .readiness-badge {
+  flex-shrink: 0;
+  white-space: nowrap;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
