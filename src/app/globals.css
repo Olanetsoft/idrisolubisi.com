@@ -2220,37 +2220,76 @@ main {
   padding: 0.25rem 0.5rem;
 }
 
-/* Recognition opens with its three strongest pieces set large, apart by
-   space rather than rules; the rest follow as rows. */
+/* Recognition: in every item, who covered or recognised him leads and the
+   headline follows small, so the section scans by name. The three strongest
+   pieces sit on raised cards; honours and the rest follow as rows. */
 .press-lead {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.75rem clamp(1.5rem, 3vw, 3rem);
-  margin-bottom: clamp(2rem, 4vw, 3rem);
+  gap: var(--box-gap);
 }
-.press-item {
+.press-card {
   position: relative;
+  display: grid;
+  align-content: start;
+  gap: 0.5rem;
+  padding: 1rem 1.125rem 1.125rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: border-color var(--dur-2) var(--ease);
 }
-.press-title {
+.press-outlet {
   font-size: var(--fs-sub);
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: -0.012em;
   text-wrap: balance;
 }
+.press-headline {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: var(--fs-small);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-2);
+  text-wrap: pretty;
+}
+.press-card .card-link::after {
+  border-radius: var(--radius);
+}
 @media (hover: hover) {
-  .press-item:hover .card-link {
+  .press-card:has(.card-link):hover {
+    border-color: var(--line-strong);
+  }
+  .press-card:hover .card-link {
     background-size: 100% 1px;
   }
 }
-.press-item:has(.card-link:focus-visible) {
+.press-card:has(.card-link:focus-visible) {
   outline: 2px solid var(--focus);
-  outline-offset: 6px;
-  border-radius: 4px;
+  outline-offset: 3px;
 }
-@media (max-width: 1023px) {
+.press-by {
+  margin-bottom: 0.25rem;
+  font-size: var(--fs-body);
+  font-weight: 600;
+  line-height: 1.4;
+}
+.press-rows .card-title {
+  font-size: var(--fs-small);
+  line-height: 1.5;
+  color: var(--text-2);
+}
+/* Phones: one card per row, a little tighter. */
+@media (max-width: 759px) {
   .press-lead {
     grid-template-columns: 1fr;
+  }
+  .press-card {
+    padding: 0.875rem 1rem 1rem;
   }
 }
 
