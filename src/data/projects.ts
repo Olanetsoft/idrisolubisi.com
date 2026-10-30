@@ -13,7 +13,7 @@ export type Project = {
   name: string;
   group: "harness" | "more";
   oneLine: string;
-  /** One line of proof, ideally a number. Optional when there is nothing worth saying. */
+  /** One line of proof, ideally a number. Not shown on the card (kept clean); /llms.txt and /llms-full.txt carry it. */
   proof?: string;
   stack: string[];
   links: ProjectLink[];

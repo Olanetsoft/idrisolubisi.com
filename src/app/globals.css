@@ -1337,8 +1337,8 @@ main {
 /* ---------- projects ---------- */
 
 /* Projects, more builds and community share one small card: a 16:9 picture
-   set just inside the raised card, then a name, a few words and one number.
-   The whole card is a single link (WorkCard.tsx). Projects sit three to a
+   set just inside the raised card, then a name and a few words (the numbers
+   are in /llms.txt and /llms-full.txt). The whole card is a single link (WorkCard.tsx). Projects sit three to a
    row across the page column, two on phones. */
 .harness,
 .more {
@@ -1456,11 +1456,10 @@ main {
     backdrop-filter: none;
   }
 }
-/* The body fills the card, so the proof lines sit on one baseline across a row. */
+/* The body fills the card, so cards in a row end on one line. */
 .work-body {
   display: grid;
   flex: 1 0 auto;
-  grid-template-rows: auto auto 1fr;
   align-content: start;
   gap: 3px;
   padding: 10px 6px 6px;
@@ -1498,23 +1497,6 @@ main {
   .work-line {
     -webkit-line-clamp: 4;
   }
-}
-.work-foot {
-  align-self: end;
-  display: flex;
-  margin-top: 6px;
-}
-.work-proof {
-  font-size: var(--fs-meta);
-  font-weight: 600;
-  line-height: 1.4;
-  color: var(--text);
-}
-.work-meta {
-  font-size: var(--fs-meta);
-  line-height: 1.4;
-  color: var(--text-2);
-  text-wrap: pretty;
 }
 @media (hover: hover) {
   a.work-card .work-media img {
