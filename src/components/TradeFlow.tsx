@@ -19,21 +19,30 @@ export function TradeFlow() {
   const root = useRef<HTMLElement>(null);
   const timer = useRef(0);
   const reduced = useRef(false);
+  // What a screen reader hears: only after a press, never for the autoplay.
+  const [said, setSaid] = useState("");
 
-  const play = useCallback((index: number) => {
+  const play = useCallback((index: number, pressed = false) => {
     window.clearTimeout(timer.current);
-    const total = flowScenarios[index].steps.length;
+    const steps = flowScenarios[index].steps;
+    // Each new step is said as it appears.
+    const say = (count: number) => {
+      if (pressed) setSaid(steps[count - 1].text);
+    };
     setScenario(index);
     if (reduced.current) {
-      setShown(total);
+      setShown(steps.length);
+      if (pressed) setSaid(steps.map((s) => s.text).join(" "));
       return;
     }
     let count = 1;
     setShown(count);
+    say(count);
     const next = () => {
       count += 1;
       setShown(count);
-      if (count < total) timer.current = window.setTimeout(next, STEP_MS);
+      say(count);
+      if (count < steps.length) timer.current = window.setTimeout(next, STEP_MS);
     };
     timer.current = window.setTimeout(next, STEP_MS);
   }, []);
@@ -78,7 +87,7 @@ export function TradeFlow() {
             type="button"
             className="flow-button"
             aria-pressed={i === scenario}
-            onClick={() => play(i)}
+            onClick={() => play(i, true)}
           >
             {s.label}
           </button>
@@ -92,7 +101,7 @@ export function TradeFlow() {
           </li>
         ))}
       </ol>
-      <ol className="flow-trace" aria-live="polite">
+      <ol className="flow-trace">
         {steps.map((s, i) => (
           <li key={`${scenario}-${i}`} data-tone={s.tone}>
             <span className="flow-num" aria-hidden="true">
@@ -102,8 +111,11 @@ export function TradeFlow() {
           </li>
         ))}
       </ol>
+      <p className="sr-only" aria-live="polite">
+        {said}
+      </p>
       <figcaption id="flow-caption" className="flow-caption">
-        How a trade moved through SwoopAgent. Pick a case to play it.
+        How a trade moved through SwoopAgent. Pick a case to see each step.
       </figcaption>
     </figure>
   );
