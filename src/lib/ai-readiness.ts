@@ -217,9 +217,15 @@ const why = (f: Got) => (got(f) ? `status ${f.status}` : f.error);
 
 const looksLikeHtml = (f: Fetched) =>
   f.contentType.includes("html") || /^\s*<(!doctype|html|head|body)\b/i.test(f.body);
-/** A text file that really exists: a 200 that is not the site's HTML fallback page. */
+/**
+ * A text file that really exists: a 200 whose body is not the site's HTML
+ * fallback page. Judged by the body, since some servers label plain text as
+ * HTML.
+ */
 const textFile = (f: Got) =>
-  got(f) && f.status === 200 && f.body.trim() && !looksLikeHtml(f) ? f : null;
+  got(f) && f.status === 200 && f.body.trim() && !/^\s*<(!doctype|html|head|body)\b/i.test(f.body)
+    ? f
+    : null;
 
 const count = (n: number) => n.toLocaleString("en-GB");
 const kb = (text: string) => `${count(Math.max(1, Math.round(Buffer.byteLength(text) / 1024)))} KB`;
@@ -493,15 +499,23 @@ export async function checkSite(input: string): Promise<Report> {
     why: "AI answer engines can only cite pages their crawlers may read. Blocking them can be deliberate.",
   });
 
-  const sitemapFile = got(sitemap) && sitemap.status === 200 ? readSitemap(sitemap.body) : null;
+  // A gzipped sitemap can't be counted here, but a 200 for it means it exists.
+  const gzipped = /\.gz(\?|$)/i.test(sitemapUrl) && got(sitemap) && sitemap.status === 200;
+  const sitemapFile = gzipped
+    ? { valid: true, isIndex: false, entries: -1 }
+    : got(sitemap) && sitemap.status === 200
+      ? readSitemap(sitemap.body)
+      : null;
   checks.push({
     id: "sitemap",
     label: "Sitemap",
     status: sitemapFile?.valid ? "pass" : "warn",
     detail: sitemapFile?.valid
-      ? sitemapFile.isIndex
-        ? `Found a sitemap index listing ${plural(sitemapFile.entries, "sitemap")}.`
-        : `Found a sitemap listing ${plural(sitemapFile.entries, "page")}.`
+      ? sitemapFile.entries < 0
+        ? "Found a gzipped sitemap."
+        : sitemapFile.isIndex
+          ? `Found a sitemap index listing ${plural(sitemapFile.entries, "sitemap")}.`
+          : `Found a sitemap listing ${plural(sitemapFile.entries, "page")}.`
       : "No sitemap was found in robots.txt or at /sitemap.xml.",
     why: "A sitemap lists every page you want found, including ones nothing links to.",
   });
