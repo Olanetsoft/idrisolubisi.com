@@ -8,7 +8,7 @@ type WorkCardProps = {
   /** Alt text only when the card is not a link; on a link the visible name labels it. */
   alt?: string;
   sizes: string;
-  /** On the first screen: load at once, at high priority (the lead harness card). */
+  /** On the first screen: load at once (the lead harness card; the portrait has the high priority). */
   eager?: boolean;
   /** A short mono tag on the image: a community role. */
   tag?: string;
@@ -57,7 +57,6 @@ export function WorkCard({
           height={800}
           sizes={sizes}
           loading={eager ? "eager" : undefined}
-          fetchPriority={eager ? "high" : undefined}
         />
         {tag && (
           <span className="media-tag" aria-hidden="true">

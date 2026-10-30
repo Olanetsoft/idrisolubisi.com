@@ -9,7 +9,8 @@ type Video = { id: string; start?: number; title: string; href: string };
  * dialog over the page instead of leaving for YouTube. YouTube (the privacy
  * enhanced player) loads only then. Escape, the close button or a click
  * outside closes it, and focus returns to the thumbnail. Middle-click, a
- * modified click or no script still opens YouTube as a normal link.
+ * modified click or no script still opens YouTube as a normal link, and so
+ * does a tap on a phone, where the YouTube app or page is the better player.
  */
 export function VideoDialog() {
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -19,6 +20,7 @@ export function VideoDialog() {
     const onClick = (event: MouseEvent) => {
       if (event.defaultPrevented || event.button !== 0) return;
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      if (window.matchMedia("(max-width: 759px)").matches) return;
       const link = (event.target as Element).closest<HTMLAnchorElement>("a[data-video-id]");
       if (!link || !dialogRef.current) return;
       event.preventDefault();

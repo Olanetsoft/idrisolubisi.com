@@ -598,20 +598,24 @@ figure {
   #contact {
     view-timeline: --sec-contact block;
   }
-  body:has(.hero) .site-header {
-    border-bottom-color: transparent !important;
-  }
-  body:has(.hero) .trace {
-    position: absolute;
-    inset: auto 0 -1px;
-    height: 1px;
-    display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    column-gap: 3px;
-    pointer-events: none;
-    animation: fade-in linear both;
-    animation-timeline: scroll(root);
-    animation-range: 0 24px;
+  /* Desktop only: on phones the nav lives in Menu, so an unlabelled
+     progress bar would mean nothing; phones keep the plain hairline. */
+  @media (min-width: 760px) {
+    body:has(.hero) .site-header {
+      border-bottom-color: transparent !important;
+    }
+    body:has(.hero) .trace {
+      position: absolute;
+      inset: auto 0 -1px;
+      height: 1px;
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      column-gap: 3px;
+      pointer-events: none;
+      animation: fade-in linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 24px;
+    }
   }
   .trace > span {
     position: relative;
@@ -1199,6 +1203,14 @@ main {
 :is(.more, .videos, .stage-list):not([data-open]) > li[data-extra] {
   display: none;
 }
+/* Phones start shorter: three talk videos and five events, and the same
+   buttons open the rest. Only where a button exists (a data-extra item). */
+@media (max-width: 759px) and (scripting: enabled) {
+  .videos:not([data-open]):has(> li[data-extra]) > li:nth-child(n + 4),
+  .stage-list:not([data-open]):has(> li[data-extra]) > li:nth-child(n + 6) {
+    display: none;
+  }
+}
 @media (scripting: none) {
   :is(.more, .stage-list):not([data-open]) > li[data-extra] {
     display: grid;
@@ -1542,28 +1554,29 @@ main {
   text-decoration-color: var(--live);
 }
 
-/* Phones: two to a row. The first card of each list spans the row with its
-   picture beside the text, so the three cards shown fill two rows; stacked
-   harness rows get a taller gap so each step header sits with its own card. */
+/* Phones: one project per row, a small picture beside the name and line,
+   like the talk videos (a screenshot this small is a hint, not something to
+   read); stacked harness rows keep a taller gap for their step headers. */
 @media (max-width: 759px) {
   .harness,
   .more {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
   .harness {
-    row-gap: 1.5rem;
+    row-gap: 1.25rem;
   }
-  :is(.harness, .more) > li:first-child {
-    grid-column: 1 / -1;
-  }
-  :is(.harness, .more) > li:first-child > .work-card {
+  :is(.harness, .more) .work-card {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    align-items: center;
+    grid-template-columns: 112px minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
   }
-  :is(.harness, .more) > li:first-child .work-body {
-    padding: 8px 10px;
+  :is(.harness, .more) .work-body {
+    padding: 4px 4px 4px 0;
+  }
+  :is(.harness, .more) .work-line {
+    font-size: var(--fs-small);
   }
   .work-body {
     padding: 8px 4px 4px;
@@ -2161,6 +2174,15 @@ main {
   }
   .stage-photo:not(.stage-photo--lead) .stage-photo-link {
     aspect-ratio: 4 / 5;
+  }
+  /* Phones show the lead photo only, as a plain picture: the dialog would
+     show it no bigger than it already is. */
+  .stage-photo:not(.stage-photo--lead) {
+    display: none;
+  }
+  .stage-photo-link {
+    pointer-events: none;
+    cursor: default;
   }
   /* Phones: every caption goes under its picture, in the text face. */
   .stage-tag {
@@ -2933,6 +2955,34 @@ body:has(.contact-box) .footer-handles {
 }
 
 /* ---------- print, motion ---------- */
+
+/* Phones, last: what only earns its place on a wide screen steps back.
+   Writing shows six posts (the blog has the rest), the footer drops the
+   links meant for crawlers, the case study diagram buttons and a few small
+   controls get full-size tap targets, and press rows may take three lines. */
+@media (max-width: 759px) {
+  #writing .row-list > li:nth-child(n + 7) {
+    display: none;
+  }
+  #writing .more-links a:nth-child(n + 3) {
+    display: none;
+  }
+  .footer-meta .footer-copy a {
+    display: none;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .bio .copy-button,
+  .flow-button {
+    min-height: 44px;
+  }
+  .press-rows .card-title {
+    -webkit-line-clamp: 3;
+  }
+}
 
 @media print {
   body::before,

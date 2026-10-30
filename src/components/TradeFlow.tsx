@@ -10,7 +10,7 @@ const STEP_MS = 1100;
  * SwoopAgent's trade path as a small diagram you can play: pick a case and
  * the parts of the system light up in order while the steps are written out
  * below. It plays the first case once when it scrolls into view. Before any
- * script runs (and with reduced motion), each case shows all its steps at
+ * script runs (and with reduced motion, and on phones), each case shows all its steps at
  * once; without script the first case is shown and the buttons are hidden.
  */
 export function TradeFlow() {
@@ -39,7 +39,11 @@ export function TradeFlow() {
   }, []);
 
   useEffect(() => {
-    reduced.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    // Phones show each case whole: playing it step by step would light boxes
+    // above the fold while the steps appear below it.
+    reduced.current = window.matchMedia(
+      "(prefers-reduced-motion: reduce), (max-width: 759px)",
+    ).matches;
     const el = root.current;
     if (!el || reduced.current) return;
     const seen = new IntersectionObserver(
