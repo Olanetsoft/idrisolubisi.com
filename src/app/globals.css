@@ -2269,8 +2269,79 @@ main {
   justify-items: start;
   gap: 1rem;
 }
-.contact-box .press-photos {
+/* For organisers: one line until opened, then two bios to copy and the
+   photo and Sessionize links. */
+.organisers {
+  width: 100%;
   margin-top: 0.25rem;
+}
+.organisers summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: var(--fs-small);
+  color: var(--text-2);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+  list-style: none;
+}
+.organisers summary::-webkit-details-marker {
+  display: none;
+}
+.organisers summary:hover,
+.organisers[open] summary {
+  color: var(--text);
+  text-decoration-color: currentColor;
+}
+.organisers summary:focus-visible {
+  outline: var(--focus-width) solid var(--focus);
+  outline-offset: var(--focus-offset);
+  border-radius: 2px;
+}
+.organisers-body {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 0.75rem;
+  padding: 1rem 1.125rem 1.125rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.bio {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+.bio-label {
+  font: 400 var(--fs-meta)/1.4 var(--font-mono-stack);
+  color: var(--text-3);
+}
+.bio .copy-button {
+  min-height: 32px;
+  margin-right: -0.625rem;
+}
+.bio-text {
+  grid-column: 1 / -1;
+  margin-top: 0.25rem;
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  color: var(--text-2);
+  text-wrap: pretty;
+}
+.organisers-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  font-size: var(--fs-small);
+}
+.organisers-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--text-2);
 }
 /* Two even columns, so the email address fits on one line in the 960px page. */
 @media (min-width: 1024px) {
@@ -2392,15 +2463,9 @@ main {
 
 /* ---------- case study (/work/swoopagent) ---------- */
 
-/* The text keeps a reading measure; the diagram uses the whole column. */
+/* Everything, text included, uses the whole 960px column like the home page. */
 .case {
   padding-block: clamp(1.5rem, 4vw, 3rem) clamp(2.5rem, 5vw, 4rem);
-}
-.case-head,
-.case-section > p,
-.case-points,
-.case-foot {
-  max-width: 64ch;
 }
 .case-kicker {
   font: 400 var(--fs-meta)/1.4 var(--font-mono-stack);
@@ -2423,7 +2488,7 @@ main {
 }
 .case-facts {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem 2rem;
   margin-top: 2rem;
   padding-top: 1.25rem;
@@ -2477,6 +2542,11 @@ main {
   border-top: 1px solid var(--line);
   font-size: var(--fs-small);
   color: var(--text-3);
+}
+@media (max-width: 759px) {
+  .case-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 @media (max-width: 519px) {
   .case-facts {

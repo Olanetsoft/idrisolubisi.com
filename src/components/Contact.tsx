@@ -33,6 +33,12 @@ const SOCIALS: { label: string; href: string; icon: BrandName; note?: string }[]
   },
 ];
 
+/** Ready to paste into an event page or a press note, in the third person. */
+const BIOS = [
+  { label: "Short bio", text: site.shortBio },
+  { label: "Full bio", text: site.description },
+];
+
 export function Contact() {
   return (
     <section className="section" id="contact" aria-labelledby="contact-title">
@@ -66,9 +72,22 @@ export function Contact() {
                 </li>
               ))}
             </ul>
-            <p className="more-link press-photos">
-              <a href={site.links.photos}>Headshots and photos for organisers and press</a>
-            </p>
+            <details className="organisers">
+              <summary>For organisers: bios, headshots and Sessionize</summary>
+              <div className="organisers-body">
+                {BIOS.map((bio) => (
+                  <div key={bio.label} className="bio">
+                    <p className="bio-label">{bio.label}</p>
+                    <CopyButton value={bio.text} label={`Copy the ${bio.label.toLowerCase()}`} />
+                    <p className="bio-text">{bio.text}</p>
+                  </div>
+                ))}
+                <p className="organisers-links">
+                  <a href={site.links.photos}>Headshots and photos</a>
+                  <a href={site.links.sessionize}>Speaker profile on Sessionize</a>
+                </p>
+              </div>
+            </details>
           </div>
         </div>
       </div>
