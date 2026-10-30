@@ -23,7 +23,7 @@ export function Hero() {
               width={1407}
               height={1600}
               loading="eager"
-              sizes="(max-width: 519px) 26vw, (max-width: 1023px) 133px, 200px"
+              sizes="(max-width: 759px) 168px, (max-width: 1023px) 235px, 300px"
             />
           </figure>
           <div className="hero-pitch">
