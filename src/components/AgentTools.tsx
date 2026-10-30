@@ -15,12 +15,20 @@ export function AgentTools() {
       document: { modelContext?: ModelContext };
       navigator: { modelContext?: ModelContext };
     };
-    const context = scope.document.modelContext ?? scope.navigator.modelContext;
-    if (typeof context?.registerTool !== "function") return;
+    // A broken polyfill or extension can make the getter itself throw; the
+    // site must render either way.
+    let context: ModelContext | undefined;
+    try {
+      context = scope.document.modelContext ?? scope.navigator.modelContext;
+      if (typeof context?.registerTool !== "function") return;
+    } catch {
+      return;
+    }
+    const api = context;
     const controller = new AbortController();
     const start = () =>
       import("@/lib/webmcp").then(({ registerSiteTools }) => {
-        if (!controller.signal.aborted) registerSiteTools(context, controller.signal);
+        if (!controller.signal.aborted) registerSiteTools(api, controller.signal);
       });
     const idle = window.requestIdleCallback?.(start, { timeout: 3000 });
     const timer = idle === undefined ? window.setTimeout(start, 1500) : undefined;

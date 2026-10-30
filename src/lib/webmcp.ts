@@ -2,7 +2,7 @@ import { community, experience } from "@/data/experience";
 import { projects } from "@/data/projects";
 import { recognition } from "@/data/recognition";
 import { site } from "@/data/site";
-import { isUpcoming, latestTalk, speakingTopics, talks } from "@/data/talks";
+import { TALK_KINDS, isUpcoming, latestTalk, speakingTopics, talks } from "@/data/talks";
 import { featuredVideos } from "@/data/videos";
 import { writingList } from "@/data/writing";
 import { absoluteUrl } from "@/lib/format";
@@ -33,9 +33,32 @@ export type ModelContext = {
 };
 
 const json = (value: unknown) => JSON.stringify(value, null, 2);
-const text = (value: unknown) => (typeof value === "string" ? value.trim() : "");
+/** A string or a number as trimmed text, anything else as "": agents send 2026 as often as "2026". */
+const str = (value: unknown) =>
+  typeof value === "string"
+    ? value.trim()
+    : typeof value === "number" && Number.isFinite(value)
+      ? String(value)
+      : "";
+const yes = (value: unknown) => value === true || str(value).toLowerCase() === "true";
+/** A count from 1 to `max`, or `fallback` when missing or not a number. */
+const count = (value: unknown, fallback: number, max: number) => {
+  const n = Number(str(value));
+  return Number.isFinite(n) && n >= 1 ? Math.min(Math.floor(n), max) : fallback;
+};
 const plain = (value: string) =>
   value.replace(/==([^=]+)==/g, "$1").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+/** Words as lowercase letters and digits: "cross-chain" is "cross" and "chain". */
+const tokens = (value: string) => value.toLowerCase().match(/[\p{L}\p{N}]+/gu) ?? [];
+
+/** The years a talk covers: "2025–26" is 2025 and 2026. */
+function yearsOf(year?: string): number[] {
+  const m = (year ?? "").match(/^(\d{4})(?:\s*[–-]\s*(\d{2}|\d{4}))?$/);
+  if (!m) return [];
+  const start = Number(m[1]);
+  const end = m[2] ? Number(m[2].length === 2 ? m[1].slice(0, 2) + m[2] : m[2]) : start;
+  return Array.from({ length: Math.max(0, end - start) + 1 }, (_, i) => start + i);
+}
 
 function profile() {
   return {
@@ -69,33 +92,52 @@ function profile() {
   };
 }
 
-function projectList(group: unknown) {
-  return projects
-    .filter((p) => (group !== "harness" && group !== "more" ? true : p.group === group))
-    .map((p) => ({
-      name: p.name,
-      group: p.group === "harness" ? "agent harness" : "more builds",
-      summary: p.oneLine,
-      detail: p.detail,
-      proof: p.proof,
-      stack: p.stack,
-      links: p.links
-        .filter((l) => !isPrivateRepo(l.url))
-        .map((l) => ({ label: l.label, url: absoluteUrl(l.url) })),
-    }));
+function projectList(input: Record<string, unknown>) {
+  const group = str(input.group).toLowerCase();
+  if (group && group !== "harness" && group !== "more") {
+    return {
+      note: `Unknown group "${group}". Use "harness" or "more", or leave it out.`,
+      projects: [],
+    };
+  }
+  return {
+    projects: projects
+      .filter((p) => !group || p.group === group)
+      .map((p) => ({
+        name: p.name,
+        group: p.group === "harness" ? "agent harness" : "more builds",
+        summary: p.oneLine,
+        detail: p.detail,
+        proof: p.proof,
+        stack: p.stack,
+        links: p.links
+          .filter((l) => !isPrivateRepo(l.url))
+          .map((l) => ({ label: l.label, url: absoluteUrl(l.url) })),
+      })),
+  };
 }
 
 function talkList(input: Record<string, unknown>) {
-  const kind = text(input.kind).toLowerCase();
-  const year = text(input.year);
+  // "workshops" and "Workshop" both mean Workshop.
+  const asked = str(input.kind).toLowerCase();
+  const kind = TALK_KINDS.find((k) => [asked, asked.replace(/s$/, "")].includes(k.toLowerCase()));
+  if (asked && !kind) {
+    return { note: `Unknown kind "${asked}". Use one of: ${TALK_KINDS.join(", ")}.`, talks: [] };
+  }
+  const yearText = str(input.year);
+  if (yearText && !/^\d{4}$/.test(yearText)) {
+    return { note: "Give the year as four digits, such as 2025.", talks: [] };
+  }
+  const year = Number(yearText);
+  const upcoming = yes(input.upcoming);
   const latest = latestTalk();
   return {
     latest: latest ? { event: latest.event, title: latest.title, kind: latest.kind } : null,
     topics: speakingTopics,
     talks: talks
-      .filter((t) => !kind || t.kind.toLowerCase() === kind)
-      .filter((t) => !year || (t.year ?? "").includes(year))
-      .filter((t) => input.upcoming !== true || isUpcoming(t))
+      .filter((t) => !kind || t.kind === kind)
+      .filter((t) => !year || yearsOf(t.year).includes(year))
+      .filter((t) => !upcoming || isUpcoming(t))
       .map((t) => ({
         event: t.event,
         title: t.title,
@@ -117,10 +159,9 @@ function talkList(input: Record<string, unknown>) {
   };
 }
 
-function writing(limit: unknown) {
-  const n = typeof limit === "number" && limit > 0 ? Math.min(Math.floor(limit), 50) : 10;
+function writing(input: Record<string, unknown>) {
   return writingList(blogPosts)
-    .slice(0, n)
+    .slice(0, count(input.limit, 10, 50))
     .map((a) => ({ title: a.title, outlet: a.outlet, date: a.date, url: a.href }));
 }
 
@@ -132,59 +173,89 @@ function index() {
       title: p.name,
       summary: p.oneLine,
       url: absoluteUrl(p.links.find((l) => !isPrivateRepo(l.url))?.url ?? `/#${p.key}`),
-      words: [p.name, p.oneLine, p.detail, p.tagline, ...p.stack].join(" "),
+      words: [p.oneLine, p.detail, p.tagline, ...p.stack].join(" "),
     })),
     ...talks.map((t) => ({
       section: "Talks",
       title: t.title ? `${t.title} (${t.event})` : t.event,
       summary: [t.kind, t.location, t.year].filter(Boolean).join(", "),
       url: t.href ?? `${site.url}/#talks`,
-      words: [t.event, t.title, t.kind, t.location, t.year].join(" "),
+      words: [t.kind, t.location, t.year].join(" "),
     })),
     ...featuredVideos.map((v) => ({
       section: "Videos",
       title: v.title,
       summary: [v.kind, v.context, v.year].join(", "),
       url: `https://www.youtube.com/watch?v=${v.id}`,
-      words: [v.title, v.kind, v.context].join(" "),
+      words: [v.kind, v.context].join(" "),
     })),
     ...writingList(blogPosts).map((a) => ({
       section: "Writing",
       title: a.title,
       summary: a.outlet,
       url: a.href,
-      words: [a.title, a.outlet].join(" "),
+      words: a.outlet,
     })),
     ...experience.map((r) => ({
       section: "Experience",
       title: `${r.title}, ${r.company}`,
       summary: r.period,
       url: `${site.url}/#experience`,
-      words: [r.title, r.company, ...r.points].join(" "),
+      words: r.points.join(" "),
     })),
     ...recognition.map((r) => ({
       section: "Recognition",
       title: r.title,
       summary: r.by,
       url: r.href ?? `${site.url}/#recognition`,
-      words: [r.title, r.by, r.detail].join(" "),
+      words: [r.by, r.detail].join(" "),
     })),
   ];
 }
 
-function search(query: unknown) {
-  const terms = text(query).toLowerCase().split(/\s+/).filter(Boolean);
-  if (!terms.length) return { results: [], note: 'Pass a query, for example "MCP" or "Lagos".' };
-  const results = index()
-    .map(({ words, ...item }) => {
-      const haystack = words.toLowerCase();
-      return { item, score: terms.filter((t) => haystack.includes(t)).length };
-    })
-    .filter((r) => r.score > 0)
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 12)
-    .map((r) => r.item);
-  return { results, note: results.length ? undefined : "Nothing on this site matches." };
+function search(input: Record<string, unknown>) {
+  const terms = [...new Set(tokens(str(input.query)))];
+  if (!terms.length) {
+    return { results: [], total: 0, note: 'Pass a query, for example "MCP" or "Lagos".' };
+  }
+  // A word matches itself; words of four letters or more also match longer
+  // words they start, so "agent" finds "agents" but "ai" does not find "aim".
+  const matched = (words: Set<string>) =>
+    terms.filter((t) => [...words].some((w) => w === t || (t.length >= 4 && w.startsWith(t))));
+  const scored = index()
+    .map(({ words, ...item }) => ({
+      item,
+      hits: matched(new Set(tokens(`${item.title} ${words}`))).length,
+      inTitle: matched(new Set(tokens(item.title))).length,
+    }))
+    .filter((r) => r.hits > 0);
+  const everyWord = scored.filter((r) => r.hits === terms.length);
+  const pool = (everyWord.length ? everyWord : scored).sort(
+    (a, b) => b.hits - a.hits || b.inTitle - a.inTitle,
+  );
+  // Within equal scores, take one item per section in turn, so a broad word
+  // does not fill every slot with projects before talks or writing appear.
+  const spread: typeof pool = [];
+  for (const score of [...new Set(pool.map((r) => `${r.hits}:${r.inTitle}`))]) {
+    const bySection = new Map<string, typeof pool>();
+    for (const r of pool.filter((x) => `${x.hits}:${x.inTitle}` === score)) {
+      bySection.set(r.item.section, [...(bySection.get(r.item.section) ?? []), r]);
+    }
+    const lists = [...bySection.values()];
+    for (let i = 0; lists.some((l) => l[i]); i++)
+      for (const l of lists) if (l[i]) spread.push(l[i]);
+  }
+  const limit = count(input.limit, 12, 50);
+  const results = spread.slice(0, limit).map((r) => r.item);
+  const notes = [
+    !pool.length && "Nothing on this site matches.",
+    pool.length &&
+      !everyWord.length &&
+      `No item matches all of: ${terms.join(", ")}; these match some of the words.`,
+    pool.length > results.length &&
+      `Showing ${results.length} of ${pool.length}. Narrow the query, raise the limit, or use list_projects, list_talks or list_writing for full lists.`,
+  ].filter(Boolean);
+  return { results, total: pool.length, note: notes.join(" ") || undefined };
 }
 
 /** Registers the tools; aborting the signal removes them. */
@@ -214,7 +285,7 @@ export function registerSiteTools(context: ModelContext, signal: AbortSignal) {
           },
         },
       },
-      execute: async (input?: Record<string, unknown> | null) => json(projectList(input?.group)),
+      execute: async (input?: Record<string, unknown> | null) => json(projectList(input ?? {})),
     },
     {
       name: "list_talks",
@@ -224,11 +295,12 @@ export function registerSiteTools(context: ModelContext, signal: AbortSignal) {
       inputSchema: {
         type: "object",
         properties: {
-          kind: {
+          kind: { type: "string", enum: [...TALK_KINDS], description: "The kind of event." },
+          year: {
             type: "string",
-            description: "Keynote, Talk, Workshop, Panel, Fireside chat, Host, Lecture or Speaker.",
+            pattern: "^\\d{4}$",
+            description: "A four-digit year such as 2025. Talks spanning years match each year.",
           },
-          year: { type: "string", description: "A year such as 2025." },
           upcoming: { type: "boolean", description: "Only events that have not happened yet." },
         },
       },
@@ -245,19 +317,22 @@ export function registerSiteTools(context: ModelContext, signal: AbortSignal) {
           limit: { type: "number", description: "How many to return, up to 50. Defaults to 10." },
         },
       },
-      execute: async (input?: Record<string, unknown> | null) => json(writing(input?.limit)),
+      execute: async (input?: Record<string, unknown> | null) => json(writing(input ?? {})),
     },
     {
       name: "search_site",
       title: "Search this site",
       description:
-        "Search Idris's projects, talks, videos, writing, experience and press coverage. Returns matching items with links.",
+        "Search Idris's projects, talks, videos, writing, experience and press coverage. Returns the items that match every word (or, failing that, some of them) with links, and the total.",
       inputSchema: {
         type: "object",
-        properties: { query: { type: "string", description: "Words to look for." } },
+        properties: {
+          query: { type: "string", description: "Words to look for." },
+          limit: { type: "number", description: "How many to return, up to 50. Defaults to 12." },
+        },
         required: ["query"],
       },
-      execute: async (input?: Record<string, unknown> | null) => json(search(input?.query)),
+      execute: async (input?: Record<string, unknown> | null) => json(search(input ?? {})),
     },
   ];
   for (const tool of tools) {

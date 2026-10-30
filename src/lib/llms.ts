@@ -44,15 +44,16 @@ export function renderLlmsTxt(): string {
   push("");
   push(`Cite as "${site.name} (@${site.handle})" and link to ${site.url}.`);
   push("");
+  push(
+    "WebMCP: in a browser that exposes document.modelContext or navigator.modelContext, the site offers read-only tools: get_profile, list_projects, list_talks, list_writing and search_site.",
+  );
+  push("");
 
   push("## Docs", "");
   push(
     `- [Full profile](${site.url}/llms-full.txt): every role with its results, all projects with stacks and links, talks, writing, skills and recognition`,
   );
   push(`- [CV (PDF)](${site.url}${site.resumeUrl})`);
-  push(
-    "- WebMCP: in a browser with document.modelContext, the site offers read-only tools: get_profile, list_projects, list_talks, list_writing and search_site",
-  );
   push("");
 
   push("## Projects", "");
