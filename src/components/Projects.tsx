@@ -9,7 +9,11 @@ import { WorkCard } from "./WorkCard";
 const publicLinks = (project: Project) => project.links.filter((l) => !isPrivateRepo(l.url));
 
 /** How a card's link reads to screen readers, after "opens". */
-const OPENS: Record<string, string> = { Site: "the site", "Case study": "the case study" };
+const OPENS: Record<string, string> = {
+  Site: "the site",
+  "Case study": "the case study",
+  Tool: "the tool",
+};
 
 /** Three cards to a row in the 960px page column (two on phones, the first spanning). */
 const CARD_SIZES = "(max-width: 759px) 46vw, (max-width: 1023px) 30vw, 310px";
