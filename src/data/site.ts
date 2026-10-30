@@ -19,6 +19,9 @@ export const site = {
     "Idris Olubisi (olanetsoft), Senior Developer Relations Engineer and educator who builds AI agents. Built the Midnight MCP server: 10,000+ downloads.",
   description:
     "Idris Olubisi is a London-based backend engineer who moved into developer relations and now builds AI agents. For seven years he has worked alongside developers and builders, finding the step that costs them time and shipping the fix, whether that’s courses, docs and tutorials, partner integrations and solution architecture, or production code.",
+  /** The one-line bio for organisers (Contact, "For organisers"): the hero's first sentence in the third person. The full one is `description`. */
+  shortBio:
+    "Idris Olubisi is a backend engineer who moved into developer relations and now builds AI agents.",
   /** For /llms-full.txt. */
   profile: {
     pronouns: "He/Him",
