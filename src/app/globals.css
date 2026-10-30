@@ -2463,15 +2463,9 @@ main {
 
 /* ---------- case study (/work/swoopagent) ---------- */
 
-/* The text keeps a reading measure; the diagram uses the whole column. */
+/* Everything, text included, uses the whole 960px column like the home page. */
 .case {
   padding-block: clamp(1.5rem, 4vw, 3rem) clamp(2.5rem, 5vw, 4rem);
-}
-.case-head,
-.case-section > p,
-.case-points,
-.case-foot {
-  max-width: 64ch;
 }
 .case-kicker {
   font: 400 var(--fs-meta)/1.4 var(--font-mono-stack);
@@ -2494,7 +2488,7 @@ main {
 }
 .case-facts {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem 2rem;
   margin-top: 2rem;
   padding-top: 1.25rem;
@@ -2548,6 +2542,11 @@ main {
   border-top: 1px solid var(--line);
   font-size: var(--fs-small);
   color: var(--text-3);
+}
+@media (max-width: 759px) {
+  .case-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 @media (max-width: 519px) {
   .case-facts {
