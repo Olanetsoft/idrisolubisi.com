@@ -32,7 +32,7 @@ export const site = {
   },
   /** The longer summary for /llms-full.txt. Every figure here is also on the page. */
   summary:
-    "Idris Olubisi is a backend engineer turned developer relations engineer, now building agent systems: seven years across backend engineering and developer-facing work (2019 to 2026). He built the open-source Midnight MCP server (10,000+ downloads, 11,900+ AI-agent tool calls), re-architected documentation for AI retrieval, and built SwoopAgent, a multi-tenant platform where around 100 users trade real funds through Claude-powered agents. He founded Web3 Afrika (15,000+ builders across Africa), and his tutorials have been read 10M+ times.",
+    "Idris Olubisi is a backend engineer turned developer relations engineer, now building agent systems: seven years across backend engineering and developer-facing work (2019 to 2026). He built the open-source Midnight MCP server (10,000+ downloads, 11,900+ AI-agent tool calls), re-architected documentation for AI retrieval, and built SwoopAgent, a Claude trading agent on Base whose backend checked every buy and signed and executed every trade. He founded Web3 Afrika (15,000+ builders across Africa), and his tutorials have been read 10M+ times.",
   /** Checked on github.com on 14 Oct 2026; followers come live from the build. */
   github: {
     publicRepos: "320+",

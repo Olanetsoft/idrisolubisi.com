@@ -49,17 +49,19 @@ export const projects: Project[] = [
     name: "SwoopAgent",
     group: "harness",
     oneLine:
-      "Multi-tenant platform where each user runs a Claude-powered agent that trades real money on web and Telegram, with the backend checking and executing every trade.",
-    proof: "Around 100 users trading real funds",
-    stack: ["TypeScript", "Next.js", "Postgres", "Redis", "Docker", "Claude API"],
-    links: [{ label: "GitHub", url: "https://github.com/Olanetsoft/swoopagent-claw" }],
+      "Trading platform where a Claude agent picked new tokens on Base and traded real money from a web dashboard, while backend code checked every buy and signed and executed every trade.",
+    stack: ["TypeScript", "Next.js", "Postgres", "Redis", "Docker", "Claude API", "OpenClaw"],
+    links: [
+      { label: "Case study", url: "/work/swoopagent" },
+      { label: "GitHub", url: "https://github.com/Olanetsoft/swoopagent-claw" },
+    ],
     githubRepo: "Olanetsoft/swoopagent-claw",
     detail:
-      "Agents propose; the backend validates, signs and executes. Closed a double-sell race with an optimistic-lock mutex, Redis idempotency keys and single-transaction writes. A safety layer checks every open position every 30 seconds and enforces stop-losses and a -15% circuit breaker.",
-    tagline: "Claude trading agents behind a safety layer",
-    image: "/images/work/swoopagent-flow.jpg",
+      "Built solo in February 2026: 136 commits in 19 days, 165 unit tests. The agent ran on OpenClaw and could only propose; the backend re-checked every buy at execution time, signed it and swapped through 0x on Base. A backend loop repriced every open position every 30 seconds and enforced stop-losses and staged take-profits even with the agent down, and a -15% daily circuit breaker blocked new buys. Sells retried with rising slippage, counted only once the on-chain receipt confirmed, and closed a position only if it was still open, in one transaction with the trade. After tokens whose only pool was on Uniswap V4 could be bought but not sold, V4-only pools were blocked in the backend. Not running today.",
+    tagline: "A Claude trading agent behind a safety layer",
+    image: "/images/work/swoopagent-loop.jpg",
     imageAlt:
-      "Diagram: a Claude agent proposes trades; the backend validates, signs and executes them; a safety layer with stop-losses and a -15% circuit breaker checks every 30 seconds",
+      "Diagram: a Claude agent proposes trades; the backend checks, signs and executes them; a safety loop reprices open positions every 30 seconds for stop-losses and take-profits",
   },
   {
     key: "midnight-mcp",

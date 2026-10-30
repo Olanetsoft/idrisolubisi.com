@@ -8,6 +8,9 @@ import { WorkCard } from "./WorkCard";
 /** Links that resolve for a visitor: a private repo would 404, so it is left out until it is public. */
 const publicLinks = (project: Project) => project.links.filter((l) => !isPrivateRepo(l.url));
 
+/** How a card's link reads to screen readers, after "opens". */
+const OPENS: Record<string, string> = { Site: "the site", "Case study": "the case study" };
+
 /** Three cards to a row in the 960px page column (two on phones, the first spanning). */
 const CARD_SIZES = "(max-width: 759px) 46vw, (max-width: 1023px) 30vw, 310px";
 
@@ -47,9 +50,7 @@ function ProjectCard({
         name={project.name}
         line={project.tagline}
         proof={project.proof}
-        srExtra={
-          primary ? `opens ${primary.label === "Site" ? "the site" : primary.label}` : undefined
-        }
+        srExtra={primary ? `opens ${OPENS[primary.label] ?? primary.label}` : undefined}
         size={feature ? "feature" : "default"}
       />
     </li>

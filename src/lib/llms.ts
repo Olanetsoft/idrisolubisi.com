@@ -3,7 +3,7 @@ import { projects } from "@/data/projects";
 import { recognition } from "@/data/recognition";
 import { site } from "@/data/site";
 import { writingStats } from "@/data/writing";
-import { monthYear } from "@/lib/format";
+import { absoluteUrl, monthYear } from "@/lib/format";
 import { isPrivateRepo } from "@/lib/generated";
 
 const plain = (text: string) => text.replace(/==([^=]+)==/g, "$1");
@@ -55,7 +55,7 @@ export function renderLlmsTxt(): string {
   push("## Projects", "");
   for (const p of projects) {
     const [link] = p.links.filter((l) => !isPrivateRepo(l.url));
-    const url = link?.url ?? `${site.url}/#${p.key}`;
+    const url = link ? absoluteUrl(link.url) : `${site.url}/#${p.key}`;
     const harness = p.group === "harness" ? " (agent harness)" : "";
     push(`- [${p.name}](${url})${harness}: ${p.tagline}.${p.proof ? ` ${p.proof}.` : ""}`);
   }

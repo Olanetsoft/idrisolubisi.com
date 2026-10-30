@@ -34,6 +34,7 @@ One page, in this order: the hero (status line, name and role, one intro, the ca
 | Projects: the agent harness and More builds                                   | `src/data/projects.ts`                                                                                                     |
 | Talks (the Latest card is the newest dated talk), speaking topics             | `src/data/talks.ts`                                                                                                        |
 | Videos under Talks and workshops                                              | `src/data/videos.ts`                                                                                                       |
+| The SwoopAgent case study (`/work/swoopagent`) and its trade diagram          | `src/data/swoopagent.ts`                                                                                                   |
 | Experience, community, education and skills                                   | `src/data/experience.ts`                                                                                                   |
 | Curated articles, "Published on" platforms, writing stats                     | `src/data/writing.ts`                                                                                                      |
 | Press, awards and interviews                                                  | `src/data/recognition.ts`                                                                                                  |
