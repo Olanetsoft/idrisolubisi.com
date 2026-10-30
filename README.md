@@ -32,7 +32,7 @@ One page, in this order: the hero (status line, name and role, one intro, the ca
 | Name, intro, availability, links, hand-kept follower counts, the long summary | `src/data/site.ts`                                                                                                         |
 | Hero headline and intro                                                       | `src/data/hero.ts`                                                                                                         |
 | Projects: the agent harness and More builds                                   | `src/data/projects.ts`                                                                                                     |
-| Talks, the Guest lecture and Keynote cards, speaking topics                   | `src/data/talks.ts`                                                                                                        |
+| Talks, the Latest, Guest lecture and Keynote cards, speaking topics           | `src/data/talks.ts`                                                                                                        |
 | Videos under Talks and workshops                                              | `src/data/videos.ts`                                                                                                       |
 | Experience, community, education and skills                                   | `src/data/experience.ts`                                                                                                   |
 | Curated articles, "Published on" platforms, writing stats                     | `src/data/writing.ts`                                                                                                      |

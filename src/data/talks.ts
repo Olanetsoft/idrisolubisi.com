@@ -9,7 +9,7 @@ export type Talk = {
   href?: string;
   note?: string;
   /** Shown as a card at the top of Talks instead of in the On stage list. */
-  highlight?: "Keynote" | "Guest lecture";
+  highlight?: "Latest" | "Keynote" | "Guest lecture";
   /** For an event still to come: its last day (ISO). Until then it is marked upcoming. */
   date?: string;
 };
@@ -45,6 +45,7 @@ export const talks: Talk[] = [
     location: "Lagos",
     kind: "Workshop",
     href: "https://blockfestafrica.com/schedule",
+    highlight: "Latest",
   },
   {
     event: "University of Zurich International Summer School",

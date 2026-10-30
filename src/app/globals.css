@@ -1707,7 +1707,7 @@ main {
    They leave the On stage list below, so nothing shows twice. */
 .highlights {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--box-gap);
   margin-bottom: clamp(1.75rem, 3vw, 2.5rem);
 }
