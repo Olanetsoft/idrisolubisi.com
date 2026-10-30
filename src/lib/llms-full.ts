@@ -4,7 +4,7 @@ import { recognition } from "@/data/recognition";
 import { site } from "@/data/site";
 import { isUpcoming, speakingTopics, talks } from "@/data/talks";
 import { platforms, writingList, writingStats } from "@/data/writing";
-import { monthYear } from "@/lib/format";
+import { absoluteUrl, monthYear } from "@/lib/format";
 import {
   blogPosts,
   githubFetchedAt,
@@ -91,7 +91,7 @@ export function renderLlmsFullTxt(): string {
       }
       push(`Stack: ${p.stack.join(", ")}.`);
       if (p.command) push(`Run: \`${p.command}\``);
-      if (links.length) push(links.map((l) => `${l.label}: ${l.url}`).join(" | "));
+      if (links.length) push(links.map((l) => `${l.label}: ${absoluteUrl(l.url)}`).join(" | "));
       push("");
     }
   }

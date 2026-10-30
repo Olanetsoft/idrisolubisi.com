@@ -52,7 +52,10 @@ export const projects: Project[] = [
       "Multi-tenant platform where each user runs a Claude-powered agent that trades real money on web and Telegram, with the backend checking and executing every trade.",
     proof: "Around 100 users trading real funds",
     stack: ["TypeScript", "Next.js", "Postgres", "Redis", "Docker", "Claude API"],
-    links: [{ label: "GitHub", url: "https://github.com/Olanetsoft/swoopagent-claw" }],
+    links: [
+      { label: "Case study", url: "/work/swoopagent" },
+      { label: "GitHub", url: "https://github.com/Olanetsoft/swoopagent-claw" },
+    ],
     githubRepo: "Olanetsoft/swoopagent-claw",
     detail:
       "Agents propose; the backend validates, signs and executes. Closed a double-sell race with an optimistic-lock mutex, Redis idempotency keys and single-transaction writes. A safety layer checks every open position every 30 seconds and enforces stop-losses and a -15% circuit breaker.",
