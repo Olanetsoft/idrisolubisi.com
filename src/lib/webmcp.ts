@@ -25,7 +25,8 @@ export type ModelContext = {
       description: string;
       inputSchema?: object;
       annotations?: { readOnlyHint?: boolean };
-      execute: (input: Record<string, unknown>) => Promise<string>;
+      // The browser may pass no input object at all.
+      execute: (input?: Record<string, unknown> | null) => Promise<string>;
     },
     options?: { signal?: AbortSignal },
   ) => unknown;
@@ -213,7 +214,7 @@ export function registerSiteTools(context: ModelContext, signal: AbortSignal) {
           },
         },
       },
-      execute: async (input: Record<string, unknown>) => json(projectList(input.group)),
+      execute: async (input?: Record<string, unknown> | null) => json(projectList(input?.group)),
     },
     {
       name: "list_talks",
@@ -231,7 +232,7 @@ export function registerSiteTools(context: ModelContext, signal: AbortSignal) {
           upcoming: { type: "boolean", description: "Only events that have not happened yet." },
         },
       },
-      execute: async (input: Record<string, unknown>) => json(talkList(input)),
+      execute: async (input?: Record<string, unknown> | null) => json(talkList(input ?? {})),
     },
     {
       name: "list_writing",
@@ -244,7 +245,7 @@ export function registerSiteTools(context: ModelContext, signal: AbortSignal) {
           limit: { type: "number", description: "How many to return, up to 50. Defaults to 10." },
         },
       },
-      execute: async (input: Record<string, unknown>) => json(writing(input.limit)),
+      execute: async (input?: Record<string, unknown> | null) => json(writing(input?.limit)),
     },
     {
       name: "search_site",
@@ -256,7 +257,7 @@ export function registerSiteTools(context: ModelContext, signal: AbortSignal) {
         properties: { query: { type: "string", description: "Words to look for." } },
         required: ["query"],
       },
-      execute: async (input: Record<string, unknown>) => json(search(input.query)),
+      execute: async (input?: Record<string, unknown> | null) => json(search(input?.query)),
     },
   ];
   for (const tool of tools) {
