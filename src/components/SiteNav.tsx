@@ -9,7 +9,6 @@ import {
   type RefObject,
 } from "react";
 import { usePathname } from "next/navigation";
-import { site } from "@/data/site";
 
 const SECTIONS = [
   { id: "work", label: "Projects" },
@@ -57,7 +56,7 @@ function useActiveSection(enabled: boolean): string | null {
  * elsewhere. The section being read is marked, so the header doubles as a
  * "you are here".
  */
-export function SiteNav() {
+export function SiteNav({ blogUrl }: { blogUrl: string }) {
   const pathname = usePathname();
   const onHome = pathname === "/";
   const base = onHome ? "" : "/";
@@ -76,7 +75,7 @@ export function SiteNav() {
           {s.label}
         </a>
       ))}
-      <a href={site.links.blog}>Blog</a>
+      <a href={blogUrl}>Blog</a>
       <span className="nav-indicator" aria-hidden="true" ref={barRef} />
     </nav>
   );
@@ -134,7 +133,7 @@ export function BrandLink({ name }: { name: string }) {
  * the header. It closes on a link, on Escape (returning focus to the button)
  * and on a tap outside.
  */
-export function MobileMenu() {
+export function MobileMenu({ blogUrl }: { blogUrl: string }) {
   const pathname = usePathname();
   const onHome = pathname === "/";
   const base = onHome ? "" : "/";
@@ -221,7 +220,7 @@ export function MobileMenu() {
           </a>
         ))}
         <a
-          href={site.links.blog}
+          href={blogUrl}
           onClick={() => setOpen(false)}
           style={{ "--i": SECTIONS.length } as CSSProperties}
         >
