@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from "@/components/Analytics";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { community } from "@/data/experience";
@@ -230,9 +230,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://blog.idrisolubisi.com/rss.xml"
           title="Idris Olubisi's blog"
         />
-        {process.env.NODE_ENV === "production" && (
-          <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
-        )}
       </head>
       {/* Extensions such as Grammarly add attributes to <body> before React loads;
           this ignores those attribute differences on this one element only. */}
@@ -247,7 +244,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {process.env.NODE_ENV === "production" && <GoogleAnalytics gaId={site.gaId} />}
+        {process.env.NODE_ENV === "production" && <Analytics gaId={site.gaId} />}
       </body>
     </html>
   );
