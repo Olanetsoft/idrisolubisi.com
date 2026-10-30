@@ -14,8 +14,6 @@ type WorkCardProps = {
   tag?: string;
   name: string;
   line: string;
-  /** One proof line: bold on featured cards, regular elsewhere. */
-  proof?: string;
   /** Extra words for screen readers, such as where the link goes. */
   srExtra?: string;
   size?: "feature" | "default" | "sm";
@@ -23,8 +21,8 @@ type WorkCardProps = {
 
 /**
  * One card for projects, more builds and community: a 16:10 screenshot,
- * shown 16:9 with its top kept, just inside the raised card, then a name, one
- * line and one number. The whole card is a single link, with nothing
+ * shown 16:9 with its top kept, just inside the raised card, then a name and
+ * one line. The whole card is a single link, with nothing
  * interactive inside it.
  */
 export function WorkCard({
@@ -37,7 +35,6 @@ export function WorkCard({
   tag,
   name,
   line,
-  proof,
   srExtra,
   size = "default",
 }: WorkCardProps) {
@@ -74,14 +71,6 @@ export function WorkCard({
         </h4>
         {srExtra && <span className="sr-only">, {srExtra}.</span>}
         <span className="work-line">{line}</span>
-        {proof && (
-          <span className="work-foot">
-            <span className={size === "feature" ? "work-proof" : "work-meta"}>
-              <span className="sr-only">. </span>
-              {proof}
-            </span>
-          </span>
-        )}
       </div>
     </>
   );

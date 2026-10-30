@@ -17,7 +17,7 @@ const CARD_SIZES = "(max-width: 759px) 46vw, (max-width: 1023px) 30vw, 310px";
 /** More builds shows one row of cards; a button reveals the rest. */
 const MORE_SHOWN = 3;
 
-/** A project as a card: its picture, name, a few words and one number; the card opens the project. */
+/** A project as a card: its picture, name and a few words; the card opens the project. Its numbers live in /llms.txt and /llms-full.txt. */
 function ProjectCard({
   project,
   feature,
@@ -49,7 +49,6 @@ function ProjectCard({
         eager={lead}
         name={project.name}
         line={project.tagline}
-        proof={project.proof}
         srExtra={primary ? `opens ${OPENS[primary.label] ?? primary.label}` : undefined}
         size={feature ? "feature" : "default"}
       />
