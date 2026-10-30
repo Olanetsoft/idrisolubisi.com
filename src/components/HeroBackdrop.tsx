@@ -4,10 +4,12 @@ import { useEffect, useRef } from "react";
 
 /**
  * The faint grid behind the hero. On load, one ring of lit grid lines goes
- * out from the live dot (CSS, see .hero-pulse). On a desktop with a mouse, a
- * soft light follows the pointer across the grid lines and fades when it
- * leaves, and pointing at the status line sends the ring again. Touch screens
- * and reduced-motion users get the still grid after the first ring, or none.
+ * out from the live dot (CSS, see .hero-pulse). On a desktop with a mouse, the
+ * pointer leaves an amber wake along the grid lines and bends them slightly
+ * (WebGL, src/lib/grid-wake.ts, loaded once the page is idle); until then, or
+ * without WebGL, a soft light follows the pointer instead. Pointing at the
+ * status line sends the ring again. Touch screens and reduced-motion users get
+ * the still grid after the first ring, or none.
  */
 export function HeroBackdrop() {
   const ref = useRef<HTMLDivElement>(null);
@@ -21,7 +23,19 @@ export function HeroBackdrop() {
     if (!finePointer || reduced) return;
 
     let frame = 0;
+    let stopWake: (() => void) | null = null;
+    let cancelled = false;
+    const startWake = () =>
+      import("@/lib/grid-wake").then(({ startGridWake }) => {
+        if (cancelled) return;
+        stopWake = startGridWake(el, hero);
+        if (stopWake) el.dataset.wake = "on";
+      });
+    const idle = window.requestIdleCallback?.(startWake, { timeout: 2000 });
+    const timer = idle === undefined ? window.setTimeout(startWake, 1200) : undefined;
+
     const move = (event: PointerEvent) => {
+      if (stopWake) return;
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
         const box = el.getBoundingClientRect();
@@ -55,6 +69,10 @@ export function HeroBackdrop() {
     hero.addEventListener("pointerleave", leave);
     status?.addEventListener("pointerenter", pulse);
     return () => {
+      cancelled = true;
+      if (idle !== undefined) window.cancelIdleCallback(idle);
+      window.clearTimeout(timer);
+      stopWake?.();
       cancelAnimationFrame(frame);
       hero.removeEventListener("pointermove", move);
       hero.removeEventListener("pointerleave", leave);

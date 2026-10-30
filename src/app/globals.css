@@ -821,6 +821,22 @@ figure {
 .hero-bg[data-glow="on"]::after {
   opacity: 1;
 }
+/* The WebGL wake (grid-wake.ts) replaces the CSS glow once it is running. */
+.hero-bg[data-wake]::after {
+  display: none;
+}
+/* Same box as the grid, with a softer fade: the pointer lights the grid
+   wherever it is, even where the resting grid has faded out. */
+.hero-wake {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  inset: calc(var(--cell) * -3) calc(var(--cell) * -8) 0;
+  width: calc(100% + var(--cell) * 16);
+  height: calc(100% + var(--cell) * 3);
+  -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent);
+  mask-image: linear-gradient(to bottom, #000 70%, transparent);
+}
 /* One ring of lit grid lines goes out from the live dot when it pings on
    load (and again when the status line is pointed at). The ring is a soft
    annulus scaled up from the dot; the mask keeps only the grid lines, so it
@@ -870,7 +886,8 @@ figure {
 }
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 200px;
+  /* The photo is five grid cells wide, so its edges sit on the grid lines. */
+  grid-template-columns: minmax(0, 1fr) calc(var(--cell) * 5);
   grid-template-areas:
     "status status"
     "id portrait"
@@ -1021,8 +1038,8 @@ figure {
 /* The ring sits inside the box (padding plus border), so it lines up with
    the right edge of everything else instead of sticking out past it. */
 .portrait img {
-  width: 200px;
-  height: 200px;
+  width: calc(var(--cell) * 5);
+  height: calc(var(--cell) * 5);
   padding: 6px;
   border: 1px solid var(--line);
   border-radius: 50%;
@@ -1042,9 +1059,27 @@ figure {
   margin-left: -0.75rem;
 }
 
-/* Tablets and phones: the photo stays on the right of the name; everything
-   else runs full width underneath. */
+/* Tablets: the same two columns, the photo four cells wide. */
 @media (max-width: 1023px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) calc(var(--cell) * 4);
+    column-gap: clamp(1.5rem, 4vw, 2.5rem);
+  }
+  .portrait {
+    margin-top: 1rem;
+  }
+  .portrait img {
+    width: calc(var(--cell) * 4);
+    height: calc(var(--cell) * 4);
+    padding: 5px;
+  }
+  .hero-pitch {
+    margin-top: 1.5rem;
+  }
+}
+/* Phones: the photo stays on the right of the name; everything else runs
+   full width underneath. */
+@media (max-width: 759px) {
   .hero-grid {
     grid-template-columns: minmax(0, 1fr) auto;
     grid-template-areas:
@@ -1055,16 +1090,10 @@ figure {
     column-gap: 1rem;
     align-items: center;
   }
-  .portrait {
-    margin-top: 1rem;
-  }
   .portrait img {
-    width: clamp(88px, 28cqi, 133px);
-    height: clamp(88px, 28cqi, 133px);
+    width: clamp(112px, 36cqi, 168px);
+    height: clamp(112px, 36cqi, 168px);
     padding: 4px;
-  }
-  .hero-pitch {
-    margin-top: 1.5rem;
   }
 }
 /* Phones: the call and the CV share one row, the call taking the room. */
