@@ -1,8 +1,9 @@
 /**
- * Recommendations from people he worked with, taken from his public LinkedIn
- * recommendations. Each quote is whole sentences, word for word: to shorten
- * one, pick other sentences, never edit a word. `relation` is LinkedIn's own
- * wording; `date` is when it was written, for /llms-full.txt only.
+ * Recommendations from people who worked or studied with him, taken from his
+ * public LinkedIn recommendations, newest first. Each quote is whole
+ * sentences, word for word: to shorten one, pick other sentences, never edit
+ * a word. `relation` is LinkedIn's own wording; `date` is when it was
+ * written, for /llms-full.txt only.
  */
 export const testimonials: {
   name: string;
@@ -11,6 +12,13 @@ export const testimonials: {
   date: string;
   quote: string;
 }[] = [
+  {
+    name: "Tobi Akinpelu",
+    href: "https://www.linkedin.com/in/tobiakinpelu/",
+    relation: "Studied with Idris",
+    date: "2025-07",
+    quote: "Idris speaks with quiet confidence. Their posts don’t shout, but they always land.",
+  },
   {
     name: "Sylvester Amanyi",
     href: "https://www.linkedin.com/in/maisonarmani/",

@@ -1904,11 +1904,11 @@ main {
   }
 }
 
-/* Recommendations: three quotes side by side, the words first and who said
-   it under them. Phones show the first two, the managers, in one column. */
+/* Recommendations: four quotes in two columns, newest first, the words first
+   and who said it under them. Phones show the first two in one column. */
 .quote-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--box-gap);
 }
 .quote-grid > li {
