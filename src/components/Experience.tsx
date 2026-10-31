@@ -1,5 +1,6 @@
 import { community, education, experience } from "@/data/experience";
 import { site } from "@/data/site";
+import { testimonials } from "@/data/testimonials";
 import { SectionLabel } from "./SectionLabel";
 import { WorkCard } from "./WorkCard";
 
@@ -11,7 +12,8 @@ function years(period: string): string {
 
 /**
  * Experience as a short list: title, company and years for each role. The
- * CV carries the detail. Community follows as picture cards.
+ * CV carries the detail. Recommendations from people he worked with follow,
+ * word for word from LinkedIn, then Community as picture cards.
  */
 export function Experience() {
   return (
@@ -35,6 +37,22 @@ export function Experience() {
             </li>
           ))}
         </ol>
+        <h3 className="group-label">Recommendations</h3>
+        <ul className="quote-grid">
+          {testimonials.map((t) => (
+            <li key={t.name}>
+              <figure className="quote-card">
+                <blockquote className="quote-text">
+                  <p>“{t.quote}”</p>
+                </blockquote>
+                <figcaption className="quote-by">
+                  <a href={t.href}>{t.name}</a>
+                  <span className="quote-relation">{t.relation}</span>
+                </figcaption>
+              </figure>
+            </li>
+          ))}
+        </ul>
         <h3 className="group-label">Community</h3>
         <ul className="community-grid">
           {community.map((c) => (

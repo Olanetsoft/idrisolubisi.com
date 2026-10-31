@@ -1904,6 +1904,60 @@ main {
   }
 }
 
+/* Recommendations: three quotes side by side, the words first and who said
+   it under them. Phones show the first two, the managers, in one column. */
+.quote-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--box-gap);
+}
+.quote-grid > li {
+  display: flex;
+}
+.quote-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem 1.125rem 1.125rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.quote-text {
+  margin: 0;
+}
+.quote-text p {
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  color: var(--text);
+  text-wrap: pretty;
+}
+.quote-by {
+  display: grid;
+  gap: 2px;
+}
+.quote-by a {
+  justify-self: start;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  line-height: 1.4;
+}
+.quote-relation {
+  font: 400 var(--fs-meta)/1.4 var(--font-mono-stack);
+  color: var(--text-3);
+}
+@media (max-width: 759px) {
+  .quote-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+  .quote-grid > li:nth-child(n + 3) {
+    display: none;
+  }
+}
+
 /* Community: four smaller picture cards, the same card as the projects; the
    tag on each picture is his role. */
 .community-grid {
@@ -3229,6 +3283,10 @@ body:has(.contact-box) .footer-handles {
     padding-block: 13px;
     margin-block: -13px;
   }
+  .quote-by a {
+    padding-block: 12px;
+    margin-block: -12px;
+  }
   .email,
   .brand {
     display: inline-flex;
@@ -3260,6 +3318,9 @@ body:has(.contact-box) .footer-handles {
   }
   .videos > li[data-extra] {
     display: block !important;
+  }
+  .quote-grid > li {
+    display: flex !important;
   }
   .more-toggle,
   .work-media,
