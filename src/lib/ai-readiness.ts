@@ -270,9 +270,13 @@ const challenged = (f: Got) =>
   f.status === 200 &&
   f.body.length < 100_000 &&
   /\/errors_page\/validateCaptcha|\bname\s*=\s*["']?js_challenge\b/i.test(f.body);
-/** Refused, rate-limited, broken or unanswered: the file may exist, but this check couldn't read it. */
+/**
+ * Refused, rate-limited, challenged, broken or unanswered: the file may exist,
+ * but this check couldn't read it. A 202 is AWS WAF's bot check (IMDb's,
+ * Booking's), whose body may be empty.
+ */
 const unreadable = (f: Got) =>
-  !got(f) || [401, 403, 429].includes(f.status) || f.status >= 500 || challenged(f);
+  !got(f) || [202, 401, 403, 429].includes(f.status) || f.status >= 500 || challenged(f);
 const why = (f: Got) =>
   !got(f) ? f.error : challenged(f) ? "it answered with a bot check" : `status ${f.status}`;
 
@@ -489,9 +493,12 @@ export function readHtml(source: string) {
     [...html.matchAll(/<noscript\b[^<>]*>([\s\S]*?)(?:<\/noscript\s*>|$)/gi)].some(([, inner]) =>
       /javascript/i.test(inner),
     );
-  const text = source
+  // The markup a reader sees: no scripts, styles, templates or comments,
+  // whose markup is never shown (an <h1> in a script string isn't a heading).
+  const shown = source
     .replace(/<(script|style|noscript|svg|template|iframe)\b[\s\S]*?(?:<\/\1\s*>|$)/gi, " ")
-    .replace(/<!--[\s\S]*?(?:-->|$)/g, " ")
+    .replace(/<!--[\s\S]*?(?:-->|$)/g, " ");
+  const text = shown
     .replace(/<[^<>]*>/g, " ")
     .replace(/&(#\d+|#x[0-9a-f]+|[a-z]+);/gi, entity)
     .replace(/\s+/g, " ")
@@ -506,7 +513,7 @@ export function readHtml(source: string) {
     description: meta("description") ?? meta("og:description"),
     canonical: attr(canonical, "href"),
     lang: attr(tagsOf(html, "html")[0], "lang"),
-    h1: /<h1[\s>]/i.test(source),
+    h1: /<h1[\s>]/i.test(shown),
     jsonLdTypes: [...types],
   };
 }
@@ -679,13 +686,15 @@ export async function checkSite(input: string): Promise<Report> {
     checks.push({
       id: "html",
       label: "Content without JavaScript",
-      status: read.words >= 150 ? "pass" : built ? "fail" : "warn",
+      status: read.words >= 150 ? "pass" : built && !home.truncated ? "fail" : "warn",
       detail:
         read.words >= 150
           ? `${where} has ${home.truncated ? "at least " : ""}${plural(read.words, "word")} in its HTML before any script runs.`
-          : built
-            ? `${where} has only ${plural(read.words, "word")} before any script runs, and looks built in the browser.`
-            : `${where} has only ${plural(read.words, "word")} of text in its HTML.`,
+          : home.truncated
+            ? `${where} is over ${MAX_BYTES / 1_000_000} MB, and its first ${MAX_BYTES / 1_000_000} MB has only ${plural(read.words, "word")} before any script runs.`
+            : built
+              ? `${where} has only ${plural(read.words, "word")} before any script runs, and looks built in the browser.`
+              : `${where} has only ${plural(read.words, "word")} of text in its HTML.`,
       why: htmlWhy,
     });
   }
@@ -698,7 +707,8 @@ export async function checkSite(input: string): Promise<Report> {
     const missing = [
       !read.title && "a title",
       !read.description && "a meta description",
-      !read.h1 && "an h1",
+      // An h1 past the cut of a page over the size cap would be missed.
+      !read.h1 && !home.truncated && "an h1",
       !read.canonical && "a canonical link",
       !read.lang && "a lang attribute",
     ].filter(Boolean) as string[];
