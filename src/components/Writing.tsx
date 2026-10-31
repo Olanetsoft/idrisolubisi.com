@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { site } from "@/data/site";
 import { platforms, writingList, writingStats } from "@/data/writing";
 import { monthYear } from "@/lib/format";
@@ -12,7 +13,13 @@ export function Writing() {
           <SectionLabel id="writing">Writing</SectionLabel>
           <p className="lede">Tutorials read {writingStats.reads} times.</p>
           <p className="lede-sub published-on">
-            <span className="published-label">Published on</span> {platforms.join(", ")}
+            <span className="published-label">Published on</span>{" "}
+            {platforms.map((p, i) => (
+              <Fragment key={p.name}>
+                {i > 0 && ", "}
+                {p.href ? <a href={p.href}>{p.name}</a> : p.name}
+              </Fragment>
+            ))}
           </p>
         </div>
         <ul className="row-list row-list--dated">

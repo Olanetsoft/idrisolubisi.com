@@ -78,18 +78,30 @@ export const articles: Article[] = [
   },
 ];
 
-export const platforms = [
-  "freeCodeCamp",
-  "TechCabal",
-  "LogRocket",
-  "Dev.to",
-  "Medium",
-  "Moralis",
-  "Section",
-  "Alchemy",
-  "Infura",
-  "Appsmith",
-  "Hashnode",
+/**
+ * Where his tutorials ran. Most have an article in the list above; the ones
+ * that don't link to one: Appsmith to the article it published, Infura to
+ * his tutorial on its NFT SDK (his own blog, the owner's call). Alchemy's
+ * only byline page no longer shows the article, so it stays a name.
+ */
+export const platforms: { name: string; href?: string }[] = [
+  { name: "freeCodeCamp" },
+  { name: "TechCabal" },
+  { name: "LogRocket" },
+  { name: "Dev.to" },
+  { name: "Medium" },
+  { name: "Moralis" },
+  { name: "Section" },
+  { name: "Alchemy" },
+  {
+    name: "Infura",
+    href: "https://blog.idrisolubisi.com/easily-create-an-nft-app-using-the-new-infura-nft-sdk-typescript",
+  },
+  {
+    name: "Appsmith",
+    href: "https://www.appsmith.com/blog/upload-and-manage-files-on-cloudinary-with-the-filepicker-widget",
+  },
+  { name: "Hashnode" },
 ];
 
 export const writingStats = {
