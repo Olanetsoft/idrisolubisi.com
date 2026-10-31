@@ -221,7 +221,7 @@ export const projects: Project[] = [
     name: "Learn Compact",
     group: "more",
     oneLine:
-      "Interactive book and exercises that teach Compact, Midnight’s zero-knowledge contract language.",
+      "Interactive book and exercises that teach Compact, Midnight’s zero-knowledge contract language, with code you compile on the page.",
     proof: "9 chapters and 17 exercises",
     stack: ["Compact", "mdBook", "JavaScript", "Netlify"],
     links: [
