@@ -115,7 +115,9 @@ export function renderLlmsFullTxt(): string {
 
   push("## Writing", "");
   push(`Tutorials read ${writingStats.reads} times. Writing since ${site.profile.writingSince}.`);
-  push(`Published on ${platforms.join(", ")}.`);
+  push(
+    `Published on ${platforms.map((p) => (p.href ? `${p.name} (${p.href})` : p.name)).join(", ")}.`,
+  );
   push("");
   for (const a of writingList(blogPosts)) {
     push(
