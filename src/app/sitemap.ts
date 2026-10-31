@@ -5,6 +5,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: `${site.url}/`, lastModified: new Date(), changeFrequency: "monthly", priority: 1 },
     {
+      url: `${site.url}/tools/ai-readiness`,
+      lastModified: new Date("2026-10-30"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
       url: `${site.url}/work/swoopagent`,
       lastModified: new Date("2026-10-30"),
       changeFrequency: "yearly",

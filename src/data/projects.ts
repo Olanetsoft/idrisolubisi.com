@@ -104,6 +104,19 @@ export const projects: Project[] = [
     image: "/images/work/agent-lookout.jpg",
   },
   {
+    key: "ai-readiness",
+    name: "AI readiness check",
+    group: "more",
+    oneLine:
+      "Free tool that shows how a website looks to AI agents: its llms.txt, what its HTML says before any script runs, its structured data, which AI crawlers it lets in and its sitemap.",
+    stack: ["TypeScript", "Next.js", "Netlify Functions"],
+    links: [{ label: "Tool", url: "/tools/ai-readiness" }],
+    detail:
+      "Reads only the named site's public files through a guarded fetcher: public addresses only, checked after DNS and on every redirect, with time and size limits, and a per-visitor rate limit. Nothing is stored.",
+    tagline: "See any site the way an AI agent does",
+    image: "/images/work/ai-readiness.jpg",
+  },
+  {
     key: "create-mn-app",
     name: "create-mn-app",
     group: "more",

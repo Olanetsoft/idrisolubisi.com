@@ -27,31 +27,32 @@ One page, in this order: the hero (status line, name and role, one intro, the ca
 
 ## Where things live
 
-| What                                                                          | Where                                                                                                                      |
-| ----------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| Name, intro, availability, links, hand-kept follower counts, the long summary | `src/data/site.ts`                                                                                                         |
-| Hero headline and intro                                                       | `src/data/hero.ts`                                                                                                         |
-| Projects: the agent harness and More builds                                   | `src/data/projects.ts`                                                                                                     |
-| Talks (the Latest card is the newest dated talk), speaking topics             | `src/data/talks.ts`                                                                                                        |
-| Videos under Talks and workshops                                              | `src/data/videos.ts`                                                                                                       |
-| The SwoopAgent case study (`/work/swoopagent`) and its trade diagram          | `src/data/swoopagent.ts`                                                                                                   |
-| Experience, community, education and skills                                   | `src/data/experience.ts`                                                                                                   |
-| Curated articles, "Published on" platforms, writing stats                     | `src/data/writing.ts`                                                                                                      |
-| Press, awards and interviews                                                  | `src/data/recognition.ts`                                                                                                  |
-| Build-time data (written by `npm run data`, do not edit by hand)              | `src/data/generated/github.json`, `src/data/generated/blog.json`, typed in `src/lib/generated.ts`                          |
-| Brand marks                                                                   | `src/components/icon-data.json`, built into `public/icons.svg` by `npm run icons`; used through `src/components/icons.tsx` |
-| Styles and design tokens                                                      | `src/app/globals.css`                                                                                                      |
-| Browser-bar colours (keep in step with `--bg` in `globals.css`)               | `src/lib/theme.ts`                                                                                                         |
-| Metadata and structured data (JSON-LD)                                        | `src/app/layout.tsx`                                                                                                       |
-| Social preview image                                                          | `src/app/opengraph-image.tsx`                                                                                              |
-| Favicon and home-screen icons                                                 | `src/app/icon.svg`, `favicon.ico`, `apple-icon.png`, `manifest.ts`; `public/icon-192.png`, `public/icon-512.png`           |
-| Sitemap and robots                                                            | `src/app/sitemap.ts`, `src/app/robots.ts`                                                                                  |
-| `/llms.txt` and `/llms-full.txt`                                              | `src/lib/llms.ts`, `src/lib/llms-full.ts`                                                                                  |
-| CV PDF (refresh with `npm run cv`)                                            | `public/Idris-Olubisi-CV.pdf`                                                                                              |
-| Portrait                                                                      | `public/images/idris-portrait.jpg`                                                                                         |
-| Card pictures (1280x800 JPEG; set `image` in projects.ts or experience.ts)    | `public/images/work/`, `public/images/community/`                                                                          |
-| humans.txt                                                                    | `public/humans.txt`                                                                                                        |
-| Archived 2020 post, served at `/how-to-create-react-app`                      | `src/content/how-to-create-react-app.ts`, images in `public/archive/`                                                      |
+| What                                                                            | Where                                                                                                                      |
+| ------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Name, intro, availability, links, hand-kept follower counts, the long summary   | `src/data/site.ts`                                                                                                         |
+| Hero headline and intro                                                         | `src/data/hero.ts`                                                                                                         |
+| Projects: the agent harness and More builds                                     | `src/data/projects.ts`                                                                                                     |
+| Talks (the Latest card is the newest dated talk), speaking topics               | `src/data/talks.ts`                                                                                                        |
+| Videos under Talks and workshops                                                | `src/data/videos.ts`                                                                                                       |
+| The SwoopAgent case study (`/work/swoopagent`) and its trade diagram            | `src/data/swoopagent.ts`                                                                                                   |
+| The AI readiness check (`/tools/ai-readiness`): the fetcher and checks; the API | `src/lib/ai-readiness.ts`; `netlify/functions/ai-check.mts`                                                                |
+| Experience, community, education and skills                                     | `src/data/experience.ts`                                                                                                   |
+| Curated articles, "Published on" platforms, writing stats                       | `src/data/writing.ts`                                                                                                      |
+| Press, awards and interviews                                                    | `src/data/recognition.ts`                                                                                                  |
+| Build-time data (written by `npm run data`, do not edit by hand)                | `src/data/generated/github.json`, `src/data/generated/blog.json`, typed in `src/lib/generated.ts`                          |
+| Brand marks                                                                     | `src/components/icon-data.json`, built into `public/icons.svg` by `npm run icons`; used through `src/components/icons.tsx` |
+| Styles and design tokens                                                        | `src/app/globals.css`                                                                                                      |
+| Browser-bar colours (keep in step with `--bg` in `globals.css`)                 | `src/lib/theme.ts`                                                                                                         |
+| Metadata and structured data (JSON-LD)                                          | `src/app/layout.tsx`                                                                                                       |
+| Social preview image                                                            | `src/app/opengraph-image.tsx`                                                                                              |
+| Favicon and home-screen icons                                                   | `src/app/icon.svg`, `favicon.ico`, `apple-icon.png`, `manifest.ts`; `public/icon-192.png`, `public/icon-512.png`           |
+| Sitemap and robots                                                              | `src/app/sitemap.ts`, `src/app/robots.ts`                                                                                  |
+| `/llms.txt` and `/llms-full.txt`                                                | `src/lib/llms.ts`, `src/lib/llms-full.ts`                                                                                  |
+| CV PDF (refresh with `npm run cv`)                                              | `public/Idris-Olubisi-CV.pdf`                                                                                              |
+| Portrait                                                                        | `public/images/idris-portrait.jpg`                                                                                         |
+| Card pictures (1280x800 JPEG; set `image` in projects.ts or experience.ts)      | `public/images/work/`, `public/images/community/`                                                                          |
+| humans.txt                                                                      | `public/humans.txt`                                                                                                        |
+| Archived 2020 post, served at `/how-to-create-react-app`                        | `src/content/how-to-create-react-app.ts`, images in `public/archive/`                                                      |
 
 ## Build-time data
 
