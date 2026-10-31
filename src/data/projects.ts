@@ -168,7 +168,8 @@ export const projects: Project[] = [
     group: "more",
     oneLine:
       "Gift exchange and wishlist platform with AI gift ideas, real-time party games and an installable PWA.",
-    proof: "3,000+ users across 20+ countries",
+    proof:
+      "3,700+ users, 2,200+ of them active in a group, a wishlist or a giveaway. Its giveaways have drawn 2,500+ entries from 2,100+ people, and Dice Duel, its live quiz game, has run 30 games for 200+ players",
     stack: ["TypeScript", "Next.js", "Supabase", "Redis", "OpenAI API"],
     links: [{ label: "Site", url: "https://giftdice.com" }],
     tagline: "Gift exchanges and wishlists with AI gift ideas",
