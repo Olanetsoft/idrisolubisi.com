@@ -27,7 +27,7 @@ const HOP_MS = 8000;
 const BUDGET_MS = 15000;
 /** Per response, after decompression. */
 const MAX_BYTES = 1_500_000;
-/** How much of a page's HTML the page checks read. */
+/** How much of a page's HTML the head and script checks read (words use all of it). */
 const PARSE_CHARS = 512_000;
 const MAX_REDIRECTS = 3;
 const USER_AGENT =
@@ -223,12 +223,14 @@ export type Fetched = Raw & { url: string };
 
 const HTML = "text/html,application/xhtml+xml";
 const TEXT = "text/plain, text/markdown;q=0.9, */*;q=0.1";
+/** robots.txt is asked for the way crawlers ask, without markdown. */
+const ROBOTS = "text/plain, */*;q=0.1";
 const XML = "application/xml, text/xml;q=0.9, */*;q=0.1";
 
 /**
  * A GET that vets the URL and every redirect hop, within `deadline`. `accept`
  * matters: some sites answer a request that accepts markdown with markdown,
- * or a 404.
+ * or a 404 (react.dev does, even for robots.txt).
  */
 export async function safeGet(
   value: string,
@@ -257,9 +259,26 @@ export type Report = { site: string; page: string; checkedAt: string; checks: Ch
 /** A fetch that failed outright keeps its reason, so the report can say why. */
 type Got = Fetched | { error: string };
 const got = (f: Got): f is Fetched => !("error" in f);
-/** Refused, rate-limited, broken or unanswered: the file may exist, but this check couldn't read it. */
-const unreadable = (f: Got) => !got(f) || [401, 403, 429].includes(f.status) || f.status >= 500;
-const why = (f: Got) => (got(f) ? `status ${f.status}` : f.error);
+/**
+ * A bot check served with a 200 in place of the page (Amazon's captcha,
+ * Reddit's JavaScript challenge). It says nothing about the site, so it counts
+ * as a refusal. Only markers of the check pages themselves, never a script
+ * that real pages load too.
+ */
+const challenged = (f: Got) =>
+  got(f) &&
+  f.status === 200 &&
+  f.body.length < 100_000 &&
+  /\/errors_page\/validateCaptcha|\bname\s*=\s*["']?js_challenge\b/i.test(f.body);
+/**
+ * Refused, rate-limited, challenged, broken or unanswered: the file may exist,
+ * but this check couldn't read it. A 202 is AWS WAF's bot check (IMDb's,
+ * Booking's), whose body may be empty.
+ */
+const unreadable = (f: Got) =>
+  !got(f) || [202, 401, 403, 429].includes(f.status) || f.status >= 500 || challenged(f);
+const why = (f: Got) =>
+  !got(f) ? f.error : challenged(f) ? "it answered with a bot check" : `status ${f.status}`;
 
 const startsLikeHtml = (body: string) => /^\s*<(!doctype|html|head|body)\b/i.test(body);
 const looksLikeHtml = (f: Fetched) => f.contentType.includes("html") || startsLikeHtml(f.body);
@@ -412,7 +431,12 @@ function countWords(text: string): number {
   return words;
 }
 
-/** What a page says before any JavaScript runs, from the first 512 K characters of its HTML. */
+/**
+ * What a page says before any JavaScript runs. The words and the h1 come from
+ * all of the HTML that was fetched, since a page can spend its first 512 K
+ * characters on inline CSS (the Guardian's does); the head and the scripts
+ * from the first 512 K.
+ */
 export function readHtml(source: string) {
   const html = source.slice(0, PARSE_CHARS);
   // Each lazy scan ends at its closing tag or at the end of the text, so an
@@ -459,16 +483,22 @@ export function readHtml(source: string) {
     }
   }
   // Signs that the page is built in the browser: an empty app container, or
-  // a <noscript> asking for JavaScript.
+  // a <noscript> asking for JavaScript. Empty divs are found first and their
+  // id tested after, so a long tag is scanned once.
   const appShell =
-    /<div\b[^<>]*\sid\s*=\s*["']?(root|app|__next|__nuxt|svelte)\b[^<>]*>\s*<\/div>/i.test(html) ||
+    [...html.matchAll(/<div\b[^<>]*>\s*<\/div>/gi)].some(([tag]) =>
+      /\sid\s*=\s*["']?(root|app|__next|__nuxt|svelte)\b/i.test(tag),
+    ) ||
     /<app-root\b/i.test(html) ||
     [...html.matchAll(/<noscript\b[^<>]*>([\s\S]*?)(?:<\/noscript\s*>|$)/gi)].some(([, inner]) =>
       /javascript/i.test(inner),
     );
-  const text = html
+  // The markup a reader sees: no scripts, styles, templates or comments,
+  // whose markup is never shown (an <h1> in a script string isn't a heading).
+  const shown = source
     .replace(/<(script|style|noscript|svg|template|iframe)\b[\s\S]*?(?:<\/\1\s*>|$)/gi, " ")
-    .replace(/<!--[\s\S]*?(?:-->|$)/g, " ")
+    .replace(/<!--[\s\S]*?(?:-->|$)/g, " ");
+  const text = shown
     .replace(/<[^<>]*>/g, " ")
     .replace(/&(#\d+|#x[0-9a-f]+|[a-z]+);/gi, entity)
     .replace(/\s+/g, " ")
@@ -483,7 +513,7 @@ export function readHtml(source: string) {
     description: meta("description") ?? meta("og:description"),
     canonical: attr(canonical, "href"),
     lang: attr(tagsOf(html, "html")[0], "lang"),
-    h1: /<h1[\s>]/i.test(html),
+    h1: /<h1[\s>]/i.test(shown),
     jsonLdTypes: [...types],
   };
 }
@@ -534,7 +564,7 @@ export async function checkSite(input: string): Promise<Report> {
   const rootFull = settle(`${site}/llms-full.txt`, TEXT);
   const [home, robots, defaultSitemap] = await Promise.all([
     settle(page, HTML),
-    settle(`${site}/robots.txt`, TEXT),
+    settle(`${site}/robots.txt`, ROBOTS),
     settle(`${site}/sitemap.xml`, XML),
   ]);
   if (!got(home)) {
@@ -632,7 +662,7 @@ export async function checkSite(input: string): Promise<Report> {
   });
 
   let read: ReturnType<typeof readHtml> | null = null;
-  if (home.status === 200 && looksLikeHtml(home)) {
+  if (home.status === 200 && looksLikeHtml(home) && !challenged(home)) {
     try {
       read = readHtml(home.body);
     } catch {
@@ -656,13 +686,15 @@ export async function checkSite(input: string): Promise<Report> {
     checks.push({
       id: "html",
       label: "Content without JavaScript",
-      status: read.words >= 150 ? "pass" : built ? "fail" : "warn",
+      status: read.words >= 150 ? "pass" : built && !home.truncated ? "fail" : "warn",
       detail:
         read.words >= 150
-          ? `${where} has ${plural(read.words, "word")} in its HTML before any script runs.`
-          : built
-            ? `${where} has only ${plural(read.words, "word")} before any script runs, and looks built in the browser.`
-            : `${where} has only ${plural(read.words, "word")} of text in its HTML.`,
+          ? `${where} has ${home.truncated ? "at least " : ""}${plural(read.words, "word")} in its HTML before any script runs.`
+          : home.truncated
+            ? `${where} is over ${MAX_BYTES / 1_000_000} MB, and its first ${MAX_BYTES / 1_000_000} MB has only ${plural(read.words, "word")} before any script runs.`
+            : built
+              ? `${where} has only ${plural(read.words, "word")} before any script runs, and looks built in the browser.`
+              : `${where} has only ${plural(read.words, "word")} of text in its HTML.`,
       why: htmlWhy,
     });
   }
@@ -675,7 +707,8 @@ export async function checkSite(input: string): Promise<Report> {
     const missing = [
       !read.title && "a title",
       !read.description && "a meta description",
-      !read.h1 && "an h1",
+      // An h1 past the cut of a page over the size cap would be missed.
+      !read.h1 && !home.truncated && "an h1",
       !read.canonical && "a canonical link",
       !read.lang && "a lang attribute",
     ].filter(Boolean) as string[];

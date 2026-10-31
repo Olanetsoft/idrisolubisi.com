@@ -8,7 +8,7 @@ import { checkSite, InputError } from "../../src/lib/ai-readiness";
  * one sent by another website is refused, so no page can make its visitors
  * run checks.
  */
-export default async (request: Request) => {
+export default async function aiCheck(request: Request) {
   const from = request.headers.get("sec-fetch-site");
   if (from && from !== "same-origin" && from !== "none") {
     return Response.json(
@@ -33,7 +33,7 @@ export default async (request: Request) => {
       { status: known ? 400 : 502, headers: { "cache-control": "no-store" } },
     );
   }
-};
+}
 
 export const config = {
   path: "/api/ai-check",
