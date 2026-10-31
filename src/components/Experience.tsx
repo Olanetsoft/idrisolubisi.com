@@ -12,8 +12,9 @@ function years(period: string): string {
 
 /**
  * Experience as a short list: title, company and years for each role. The
- * CV carries the detail. Recommendations from people he worked with follow,
- * word for word from LinkedIn, then Community as picture cards.
+ * CV carries the detail. Recommendations from people who worked or studied
+ * with him follow, word for word from LinkedIn, then Community as picture
+ * cards.
  */
 export function Experience() {
   return (
