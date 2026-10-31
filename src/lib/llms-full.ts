@@ -3,6 +3,7 @@ import { harnessIntro, otherOpenSource, projects } from "@/data/projects";
 import { recognition } from "@/data/recognition";
 import { site } from "@/data/site";
 import { isUpcoming, speakingTopics, talks } from "@/data/talks";
+import { testimonials } from "@/data/testimonials";
 import { platforms, writingList, writingStats } from "@/data/writing";
 import { absoluteUrl, monthYear } from "@/lib/format";
 import {
@@ -58,6 +59,16 @@ export function renderLlmsFullTxt(): string {
     if (r.url) push(`- ${r.url}`);
     push("");
   }
+
+  push("## Recommendations", "");
+  push("Word for word from his LinkedIn recommendations.");
+  push("");
+  for (const t of testimonials) {
+    push(
+      `- "${t.quote}" - ${t.name}, ${t.relation.charAt(0).toLowerCase()}${t.relation.slice(1)} (${monthYear(t.date)}) - ${t.href}`,
+    );
+  }
+  push("");
 
   push("## Community", "");
   for (const c of community) {
