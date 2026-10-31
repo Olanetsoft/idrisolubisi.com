@@ -10,3 +10,11 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+# Site images: a returning visitor uses its copy for a day and may keep using
+# it while a fresh one loads for a week. Netlify Image CDN passes these
+# headers on to the resized versions. Rename a file when its picture changes.
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"

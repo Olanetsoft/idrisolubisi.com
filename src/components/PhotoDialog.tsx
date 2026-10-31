@@ -10,7 +10,9 @@ import type { StagePhoto } from "@/data/talks";
  * arrow keys, move between them, and a screen reader hears which photo is
  * showing; Escape, Close or a click outside closes it, and focus returns to
  * the photo. A modified click or no script opens the
- * image file as a normal link.
+ * image file as a normal link. Phones show the lead photo as a plain
+ * picture: there the links lose their href, so they are neither a dead tap
+ * nor a focus stop, and get it back on a wider screen.
  */
 export function PhotoDialog({ photos }: { photos: StagePhoto[] }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -30,7 +32,22 @@ export function PhotoDialog({ photos }: { photos: StagePhoto[] }) {
       dialogRef.current.showModal();
     };
     document.addEventListener("click", onClick);
-    return () => document.removeEventListener("click", onClick);
+    const phone = window.matchMedia("(max-width: 759px)");
+    const sync = () => {
+      for (const link of document.querySelectorAll<HTMLAnchorElement>("a[data-photo]")) {
+        const href = link.getAttribute("href") ?? link.dataset.href;
+        if (!href) continue;
+        link.dataset.href = href;
+        if (phone.matches) link.removeAttribute("href");
+        else link.setAttribute("href", href);
+      }
+    };
+    sync();
+    phone.addEventListener("change", sync);
+    return () => {
+      document.removeEventListener("click", onClick);
+      phone.removeEventListener("change", sync);
+    };
   }, []);
 
   const close = () => dialogRef.current?.close();
@@ -68,6 +85,12 @@ export function PhotoDialog({ photos }: { photos: StagePhoto[] }) {
             width={photo.width}
             height={photo.height}
             sizes="(max-width: 1023px) 100vw, 960px"
+            // The box is sized before the image arrives, so the dialog opens
+            // at its full size instead of growing from a strip.
+            style={{
+              aspectRatio: `${photo.width} / ${photo.height}`,
+              width: `min(100%, calc((100dvh - 9rem) * ${photo.width} / ${photo.height}))`,
+            }}
           />
         )}
       </div>

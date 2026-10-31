@@ -86,7 +86,15 @@ export function Talks() {
             <li key={t.event} className="highlight">
               <p className="highlight-label">{label}</p>
               <p className="highlight-event">
-                {t.href ? <a href={t.href}>{eventName(t)}</a> : eventName(t)}
+                {t.href ? (
+                  // The year tells the two Blockfest links apart for screen readers.
+                  <a href={t.href}>
+                    {eventName(t)}
+                    <span className="sr-only"> {t.year}</span>
+                  </a>
+                ) : (
+                  eventName(t)
+                )}
               </p>
               {t.title && <p className="highlight-title">{t.title}</p>}
               <p className="highlight-meta">{highlightMeta(t, label)}</p>
@@ -138,6 +146,9 @@ export function Talks() {
           {stages.map((t, i) => {
             const city = t.location && !eventName(t).includes(t.location) ? t.location : undefined;
             const kind = [KIND[t.kind], city, isUpcoming(t) && "upcoming"].filter(Boolean);
+            // Shown: an upcoming event drops its city, so the name keeps one line
+            // on wide screens; screen readers still hear it.
+            const shownKind = [KIND[t.kind], isUpcoming(t) ? "upcoming" : city].filter(Boolean);
             // A linked row reads as one link with the year and kind in its name,
             // so the three Web3 Lagos rows don't share one name.
             const linkOnly = t.href ? true : undefined;
@@ -162,7 +173,7 @@ export function Talks() {
                 </span>
                 <span className="stage-kind" aria-hidden={linkOnly}>
                   <span className="sr-only">, </span>
-                  {kind.join(" · ")}
+                  {shownKind.join(" · ")}
                 </span>
               </li>
             );

@@ -2207,7 +2207,6 @@ main {
 }
 .photo-dialog-frame img {
   display: block;
-  width: auto;
   max-width: 100%;
   height: auto;
   max-height: calc(100dvh - 9rem);
@@ -2230,7 +2229,13 @@ main {
 .press-lead {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: auto auto;
   gap: var(--box-gap);
+}
+/* The cards share rows, so every headline starts at the same height. */
+.press-card {
+  grid-row: span 2;
+  grid-template-rows: subgrid;
 }
 .press-card {
   position: relative;
@@ -2261,6 +2266,12 @@ main {
   color: var(--text-2);
   text-wrap: pretty;
 }
+/* Between 760 and 899px the cards are narrow, so headlines may take four lines. */
+@media (min-width: 760px) and (max-width: 899px) {
+  .press-headline {
+    -webkit-line-clamp: 4;
+  }
+}
 .press-card .card-link::after {
   border-radius: var(--radius);
 }
@@ -2283,6 +2294,7 @@ main {
   line-height: 1.4;
 }
 .press-rows .card-title {
+  -webkit-line-clamp: 3;
   font-size: var(--fs-small);
   line-height: 1.5;
   color: var(--text-2);
@@ -2454,7 +2466,6 @@ main {
   margin-bottom: 1.5rem;
   font-size: var(--fs-small);
   color: var(--text-2);
-  text-decoration: none;
 }
 .back-link:hover {
   text-decoration: underline;
@@ -2780,6 +2791,31 @@ main {
     border-top: 0;
     border-left: 1px solid var(--line-strong);
   }
+  /* Compact boxes and buttons, so after a tap the steps sit on screen with
+     the lit box, and a steady height for the steps, so switching cases does
+     not move what follows. */
+  .flow-nodes {
+    --flow-gap: 0.875rem;
+    margin-top: 1rem;
+  }
+  .flow-node {
+    min-height: 0;
+    gap: 0;
+    padding: 0.5rem 0.75rem;
+  }
+  .flow-controls {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .flow-button {
+    border-radius: var(--radius);
+    line-height: 1.3;
+  }
+  .flow-trace {
+    min-height: 19rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
 }
 
 /* ---------- AI readiness check (/tools/ai-readiness) ---------- */
@@ -3090,8 +3126,7 @@ body:has(.contact-box) .footer-handles {
 
 /* Phones, last: what only earns its place on a wide screen steps back.
    Writing shows six posts (the blog has the rest), the footer drops the
-   links meant for crawlers, the case study diagram buttons and a few small
-   controls get full-size tap targets, and press rows may take three lines. */
+   links meant for crawlers, and the open menu holds the page still. */
 @media (max-width: 759px) {
   #writing .row-list > li:nth-child(n + 7) {
     display: none;
@@ -3102,17 +3137,16 @@ body:has(.contact-box) .footer-handles {
   .footer-meta .footer-copy a {
     display: none;
   }
-  .brand {
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
+  /* The open menu holds the page still; a drag on the dimmed area does nothing. */
+  html:has(#mobile-menu:not([hidden])) {
+    overflow: hidden;
   }
-  .bio .copy-button,
-  .flow-button {
-    min-height: 44px;
+  .menu-scrim {
+    touch-action: none;
   }
-  .press-rows .card-title {
-    -webkit-line-clamp: 3;
+  .footer-nav a {
+    padding-inline: 10px;
+    margin-inline: -10px;
   }
 }
 
@@ -3175,7 +3209,13 @@ body:has(.contact-box) .footer-handles {
     -webkit-mask-image: radial-gradient(130% 440px at 50% 0, #000 30%, transparent 100%);
     mask-image: radial-gradient(130% 440px at 50% 0, #000 30%, transparent 100%);
   }
-  /* Small links get a full-size tap area without changing the layout. */
+  .footer-meta {
+    row-gap: 1.75rem;
+  }
+}
+/* Small links get a full-size tap area without changing the layout, on
+   phones and on any touch screen (tablets are wider but still tapped). */
+@media (max-width: 759px), (pointer: coarse) {
   .label-link {
     padding-block: 0.875rem;
     margin-block: -0.875rem;
@@ -3184,20 +3224,20 @@ body:has(.contact-box) .footer-handles {
   .footer-handles a {
     min-height: 44px;
   }
-  .footer-meta {
-    row-gap: 1.75rem;
-  }
   .footer-meta a {
     display: inline-block;
     padding-block: 13px;
     margin-block: -13px;
   }
-  .email {
+  .email,
+  .brand {
     display: inline-flex;
     align-items: center;
     min-height: 44px;
   }
-  .copy-button {
+  .copy-button,
+  .flow-button,
+  .header-cta {
     min-height: 44px;
   }
 }
