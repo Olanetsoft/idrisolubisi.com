@@ -3060,15 +3060,18 @@ body:has(.contact-box) .footer-handles {
 }
 
 /* The footer flower: a bud until the footer is in view, then it opens petal
-   by petal. Hover sways it; a tap turns it by one petal. The page's only
-   playful detail. */
+   by petal. Hover sways it; a tap turns it by one petal; a pull grows it out
+   on a springy stem. */
 .bloom {
   display: inline-flex;
   vertical-align: -0.3em;
-  padding: 10px;
-  margin: -10px calc(0.45rem - 10px) -10px -10px;
+  padding: 13px;
+  margin: -13px calc(0.45rem - 13px) -13px -13px;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
 }
 .bloom-flower,
 .bloom-petal,
@@ -3102,8 +3105,46 @@ body:has(.contact-box) .footer-handles {
 .bloom.is-open .bloom-center {
   transform: none;
 }
-.bloom.is-open:hover .bloom-petal {
-  transform: scale(1.08) rotate(7deg);
+@media (hover: hover) {
+  .bloom.is-open:hover .bloom-petal {
+    transform: scale(1.08) rotate(7deg);
+  }
+}
+/* Once the pull has loaded (src/lib/sprung-flower.ts). pan-up leaves a downward
+   swipe to the browser where that is understood; elsewhere it falls back to
+   none. The canvas and the catcher are in the page only while the flower is in
+   play: the canvas draws over everything and never takes a pointer, and the
+   catcher follows the head so it can be caught mid-wobble. */
+.bloom.is-sprung {
+  touch-action: none;
+  touch-action: pan-up;
+}
+.bloom-canvas {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 40;
+  pointer-events: none;
+}
+.bloom-catch {
+  position: fixed;
+  left: -36px;
+  top: -36px;
+  z-index: 39;
+  display: none;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+}
+@media print {
+  .bloom-canvas,
+  .bloom-catch {
+    display: none;
+  }
 }
 
 /* ---------- 404 ---------- */
