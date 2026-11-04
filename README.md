@@ -50,6 +50,7 @@ One page, in this order: the hero (status line, name and role, one intro, the ca
 | `/llms.txt` and `/llms-full.txt`                                                | `src/lib/llms.ts`, `src/lib/llms-full.ts`                                                                                  |
 | CV PDF (refresh with `npm run cv`)                                              | `public/Idris-Olubisi-CV.pdf`                                                                                              |
 | Portrait                                                                        | `public/images/idris-portrait.jpg`                                                                                         |
+| The loose portrait on phones and the load knock                                 | `src/lib/portrait-roll.ts`, started by `HeroBackdrop.tsx`; phone rules in `globals.css`                                    |
 | Card pictures (1280x800 JPEG; set `image` in projects.ts or experience.ts)      | `public/images/work/`, `public/images/community/`                                                                          |
 | humans.txt                                                                      | `public/humans.txt`                                                                                                        |
 | Archived 2020 post, served at `/how-to-create-react-app`                        | `src/content/how-to-create-react-app.ts`, images in `public/archive/`                                                      |
