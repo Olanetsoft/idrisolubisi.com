@@ -1,7 +1,16 @@
-import type { ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
 
-/** Renders [label](url) as links and ==text== as a highlighted <mark>. */
-export function RichText({ text }: { text: string }): ReactNode {
+/**
+ * Renders [label](url) as links and ==text== as a highlighted <mark>.
+ * `wrapMark` puts something around that <mark>: the Hero's door.
+ */
+export function RichText({
+  text,
+  wrapMark,
+}: {
+  text: string;
+  wrapMark?: (mark: ReactNode) => ReactNode;
+}): ReactNode {
   const nodes: ReactNode[] = [];
   const pattern = /\[([^\]]+)\]\(([^)]+)\)|==([^=]+)==/g;
   let last = 0;
@@ -15,7 +24,8 @@ export function RichText({ text }: { text: string }): ReactNode {
         </a>,
       );
     } else {
-      nodes.push(<mark key={match.index}>{match[3]}</mark>);
+      const mark = <mark>{match[3]}</mark>;
+      nodes.push(<Fragment key={match.index}>{wrapMark ? wrapMark(mark) : mark}</Fragment>);
     }
     last = pattern.lastIndex;
   }

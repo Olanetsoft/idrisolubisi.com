@@ -12,3 +12,17 @@ export const hero: { headline: string; intro: string } = {
   headline: site.role,
   intro: site.bio[0],
 };
+
+/**
+ * The game behind the highlighted clause (SlowStep.tsx): the steps of a
+ * developer's path, in order, each with the project that fixed it. Hero.tsx
+ * adds each project's name and tagline, so they stay equal to its card, and
+ * `key` is the id of that card.
+ */
+export const slowSteps: { key: string; step: string }[] = [
+  { key: "learn-compact", step: "Learning the idea" },
+  { key: "create-mn-app", step: "Setting up" },
+  { key: "compact-playground", step: "Running the code" },
+  { key: "foundry-axelar-gmp-example", step: "Integrating" },
+  { key: "midnight-mcp", step: "Asking for help" },
+];
