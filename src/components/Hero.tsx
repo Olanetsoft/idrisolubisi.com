@@ -1,9 +1,17 @@
 import Image from "next/image";
-import { hero } from "@/data/hero";
+import { hero, slowSteps } from "@/data/hero";
+import { projects } from "@/data/projects";
 import { site } from "@/data/site";
 import { HeroBackdrop } from "./HeroBackdrop";
 import { RichText } from "./RichText";
+import { SlowStep } from "./SlowStep";
 import { StatusLine } from "./StatusLine";
+
+/** Only what the game shows, so the client code does not pull in the whole of projects.ts. */
+const steps = slowSteps.map(({ key, step }) => {
+  const { name, tagline } = projects.find((project) => project.key === key)!;
+  return { key, step, name, line: tagline };
+});
 
 export function Hero() {
   return (
@@ -29,7 +37,20 @@ export function Hero() {
           </figure>
           <div className="hero-pitch">
             <p className="pitch">
-              <RichText text={hero.intro} />
+              <RichText
+                text={hero.intro}
+                wrapMark={(mark) => (
+                  <a
+                    className="slow-step-door"
+                    href="#work"
+                    role="button"
+                    aria-haspopup="dialog"
+                    data-slow-step
+                  >
+                    {mark}
+                  </a>
+                )}
+              />
             </p>
           </div>
           <div className="actions">
@@ -42,6 +63,7 @@ export function Hero() {
           </div>
         </div>
       </div>
+      <SlowStep steps={steps} />
     </section>
   );
 }

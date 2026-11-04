@@ -1040,6 +1040,519 @@ figure {
   font-weight: 600;
 }
 
+/* The door to the slow step (SlowStep.tsx). An inline link, not a button, so
+   it wraps with the sentence; the padding only makes the tap area taller. */
+.slow-step-door {
+  padding-block: 0.4em;
+  margin-block: -0.4em;
+  border-radius: 3px;
+  color: var(--accent);
+  /* Underlined at rest like every link here, so touch screens see it too. */
+  text-decoration-color: color-mix(in oklab, var(--accent) 60%, transparent);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  -webkit-touch-callout: none;
+  transition: background-color 80ms linear;
+}
+.slow-step-door mark {
+  color: inherit;
+}
+.slow-step-door[data-press] {
+  background: color-mix(in oklab, var(--accent) 22%, transparent);
+}
+/* One bead slips off the last letter, once, and falls to the buttons: the
+   invitation. Out of flow and compositor only, so it moves nothing. */
+.slow-step-door::after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  margin: 1.04em 0 0 -7px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0;
+  pointer-events: none;
+  animation: slow-step-drip 1620ms 2500ms both;
+}
+/* The fall to the top of the buttons, which sit closer on wider screens. */
+.hero-pitch {
+  --drip: 122px;
+}
+@media (min-width: 481px) {
+  .hero-pitch {
+    --drip: 95px;
+  }
+}
+@media (min-width: 1024px) {
+  .hero-pitch {
+    --drip: 109px;
+  }
+}
+@keyframes slow-step-drip {
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
+    animation-timing-function: cubic-bezier(0.3, 0, 0.3, 1);
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(1px) scale(1, 1.12);
+    animation-timing-function: cubic-bezier(0.55, 0.02, 0.9, 0.5);
+  }
+  92% {
+    opacity: 1;
+    transform: translateY(var(--drip)) scale(0.92, 1.18);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(calc(var(--drip) + 2px)) scale(2, 0.3);
+  }
+}
+
+/* The slow step: the page holds still behind it, with its scrollbar's room
+   kept, and the clause has left the sentence. The open state is all CSS, so
+   it paints at once and the gates are there before the game has loaded. */
+html:has(.slow-step[open]) {
+  overflow: hidden;
+  overscroll-behavior: none;
+  scrollbar-gutter: stable;
+}
+.hero:has(.slow-step[open]) .slow-step-door {
+  color: transparent;
+  text-decoration-color: transparent;
+}
+.slow-step {
+  --play-h: calc(7.25rem + env(safe-area-inset-bottom));
+  width: 100%;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  /* Open at the sides, where the clause rises from outside a desktop stage;
+     closed at the foot, where the panel waits. */
+  overflow: visible;
+  clip-path: inset(-100vh -100vw 0);
+  background: var(--bg);
+  color: var(--text);
+  touch-action: pinch-zoom;
+  overscroll-behavior: contain;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  animation: slow-step-lit 200ms linear backwards;
+}
+.slow-step[open] {
+  display: flex;
+  flex-direction: column;
+}
+.slow-step::backdrop {
+  background: transparent;
+}
+.slow-step::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.7;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, var(--grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+  background-size: calc(min(100vw, 430px) / 16) calc(min(100vw, 430px) / 16);
+  -webkit-mask-image: linear-gradient(to bottom, #000, transparent 70%);
+  mask-image: linear-gradient(to bottom, #000, transparent 70%);
+  animation: slow-step-fade 500ms linear backwards;
+}
+@keyframes slow-step-lit {
+  from {
+    background-color: transparent;
+  }
+}
+@keyframes slow-step-fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes slow-step-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+@keyframes slow-step-lift {
+  from {
+    transform: translate(var(--lift));
+  }
+}
+@keyframes slow-step-grow {
+  from {
+    scale: 0;
+  }
+}
+@keyframes slow-step-rattle {
+  from {
+    transform: translate(-0.8px, 0.4px);
+  }
+  to {
+    transform: translate(0.9px, -0.4px);
+  }
+}
+.slow-step-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.slow-step-top {
+  position: relative;
+  z-index: 3;
+  flex: none;
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  padding: max(env(safe-area-inset-top), 6px) 4px 0 var(--gutter);
+  animation: slow-step-fade 240ms linear 120ms backwards;
+}
+.slow-step-fixes {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font: 400 var(--fs-meta) / 1 var(--font-mono-stack);
+  color: var(--text-3);
+}
+.slow-step-pip {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  transition:
+    transform 320ms cubic-bezier(0.3, 1.8, 0.5, 1),
+    opacity 200ms linear;
+}
+.slow-step-pip:first-of-type {
+  margin-left: 3px;
+}
+.slow-step-pip[data-spent] {
+  transform: scale(0);
+  opacity: 0;
+}
+.slow-step-close:active {
+  color: var(--accent);
+}
+.slow-step-clause {
+  position: relative;
+  z-index: 2;
+  flex: none;
+  margin-top: 2px;
+  padding-inline: var(--gutter);
+  color: var(--accent);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  pointer-events: none;
+  animation: slow-step-lift 500ms cubic-bezier(0.3, 0.4, 0.15, 1.08) backwards;
+}
+/* Each gate is a full-width button: its label and, until the game has drawn
+   them on the canvas, its two arms. --c is one chamber, as in place() in
+   src/lib/slow-step.ts. */
+.slow-step-gates {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  margin-bottom: var(--play-h);
+  box-shadow: 0 1px 0 var(--line);
+  container-type: size;
+  pointer-events: none;
+}
+.slow-step-gate {
+  --c: calc((100cqh - 36px) / 5);
+  position: absolute;
+  top: calc(28px + var(--c) * var(--i));
+  left: 0;
+  width: 100%;
+  height: var(--c);
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 0 var(--gutter) 2px;
+  border: 0;
+  background: transparent;
+  color: var(--text-2);
+  font: 400 var(--fs-meta) / 1.4 var(--font-mono-stack);
+  text-align: left;
+  cursor: pointer;
+  pointer-events: auto;
+  touch-action: pinch-zoom;
+  transition:
+    background-color 90ms linear,
+    color 160ms linear;
+  animation: slow-step-fade 260ms linear calc(var(--i) * 45ms + 120ms) backwards;
+}
+.slow-step-gate:first-child {
+  top: 0;
+  height: calc(var(--c) + 28px);
+}
+.slow-step-gate::before,
+.slow-step-gate::after {
+  content: "";
+  position: absolute;
+  bottom: 22px;
+  left: 14px;
+  right: calc(50% + 13px);
+  height: min(var(--c) / 2, 62px);
+  background: linear-gradient(
+    to top right,
+    transparent calc(50% - 0.7px),
+    var(--line-strong) 0 calc(50% + 0.7px),
+    transparent 0
+  );
+  transform-origin: calc(100% + 13px) 100%;
+  animation: slow-step-grow 360ms ease-out calc(var(--i) * 50ms + 100ms) backwards;
+}
+.slow-step-gate::after {
+  transform: scaleX(-1);
+}
+.slow-step[data-live] .slow-step-gate::before,
+.slow-step[data-live] .slow-step-gate::after {
+  display: none;
+}
+.slow-step[data-live] .slow-step-gates {
+  box-shadow: none;
+}
+.slow-step-gate[data-press] {
+  background: var(--spot);
+}
+.slow-step-gate:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: -3px;
+}
+.slow-step-gate[aria-disabled="true"] {
+  cursor: default;
+}
+.slow-step-gate-dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  margin-bottom: 5px;
+  border: 1px solid var(--text-3);
+  border-radius: 50%;
+  transition:
+    background-color 140ms linear,
+    border-color 140ms linear,
+    transform 320ms cubic-bezier(0.3, 1.8, 0.5, 1);
+}
+.slow-step-gate[data-state="fixed"] {
+  color: var(--accent);
+}
+.slow-step-gate[data-state="fixed"] .slow-step-gate-dot {
+  border-color: var(--accent);
+  background: var(--accent);
+  transform: scale(1.1);
+}
+.slow-step-gate[data-loud] .slow-step-gate-name {
+  display: inline-block;
+  animation: slow-step-rattle 110ms steps(2, jump-none) infinite;
+}
+.slow-step-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  height: 100%;
+  padding: 12px var(--gutter) 24px;
+  overflow-y: auto;
+  background: var(--bg);
+  overscroll-behavior: contain;
+  touch-action: pan-y pinch-zoom;
+}
+.slow-step[data-phase="end"] .slow-step-fixes {
+  opacity: 0;
+}
+.slow-step-hint {
+  color: var(--text-3);
+  font: 400 var(--fs-meta) / 1.5 var(--font-mono-stack);
+  animation: slow-step-fade 500ms linear backwards;
+}
+.slow-step-note {
+  animation: slow-step-rise 440ms cubic-bezier(0.2, 1.3, 0.35, 1) backwards;
+}
+.slow-step-note b {
+  display: block;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  line-height: 1.35;
+}
+.slow-step-note span {
+  display: block;
+  margin-top: 1px;
+  font-size: var(--fs-small);
+  line-height: 1.4;
+  color: var(--text-2);
+}
+.slow-step-note em {
+  display: block;
+  margin-top: 5px;
+  font: 400 var(--fs-meta) / 1.4 var(--font-mono-stack);
+  color: var(--text-2);
+  animation: slow-step-fade 180ms linear var(--beat, 400ms) backwards;
+}
+.slow-step-note[data-hit] em {
+  color: var(--accent);
+}
+.slow-step-end-label {
+  font: 400 var(--fs-meta) / 1.4 var(--font-mono-stack);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+.slow-step-list {
+  margin-top: 2px;
+}
+.slow-step-list a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 44px;
+  padding-block: 7px;
+  text-decoration: none;
+}
+.slow-step-list a:active {
+  background: var(--spot);
+}
+.slow-step-list b {
+  font-size: var(--fs-small);
+  font-weight: 600;
+  line-height: 1.35;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  text-decoration-color: var(--line-strong);
+}
+.slow-step-list span {
+  font-size: var(--fs-meta);
+  line-height: 1.4;
+  color: var(--text-2);
+}
+.slow-step-foot {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  margin-top: 8px;
+  padding-bottom: max(env(safe-area-inset-bottom), 12px);
+}
+/* A real button, so drop the browser's grey fill and system font. */
+.slow-step-foot .btn {
+  appearance: none;
+  background: none;
+  font: inherit;
+  font-size: var(--fs-small);
+  cursor: pointer;
+}
+.slow-step-foot p {
+  font-size: var(--fs-meta);
+  line-height: 1.35;
+  color: var(--text-3);
+}
+/* The way out: the clause goes back into its sentence as the rest fades. */
+.slow-step[data-closing] {
+  background: transparent;
+  transition: background-color 200ms linear;
+}
+.slow-step[data-closing]::before,
+.slow-step[data-closing] > :not(.slow-step-clause) {
+  opacity: 0;
+  transition: opacity 140ms linear;
+}
+.slow-step[data-closing] .slow-step-clause {
+  transform: translate(var(--lift));
+  transition: transform 280ms cubic-bezier(0.3, 0.9, 0.25, 1);
+  animation: none;
+}
+/* Short screens, a phone with its browser bars showing: names only, so all
+   five gates stay readable above the list. */
+@media (max-height: 720px) {
+  .slow-step-list span {
+    display: none;
+  }
+  .slow-step-list a {
+    padding-block: 0;
+  }
+  .slow-step-foot {
+    margin-top: 4px;
+  }
+}
+@media (hover: hover) {
+  .slow-step-gate:hover {
+    background: color-mix(in oklab, var(--spot) 50%, transparent);
+  }
+  .slow-step-list a:hover b {
+    text-decoration-color: currentColor;
+  }
+}
+/* A phone on its side: the gates on the left, what shipped beside them. */
+@media (orientation: landscape) and (max-height: 519px) {
+  .slow-step {
+    --play-h: 22px;
+  }
+  .slow-step-clause {
+    width: 58%;
+    padding-right: 0;
+  }
+  .slow-step-gates {
+    width: 58%;
+  }
+  .slow-step-panel {
+    left: calc(58% - 6px);
+    padding: 60px var(--gutter) 0 6px;
+    background: none;
+  }
+}
+/* Tablets and desktops: a phone-sized stage, not a stretched game. */
+@media (min-width: 431px) and (min-height: 521px) {
+  .slow-step {
+    --gutter: 17px;
+    width: 430px;
+    height: min(100dvh, 932px);
+    margin: auto;
+    border-radius: var(--radius);
+    box-shadow: 0 0 0 1px var(--line);
+  }
+  .slow-step::backdrop {
+    /* The fallback covers browsers where ::backdrop does not inherit tokens. */
+    background: var(--scrim-strong, rgb(0 0 0 / 0.72));
+    animation: slow-step-fade 200ms linear backwards;
+  }
+}
+/* Forced colours keep none of the site's: the door's text, the fix count and a
+   fixed gate need system colours to show, and the canvas reads these tokens. */
+@media (forced-colors: active) {
+  .slow-step {
+    --bg: Canvas;
+    --text: CanvasText;
+    --accent: LinkText;
+    --line: CanvasText;
+    --line-strong: CanvasText;
+  }
+  .slow-step-door mark {
+    forced-color-adjust: none;
+    color: LinkText;
+  }
+  .slow-step-pip,
+  .slow-step-gate[data-state="fixed"] .slow-step-gate-dot {
+    forced-color-adjust: none;
+    border-color: CanvasText;
+    background: CanvasText;
+  }
+}
+
 /* The ring sits inside the box (padding plus border), so it lines up with
    the right edge of everything else instead of sticking out past it. */
 .portrait img {
