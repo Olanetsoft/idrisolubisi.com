@@ -1016,7 +1016,8 @@ figure {
   }
 }
 
-.hero h1 {
+.hero h1,
+.name-clone {
   font-size: var(--fs-display);
   line-height: 1;
   letter-spacing: -0.03em;
@@ -1098,6 +1099,79 @@ figure {
     width: clamp(112px, 36cqi, 168px);
     height: clamp(112px, 36cqi, 168px);
     padding: 4px;
+  }
+  /* The loose wheel (src/lib/portrait-roll.ts). Vertical swipes on the photo
+     stay with the page. While the wheel is over the name, a clone of it stands
+     in, one span per letter, so the letters can ride the rim. */
+  .hero-id {
+    position: relative;
+  }
+  .portrait {
+    touch-action: pan-y pinch-zoom;
+  }
+  .portrait[data-loose] {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+  }
+  .portrait[data-loose] img {
+    transition: border-color var(--dur-1);
+  }
+  .portrait[data-held] img {
+    border-color: var(--accent);
+  }
+  @media (hover: hover) {
+    .portrait[data-loose] {
+      cursor: grab;
+    }
+    .portrait[data-held] {
+      cursor: grabbing;
+    }
+  }
+  .name-clone {
+    position: absolute;
+    inset: 0;
+    font-weight: 600;
+    pointer-events: none;
+  }
+  .name-clone span {
+    position: absolute;
+    white-space: pre;
+    transform-origin: 50% 88%;
+  }
+  /* The ring that leaves the live dot knocks the photo as it arrives: a small
+     roll and a rock, which says it is loose without a word. `rotate` and
+     `translate` add to the transforms the wheel writes, so they cannot fight. */
+  @media (prefers-reduced-motion: no-preference) {
+    .portrait img {
+      animation: portrait-knock 1500ms 1080ms 1;
+    }
+    @keyframes portrait-knock {
+      0% {
+        rotate: 0deg;
+        translate: 0 0;
+        animation-timing-function: cubic-bezier(0.15, 0.7, 0.4, 1);
+      }
+      15% {
+        rotate: 5deg;
+        translate: 5.6px 0;
+        animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+      }
+      45% {
+        rotate: -2.2deg;
+        translate: -2.5px 0;
+        animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+      }
+      73% {
+        rotate: 0.8deg;
+        translate: 0.9px 0;
+        animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+      }
+      100% {
+        rotate: 0deg;
+        translate: 0 0;
+      }
+    }
   }
 }
 /* Phones: the call and the CV share one row, the call taking the room. */
