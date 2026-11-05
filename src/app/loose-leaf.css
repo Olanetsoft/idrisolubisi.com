@@ -1,0 +1,422 @@
+/* Loose Leaf (src/lib/loose-leaf.ts). Loaded with the piece, on the door's press,
+   so none of this is in the first load. Every colour here is a site token, or
+   a token mixed with another, and both themes follow from those. */
+.three-stage[data-three="loose-leaf"] {
+  --leaf-paper: var(--text);
+  --leaf-ink: var(--raised);
+  --leaf-brass: color-mix(in srgb, var(--accent) 72%, var(--bg));
+  --leaf-pool: color-mix(in srgb, var(--text) 15%, var(--bg));
+  --leaf-floor: color-mix(in srgb, var(--text) 6%, var(--bg));
+}
+[data-theme="light"] .three-stage[data-three="loose-leaf"] {
+  --leaf-paper: var(--raised);
+  --leaf-ink: var(--text);
+  --leaf-pool: var(--surface);
+  --leaf-floor: color-mix(in srgb, var(--raised) 70%, var(--bg));
+}
+/* The stage's light, behind the canvas and its shadows: a pool on the wall, and
+   a floor that starts at one hairline. */
+.three-stage[data-three="loose-leaf"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--line), var(--line)) 0 var(--seam, 75%) / 100% 1px no-repeat,
+    linear-gradient(transparent var(--seam, 75%), var(--leaf-floor) var(--seam, 75%), var(--bg)),
+    radial-gradient(90% 58% at 50% var(--pool-y, 40%), var(--leaf-pool), transparent);
+  animation: slow-step-fade calc(var(--dur-2) * 2) linear backwards;
+}
+.three-stage[data-three="loose-leaf"][data-closing]::after {
+  opacity: 0;
+  transition: opacity var(--dur-1) linear;
+}
+
+/* The drawing, and the door's icon, which waits behind it for the way out. */
+.three-leaf-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+.three-stage-slot:has(.three-leaf-svg)::after {
+  display: none;
+}
+.three-stage-slot:has(.three-leaf-svg) .three-stage-icon {
+  opacity: 0;
+  transition: opacity var(--dur-2) linear;
+}
+.three-stage[data-closing] .three-stage-slot:has(.three-leaf-svg) .three-stage-icon {
+  opacity: 1;
+  transition: transform 280ms var(--ease);
+}
+/* Once the slot has faded, so it does not flash back on the way out. */
+.three-stage[data-live] .three-leaf-svg {
+  opacity: 0;
+  transition: opacity 0s linear var(--dur-2);
+}
+.three-stage[data-live] .three-leaf-sway {
+  animation: none;
+}
+.three-leaf-tree {
+  transform-box: view-box;
+  transform-origin: var(--gx) var(--gy);
+  animation: three-leaf-grow calc(var(--dur-2) * 2) var(--ease) backwards;
+}
+.three-leaf-svg[data-grown] .three-leaf-tree {
+  animation: none;
+}
+@keyframes three-leaf-grow {
+  from {
+    opacity: 0;
+    transform: scale(var(--grow));
+  }
+}
+/* Six swings and it rests: nothing here moves on a page nobody is touching. */
+.three-leaf-sway {
+  transform-box: view-box;
+  transform-origin: var(--ox) var(--oy);
+  animation: three-leaf-sway var(--d, 3s) ease-in-out 6 alternate;
+}
+@keyframes three-leaf-sway {
+  from {
+    transform: rotate(calc(var(--a, 1deg) * -1));
+  }
+  to {
+    transform: rotate(var(--a, 1deg));
+  }
+}
+.three-leaf-node {
+  transition: transform calc(var(--dur-2) * 2) var(--ease);
+}
+.three-leaf-gone {
+  opacity: 0;
+}
+.three-leaf-arm,
+.three-leaf-hub {
+  fill: var(--leaf-brass);
+  transition: fill var(--dur-2) linear;
+}
+.three-leaf-arm {
+  transform-box: view-box;
+  transform-origin: var(--hx) var(--hy);
+  transition:
+    transform calc(var(--dur-2) * 2) var(--ease),
+    fill var(--dur-2) linear;
+}
+.three-leaf-thread {
+  stroke: var(--text-3);
+  stroke-width: 0.8;
+  vector-effect: non-scaling-stroke;
+  transform-box: view-box;
+  transform-origin: var(--ox) var(--oy);
+  transition:
+    stroke var(--dur-1) linear,
+    transform calc(var(--dur-2) * 2) var(--ease);
+}
+.three-leaf-drag {
+  transition: transform calc(var(--dur-2) * 2) var(--ease);
+}
+.three-leaf-pulled .three-leaf-drag,
+.three-leaf-pulled .three-leaf-thread {
+  transition: none;
+}
+.three-leaf-arm.three-leaf-lit,
+.three-leaf-hub.three-leaf-lit {
+  fill: var(--accent);
+}
+.three-leaf-thread.three-leaf-lit {
+  stroke: var(--accent);
+}
+.three-leaf-paper rect {
+  fill: var(--leaf-paper);
+  transition: fill var(--dur-1) linear;
+}
+.three-leaf-paper text {
+  fill: var(--leaf-ink);
+  font-family: var(--font-sans), sans-serif;
+  font-weight: 600;
+}
+.three-leaf-paper .three-leaf-outlet {
+  font-family: var(--font-mono-stack);
+  font-weight: 400;
+  opacity: 0.66;
+}
+.three-leaf-paper circle {
+  fill: var(--bg);
+}
+.three-leaf-held .three-leaf-paper rect {
+  fill: color-mix(in srgb, var(--accent) 18%, var(--leaf-paper));
+}
+.three-leaf-fallen {
+  transition: transform calc(var(--dur-2) * 5) var(--ease);
+}
+
+/* The root hash, under Close, where the pulse ends. */
+.three-leaf-root {
+  position: absolute;
+  z-index: 3;
+  top: calc(max(env(safe-area-inset-top), 6px) + 48px);
+  left: 0;
+  right: 0;
+  padding: 0 var(--gutter);
+  pointer-events: none;
+  text-align: center;
+  animation: slow-step-fade var(--dur-2) linear var(--dur-1) backwards;
+}
+/* The one size off the scale: 32 digits fitted to the width of the stage. */
+.three-leaf-hash {
+  display: block;
+  color: var(--text);
+  font: 400 clamp(11.5px, 3.95vw, 16px) / 1.32 var(--font-mono-stack);
+  letter-spacing: 0.01em;
+  font-variant-numeric: tabular-nums;
+  transition: color var(--dur-2) linear;
+}
+.three-leaf-hash[data-dirty] {
+  color: var(--accent);
+}
+.three-leaf-hash span {
+  display: block;
+  white-space: nowrap;
+}
+.three-leaf-hash i {
+  font-style: normal;
+}
+/* Room for two lines, as the longest wording takes, and the layout measures it. */
+.three-leaf-state {
+  min-height: 2.6em;
+  margin-top: 6px;
+  color: var(--text-3);
+  font: 400 var(--fs-meta) / 1.3 var(--font-mono-stack);
+}
+
+/* Each changed parent's new hash, beside its arm. Plain amber, as a label. */
+.three-leaf-chips {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.three-leaf-chips span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--accent);
+  font: 400 var(--fs-tag) / 1.2 var(--font-mono-stack);
+  opacity: 0;
+  transition: opacity var(--dur-1) linear;
+}
+.three-leaf-chips span[data-on] {
+  opacity: 1;
+}
+
+/* The foot: a line or two in the slow step's text styles, and the way to the list. */
+.three-leaf-foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 96px;
+  padding-top: 10px;
+}
+.three-leaf-message {
+  flex: 1;
+  min-width: 0;
+}
+.three-leaf-hint {
+  color: var(--text-2);
+  font:
+    400 var(--fs-small) / 1.35 var(--font-sans),
+    sans-serif;
+  animation: slow-step-fade calc(var(--dur-2) * 2) linear backwards;
+}
+.three-leaf-hint b {
+  display: block;
+  color: var(--text);
+  font-weight: 600;
+}
+.three-leaf-card {
+  pointer-events: auto;
+  animation: slow-step-rise calc(var(--dur-2) * 2) var(--ease) backwards;
+}
+.three-leaf-card p {
+  color: var(--text-3);
+  font: 400 var(--fs-meta) / 1.3 var(--font-mono-stack);
+}
+.three-leaf-title {
+  display: block;
+  margin-top: 2px;
+  color: var(--text);
+  font:
+    400 var(--fs-body) / 1.28 var(--font-sans),
+    sans-serif;
+  text-decoration-color: var(--accent);
+  -webkit-user-select: text;
+  user-select: text;
+}
+.three-leaf-again {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 2px;
+}
+.three-leaf-rehang {
+  min-height: 44px;
+  padding: 0 2px;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font:
+    400 var(--fs-small) / 1 var(--font-sans),
+    sans-serif;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.three-leaf-again small {
+  color: var(--text-3);
+  font:
+    400 var(--fs-meta) / 1.25 var(--font-sans),
+    sans-serif;
+}
+.three-leaf-all {
+  flex: none;
+  min-height: 44px;
+  padding: 0 0 0 12px;
+  border: 0;
+  background: none;
+  color: var(--text-2);
+  font: 400 var(--fs-meta) / 1 var(--font-mono-stack);
+  cursor: pointer;
+  pointer-events: auto;
+}
+.three-leaf-all:active {
+  color: var(--accent);
+}
+
+/* A real list of the eight, in the tab order and read by screen readers. It comes
+   up for a keyboard as soon as focus lands inside it, and stops above All eight,
+   the way back down, with room for its focus ring. */
+.three-leaf-sheet {
+  position: absolute;
+  z-index: 5;
+  inset: 0 0 calc(max(env(safe-area-inset-bottom), 16px) + 50px);
+  overflow: hidden;
+  pointer-events: none;
+}
+.three-stage:has(.three-leaf-list:is([data-open], :focus-within)) .three-leaf-message {
+  visibility: hidden;
+}
+.three-leaf-list {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 50%;
+  overflow: auto;
+  padding: 14px var(--gutter);
+  background: var(--raised);
+  border-block: 1px solid var(--line);
+  transform: translateY(102%);
+  transition: transform calc(var(--dur-2) * 1.2) var(--ease);
+  pointer-events: auto;
+  touch-action: pan-y pinch-zoom;
+  overscroll-behavior: contain;
+  -webkit-user-select: text;
+  user-select: text;
+}
+.three-leaf-list[data-open],
+.three-leaf-list:focus-within {
+  transform: none;
+}
+.three-leaf-list li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0 12px;
+  padding: 6px 0;
+  border-top: 1px solid var(--line);
+}
+.three-leaf-list li:first-child {
+  border-top: 0;
+}
+.three-leaf-list a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: var(--fs-small);
+  line-height: 1.3;
+}
+.three-leaf-list span {
+  display: block;
+  margin-top: 1px;
+  color: var(--text-3);
+  font: 400 var(--fs-meta) / 1.4 var(--font-mono-stack);
+}
+.three-leaf-list button {
+  min-width: 64px;
+  min-height: 44px;
+  padding: 0 4px;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font: 400 var(--fs-meta) / 1 var(--font-mono-stack);
+  text-align: right;
+  cursor: pointer;
+}
+.three-leaf-note {
+  margin-top: 8px;
+  color: var(--text-3);
+  font-size: var(--fs-meta);
+  line-height: 1.4;
+}
+
+/* A phone on its side: the mobile on the left, and the words beside it. */
+@media (orientation: landscape) and (max-height: 519px) {
+  .three-leaf-root {
+    top: calc(max(env(safe-area-inset-top), 6px) + 44px);
+    left: 58%;
+    padding: 0 var(--gutter) 0 6px;
+    text-align: left;
+  }
+  .three-leaf-hash {
+    font-size: 11.5px;
+  }
+  .three-stage[data-three="loose-leaf"] .three-stage-foot {
+    top: auto;
+    bottom: 0;
+  }
+  .three-stage[data-three="loose-leaf"]::after {
+    right: 42%;
+    -webkit-mask-image: linear-gradient(to right, #000 80%, transparent);
+    mask-image: linear-gradient(to right, #000 80%, transparent);
+  }
+  .three-leaf-foot {
+    min-height: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .three-leaf-tree,
+  .three-leaf-sway,
+  .three-leaf-hint,
+  .three-leaf-card {
+    animation: none;
+  }
+  .three-leaf-node,
+  .three-leaf-arm,
+  .three-leaf-thread,
+  .three-leaf-drag,
+  .three-leaf-fallen,
+  .three-leaf-list {
+    transition: none;
+  }
+}

@@ -108,6 +108,9 @@ export const writingStats = {
   reads: "10M+",
 };
 
+/** The post the Loose Leaf door hangs on (src/components/Writing.tsx). */
+export const MERKLE_POST = "https://blog.idrisolubisi.com/how-merkle-proofs-work";
+
 /**
  * The curated list plus any blog post newer than its newest entry, so new
  * posts appear on the next build without editing this file.
@@ -118,4 +121,11 @@ export function writingList(posts: { title: string; url: string; date: string }[
     .filter((p) => p.date > newest)
     .map((p) => ({ title: p.title, outlet: "Blog", href: p.url, date: p.date }));
   return [...fresh, ...articles];
+}
+
+/** The eight leaves of Loose Leaf: the newest eight, and always the post its door sits on. */
+export function looseLeaves(list: Article[], door: string): Article[] {
+  const eight = list.slice(0, 8);
+  if (!eight.some((a) => a.href === door)) eight[7] = list.find((a) => a.href === door)!;
+  return eight;
 }

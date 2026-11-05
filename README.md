@@ -47,6 +47,7 @@ One page, in this order: the hero (status line, name and role, one intro, the ca
 | The three.js stage: the shell and list of stages; its CSS; brand and renderer   | `src/lib/three-shell.ts`; `src/app/three-stage.css`; `src/lib/three-stage.ts`                                              |
 | The flipped phone: stand-in and thumb; the scene; the physics; its CSS          | `src/lib/flipped-phone.ts`; `src/lib/flipped-phone-scene.ts`; `src/lib/flipped-phone-flight.ts`; its CSS in `src/app/`     |
 | Crops of the stage photos for the phone's screen                                | `public/images/talks/*-phone.jpg`                                                                                          |
+| Loose Leaf on the Merkle row: door; lesson and drawing; weight; 3D; its CSS     | `LooseLeafDoor.tsx`; `src/lib/loose-leaf.ts`, `loose-leaf-sim.ts`, `loose-leaf-three.ts`; `src/app/loose-leaf.css`         |
 | Styles and design tokens                                                        | `src/app/globals.css`                                                                                                      |
 | Browser-bar colours (keep in step with `--bg` in `globals.css`)                 | `src/lib/theme.ts`                                                                                                         |
 | Metadata and structured data (JSON-LD)                                          | `src/app/layout.tsx`                                                                                                       |

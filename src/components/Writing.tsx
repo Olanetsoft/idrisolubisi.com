@@ -1,11 +1,13 @@
 import { Fragment } from "react";
 import { site } from "@/data/site";
-import { platforms, writingList, writingStats } from "@/data/writing";
+import { MERKLE_POST, platforms, writingList, writingStats } from "@/data/writing";
 import { monthYear } from "@/lib/format";
 import { blogPosts } from "@/lib/generated";
+import { LooseLeafDoor } from "./LooseLeafDoor";
 import { SectionLabel } from "./SectionLabel";
 
 export function Writing() {
+  const list = writingList(blogPosts);
   return (
     <section className="section" id="writing" aria-labelledby="writing-title">
       <div className="container">
@@ -23,7 +25,7 @@ export function Writing() {
           </p>
         </div>
         <ul className="row-list row-list--dated">
-          {writingList(blogPosts).map((a) => (
+          {list.map((a) => (
             <li className="row-item" key={a.href}>
               <p className="card-kicker">
                 <time dateTime={a.date}>{monthYear(a.date)}</time>
@@ -35,6 +37,7 @@ export function Writing() {
                   {a.title}
                 </a>
               </h3>
+              {a.href === MERKLE_POST && <LooseLeafDoor list={list} href={a.href} />}
             </li>
           ))}
         </ul>

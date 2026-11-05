@@ -46,7 +46,8 @@
   --shadow-overlay: 0 30px 80px -30px rgb(0 0 0 / 0.6);
 
   --font-mono-stack: var(--font-mono), ui-monospace, "SF Mono", Menlo, monospace;
-  /* Eight sizes, each with one job (no others; weights 400 and 600 only). */
+  /* Eight sizes, each with one job (no others, bar Loose Leaf's fitted root hash;
+     weights 400 and 600 only). */
   --fs-display: clamp(2.125rem, 1.4rem + 3.6vw, 4.5rem); /* the name */
   --fs-title: clamp(1.5rem, 1.05rem + 1.6vw, 2.375rem); /* section statements */
   --fs-sub: clamp(1.125rem, 1rem + 0.6vw, 1.5rem); /* role line, lead titles, email */
@@ -1166,6 +1167,23 @@ a.three-door:active {
       animation-range: entry 50% entry 100%;
     }
   }
+}
+/* A door on a row hangs from the row's own hairline, over the row's link, and
+   takes a thumb's near miss for itself. */
+.row-item > .three-door {
+  position: absolute;
+  z-index: 1;
+  top: -1px;
+  right: 0;
+}
+.row-item > .three-door::before {
+  content: "";
+  position: absolute;
+  inset: 0 -6px -8px -14px;
+}
+.row-item > .three-door svg {
+  overflow: visible;
+  transform-origin: 50% 0;
 }
 @keyframes three-door-buzz {
   0%,
@@ -3880,10 +3898,11 @@ body:has(.contact-box) .footer-handles {
 /* ---------- print, motion ---------- */
 
 /* Phones, last: what only earns its place on a wide screen steps back.
-   Writing shows six posts (the blog has the rest), the footer drops the
-   links meant for crawlers, and the open menu holds the page still. */
+   Writing shows six posts and any row with a door (the blog has the rest),
+   the footer drops the links meant for crawlers, and the open menu holds the
+   page still. */
 @media (max-width: 759px) {
-  #writing .row-list > li:nth-child(n + 7) {
+  #writing .row-list > li:nth-child(n + 7):not(:has(> .three-door)) {
     display: none;
   }
   #writing .more-links a:nth-child(n + 3) {

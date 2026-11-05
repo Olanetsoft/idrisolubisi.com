@@ -67,6 +67,16 @@ function photosWithoutWebgl(slot: HTMLElement) {
 /** Every stage, by its door's `stage` prop. One line each, so a new piece adds nothing else here. */
 const STAGES: Record<string, StageEntry> = {
   "flipped-phone": { load: () => import("@/lib/flipped-phone"), standIn: photosWithoutWebgl },
+  "loose-leaf": {
+    load: () => import("@/lib/loose-leaf"),
+    label: "How Merkle proofs work",
+    // Its drawing is the same module, which has no three.js in it. Without it, the stage leaves.
+    standIn: (slot) => {
+      import("@/lib/loose-leaf")
+        .then(({ standIn }) => standIn(slot))
+        .catch(() => slot.parentElement?.dispatchEvent(new Event("cancel")));
+    },
+  },
 };
 
 /** The way out, in ms: as long as the slow step's. */
