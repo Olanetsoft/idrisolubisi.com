@@ -66,9 +66,28 @@ function channels(color: string): [number, number, number] {
 
 /**
  * Starts the wake on `box` (the .hero-bg grid), listening for the pointer on
- * `host` (the hero). Returns a function that stops it, or null without WebGL.
+ * `host` (the hero). A three.js stage covers the hero and wants the one WebGL
+ * context, so the wake lets go of its own while a stage is open and comes back
+ * after. Returns a function that stops it, or null without WebGL.
  */
 export function startGridWake(box: HTMLElement, host: HTMLElement): (() => void) | null {
+  let stop = wakeGrid(box, host);
+  if (!stop) return null;
+  const stages = new MutationObserver(() => {
+    const open = document.querySelector(".three-stage");
+    if (open) {
+      stop?.();
+      stop = null;
+    } else stop ??= wakeGrid(box, host);
+  });
+  stages.observe(document.body, { childList: true });
+  return () => {
+    stages.disconnect();
+    stop?.();
+  };
+}
+
+function wakeGrid(box: HTMLElement, host: HTMLElement): (() => void) | null {
   const canvas = document.createElement("canvas");
   canvas.className = "hero-wake";
   const gl = canvas.getContext("webgl", {

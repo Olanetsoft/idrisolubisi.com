@@ -46,8 +46,28 @@ type StageEntry = {
   standIn?: (slot: HTMLElement) => void;
 };
 
+/**
+ * Without WebGL the flipped phone is the stage photos in their own dialog
+ * (PhotoDialog.tsx). The stage closes before it paints, and the photo opens once
+ * the shell has finished, so focus goes back to the door and then returns to it.
+ */
+function photosWithoutWebgl(slot: HTMLElement) {
+  if (webglSupported()) return;
+  const dialog = slot.closest("dialog")!;
+  queueMicrotask(() => {
+    dialog.addEventListener(
+      "close",
+      () => document.querySelector<HTMLElement>("a[data-photo]")?.click(),
+      { once: true },
+    );
+    dialog.close();
+  });
+}
+
 /** Every stage, by its door's `stage` prop. One line each, so a new piece adds nothing else here. */
-const STAGES: Record<string, StageEntry> = {};
+const STAGES: Record<string, StageEntry> = {
+  "flipped-phone": { load: () => import("@/lib/flipped-phone"), standIn: photosWithoutWebgl },
+};
 
 /** The way out, in ms: as long as the slow step's. */
 const LEAVE = 280;
@@ -230,8 +250,8 @@ export function openStage(door: HTMLAnchorElement) {
         dialog.replaceChildren();
       } else stop = end;
     })
-    // With nothing to show, the stage leaves; a stand-in stays, with its Close.
+    // With nothing to show, the stage leaves; a stand-in that drew stays, with its Close.
     .catch(() => {
-      if (!entry.standIn) shut();
+      if (!entry.standIn || slot.childElementCount < 2) shut();
     });
 }

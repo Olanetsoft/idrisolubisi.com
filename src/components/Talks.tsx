@@ -5,6 +5,7 @@ import { featuredVideos } from "@/data/videos";
 import { MoreToggle } from "./MoreToggle";
 import { SectionLabel } from "./SectionLabel";
 import { PhotoDialog } from "./PhotoDialog";
+import { ThreeDoor } from "./ThreeDoor";
 import { VideoDialog } from "./VideoDialog";
 
 type Talk = (typeof talks)[number];
@@ -54,6 +55,21 @@ export function Talks() {
         <div className="section-head">
           <SectionLabel id="talks">Talks and workshops</SectionLabel>
           <p className="lede">On stage and on camera.</p>
+          <ThreeDoor stage="flipped-phone" href="#talks" label="Turn the phone over">
+            <g transform="rotate(14 22 22)">
+              <rect x="13.5" y="4.5" width="17" height="35" rx="3.5" />
+              <rect
+                className="three-door-amber"
+                x="17.5"
+                y="13"
+                width="9"
+                height="18"
+                rx="1.5"
+                transform="rotate(9 22 22)"
+              />
+              <circle className="three-door-dot" cx="22" cy="8.5" r="1.2" />
+            </g>
+          </ThreeDoor>
         </div>
         <PhotoDialog photos={stagePhotos} />
         <div className="stage-photos">

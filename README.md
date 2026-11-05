@@ -45,6 +45,8 @@ One page, in this order: the hero (status line, name and role, one intro, the ca
 | The footer flower, and the pull that grows it on a stem                         | `src/components/Bloom.tsx`; `src/lib/sprung-flower.ts`                                                                     |
 | The doors to the three.js stages: the line icons; their one listener            | `src/components/ThreeDoor.tsx`; `src/components/ThreeDoorOpener.tsx`; icon rules in `globals.css`                          |
 | The three.js stage: the shell and list of stages; its CSS; brand and renderer   | `src/lib/three-shell.ts`; `src/app/three-stage.css`; `src/lib/three-stage.ts`                                              |
+| The flipped phone: stand-in and thumb; the scene; the physics; its CSS          | `src/lib/flipped-phone.ts`; `src/lib/flipped-phone-scene.ts`; `src/lib/flipped-phone-flight.ts`; its CSS in `src/app/`     |
+| Crops of the stage photos for the phone's screen                                | `public/images/talks/*-phone.jpg`                                                                                          |
 | Styles and design tokens                                                        | `src/app/globals.css`                                                                                                      |
 | Browser-bar colours (keep in step with `--bg` in `globals.css`)                 | `src/lib/theme.ts`                                                                                                         |
 | Metadata and structured data (JSON-LD)                                          | `src/app/layout.tsx`                                                                                                       |

@@ -1149,6 +1149,15 @@ a.three-door:active {
     color: var(--text);
   }
 }
+.section-head:has(> .three-door) {
+  position: relative;
+  padding-right: 3rem;
+}
+.section-head > .three-door {
+  position: absolute;
+  right: 0;
+  bottom: -6px;
+}
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: view()) {
     a.three-door svg {
