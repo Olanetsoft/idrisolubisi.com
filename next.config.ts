@@ -5,6 +5,10 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: {
     formats: ["image/avif", "image/webp"],
+    // Every srcset lists all of these, so each width is paid for on every card.
+    // These cover each picture's slots at 1x to 3x, up to the largest original.
+    imageSizes: [256, 384],
+    deviceSizes: [640, 828, 1080, 1280, 1600],
     // YouTube thumbnails for the talks and workshops grid.
     remotePatterns: [{ protocol: "https", hostname: "i.ytimg.com", pathname: "/vi/**" }],
   },

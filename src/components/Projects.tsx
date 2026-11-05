@@ -15,9 +15,6 @@ const OPENS: Record<string, string> = {
   Tool: "the tool",
 };
 
-/** Three cards to a row in the 960px page column; on phones one row each, the picture 112px wide. */
-const CARD_SIZES = "(max-width: 759px) 112px, (max-width: 1023px) 30vw, 310px";
-
 /** More builds shows one row of cards; a button reveals the rest. */
 const MORE_SHOWN = 3;
 
@@ -49,7 +46,6 @@ function ProjectCard({
         href={primary?.url}
         image={project.image}
         alt={primary ? undefined : project.imageAlt}
-        sizes={CARD_SIZES}
         eager={lead}
         name={project.name}
         line={project.tagline}

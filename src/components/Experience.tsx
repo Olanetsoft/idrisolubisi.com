@@ -1,6 +1,7 @@
 import { community, education, experience } from "@/data/experience";
 import { site } from "@/data/site";
 import { testimonials } from "@/data/testimonials";
+import { QuoteRow, RoleRow } from "./ListRows";
 import { SectionLabel } from "./SectionLabel";
 import { WorkCard } from "./WorkCard";
 
@@ -26,32 +27,24 @@ export function Experience() {
         </div>
         <ol className="xp-list">
           {experience.map((r) => (
-            <li className="xp-row" key={`${r.company}-${r.period}`}>
-              <span className="xp-title">{r.title}</span>
-              <span className="xp-where">
-                <span className="xp-company">{r.company}</span>
-                <span className="xp-years">
-                  <span className="sr-only">, </span>
-                  {years(r.period)}
-                </span>
-              </span>
-            </li>
+            <RoleRow
+              key={`${r.company}-${r.period}`}
+              title={r.title}
+              company={r.company}
+              years={years(r.period)}
+            />
           ))}
         </ol>
         <h3 className="group-label">Recommendations</h3>
         <ul className="quote-grid">
           {testimonials.map((t) => (
-            <li key={t.name}>
-              <figure className="quote-card">
-                <blockquote className="quote-text">
-                  <p>“{t.quote}”</p>
-                </blockquote>
-                <figcaption className="quote-by">
-                  <a href={t.href}>{t.name}</a>
-                  <span className="quote-relation">{t.relation}</span>
-                </figcaption>
-              </figure>
-            </li>
+            <QuoteRow
+              key={t.name}
+              quote={t.quote}
+              href={t.href}
+              name={t.name}
+              relation={t.relation}
+            />
           ))}
         </ul>
         <h3 className="group-label">Community</h3>
@@ -61,7 +54,6 @@ export function Experience() {
               <WorkCard
                 href={c.href}
                 image={c.image}
-                sizes="(max-width: 759px) 46vw, (max-width: 1023px) 23vw, 230px"
                 tag={c.role}
                 name={c.org}
                 line={c.summary}
