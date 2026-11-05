@@ -51,6 +51,7 @@ One page, in this order: the hero (status line, name and role, one intro, the ca
 | Strung Years (the wire toy under On stage): the door; the piece; its CSS        | `src/components/Talks.tsx`; `src/lib/strung-years.ts`; `src/app/strung-years.css`; beads come from `src/data/talks.ts`     |
 | The sign on each playful piece: its rules; what it says; how it goes            | the `@media screen` block by the doors in `globals.css`; each `data-hint`; `src/lib/played.ts`                             |
 | Styles and design tokens                                                        | `src/app/globals.css`                                                                                                      |
+| Fallback fonts sized to the copy, so the swap to Plex moves nothing             | `@font-face` at the top of `src/app/globals.css`; `fallback` in `src/app/layout.tsx`                                       |
 | Browser-bar colours (keep in step with `--bg` in `globals.css`)                 | `src/lib/theme.ts`                                                                                                         |
 | Metadata and structured data (JSON-LD)                                          | `src/app/layout.tsx`                                                                                                       |
 | Social preview image                                                            | `src/app/opengraph-image.tsx`                                                                                              |
