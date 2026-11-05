@@ -15,6 +15,8 @@ const sans = IBM_Plex_Sans({
   weight: ["400", "600"],
   variable: "--font-sans",
   display: "swap",
+  // Sized by hand in globals.css, against the site's own copy.
+  fallback: ["Plex Fallback Arial", "Plex Fallback Roboto"],
 });
 
 // One weight keeps the font payload small; the mono labels are all small caps-size text.

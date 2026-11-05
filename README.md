@@ -44,6 +44,7 @@ One page, in this order: the hero (status line, name and role, one intro, the ca
 | Brand marks                                                                     | `src/components/icon-data.json`, built into `public/icons.svg` by `npm run icons`; used through `src/components/icons.tsx` |
 | The footer flower, and the pull that grows it on a stem                         | `src/components/Bloom.tsx`; `src/lib/sprung-flower.ts`                                                                     |
 | Styles and design tokens                                                        | `src/app/globals.css`                                                                                                      |
+| Fallback fonts sized to the copy, so the swap to Plex moves nothing             | `@font-face` at the top of `src/app/globals.css`; `fallback` in `src/app/layout.tsx`                                       |
 | Browser-bar colours (keep in step with `--bg` in `globals.css`)                 | `src/lib/theme.ts`                                                                                                         |
 | Metadata and structured data (JSON-LD)                                          | `src/app/layout.tsx`                                                                                                       |
 | Social preview image                                                            | `src/app/opengraph-image.tsx`                                                                                              |

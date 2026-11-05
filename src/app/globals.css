@@ -8,6 +8,27 @@
    hover, the footer flower); green is kept for things that are true right
    now (available, live). */
 
+/* What the sans shows until IBM Plex arrives: Arial, or Roboto on Android,
+   which has no Arial. Each is sized against this site's own copy, so the hero
+   wraps the same way before and after and the swap moves nothing at the usual
+   phone widths for that system. Re-measure if the intro changes much. */
+@font-face {
+  font-family: "Plex Fallback Arial";
+  src: local("Arial");
+  size-adjust: 101.75%;
+  ascent-override: 100.74%;
+  descent-override: 27.03%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Plex Fallback Roboto";
+  src: local("Roboto");
+  size-adjust: 103%;
+  ascent-override: 99.51%;
+  descent-override: 26.7%;
+  line-gap-override: 0%;
+}
+
 :root {
   --bg: #000000;
   --raised: #141310;
