@@ -11,6 +11,7 @@
  */
 
 import "@/app/loose-leaf.css";
+import { looseLeaves } from "@/data/writing";
 import {
   LEAF_H,
   LEAF_W,
@@ -897,21 +898,27 @@ function wire(lesson: Lesson, signal: AbortSignal) {
 
 /* ---------- the stage ---------- */
 
-function articlesFromPage() {
-  const data = document.getElementById("loose-leaf-articles")?.textContent ?? "[]";
-  return (JSON.parse(data) as string[][]).map(([title, outlet, href, date]) => ({
-    title,
-    outlet,
-    href,
-    date,
-  }));
+/** The rows of the Writing list, read as they stand, then the eight that hang. */
+function articlesFromPage(door: string) {
+  const rows = document.querySelectorAll("#writing .row-item");
+  const list = Array.from(rows, (row) => {
+    const link = row.querySelector(".card-link")!;
+    const kicker = row.querySelector(".card-kicker")!;
+    return {
+      title: link.textContent,
+      outlet: kicker.lastChild!.textContent!,
+      href: link.getAttribute("href")!,
+      date: kicker.querySelector("time")!.textContent,
+    };
+  });
+  return looseLeaves(list, door);
 }
 
 function open(slot: HTMLElement) {
   const dialog = slot.closest("dialog")!;
   const foot = dialog.querySelector<HTMLElement>(".three-stage-foot")!;
-  const articles = articlesFromPage();
-  const door = document.querySelector('a[data-three="loose-leaf"]')?.getAttribute("href");
+  const door = document.querySelector('a[data-three="loose-leaf"]')!.getAttribute("href")!;
+  const articles = articlesFromPage(door);
 
   foot.innerHTML = `<div class="three-leaf-foot"><div class="three-leaf-message"></div><button class="three-leaf-all" type="button" aria-expanded="false" aria-controls="three-leaf-list">All eight</button></div>`;
   dialog.insertAdjacentHTML(

@@ -3,6 +3,7 @@ import { site } from "@/data/site";
 import { MERKLE_POST, platforms, writingList, writingStats } from "@/data/writing";
 import { monthYear } from "@/lib/format";
 import { blogPosts } from "@/lib/generated";
+import { ArticleRow } from "./ListRows";
 import { LooseLeafDoor } from "./LooseLeafDoor";
 import { SectionLabel } from "./SectionLabel";
 
@@ -26,19 +27,16 @@ export function Writing() {
         </div>
         <ul className="row-list row-list--dated">
           {list.map((a) => (
-            <li className="row-item" key={a.href}>
-              <p className="card-kicker">
-                <time dateTime={a.date}>{monthYear(a.date)}</time>
-                <span aria-hidden="true">·</span>
-                {a.outlet}
-              </p>
-              <h3 className="card-title">
-                <a className="card-link" href={a.href}>
-                  {a.title}
-                </a>
-              </h3>
-              {a.href === MERKLE_POST && <LooseLeafDoor list={list} href={a.href} />}
-            </li>
+            <ArticleRow
+              key={a.href}
+              date={a.date}
+              month={monthYear(a.date)}
+              outlet={a.outlet}
+              href={a.href}
+              title={a.title}
+            >
+              {a.href === MERKLE_POST && <LooseLeafDoor href={a.href} />}
+            </ArticleRow>
           ))}
         </ul>
         <p className="more-link more-links">

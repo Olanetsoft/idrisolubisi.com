@@ -10,6 +10,7 @@ import {
   talks,
 } from "@/data/talks";
 import { featuredVideos } from "@/data/videos";
+import { StageRow, VideoRow } from "./ListRows";
 import { MoreToggle } from "./MoreToggle";
 import { SectionLabel } from "./SectionLabel";
 import { PhotoDialog } from "./PhotoDialog";
@@ -112,32 +113,7 @@ export function Talks() {
         </ul>
         <ul className="videos" id="talk-videos">
           {featuredVideos.map((v, i) => (
-            <li key={v.id} className="video" data-extra={i >= VIDEOS_SHOWN || undefined}>
-              <a
-                className="video-link"
-                href={`https://www.youtube.com/watch?v=${v.id}${v.start ? `&t=${v.start}s` : ""}`}
-                data-video-id={v.id}
-                data-video-start={v.start}
-                data-video-title={v.title}
-              >
-                <span className="video-thumb">
-                  <Image
-                    src={`https://i.ytimg.com/vi/${v.id}/${v.thumb ?? "hqdefault"}.jpg`}
-                    alt=""
-                    width={480}
-                    height={360}
-                    sizes="(max-width: 759px) 112px, (max-width: 1023px) 30vw, 310px"
-                  />
-                </span>
-                <span className="video-text">
-                  <span className="video-title">{v.title}</span>
-                  <span className="sr-only">,</span>
-                  <span className="video-meta">
-                    {v.kind}, {v.context}, {v.year}
-                  </span>
-                </span>
-              </a>
-            </li>
+            <VideoRow key={v.id} video={v} extra={i >= VIDEOS_SHOWN || undefined} />
           ))}
         </ul>
         <div className="more-actions">
@@ -171,33 +147,16 @@ export function Talks() {
             // Shown: an upcoming event drops its city, so the name keeps one line
             // on wide screens; screen readers still hear it.
             const shownKind = [KIND[t.kind], isUpcoming(t) ? "upcoming" : city].filter(Boolean);
-            // A linked row reads as one link with the year and kind in its name,
-            // so the three Web3 Lagos rows don't share one name.
-            const linkOnly = t.href ? true : undefined;
             return (
-              <li
+              <StageRow
                 key={`${t.event}-${t.title ?? t.kind}`}
-                className="row-item stage-row"
-                data-extra={i >= STAGES_SHOWN || undefined}
-              >
-                <span className="stage-year" aria-hidden={linkOnly}>
-                  {t.year}
-                </span>
-                <span className="stage-event">
-                  {t.href ? (
-                    <a className="card-link" href={t.href}>
-                      {eventName(t)}
-                      <span className="sr-only">, {[...kind, t.year].join(", ")}</span>
-                    </a>
-                  ) : (
-                    eventName(t)
-                  )}
-                </span>
-                <span className="stage-kind" aria-hidden={linkOnly}>
-                  <span className="sr-only">, </span>
-                  {shownKind.join(" · ")}
-                </span>
-              </li>
+                year={t.year}
+                event={eventName(t)}
+                href={t.href}
+                kind={shownKind.join(" · ")}
+                heard={t.href ? [...kind, t.year].join(", ") : undefined}
+                extra={i >= STAGES_SHOWN || undefined}
+              />
             );
           })}
         </ul>
