@@ -1,0 +1,358 @@
+/* The flipped phone (src/lib/flipped-phone.ts). Loaded with the piece, on a
+   door's press, so none of this is in the first load. The stand-in is a line
+   drawing of the phone the scene is about to draw, in the same pose and size. */
+.three-stage[data-three="flipped-phone"] {
+  --phone-body: var(--raised);
+  --phone-rim: color-mix(in oklab, var(--accent) 45%, var(--bg));
+}
+[data-theme="light"] .three-stage[data-three="flipped-phone"] {
+  --phone-body: var(--text);
+  --phone-rim: color-mix(in oklab, var(--accent) 50%, var(--bg));
+}
+/* The table is the grid from here on, laid flat under the phone. */
+.three-stage[data-three="flipped-phone"][data-live]::before {
+  opacity: 0;
+  transition: opacity var(--dur-2) linear;
+}
+.three-stage-slot:has(.three-phone) .three-stage-icon {
+  visibility: hidden;
+}
+.three-stage-slot:has(.three-phone)::after {
+  display: none;
+}
+.three-stage[data-closing] .three-stage-slot:has(.three-phone) .three-stage-icon {
+  visibility: visible;
+}
+.three-stage[data-live] .three-phone {
+  visibility: hidden;
+  transition: visibility 0s var(--dur-2);
+}
+.three-phone {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  perspective: var(--phone-p);
+  pointer-events: none;
+}
+.three-phone-slab {
+  --rest: rotateX(var(--phone-tilt));
+  position: relative;
+  width: var(--phone-w);
+  height: var(--phone-h);
+  transform-style: preserve-3d;
+  transform: var(--rest) rotateX(var(--tx, 0deg)) rotateY(var(--ty, 0deg));
+  animation: three-phone-rise calc(var(--dur-2) * 2) var(--ease) backwards;
+}
+@keyframes three-phone-rise {
+  from {
+    transform: translate(var(--phone-from-x, 0), var(--phone-from-y, 0))
+      scale(var(--phone-from-s, 0.2));
+  }
+}
+.three-phone-slab[data-flip] {
+  animation: three-phone-flip 980ms linear;
+}
+@keyframes three-phone-flip {
+  0% {
+    transform: var(--rest);
+    animation-timing-function: cubic-bezier(0.2, 0.7, 0.4, 1);
+  }
+  48% {
+    transform: var(--rest) translate3d(0, -14vh, calc(var(--phone-p) * 0.26)) rotateX(-400deg);
+    animation-timing-function: cubic-bezier(0.6, 0, 0.8, 0.6);
+  }
+  86% {
+    transform: var(--rest) rotateX(-720deg);
+    animation-timing-function: ease-out;
+  }
+  93% {
+    transform: var(--rest) rotateX(-728deg);
+  }
+  100% {
+    transform: var(--rest) rotateX(-720deg);
+  }
+}
+.three-phone-face {
+  position: absolute;
+  backface-visibility: hidden;
+}
+.three-phone-face--front,
+.three-phone-face--back {
+  inset: 0;
+  border-radius: calc(var(--phone-w) * 0.15);
+  background: var(--phone-body);
+  box-shadow: inset 0 0 0 1px var(--phone-rim);
+}
+.three-phone-face--front {
+  padding: calc(var(--phone-w) * 0.037);
+  transform: translateZ(calc(var(--phone-d) / 2));
+}
+.three-phone-face--back {
+  transform: rotateY(180deg) translateZ(calc(var(--phone-d) / 2));
+}
+.three-phone-face--l,
+.three-phone-face--r,
+.three-phone-face--t,
+.three-phone-face--b {
+  background: var(--phone-body);
+  box-shadow: inset 0 0 0 1px var(--phone-rim);
+}
+.three-phone-face--l,
+.three-phone-face--r {
+  top: calc(var(--phone-w) * 0.14);
+  bottom: calc(var(--phone-w) * 0.14);
+  left: calc(50% - var(--phone-d) / 2);
+  width: var(--phone-d);
+}
+.three-phone-face--l {
+  transform: rotateY(-90deg) translateZ(calc(var(--phone-w) / 2));
+}
+.three-phone-face--r {
+  transform: rotateY(90deg) translateZ(calc(var(--phone-w) / 2));
+}
+.three-phone-face--t,
+.three-phone-face--b {
+  top: calc(50% - var(--phone-d) / 2);
+  left: calc(var(--phone-w) * 0.14);
+  right: calc(var(--phone-w) * 0.14);
+  height: var(--phone-d);
+}
+.three-phone-face--t {
+  transform: rotateX(90deg) translateZ(calc(var(--phone-h) / 2));
+}
+.three-phone-face--b {
+  transform: rotateX(-90deg) translateZ(calc(var(--phone-h) / 2));
+}
+/* The tunnel, as hairlines: a phone in a phone, each turned on the last. */
+.three-phone-nest {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: calc(var(--phone-w) * 0.115);
+  background: var(--bg);
+}
+.three-phone-nest i {
+  display: grid;
+  place-items: center;
+  width: 60%;
+  height: 60%;
+  border: 1px solid var(--accent);
+  border-radius: 12% / 5.6%;
+  transform: rotate(7.5deg);
+}
+.three-phone-photo {
+  position: absolute;
+  inset: calc(var(--phone-w) * 0.037);
+  width: calc(100% - var(--phone-w) * 0.074);
+  height: calc(100% - var(--phone-w) * 0.074);
+  object-fit: cover;
+  border-radius: calc(var(--phone-w) * 0.115);
+  opacity: 0;
+  transition: opacity 320ms linear;
+}
+.three-phone-photo[data-on] {
+  opacity: 1;
+}
+/* A wordless nudge: up. */
+.three-phone-hint {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: calc(50% + var(--phone-h) * 0.52);
+  width: 18px;
+  height: 22px;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  translate: -50% 0;
+  opacity: 0;
+  transition: opacity var(--dur-2) linear;
+  pointer-events: none;
+}
+.three-stage[data-rest] .three-phone-hint {
+  opacity: 1;
+  transition-delay: 500ms;
+}
+.three-stage[data-rest] .three-phone-hint path {
+  animation: three-phone-up 1500ms ease-in-out infinite;
+}
+.three-stage[data-rest] .three-phone-hint path:nth-child(2) {
+  animation-delay: 110ms;
+}
+.three-stage[data-rest] .three-phone-hint path:first-child {
+  animation-delay: 220ms;
+}
+@keyframes three-phone-up {
+  0%,
+  60%,
+  100% {
+    opacity: 0.12;
+  }
+  22% {
+    opacity: 0.9;
+  }
+}
+.three-stage[data-three="flipped-phone"] .three-stage-foot {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  text-align: center;
+}
+.three-phone-tag {
+  min-height: 1.5em;
+  color: var(--text-2);
+  opacity: 0;
+  translate: 0 6px;
+  transition:
+    opacity var(--dur-1) linear,
+    translate 320ms var(--ease);
+}
+.three-phone-tag[data-on] {
+  opacity: 1;
+  translate: 0 0;
+}
+.three-phone-flip {
+  pointer-events: auto;
+}
+.three-phone-flip:active {
+  color: var(--accent);
+}
+/* The thumb is the control on a touch screen; Flip stays for a keyboard or a screen reader. */
+@media (pointer: coarse) {
+  .three-phone-flip:not(:focus-visible, [data-show]) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    min-height: 0;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+}
+.three-phone-end {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  align-content: end;
+  overflow: hidden;
+  border-radius: inherit;
+  touch-action: pan-y pinch-zoom;
+}
+.three-phone-end[hidden] {
+  display: none;
+}
+/* The hall is dark in both themes, so words over it are the tags' ink, and Close
+   stays readable on whatever part of it is behind. */
+.three-phone-end::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 96px;
+  background: linear-gradient(to bottom, var(--tag-bg), transparent);
+}
+.three-stage:has(.three-phone-end[data-on]) {
+  --focus: var(--tag-ink);
+}
+.three-stage:has(.three-phone-end[data-on]) .three-stage-close {
+  color: var(--tag-ink);
+}
+.three-phone-end img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--phone-x) 50%;
+  opacity: 0;
+  transform: scale(1.05);
+  transition:
+    opacity 180ms linear,
+    transform 1600ms var(--ease);
+}
+.three-phone-end[data-on] img {
+  opacity: 1;
+  transform: none;
+}
+/* Inside the phone, the crop opens out: slowly across the hall he was talking to. */
+.three-phone-end[data-pan] img {
+  object-position: 8% 50%;
+  transition:
+    opacity 180ms linear,
+    transform 1600ms var(--ease),
+    object-position 9s cubic-bezier(0.45, 0, 0.3, 1);
+}
+.three-phone-end-foot {
+  position: relative;
+  padding: 5.5rem var(--gutter) calc(max(env(safe-area-inset-bottom), 16px) + 0.5rem);
+  background: linear-gradient(to top, var(--scrim-strong), var(--tag-bg) 58%, transparent);
+  color: var(--tag-ink);
+  opacity: 0;
+  translate: 0 10px;
+  transition:
+    opacity 320ms linear 500ms,
+    translate 520ms var(--ease) 500ms;
+  -webkit-user-select: text;
+  user-select: text;
+}
+.three-phone-end[data-on] .three-phone-end-foot {
+  opacity: 1;
+  translate: 0 0;
+}
+.three-phone-end-line {
+  font-size: var(--fs-sub);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.three-phone-end-line a {
+  text-decoration-color: color-mix(in oklab, var(--accent) 60%, var(--tag-ink));
+  text-underline-offset: 3px;
+}
+.three-phone-end-by {
+  margin-top: 0.5rem;
+  font: 400 var(--fs-meta) / 1.4 var(--font-mono-stack);
+}
+/* A phone on its side: the nudge stays with the phone, in the left of the stage. */
+@media (orientation: landscape) and (max-height: 519px) {
+  .three-phone-hint {
+    left: 29%;
+    top: auto;
+    bottom: 10px;
+  }
+  .three-stage[data-three="flipped-phone"] .three-stage-foot {
+    bottom: 0;
+    align-content: center;
+  }
+  /* The table fades out before the piece's edge, into the stage. */
+  .three-stage[data-three="flipped-phone"] .three-stage-canvas {
+    -webkit-mask-image: linear-gradient(to right, #000 80%, transparent);
+    mask-image: linear-gradient(to right, #000 80%, transparent);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .three-phone-slab {
+    animation: none;
+  }
+  .three-stage[data-rest] .three-phone-hint path {
+    animation: none;
+    opacity: 0.5;
+  }
+  .three-phone-end img {
+    transform: none;
+    transition: opacity 300ms linear;
+  }
+  .three-phone-end-foot {
+    translate: 0 0;
+    transition: opacity 300ms linear;
+  }
+  .three-phone-end[data-pan] img {
+    object-position: var(--phone-x) 50%;
+  }
+}

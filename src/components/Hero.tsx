@@ -24,7 +24,7 @@ export function Hero() {
             <h1 id="hero-title">{site.name}</h1>
             {hero.headline && <p className="headline">{hero.headline}</p>}
           </div>
-          <figure className="portrait">
+          <figure className="portrait" data-hint="Flick me">
             <Image
               src="/images/idris-portrait.jpg"
               alt="Idris Olubisi"
@@ -46,6 +46,7 @@ export function Hero() {
                     role="button"
                     aria-haspopup="dialog"
                     data-slow-step
+                    data-hint="to play"
                   >
                     {mark}
                   </a>

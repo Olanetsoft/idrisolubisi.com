@@ -8,6 +8,8 @@
  * HeroBackdrop decides who gets it (under 760px, motion allowed).
  */
 
+import { markPlayed } from "@/lib/played";
+
 /** The home spring, in rad/s, and its damping ratio. */
 const SPRING = 5.2;
 const DAMPING = 0.32;
@@ -252,6 +254,7 @@ export function startPortraitRoll(hero: HTMLElement): () => void {
     pressTo = 1;
     delete fig.dataset.held;
     if (cancelled) return;
+    markPlayed("wheel");
     const t = e.timeStamp;
     const dx = e.clientX - downX;
     const quick = t - downT < 400;
@@ -306,6 +309,7 @@ export function startPortraitRoll(hero: HTMLElement): () => void {
         if (Math.abs(e.clientX - grabX) < 6) return;
         moved = true;
         grabX = e.clientX; // the browser's slop is not a jump
+        markPlayed("wheel"); // a drag; a press alone may be the start of a scroll
       }
       const to = base + e.clientX - grabX;
       // Past the edge the finger is pressing into it, which squashes the wheel.

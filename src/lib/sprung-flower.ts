@@ -10,6 +10,8 @@
  * as the flower is in play, then leaves the page and gives its memory back.
  */
 
+import { markPlayed } from "@/lib/played";
+
 const { abs, atan2, cos, exp, floor, hypot, max, min, pow, random, round, sin, sqrt } = Math;
 
 const TAU = Math.PI * 2;
@@ -24,6 +26,8 @@ const RAD = 0.433;
 /** How far below the head's centre the stem is rooted, in px. */
 const ROOT = 7;
 const MOTES = 7;
+/** How far a thumb drifts on a tap, in px. Any further is a pull. */
+const TAP_SLOP = 11;
 /** Being pulled, and let go. Zero is at rest. */
 const HELD = 1;
 const FREE = 2;
@@ -735,12 +739,13 @@ export function startSprungFlower(bloom: HTMLElement, onTurn: () => void): () =>
     ptrX = e.clientX;
     ptrY = e.clientY;
     moved = max(moved, hypot(ptrX - downX, ptrY - downY));
+    if (moved >= TAP_SLOP) markPlayed("flower");
   };
   const up = (e: PointerEvent) => {
     if (e.pointerId !== pid) return;
     pid = null;
     const cancelled = e.type !== "pointerup";
-    const tap = !cancelled && moved < 11 && e.timeStamp - downAt < 600; // a thumb drifts
+    const tap = !cancelled && moved < TAP_SLOP && e.timeStamp - downAt < 600;
     const stale = e.timeStamp - lastT > 70;
     const flick = stale || cancelled ? 0 : clamp(fvx * 0.012, -26, 26);
     settle("release");

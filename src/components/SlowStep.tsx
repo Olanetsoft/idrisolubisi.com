@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { flushSync } from "react-dom";
+import { holdScroll } from "@/lib/hold-scroll";
 import type { SlowStepItem } from "@/lib/slow-step";
 
 const EVENTS = [
@@ -48,6 +49,7 @@ export function SlowStep({ steps }: { steps: SlowStepItem[] }) {
     let stop: (() => void) | undefined;
     let opening = 0;
     let pushed = false;
+    let release = () => {};
     let timer = 0;
 
     // Without the game the dialog still opens, shows the gates and closes.
@@ -85,6 +87,7 @@ export function SlowStep({ steps }: { steps: SlowStepItem[] }) {
       const lift = setLift(link, dialog);
       // An entry of its own, so the back button leaves the game and not the page.
       try {
+        release = holdScroll();
         history.pushState({ slowStep: true }, "");
         pushed = true;
       } catch {}
@@ -173,9 +176,13 @@ export function SlowStep({ steps }: { steps: SlowStepItem[] }) {
             pushed = false;
             location.replace(dialog.returnValue);
             dialog.returnValue = "";
+            release();
           } else if (pushed) {
             pushed = false;
+            window.addEventListener("popstate", release, { once: true });
             history.back();
+          } else {
+            release();
           }
           break;
         case "click": {

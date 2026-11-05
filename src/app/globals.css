@@ -46,7 +46,8 @@
   --shadow-overlay: 0 30px 80px -30px rgb(0 0 0 / 0.6);
 
   --font-mono-stack: var(--font-mono), ui-monospace, "SF Mono", Menlo, monospace;
-  /* Eight sizes, each with one job (no others; weights 400 and 600 only). */
+  /* Eight sizes, each with one job (no others, bar Loose Leaf's fitted root hash;
+     weights 400 and 600 only). */
   --fs-display: clamp(2.125rem, 1.4rem + 3.6vw, 4.5rem); /* the name */
   --fs-title: clamp(1.5rem, 1.05rem + 1.6vw, 2.375rem); /* section statements */
   --fs-sub: clamp(1.125rem, 1rem + 0.6vw, 1.5rem); /* role line, lead titles, email */
@@ -1113,6 +1114,169 @@ figure {
   }
 }
 
+/* The doors to the three.js stages (ThreeDoor.tsx): one family of 44px line
+   drawings in the footer flower's stroke, ink with amber accents. The scroll
+   itself gives one a small buzz as it comes into view, so a door already on
+   screen when the page loads never moves, and no script is involved. */
+.three-door {
+  display: inline-flex;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  color: var(--text-2);
+  transition: color var(--dur-1) var(--ease);
+}
+.three-door svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.three-door .three-door-amber {
+  stroke: var(--accent);
+}
+.three-door .three-door-dot {
+  fill: var(--accent);
+  stroke: none;
+}
+a.three-door:active {
+  color: var(--accent);
+}
+@media (hover: hover) {
+  a.three-door:hover {
+    color: var(--text);
+  }
+}
+.section-head:has(> .three-door) {
+  position: relative;
+  padding-right: 3rem;
+}
+.section-head > .three-door {
+  position: absolute;
+  right: 0;
+  bottom: -6px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    a.three-door svg {
+      animation: three-door-buzz linear both;
+      animation-timeline: view();
+      animation-range: entry 50% entry 100%;
+    }
+  }
+}
+/* A door on a row hangs from the row's own hairline, over the row's link, and
+   takes a thumb's near miss for itself. */
+.row-item > .three-door {
+  position: absolute;
+  z-index: 1;
+  top: -1px;
+  right: 0;
+}
+.row-item > .three-door::before {
+  content: "";
+  position: absolute;
+  inset: 0 -6px -8px -14px;
+}
+.row-item > .three-door svg {
+  overflow: visible;
+  transform-origin: 50% 0;
+}
+/* The sign on each of the six playful pieces: one amber dot and a few mono
+   words, Tap or Click by pointer. Out of flow, so it moves and wraps nothing;
+   its words are an attribute, so not page text, and its empty alt leaves each
+   control's name alone. It is part of its piece, so a press on it counts. The
+   two in the first screen paint with the page and never animate. A browser
+   without the alt or the query shows no sign, which costs nothing. Doors wait
+   for ThreeDoorOpener to find WebGL; the flower for its pull to load, which
+   never happens under reduced motion. src/lib/played.ts ends each one. */
+@media screen and (scripting: enabled) {
+  .portrait::after,
+  .slow-step-door::before,
+  .bloom.is-sprung::after,
+  [data-webgl] a.three-door::after {
+    content: var(--verb, "") attr(data-hint) / "";
+    position: absolute;
+    padding-left: 12px;
+    background: radial-gradient(circle at 3px, var(--accent) 3px, transparent 3.5px);
+    font: 400 var(--fs-meta) / 18px var(--font-mono-stack);
+    color: var(--text-3);
+    white-space: nowrap;
+  }
+  .slow-step-door,
+  .three-door {
+    --verb: "Tap ";
+  }
+  .portrait,
+  .hero-pitch,
+  .bloom {
+    position: relative;
+  }
+  .portrait::after {
+    top: 100%;
+    left: 50%;
+    translate: -50%;
+    margin-top: 3px;
+  }
+  .slow-step-door::before {
+    bottom: calc(100% + 4px);
+    left: 0;
+  }
+  .bloom::after {
+    bottom: calc(100% - 9px);
+    left: 13px;
+  }
+  /* Under a door's drawing, or beside it where a hairline runs underneath. */
+  a.three-door::after {
+    top: calc(100% - 3px);
+    right: 0;
+  }
+  .stage-head a.three-door::after {
+    top: 13px;
+    right: 100%;
+  }
+  [data-played~="wheel"] .portrait::after,
+  [data-played~="slow-step"] .slow-step-door::before,
+  [data-played~="flower"] .bloom::after,
+  [data-played~="flipped-phone"] a[data-three="flipped-phone"]::after,
+  [data-played~="loose-leaf"] a[data-three="loose-leaf"]::after,
+  [data-played~="strung-years"] a[data-three="strung-years"]::after {
+    content: none;
+  }
+  @media (pointer: fine) {
+    .slow-step-door,
+    .three-door {
+      --verb: "Click ";
+    }
+  }
+  @media (min-width: 760px), (prefers-reduced-motion: reduce) {
+    .portrait::after {
+      content: none;
+    }
+  }
+}
+@keyframes three-door-buzz {
+  0%,
+  100% {
+    transform: none;
+  }
+  20% {
+    transform: rotate(-5deg);
+  }
+  40% {
+    transform: rotate(4deg);
+  }
+  60% {
+    transform: rotate(-3deg);
+  }
+  80% {
+    transform: rotate(2deg);
+  }
+}
+
 /* The slow step: the page holds still behind it, with its scrollbar's room
    kept, and the clause has left the sentence. The open state is all CSS, so
    it paints at once and the gates are there before the game has loaded. */
@@ -1834,8 +1998,18 @@ main {
   line-height: 1.4;
   color: var(--text-2);
 }
-* + .group-label {
+* + .group-label,
+.stage-head {
   margin-top: 2.5rem;
+}
+/* The Strung Years door, at the end of the On stage heading. It adds no height. */
+.stage-head {
+  position: relative;
+}
+.stage-head .three-door {
+  position: absolute;
+  top: -12px;
+  right: -6px;
 }
 .more-link {
   margin-top: 1.25rem;
@@ -3807,10 +3981,11 @@ body:has(.contact-box) .footer-handles {
 /* ---------- print, motion ---------- */
 
 /* Phones, last: what only earns its place on a wide screen steps back.
-   Writing shows six posts (the blog has the rest), the footer drops the
-   links meant for crawlers, and the open menu holds the page still. */
+   Writing shows six posts and any row with a door (the blog has the rest),
+   the footer drops the links meant for crawlers, and the open menu holds the
+   page still. */
 @media (max-width: 759px) {
-  #writing .row-list > li:nth-child(n + 7) {
+  #writing .row-list > li:nth-child(n + 7):not(:has(> .three-door)) {
     display: none;
   }
   #writing .more-links a:nth-child(n + 3) {
@@ -3958,6 +4133,7 @@ body:has(.contact-box) .footer-handles {
   .menu-scrim,
   .copy-button,
   .bloom,
+  .three-door,
   .video-thumb,
   .label-hash {
     display: none !important;

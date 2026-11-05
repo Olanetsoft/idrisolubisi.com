@@ -1,10 +1,19 @@
 import Image from "next/image";
 import { site } from "@/data/site";
-import { isUpcoming, latestTalk, stagePhotos, talks } from "@/data/talks";
+import {
+  KIND,
+  eventName,
+  isUpcoming,
+  latestTalk,
+  stagePhotos,
+  talkCity,
+  talks,
+} from "@/data/talks";
 import { featuredVideos } from "@/data/videos";
 import { MoreToggle } from "./MoreToggle";
 import { SectionLabel } from "./SectionLabel";
 import { PhotoDialog } from "./PhotoDialog";
+import { ThreeDoor } from "./ThreeDoor";
 import { VideoDialog } from "./VideoDialog";
 
 type Talk = (typeof talks)[number];
@@ -15,28 +24,12 @@ const VIDEOS_SHOWN = 6;
 /** The On stage list shows the most recent rows; a button reveals the rest. */
 const STAGES_SHOWN = 10;
 
-const KIND: Record<Talk["kind"], string> = {
-  Keynote: "Keynote",
-  Talk: "Talk",
-  Workshop: "Workshop",
-  Panel: "Panel",
-  "Fireside chat": "Fireside chat",
-  Host: "Host",
-  Lecture: "Guest lecture",
-  Speaker: "Speaker",
-};
-
-/** "Blockfest Africa", without a trailing year or a bracketed long name; the year has its own column. */
-function eventName(t: Talk): string {
-  return t.event.replace(/\s*\(.*\)$/, "").replace(/\s+\d{4}$/, "");
-}
-
 /** "Lagos, 2025": the kind unless the label or title already says it, the city unless the event names it, the year. */
 function highlightMeta(t: Talk, label: string): string {
   const kind = KIND[t.kind];
   const said = `${label} ${t.title ?? ""}`.toLowerCase();
   const showKind = !said.includes(kind.split(" ").pop()!.toLowerCase());
-  const city = t.location && !eventName(t).includes(t.location) ? t.location : undefined;
+  const city = talkCity(t);
   return [showKind ? kind : undefined, city, t.year].filter(Boolean).join(", ");
 }
 
@@ -54,6 +47,21 @@ export function Talks() {
         <div className="section-head">
           <SectionLabel id="talks">Talks and workshops</SectionLabel>
           <p className="lede">On stage and on camera.</p>
+          <ThreeDoor stage="flipped-phone" href="#talks" label="Turn the phone over" hint="to flip">
+            <g transform="rotate(14 22 22)">
+              <rect x="13.5" y="4.5" width="17" height="35" rx="3.5" />
+              <rect
+                className="three-door-amber"
+                x="17.5"
+                y="13"
+                width="9"
+                height="18"
+                rx="1.5"
+                transform="rotate(9 22 22)"
+              />
+              <circle className="three-door-dot" cx="22" cy="8.5" r="1.2" />
+            </g>
+          </ThreeDoor>
         </div>
         <PhotoDialog photos={stagePhotos} />
         <div className="stage-photos">
@@ -141,10 +149,24 @@ export function Talks() {
             <a href={site.links.sessionize}>Speaker profile on Sessionize</a>
           </p>
         </div>
-        <h3 className="group-label">On stage</h3>
+        <div className="stage-head">
+          <h3 className="group-label">On stage</h3>
+          <ThreeDoor
+            stage="strung-years"
+            href="#on-stage"
+            label="Strung Years, a toy with one bead for each talk"
+            hint="to spin"
+          >
+            <path d="M7 37C14 37 17 31 17 25C17 15 33 13 33 22C33 29 23 29 23 22C23 13 31 7 38 7" />
+            <circle cx="11" cy="36.2" r="2.2" fill="var(--bg)" />
+            <circle cx="15.5" cy="31.7" r="2.2" fill="var(--bg)" />
+            <circle cx="17" cy="25.4" r="2.2" fill="var(--bg)" />
+            <circle className="three-door-dot" cx="24.8" cy="16.4" r="2.4" />
+          </ThreeDoor>
+        </div>
         <ul className="row-list stage-list" id="on-stage">
           {stages.map((t, i) => {
-            const city = t.location && !eventName(t).includes(t.location) ? t.location : undefined;
+            const city = talkCity(t);
             const kind = [KIND[t.kind], city, isUpcoming(t) && "upcoming"].filter(Boolean);
             // Shown: an upcoming event drops its city, so the name keeps one line
             // on wide screens; screen readers still hear it.

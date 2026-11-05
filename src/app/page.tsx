@@ -5,6 +5,7 @@ import { Projects } from "@/components/Projects";
 import { Spotlight } from "@/components/Spotlight";
 import { Recognition } from "@/components/Recognition";
 import { Talks } from "@/components/Talks";
+import { ThreeDoorOpener } from "@/components/ThreeDoorOpener";
 import { Writing } from "@/components/Writing";
 
 // Rebuilt daily so an upcoming talk loses its mark once the day has passed.
@@ -21,6 +22,7 @@ export default function HomePage() {
       <Recognition />
       <Contact />
       <Spotlight />
+      <ThreeDoorOpener />
     </>
   );
 }
