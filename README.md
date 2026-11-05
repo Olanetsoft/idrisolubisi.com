@@ -48,6 +48,7 @@ One page, in this order: the hero (status line, name and role, one intro, the ca
 | The flipped phone: stand-in and thumb; the scene; the physics; its CSS          | `src/lib/flipped-phone.ts`; `src/lib/flipped-phone-scene.ts`; `src/lib/flipped-phone-flight.ts`; its CSS in `src/app/`     |
 | Crops of the stage photos for the phone's screen                                | `public/images/talks/*-phone.jpg`                                                                                          |
 | Loose Leaf on the Merkle row: door; lesson and drawing; weight; 3D; its CSS     | `LooseLeafDoor.tsx`; `src/lib/loose-leaf.ts`, `loose-leaf-sim.ts`, `loose-leaf-three.ts`; `src/app/loose-leaf.css`         |
+| Strung Years (the wire toy under On stage): the door; the piece; its CSS        | `src/components/Talks.tsx`; `src/lib/strung-years.ts`; `src/app/strung-years.css`; beads come from `src/data/talks.ts`     |
 | Styles and design tokens                                                        | `src/app/globals.css`                                                                                                      |
 | Browser-bar colours (keep in step with `--bg` in `globals.css`)                 | `src/lib/theme.ts`                                                                                                         |
 | Metadata and structured data (JSON-LD)                                          | `src/app/layout.tsx`                                                                                                       |

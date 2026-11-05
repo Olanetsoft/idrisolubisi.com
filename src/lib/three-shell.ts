@@ -77,6 +77,7 @@ const STAGES: Record<string, StageEntry> = {
         .catch(() => slot.parentElement?.dispatchEvent(new Event("cancel")));
     },
   },
+  "strung-years": { load: () => import("@/lib/strung-years"), label: "Strung Years" },
 };
 
 /** The way out, in ms: as long as the slow step's. */

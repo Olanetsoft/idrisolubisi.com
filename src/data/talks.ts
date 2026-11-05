@@ -27,7 +27,31 @@ export type Talk = {
    * Latest card at the top of Talks.
    */
   date?: string;
+  /** A stage photo taken there (a `src` in stagePhotos), for its card in Strung Years. */
+  photo?: string;
 };
+
+/** Each kind as the page writes it. */
+export const KIND: Record<Talk["kind"], string> = {
+  Keynote: "Keynote",
+  Talk: "Talk",
+  Workshop: "Workshop",
+  Panel: "Panel",
+  "Fireside chat": "Fireside chat",
+  Host: "Host",
+  Lecture: "Guest lecture",
+  Speaker: "Speaker",
+};
+
+/** "Blockfest Africa", without a trailing year or a bracketed long name; the year has its own column. */
+export function eventName(t: Talk): string {
+  return t.event.replace(/\s*\(.*\)$/, "").replace(/\s+\d{4}$/, "");
+}
+
+/** The city, unless the event's name already says it. */
+export function talkCity(t: Talk): string | undefined {
+  return t.location && !eventName(t).includes(t.location) ? t.location : undefined;
+}
 
 /** Worked out when the page is built, and again each day (see page.tsx). */
 export function isUpcoming(t: Talk): boolean {
@@ -91,6 +115,7 @@ export const talks: Talk[] = [
     kind: "Keynote",
     note: "12,000 participants from 50+ countries",
     highlight: "Keynote",
+    photo: "/images/talks/blockfest-keynote.jpg",
     href: "https://businessday.ng/news/article/blockfest-africa-2025-draws-12000-participants-strengthens-africas-web3-voice/",
   },
   {
@@ -107,6 +132,7 @@ export const talks: Talk[] = [
     year: "2025",
     location: "Lagos",
     kind: "Host",
+    photo: "/images/talks/build-afrika.jpg",
     href: "https://techpoint.africa/brandpress/the-build-afrika-summit-rallies-africas-top-tech-talent-to-build-the-future-of-decentralization/",
   },
   {
@@ -242,6 +268,7 @@ export const talks: Talk[] = [
     year: "2022",
     location: "Lagos and Nairobi",
     kind: "Workshop",
+    photo: "/images/talks/mara-roadshow-stage.jpg",
     href: "https://blog.idrisolubisi.com/dev-retro-2022-the-highs-and-lows-of-a-year-to-remember",
   },
   {

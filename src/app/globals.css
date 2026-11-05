@@ -1925,8 +1925,18 @@ main {
   line-height: 1.4;
   color: var(--text-2);
 }
-* + .group-label {
+* + .group-label,
+.stage-head {
   margin-top: 2.5rem;
+}
+/* The Strung Years door, at the end of the On stage heading. It adds no height. */
+.stage-head {
+  position: relative;
+}
+.stage-head .three-door {
+  position: absolute;
+  top: -12px;
+  right: -6px;
 }
 .more-link {
   margin-top: 1.25rem;
