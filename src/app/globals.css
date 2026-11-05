@@ -1113,6 +1113,70 @@ figure {
   }
 }
 
+/* The doors to the three.js stages (ThreeDoor.tsx): one family of 44px line
+   drawings in the footer flower's stroke, ink with amber accents. The scroll
+   itself gives one a small buzz as it comes into view, so a door already on
+   screen when the page loads never moves, and no script is involved. */
+.three-door {
+  display: inline-flex;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  color: var(--text-2);
+  transition: color var(--dur-1) var(--ease);
+}
+.three-door svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.three-door .three-door-amber {
+  stroke: var(--accent);
+}
+.three-door .three-door-dot {
+  fill: var(--accent);
+  stroke: none;
+}
+a.three-door:active {
+  color: var(--accent);
+}
+@media (hover: hover) {
+  a.three-door:hover {
+    color: var(--text);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    a.three-door svg {
+      animation: three-door-buzz linear both;
+      animation-timeline: view();
+      animation-range: entry 50% entry 100%;
+    }
+  }
+}
+@keyframes three-door-buzz {
+  0%,
+  100% {
+    transform: none;
+  }
+  20% {
+    transform: rotate(-5deg);
+  }
+  40% {
+    transform: rotate(4deg);
+  }
+  60% {
+    transform: rotate(-3deg);
+  }
+  80% {
+    transform: rotate(2deg);
+  }
+}
+
 /* The slow step: the page holds still behind it, with its scrollbar's room
    kept, and the clause has left the sentence. The open state is all CSS, so
    it paints at once and the gates are there before the game has loaded. */
@@ -3958,6 +4022,7 @@ body:has(.contact-box) .footer-handles {
   .menu-scrim,
   .copy-button,
   .bloom,
+  .three-door,
   .video-thumb,
   .label-hash {
     display: none !important;

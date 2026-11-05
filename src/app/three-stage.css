@@ -1,0 +1,208 @@
+/* The stage (src/lib/three-shell.ts). Loaded with the shell, on a door's press,
+   so none of this is in the first load. The rules follow the slow step's
+   dialog in globals.css, and share its keyframes: change the two together. The
+   open state is all CSS, so it paints at once and the stand-in is there before
+   three.js has loaded. */
+html:has(.three-stage[open]) {
+  overflow: hidden;
+  overscroll-behavior: none;
+  scrollbar-gutter: stable;
+}
+.three-door[data-out] {
+  visibility: hidden;
+}
+.three-stage {
+  width: 100%;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  /* Open all round, where the icon rises from outside a desktop stage. */
+  overflow: visible;
+  background: var(--bg);
+  color: var(--text);
+  touch-action: pinch-zoom;
+  overscroll-behavior: contain;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  animation: slow-step-lit var(--dur-2) linear backwards;
+}
+.three-stage[open] {
+  display: flex;
+  flex-direction: column;
+}
+.three-stage::backdrop {
+  background: transparent;
+}
+.three-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.7;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, var(--grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+  background-size: calc(min(100vw, 430px) / 16) calc(min(100vw, 430px) / 16);
+  -webkit-mask-image: linear-gradient(to bottom, #000, transparent 70%);
+  mask-image: linear-gradient(to bottom, #000, transparent 70%);
+  animation: slow-step-fade calc(var(--dur-2) * 2) linear backwards;
+}
+.three-stage-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-2) var(--ease);
+}
+.three-stage-slot {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 18px;
+  padding: 60px var(--gutter);
+  transition: opacity var(--dur-2) var(--ease);
+}
+.three-door.three-stage-icon {
+  width: 96px;
+  height: 96px;
+  animation: three-stage-lift calc(var(--dur-2) * 2) var(--ease) backwards;
+}
+.three-door.three-stage-icon svg {
+  stroke-width: 0.5;
+}
+/* The amber dot of a stage still on its way. It waits, so a quick load never shows it. */
+.three-stage-slot:has(.three-stage-icon)::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: three-stage-wait 800ms ease-in-out 600ms infinite alternate backwards;
+}
+.three-stage[data-live] .three-stage-canvas {
+  opacity: 1;
+  pointer-events: auto;
+}
+.three-stage[data-live] .three-stage-slot {
+  opacity: 0;
+  pointer-events: none;
+}
+/* Out of sight, it would keep the page drawing at rest. */
+.three-stage[data-live] .three-stage-slot::after {
+  opacity: 0;
+  animation: none;
+}
+.three-stage-top {
+  position: relative;
+  z-index: 3;
+  flex: none;
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  padding: max(env(safe-area-inset-top), 6px) 4px 0 var(--gutter);
+  pointer-events: none;
+  animation: slow-step-fade var(--dur-2) linear var(--dur-1) backwards;
+}
+.three-stage-close {
+  pointer-events: auto;
+}
+.three-stage-close:active {
+  color: var(--accent);
+}
+.three-stage-label {
+  font: 400 var(--fs-meta) / 1 var(--font-mono-stack);
+  color: var(--text-3);
+}
+.three-stage-foot {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  padding: 0 var(--gutter) max(env(safe-area-inset-bottom), 16px);
+  color: var(--text-3);
+  font: 400 var(--fs-meta) / 1.5 var(--font-mono-stack);
+  pointer-events: none;
+}
+@keyframes three-stage-lift {
+  from {
+    transform: translate(var(--lift)) scale(0.46);
+  }
+}
+@keyframes three-stage-wait {
+  from {
+    opacity: 0;
+  }
+}
+/* The way out: the icon goes back to its door as the rest fades. */
+.three-stage[data-closing] {
+  background: transparent;
+  transition: background-color var(--dur-2) linear;
+}
+.three-stage[data-closing]::before,
+.three-stage[data-closing] > :not(.three-stage-slot),
+.three-stage[data-closing] .three-stage-slot::after,
+.three-stage[data-closing] .three-stage-slot > :not(.three-stage-icon) {
+  opacity: 0;
+  transition: opacity var(--dur-1) linear;
+}
+.three-stage[data-closing] .three-stage-slot {
+  opacity: 1;
+  transition: none;
+}
+.three-stage[data-closing] .three-stage-icon {
+  transform: translate(var(--lift)) scale(0.46);
+  transition: transform 280ms var(--ease);
+  animation: none;
+}
+/* A phone on its side: the piece on the left, its words beside it. */
+@media (orientation: landscape) and (max-height: 519px) {
+  .three-stage:has(.three-stage-foot:not(:empty)) :is(.three-stage-canvas, .three-stage-slot) {
+    width: 58%;
+  }
+  .three-stage-foot {
+    left: 58%;
+    top: 60px;
+    padding: 0 var(--gutter) 0 6px;
+  }
+}
+/* Tablets and desktops: a phone-sized stage, not a stretched one. */
+@media (min-width: 431px) and (min-height: 521px) {
+  .three-stage {
+    --gutter: 17px;
+    width: 430px;
+    height: min(100dvh, 932px);
+    margin: auto;
+    border-radius: var(--radius);
+    box-shadow: 0 0 0 1px var(--line);
+  }
+  .three-stage::backdrop {
+    /* The fallback covers browsers where ::backdrop does not inherit tokens. */
+    background: var(--scrim-strong, rgb(0 0 0 / 0.72));
+    animation: slow-step-fade var(--dur-2) linear backwards;
+  }
+}
+/* Forced colours keep none of the site's, and the canvas reads these tokens. */
+@media (forced-colors: active) {
+  .three-stage {
+    --bg: Canvas;
+    --raised: Canvas;
+    --text: CanvasText;
+    --text-2: CanvasText;
+    --text-3: CanvasText;
+    --accent: LinkText;
+    --line: CanvasText;
+    --line-strong: CanvasText;
+  }
+}

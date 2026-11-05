@@ -43,6 +43,8 @@ One page, in this order: the hero (status line, name and role, one intro, the ca
 | Build-time data (written by `npm run data`, do not edit by hand)                | `src/data/generated/github.json`, `src/data/generated/blog.json`, typed in `src/lib/generated.ts`                          |
 | Brand marks                                                                     | `src/components/icon-data.json`, built into `public/icons.svg` by `npm run icons`; used through `src/components/icons.tsx` |
 | The footer flower, and the pull that grows it on a stem                         | `src/components/Bloom.tsx`; `src/lib/sprung-flower.ts`                                                                     |
+| The doors to the three.js stages: the line icons; their one listener            | `src/components/ThreeDoor.tsx`; `src/components/ThreeDoorOpener.tsx`; icon rules in `globals.css`                          |
+| The three.js stage: the shell and list of stages; its CSS; brand and renderer   | `src/lib/three-shell.ts`; `src/app/three-stage.css`; `src/lib/three-stage.ts`                                              |
 | Styles and design tokens                                                        | `src/app/globals.css`                                                                                                      |
 | Browser-bar colours (keep in step with `--bg` in `globals.css`)                 | `src/lib/theme.ts`                                                                                                         |
 | Metadata and structured data (JSON-LD)                                          | `src/app/layout.tsx`                                                                                                       |
