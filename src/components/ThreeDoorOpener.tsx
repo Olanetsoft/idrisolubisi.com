@@ -9,7 +9,9 @@ let backed = false;
  * the first load. A click, Enter or Space on a door fetches the shell
  * (src/lib/three-shell.ts), and the shell fetches three.js; a press that turns
  * into a scroll never becomes a click, so it opens nothing. A modified click,
- * a middle-click, a failed fetch or no script is an ordinary link.
+ * a middle-click, a failed fetch or no script is an ordinary link. A door's hint
+ * promises a stage, so it shows once WebGL is known to be there, which is asked
+ * as a door nears the screen, and only when the page is idle.
  */
 export function ThreeDoorOpener() {
   useEffect(() => {
@@ -32,9 +34,27 @@ export function ThreeDoorOpener() {
         .catch(() => location.assign(door.href));
     };
 
+    const near = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((e) => e.isIntersecting)) return;
+        near.disconnect();
+        const ask = () =>
+          import("@/lib/webgl")
+            .then(({ webglSupported }) => {
+              if (webglSupported()) document.documentElement.dataset.webgl = "";
+            })
+            .catch(() => {});
+        const idle = window.requestIdleCallback?.(ask, { timeout: 2000 });
+        if (idle === undefined) window.setTimeout(ask, 1200);
+      },
+      { rootMargin: "50%" },
+    );
+    document.querySelectorAll("a[data-three]").forEach((door) => near.observe(door));
+
     document.addEventListener("click", onEvent);
     document.addEventListener("keydown", onEvent);
     return () => {
+      near.disconnect();
       document.removeEventListener("click", onEvent);
       document.removeEventListener("keydown", onEvent);
     };

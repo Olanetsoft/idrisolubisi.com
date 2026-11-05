@@ -57,6 +57,7 @@ export function Bloom() {
         setTurn((t) => t + 1);
       }}
       aria-hidden="true"
+      data-hint="Pull me"
     >
       <svg viewBox="0 0 24 24" width="18" height="18" focusable="false">
         <g className="bloom-flower">

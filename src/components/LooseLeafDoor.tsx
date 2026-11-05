@@ -16,6 +16,7 @@ export function LooseLeafDoor({ list, href }: { list: Article[]; href: string })
         stage="loose-leaf"
         href={href}
         label="Loose Leaf: a hanging Merkle tree made of eight articles"
+        hint="a leaf"
       >
         <path d="M22 0v8M8 10v6M36 10v9M3.5 18v7M12.5 18v12M31.5 21v6M40.5 21v11M1.5 25h4v6h-4zM10.5 30h4v6h-4zM29.5 27h4v6h-4zM38.5 32h4v6h-4z" />
         <path

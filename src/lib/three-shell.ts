@@ -12,6 +12,8 @@
 
 import "@/app/three-stage.css";
 import { holdScroll } from "@/lib/hold-scroll";
+import { markPlayed } from "@/lib/played";
+import { webglSupported } from "@/lib/webgl";
 
 export type Stage = {
   /** The open dialog, for reading tokens and for anything a piece adds to it. */
@@ -83,18 +85,7 @@ const STAGES: Record<string, StageEntry> = {
 /** The way out, in ms: as long as the slow step's. */
 const LEAVE = 280;
 
-let webgl: boolean | undefined;
 let active = false;
-
-/** three.js needs WebGL 2. Asked once, and the test context is handed straight back. */
-export function webglSupported() {
-  if (webgl === undefined) {
-    const gl = document.createElement("canvas").getContext("webgl2");
-    webgl = !!gl;
-    gl?.getExtension("WEBGL_lose_context")?.loseContext();
-  }
-  return webgl;
-}
 
 export function openStage(door: HTMLAnchorElement) {
   const entry = STAGES[door.dataset.three!];
@@ -104,6 +95,7 @@ export function openStage(door: HTMLAnchorElement) {
     return;
   }
   active = true;
+  markPlayed(door.dataset.three!);
 
   const dialog = document.createElement("dialog");
   dialog.className = "three-stage";

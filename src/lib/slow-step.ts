@@ -8,6 +8,8 @@
  * on first intent.
  */
 
+import { markPlayed } from "@/lib/played";
+
 export type SlowStepItem = { key: string; step: string; name: string; line: string };
 
 const GRAVITY = 1500; // px/s2
@@ -138,6 +140,7 @@ export function startSlowStep(
   lift: { x: number; y: number },
   openedAt: number,
 ): () => void {
+  markPlayed("slow-step");
   const canvas = make("canvas", "", "slow-step-canvas");
   canvas.setAttribute("aria-hidden", "true");
   const ctx = canvas.getContext("2d")!;

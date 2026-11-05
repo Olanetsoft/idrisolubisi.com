@@ -7,12 +7,14 @@ type Props = {
   href: string;
   /** Its name for screen readers, which also names the stage. */
   label: string;
+  /** What its sign says after Tap or Click, as an attribute so it is not page text. */
+  hint: string;
   /** The drawing, in a 44 by 44 box. Use .three-door-amber and .three-door-dot for the accents. */
   children: ReactNode;
 };
 
 /** A door to a three.js stage: a line drawing in the server HTML, and no script of its own. */
-export function ThreeDoor({ stage, href, label, children }: Props) {
+export function ThreeDoor({ stage, href, label, hint, children }: Props) {
   return (
     <a
       className="three-door"
@@ -21,6 +23,7 @@ export function ThreeDoor({ stage, href, label, children }: Props) {
       aria-haspopup="dialog"
       aria-label={label}
       data-three={stage}
+      data-hint={hint}
     >
       <svg viewBox="0 0 44 44" width="44" height="44" focusable="false" aria-hidden="true">
         {children}

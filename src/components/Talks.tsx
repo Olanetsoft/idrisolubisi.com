@@ -47,7 +47,7 @@ export function Talks() {
         <div className="section-head">
           <SectionLabel id="talks">Talks and workshops</SectionLabel>
           <p className="lede">On stage and on camera.</p>
-          <ThreeDoor stage="flipped-phone" href="#talks" label="Turn the phone over">
+          <ThreeDoor stage="flipped-phone" href="#talks" label="Turn the phone over" hint="to flip">
             <g transform="rotate(14 22 22)">
               <rect x="13.5" y="4.5" width="17" height="35" rx="3.5" />
               <rect
@@ -155,6 +155,7 @@ export function Talks() {
             stage="strung-years"
             href="#on-stage"
             label="Strung Years, a toy with one bead for each talk"
+            hint="to spin"
           >
             <path d="M7 37C14 37 17 31 17 25C17 15 33 13 33 22C33 29 23 29 23 22C23 13 31 7 38 7" />
             <circle cx="11" cy="36.2" r="2.2" fill="var(--bg)" />

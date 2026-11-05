@@ -1185,6 +1185,79 @@ a.three-door:active {
   overflow: visible;
   transform-origin: 50% 0;
 }
+/* The sign on each of the six playful pieces: one amber dot and a few mono
+   words, Tap or Click by pointer. Out of flow, so it moves and wraps nothing;
+   its words are an attribute, so not page text, and its empty alt leaves each
+   control's name alone. It is part of its piece, so a press on it counts. The
+   two in the first screen paint with the page and never animate. A browser
+   without the alt or the query shows no sign, which costs nothing. Doors wait
+   for ThreeDoorOpener to find WebGL; the flower for its pull to load, which
+   never happens under reduced motion. src/lib/played.ts ends each one. */
+@media screen and (scripting: enabled) {
+  .portrait::after,
+  .slow-step-door::before,
+  .bloom.is-sprung::after,
+  [data-webgl] a.three-door::after {
+    content: var(--verb, "") attr(data-hint) / "";
+    position: absolute;
+    padding-left: 12px;
+    background: radial-gradient(circle at 3px, var(--accent) 3px, transparent 3.5px);
+    font: 400 var(--fs-meta) / 18px var(--font-mono-stack);
+    color: var(--text-3);
+    white-space: nowrap;
+  }
+  .slow-step-door,
+  .three-door {
+    --verb: "Tap ";
+  }
+  .portrait,
+  .hero-pitch,
+  .bloom {
+    position: relative;
+  }
+  .portrait::after {
+    top: 100%;
+    left: 50%;
+    translate: -50%;
+    margin-top: 3px;
+  }
+  .slow-step-door::before {
+    bottom: calc(100% + 4px);
+    left: 0;
+  }
+  .bloom::after {
+    bottom: calc(100% - 9px);
+    left: 13px;
+  }
+  /* Under a door's drawing, or beside it where a hairline runs underneath. */
+  a.three-door::after {
+    top: calc(100% - 3px);
+    right: 0;
+  }
+  .stage-head a.three-door::after {
+    top: 13px;
+    right: 100%;
+  }
+  [data-played~="wheel"] .portrait::after,
+  [data-played~="slow-step"] .slow-step-door::before,
+  [data-played~="flower"] .bloom::after,
+  [data-played~="flipped-phone"] a[data-three="flipped-phone"]::after,
+  [data-played~="loose-leaf"] a[data-three="loose-leaf"]::after,
+  [data-played~="strung-years"] a[data-three="strung-years"]::after {
+    content: none;
+  }
+  @media (pointer: fine) {
+    .slow-step-door,
+    .three-door {
+      --verb: "Click ";
+    }
+  }
+  @media (min-width: 760px), (prefers-reduced-motion: reduce) {
+    .portrait::after {
+      content: none;
+    }
+  }
+}
 @keyframes three-door-buzz {
   0%,
   100% {
