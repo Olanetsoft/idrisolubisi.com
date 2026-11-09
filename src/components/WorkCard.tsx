@@ -1,4 +1,12 @@
+"use client";
+
 import Image from "next/image";
+
+/** Three cards to a row in the 960px page column; on phones one row each, the picture 112px wide. */
+const CARD_SIZES = "(max-width: 759px) 112px, (max-width: 1023px) 30vw, 310px";
+
+/** Four small cards to a row, two on phones. */
+const SMALL_CARD_SIZES = "(max-width: 759px) 46vw, (max-width: 1023px) 23vw, 230px";
 
 type WorkCardProps = {
   /** Where the whole card goes. Without it the card is still: no light, no tilt (a private repo). */
@@ -7,7 +15,6 @@ type WorkCardProps = {
   image: string;
   /** Alt text only when the card is not a link; on a link the visible name labels it. */
   alt?: string;
-  sizes: string;
   /** On the first screen: load at once (the lead harness card; the portrait has the high priority). */
   eager?: boolean;
   /** A short mono tag on the image: a community role. */
@@ -23,14 +30,14 @@ type WorkCardProps = {
  * One card for projects, more builds and community: a 16:10 screenshot,
  * shown 16:9 with its top kept, just inside the raised card, then a name and
  * one line. The whole card is a single link, with nothing
- * interactive inside it.
+ * interactive inside it. A client component only so that the page's inline
+ * data carries its props and not its markup, as in ListRows.tsx.
  */
 export function WorkCard({
   href,
   rel,
   image,
   alt = "",
-  sizes,
   eager,
   tag,
   name,
@@ -55,7 +62,7 @@ export function WorkCard({
           alt={href ? "" : alt}
           width={1280}
           height={800}
-          sizes={sizes}
+          sizes={size === "sm" ? SMALL_CARD_SIZES : CARD_SIZES}
           loading={eager ? "eager" : undefined}
         />
         {tag && (
